@@ -1,0 +1,41 @@
+package com.xiaomi.hm.health.b.a;
+
+public final class o {
+    public static final int AppActionBar = 2131427334;
+    public static final int AppBaseTheme = 2131427340;
+    public static final int AppTheme = 2131427341;
+    public static final int AppThemeTint = 2131427342;
+    public static final int BackButton = 2131427335;
+    public static final int BaseActionBar = 2131427330;
+    public static final int BottomDialog = 2131427329;
+    public static final int CaptureTheme = 2131427344;
+    public static final int CountDownDimDialogTint = 2131427346;
+    public static final int CountDownDimTint = 2131427345;
+    public static final int DialogBase = 2131427328;
+    public static final int DimPanel = 2131427339;
+    public static final int DimPanelBase = 2131427338;
+    public static final int DimPanelTint = 2131427343;
+    public static final int LeftButton = 2131427352;
+    public static final int ListItemTitleText = 2131427337;
+    public static final int MenuTextStyle = 2131427333;
+    public static final int RightButton = 2131427336;
+    public static final int RunningDetailDesc = 2131427349;
+    public static final int RunningDetailUnit = 2131427348;
+    public static final int RunningDetailValue = 2131427347;
+    public static final int RunningHelpContent = 2131427364;
+    public static final int RunningHelpLabel = 2131427363;
+    public static final int RunningProgressBar = 2131427362;
+    public static final int RunningTiming = 2131427350;
+    public static final int RunningTimingUnit = 2131427351;
+    public static final int TitleBarTheme = 2131427331;
+    public static final int TitleBarTheme_WindowTranslucent = 2131427332;
+    public static final int TranslucentActionBar = 2131427358;
+    public static final int TranslucentActionBarFitsSystemWindowsTheme = 2131427360;
+    public static final int TranslucentActionBarTheme = 2131427359;
+    public static final int WindowTransparent = 2131427361;
+    public static final int font_c50000000_s10_5 = 2131427356;
+    public static final int font_c70000000_s15_5 = 2131427357;
+    public static final int font_white_s16_5 = 2131427355;
+    public static final int font_white_s18 = 2131427353;
+    public static final int font_white_s40_5 = 2131427354;
+}

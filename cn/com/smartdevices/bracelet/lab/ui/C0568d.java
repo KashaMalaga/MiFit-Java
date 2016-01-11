@@ -1,0 +1,113 @@
+package cn.com.smartdevices.bracelet.lab.ui;
+
+import android.os.Bundle;
+import com.xiaomi.hm.health.i;
+import com.xiaomi.hm.health.k;
+import com.xiaomi.hm.health.r;
+import java.util.ArrayList;
+import java.util.List;
+
+public class C0568d {
+    public static final String a = "sportSelected";
+    public static final String b = "sportNameResId";
+    public static final String c = "sportImgResId";
+    public static final String d = "sportImgSelectedResId";
+    public static final String e = "others";
+    public static final String f = "sportId";
+    public static final String g = "sportEntrance";
+    public static final String h = "sportDoneColorResId";
+
+    private C0568d() {
+    }
+
+    public static List<Bundle> a() {
+        List<Bundle> arrayList = new ArrayList(12);
+        Bundle bundle = new Bundle();
+        bundle.putString(f, "Running");
+        bundle.putInt(b, r.lab_factory_sport_type_running);
+        bundle.putInt(c, k.lab_favorite_vote_running_normal);
+        bundle.putInt(d, k.lab_favorite_vote_running_done);
+        bundle.putString(g, "GPSMainActivity");
+        bundle.putInt(h, i.sport_done_text);
+        bundle.putBoolean(a, true);
+        arrayList.add(bundle);
+        bundle = new Bundle();
+        bundle.putString(f, "Football");
+        bundle.putInt(b, r.lab_factory_sport_type_football);
+        bundle.putInt(c, k.lab_favorite_vote_football_normal);
+        bundle.putInt(h, i.sport_vote_text);
+        bundle.putBoolean(a, false);
+        arrayList.add(bundle);
+        bundle = new Bundle();
+        bundle.putString(f, "Basketball");
+        bundle.putInt(b, r.lab_factory_sport_type_basketball);
+        bundle.putInt(c, k.lab_favorite_vote_basketball_normal);
+        bundle.putInt(h, i.sport_vote_text);
+        bundle.putBoolean(a, false);
+        arrayList.add(bundle);
+        bundle = new Bundle();
+        bundle.putString(f, "Volleyball");
+        bundle.putInt(b, r.lab_factory_sport_type_volleyball);
+        bundle.putInt(c, k.lab_favorite_vote_volleyball_normal);
+        bundle.putInt(h, i.sport_vote_text);
+        bundle.putBoolean(a, false);
+        arrayList.add(bundle);
+        bundle = new Bundle();
+        bundle.putString(f, "Badminton");
+        bundle.putInt(b, r.lab_factory_sport_type_badminton);
+        bundle.putInt(c, k.lab_favorite_vote_badminton_normal);
+        bundle.putInt(h, i.sport_vote_text);
+        bundle.putBoolean(a, false);
+        arrayList.add(bundle);
+        bundle = new Bundle();
+        bundle.putString(f, "Tennis");
+        bundle.putInt(b, r.lab_factory_sport_type_tennis);
+        bundle.putInt(c, k.lab_favorite_vote_tennis_normal);
+        bundle.putInt(h, i.sport_vote_text);
+        bundle.putBoolean(a, false);
+        arrayList.add(bundle);
+        bundle = new Bundle();
+        bundle.putString(f, "PingPong");
+        bundle.putInt(b, r.lab_factory_sport_type_pingpong);
+        bundle.putInt(c, k.lab_favorite_vote_pingpong_normal);
+        bundle.putInt(h, i.sport_vote_text);
+        bundle.putBoolean(a, false);
+        arrayList.add(bundle);
+        bundle = new Bundle();
+        bundle.putString(f, "Riding");
+        bundle.putInt(b, r.lab_factory_sport_type_riding);
+        bundle.putInt(c, k.lab_favorite_vote_riding_normal);
+        bundle.putInt(h, i.sport_vote_text);
+        arrayList.add(bundle);
+        bundle = new Bundle();
+        bundle.putString(f, "Climbing");
+        bundle.putInt(b, r.lab_factory_sport_type_climbing);
+        bundle.putInt(c, k.lab_favorite_vote_climbing_normal);
+        bundle.putInt(h, i.sport_vote_text);
+        bundle.putBoolean(a, false);
+        arrayList.add(bundle);
+        bundle = new Bundle();
+        bundle.putString(f, "Skidding");
+        bundle.putInt(b, r.lab_factory_sport_type_skidding);
+        bundle.putInt(c, k.lab_favorite_vote_skidding_normal);
+        bundle.putInt(h, i.sport_vote_text);
+        bundle.putBoolean(a, false);
+        arrayList.add(bundle);
+        bundle = new Bundle();
+        bundle.putString(f, "Sliding");
+        bundle.putInt(b, r.lab_factory_sport_type_sliding);
+        bundle.putInt(c, k.lab_favorite_vote_sliding_normal);
+        bundle.putInt(h, i.sport_vote_text);
+        bundle.putBoolean(a, false);
+        arrayList.add(bundle);
+        bundle = new Bundle();
+        bundle.putString(f, "Others");
+        bundle.putInt(b, r.lab_factory_sport_type_others);
+        bundle.putInt(c, k.lab_favorite_vote_others_normal);
+        bundle.putInt(h, i.sport_vote_text);
+        bundle.putBoolean(a, false);
+        bundle.putBoolean(e, true);
+        arrayList.add(bundle);
+        return arrayList;
+    }
+}

@@ -1,0 +1,176 @@
+package cn.com.smartdevices.bracelet.j;
+
+import android.annotation.SuppressLint;
+import android.os.Build.VERSION;
+import cn.com.smartdevices.bracelet.config.b;
+import cn.com.smartdevices.bracelet.model.LoginData;
+import cn.com.smartdevices.bracelet.model.ThirdLoginState;
+import com.d.a.a.O;
+import com.xiaomi.e.a;
+import java.util.Locale;
+import java.util.TimeZone;
+
+public class f {
+    public static final String A = "icon_url";
+    public static final String B = "gender";
+    public static final String C = "height";
+    public static final String D = "weight";
+    public static final String E = "birthday";
+    public static final String F = "deviceid";
+    public static final String G = "person_signature";
+    public static final String H = "person_sh";
+    public static final String I = "location";
+    public static final String J = "icon_path";
+    public static final String K = "day_sport_goal";
+    public static final String L = "uid";
+    public static final String M = "access_token";
+    public static final String N = "expiresIn";
+    public static final String O = "mac_token";
+    public static final String P = "miid";
+    public static final String Q = "miliaoNick";
+    public static final String R = "miliaoIcon";
+    public static final String S = "miliaoIcon_320";
+    public static final String T = "aliasNick";
+    public static final String U = "userId";
+    public static final String V = "friends";
+    public static final String W = "alarm_clock";
+    public static final String X = "message";
+    public static final String Y = "email";
+    public static final String Z = "mac";
+    public static final String a = "device_type";
+    public static final String aA = "behavior";
+    public static final String aB = "tagTime";
+    public static final String aC = "tag";
+    public static final String aD = "md5";
+    public static final String aE = "count";
+    public static final String aF = "start_uid";
+    public static final String aG = "limit";
+    public static final String aH = "f_uid";
+    public static final String aI = "from_date";
+    public static final String aJ = "to_date";
+    public static final String aK = "to_uid";
+    public static final String aL = "search_uid";
+    public static final String aM = "from_uid";
+    public static final String aN = "status";
+    public static final String aO = "offset";
+    public static final String aP = "nick";
+    public static final String aQ = "versioncode";
+    public static final String aR = "third_app_uid";
+    public static final String aS = "expires_time";
+    public static final String aT = "expires_in";
+    public static final String aU = "refresh_token";
+    public static final String aV = "nick_name";
+    public static final String aW = "unbind";
+    public static final String aX = "refresh_token";
+    public static final String aY = "imei";
+    public static final String aZ = "type";
+    public static final String aa = "devicetype";
+    public static final String ab = "miui_version_code";
+    public static final String ac = "miui_version_name";
+    public static final String ad = "phone_brand";
+    public static final String ae = "phone_model";
+    public static final String af = "phone_system";
+    public static final String ag = "fwversion";
+    public static final String ah = "source";
+    public static final String ai = "hr_fwversion";
+    public static final String aj = "shoes_fwversion";
+    public static final String ak = "softversion";
+    public static final String al = "config";
+    public static final String am = "age";
+    public static final String an = "version";
+    public static final String ao = "statistic_bracelet";
+    public static final String ap = "statistic_app";
+    public static final String aq = "log_file";
+    public static final String ar = "log_file_name";
+    public static final String as = "days";
+    public static final String at = "count";
+    public static final String au = "detail";
+    public static final String av = "third_appid";
+    public static final String aw = "record";
+    public static final String ax = "time_type";
+    public static final String ay = "date";
+    public static final String az = "googleplay";
+    public static final String b = "appid";
+    public static final String ba = "track_id";
+    public static final String bb = "count";
+    public static final String bc = "heart_rate";
+    public static final String bd = "resolution";
+    public static final String c = "callid";
+    public static final String d = "v";
+    public static final String e = "lang";
+    public static final String f = "userid";
+    public static final String g = "security";
+    public static final String h = "bd_sig";
+    public static final String i = "username";
+    public static final String j = "timezone";
+    public static final String k = "channel";
+    public static final String l = "cv";
+    public static final String m = "device";
+    public static final String n = "country";
+    public static final String o = "city";
+    public static final String p = "deviceid";
+    public static final String q = "data_type";
+    public static final String r = "data_len";
+    public static final String s = "data_json";
+    public static final String t = "uuid";
+    public static final String u = "track_id";
+    public static final String v = "from_date";
+    public static final String w = "to_date";
+    public static final String x = "iterate";
+    public static final String y = "nick_name";
+    public static final String z = "icon";
+
+    @SuppressLint({"NewApi"})
+    public static O a(LoginData loginData) {
+        if (loginData == null) {
+            throw new IllegalArgumentException("LoginData is null");
+        }
+        O o = new O();
+        b h = b.h();
+        o.a(f, a.f + loginData.uid);
+        o.a(g, loginData.security);
+        String str = d;
+        h.getClass();
+        o.a(str, "1.0");
+        o.a(b, a.f + h.b.a);
+        o.a(c, a.f + System.currentTimeMillis());
+        o.a(e, Locale.getDefault().getLanguage());
+        o.a(n, Locale.getDefault().getCountry());
+        o.a(j, TimeZone.getDefault().getID());
+        o.a(k, b.c());
+        o.a(m, "android_" + VERSION.SDK_INT);
+        o.a(a, b.d());
+        o.a(l, b.b() + "_" + b.a());
+        return o;
+    }
+
+    @SuppressLint({"NewApi"})
+    public static O a(String str, LoginData loginData, ThirdLoginState thirdLoginState) {
+        if (loginData == null || thirdLoginState == null) {
+            throw new IllegalArgumentException("LoginData and ThirdLoginState object is null");
+        }
+        O o = new O();
+        b h = b.h();
+        o.a(f, a.f + loginData.uid);
+        o.a(g, loginData.security);
+        String str2 = d;
+        h.getClass();
+        o.a(str2, "1.0");
+        o.a(b, a.f + h.b.a);
+        o.a(c, a.f + System.currentTimeMillis());
+        o.a(e, Locale.getDefault().getLanguage());
+        o.a(n, Locale.getDefault().getCountry());
+        o.a(j, TimeZone.getDefault().getID());
+        o.a(k, b.c());
+        o.a(m, "android_" + VERSION.SDK_INT);
+        o.a(a, b.d());
+        o.a(l, b.b() + "_" + b.a());
+        o.a(av, str);
+        o.a(aR, thirdLoginState.uid);
+        o.a(M, thirdLoginState.accessToken);
+        o.a(aT, String.valueOf(thirdLoginState.expiresIn));
+        o.a(aX, thirdLoginState.refreshToken);
+        o.a(y, thirdLoginState.nickName);
+        return o;
+    }
+}

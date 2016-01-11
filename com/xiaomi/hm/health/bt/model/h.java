@@ -1,0 +1,112 @@
+package com.xiaomi.hm.health.bt.model;
+
+import cn.com.smartdevices.bracelet.model.PersonInfo;
+import com.xiaomi.e.a;
+import com.xiaomi.hm.health.dataprocess.HeartRateInfo;
+
+public final class h {
+    public final String a;
+    public final int b;
+    public final int c;
+    public final int d;
+    public final int e;
+    public final int f;
+    public int g = -1;
+
+    public h(String str, int i, int i2) {
+        this.a = str;
+        this.b = Integer.decode("0x" + str.substring(8, 10)).intValue();
+        this.c = Integer.decode("0x" + str.substring(10, 12)).intValue();
+        this.d = Integer.decode("0x" + str.substring(12, 14)).intValue();
+        this.e = i;
+        this.f = i2;
+    }
+
+    public h(String str, int i, int i2, int i3) {
+        this.a = str;
+        this.b = Integer.decode("0x" + str.substring(8, 10)).intValue();
+        this.c = Integer.decode("0x" + str.substring(10, 12)).intValue();
+        this.d = Integer.decode("0x" + str.substring(12, 14)).intValue();
+        this.e = i;
+        this.f = i2;
+        this.g = i3;
+    }
+
+    public boolean a() {
+        return this.g != -1;
+    }
+
+    public boolean b() {
+        return ((this.b & HeartRateInfo.HR_EMPTY_VALUE) == 5 && (this.c & HeartRateInfo.HR_EMPTY_VALUE) == 0) || ((this.b & HeartRateInfo.HR_EMPTY_VALUE) == 0 && (this.d & HeartRateInfo.HR_EMPTY_VALUE) == 208);
+    }
+
+    public int c() {
+        return this.f & HeartRateInfo.HR_EMPTY_VALUE;
+    }
+
+    public int d() {
+        return (this.f >> 24) & HeartRateInfo.HR_EMPTY_VALUE;
+    }
+
+    public int e() {
+        return (this.f >> 16) & HeartRateInfo.HR_EMPTY_VALUE;
+    }
+
+    public int f() {
+        return (this.f >> 8) & HeartRateInfo.HR_EMPTY_VALUE;
+    }
+
+    public int g() {
+        return this.e & HeartRateInfo.HR_EMPTY_VALUE;
+    }
+
+    public int h() {
+        return (this.e >> 24) & HeartRateInfo.HR_EMPTY_VALUE;
+    }
+
+    public int i() {
+        return (this.e >> 16) & HeartRateInfo.HR_EMPTY_VALUE;
+    }
+
+    public int j() {
+        return (this.e >> 8) & HeartRateInfo.HR_EMPTY_VALUE;
+    }
+
+    public String k() {
+        return d() + "." + e() + "." + f() + "." + c();
+    }
+
+    public int l() {
+        return this.g & HeartRateInfo.HR_EMPTY_VALUE;
+    }
+
+    public int m() {
+        return (this.g >> 24) & HeartRateInfo.HR_EMPTY_VALUE;
+    }
+
+    public int n() {
+        return (this.g >> 16) & HeartRateInfo.HR_EMPTY_VALUE;
+    }
+
+    public int o() {
+        return (this.g >> 8) & HeartRateInfo.HR_EMPTY_VALUE;
+    }
+
+    public String p() {
+        return m() + "." + n() + "." + o() + "." + l();
+    }
+
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder(PersonInfo.INCOMING_CALL_DISABLE_BIT);
+        String str = a.f + h() + "." + i() + "." + j() + "." + g();
+        stringBuilder.append("[[[ " + getClass().getSimpleName() + " ]]]");
+        stringBuilder.append("\n         deviceID: " + this.a);
+        stringBuilder.append("\n          feature: " + Integer.toHexString(this.b));
+        stringBuilder.append("\n       appearance: " + Integer.toHexString(this.c));
+        stringBuilder.append("\n  hardwareVersion: " + Integer.toHexString(this.d));
+        stringBuilder.append("\n   profileVersion: " + str);
+        stringBuilder.append("\n  firmwareVersion: " + k());
+        stringBuilder.append("\n  firmware2Version: " + p());
+        return stringBuilder.toString();
+    }
+}

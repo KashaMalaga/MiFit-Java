@@ -1,0 +1,56 @@
+package com.huami.android.widget.share;
+
+import android.annotation.SuppressLint;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
+import com.xiaomi.hm.health.a.f;
+import com.xiaomi.hm.health.a.g;
+import java.util.ArrayList;
+import java.util.List;
+
+final class j extends BaseAdapter {
+    final /* synthetic */ h a;
+    private List<u> b = null;
+
+    public j(h hVar, List<u> list) {
+        this.a = hVar;
+        this.b = list;
+        if (this.b == null) {
+            this.b = new ArrayList();
+        }
+    }
+
+    public u a(int i) {
+        return (u) this.b.get(i);
+    }
+
+    public int getCount() {
+        return this.b.size();
+    }
+
+    public /* synthetic */ Object getItem(int i) {
+        return a(i);
+    }
+
+    public long getItemId(int i) {
+        return 0;
+    }
+
+    @SuppressLint({"NewApi"})
+    public View getView(int i, View view, ViewGroup viewGroup) {
+        if (view == null) {
+            view = LayoutInflater.from(this.a.getActivity()).inflate(g.view_share_dialog_item, null);
+        }
+        TextView textView = (TextView) view.findViewById(f.label);
+        ImageView imageView = (ImageView) view.findViewById(f.icon);
+        u a = a(i);
+        textView.setText(a.b);
+        imageView.setBackgroundResource(a.a);
+        imageView.setEnabled(a.c);
+        return view;
+    }
+}
