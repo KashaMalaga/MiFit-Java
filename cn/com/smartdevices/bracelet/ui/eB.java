@@ -3,8 +3,8 @@ package cn.com.smartdevices.bracelet.ui;
 import android.app.ProgressDialog;
 import android.os.Handler;
 import com.huami.android.view.b;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.bt.a.d;
-import com.xiaomi.hm.health.r;
 
 class eB extends d {
     final /* synthetic */ eA a;
@@ -16,7 +16,7 @@ class eB extends d {
     public void a() {
         super.a();
         if (this.a.getActivity() != null) {
-            this.a.b = ProgressDialog.show(this.a.getActivity(), this.a.getString(r.reset_mili), this.a.getString(r.wait));
+            this.a.b = ProgressDialog.show(this.a.getActivity(), this.a.getString(R.string.reset_mili), this.a.getString(R.string.wait));
         }
     }
 
@@ -31,6 +31,6 @@ class eB extends d {
             this.a.b.dismiss();
             this.a.b = null;
         }
-        b.a(this.a.getActivity(), this.a.getActivity().getString(r.bt_operation_failed_tips), 0).show();
+        b.a(this.a.getActivity(), this.a.getActivity().getString(R.string.bt_operation_failed_tips), 0).show();
     }
 }

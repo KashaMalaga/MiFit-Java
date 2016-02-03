@@ -32,11 +32,11 @@ final class b implements OnCompletionListener, OnErrorListener, Closeable {
     }
 
     private MediaPlayer b(Context context) {
+        AssetFileDescriptor openRawResourceFd;
         MediaPlayer mediaPlayer = new MediaPlayer();
         mediaPlayer.setAudioStreamType(3);
         mediaPlayer.setOnCompletionListener(this);
         mediaPlayer.setOnErrorListener(this);
-        AssetFileDescriptor openRawResourceFd;
         try {
             openRawResourceFd = context.getResources().openRawResourceFd(k.beep);
             mediaPlayer.setDataSource(openRawResourceFd.getFileDescriptor(), openRawResourceFd.getStartOffset(), openRawResourceFd.getLength());

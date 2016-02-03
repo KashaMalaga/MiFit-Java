@@ -5,8 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 import com.huami.android.view.c;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
+import com.xiaomi.hm.health.R;
 
 public class C0675ae extends c {
     private static final String a = C0675ae.class.getSimpleName();
@@ -31,16 +30,16 @@ public class C0675ae extends c {
     }
 
     private void a(View view) {
-        this.b = (TextView) view.findViewById(l.text_first);
+        this.b = (TextView) view.findViewById(R.id.text_first);
         if (!(this.h == null || this.h.isEmpty())) {
             this.b.setText(this.h);
         }
-        this.c = (TextView) view.findViewById(l.text_second);
+        this.c = (TextView) view.findViewById(R.id.text_second);
         if (!(this.i == null || this.i.isEmpty())) {
             this.c.setText(this.i);
         }
-        this.e = view.findViewById(l.weight_edit_delete);
-        this.f = view.findViewById(l.weight_edit_move);
+        this.e = view.findViewById(R.id.weight_edit_delete);
+        this.f = view.findViewById(R.id.weight_edit_move);
         this.e.setOnClickListener(new C0676af(this));
         this.f.setOnClickListener(new C0677ag(this));
     }
@@ -66,7 +65,7 @@ public class C0675ae extends c {
     }
 
     protected int inflateLayout() {
-        return n.dialog_weight_info_modify;
+        return R.layout.dialog_weight_info_modify;
     }
 
     public void onActivityCreated(Bundle bundle) {

@@ -39,10 +39,7 @@ import com.huami.android.ui.a;
 import com.huami.android.view.b;
 import com.huami.android.zxing.CaptureActivity;
 import com.tencent.connect.common.Constants;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.o;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -138,11 +135,11 @@ public class FriendActivity extends ActionBarActivity implements OnClickListener
                     startActivity(SearchResultActivity.a(this, aVar.a, aVar.b, null, false));
                     C0401a.a((Context) this, C0409b.aF);
                 } else {
-                    b.a((Context) this, (int) r.lable_qrcode_is_myself, 0);
+                    b.a((Context) this, (int) R.string.lable_qrcode_is_myself, 0);
                     C0401a.a((Context) this, C0409b.aG);
                 }
             } else {
-                b.a((Context) this, (int) r.label_qrcode_error, 0);
+                b.a((Context) this, (int) R.string.label_qrcode_error, 0);
                 C0401a.a((Context) this, C0409b.aG);
             }
         }
@@ -151,23 +148,23 @@ public class FriendActivity extends ActionBarActivity implements OnClickListener
 
     public void onClick(View view) {
         switch (view.getId()) {
-            case l.add_button /*2131296359*/:
-            case l.action_button /*2131296395*/:
-            case l.action_add_friend /*2131297591*/:
+            case R.id.add_button:
+            case R.id.action_button:
+            case R.id.action_add_friend:
                 C0401a.a((Context) this, C0409b.aB, C0410c.t, this.l == 0 ? Constants.VIA_RESULT_SUCCESS : Constants.VIA_TO_TYPE_QQ_GROUP);
                 startActivityForResult(CaptureActivity.b(this), a);
                 return;
-            case l.my_qrcode_button /*2131296396*/:
-            case l.action_my_qrcode /*2131297592*/:
+            case R.id.my_qrcode_button:
+            case R.id.action_my_qrcode:
                 C0401a.a((Context) this, C0409b.aC, C0410c.t, this.l == 0 ? Constants.VIA_RESULT_SUCCESS : Constants.VIA_TO_TYPE_QQ_GROUP);
                 PersonInfo readPersonInfo = Keeper.readPersonInfo();
                 startActivity(UserQRCardActivity.a(this, readPersonInfo.uid, readPersonInfo.avatarUrl, readPersonInfo.getNickname()));
                 return;
-            case l.message_button /*2131297593*/:
+            case R.id.message_button:
                 C0401a.a((Context) this, C0409b.aE);
                 startActivity(MessageActivity.a((Context) this));
                 return;
-            case l.more_button /*2131297595*/:
+            case R.id.more_button:
                 C0401a.a((Context) this, C0409b.aD, C0410c.t, this.l == 0 ? Constants.VIA_RESULT_SUCCESS : Constants.VIA_TO_TYPE_QQ_GROUP);
                 f();
                 return;
@@ -178,24 +175,24 @@ public class FriendActivity extends ActionBarActivity implements OnClickListener
 
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView(n.activity_friend_list);
+        setContentView(R.layout.activity_friend_list);
         this.d = A.a();
         this.e = h.a(getApplicationContext());
         this.e.a((Object) this);
-        this.g = (PullToRefreshListView) findViewById(l.friend_list);
-        this.i = findViewById(l.empty_list);
-        findViewById(l.my_qrcode_button).setOnClickListener(this);
-        findViewById(l.action_button).setOnClickListener(this);
+        this.g = (PullToRefreshListView) findViewById(R.id.friend_list);
+        this.i = findViewById(R.id.empty_list);
+        findViewById(R.id.my_qrcode_button).setOnClickListener(this);
+        findViewById(R.id.action_button).setOnClickListener(this);
         this.g.setOnRefreshListener((OnRefreshListener2) this);
         this.g.setMode(Mode.BOTH);
         ILoadingLayout loadingLayoutProxy = this.g.getLoadingLayoutProxy(true, false);
-        loadingLayoutProxy.setPullLabel(getString(r.label_pull_to_refresh));
-        loadingLayoutProxy.setRefreshingLabel(getString(r.label_refreshing));
-        loadingLayoutProxy.setReleaseLabel(getString(r.label_release_to_refresh));
+        loadingLayoutProxy.setPullLabel(getString(R.string.label_pull_to_refresh));
+        loadingLayoutProxy.setRefreshingLabel(getString(R.string.label_refreshing));
+        loadingLayoutProxy.setReleaseLabel(getString(R.string.label_release_to_refresh));
         loadingLayoutProxy = this.g.getLoadingLayoutProxy(false, true);
-        loadingLayoutProxy.setPullLabel(getString(r.label_pull_to_load));
-        loadingLayoutProxy.setRefreshingLabel(getString(r.label_loading));
-        loadingLayoutProxy.setReleaseLabel(getString(r.label_release_to_load));
+        loadingLayoutProxy.setPullLabel(getString(R.string.label_pull_to_load));
+        loadingLayoutProxy.setRefreshingLabel(getString(R.string.label_loading));
+        loadingLayoutProxy.setReleaseLabel(getString(R.string.label_release_to_load));
         this.g.setMode(Mode.DISABLED);
         ListView listView = (ListView) this.g.getRefreshableView();
         listView.setFadingEdgeLength(0);
@@ -222,10 +219,10 @@ public class FriendActivity extends ActionBarActivity implements OnClickListener
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(o.menu_friend, menu);
-        MenuItem findItem = menu.findItem(l.action_more);
-        View inflate = LayoutInflater.from(this).inflate(n.view_friend_menu_view, null);
-        this.m = inflate.findViewById(l.menu_new_flag);
+        getMenuInflater().inflate(R.menu.menu_friend, menu);
+        MenuItem findItem = menu.findItem(R.id.action_more);
+        View inflate = LayoutInflater.from(this).inflate(R.layout.view_friend_menu_view, null);
+        this.m = inflate.findViewById(R.id.menu_new_flag);
         inflate.setOnClickListener(this);
         findItem.setActionView(inflate);
         b();
@@ -316,7 +313,7 @@ public class FriendActivity extends ActionBarActivity implements OnClickListener
     }
 
     public boolean onOptionsItemSelected(MenuItem menuItem) {
-        if (menuItem.getItemId() != l.action_more) {
+        if (menuItem.getItemId() != R.id.action_more) {
             return super.onOptionsItemSelected(menuItem);
         }
         f();

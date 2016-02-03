@@ -9,8 +9,8 @@ import cn.com.smartdevices.bracelet.C0596r;
 import cn.com.smartdevices.bracelet.model.BtDevice;
 import cn.com.smartdevices.bracelet.view.O;
 import com.huami.android.view.b;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.bt.model.e;
-import com.xiaomi.hm.health.r;
 import java.util.Collections;
 import java.util.Iterator;
 
@@ -28,7 +28,7 @@ class C0768dq extends Handler {
         switch (i) {
             case aj.I /*4097*/:
                 if (this.a.b) {
-                    b.a(this.a.A, (int) r.connect_bracelet_now, 1).show();
+                    b.a(this.a.A, (int) R.string.connect_bracelet_now, 1).show();
                     return;
                 }
                 return;
@@ -39,7 +39,7 @@ class C0768dq extends Handler {
                 this.a.p();
                 if (this.a.x.size() < 1) {
                     if (this.a.b) {
-                        b.a(this.a.A, (int) r.device_not_found, 0).show();
+                        b.a(this.a.A, (int) R.string.device_not_found, 0).show();
                     }
                     this.a.t();
                     C0401a.d(this.a.A, C0401a.dE);
@@ -47,7 +47,7 @@ class C0768dq extends Handler {
                     return;
                 } else if (this.a.G != null && !this.a.b) {
                     if (this.a.b) {
-                        b.a(this.a.A, (int) r.search_bracelet_ok, 1).show();
+                        b.a(this.a.A, (int) R.string.search_bracelet_ok, 1).show();
                     }
                     C0596r.e("SearchSingleBraceletActivity", "Connect device,Found:" + this.a.G.device.getAddress() + ", signal= " + this.a.G.signal);
                     C0401a.d(this.a.A, C0401a.dE);

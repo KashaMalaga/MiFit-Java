@@ -11,7 +11,6 @@ import com.d.a.a.O;
 import com.d.a.a.S;
 import com.d.a.a.h;
 import com.tencent.connect.common.Constants;
-import com.tencent.open.SocialConstants;
 
 public class D extends e {
     public static final String a = "huami.health.getMedalConfig.json";
@@ -53,7 +52,7 @@ public class D extends e {
         f.uid = 257106499;
         f.security = "523b576ecf9ccd743c0c055015132a77";
         O a = f.a(f);
-        a.b(SocialConstants.PARAM_TYPE, Constants.VIA_TO_TYPE_QQ_GROUP);
+        a.b(com.xiaomi.channel.relationservice.data.a.h, Constants.VIA_TO_TYPE_QQ_GROUP);
         String b = cn.com.smartdevices.bracelet.j.h.b("http://101.251.64.11:8001/huami.health.getUserMedals.json", a.c(f.c));
         C0596r.e(d, "queryMyMedal url:" + b + " params:" + a + " isAsync:" + z);
         if (z) {

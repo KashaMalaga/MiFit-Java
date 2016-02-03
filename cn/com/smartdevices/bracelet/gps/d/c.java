@@ -21,11 +21,11 @@ public class c {
     }
 
     public static List<cn.com.smartdevices.bracelet.gps.model.c> a(Context context, long j) {
+        Cursor query;
         Throwable th;
         Cursor cursor = null;
         SQLiteDatabase readableDatabase = a(context).getReadableDatabase();
         List<cn.com.smartdevices.bracelet.gps.model.c> linkedList = new LinkedList();
-        Cursor query;
         try {
             query = readableDatabase.query(b.a, new String[]{ParamKey.LATITUDE, b.c}, "track_id=?", new String[]{a.f + j}, null, null, null);
             while (query.moveToNext()) {

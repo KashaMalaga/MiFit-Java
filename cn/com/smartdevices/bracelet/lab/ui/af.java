@@ -104,7 +104,6 @@ public class af {
     }
 
     private static boolean a(Context context, String str, String str2) {
-        Object a;
         Exception e;
         OutputStream outputStream;
         Throwable th;
@@ -113,6 +112,7 @@ public class af {
         if (!file.exists()) {
             return false;
         }
+        Object a;
         InputStream open;
         try {
             open = context.getResources().getAssets().open(str2);

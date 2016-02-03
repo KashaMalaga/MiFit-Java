@@ -12,11 +12,9 @@ import cn.com.smartdevices.bracelet.eventbus.EventSettingFragmentUpdate;
 import cn.com.smartdevices.bracelet.model.MiliConfig;
 import cn.com.smartdevices.bracelet.model.PersonInfo;
 import com.huami.android.view.c;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.bt.a.r;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
 import de.greenrobot.event.EventBus;
-import kankan.wheel.widget.g;
 
 public class cY extends c {
     private PersonInfo a;
@@ -35,59 +33,59 @@ public class cY extends c {
         this.e.setVisibility(4);
         this.f.setVisibility(4);
         this.d.setVisibility(4);
-        this.g.setTextColor(getResources().getColor(g.main_ui_title_color));
-        this.j.setTextColor(getResources().getColor(g.main_ui_title_color));
-        this.i.setTextColor(getResources().getColor(g.main_ui_title_color));
-        this.h.setTextColor(getResources().getColor(g.main_ui_title_color));
+        this.g.setTextColor(getResources().getColor(R.color.main_ui_title_color));
+        this.j.setTextColor(getResources().getColor(R.color.main_ui_title_color));
+        this.i.setTextColor(getResources().getColor(R.color.main_ui_title_color));
+        this.h.setTextColor(getResources().getColor(R.color.main_ui_title_color));
         if (this.a.getMiliColor().equals(MiliConfig.BLUE)) {
-            this.g.setTextColor(getResources().getColor(g.highlight));
+            this.g.setTextColor(getResources().getColor(R.color.highlight));
             this.c.setVisibility(0);
         } else if (this.a.getMiliColor().equals(MiliConfig.ORANGE)) {
-            this.j.setTextColor(getResources().getColor(g.highlight));
+            this.j.setTextColor(getResources().getColor(R.color.highlight));
             this.e.setVisibility(0);
         } else if (this.a.getMiliColor().equals(MiliConfig.GREEN)) {
-            this.i.setTextColor(getResources().getColor(g.highlight));
+            this.i.setTextColor(getResources().getColor(R.color.highlight));
             this.f.setVisibility(0);
         } else if (this.a.getMiliColor().equals(MiliConfig.RED)) {
-            this.h.setTextColor(getResources().getColor(g.highlight));
+            this.h.setTextColor(getResources().getColor(R.color.highlight));
             this.d.setVisibility(0);
         }
     }
 
     private void a(View view) {
-        this.c = view.findViewById(l.person_info_light_color_blue);
-        this.e = view.findViewById(l.person_info_light_color_oragne);
-        this.f = view.findViewById(l.person_info_light_color_green);
-        this.d = view.findViewById(l.person_info_light_color_red);
-        this.g = (TextView) view.findViewById(l.person_info_light_color_blue_txt);
-        this.j = (TextView) view.findViewById(l.person_info_light_color_oragne_txt);
-        this.i = (TextView) view.findViewById(l.person_info_light_color_green_txt);
-        this.h = (TextView) view.findViewById(l.person_info_light_color_red_txt);
-        view.findViewById(l.person_info_light_color_blue_area).setOnClickListener(this);
-        view.findViewById(l.person_info_light_color_oragne_area).setOnClickListener(this);
-        view.findViewById(l.person_info_light_color_green_area).setOnClickListener(this);
-        view.findViewById(l.person_info_light_color_red_area).setOnClickListener(this);
+        this.c = view.findViewById(R.id.person_info_light_color_blue);
+        this.e = view.findViewById(R.id.person_info_light_color_oragne);
+        this.f = view.findViewById(R.id.person_info_light_color_green);
+        this.d = view.findViewById(R.id.person_info_light_color_red);
+        this.g = (TextView) view.findViewById(R.id.person_info_light_color_blue_txt);
+        this.j = (TextView) view.findViewById(R.id.person_info_light_color_oragne_txt);
+        this.i = (TextView) view.findViewById(R.id.person_info_light_color_green_txt);
+        this.h = (TextView) view.findViewById(R.id.person_info_light_color_red_txt);
+        view.findViewById(R.id.person_info_light_color_blue_area).setOnClickListener(this);
+        view.findViewById(R.id.person_info_light_color_oragne_area).setOnClickListener(this);
+        view.findViewById(R.id.person_info_light_color_green_area).setOnClickListener(this);
+        view.findViewById(R.id.person_info_light_color_red_area).setOnClickListener(this);
     }
 
     protected int inflateLayout() {
-        return n.fragment_person_info_set_light_color;
+        return R.layout.fragment_person_info_set_light_color;
     }
 
     public void onClick(View view) {
         switch (view.getId()) {
-            case l.person_info_light_color_blue_area /*2131297056*/:
+            case R.id.person_info_light_color_blue_area:
                 this.a.setMiliColor(MiliConfig.BLUE);
                 onRightButtonClicked();
                 return;
-            case l.person_info_light_color_oragne_area /*2131297059*/:
+            case R.id.person_info_light_color_oragne_area:
                 this.a.setMiliColor(MiliConfig.ORANGE);
                 onRightButtonClicked();
                 return;
-            case l.person_info_light_color_green_area /*2131297062*/:
+            case R.id.person_info_light_color_green_area:
                 this.a.setMiliColor(MiliConfig.GREEN);
                 onRightButtonClicked();
                 return;
-            case l.person_info_light_color_red_area /*2131297065*/:
+            case R.id.person_info_light_color_red_area:
                 this.a.setMiliColor(MiliConfig.RED);
                 onRightButtonClicked();
                 return;

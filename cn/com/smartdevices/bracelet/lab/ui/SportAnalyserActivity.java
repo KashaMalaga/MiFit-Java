@@ -29,16 +29,12 @@ import cn.com.smartdevices.bracelet.lab.ui.view.LabCircleView;
 import cn.com.smartdevices.bracelet.model.ShareData;
 import cn.com.smartdevices.bracelet.ui.SystemBarTintActivity;
 import com.xiaomi.e.a;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.dataprocess.SportDay;
-import com.xiaomi.hm.health.e;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import kankan.wheel.widget.g;
 import org.json.JSONObject;
 
 public class SportAnalyserActivity extends SystemBarTintActivity implements i {
@@ -86,7 +82,7 @@ public class SportAnalyserActivity extends SystemBarTintActivity implements i {
     }
 
     private int a(String str) {
-        return (!k.b.equals(str) && k.a.equals(str)) ? com.xiaomi.hm.health.i.lab_situp_bg : com.xiaomi.hm.health.i.lab_ropeskipping_bg;
+        return (!k.b.equals(str) && k.a.equals(str)) ? R.color.lab_situp_bg : R.color.lab_ropeskipping_bg;
     }
 
     private ShareData a(Context context) {
@@ -104,11 +100,11 @@ public class SportAnalyserActivity extends SystemBarTintActivity implements i {
 
     private String a() {
         if (k.b.equals(this.o)) {
-            return getString(r.lab_factory_sport_pb_desc, new Object[]{getString(r.lab_factory_sport_pb_ropeskipping)});
+            return getString(R.string.lab_factory_sport_pb_desc, new Object[]{getString(R.string.lab_factory_sport_pb_ropeskipping)});
         } else if (!k.a.equals(this.o)) {
             return a.f;
         } else {
-            return getString(r.lab_factory_sport_pb_desc, new Object[]{getString(r.lab_factory_sport_pb_situp)});
+            return getString(R.string.lab_factory_sport_pb_desc, new Object[]{getString(R.string.lab_factory_sport_pb_situp)});
         }
     }
 
@@ -126,10 +122,10 @@ public class SportAnalyserActivity extends SystemBarTintActivity implements i {
 
     private void a(DynamicGroupItemInfo dynamicGroupItemInfo) {
         if (dynamicGroupItemInfo.isNewPBPoint()) {
-            f(getResources().getColor(com.xiaomi.hm.health.i.lab_record_broken_bg));
+            f(getResources().getColor(R.color.lab_record_broken_bg));
         }
         if (this.D.getRoundCountOfPB() == 0) {
-            this.K.setText(getString(r.lab_factory_sport_come_on));
+            this.K.setText(getString(R.string.lab_factory_sport_come_on));
             this.k.setVisibility(4);
             return;
         }
@@ -153,28 +149,28 @@ public class SportAnalyserActivity extends SystemBarTintActivity implements i {
     }
 
     private String b(String str) {
-        return k.b.equals(this.o) ? getString(r.lab_factory_sport_type_ropeskipping) : k.a.equals(this.o) ? getString(r.lab_factory_sport_type_situp) : a.f;
+        return k.b.equals(this.o) ? getString(R.string.lab_factory_sport_type_ropeskipping) : k.a.equals(this.o) ? getString(R.string.lab_factory_sport_type_situp) : a.f;
     }
 
     private void b() {
-        this.x = findViewById(l.lab_main_sport);
-        this.w = (TextView) findViewById(l.title_back);
+        this.x = findViewById(R.id.lab_main_sport);
+        this.w = (TextView) findViewById(R.id.title_back);
         f(getResources().getColor(a(this.o)));
-        this.k = (TextView) findViewById(l.value_personal_record);
-        this.y = (TextView) findViewById(l.sport_average_rating);
-        this.l = (TextView) findViewById(l.sport_progress_time);
-        this.v = (LabCircleView) findViewById(l.sport_progress_state);
-        this.E = (CircleListScrollView) findViewById(l.horizontal_scroll_view);
-        this.y.setText(Html.fromHtml(getString(r.lab_factory_sport_average_rate_per_minute, new Object[]{Integer.valueOf(F)})));
+        this.k = (TextView) findViewById(R.id.value_personal_record);
+        this.y = (TextView) findViewById(R.id.sport_average_rating);
+        this.l = (TextView) findViewById(R.id.sport_progress_time);
+        this.v = (LabCircleView) findViewById(R.id.sport_progress_state);
+        this.E = (CircleListScrollView) findViewById(R.id.horizontal_scroll_view);
+        this.y.setText(Html.fromHtml(getString(R.string.lab_factory_sport_average_rate_per_minute, new Object[]{Integer.valueOf(F)})));
         this.w.setText(this.z);
         this.k.setOnLongClickListener(new B(this));
-        this.n = (TextView) findViewById(l.operation_bn);
+        this.n = (TextView) findViewById(R.id.operation_bn);
         this.n.setEnabled(false);
         this.n.setOnClickListener(new C(this));
-        this.A = AnimationUtils.loadAnimation(this, e.lab_sport_group_count_rest);
+        this.A = AnimationUtils.loadAnimation(this, R.anim.lab_sport_group_count_rest);
         this.A.setAnimationListener(new F());
-        this.J = (TextView) findViewById(l.sport_finish_desc);
-        this.K = (TextView) findViewById(l.key_personal_best_record);
+        this.J = (TextView) findViewById(R.id.sport_finish_desc);
+        this.K = (TextView) findViewById(R.id.key_personal_best_record);
         this.v.c(5);
     }
 
@@ -203,7 +199,7 @@ public class SportAnalyserActivity extends SystemBarTintActivity implements i {
 
     private void c() {
         if (this.D.getRoundCountOfPB() == 0) {
-            this.K.setText(getString(r.lab_factory_sport_come_on));
+            this.K.setText(getString(R.string.lab_factory_sport_come_on));
             this.k.setVisibility(4);
             return;
         }
@@ -214,12 +210,12 @@ public class SportAnalyserActivity extends SystemBarTintActivity implements i {
 
     private void c(int i) {
         if (i == 2) {
-            this.v.a((int) r.lab_factory_exercise_state_stopped);
+            this.v.a((int) R.string.lab_factory_exercise_state_stopped);
             this.f.c();
             h();
         } else if (i == 6) {
             this.v.a(true);
-            f(getResources().getColor(g.bg_color_grey));
+            f(getResources().getColor(R.color.bg_color_grey));
             if (this.h > 0) {
                 r0 = this.g.obtainMessage();
                 r0.what = 1;
@@ -231,7 +227,7 @@ public class SportAnalyserActivity extends SystemBarTintActivity implements i {
             h();
         } else if (i == 4) {
             this.n.setEnabled(true);
-            this.v.a((int) r.lab_factory_exercise_state_ready);
+            this.v.a((int) R.string.lab_factory_exercise_state_ready);
             this.v.a(false);
             d.a((Context) this).b((i) this, this.o);
             b(true);
@@ -247,16 +243,16 @@ public class SportAnalyserActivity extends SystemBarTintActivity implements i {
             }
         } else if (i == 5) {
             this.n.setEnabled(false);
-            this.v.a((int) r.lab_factory_sport_device_preparing);
+            this.v.a((int) R.string.lab_factory_sport_device_preparing);
         } else if (i == 3) {
-            this.v.a((int) r.lab_factory_exercise_state_paused);
+            this.v.a((int) R.string.lab_factory_exercise_state_paused);
         }
     }
 
     private void c(boolean z) {
         if (z) {
             String a = f.a((Context) this, this.e.getCostTime());
-            this.J.setText(getString(r.lab_factory_sport_group_time_cost, new Object[]{this.z, a}));
+            this.J.setText(getString(R.string.lab_factory_sport_group_time_cost, new Object[]{this.z, a}));
             this.J.setVisibility(F);
             return;
         }
@@ -317,9 +313,9 @@ public class SportAnalyserActivity extends SystemBarTintActivity implements i {
 
     private void e() {
         Bundle bundle = new Bundle();
-        bundle.putString(ae.a, getString(r.confirm));
-        bundle.putString(ae.b, getString(r.lab_factory_sport_monitor_bracelet_offline_notice, new Object[]{this.z}));
-        bundle.putString(ae.c, getString(r.lab_factory_sport_monitor_bracelet_offline));
+        bundle.putString(ae.a, getString(R.string.confirm));
+        bundle.putString(ae.b, getString(R.string.lab_factory_sport_monitor_bracelet_offline_notice, new Object[]{this.z}));
+        bundle.putString(ae.c, getString(R.string.lab_factory_sport_monitor_bracelet_offline));
         ae.a(this, ae.class, bundle, new D(this));
     }
 
@@ -353,7 +349,7 @@ public class SportAnalyserActivity extends SystemBarTintActivity implements i {
     }
 
     private void g() {
-        this.J.setText(getString(r.lab_factory_cheat_toast));
+        this.J.setText(getString(R.string.lab_factory_cheat_toast));
         this.J.setVisibility(F);
     }
 
@@ -382,7 +378,7 @@ public class SportAnalyserActivity extends SystemBarTintActivity implements i {
             nextInt = i;
         }
         nextInt = a((long) this.e.getCount(), (long) nextInt);
-        this.y.setText(Html.fromHtml(getString(r.lab_factory_sport_average_rate_per_minute, new Object[]{Integer.valueOf(nextInt)})));
+        this.y.setText(Html.fromHtml(getString(R.string.lab_factory_sport_average_rate_per_minute, new Object[]{Integer.valueOf(nextInt)})));
     }
 
     private void j() {
@@ -437,7 +433,7 @@ public class SportAnalyserActivity extends SystemBarTintActivity implements i {
         }
         long currentTimeMillis = System.currentTimeMillis();
         if (this.c == -1) {
-            com.huami.android.view.b.a((Context) this, (int) r.lab_factory_exit_press_again, (int) F).show();
+            com.huami.android.view.b.a((Context) this, (int) R.string.lab_factory_exit_press_again, (int) F).show();
             this.c = currentTimeMillis;
             this.f.sendEmptyMessageDelayed(b, 2000);
         } else if (currentTimeMillis - this.c < 2000) {
@@ -448,7 +444,7 @@ public class SportAnalyserActivity extends SystemBarTintActivity implements i {
 
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView((int) n.activity_lab_factory_sport_analyser_offical);
+        setContentView((int) R.layout.activity_lab_factory_sport_analyser_offical);
         this.o = getIntent().getStringExtra(k.h);
         if (TextUtils.isEmpty(this.o)) {
             setResult(F);

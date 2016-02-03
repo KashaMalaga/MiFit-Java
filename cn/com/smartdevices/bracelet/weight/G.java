@@ -15,12 +15,9 @@ import cn.com.smartdevices.bracelet.ui.C0763dl;
 import com.amap.api.maps.model.BitmapDescriptorFactory;
 import com.huami.android.view.c;
 import com.xiaomi.e.a;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
+import com.xiaomi.hm.health.R;
 import kankan.wheel.widget.WheelView;
 import kankan.wheel.widget.a.f;
-import kankan.wheel.widget.g;
-import kankan.wheel.widget.h;
 
 public class G extends c {
     private static final String c = G.class.getSimpleName();
@@ -48,7 +45,7 @@ public class G extends c {
     }
 
     protected int inflateLayout() {
-        return n.fragment_person_info_setting_weight;
+        return R.layout.fragment_person_info_setting_weight;
     }
 
     public void onAttach(Activity activity) {
@@ -68,24 +65,24 @@ public class G extends c {
         this.f = Keeper.readPersonInfo().miliConfig.weightUnit;
         this.d = (int) aA.b(3.0f, this.f);
         this.e = (int) aA.b((float) aA.c(getActivity()), this.f);
-        this.a = (WheelView) onCreateView.findViewById(l.info_weight_int_wheel);
-        this.b = (WheelView) onCreateView.findViewById(l.info_weight_decimal_wheel);
-        this.a.e(h.wheel_custom_val_white_1).a(a.f, 25.123f).a(new C0763dl(getActivity(), this.d, this.e, this.a, getResources().getColor(g.highlight), getResources().getColor(g.main_ui_content_color), kankan.wheel.widget.a.bm, false, 46, 24, 21, 21, 1)).c(((int) aA.b(g, Keeper.readPersonInfo().miliConfig.weightUnit)) - ((int) aA.b(3.0f, Keeper.readPersonInfo().miliConfig.weightUnit)));
-        this.i = new C0763dl(getActivity(), 0, 9, this.a, getResources().getColor(g.highlight), getResources().getColor(g.main_ui_content_color), kankan.wheel.widget.a.bm, false, 46, 24, 21, 21, 1);
+        this.a = (WheelView) onCreateView.findViewById(R.id.info_weight_int_wheel);
+        this.b = (WheelView) onCreateView.findViewById(R.id.info_weight_decimal_wheel);
+        this.a.e(R.drawable.wheel_custom_val_white_1).a(a.f, 25.123f).a(new C0763dl(getActivity(), this.d, this.e, this.a, getResources().getColor(R.color.highlight), getResources().getColor(R.color.main_ui_content_color), kankan.wheel.widget.a.bm, false, 46, 24, 21, 21, 1)).c(((int) aA.b(g, Keeper.readPersonInfo().miliConfig.weightUnit)) - ((int) aA.b(3.0f, Keeper.readPersonInfo().miliConfig.weightUnit)));
+        this.i = new C0763dl(getActivity(), 0, 9, this.a, getResources().getColor(R.color.highlight), getResources().getColor(R.color.main_ui_content_color), kankan.wheel.widget.a.bm, false, 46, 24, 21, 21, 1);
         this.i.a(19);
         if (aA.b(g, Keeper.readPersonInfo().miliConfig.weightUnit) < ((float) this.e)) {
             C0596r.e(c, " < max");
             C0596r.e(c, " max weight: " + this.e);
-            this.b.e(h.wheel_custom_val_white_1).a(aA.a(getActivity().getApplicationContext(), Keeper.readPersonInfo().miliConfig.weightUnit), 25.123f).a(this.i).c(((int) (aA.c(aA.b(g, Keeper.readPersonInfo().miliConfig.weightUnit), 1) * 10.0f)) - (((int) aA.b(g, Keeper.readPersonInfo().miliConfig.weightUnit)) * 10));
+            this.b.e(R.drawable.wheel_custom_val_white_1).a(aA.a(getActivity().getApplicationContext(), Keeper.readPersonInfo().miliConfig.weightUnit), 25.123f).a(this.i).c(((int) (aA.c(aA.b(g, Keeper.readPersonInfo().miliConfig.weightUnit), 1) * 10.0f)) - (((int) aA.b(g, Keeper.readPersonInfo().miliConfig.weightUnit)) * 10));
             C0596r.e(c, "raw " + g);
             C0596r.e(c, "to unit" + aA.b(g, Keeper.readPersonInfo().miliConfig.weightUnit));
             C0596r.e(c, "raw*10 -> int " + ((int) (aA.b(g, Keeper.readPersonInfo().miliConfig.weightUnit) * 10.0f)));
             C0596r.e(c, "raw -> int * 10" + (((int) aA.b(g, Keeper.readPersonInfo().miliConfig.weightUnit)) * 10));
         } else {
             C0596r.e(c, " >= max");
-            f c0763dl = new C0763dl(getActivity(), 0, b(), this.b, getResources().getColor(g.highlight), getResources().getColor(g.main_ui_content_color), kankan.wheel.widget.a.bm, false, 46, 24, 21, 21, 1);
+            f c0763dl = new C0763dl(getActivity(), 0, b(), this.b, getResources().getColor(R.color.highlight), getResources().getColor(R.color.main_ui_content_color), kankan.wheel.widget.a.bm, false, 46, 24, 21, 21, 1);
             c0763dl.a(19);
-            this.b.e(h.wheel_custom_val_white_1).a(aA.a(getActivity().getApplicationContext(), Keeper.readPersonInfo().miliConfig.weightUnit), 25.123f).a(c0763dl).c(((int) (aA.b(g, Keeper.readPersonInfo().miliConfig.weightUnit) * 10.0f)) - (((int) aA.b(g, Keeper.readPersonInfo().miliConfig.weightUnit)) * 10));
+            this.b.e(R.drawable.wheel_custom_val_white_1).a(aA.a(getActivity().getApplicationContext(), Keeper.readPersonInfo().miliConfig.weightUnit), 25.123f).a(c0763dl).c(((int) (aA.b(g, Keeper.readPersonInfo().miliConfig.weightUnit) * 10.0f)) - (((int) aA.b(g, Keeper.readPersonInfo().miliConfig.weightUnit)) * 10));
         }
         this.a.a(new H(this));
         return onCreateView;

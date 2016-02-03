@@ -17,11 +17,8 @@ import cn.com.smartdevices.bracelet.weight.WeightInfo;
 import cn.com.smartdevices.bracelet.weight.aA;
 import cn.com.smartdevices.bracelet.weight.ah;
 import com.xiaomi.e.a;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
+import com.xiaomi.hm.health.R;
 import kankan.wheel.widget.WheelView;
-import kankan.wheel.widget.g;
-import kankan.wheel.widget.h;
 
 public class PersonInfoSetWeightActivity extends PersonInfoBaseActivity implements OnClickListener {
     private static final String f = PersonInfoSetWeightActivity.class.getSimpleName();
@@ -60,14 +57,14 @@ public class PersonInfoSetWeightActivity extends PersonInfoBaseActivity implemen
 
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView((int) n.activity_person_info_set_weight);
+        setContentView((int) R.layout.activity_person_info_set_weight);
         a();
         this.e = Keeper.readPersonInfo().getMiliConfig().weightUnit;
         this.c = (int) aA.b(3.0f, this.e);
         this.d = (int) aA.b(Utils.k() ? 634.0f : 634.0f, this.e);
         C0596r.e("dwy", "min = " + this.c + ", max = " + this.d + ", weightUnit=" + this.e);
-        this.h = (WheelView) findViewById(l.person_info_weight_picker);
-        this.h.a(5).e(h.wheel_custom_val_dark_0).a(aA.a(this.g, this.e), g.content_color, 12, 40.0f, kankan.wheel.widget.a.bj).a(new C0763dl(this, this.c, this.d, this.h, getResources().getColor(g.title_color), getResources().getColor(g.content_color), getResources().getColor(g.content_color_darker), false, 50, 48, 45, 45));
+        this.h = (WheelView) findViewById(R.id.person_info_weight_picker);
+        this.h.a(5).e(R.drawable.wheel_custom_val_dark_0).a(aA.a(this.g, this.e), R.color.content_color, 12, 40.0f, kankan.wheel.widget.a.bj).a(new C0763dl(this, this.c, this.d, this.h, getResources().getColor(R.color.title_color), getResources().getColor(R.color.content_color), getResources().getColor(R.color.content_color_darker), false, 50, 48, 45, 45));
         this.h.c(this.a.weight > 0.0f ? (int) aA.b(this.a.weight - 3.0f, this.e) : (int) aA.b(57.0f, this.e));
     }
 

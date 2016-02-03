@@ -12,9 +12,7 @@ import cn.com.smartdevices.bracelet.relation.db.f;
 import cn.com.smartdevices.bracelet.relation.view.CareButton;
 import com.f.a.b.a.b;
 import com.f.a.b.f.a;
-import com.xiaomi.hm.health.k;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
@@ -73,17 +71,17 @@ class U extends BaseAdapter implements a {
     }
 
     public void a(String str, View view) {
-        ((ImageView) view).setBackgroundResource(k.default_friend_avatar);
+        ((ImageView) view).setBackgroundResource(R.drawable.default_friend_avatar);
     }
 
     public void a(String str, View view, Bitmap bitmap) {
         if (bitmap == null) {
-            ((ImageView) view).setBackgroundResource(k.default_friend_avatar);
+            ((ImageView) view).setBackgroundResource(R.drawable.default_friend_avatar);
         }
     }
 
     public void a(String str, View view, b bVar) {
-        ((ImageView) view).setBackgroundResource(k.default_friend_avatar);
+        ((ImageView) view).setBackgroundResource(R.drawable.default_friend_avatar);
     }
 
     public void a(List<f> list) {
@@ -97,7 +95,7 @@ class U extends BaseAdapter implements a {
     }
 
     public void b(String str, View view) {
-        ((ImageView) view).setBackgroundResource(k.default_friend_avatar);
+        ((ImageView) view).setBackgroundResource(R.drawable.default_friend_avatar);
     }
 
     public int getCount() {
@@ -131,13 +129,13 @@ class U extends BaseAdapter implements a {
             case kankan.wheel.widget.a.i /*0*/:
                 T t;
                 if (view == null) {
-                    view = View.inflate(this.a, n.view_message_care_item, null);
+                    view = View.inflate(this.a, R.layout.view_message_care_item, null);
                     T t2 = new T();
-                    t2.e = (ImageView) view.findViewById(com.xiaomi.hm.health.l.icon);
-                    t2.a = (TextView) view.findViewById(com.xiaomi.hm.health.l.username);
-                    t2.b = (TextView) view.findViewById(com.xiaomi.hm.health.l.notice);
-                    t2.c = (TextView) view.findViewById(com.xiaomi.hm.health.l.notice_time);
-                    t2.d = (CareButton) view.findViewById(com.xiaomi.hm.health.l.care_button);
+                    t2.e = (ImageView) view.findViewById(R.id.icon);
+                    t2.a = (TextView) view.findViewById(R.id.username);
+                    t2.b = (TextView) view.findViewById(R.id.notice);
+                    t2.c = (TextView) view.findViewById(R.id.notice_time);
+                    t2.d = (CareButton) view.findViewById(R.id.care_button);
                     t2.d.setOnClickListener(this.a);
                     t2.d.a(this.a);
                     t2.d.a(false);
@@ -148,23 +146,23 @@ class U extends BaseAdapter implements a {
                 }
                 C0544h.a().b(a.w, t.e, this);
                 t.a.setText(a.r);
-                t.b.setText(this.a.getString(r.label_care_time_by_other, new Object[]{Integer.valueOf(a.u)}));
+                t.b.setText(this.a.getString(R.string.label_care_time_by_other, new Object[]{Integer.valueOf(a.u)}));
                 t.c.setText(MessageActivity.j.format(new Date(a.s)));
                 t.d.setTag(a);
                 break;
             case l.a /*1*/:
                 S s;
                 if (view == null) {
-                    view = View.inflate(this.a, n.view_message_add_item, null);
+                    view = View.inflate(this.a, R.layout.view_message_add_item, null);
                     S s2 = new S();
-                    s2.h = (ImageView) view.findViewById(com.xiaomi.hm.health.l.icon);
-                    s2.a = (TextView) view.findViewById(com.xiaomi.hm.health.l.username);
-                    s2.b = (TextView) view.findViewById(com.xiaomi.hm.health.l.notice);
-                    s2.c = (TextView) view.findViewById(com.xiaomi.hm.health.l.notice_time);
-                    s2.d = (Button) view.findViewById(com.xiaomi.hm.health.l.ok_button);
-                    s2.e = (Button) view.findViewById(com.xiaomi.hm.health.l.refuse_button);
-                    s2.f = view.findViewById(com.xiaomi.hm.health.l.action_panel);
-                    s2.g = (TextView) view.findViewById(com.xiaomi.hm.health.l.agree_flag);
+                    s2.h = (ImageView) view.findViewById(R.id.icon);
+                    s2.a = (TextView) view.findViewById(R.id.username);
+                    s2.b = (TextView) view.findViewById(R.id.notice);
+                    s2.c = (TextView) view.findViewById(R.id.notice_time);
+                    s2.d = (Button) view.findViewById(R.id.ok_button);
+                    s2.e = (Button) view.findViewById(R.id.refuse_button);
+                    s2.f = view.findViewById(R.id.action_panel);
+                    s2.g = (TextView) view.findViewById(R.id.agree_flag);
                     view.setTag(s2);
                     s = s2;
                 } else {
@@ -172,18 +170,18 @@ class U extends BaseAdapter implements a {
                 }
                 s.a.setText(a.r);
                 s.c.setText(MessageActivity.j.format(new Date(a.s)));
-                s.b.setText(r.label_request_add_friend);
+                s.b.setText(R.string.label_request_add_friend);
                 C0544h.a().b(a.w, s.h, this);
                 if (a.v != 0) {
                     if (a.v != 3) {
                         if (a.v == 2) {
-                            s.g.setText(r.label_refused);
+                            s.g.setText(R.string.label_refused);
                             s.g.setVisibility(0);
                             s.f.setVisibility(8);
                             break;
                         }
                     }
-                    s.g.setText(r.label_accepted);
+                    s.g.setText(R.string.label_accepted);
                     s.g.setVisibility(0);
                     s.f.setVisibility(8);
                     break;
@@ -199,12 +197,12 @@ class U extends BaseAdapter implements a {
             case kankan.wheel.widget.a.k /*2*/:
                 W w;
                 if (view == null) {
-                    view = View.inflate(this.a, n.view_message_refuse_item, null);
+                    view = View.inflate(this.a, R.layout.view_message_refuse_item, null);
                     W w2 = new W();
-                    w2.a = (ImageView) view.findViewById(com.xiaomi.hm.health.l.icon);
-                    w2.c = (TextView) view.findViewById(com.xiaomi.hm.health.l.username);
-                    w2.b = (TextView) view.findViewById(com.xiaomi.hm.health.l.notice_time);
-                    w2.d = (TextView) view.findViewById(com.xiaomi.hm.health.l.notice);
+                    w2.a = (ImageView) view.findViewById(R.id.icon);
+                    w2.c = (TextView) view.findViewById(R.id.username);
+                    w2.b = (TextView) view.findViewById(R.id.notice_time);
+                    w2.d = (TextView) view.findViewById(R.id.notice);
                     view.setTag(w2);
                     w = w2;
                 } else {
@@ -212,9 +210,9 @@ class U extends BaseAdapter implements a {
                 }
                 C0544h.a().b(a.w, w.a, this);
                 if (a.t == 3) {
-                    w.d.setText(r.label_accept_add_friend_by_him);
+                    w.d.setText(R.string.label_accept_add_friend_by_him);
                 } else {
-                    w.d.setText(r.label_refuse_add_friend_by_him);
+                    w.d.setText(R.string.label_refuse_add_friend_by_him);
                 }
                 w.c.setText(a.r);
                 w.b.setText(MessageActivity.j.format(new Date(a.s)));

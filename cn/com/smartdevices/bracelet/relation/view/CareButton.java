@@ -12,9 +12,7 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import cn.com.smartdevices.bracelet.relation.A;
-import com.xiaomi.hm.health.k;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 
 public class CareButton extends RelativeLayout implements OnClickListener {
     public static final int a = 0;
@@ -52,20 +50,20 @@ public class CareButton extends RelativeLayout implements OnClickListener {
         LayoutParams layoutParams = new RelativeLayout.LayoutParams(-2, -2);
         layoutParams.leftMargin = (int) TypedValue.applyDimension(b, 10.0f, displayMetrics);
         layoutParams.addRule(13);
-        this.h = context.getString(r.button_send_care);
+        this.h = context.getString(R.string.button_send_care);
         this.f.setText(this.h);
         this.f.setTextColor(Color.parseColor("#d3ffffff"));
         this.f.setTextSize(c, 13.3f);
         addView(this.f, layoutParams);
         this.f.setEnabled(false);
-        this.f.setId(l.care_button_label);
+        this.f.setId(R.id.care_button_label);
         int applyDimension = (int) TypedValue.applyDimension(b, 18.0f, displayMetrics);
         this.g = new ProgressBar(context);
         layoutParams = new RelativeLayout.LayoutParams(applyDimension, applyDimension);
-        layoutParams.addRule(a, l.care_button_label);
+        layoutParams.addRule(a, R.id.care_button_label);
         layoutParams.addRule(15);
         addView(this.g, layoutParams);
-        this.g.setIndeterminateDrawable(context.getResources().getDrawable(k.button_progress));
+        this.g.setIndeterminateDrawable(context.getResources().getDrawable(R.drawable.button_progress));
         this.g.setEnabled(false);
         this.g.setVisibility(8);
         super.setOnClickListener(this);

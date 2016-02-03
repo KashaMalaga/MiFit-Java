@@ -14,8 +14,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import cn.com.smartdevices.bracelet.C0596r;
 import com.xiaomi.e.a;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
+import com.xiaomi.hm.health.R;
 
 public class RulerScrollView extends HorizontalScrollView {
     private static final String a = "RulerScrollView";
@@ -41,8 +40,8 @@ public class RulerScrollView extends HorizontalScrollView {
         super(context, attributeSet);
         this.c = new GestureDetector(context, this.r);
         this.d = LayoutInflater.from(context);
-        this.d.inflate(n.ruler_scroller, this);
-        this.g = (LinearLayout) findViewById(l.ruler_content);
+        this.d.inflate(R.layout.ruler_scroller, this);
+        this.g = (LinearLayout) findViewById(R.id.ruler_content);
     }
 
     public RulerScrollView(Context context, AttributeSet attributeSet, int i) {
@@ -63,20 +62,20 @@ public class RulerScrollView extends HorizontalScrollView {
         int i2 = (int) ((((float) i) + (((float) this.j) / 2.0f)) / ((float) this.m));
         View childAt = this.g.getChildAt(i2);
         if (childAt != null) {
-            childAt.findViewById(l.ruler_txt).setAlpha(0.1f);
+            childAt.findViewById(R.id.ruler_txt).setAlpha(0.1f);
         }
         if (i2 > 0) {
             childAt = this.g.getChildAt(i2 - 1);
             float a = a(i2 - 1, i);
             if (childAt != null) {
-                childAt.findViewById(l.ruler_txt).setAlpha(a);
+                childAt.findViewById(R.id.ruler_txt).setAlpha(a);
             }
         }
         if (i2 < this.g.getChildCount() - 1) {
             childAt = this.g.getChildAt(i2 + 1);
             float a2 = a(i2 + 1, i);
             if (childAt != null) {
-                childAt.findViewById(l.ruler_txt).setAlpha(a2);
+                childAt.findViewById(R.id.ruler_txt).setAlpha(a2);
             }
         }
     }
@@ -107,8 +106,8 @@ public class RulerScrollView extends HorizontalScrollView {
 
     public void a(View view) {
         this.l = view;
-        this.n = (TextView) this.l.findViewById(l.ruler_indicator_txt);
-        this.o = (TextView) this.l.findViewById(l.ruler_indicator_unit);
+        this.n = (TextView) this.l.findViewById(R.id.ruler_indicator_txt);
+        this.o = (TextView) this.l.findViewById(R.id.ruler_indicator_unit);
     }
 
     public void addView(View view) {

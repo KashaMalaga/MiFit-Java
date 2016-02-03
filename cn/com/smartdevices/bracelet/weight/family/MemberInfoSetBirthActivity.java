@@ -11,14 +11,10 @@ import cn.com.smartdevices.bracelet.Keeper;
 import cn.com.smartdevices.bracelet.model.Birthday;
 import cn.com.smartdevices.bracelet.ui.C0763dl;
 import com.xiaomi.e.a;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.bt.profile.Weight.e;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
 import java.util.Calendar;
 import kankan.wheel.widget.WheelView;
-import kankan.wheel.widget.g;
-import kankan.wheel.widget.h;
 
 public class MemberInfoSetBirthActivity extends MemberInfoBaseActivity implements OnClickListener {
     private WheelView h;
@@ -67,10 +63,10 @@ public class MemberInfoSetBirthActivity extends MemberInfoBaseActivity implement
         if (!(getIntent() == null || getIntent().getExtras() == null)) {
             this.g = e.b(getIntent().getStringExtra(e.d));
         }
-        setContentView((int) n.activity_person_info_set_age);
+        setContentView((int) R.layout.activity_person_info_set_age);
         b();
-        this.j = (TextView) findViewById(l.bracelet_login_title_info);
-        this.j.setText(getString(r.input_precise_user_info));
+        this.j = (TextView) findViewById(R.id.bracelet_login_title_info);
+        this.j.setText(getString(R.string.input_precise_user_info));
         String currentUserInfoByTag = Keeper.getCurrentUserInfoByTag(Keeper.CURRENT_USER_BIRTH);
         if (currentUserInfoByTag.isEmpty()) {
             i = Calendar.getInstance().get(1);
@@ -92,14 +88,14 @@ public class MemberInfoSetBirthActivity extends MemberInfoBaseActivity implement
         this.o = Calendar.getInstance().get(2);
         this.l = i - 100;
         int i4 = i + 0;
-        this.h = (WheelView) findViewById(l.person_info_year_picker);
-        this.h.a(5).e(h.wheel_custom_val_dark_0).a(getString(r.year), g.content_color, 12, kankan.wheel.widget.a.bh, kankan.wheel.widget.a.bj).a(new C0763dl(this, this.l, i4, this.h, getResources().getColor(g.title_color), getResources().getColor(g.content_color), getResources().getColor(g.content_color_darker), false, 50, 48, 45, 45));
-        this.i = (WheelView) findViewById(l.person_info_month_picker);
-        this.n = new C0763dl(this, 1, 12, this.i, getResources().getColor(g.title_color), getResources().getColor(g.content_color), getResources().getColor(g.content_color_darker), true, 50, 48, 45, 45);
+        this.h = (WheelView) findViewById(R.id.person_info_year_picker);
+        this.h.a(5).e(R.drawable.wheel_custom_val_dark_0).a(getString(R.string.year), R.color.content_color, 12, kankan.wheel.widget.a.bh, kankan.wheel.widget.a.bj).a(new C0763dl(this, this.l, i4, this.h, getResources().getColor(R.color.title_color), getResources().getColor(R.color.content_color), getResources().getColor(R.color.content_color_darker), false, 50, 48, 45, 45));
+        this.i = (WheelView) findViewById(R.id.person_info_month_picker);
+        this.n = new C0763dl(this, 1, 12, this.i, getResources().getColor(R.color.title_color), getResources().getColor(R.color.content_color), getResources().getColor(R.color.content_color_darker), true, 50, 48, 45, 45);
         if (!this.k.isValid() || this.k.getYear() - this.l < 100) {
-            this.i.a(5).e(h.wheel_custom_val_dark_0).a(getString(r.month), g.content_color, 12, kankan.wheel.widget.a.bi, kankan.wheel.widget.a.bj).a(this.n);
+            this.i.a(5).e(R.drawable.wheel_custom_val_dark_0).a(getString(R.string.month), R.color.content_color, 12, kankan.wheel.widget.a.bi, kankan.wheel.widget.a.bj).a(this.n);
         } else {
-            this.i.a(5).e(h.wheel_custom_val_dark_0).a(getString(r.month), g.content_color, 12, kankan.wheel.widget.a.bi, kankan.wheel.widget.a.bj).a(new C0763dl(this, 1, this.o + 1, this.i, getResources().getColor(g.title_color), getResources().getColor(g.content_color), getResources().getColor(g.content_color_darker), false, 50, 48, 45, 45));
+            this.i.a(5).e(R.drawable.wheel_custom_val_dark_0).a(getString(R.string.month), R.color.content_color, 12, kankan.wheel.widget.a.bi, kankan.wheel.widget.a.bj).a(new C0763dl(this, 1, this.o + 1, this.i, getResources().getColor(R.color.title_color), getResources().getColor(R.color.content_color), getResources().getColor(R.color.content_color_darker), false, 50, 48, 45, 45));
         }
         if (this.k.isValid()) {
             this.h.c(this.k.getYear() - this.l);

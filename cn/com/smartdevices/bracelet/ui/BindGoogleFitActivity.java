@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
-import com.xiaomi.hm.health.n;
+import com.xiaomi.hm.health.R;
 
 public class BindGoogleFitActivity extends SystemBarTintActivity {
     private static final String d = "GoogleFitUtil";
@@ -19,6 +19,6 @@ public class BindGoogleFitActivity extends SystemBarTintActivity {
 
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView((int) n.activity_bind_googlefit_health);
+        setContentView((int) R.layout.activity_bind_googlefit_health);
     }
 }

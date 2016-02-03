@@ -49,6 +49,7 @@ public final class b extends r {
             int i3;
             int i4;
             boolean z;
+            int i5;
             char toUpperCase3 = Character.toUpperCase(str.charAt(i2));
             if (i2 == 0 || i2 == str.length() - 1) {
                 switch (toUpperCase3) {
@@ -66,25 +67,24 @@ public final class b extends r {
                         break;
                 }
             }
-            int i5 = 0;
-            while (i5 < a.a.length) {
-                int i6;
-                if (toUpperCase3 == a.a[i5]) {
-                    i3 = a.b[i5];
-                    i5 = 0;
+            int i6 = 0;
+            while (i6 < a.a.length) {
+                if (toUpperCase3 == a.a[i6]) {
+                    i3 = a.b[i6];
+                    i6 = 0;
                     i4 = 0;
                     z = true;
-                    while (i5 < 7) {
+                    while (i6 < 7) {
                         zArr[i] = z;
-                        i6 = i + 1;
-                        if (((i3 >> (6 - i5)) & 1) != 0 || i4 == 1) {
-                            i5++;
+                        i5 = i + 1;
+                        if (((i3 >> (6 - i6)) & 1) != 0 || i4 == 1) {
+                            i6++;
                             i4 = 0;
                             z = z;
-                            i = i6;
+                            i = i5;
                         } else {
                             i4++;
-                            i = i6;
+                            i = i5;
                         }
                     }
                     if (i2 < str.length() - 1) {
@@ -93,24 +93,24 @@ public final class b extends r {
                     }
                     i2++;
                 } else {
-                    i5++;
+                    i6++;
                 }
             }
             i3 = 0;
-            i5 = 0;
+            i6 = 0;
             i4 = 0;
             z = true;
-            while (i5 < 7) {
+            while (i6 < 7) {
                 zArr[i] = z;
-                i6 = i + 1;
-                if (((i3 >> (6 - i5)) & 1) != 0) {
+                i5 = i + 1;
+                if (((i3 >> (6 - i6)) & 1) != 0) {
                 }
                 if (z) {
                 }
-                i5++;
+                i6++;
                 i4 = 0;
                 z = z;
-                i = i6;
+                i = i5;
             }
             if (i2 < str.length() - 1) {
                 zArr[i] = false;

@@ -6,7 +6,7 @@ import cn.com.smartdevices.bracelet.Utils;
 import cn.com.smartdevices.bracelet.model.PersonInfo;
 import cn.com.smartdevices.bracelet.ui.C0763dl;
 import cn.com.smartdevices.bracelet.weight.UserInfo;
-import com.xiaomi.hm.health.p;
+import com.xiaomi.hm.health.R;
 import kankan.wheel.widget.WheelView;
 
 public class a {
@@ -43,9 +43,9 @@ public class a {
         String quantityString;
         int f = wheelView.f() + i;
         if (wheelView == this.f) {
-            quantityString = this.l.getResources().getQuantityString(p.numberInch, f, new Object[]{com.xiaomi.e.a.f});
+            quantityString = this.l.getResources().getQuantityString(R.plurals.numberInch, f, new Object[]{com.xiaomi.e.a.f});
         } else {
-            quantityString = this.l.getResources().getQuantityString(p.numberFoot, f, new Object[]{com.xiaomi.e.a.f});
+            quantityString = this.l.getResources().getQuantityString(R.plurals.numberFoot, f, new Object[]{com.xiaomi.e.a.f});
         }
         C0596r.e(b, "value = " + f + " unit -= " + quantityString);
         wheelView.a(quantityString);

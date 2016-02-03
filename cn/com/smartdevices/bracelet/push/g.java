@@ -11,8 +11,7 @@ import cn.com.smartdevices.bracelet.Constant;
 import cn.com.smartdevices.bracelet.partner.NativeInterface;
 import cn.com.smartdevices.bracelet.partner.Partner;
 import cn.com.smartdevices.bracelet.shoes.data.db.j;
-import com.xiaomi.hm.health.k;
-import com.xiaomi.hm.health.l;
+import com.xiaomi.hm.health.R;
 import java.io.Serializable;
 import org.json.JSONObject;
 
@@ -32,7 +31,7 @@ public class g extends a {
     }
 
     public int a() {
-        return l.notification_jump;
+        return R.id.notification_jump;
     }
 
     public void b() {
@@ -55,7 +54,7 @@ public class g extends a {
         } else {
             return;
         }
-        aT e = new aT(this.d).a((int) k.app_icon).a(this.l).b(this.m).e(true);
+        aT e = new aT(this.d).a((int) R.drawable.app_icon).a(this.l).b(this.m).e(true);
         e.a(PendingIntent.getBroadcast(this.d, 0, intent, 268435456));
         ((NotificationManager) this.d.getSystemService("notification")).notify(1, e.c());
     }

@@ -55,6 +55,7 @@ import cn.com.smartdevices.bracelet.weight.aA;
 import cn.com.smartdevices.bracelet.weight.ah;
 import cn.com.smartdevices.bracelet.weight.family.MemberInfoSetWeightActivity;
 import com.sina.weibo.sdk.exception.WeiboAuthException;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.bt.a.A;
 import com.xiaomi.hm.health.bt.b.c;
 import com.xiaomi.hm.health.bt.bleservice.BLEService;
@@ -62,11 +63,10 @@ import com.xiaomi.hm.health.bt.e.a;
 import com.xiaomi.hm.health.bt.e.f;
 import com.xiaomi.hm.health.bt.e.g;
 import com.xiaomi.hm.health.bt.e.h;
+import com.xiaomi.hm.health.bt.model.BraceletBtInfo;
 import com.xiaomi.hm.health.bt.model.HwBatteryStatus;
 import com.xiaomi.hm.health.bt.model.HwConnStatus;
 import com.xiaomi.hm.health.bt.profile.Weight.e;
-import com.xiaomi.hm.health.k;
-import com.xiaomi.hm.health.r;
 import com.xiaomi.hm.health.t;
 import com.xiaomi.mistatistic.sdk.d;
 import de.greenrobot.event.EventBus;
@@ -187,7 +187,7 @@ public class BaseSCActivity extends SystemBarTintActivity implements h {
         P p = new P();
         p.a = eVar;
         if (!eVar.f()) {
-            p.b = getResources().getString(r.weight_weighting_now);
+            p.b = getResources().getString(R.string.weight_weighting_now);
             p.c = 0;
             p.d = 0.0f;
         } else if (eVar.d()) {
@@ -195,7 +195,7 @@ public class BaseSCActivity extends SystemBarTintActivity implements h {
         } else {
             UserInfo userInfo = new UserInfo();
             userInfo.uid = 0;
-            userInfo.name = getString(r.visitor);
+            userInfo.name = getString(R.string.visitor);
             List a = aA.a(eVar);
             if (a != null && a.size() == 1) {
                 userInfo = (UserInfo) a.get(0);
@@ -207,7 +207,7 @@ public class BaseSCActivity extends SystemBarTintActivity implements h {
                 p.c = userInfo.uid;
                 p.d = userInfo.targetWeight;
             } else {
-                p.b = getResources().getString(r.weight_guest);
+                p.b = getResources().getString(R.string.weight_guest);
                 p.c = 0;
                 p.d = 0.0f;
             }
@@ -241,7 +241,7 @@ public class BaseSCActivity extends SystemBarTintActivity implements h {
         if (this.a == null) {
             this.a = new C0639p(this.x);
         }
-        if (z) {
+        if (z || FwUpgradeManager.getDefault(this).checkShoesFwUpgrade()) {
             z3 = false;
         } else if (System.currentTimeMillis() - Keeper.readSyncDeviceTime(c.SHOES.b()) > 120000) {
             z3 = false;
@@ -260,17 +260,17 @@ public class BaseSCActivity extends SystemBarTintActivity implements h {
         if (readLowBatteryNofifyLevel != a) {
             Keeper.keepLowBatteryNofityLevel(a);
             NotificationManager notificationManager = (NotificationManager) getSystemService("notification");
-            CharSequence string = getString(r.noti_bracelet_low_battery_title);
+            CharSequence string = getString(R.string.noti_bracelet_low_battery_title);
             CharSequence charSequence = com.xiaomi.e.a.f;
             if (a == 0) {
-                charSequence = getString(r.noti_bracelet_low_battery_content_high);
+                charSequence = getString(R.string.noti_bracelet_low_battery_content_high);
             } else if (a == 1 || a == 2) {
-                charSequence = getString(r.noti_bracelet_low_battery_content_mid);
+                charSequence = getString(R.string.noti_bracelet_low_battery_content_mid);
             } else if (a == 3) {
-                string = getString(r.noti_bracelet_low_battery_title_low);
-                charSequence = getString(r.noti_bracelet_low_battery_content_low);
+                string = getString(R.string.noti_bracelet_low_battery_title_low);
+                charSequence = getString(R.string.noti_bracelet_low_battery_content_low);
             }
-            aT e = new aT(this).a((int) k.app_icon).a(string).b(charSequence).e(true);
+            aT e = new aT(this).a((int) R.drawable.app_icon).a(string).b(charSequence).e(true);
             e.a(new long[]{100, 500, 500, 500});
             e.a(PendingIntent.getBroadcast(this, 0, new Intent(kankan.wheel.widget.a.bM), 268435456));
             notificationManager.notify(1, e.c());
@@ -285,39 +285,39 @@ public class BaseSCActivity extends SystemBarTintActivity implements h {
         PendingIntent activity = PendingIntent.getActivity(this, 0, new Intent(this, MainActivity.class), 268435456);
         switch (i) {
             case t.WeightView_wv_tips /*14*/:
-                string = getString(r.notify_status_motor_call);
+                string = getString(R.string.notify_status_motor_call);
                 pendingIntent = activity;
                 break;
             case kankan.wheel.widget.a.aV /*15*/:
-                string = getString(r.notify_status_motor_disconnect);
+                string = getString(R.string.notify_status_motor_disconnect);
                 pendingIntent = activity;
                 break;
             case kankan.wheel.widget.a.bp /*16*/:
-                string = getString(r.notify_status_motor_smart_alarm);
+                string = getString(R.string.notify_status_motor_smart_alarm);
                 pendingIntent = PendingIntent.getBroadcast(this, 0, new Intent(kankan.wheel.widget.a.bN), 268435456);
                 break;
             case kankan.wheel.widget.a.bu /*17*/:
-                string = getString(r.notify_status_motor_alarm);
+                string = getString(R.string.notify_status_motor_alarm);
                 pendingIntent = PendingIntent.getBroadcast(this, 0, new Intent(kankan.wheel.widget.a.bN), 268435456);
                 break;
             case kankan.wheel.widget.a.br /*18*/:
-                string = getString(r.notify_status_motor_goal);
+                string = getString(R.string.notify_status_motor_goal);
                 pendingIntent = activity;
                 break;
             case kankan.wheel.widget.a.bs /*19*/:
-                string = getString(r.notify_status_motor_auth);
+                string = getString(R.string.notify_status_motor_auth);
                 pendingIntent = activity;
                 break;
             case kankan.wheel.widget.a.aF /*20*/:
-                string = getString(r.notify_status_motor_shut_down);
+                string = getString(R.string.notify_status_motor_shut_down);
                 pendingIntent = activity;
                 break;
             case com.xiaomi.hm.health.bt.profile.a.a.Z /*21*/:
-                string = getString(r.notify_status_motor_auth_success);
+                string = getString(R.string.notify_status_motor_auth_success);
                 pendingIntent = activity;
                 break;
             case com.xiaomi.hm.health.bt.profile.a.a.aa /*22*/:
-                string = getString(r.notify_status_motor_test);
+                string = getString(R.string.notify_status_motor_test);
                 pendingIntent = activity;
                 break;
             case com.xiaomi.hm.health.bt.profile.a.a.ab /*27*/:
@@ -326,7 +326,7 @@ public class BaseSCActivity extends SystemBarTintActivity implements h {
                 return false;
         }
         NotificationManager notificationManager = (NotificationManager) getSystemService("notification");
-        aT e = new aT(this).a((int) k.app_icon).a(getString(r.notify_status_motor) + string).e(true);
+        aT e = new aT(this).a((int) R.drawable.app_icon).a(getString(R.string.notify_status_motor) + string).e(true);
         e.a(pendingIntent);
         notificationManager.notify(t, e.c());
         return true;
@@ -340,6 +340,12 @@ public class BaseSCActivity extends SystemBarTintActivity implements h {
         }
         DeviceSource.unbindSensorHub();
         if (z && com.xiaomi.hm.health.bt.bleservice.a.c()) {
+            com.xiaomi.hm.health.bt.model.h f = com.xiaomi.hm.health.bt.bleservice.a.f();
+            BraceletBtInfo readBraceletBtInfo = Keeper.readBraceletBtInfo();
+            if (f.b() && readBraceletBtInfo.a != 5) {
+                readBraceletBtInfo.a = 5;
+                Keeper.keepBraceletBtInfo(readBraceletBtInfo);
+            }
             if (z2) {
                 r();
             } else if (this.G) {
@@ -549,7 +555,7 @@ public class BaseSCActivity extends SystemBarTintActivity implements h {
     }
 
     private void t() {
-        aT e = new aT(this).a((int) k.app_icon).a(getString(r.bracelet_notify_title)).b(getString(r.bracelet_notify_text)).e(true);
+        aT e = new aT(this).a((int) R.drawable.app_icon).a(getString(R.string.bracelet_notify_title)).b(getString(R.string.bracelet_notify_text)).e(true);
         e.a(new long[]{100, 500, 500, 500});
         e.a(PendingIntent.getBroadcast(this, 0, new Intent(kankan.wheel.widget.a.bM), 268435456));
         ((NotificationManager) getSystemService("notification")).notify(3, e.c());
@@ -747,7 +753,7 @@ public class BaseSCActivity extends SystemBarTintActivity implements h {
                     this.A = false;
                     return;
                 case kankan.wheel.widget.a.i /*0*/:
-                    com.huami.android.view.b.a((Context) this, getString(r.failed_enable_bt), 1).show();
+                    com.huami.android.view.b.a((Context) this, getString(R.string.failed_enable_bt), 1).show();
                     this.A = true;
                     EventBus.getDefault().post(new EventBtOnOff(1));
                     return;
@@ -822,6 +828,7 @@ public class BaseSCActivity extends SystemBarTintActivity implements h {
                     LuaEvent.getInstance(this.x).deleteLuaOfStepAssociatedItem();
                 }
                 this.H = z;
+                a(true, true);
                 break;
             default:
                 i = 0;

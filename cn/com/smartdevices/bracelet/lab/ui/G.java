@@ -6,7 +6,7 @@ import android.text.Html;
 import android.widget.TextView;
 import cn.com.smartdevices.bracelet.lab.d;
 import cn.com.smartdevices.bracelet.lab.sportmode.DynamicGroupItemInfo;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 
 final class G extends Handler {
     public static final int a = 100;
@@ -68,7 +68,7 @@ final class G extends Handler {
                     SportAnalyserActivity sportAnalyserActivity = this.f;
                     Object[] objArr = new Object[e];
                     objArr[0] = Integer.valueOf(0);
-                    k.setText(Html.fromHtml(sportAnalyserActivity.getString(r.lab_factory_sport_average_rate_per_minute, objArr)));
+                    k.setText(Html.fromHtml(sportAnalyserActivity.getString(R.string.lab_factory_sport_average_rate_per_minute, objArr)));
                     return;
                 } else {
                     return;

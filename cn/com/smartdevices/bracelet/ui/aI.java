@@ -8,8 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 import cn.com.smartdevices.bracelet.C0596r;
 import cn.com.smartdevices.bracelet.activity.WebActivity;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
+import com.xiaomi.hm.health.R;
 import kankan.wheel.widget.a;
 
 class aI extends BaseAdapter {
@@ -44,11 +43,11 @@ class aI extends BaseAdapter {
     public View getView(int i, View view, ViewGroup viewGroup) {
         C0596r.e("Dynamic.List", "GetView : " + i);
         if (view == null) {
-            view = LayoutInflater.from(this.a.getActivity()).inflate(n.fragment_dynamic_list_item, viewGroup, false);
+            view = LayoutInflater.from(this.a.getActivity()).inflate(R.layout.fragment_dynamic_list_item, viewGroup, false);
         }
         aK aKVar = (aK) getItem(i);
-        TextView textView = (TextView) view.findViewById(l.summary);
-        ((TextView) view.findViewById(l.title)).setText(aKVar.a);
+        TextView textView = (TextView) view.findViewById(R.id.summary);
+        ((TextView) view.findViewById(R.id.title)).setText(aKVar.a);
         textView.setText(aKVar.b);
         view.setOnClickListener(new aJ(this, aKVar));
         return view;

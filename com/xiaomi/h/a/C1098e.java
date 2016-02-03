@@ -1,10 +1,10 @@
 package com.xiaomi.h.a;
 
 import b.a.C0374dh;
-import cn.com.smartdevices.bracelet.gps.c.a.g;
 import cn.com.smartdevices.bracelet.partner.NativeInterface;
 import cn.com.smartdevices.bracelet.shoes.sync.SyncShoesDataService;
 import com.tencent.open.SocialConstants;
+import com.xiaomi.channel.relationservice.data.a;
 import java.io.Serializable;
 import java.util.BitSet;
 import java.util.Collections;
@@ -12,12 +12,12 @@ import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
-import kankan.wheel.widget.a;
 import kankan.wheel.widget.l;
 import org.apache.thrift.b;
 import org.apache.thrift.meta_data.e;
 import org.apache.thrift.protocol.c;
 import org.apache.thrift.protocol.f;
+import org.apache.thrift.protocol.g;
 import org.apache.thrift.protocol.i;
 import org.apache.thrift.protocol.k;
 
@@ -33,7 +33,7 @@ public class C1098e implements Serializable, Cloneable, b<C1098e, C1099f> {
     private static final c s = new c(SocialConstants.PARAM_URL, C0374dh.i, (short) 7);
     private static final c t = new c("passThrough", (byte) 8, (short) 8);
     private static final c u = new c("notifyId", (byte) 8, (short) 9);
-    private static final c v = new c(g.g, C0374dh.k, (short) 10);
+    private static final c v = new c(a.G, C0374dh.k, (short) 10);
     public String a;
     public long b;
     public String c;
@@ -57,7 +57,7 @@ public class C1098e implements Serializable, Cloneable, b<C1098e, C1099f> {
         enumMap.put(C1099f.URL, new org.apache.thrift.meta_data.b(SocialConstants.PARAM_URL, (byte) 2, new org.apache.thrift.meta_data.c(C0374dh.i)));
         enumMap.put(C1099f.PASS_THROUGH, new org.apache.thrift.meta_data.b("passThrough", (byte) 2, new org.apache.thrift.meta_data.c((byte) 8)));
         enumMap.put(C1099f.NOTIFY_ID, new org.apache.thrift.meta_data.b("notifyId", (byte) 2, new org.apache.thrift.meta_data.c((byte) 8)));
-        enumMap.put(C1099f.EXTRA, new org.apache.thrift.meta_data.b(g.g, (byte) 2, new e(C0374dh.k, new org.apache.thrift.meta_data.c(C0374dh.i), new org.apache.thrift.meta_data.c(C0374dh.i))));
+        enumMap.put(C1099f.EXTRA, new org.apache.thrift.meta_data.b(a.G, (byte) 2, new e(C0374dh.k, new org.apache.thrift.meta_data.c(C0374dh.i), new org.apache.thrift.meta_data.c(C0374dh.i))));
         k = Collections.unmodifiableMap(enumMap);
         org.apache.thrift.meta_data.b.a(C1098e.class, k);
     }
@@ -130,7 +130,7 @@ public class C1098e implements Serializable, Cloneable, b<C1098e, C1099f> {
                     u();
                     return;
                 }
-                throw new org.apache.thrift.protocol.g("Required field 'messageTs' was not found in serialized data! Struct: " + toString());
+                throw new g("Required field 'messageTs' was not found in serialized data! Struct: " + toString());
             }
             switch (i.c) {
                 case l.a /*1*/:
@@ -141,7 +141,7 @@ public class C1098e implements Serializable, Cloneable, b<C1098e, C1099f> {
                         this.a = fVar.w();
                         break;
                     }
-                case a.k /*2*/:
+                case kankan.wheel.widget.a.k /*2*/:
                     if (i.b != (byte) 10) {
                         i.a(fVar, i.b);
                         break;
@@ -149,7 +149,7 @@ public class C1098e implements Serializable, Cloneable, b<C1098e, C1099f> {
                     this.b = fVar.u();
                     a(true);
                     break;
-                case a.l /*3*/:
+                case kankan.wheel.widget.a.l /*3*/:
                     if (i.b != C0374dh.i) {
                         i.a(fVar, i.b);
                         break;
@@ -157,7 +157,7 @@ public class C1098e implements Serializable, Cloneable, b<C1098e, C1099f> {
                         this.c = fVar.w();
                         break;
                     }
-                case a.aQ /*4*/:
+                case kankan.wheel.widget.a.aQ /*4*/:
                     if (i.b != C0374dh.i) {
                         i.a(fVar, i.b);
                         break;
@@ -165,7 +165,7 @@ public class C1098e implements Serializable, Cloneable, b<C1098e, C1099f> {
                         this.d = fVar.w();
                         break;
                     }
-                case a.X /*5*/:
+                case kankan.wheel.widget.a.X /*5*/:
                     if (i.b != C0374dh.i) {
                         i.a(fVar, i.b);
                         break;
@@ -173,7 +173,7 @@ public class C1098e implements Serializable, Cloneable, b<C1098e, C1099f> {
                         this.e = fVar.w();
                         break;
                     }
-                case a.bt /*6*/:
+                case kankan.wheel.widget.a.bt /*6*/:
                     if (i.b != (byte) 8) {
                         i.a(fVar, i.b);
                         break;
@@ -181,7 +181,7 @@ public class C1098e implements Serializable, Cloneable, b<C1098e, C1099f> {
                     this.f = fVar.t();
                     b(true);
                     break;
-                case a.bc /*7*/:
+                case kankan.wheel.widget.a.bc /*7*/:
                     if (i.b != C0374dh.i) {
                         i.a(fVar, i.b);
                         break;
@@ -189,7 +189,7 @@ public class C1098e implements Serializable, Cloneable, b<C1098e, C1099f> {
                         this.g = fVar.w();
                         break;
                     }
-                case a.ba /*8*/:
+                case kankan.wheel.widget.a.ba /*8*/:
                     if (i.b != (byte) 8) {
                         i.a(fVar, i.b);
                         break;
@@ -197,7 +197,7 @@ public class C1098e implements Serializable, Cloneable, b<C1098e, C1099f> {
                     this.h = fVar.t();
                     c(true);
                     break;
-                case a.bo /*9*/:
+                case kankan.wheel.widget.a.bo /*9*/:
                     if (i.b != (byte) 8) {
                         i.a(fVar, i.b);
                         break;
@@ -205,7 +205,7 @@ public class C1098e implements Serializable, Cloneable, b<C1098e, C1099f> {
                     this.i = fVar.t();
                     d(true);
                     break;
-                case a.bd /*10*/:
+                case kankan.wheel.widget.a.bd /*10*/:
                     if (i.b != C0374dh.k) {
                         i.a(fVar, i.b);
                         break;
@@ -649,7 +649,7 @@ public class C1098e implements Serializable, Cloneable, b<C1098e, C1099f> {
 
     public void u() {
         if (this.a == null) {
-            throw new org.apache.thrift.protocol.g("Required field 'id' was not present! Struct: " + toString());
+            throw new g("Required field 'id' was not present! Struct: " + toString());
         }
     }
 }

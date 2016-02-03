@@ -70,10 +70,10 @@ public class h implements b {
     }
 
     public File a(String str) {
-        g a;
         Throwable e;
         Throwable th;
         File file = null;
+        g a;
         try {
             a = this.d.a(c(str));
             if (a != null) {

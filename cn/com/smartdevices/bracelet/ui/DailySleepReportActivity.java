@@ -13,19 +13,17 @@ import cn.com.smartdevices.bracelet.Keeper;
 import cn.com.smartdevices.bracelet.Utils;
 import cn.com.smartdevices.bracelet.f.f;
 import cn.com.smartdevices.bracelet.model.PersonInfo;
+import com.huami.android.widget.share.l;
 import com.huami.android.widget.share.q;
 import com.huami.android.widget.share.s;
 import com.tencent.connect.common.Constants;
 import com.xiaomi.channel.b.v;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.dataprocess.DaySportData;
 import com.xiaomi.hm.health.dataprocess.SleepInfo;
 import com.xiaomi.hm.health.dataprocess.SportDay;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import kankan.wheel.widget.i;
 
 public class DailySleepReportActivity extends SystemBarTintActivity implements s {
     private static final String s = "DailySleepReportActivity";
@@ -50,13 +48,13 @@ public class DailySleepReportActivity extends SystemBarTintActivity implements s
     private q t;
 
     private void a() {
-        if (findViewById(l.share_pane_container) != null) {
+        if (findViewById(R.id.share_pane_container) != null) {
             this.t = new q();
             Bundle bundle = new Bundle();
             bundle.putBoolean(v.e, true);
             this.t.setArguments(bundle);
             FragmentTransaction beginTransaction = getFragmentManager().beginTransaction();
-            beginTransaction.add(l.share_pane_container, this.t);
+            beginTransaction.add(R.id.share_pane_container, this.t);
             this.t.a((s) this);
             beginTransaction.commit();
         }
@@ -66,8 +64,8 @@ public class DailySleepReportActivity extends SystemBarTintActivity implements s
         int sleepCount = sleepInfo.getSleepCount();
         int nonRemCount = sleepInfo.getNonRemCount();
         String[] e = f.e(sleepCount);
-        CharSequence string = this.a.getString(r.unit_hour);
-        CharSequence string2 = this.a.getString(r.unit_min_short);
+        CharSequence string = this.a.getString(R.string.unit_hour);
+        CharSequence string2 = this.a.getString(R.string.unit_min_short);
         if (e[0].equals(Constants.VIA_RESULT_SUCCESS)) {
             this.d.setVisibility(8);
             this.f.setVisibility(8);
@@ -102,25 +100,25 @@ public class DailySleepReportActivity extends SystemBarTintActivity implements s
     }
 
     private void c() {
-        this.b = (ImageView) findViewById(l.avatar_icon);
-        this.c = (TextView) findViewById(l.user_name);
-        this.h = (TextView) findViewById(l.ranking_tv);
-        this.i = (TextView) findViewById(l.start_sleep_time_tv);
-        this.j = (TextView) findViewById(l.sleep_rise_tv);
-        RelativeLayout relativeLayout = (RelativeLayout) findViewById(l.layout_sleep_total);
-        this.d = (TextView) relativeLayout.findViewById(l.sleep_hour);
-        this.e = (TextView) relativeLayout.findViewById(l.sleep_min);
-        this.f = (TextView) relativeLayout.findViewById(l.sleep_hour_unit);
-        this.g = (TextView) relativeLayout.findViewById(l.sleep_min_unit);
-        relativeLayout = (RelativeLayout) findViewById(l.layout_sleep_deep);
-        this.k = (TextView) relativeLayout.findViewById(l.sleep_hour);
-        this.l = (TextView) relativeLayout.findViewById(l.sleep_min);
-        this.m = (TextView) relativeLayout.findViewById(l.sleep_hour_unit);
-        this.n = (TextView) relativeLayout.findViewById(l.sleep_min_unit);
-        this.o = findViewById(l.share_logo);
-        this.p = findViewById(l.contentLayout);
-        this.q = (TextView) findViewById(l.share_title);
-        this.r = (TextView) findViewById(l.share_from_mi_band_txt);
+        this.b = (ImageView) findViewById(R.id.avatar_icon);
+        this.c = (TextView) findViewById(R.id.user_name);
+        this.h = (TextView) findViewById(R.id.ranking_tv);
+        this.i = (TextView) findViewById(R.id.start_sleep_time_tv);
+        this.j = (TextView) findViewById(R.id.sleep_rise_tv);
+        RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.layout_sleep_total);
+        this.d = (TextView) relativeLayout.findViewById(R.id.sleep_hour);
+        this.e = (TextView) relativeLayout.findViewById(R.id.sleep_min);
+        this.f = (TextView) relativeLayout.findViewById(R.id.sleep_hour_unit);
+        this.g = (TextView) relativeLayout.findViewById(R.id.sleep_min_unit);
+        relativeLayout = (RelativeLayout) findViewById(R.id.layout_sleep_deep);
+        this.k = (TextView) relativeLayout.findViewById(R.id.sleep_hour);
+        this.l = (TextView) relativeLayout.findViewById(R.id.sleep_min);
+        this.m = (TextView) relativeLayout.findViewById(R.id.sleep_hour_unit);
+        this.n = (TextView) relativeLayout.findViewById(R.id.sleep_min_unit);
+        this.o = findViewById(R.id.share_logo);
+        this.p = findViewById(R.id.contentLayout);
+        this.q = (TextView) findViewById(R.id.share_title);
+        this.r = (TextView) findViewById(R.id.share_from_mi_band_txt);
     }
 
     private void d() {
@@ -128,8 +126,8 @@ public class DailySleepReportActivity extends SystemBarTintActivity implements s
         Utils.a(readPersonInfo, this.b);
         this.c.setText(readPersonInfo.getNickname());
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat();
-        simpleDateFormat.applyPattern(getString(r.date_month_day));
-        this.r.setText(getString(i.app_name) + " " + simpleDateFormat.format(new Date()));
+        simpleDateFormat.applyPattern(getString(R.string.date_month_day));
+        this.r.setText(getString(R.string.app_name) + " " + simpleDateFormat.format(new Date()));
         e();
     }
 
@@ -148,12 +146,12 @@ public class DailySleepReportActivity extends SystemBarTintActivity implements s
         }
     }
 
-    private com.huami.android.widget.share.l f() {
-        com.huami.android.widget.share.l lVar = new com.huami.android.widget.share.l();
-        lVar.a = getString(r.share_to_title);
-        lVar.b = getString(r.share_to_topic);
+    private l f() {
+        l lVar = new l();
+        lVar.a = getString(R.string.share_to_title);
+        lVar.b = getString(R.string.share_to_topic);
         lVar.e = Utils.a(this.p, (Context) this);
-        lVar.c = getString(r.share_to_content_step);
+        lVar.c = getString(R.string.share_to_content_step);
         return lVar;
     }
 
@@ -163,7 +161,7 @@ public class DailySleepReportActivity extends SystemBarTintActivity implements s
 
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView((int) n.daily_sleep_report);
+        setContentView((int) R.layout.daily_sleep_report);
         this.a = this;
         c();
         a();

@@ -2,7 +2,6 @@ package cn.com.smartdevices.bracelet.weibo;
 
 import cn.com.smartdevices.bracelet.j.f;
 import cn.com.smartdevices.bracelet.shoes.sync.SyncShoesDataService;
-import com.amap.api.location.LocationManagerProxy;
 import com.amap.api.services.district.DistrictSearchQuery;
 import com.tencent.open.SocialConstants;
 import com.xiaomi.e.a;
@@ -69,7 +68,7 @@ public class s {
         sVar.d = jSONObject.optString("name", a.f);
         sVar.e = jSONObject.optInt(DistrictSearchQuery.KEYWORDS_PROVINCE, -1);
         sVar.f = jSONObject.optInt(DistrictSearchQuery.KEYWORDS_CITY, -1);
-        sVar.g = jSONObject.optString(LocationManagerProxy.KEY_LOCATION_CHANGED, a.f);
+        sVar.g = jSONObject.optString(com.xiaomi.channel.relationservice.data.a.l, a.f);
         sVar.h = jSONObject.optString(SocialConstants.PARAM_COMMENT, a.f);
         sVar.i = jSONObject.optString(SocialConstants.PARAM_URL, a.f);
         sVar.j = jSONObject.optString("profile_image_url", a.f);
@@ -86,7 +85,7 @@ public class s {
         sVar.u = jSONObject.optBoolean("allow_all_act_msg", false);
         sVar.v = jSONObject.optBoolean("geo_enabled", false);
         sVar.w = jSONObject.optBoolean("verified", false);
-        sVar.x = jSONObject.optInt("verified_type", -1);
+        sVar.x = jSONObject.optInt(com.xiaomi.channel.relationservice.data.a.x, -1);
         sVar.y = jSONObject.optString("remark", a.f);
         sVar.A = jSONObject.optBoolean("allow_all_comment", true);
         sVar.B = jSONObject.optString("avatar_large", a.f);

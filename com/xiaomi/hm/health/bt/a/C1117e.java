@@ -1,6 +1,7 @@
 package com.xiaomi.hm.health.bt.a;
 
 import android.os.Handler;
+import android.os.Looper;
 import android.os.Message;
 import kankan.wheel.widget.a;
 import kankan.wheel.widget.l;
@@ -8,8 +9,9 @@ import kankan.wheel.widget.l;
 class C1117e extends Handler {
     final /* synthetic */ d a;
 
-    C1117e(d dVar) {
+    C1117e(d dVar, Looper looper) {
         this.a = dVar;
+        super(looper);
     }
 
     public void handleMessage(Message message) {

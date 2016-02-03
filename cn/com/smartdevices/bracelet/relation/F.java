@@ -9,7 +9,7 @@ import cn.com.smartdevices.bracelet.relation.db.f;
 import com.d.a.a.h;
 import com.tencent.connect.common.Constants;
 import com.xiaomi.channel.gamesdk.b;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 import org.apache.http.Header;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -50,7 +50,7 @@ class F extends h {
                     this.d.d.a(a);
                 }
                 if (this.c) {
-                    com.huami.android.view.b.a(this.d.c, (int) r.friend_new_user_guide_ok_toast, 1).show();
+                    com.huami.android.view.b.a(this.d.c, (int) R.string.friend_new_user_guide_ok_toast, 1).show();
                 }
             }
             if (optInt != 1) {

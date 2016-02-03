@@ -13,9 +13,9 @@ import com.amap.api.maps.model.BitmapDescriptorFactory;
 import com.amap.api.maps.model.GroundOverlayOptions;
 import com.edmodo.cropper.cropwindow.CropOverlayView;
 import com.xiaomi.e.a;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.bt.profile.Weight.e;
-import com.xiaomi.hm.health.f;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.mipush.sdk.f;
 import de.greenrobot.dao.query.WhereCondition;
 import de.greenrobot.daobracelet.LuaListDao;
 import de.greenrobot.daobracelet.LuaListDao.Properties;
@@ -94,9 +94,9 @@ public class aA {
     }
 
     public static String a(Context context, float f, int i, int i2) {
-        String[] stringArray = context.getResources().getStringArray(f.weight_body_figures);
+        String[] stringArray = context.getResources().getStringArray(R.array.weight_body_figures);
         if (i > 6 && i < 18) {
-            stringArray = context.getResources().getStringArray(f.weight_body_figures_for_child);
+            stringArray = context.getResources().getStringArray(R.array.weight_body_figures_for_child);
         }
         HashMap hashMap = new HashMap();
         hashMap.put(aD.Light, stringArray[a]);
@@ -109,7 +109,7 @@ public class aA {
 
     public static String a(Context context, int i) {
         SparseArray sparseArray = new SparseArray();
-        String[] stringArray = context.getResources().getStringArray(f.weight_unit);
+        String[] stringArray = context.getResources().getStringArray(R.array.weight_unit);
         sparseArray.put(a, stringArray[a]);
         sparseArray.put(16, stringArray[b]);
         sparseArray.put(b, stringArray[d]);
@@ -120,7 +120,7 @@ public class aA {
     public static String a(Context context, int i, int i2, float f) {
         if (p == null) {
             p = new HashMap();
-            String[] stringArray = context.getResources().getStringArray(f.weight_report_suggestions_girl);
+            String[] stringArray = context.getResources().getStringArray(R.array.weight_report_suggestions_girl);
             p.put(aD.Light, stringArray[a]);
             p.put(aD.Normal, stringArray[b]);
             p.put(aD.Weight, stringArray[d]);
@@ -128,7 +128,7 @@ public class aA {
         }
         if (q == null) {
             q = new HashMap();
-            stringArray = context.getResources().getStringArray(f.weight_report_suggestions_boy);
+            stringArray = context.getResources().getStringArray(R.array.weight_report_suggestions_boy);
             q.put(aD.Light, stringArray[a]);
             q.put(aD.Normal, stringArray[b]);
             q.put(aD.Weight, stringArray[d]);
@@ -145,28 +145,28 @@ public class aA {
             if (c > 0.0f) {
                 objArr = new Object[b];
                 objArr[a] = Math.abs(c) + a(context, eVar.h());
-                return context.getString(r.lighter_than_goal, objArr);
+                return context.getString(R.string.lighter_than_goal, objArr);
             } else if (c < 0.0f) {
                 objArr = new Object[b];
                 objArr[a] = Math.abs(c) + a(context, eVar.h());
-                return context.getString(r.heavier_than_goal, objArr);
+                return context.getString(R.string.heavier_than_goal, objArr);
             }
         } else if (userInfo.uid != 0) {
             WeightInfo a = ah.a().a(userInfo.uid, eVar.e());
             if (a == null) {
-                return context.getString(r.baby_no_weight);
+                return context.getString(R.string.baby_no_weight);
             }
             c = c(eVar.j() - b(a.weight, eVar.h()), b);
             if (c > 0.0f) {
                 objArr = new Object[b];
                 objArr[a] = c + a(context, eVar.h());
-                return context.getString(r.add_than_last_time, objArr);
+                return context.getString(R.string.add_than_last_time, objArr);
             } else if (c >= 0.0f) {
-                return context.getString(r.equal_last_time);
+                return context.getString(R.string.equal_last_time);
             } else {
                 objArr = new Object[b];
                 objArr[a] = Math.abs(c) + a(context, eVar.h());
-                return context.getString(r.less_than_last_time, objArr);
+                return context.getString(R.string.less_than_last_time, objArr);
             }
         }
         return a.f;
@@ -248,7 +248,7 @@ public class aA {
     public static String b(Context context, float f, int i, int i2) {
         if (r == null) {
             r = new HashMap();
-            String[] stringArray = context.getResources().getStringArray(f.weight_dynamic_list_bmi_tips);
+            String[] stringArray = context.getResources().getStringArray(R.array.weight_dynamic_list_bmi_tips);
             r.put(aD.Light, stringArray[a]);
             r.put(aD.Normal, stringArray[b]);
             r.put(aD.Weight, stringArray[d]);
@@ -359,9 +359,9 @@ public class aA {
         float c2 = ((float) ((int) (((double) (c((h * f) * f, a, i2) * 10.0f)) + 0.5d))) / 10.0f;
         float c3 = ((float) ((int) (((double) (c((i * f) * f, a, i2) * 10.0f)) + 0.5d))) / 10.0f;
         StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append(f2 + com.xiaomi.mipush.sdk.f.i);
-        stringBuilder.append(c2 + com.xiaomi.mipush.sdk.f.i);
-        stringBuilder.append(c3 + com.xiaomi.mipush.sdk.f.i);
+        stringBuilder.append(f2 + f.i);
+        stringBuilder.append(c2 + f.i);
+        stringBuilder.append(c3 + f.i);
         return stringBuilder.toString();
     }
 }

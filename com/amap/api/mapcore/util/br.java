@@ -233,12 +233,12 @@ public class br {
     }
 
     byte[] a(String str, Map<String, String> map, HttpEntity httpEntity) {
+        ByteArrayOutputStream byteArrayOutputStream;
         InputStream content;
         Throwable e;
         Exception e2;
         Throwable th;
         byte[] bArr = null;
-        ByteArrayOutputStream byteArrayOutputStream;
         try {
             byteArrayOutputStream = new ByteArrayOutputStream();
             try {

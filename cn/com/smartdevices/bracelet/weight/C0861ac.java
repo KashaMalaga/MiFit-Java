@@ -8,8 +8,7 @@ import android.widget.TextView;
 import cn.com.smartdevices.bracelet.C0596r;
 import cn.com.smartdevices.bracelet.Utils;
 import cn.com.smartdevices.bracelet.view.WeightUserAvatar;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
+import com.xiaomi.hm.health.R;
 
 class C0861ac extends BaseAdapter {
     final /* synthetic */ Q a;
@@ -34,10 +33,10 @@ class C0861ac extends BaseAdapter {
         C0862ad c0862ad;
         C0596r.e("UserListActivity", "adapter getView()");
         if (view == null) {
-            view = LayoutInflater.from(this.a.g).inflate(n.userlist_item, null);
+            view = LayoutInflater.from(this.a.g).inflate(R.layout.userlist_item, null);
             C0862ad c0862ad2 = new C0862ad(this);
-            c0862ad2.a = (TextView) view.findViewById(l.user_list_item_name);
-            c0862ad2.b = (WeightUserAvatar) view.findViewById(l.user_icon);
+            c0862ad2.a = (TextView) view.findViewById(R.id.user_list_item_name);
+            c0862ad2.b = (WeightUserAvatar) view.findViewById(R.id.user_icon);
             view.setTag(c0862ad2);
             c0862ad = c0862ad2;
         } else {

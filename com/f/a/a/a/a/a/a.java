@@ -358,18 +358,17 @@ final class a implements Closeable {
             if (fVar != null) {
                 if (fVar.d) {
                     File[] fileArr = new File[this.t];
-                    r7 = new InputStream[this.t];
+                    InputStream[] inputStreamArr = new InputStream[this.t];
                     int i2 = 0;
                     while (i2 < this.t) {
                         try {
                             File a = fVar.a(i2);
                             fileArr[i2] = a;
-                            r7[i2] = new FileInputStream(a);
+                            inputStreamArr[i2] = new FileInputStream(a);
                             i2++;
                         } catch (FileNotFoundException e) {
                             i = 0;
-                            while (i < this.t && r7[i] != null) {
-                                InputStream[] inputStreamArr;
+                            while (i < this.t && inputStreamArr[i] != null) {
                                 k.a(inputStreamArr[i]);
                                 i++;
                             }

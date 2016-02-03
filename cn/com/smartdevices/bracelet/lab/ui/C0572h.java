@@ -3,8 +3,8 @@ package cn.com.smartdevices.bracelet.lab.ui;
 import cn.com.smartdevices.bracelet.Keeper;
 import cn.com.smartdevices.bracelet.Utils;
 import com.huami.android.view.b;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.bt.a.d;
-import com.xiaomi.hm.health.r;
 
 class C0572h extends d {
     final /* synthetic */ boolean a;
@@ -18,7 +18,7 @@ class C0572h extends d {
     public void a(Object obj) {
         super.a(obj);
         if (obj == null || !((Boolean) obj).booleanValue()) {
-            b.a(this.b.a, (int) r.bt_operation_failed_tips, 0).show();
+            b.a(this.b.a, (int) R.string.bt_operation_failed_tips, 0).show();
             return;
         }
         this.b.a.d.enableConnectedBtAdv(this.a);
@@ -29,6 +29,6 @@ class C0572h extends d {
 
     public void b(Object obj) {
         super.b(obj);
-        b.a(this.b.a, (int) r.bt_operation_failed_tips, 0).show();
+        b.a(this.b.a, (int) R.string.bt_operation_failed_tips, 0).show();
     }
 }

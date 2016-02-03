@@ -4,7 +4,6 @@ import android.os.Parcelable;
 import android.text.TextUtils;
 import cn.com.smartdevices.bracelet.gps.sync.C0483q;
 import com.tencent.connect.common.Constants;
-import com.tencent.open.SocialConstants;
 import com.xiaomi.f.A;
 import com.xiaomi.f.c.a;
 import com.xiaomi.f.c.b;
@@ -104,7 +103,7 @@ public class PacketSync {
                 p2 = eVar.p("kick");
                 if (p2 != null) {
                     String m2 = eVar.m();
-                    String a2 = p2.a(SocialConstants.PARAM_TYPE);
+                    String a2 = p2.a(com.xiaomi.channel.relationservice.data.a.h);
                     String a3 = p2.a("reason");
                     com.xiaomi.channel.a.b.c.a("kicked by server, chid=" + l2 + " userid=" + m2 + " type=" + a2 + " reason=" + a3);
                     if ("wait".equals(a2)) {

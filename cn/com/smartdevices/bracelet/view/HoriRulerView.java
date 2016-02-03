@@ -8,8 +8,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import cn.com.smartdevices.bracelet.C0596r;
 import com.xiaomi.e.a;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
+import com.xiaomi.hm.health.R;
 
 public class HoriRulerView extends FrameLayout {
     private static final String a = "HoriRulerView";
@@ -27,9 +26,9 @@ public class HoriRulerView extends FrameLayout {
     public HoriRulerView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         this.d = LayoutInflater.from(context);
-        this.d.inflate(n.ruler_frame, this);
-        this.b = (RulerScrollView) findViewById(l.ruler_scroller_view);
-        this.c = findViewById(l.ruler_indicator);
+        this.d.inflate(R.layout.ruler_frame, this);
+        this.b = (RulerScrollView) findViewById(R.id.ruler_scroller_view);
+        this.c = findViewById(R.id.ruler_indicator);
         this.b.a(this.c);
     }
 
@@ -50,8 +49,8 @@ public class HoriRulerView extends FrameLayout {
         this.g = i2;
         this.e = str;
         while (i < i2) {
-            View inflate = this.d.inflate(n.ruler_item, null);
-            ((TextView) inflate.findViewById(l.ruler_txt)).setText(a.f + i);
+            View inflate = this.d.inflate(R.layout.ruler_item, null);
+            ((TextView) inflate.findViewById(R.id.ruler_txt)).setText(a.f + i);
             addView(inflate);
             i += i3;
         }

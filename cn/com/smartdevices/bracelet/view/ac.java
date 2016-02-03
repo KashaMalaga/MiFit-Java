@@ -6,8 +6,7 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import cn.com.smartdevices.bracelet.Utils;
 import cn.com.smartdevices.bracelet.weight.UserInfo;
-import com.xiaomi.hm.health.k;
-import com.xiaomi.hm.health.n;
+import com.xiaomi.hm.health.R;
 import java.util.List;
 
 class ac extends N<ae> {
@@ -29,7 +28,7 @@ class ac extends N<ae> {
 
     public void a(ae aeVar, int i) {
         UserInfo userInfo = (UserInfo) this.b.get(i);
-        aeVar.r.setImageResource(k.choose_user_src_selector);
+        aeVar.r.setImageResource(R.drawable.choose_user_src_selector);
         aeVar.r.a(userInfo.name);
         Utils.a(userInfo, aeVar.r);
         if (this.a.g == i) {
@@ -41,6 +40,6 @@ class ac extends N<ae> {
     }
 
     public ae c(ViewGroup viewGroup, int i) {
-        return new ae(LayoutInflater.from(viewGroup.getContext()).inflate(n.view_weight_user_picker_item, viewGroup, false));
+        return new ae(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.view_weight_user_picker_item, viewGroup, false));
     }
 }

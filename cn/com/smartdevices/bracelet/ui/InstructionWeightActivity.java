@@ -17,10 +17,7 @@ import cn.com.smartdevices.bracelet.C0401a;
 import cn.com.smartdevices.bracelet.C0596r;
 import cn.com.smartdevices.bracelet.ui.widget.c;
 import cn.com.smartdevices.bracelet.view.RippleBackground;
-import com.xiaomi.hm.health.e;
-import com.xiaomi.hm.health.k;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
+import com.xiaomi.hm.health.R;
 import java.util.ArrayList;
 
 public class InstructionWeightActivity extends SystemBarTintActivity {
@@ -84,22 +81,22 @@ public class InstructionWeightActivity extends SystemBarTintActivity {
         this.x.setVisibility(i);
         this.v.setVisibility(i);
         if (i == j) {
-            findViewById(l.instruction_weight_img_phone).setVisibility(m);
+            findViewById(R.id.instruction_weight_img_phone).setVisibility(m);
             this.w.setVisibility(i);
             d();
         } else {
             this.w.setVisibility(m);
-            findViewById(l.instruction_weight_img_phone).setVisibility(i);
+            findViewById(R.id.instruction_weight_img_phone).setVisibility(i);
         }
         if (i == 0) {
-            findViewById(l.instruction_weight_line).setVisibility(i);
-            a(this.D, (int) e.instruction_weight_left_arrow);
-            a(this.E, (int) e.instruction_weight_right_arrow);
+            findViewById(R.id.instruction_weight_line).setVisibility(i);
+            a(this.D, (int) R.anim.instruction_weight_left_arrow);
+            a(this.E, (int) R.anim.instruction_weight_right_arrow);
             return;
         }
         this.D.clearAnimation();
         this.E.clearAnimation();
-        findViewById(l.instruction_weight_line).setVisibility(m);
+        findViewById(R.id.instruction_weight_line).setVisibility(m);
     }
 
     private void a(int i, float f) {
@@ -144,7 +141,7 @@ public class InstructionWeightActivity extends SystemBarTintActivity {
                 this.z.clearAnimation();
                 this.z.setVisibility(m);
                 if (this.Q == j) {
-                    Animation loadAnimation = AnimationUtils.loadAnimation(this, e.instruction_weight_big_weight_out);
+                    Animation loadAnimation = AnimationUtils.loadAnimation(this, R.anim.instruction_weight_big_weight_out);
                     loadAnimation.setAnimationListener(new C0717bs(this));
                     this.B.startAnimation(loadAnimation);
                     return;
@@ -167,35 +164,35 @@ public class InstructionWeightActivity extends SystemBarTintActivity {
     }
 
     private void c() {
-        this.t = (RippleBackground) findViewById(l.content);
+        this.t = (RippleBackground) findViewById(R.id.content);
         this.t.a();
-        this.x = (ImageView) findViewById(l.instruction_weight_img_weight);
-        this.v = findViewById(l.in_weight_page1_phone_and_dot);
-        this.y = (ImageView) findViewById(l.instruction_weight_img_weight_overturn);
+        this.x = (ImageView) findViewById(R.id.instruction_weight_img_weight);
+        this.v = findViewById(R.id.in_weight_page1_phone_and_dot);
+        this.y = (ImageView) findViewById(R.id.instruction_weight_img_weight_overturn);
         this.y.setVisibility(m);
-        this.y.setBackgroundResource(k.instruction_weight_overturn);
-        this.N = findViewById(l.instruction_weight_bg_34);
+        this.y.setBackgroundResource(R.drawable.instruction_weight_overturn);
+        this.N = findViewById(R.id.instruction_weight_bg_34);
         this.N.setVisibility(m);
-        this.A = (ImageView) findViewById(l.instruction_weight_overMax);
+        this.A = (ImageView) findViewById(R.id.instruction_weight_overMax);
         this.A.setVisibility(m);
-        this.z = (ImageView) findViewById(l.instruction_weight_low);
+        this.z = (ImageView) findViewById(R.id.instruction_weight_low);
         this.z.setVisibility(m);
-        this.B = (ImageView) findViewById(l.instruction_weight_big_weight);
+        this.B = (ImageView) findViewById(R.id.instruction_weight_big_weight);
         this.B.setVisibility(m);
-        this.u = findViewById(l.instruction_weight_img_weight_magnify);
-        this.C = (ImageView) findViewById(l.instruction_weight_img_swipe);
-        this.D = (ImageView) findViewById(l.weight_left_arrow);
-        this.E = (ImageView) findViewById(l.weight_right_arrow);
-        this.F = (ImageView) findViewById(l.instruction_weight_img_phone1);
-        this.G = (ImageView) findViewById(l.instruction_weight_img_phone_back1);
-        this.H = (ImageView) findViewById(l.instruction_weight_img_phone_back2);
-        this.w = findViewById(l.instruction_weight_phones);
-        this.I = findViewById(l.instruction_weight_page_6);
-        this.a = (ImageView) findViewById(l.instruction_weight_foot);
-        this.J = (ImageView) findViewById(l.instruction_weight_flatwise);
-        this.K = findViewById(l.instruction_weight_page6_tips1);
-        this.L = findViewById(l.instruction_weight_page6_tips2);
-        this.M = findViewById(l.instruction_weight_page6_tips3);
+        this.u = findViewById(R.id.instruction_weight_img_weight_magnify);
+        this.C = (ImageView) findViewById(R.id.instruction_weight_img_swipe);
+        this.D = (ImageView) findViewById(R.id.weight_left_arrow);
+        this.E = (ImageView) findViewById(R.id.weight_right_arrow);
+        this.F = (ImageView) findViewById(R.id.instruction_weight_img_phone1);
+        this.G = (ImageView) findViewById(R.id.instruction_weight_img_phone_back1);
+        this.H = (ImageView) findViewById(R.id.instruction_weight_img_phone_back2);
+        this.w = findViewById(R.id.instruction_weight_phones);
+        this.I = findViewById(R.id.instruction_weight_page_6);
+        this.a = (ImageView) findViewById(R.id.instruction_weight_foot);
+        this.J = (ImageView) findViewById(R.id.instruction_weight_flatwise);
+        this.K = findViewById(R.id.instruction_weight_page6_tips1);
+        this.L = findViewById(R.id.instruction_weight_page6_tips2);
+        this.M = findViewById(R.id.instruction_weight_page6_tips3);
         this.I.setVisibility(m);
     }
 
@@ -267,8 +264,8 @@ public class InstructionWeightActivity extends SystemBarTintActivity {
 
     private void e() {
         c();
-        a(this.D, (int) e.instruction_weight_left_arrow);
-        a(this.E, (int) e.instruction_weight_right_arrow);
+        a(this.D, (int) R.anim.instruction_weight_left_arrow);
+        a(this.E, (int) R.anim.instruction_weight_right_arrow);
     }
 
     private void f() {
@@ -309,11 +306,11 @@ public class InstructionWeightActivity extends SystemBarTintActivity {
 
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView((int) n.activity_instruction_weight);
+        setContentView((int) R.layout.activity_instruction_weight);
         e();
         P = new C0714bp(this, this);
-        this.o = (ViewPager) findViewById(l.view_pager);
-        this.p = (c) findViewById(l.indicator);
+        this.o = (ViewPager) findViewById(R.id.view_pager);
+        this.p = (c) findViewById(R.id.indicator);
         this.r = new ArrayList(6);
         this.r.add(Fragment.instantiate(this, C0723bz.class.getName()));
         this.r.add(Fragment.instantiate(this, bA.class.getName()));

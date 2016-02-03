@@ -28,7 +28,6 @@ public abstract class s<T, V> {
     }
 
     private V a() {
-        InputStream sendRequest;
         AMapException e;
         Throwable th;
         int i = 0;
@@ -36,6 +35,7 @@ public abstract class s<T, V> {
         InputStream inputStream = null;
         HttpURLConnection httpURLConnection = null;
         while (i < this.maxTry) {
+            InputStream sendRequest;
             try {
                 this.recommandURL = getUrl();
                 byte[] makeProtobufRequestBytes = makeProtobufRequestBytes();

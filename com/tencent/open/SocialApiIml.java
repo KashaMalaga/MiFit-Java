@@ -111,9 +111,9 @@ public class SocialApiIml extends BaseApi {
         }
         bundle.putAll(composeActivityParams());
         if (SocialConstants.ACTION_ASK.equals(str)) {
-            bundle.putString(SocialConstants.PARAM_TYPE, SocialConstants.TYPE_REQUEST);
+            bundle.putString(com.xiaomi.channel.relationservice.data.a.h, SocialConstants.TYPE_REQUEST);
         } else if (SocialConstants.ACTION_GIFT.equals(str)) {
-            bundle.putString(SocialConstants.PARAM_TYPE, SocialConstants.TYPE_FREEGIFT);
+            bundle.putString(com.xiaomi.channel.relationservice.data.a.h, SocialConstants.TYPE_FREEGIFT);
         }
         a(activity, agentIntentWithTarget, str, bundle, ServerSetting.getInstance().getEnvUrl(Global.getContext(), ServerSetting.DEFAULT_URL_GIFT), iUiListener, false);
     }

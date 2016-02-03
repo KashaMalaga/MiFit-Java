@@ -325,11 +325,11 @@ public class C0927l {
     }
 
     private File d() {
+        boolean equals;
         if (Process.myUid() == h.E) {
             return null;
         }
         File file;
-        boolean equals;
         try {
             equals = "mounted".equals(Environment.getExternalStorageState());
         } catch (Exception e) {
@@ -362,10 +362,10 @@ public class C0927l {
     }
 
     private int e() {
-        boolean equals;
         if (Process.myUid() == h.E) {
             return 0;
         }
+        boolean equals;
         try {
             equals = "mounted".equals(Environment.getExternalStorageState());
         } catch (Exception e) {

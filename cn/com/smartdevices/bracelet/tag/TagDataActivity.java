@@ -29,9 +29,8 @@ import cn.com.smartdevices.bracelet.tag.a.i;
 import cn.com.smartdevices.bracelet.ui.SystemBarTintActivity;
 import com.huami.android.view.e;
 import com.huami.android.widget.f;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.bt.bleservice.BLEService;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
 import kankan.wheel.widget.a;
 import kankan.wheel.widget.l;
 
@@ -84,7 +83,7 @@ public class TagDataActivity extends SystemBarTintActivity implements OnClickLis
                 this.p.setVisibility(8);
                 this.u.setVisibility(0);
                 this.q.setEnabled(true);
-                this.q.setText(r.tag_connect);
+                this.q.setText(R.string.tag_connect);
                 return;
             case l.a /*1*/:
                 this.n.setVisibility(0);
@@ -93,7 +92,7 @@ public class TagDataActivity extends SystemBarTintActivity implements OnClickLis
                 this.p.setVisibility(8);
                 this.u.setVisibility(8);
                 this.q.setEnabled(false);
-                this.q.setText(r.tag_wait);
+                this.q.setText(R.string.tag_wait);
                 return;
             case a.k /*2*/:
                 this.n.setVisibility(0);
@@ -102,7 +101,7 @@ public class TagDataActivity extends SystemBarTintActivity implements OnClickLis
                 this.p.setVisibility(8);
                 this.u.setVisibility(8);
                 this.q.setEnabled(true);
-                this.q.setText(r.tag_start);
+                this.q.setText(R.string.tag_start);
                 return;
             case a.l /*3*/:
                 this.n.setVisibility(8);
@@ -110,7 +109,7 @@ public class TagDataActivity extends SystemBarTintActivity implements OnClickLis
                 this.t.setVisibility(8);
                 this.p.setVisibility(8);
                 this.u.setVisibility(8);
-                this.q.setText(r.tag_finish);
+                this.q.setText(R.string.tag_finish);
                 return;
             case a.aQ /*4*/:
                 f();
@@ -118,21 +117,21 @@ public class TagDataActivity extends SystemBarTintActivity implements OnClickLis
                 this.s.setVisibility(8);
                 this.t.setVisibility(8);
                 this.p.setVisibility(0);
-                this.p.setText(r.tag_error_notice);
+                this.p.setText(R.string.tag_error_notice);
                 this.u.setVisibility(8);
                 this.q.setEnabled(true);
-                this.q.setText(r.tag_click_to_retry);
+                this.q.setText(R.string.tag_click_to_retry);
                 return;
             case a.bt /*6*/:
                 f();
                 this.n.setVisibility(0);
                 this.s.setVisibility(8);
                 this.t.setVisibility(8);
-                this.p.setText(r.tag_reconnect_notice);
+                this.p.setText(R.string.tag_reconnect_notice);
                 this.p.setVisibility(0);
                 this.u.setVisibility(8);
                 this.q.setEnabled(true);
-                this.q.setText(r.tag_start);
+                this.q.setText(R.string.tag_start);
                 return;
             default:
                 return;
@@ -164,8 +163,8 @@ public class TagDataActivity extends SystemBarTintActivity implements OnClickLis
     private void c() {
         C0596r.b(c, "showConfirmDialog");
         Bundle bundle = new Bundle();
-        bundle.putString(f.a, getString(r.confirm_complete_tag));
-        bundle.putString(a.b, getString(r.label_continue_record));
+        bundle.putString(f.a, getString(R.string.confirm_complete_tag));
+        bundle.putString(a.b, getString(R.string.label_continue_record));
         C0487a.a(this, bundle).setOpClickListener(this.A);
     }
 
@@ -173,10 +172,10 @@ public class TagDataActivity extends SystemBarTintActivity implements OnClickLis
         C0596r.b(c, "startCounter|mActionEnabled:" + this.q.isEnabled());
         this.w = b.a(3);
         FragmentTransaction beginTransaction = getFragmentManager().beginTransaction();
-        beginTransaction.setCustomAnimations(com.xiaomi.hm.health.e.fade_in, com.xiaomi.hm.health.e.fade_out);
-        beginTransaction.replace(com.xiaomi.hm.health.l.fragment_container, this.w);
+        beginTransaction.setCustomAnimations(R.anim.fade_in, R.anim.fade_out);
+        beginTransaction.replace(R.id.fragment_container, this.w);
         beginTransaction.commit();
-        findViewById(com.xiaomi.hm.health.l.fragment_container).setVisibility(0);
+        findViewById(R.id.fragment_container).setVisibility(0);
         this.l.f();
     }
 
@@ -196,8 +195,8 @@ public class TagDataActivity extends SystemBarTintActivity implements OnClickLis
 
     private void g() {
         Bundle bundle = new Bundle();
-        bundle.putString(f.a, getString(r.confirm_abort_tag));
-        bundle.putString(a.b, getString(r.label_continue_record));
+        bundle.putString(f.a, getString(R.string.confirm_abort_tag));
+        bundle.putString(a.b, getString(R.string.label_continue_record));
         C0487a.a(this, bundle).setOpClickListener(this.B);
     }
 
@@ -207,8 +206,8 @@ public class TagDataActivity extends SystemBarTintActivity implements OnClickLis
             return true;
         }
         Bundle bundle = new Bundle();
-        bundle.putString(f.a, getString(r.confirm_abort_tag));
-        bundle.putString(a.b, getString(r.label_continue_record));
+        bundle.putString(f.a, getString(R.string.confirm_abort_tag));
+        bundle.putString(a.b, getString(R.string.label_continue_record));
         C0487a.a(this, bundle).setOpClickListener(this.B);
         return false;
     }
@@ -218,11 +217,11 @@ public class TagDataActivity extends SystemBarTintActivity implements OnClickLis
         if (i == 2 && this.w != null && this.w.isAdded() && !this.w.isDetached()) {
             if (!this.d) {
                 FragmentTransaction beginTransaction = getFragmentManager().beginTransaction();
-                beginTransaction.setCustomAnimations(com.xiaomi.hm.health.e.fade_in, com.xiaomi.hm.health.e.fade_out);
+                beginTransaction.setCustomAnimations(R.anim.fade_in, R.anim.fade_out);
                 beginTransaction.remove(this.w);
                 beginTransaction.commit();
             }
-            findViewById(com.xiaomi.hm.health.l.fragment_container).setVisibility(8);
+            findViewById(R.id.fragment_container).setVisibility(8);
             this.q.setEnabled(true);
             e();
         }
@@ -243,13 +242,13 @@ public class TagDataActivity extends SystemBarTintActivity implements OnClickLis
         int id = view.getId();
         C0596r.b(c, "onClick|id:" + id);
         switch (id) {
-            case com.xiaomi.hm.health.l.home_back /*2131296313*/:
+            case R.id.home_back:
                 if (h()) {
                     finish();
                     return;
                 }
                 return;
-            case com.xiaomi.hm.health.l.action_button /*2131296395*/:
+            case R.id.action_button:
                 b();
                 return;
             default:
@@ -262,17 +261,17 @@ public class TagDataActivity extends SystemBarTintActivity implements OnClickLis
         C0596r.b(c, "onCreate");
         this.e = ((PowerManager) getSystemService("power")).newWakeLock(1, "TagData");
         this.e.acquire();
-        setContentView((int) n.activity_tag_data);
-        this.m = (TextView) findViewById(com.xiaomi.hm.health.l.name);
-        this.r = (ImageView) findViewById(com.xiaomi.hm.health.l.icon);
-        this.n = (TextView) findViewById(com.xiaomi.hm.health.l.tag_action_tips);
-        this.s = (LinearLayout) findViewById(com.xiaomi.hm.health.l.rl_time);
-        TextView textView = (TextView) findViewById(com.xiaomi.hm.health.l.doing_label);
-        this.o = (TextView) findViewById(com.xiaomi.hm.health.l.timer);
-        this.t = (RelativeLayout) findViewById(com.xiaomi.hm.health.l.rl_connection);
-        this.u = (RelativeLayout) findViewById(com.xiaomi.hm.health.l.rl_connection_f);
-        this.p = (TextView) findViewById(com.xiaomi.hm.health.l.notice);
-        this.q = (Button) findViewById(com.xiaomi.hm.health.l.action_button);
+        setContentView((int) R.layout.activity_tag_data);
+        this.m = (TextView) findViewById(R.id.name);
+        this.r = (ImageView) findViewById(R.id.icon);
+        this.n = (TextView) findViewById(R.id.tag_action_tips);
+        this.s = (LinearLayout) findViewById(R.id.rl_time);
+        TextView textView = (TextView) findViewById(R.id.doing_label);
+        this.o = (TextView) findViewById(R.id.timer);
+        this.t = (RelativeLayout) findViewById(R.id.rl_connection);
+        this.u = (RelativeLayout) findViewById(R.id.rl_connection_f);
+        this.p = (TextView) findViewById(R.id.notice);
+        this.q = (Button) findViewById(R.id.action_button);
         Intent intent = getIntent();
         Object obj = com.xiaomi.e.a.f;
         String str = com.xiaomi.e.a.f;
@@ -283,17 +282,17 @@ public class TagDataActivity extends SystemBarTintActivity implements OnClickLis
             this.r.setBackgroundResource(intent.getIntExtra(j, 0));
         }
         if (TextUtils.isEmpty(obj)) {
-            com.huami.android.view.b.a((Context) this, (int) r.action_type_error, 0).show();
+            com.huami.android.view.b.a((Context) this, (int) R.string.action_type_error, 0).show();
             finish();
             return;
         }
         this.d = false;
         this.q.setOnClickListener(this);
-        findViewById(com.xiaomi.hm.health.l.home_back).setOnClickListener(this);
+        findViewById(R.id.home_back).setOnClickListener(this);
         this.g.addAction(BLEService.b);
         registerReceiver(this.z, this.g);
-        this.n.setText(getString(r.tag_action_tips, new Object[]{str}));
-        textView.setText(getString(r.tag_doing_label, new Object[]{str}));
+        this.n.setText(getString(R.string.tag_action_tips, new Object[]{str}));
+        textView.setText(getString(R.string.tag_doing_label, new Object[]{str}));
         this.l = new c(this, obj);
         this.l.a((i) this);
         this.l.b();

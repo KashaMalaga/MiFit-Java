@@ -11,8 +11,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import com.huami.android.view.c;
 import com.huami.android.view.e;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
+import com.xiaomi.hm.health.R;
 
 public class a extends c {
     public static final String a = "left_button";
@@ -39,17 +38,17 @@ public class a extends c {
     }
 
     protected int inflateLayout() {
-        return n.fragment_running_short_track_confirm;
+        return R.layout.fragment_running_short_track_confirm;
     }
 
     public void onClick(View view) {
         int id = view.getId();
-        if (id == l.left_button) {
+        if (id == R.id.left_button) {
             if (this.d != null) {
                 this.d.b(this);
             }
             dismiss();
-        } else if (id == l.right_button) {
+        } else if (id == R.id.right_button) {
             if (this.d != null) {
                 this.d.c(this);
             }
@@ -62,14 +61,14 @@ public class a extends c {
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         View onCreateView = super.onCreateView(layoutInflater, viewGroup, bundle);
         Bundle arguments = getArguments();
-        ((TextView) onCreateView.findViewById(l.description)).setText(arguments.getString(c));
-        TextView textView = (TextView) onCreateView.findViewById(l.left_button);
+        ((TextView) onCreateView.findViewById(R.id.description)).setText(arguments.getString(c));
+        TextView textView = (TextView) onCreateView.findViewById(R.id.left_button);
         textView.setOnClickListener(this);
         CharSequence string = arguments.getString(a);
         if (!TextUtils.isEmpty(string)) {
             textView.setText(string);
         }
-        textView = (TextView) onCreateView.findViewById(l.right_button);
+        textView = (TextView) onCreateView.findViewById(R.id.right_button);
         textView.setOnClickListener(this);
         CharSequence string2 = arguments.getString(b);
         if (!TextUtils.isEmpty(string2)) {

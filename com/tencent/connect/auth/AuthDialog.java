@@ -384,7 +384,7 @@ public class AuthDialog extends Dialog {
     private static void b(Context context, String str) {
         try {
             JSONObject parseJson = Util.parseJson(str);
-            int i = parseJson.getInt(SocialConstants.PARAM_TYPE);
+            int i = parseJson.getInt(com.xiaomi.channel.relationservice.data.a.h);
             Toast.makeText(context.getApplicationContext(), parseJson.getString(SocialConstants.PARAM_SEND_MSG), i).show();
         } catch (JSONException e) {
             e.printStackTrace();

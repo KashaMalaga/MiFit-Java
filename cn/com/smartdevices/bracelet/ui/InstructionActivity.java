@@ -7,8 +7,7 @@ import android.support.v4.view.ViewPager;
 import cn.com.smartdevices.bracelet.C0401a;
 import cn.com.smartdevices.bracelet.ui.widget.c;
 import com.activeandroid.b;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
+import com.xiaomi.hm.health.R;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -36,9 +35,9 @@ public class InstructionActivity extends SystemBarTintActivity {
 
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView((int) n.activity_instruction);
-        this.a = (ViewPager) findViewById(l.view_pager);
-        this.b = (c) findViewById(l.indicator);
+        setContentView((int) R.layout.activity_instruction);
+        this.a = (ViewPager) findViewById(R.id.view_pager);
+        this.b = (c) findViewById(R.id.indicator);
         this.d = new ArrayList(3);
         this.d.add(Fragment.instantiate(this, C0710bl.class.getName()));
         this.d.add(Fragment.instantiate(this, C0711bm.class.getName()));

@@ -81,10 +81,15 @@ public class J {
     }
 
     public static boolean d(Context context) {
-        boolean a = F.a(context);
-        if (!a) {
+        if (b.h().t.a.booleanValue()) {
+            boolean a = F.a(context);
+            if (a) {
+                return a;
+            }
             C0596r.e(B.a, "Failed to syncPartner from Manual");
+            return a;
         }
-        return a;
+        C0596r.d(B.a, "syncPartnerShoesFromLocal !Config.getInstance().SHOES.ENABLE");
+        return true;
     }
 }

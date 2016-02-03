@@ -1,10 +1,9 @@
 package com.xiaomi.h.a;
 
 import b.a.C0374dh;
-import cn.com.smartdevices.bracelet.gps.c.a.g;
 import cn.com.smartdevices.bracelet.shoes.sync.SyncShoesDataService;
 import com.sina.weibo.sdk.component.WidgetRequestParam;
-import com.tencent.open.SocialConstants;
+import com.xiaomi.channel.relationservice.data.a;
 import com.xiaomi.market.sdk.o;
 import java.io.Serializable;
 import java.util.BitSet;
@@ -13,10 +12,10 @@ import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
-import kankan.wheel.widget.a;
 import kankan.wheel.widget.l;
 import org.apache.thrift.b;
 import org.apache.thrift.meta_data.e;
+import org.apache.thrift.meta_data.g;
 import org.apache.thrift.protocol.c;
 import org.apache.thrift.protocol.f;
 import org.apache.thrift.protocol.i;
@@ -29,10 +28,10 @@ public class u implements Serializable, Cloneable, b<u, v> {
     private static final c n = new c("target", C0374dh.j, (short) 2);
     private static final c o = new c(SyncShoesDataService.d, C0374dh.i, (short) 3);
     private static final c p = new c("appId", C0374dh.i, (short) 4);
-    private static final c q = new c(SocialConstants.PARAM_TYPE, C0374dh.i, (short) 5);
+    private static final c q = new c(a.h, C0374dh.i, (short) 5);
     private static final c r = new c("requireAck", (byte) 2, (short) 6);
     private static final c s = new c("payload", C0374dh.i, (short) 7);
-    private static final c t = new c(g.g, C0374dh.k, (short) 8);
+    private static final c t = new c(a.G, C0374dh.k, (short) 8);
     private static final c u = new c(o.d, C0374dh.i, (short) 9);
     private static final c v = new c(WidgetRequestParam.REQ_PARAM_COMMENT_CATEGORY, C0374dh.i, (short) 10);
     public String a;
@@ -50,13 +49,13 @@ public class u implements Serializable, Cloneable, b<u, v> {
     static {
         Map enumMap = new EnumMap(v.class);
         enumMap.put(v.DEBUG, new org.apache.thrift.meta_data.b("debug", (byte) 2, new org.apache.thrift.meta_data.c(C0374dh.i)));
-        enumMap.put(v.TARGET, new org.apache.thrift.meta_data.b("target", (byte) 2, new org.apache.thrift.meta_data.g(C0374dh.j, C1104k.class)));
+        enumMap.put(v.TARGET, new org.apache.thrift.meta_data.b("target", (byte) 2, new g(C0374dh.j, C1104k.class)));
         enumMap.put(v.ID, new org.apache.thrift.meta_data.b(SyncShoesDataService.d, (byte) 1, new org.apache.thrift.meta_data.c(C0374dh.i)));
         enumMap.put(v.APP_ID, new org.apache.thrift.meta_data.b("appId", (byte) 2, new org.apache.thrift.meta_data.c(C0374dh.i)));
-        enumMap.put(v.TYPE, new org.apache.thrift.meta_data.b(SocialConstants.PARAM_TYPE, (byte) 2, new org.apache.thrift.meta_data.c(C0374dh.i)));
+        enumMap.put(v.TYPE, new org.apache.thrift.meta_data.b(a.h, (byte) 2, new org.apache.thrift.meta_data.c(C0374dh.i)));
         enumMap.put(v.REQUIRE_ACK, new org.apache.thrift.meta_data.b("requireAck", (byte) 1, new org.apache.thrift.meta_data.c((byte) 2)));
         enumMap.put(v.PAYLOAD, new org.apache.thrift.meta_data.b("payload", (byte) 2, new org.apache.thrift.meta_data.c(C0374dh.i)));
-        enumMap.put(v.EXTRA, new org.apache.thrift.meta_data.b(g.g, (byte) 2, new e(C0374dh.k, new org.apache.thrift.meta_data.c(C0374dh.i), new org.apache.thrift.meta_data.c(C0374dh.i))));
+        enumMap.put(v.EXTRA, new org.apache.thrift.meta_data.b(a.G, (byte) 2, new e(C0374dh.k, new org.apache.thrift.meta_data.c(C0374dh.i), new org.apache.thrift.meta_data.c(C0374dh.i))));
         enumMap.put(v.PACKAGE_NAME, new org.apache.thrift.meta_data.b(o.d, (byte) 2, new org.apache.thrift.meta_data.c(C0374dh.i)));
         enumMap.put(v.CATEGORY, new org.apache.thrift.meta_data.b(WidgetRequestParam.REQ_PARAM_COMMENT_CATEGORY, (byte) 2, new org.apache.thrift.meta_data.c(C0374dh.i)));
         k = Collections.unmodifiableMap(enumMap);
@@ -95,7 +94,7 @@ public class u implements Serializable, Cloneable, b<u, v> {
                         this.a = fVar.w();
                         break;
                     }
-                case a.k /*2*/:
+                case kankan.wheel.widget.a.k /*2*/:
                     if (i.b != C0374dh.j) {
                         i.a(fVar, i.b);
                         break;
@@ -103,7 +102,7 @@ public class u implements Serializable, Cloneable, b<u, v> {
                     this.b = new C1104k();
                     this.b.a(fVar);
                     break;
-                case a.l /*3*/:
+                case kankan.wheel.widget.a.l /*3*/:
                     if (i.b != C0374dh.i) {
                         i.a(fVar, i.b);
                         break;
@@ -111,7 +110,7 @@ public class u implements Serializable, Cloneable, b<u, v> {
                         this.c = fVar.w();
                         break;
                     }
-                case a.aQ /*4*/:
+                case kankan.wheel.widget.a.aQ /*4*/:
                     if (i.b != C0374dh.i) {
                         i.a(fVar, i.b);
                         break;
@@ -119,7 +118,7 @@ public class u implements Serializable, Cloneable, b<u, v> {
                         this.d = fVar.w();
                         break;
                     }
-                case a.X /*5*/:
+                case kankan.wheel.widget.a.X /*5*/:
                     if (i.b != C0374dh.i) {
                         i.a(fVar, i.b);
                         break;
@@ -127,7 +126,7 @@ public class u implements Serializable, Cloneable, b<u, v> {
                         this.e = fVar.w();
                         break;
                     }
-                case a.bt /*6*/:
+                case kankan.wheel.widget.a.bt /*6*/:
                     if (i.b != (byte) 2) {
                         i.a(fVar, i.b);
                         break;
@@ -135,7 +134,7 @@ public class u implements Serializable, Cloneable, b<u, v> {
                     this.f = fVar.q();
                     b(true);
                     break;
-                case a.bc /*7*/:
+                case kankan.wheel.widget.a.bc /*7*/:
                     if (i.b != C0374dh.i) {
                         i.a(fVar, i.b);
                         break;
@@ -143,7 +142,7 @@ public class u implements Serializable, Cloneable, b<u, v> {
                         this.g = fVar.w();
                         break;
                     }
-                case a.ba /*8*/:
+                case kankan.wheel.widget.a.ba /*8*/:
                     if (i.b != C0374dh.k) {
                         i.a(fVar, i.b);
                         break;
@@ -155,7 +154,7 @@ public class u implements Serializable, Cloneable, b<u, v> {
                     }
                     fVar.l();
                     break;
-                case a.bo /*9*/:
+                case kankan.wheel.widget.a.bo /*9*/:
                     if (i.b != C0374dh.i) {
                         i.a(fVar, i.b);
                         break;
@@ -163,7 +162,7 @@ public class u implements Serializable, Cloneable, b<u, v> {
                         this.i = fVar.w();
                         break;
                     }
-                case a.bd /*10*/:
+                case kankan.wheel.widget.a.bd /*10*/:
                     if (i.b != C0374dh.i) {
                         i.a(fVar, i.b);
                         break;

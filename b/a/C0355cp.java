@@ -1,7 +1,7 @@
 package b.a;
 
 import com.huami.android.widget.f;
-import com.tencent.open.SocialConstants;
+import com.xiaomi.channel.relationservice.data.a;
 
 public class C0355cp extends C0339cy {
     public static final int a = 0;
@@ -14,7 +14,7 @@ public class C0355cp extends C0339cy {
     public static final int h = 7;
     private static final C0371de j = new C0371de("TApplicationException");
     private static final cT k = new cT(f.a, C0374dh.i, (short) 1);
-    private static final cT l = new cT(SocialConstants.PARAM_TYPE, (byte) 8, (short) 2);
+    private static final cT l = new cT(a.h, (byte) 8, (short) 2);
     private static final long m = 1;
     protected int i = a;
 

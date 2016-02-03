@@ -2,8 +2,8 @@ package cn.com.smartdevices.bracelet.ui;
 
 import cn.com.smartdevices.bracelet.Keeper;
 import com.huami.android.view.b;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.bt.a.d;
-import com.xiaomi.hm.health.r;
 
 class C0807g extends d {
     final /* synthetic */ boolean a;
@@ -25,6 +25,6 @@ class C0807g extends d {
 
     public void b(Object obj) {
         super.b(obj);
-        b.a(this.b.b.a.p, this.b.b.a.p.getString(r.bt_operation_failed_tips), 0).show();
+        b.a(this.b.b.a.p, this.b.b.a.p.getString(R.string.bt_operation_failed_tips), 0).show();
     }
 }

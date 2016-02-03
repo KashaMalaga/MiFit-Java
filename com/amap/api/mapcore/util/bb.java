@@ -88,13 +88,13 @@ class bb extends bj {
     }
 
     protected String a(List<ad> list) {
+        InputStream fileInputStream;
         bp bpVar;
         InputStream inputStream;
         Throwable e;
         IOException iOException;
         InputStream inputStream2 = null;
         bp bpVar2 = null;
-        InputStream fileInputStream;
         try {
             File file = new File("/data/anr/traces.txt");
             if (file.exists()) {

@@ -4,7 +4,7 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.widget.FrameLayout;
-import com.xiaomi.hm.health.n;
+import com.xiaomi.hm.health.R;
 
 public class PersonPageUserInfoView extends FrameLayout {
     private static final String a = "PersonPageUserInfoView";
@@ -14,7 +14,7 @@ public class PersonPageUserInfoView extends FrameLayout {
     public PersonPageUserInfoView(Context context) {
         super(context);
         this.b = LayoutInflater.from(context);
-        this.b.inflate(n.person_page_user_info, this);
+        this.b.inflate(R.layout.person_page_user_info, this);
     }
 
     public PersonPageUserInfoView(Context context, AttributeSet attributeSet) {

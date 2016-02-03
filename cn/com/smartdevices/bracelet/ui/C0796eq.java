@@ -15,17 +15,12 @@ import cn.com.smartdevices.bracelet.Utils;
 import cn.com.smartdevices.bracelet.eventbus.EventSettingFragmentUpdate;
 import cn.com.smartdevices.bracelet.model.PersonInfo;
 import cn.com.smartdevices.bracelet.weight.aA;
-import com.xiaomi.hm.health.k;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 import de.greenrobot.event.EventBus;
 import java.util.Locale;
 import kankan.wheel.widget.WheelView;
 import kankan.wheel.widget.a;
 import kankan.wheel.widget.a.f;
-import kankan.wheel.widget.g;
-import kankan.wheel.widget.h;
 
 public class C0796eq extends Fragment implements OnClickListener {
     private static final String a = "SettingInComingCallTimeFragment";
@@ -36,14 +31,14 @@ public class C0796eq extends Fragment implements OnClickListener {
 
     private void a(int i) {
         if (i == 2) {
-            this.e.setText(r.incoming_call_notify_closed);
+            this.e.setText(R.string.incoming_call_notify_closed);
             return;
         }
-        this.e.setText(getString(r.incoming_call_notify_tips, new Object[]{Integer.valueOf(i)}));
+        this.e.setText(getString(R.string.incoming_call_notify_tips, new Object[]{Integer.valueOf(i)}));
     }
 
     protected int a() {
-        return n.fragment_setting_incomingcall;
+        return R.layout.fragment_setting_incomingcall;
     }
 
     protected void b() {
@@ -71,13 +66,13 @@ public class C0796eq extends Fragment implements OnClickListener {
 
     public void onClick(View view) {
         switch (view.getId()) {
-            case l.confirm /*2131296545*/:
+            case R.id.confirm:
                 if (getActivity() != null) {
                     getActivity().finish();
                 }
                 b();
                 return;
-            case l.cancel /*2131296581*/:
+            case R.id.cancel:
                 if (getActivity() != null) {
                     getActivity().finish();
                     return;
@@ -95,13 +90,13 @@ public class C0796eq extends Fragment implements OnClickListener {
 
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         View inflate = layoutInflater.inflate(a(), viewGroup, false);
-        this.e = (TextView) inflate.findViewById(l.incoming_call_cur_value);
-        this.c = (WheelView) inflate.findViewById(l.wheel);
-        f c0763dl = new C0763dl(getActivity(), 2, 30, this.c, getResources().getColor(g.highlight), getResources().getColor(g.main_ui_content_color), a.bm, false, 46, (int) (aA.h * 0.8f), (int) (21.0f * 0.8f), (int) (0.8f * 21.0f), 1);
+        this.e = (TextView) inflate.findViewById(R.id.incoming_call_cur_value);
+        this.c = (WheelView) inflate.findViewById(R.id.wheel);
+        f c0763dl = new C0763dl(getActivity(), 2, 30, this.c, getResources().getColor(R.color.highlight), getResources().getColor(R.color.main_ui_content_color), a.bm, false, 46, (int) (aA.h * 0.8f), (int) (21.0f * 0.8f), (int) (0.8f * 21.0f), 1);
         c0763dl.a(C0763dl.c);
         c0763dl.a(this.d);
-        c0763dl.e(r.second);
-        this.c.a(5).e(h.wheel_custom_val_white_1).a(com.xiaomi.e.a.f, (float) aA.h).a(c0763dl);
+        c0763dl.e(R.string.second);
+        this.c.a(5).e(R.drawable.wheel_custom_val_white_1).a(com.xiaomi.e.a.f, (float) aA.h).a(c0763dl);
         int inComingCallTime = this.b.getInComingCallTime();
         if (inComingCallTime < 2) {
             inComingCallTime = 2;
@@ -109,19 +104,19 @@ public class C0796eq extends Fragment implements OnClickListener {
         this.c.c(inComingCallTime - 2);
         a(inComingCallTime);
         this.c.a(new C0797er(this));
-        inflate.findViewById(l.cancel).setOnClickListener(this);
-        inflate.findViewById(l.confirm).setOnClickListener(this);
-        ImageView imageView = (ImageView) inflate.findViewById(l.incoming_call_help_img);
-        TextView textView = (TextView) inflate.findViewById(l.incoming_call_info_2);
+        inflate.findViewById(R.id.cancel).setOnClickListener(this);
+        inflate.findViewById(R.id.confirm).setOnClickListener(this);
+        ImageView imageView = (ImageView) inflate.findViewById(R.id.incoming_call_help_img);
+        TextView textView = (TextView) inflate.findViewById(R.id.incoming_call_info_2);
         if (!Locale.getDefault().toString().equals(Locale.SIMPLIFIED_CHINESE.toString())) {
-            imageView.setImageResource(k.incoming_help_3);
+            imageView.setImageResource(R.drawable.incoming_help_3);
             textView.setVisibility(4);
         } else if (TextUtils.isEmpty(Utils.f(getActivity()))) {
-            imageView.setImageResource(k.incoming_help_2);
-            textView.setText(r.incomingcall_info_3);
+            imageView.setImageResource(R.drawable.incoming_help_2);
+            textView.setText(R.string.incomingcall_info_3);
         } else {
-            imageView.setImageResource(k.incoming_help_1);
-            textView.setText(r.incomingcall_info_2);
+            imageView.setImageResource(R.drawable.incoming_help_1);
+            textView.setText(R.string.incomingcall_info_2);
         }
         return inflate;
     }

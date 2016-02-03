@@ -34,43 +34,43 @@ public class b implements a {
     }
 
     private void b() {
-        String str;
+        RandomAccessFile randomAccessFile;
+        FileLock lock;
         Throwable e;
         BufferedWriter bufferedWriter;
         FileLock fileLock;
-        RandomAccessFile randomAccessFile;
-        String str2;
+        RandomAccessFile randomAccessFile2;
+        String str;
         BufferedWriter bufferedWriter2 = null;
-        RandomAccessFile randomAccessFile2 = null;
+        RandomAccessFile randomAccessFile3 = null;
         FileLock fileLock2 = null;
         BufferedWriter bufferedWriter3 = null;
-        RandomAccessFile randomAccessFile3;
-        FileLock lock;
         try {
             File file = new File(this.e.getExternalFilesDir(null) + c);
+            String str2;
             if ((file.exists() && file.isDirectory()) || file.mkdirs()) {
                 File file2 = new File(file, "log.lock");
                 if (!file2.exists() || file2.isDirectory()) {
                     file2.createNewFile();
                 }
-                randomAccessFile3 = new RandomAccessFile(file2, "rw");
+                randomAccessFile = new RandomAccessFile(file2, "rw");
                 try {
-                    lock = randomAccessFile3.getChannel().lock();
+                    lock = randomAccessFile.getChannel().lock();
                     try {
                         bufferedWriter3 = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(new File(file, "log1.txt"), true)));
                         while (!f.isEmpty()) {
                             try {
                                 Pair pair = (Pair) f.remove(0);
-                                str = (String) pair.first;
+                                str2 = (String) pair.first;
                                 if (pair.second != null) {
-                                    str = (str + "\n") + Log.getStackTraceString((Throwable) pair.second);
+                                    str2 = (str2 + "\n") + Log.getStackTraceString((Throwable) pair.second);
                                 }
-                                bufferedWriter3.write(str + "\n");
+                                bufferedWriter3.write(str2 + "\n");
                             } catch (Exception e2) {
                                 e = e2;
                                 bufferedWriter = bufferedWriter3;
                                 fileLock = lock;
-                                randomAccessFile = randomAccessFile3;
+                                randomAccessFile2 = randomAccessFile;
                             } catch (Throwable th) {
                                 e = th;
                                 bufferedWriter2 = bufferedWriter3;
@@ -106,15 +106,15 @@ public class b implements a {
                                     Log.e(this.d, com.xiaomi.e.a.f, e32);
                                 }
                             }
-                            if (randomAccessFile3 != null) {
+                            if (randomAccessFile != null) {
                                 try {
-                                    randomAccessFile3.close();
+                                    randomAccessFile.close();
                                     return;
                                 } catch (IOException e4) {
                                     e32 = e4;
-                                    str = this.d;
-                                    str2 = com.xiaomi.e.a.f;
-                                    Log.e(str, str2, e32);
+                                    str2 = this.d;
+                                    str = com.xiaomi.e.a.f;
+                                    Log.e(str2, str, e32);
                                     return;
                                 }
                             }
@@ -122,7 +122,7 @@ public class b implements a {
                         } catch (Exception e5) {
                             e32 = e5;
                             fileLock = lock;
-                            randomAccessFile = randomAccessFile3;
+                            randomAccessFile2 = randomAccessFile;
                             try {
                                 Log.e(this.d, com.xiaomi.e.a.f, e32);
                                 if (bufferedWriter != null) {
@@ -139,21 +139,21 @@ public class b implements a {
                                         Log.e(this.d, com.xiaomi.e.a.f, e3222);
                                     }
                                 }
-                                if (randomAccessFile == null) {
+                                if (randomAccessFile2 == null) {
                                     try {
-                                        randomAccessFile.close();
+                                        randomAccessFile2.close();
                                     } catch (IOException e6) {
                                         e3222 = e6;
-                                        str = this.d;
-                                        str2 = com.xiaomi.e.a.f;
-                                        Log.e(str, str2, e3222);
+                                        str2 = this.d;
+                                        str = com.xiaomi.e.a.f;
+                                        Log.e(str2, str, e3222);
                                         return;
                                     }
                                 }
                             } catch (Throwable th2) {
                                 e3222 = th2;
                                 lock = fileLock;
-                                randomAccessFile3 = randomAccessFile;
+                                randomAccessFile = randomAccessFile2;
                                 bufferedWriter2 = bufferedWriter;
                                 if (bufferedWriter2 != null) {
                                     try {
@@ -167,9 +167,9 @@ public class b implements a {
                                 } catch (Throwable e72) {
                                     Log.e(this.d, com.xiaomi.e.a.f, e72);
                                 }
-                                if (randomAccessFile3 != null) {
+                                if (randomAccessFile != null) {
                                     try {
-                                        randomAccessFile3.close();
+                                        randomAccessFile.close();
                                     } catch (Throwable e722) {
                                         Log.e(this.d, com.xiaomi.e.a.f, e722);
                                     }
@@ -185,23 +185,23 @@ public class b implements a {
                             if (lock != null && lock.isValid()) {
                                 lock.release();
                             }
-                            if (randomAccessFile3 != null) {
-                                randomAccessFile3.close();
+                            if (randomAccessFile != null) {
+                                randomAccessFile.close();
                             }
                             throw e3222;
                         }
                     } catch (Exception e8) {
                         e3222 = e8;
                         bufferedWriter = bufferedWriter2;
-                        randomAccessFile = randomAccessFile3;
+                        randomAccessFile2 = randomAccessFile;
                         fileLock = lock;
                         Log.e(this.d, com.xiaomi.e.a.f, e3222);
                         if (bufferedWriter != null) {
                             bufferedWriter.close();
                         }
                         fileLock.release();
-                        if (randomAccessFile == null) {
-                            randomAccessFile.close();
+                        if (randomAccessFile2 == null) {
+                            randomAccessFile2.close();
                         }
                     } catch (Throwable th4) {
                         e3222 = th4;
@@ -209,22 +209,22 @@ public class b implements a {
                             bufferedWriter2.close();
                         }
                         lock.release();
-                        if (randomAccessFile3 != null) {
-                            randomAccessFile3.close();
+                        if (randomAccessFile != null) {
+                            randomAccessFile.close();
                         }
                         throw e3222;
                     }
                 } catch (Exception e9) {
                     e3222 = e9;
                     bufferedWriter = bufferedWriter2;
-                    randomAccessFile = randomAccessFile3;
+                    randomAccessFile2 = randomAccessFile;
                     Log.e(this.d, com.xiaomi.e.a.f, e3222);
                     if (bufferedWriter != null) {
                         bufferedWriter.close();
                     }
                     fileLock.release();
-                    if (randomAccessFile == null) {
-                        randomAccessFile.close();
+                    if (randomAccessFile2 == null) {
+                        randomAccessFile2.close();
                     }
                 } catch (Throwable th5) {
                     e3222 = th5;
@@ -233,8 +233,8 @@ public class b implements a {
                         bufferedWriter2.close();
                     }
                     lock.release();
-                    if (randomAccessFile3 != null) {
-                        randomAccessFile3.close();
+                    if (randomAccessFile != null) {
+                        randomAccessFile.close();
                     }
                     throw e3222;
                 }
@@ -256,11 +256,11 @@ public class b implements a {
             }
             if (bufferedWriter2 != null) {
                 try {
-                    randomAccessFile2.close();
+                    randomAccessFile3.close();
                 } catch (IOException e11) {
                     e3222 = e11;
-                    str = this.d;
-                    str2 = com.xiaomi.e.a.f;
+                    str2 = this.d;
+                    str = com.xiaomi.e.a.f;
                 }
             }
         } catch (Exception e12) {
@@ -272,19 +272,19 @@ public class b implements a {
                 bufferedWriter.close();
             }
             fileLock.release();
-            if (randomAccessFile == null) {
-                randomAccessFile.close();
+            if (randomAccessFile2 == null) {
+                randomAccessFile2.close();
             }
         } catch (Throwable th6) {
             e3222 = th6;
             lock = bufferedWriter2;
-            randomAccessFile3 = bufferedWriter2;
+            randomAccessFile = bufferedWriter2;
             if (bufferedWriter2 != null) {
                 bufferedWriter2.close();
             }
             lock.release();
-            if (randomAccessFile3 != null) {
-                randomAccessFile3.close();
+            if (randomAccessFile != null) {
+                randomAccessFile.close();
             }
             throw e3222;
         }

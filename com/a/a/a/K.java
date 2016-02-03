@@ -19,11 +19,11 @@ class K {
     private int g;
 
     protected K(ByteBuffer byteBuffer, C0895d c0895d) {
-        Closeable c0892a;
         Throwable th;
         this.c = byteBuffer;
         this.g = byteBuffer.position();
         this.f = c0895d;
+        Closeable c0892a;
         try {
             c0892a = new C0892a(byteBuffer);
             try {

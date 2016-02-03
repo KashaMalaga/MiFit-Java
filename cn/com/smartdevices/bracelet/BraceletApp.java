@@ -11,8 +11,7 @@ import cn.com.smartdevices.bracelet.push.h;
 import com.activeandroid.c;
 import com.xiaomi.channel.gamesdk.b;
 import com.xiaomi.e.a;
-import com.xiaomi.hm.health.k;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 
 public class BraceletApp extends CrashReportingApplication {
     private static final String k = "BraceletApp";
@@ -25,19 +24,19 @@ public class BraceletApp extends CrashReportingApplication {
     }
 
     public String b() {
-        return getString(r.report_email);
+        return getString(R.string.report_email);
     }
 
     public Bundle c() {
         Bundle bundle = new Bundle();
-        bundle.putString(CrashReportingApplication.h, getString(r.crash_report_email_subject, new Object[]{d(), e()}));
-        bundle.putString(CrashReportingApplication.i, getString(r.crash_report_email_text));
-        bundle.putString(CrashReportingApplication.f, getString(r.crash_report_dialog_title));
-        bundle.putString(CrashReportingApplication.g, getString(r.crash_report_dialog_text));
-        bundle.putString(CrashReportingApplication.c, getString(r.crash_report_btn_report));
-        bundle.putString(CrashReportingApplication.b, getString(r.crash_report_btn_exit));
+        bundle.putString(CrashReportingApplication.h, getString(R.string.crash_report_email_subject, new Object[]{d(), e()}));
+        bundle.putString(CrashReportingApplication.i, getString(R.string.crash_report_email_text));
+        bundle.putString(CrashReportingApplication.f, getString(R.string.crash_report_dialog_title));
+        bundle.putString(CrashReportingApplication.g, getString(R.string.crash_report_dialog_text));
+        bundle.putString(CrashReportingApplication.c, getString(R.string.crash_report_btn_report));
+        bundle.putString(CrashReportingApplication.b, getString(R.string.crash_report_btn_exit));
         bundle.putString(CrashReportingApplication.d, a.f);
-        bundle.putInt(CrashReportingApplication.e, k.app_icon);
+        bundle.putInt(CrashReportingApplication.e, R.drawable.app_icon);
         return bundle;
     }
 

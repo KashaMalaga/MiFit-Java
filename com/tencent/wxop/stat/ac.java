@@ -71,9 +71,9 @@ final class ac extends SQLiteOpenHelper {
     }
 
     private static void b(SQLiteDatabase sQLiteDatabase) {
-        Cursor query;
         Throwable th;
         Cursor cursor;
+        Cursor query;
         try {
             query = sQLiteDatabase.query("events", null, null, null, null, null, null);
             try {

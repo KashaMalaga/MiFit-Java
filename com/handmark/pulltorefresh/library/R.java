@@ -1,7 +1,5 @@
 package com.handmark.pulltorefresh.library;
 
-import com.xiaomi.hm.health.g;
-
 public final class R {
 
     public final class anim {
@@ -58,7 +56,7 @@ public final class R {
     public final class id {
         public static final int both = 2131296273;
         public static final int disabled = 2131296274;
-        public static final int fl_inner = 2131297403;
+        public static final int fl_inner = 2131297402;
         public static final int flip = 2131296280;
         public static final int gridview = 2131296257;
         public static final int icon = 2131296336;
@@ -68,10 +66,10 @@ public final class R {
         public static final int pullFromEnd = 2131296277;
         public static final int pullFromStart = 2131296278;
         public static final int pullUpFromBottom = 2131296279;
-        public static final int pull_to_refresh_image = 2131297404;
-        public static final int pull_to_refresh_progress = 2131297405;
-        public static final int pull_to_refresh_sub_text = 2131297407;
-        public static final int pull_to_refresh_text = 2131297406;
+        public static final int pull_to_refresh_image = 2131297403;
+        public static final int pull_to_refresh_progress = 2131297404;
+        public static final int pull_to_refresh_sub_text = 2131297406;
+        public static final int pull_to_refresh_text = 2131297405;
         public static final int rotate = 2131296281;
         public static final int scrollview = 2131296259;
         public static final int webview = 2131296258;
@@ -92,7 +90,7 @@ public final class R {
     }
 
     public final class styleable {
-        public static final int[] PullToRefresh = new int[]{g.ptrRefreshableViewBackground, g.ptrHeaderBackground, g.ptrHeaderTextColor, g.ptrHeaderSubTextColor, g.ptrMode, g.ptrShowIndicator, g.ptrDrawable, g.ptrDrawableStart, g.ptrDrawableEnd, g.ptrOverScroll, g.ptrHeaderTextAppearance, g.ptrSubHeaderTextAppearance, g.ptrAnimationStyle, g.ptrScrollingWhileRefreshingEnabled, g.ptrListViewExtrasEnabled, g.ptrRotateDrawableWhilePulling, g.ptrAdapterViewBackground, g.ptrDrawableTop, g.ptrDrawableBottom};
+        public static final int[] PullToRefresh = new int[]{com.xiaomi.hm.health.R.attr.ptrRefreshableViewBackground, com.xiaomi.hm.health.R.attr.ptrHeaderBackground, com.xiaomi.hm.health.R.attr.ptrHeaderTextColor, com.xiaomi.hm.health.R.attr.ptrHeaderSubTextColor, com.xiaomi.hm.health.R.attr.ptrMode, com.xiaomi.hm.health.R.attr.ptrShowIndicator, com.xiaomi.hm.health.R.attr.ptrDrawable, com.xiaomi.hm.health.R.attr.ptrDrawableStart, com.xiaomi.hm.health.R.attr.ptrDrawableEnd, com.xiaomi.hm.health.R.attr.ptrOverScroll, com.xiaomi.hm.health.R.attr.ptrHeaderTextAppearance, com.xiaomi.hm.health.R.attr.ptrSubHeaderTextAppearance, com.xiaomi.hm.health.R.attr.ptrAnimationStyle, com.xiaomi.hm.health.R.attr.ptrScrollingWhileRefreshingEnabled, com.xiaomi.hm.health.R.attr.ptrListViewExtrasEnabled, com.xiaomi.hm.health.R.attr.ptrRotateDrawableWhilePulling, com.xiaomi.hm.health.R.attr.ptrAdapterViewBackground, com.xiaomi.hm.health.R.attr.ptrDrawableTop, com.xiaomi.hm.health.R.attr.ptrDrawableBottom};
         public static final int PullToRefresh_ptrAdapterViewBackground = 16;
         public static final int PullToRefresh_ptrAnimationStyle = 12;
         public static final int PullToRefresh_ptrDrawable = 6;

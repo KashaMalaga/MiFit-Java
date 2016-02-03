@@ -17,10 +17,9 @@ import android.util.Log;
 import cn.com.smartdevices.bracelet.shoes.sync.b.g;
 import com.a.a.a.C0907p;
 import com.amap.api.services.district.DistrictSearchQuery;
-import com.huami.android.widget.a;
 import com.tencent.connect.common.Constants;
-import com.tencent.open.SocialConstants;
 import com.xiaomi.b.a.a.a.i;
+import com.xiaomi.channel.relationservice.data.a;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -94,9 +93,9 @@ public class f {
     private String a(ArrayList<String> arrayList, String str) {
         ArrayList arrayList2 = new ArrayList();
         List<NameValuePair> arrayList3 = new ArrayList();
-        arrayList3.add(new BasicNameValuePair(SocialConstants.PARAM_TYPE, str));
+        arrayList3.add(new BasicNameValuePair(a.h, str));
         arrayList3.add(new BasicNameValuePair(g.n, this.f));
-        arrayList3.add(new BasicNameValuePair(a.c, a((Collection) arrayList, com.xiaomi.mipush.sdk.f.i)));
+        arrayList3.add(new BasicNameValuePair(com.huami.android.widget.a.c, a((Collection) arrayList, com.xiaomi.mipush.sdk.f.i)));
         c c = c("resolver.gslb.mi-idc.com");
         String format = String.format("http://%1$s/gslb/gslb/getbucket.asp?ver=3.0", new Object[]{"resolver.gslb.mi-idc.com"});
         if (c == null) {

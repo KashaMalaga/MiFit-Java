@@ -24,75 +24,75 @@ final class X extends h {
 
     public void onSuccess(int i, Header[] headerArr, byte[] bArr) {
         JSONObject jSONObject;
+        JSONObject jSONObject2;
         JSONException e;
         String sportDay;
         String str = new String(bArr);
         C0596r.e("Utils", "result = " + str);
-        JSONObject jSONObject2;
         try {
             JSONObject jSONObject3 = new JSONObject(str);
             str = URLDecoder.decode(jSONObject3.getJSONObject(b.b).getString(f.au));
             C0596r.e("Utils", "details Str : " + str);
-            jSONObject2 = new JSONObject(str);
+            jSONObject = new JSONObject(str);
             try {
                 int optInt = jSONObject3.optInt(b.a);
                 if (optInt != 1) {
                     C0596r.d("Utils", "getLazyDaysFromServer code = " + optInt);
                 }
-                jSONObject = jSONObject2;
+                jSONObject2 = jSONObject;
             } catch (JSONException e2) {
                 e = e2;
                 C0596r.e("Utils", "error: " + e.toString());
-                jSONObject = jSONObject2;
-                if (jSONObject == null) {
-                    jSONObject = new JSONObject();
+                jSONObject2 = jSONObject;
+                if (jSONObject2 == null) {
+                    jSONObject2 = new JSONObject();
                 }
-                if (jSONObject.isNull(a.ck)) {
+                if (jSONObject2.isNull(a.ck)) {
                     sportDay = new SportDay().toString();
                     try {
-                        jSONObject.put(a.ck, sportDay);
+                        jSONObject2.put(a.ck, sportDay);
                     } catch (JSONException e3) {
                         e3.printStackTrace();
                     }
-                    C0596r.e("Utils", "after add lazy date: " + jSONObject.toString());
-                    Keeper.keepLazyDays(jSONObject.toString());
+                    C0596r.e("Utils", "after add lazy date: " + jSONObject2.toString());
+                    Keeper.keepLazyDays(jSONObject2.toString());
                     Keeper.keepManualLazyDayAlgoStartDate(sportDay);
                     Utils.t(this.a);
                 }
-                Keeper.keepManualLazyDayAlgoStartDate(jSONObject.optString(a.ck));
-                Keeper.keepLazyDays(URLDecoder.decode(jSONObject.toString()));
+                Keeper.keepManualLazyDayAlgoStartDate(jSONObject2.optString(a.ck));
+                Keeper.keepLazyDays(URLDecoder.decode(jSONObject2.toString()));
             }
         } catch (JSONException e4) {
             e = e4;
-            jSONObject2 = null;
+            jSONObject = null;
             C0596r.e("Utils", "error: " + e.toString());
-            jSONObject = jSONObject2;
-            if (jSONObject == null) {
-                jSONObject = new JSONObject();
+            jSONObject2 = jSONObject;
+            if (jSONObject2 == null) {
+                jSONObject2 = new JSONObject();
             }
-            if (jSONObject.isNull(a.ck)) {
+            if (jSONObject2.isNull(a.ck)) {
                 sportDay = new SportDay().toString();
-                jSONObject.put(a.ck, sportDay);
-                C0596r.e("Utils", "after add lazy date: " + jSONObject.toString());
-                Keeper.keepLazyDays(jSONObject.toString());
+                jSONObject2.put(a.ck, sportDay);
+                C0596r.e("Utils", "after add lazy date: " + jSONObject2.toString());
+                Keeper.keepLazyDays(jSONObject2.toString());
                 Keeper.keepManualLazyDayAlgoStartDate(sportDay);
                 Utils.t(this.a);
             }
-            Keeper.keepManualLazyDayAlgoStartDate(jSONObject.optString(a.ck));
-            Keeper.keepLazyDays(URLDecoder.decode(jSONObject.toString()));
+            Keeper.keepManualLazyDayAlgoStartDate(jSONObject2.optString(a.ck));
+            Keeper.keepLazyDays(URLDecoder.decode(jSONObject2.toString()));
         }
-        if (jSONObject == null) {
-            jSONObject = new JSONObject();
+        if (jSONObject2 == null) {
+            jSONObject2 = new JSONObject();
         }
-        if (jSONObject.isNull(a.ck)) {
+        if (jSONObject2.isNull(a.ck)) {
             sportDay = new SportDay().toString();
-            jSONObject.put(a.ck, sportDay);
-            C0596r.e("Utils", "after add lazy date: " + jSONObject.toString());
-            Keeper.keepLazyDays(jSONObject.toString());
+            jSONObject2.put(a.ck, sportDay);
+            C0596r.e("Utils", "after add lazy date: " + jSONObject2.toString());
+            Keeper.keepLazyDays(jSONObject2.toString());
             Keeper.keepManualLazyDayAlgoStartDate(sportDay);
             Utils.t(this.a);
         }
-        Keeper.keepManualLazyDayAlgoStartDate(jSONObject.optString(a.ck));
-        Keeper.keepLazyDays(URLDecoder.decode(jSONObject.toString()));
+        Keeper.keepManualLazyDayAlgoStartDate(jSONObject2.optString(a.ck));
+        Keeper.keepLazyDays(URLDecoder.decode(jSONObject2.toString()));
     }
 }

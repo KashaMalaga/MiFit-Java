@@ -28,9 +28,7 @@ import cn.com.smartdevices.bracelet.C0434d;
 import cn.com.smartdevices.bracelet.chart.util.q;
 import cn.com.smartdevices.bracelet.ui.fe;
 import com.huami.android.ui.a;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.s;
+import com.xiaomi.hm.health.R;
 
 public class C0611n extends DialogFragment implements OnClickListener {
     private static final String c = "MainMenuFragment";
@@ -170,7 +168,7 @@ public class C0611n extends DialogFragment implements OnClickListener {
     }
 
     public void onClick(View view) {
-        if (view.getId() == l.menu_dismiss) {
+        if (view.getId() == R.id.menu_dismiss) {
             b();
             return;
         }
@@ -182,9 +180,9 @@ public class C0611n extends DialogFragment implements OnClickListener {
 
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        int i = s.MenuPanel;
+        int i = R.style.MenuPanel;
         if (a.b(getActivity())) {
-            i = s.MenuPanelTint;
+            i = R.style.MenuPanelTint;
         }
         setStyle(0, i);
     }
@@ -196,9 +194,9 @@ public class C0611n extends DialogFragment implements OnClickListener {
     }
 
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        View inflate = layoutInflater.inflate(n.view_detail_menu, viewGroup, false);
-        this.h = (LinearLayout) inflate.findViewById(l.menu_content);
-        inflate.findViewById(l.menu_dismiss).setOnClickListener(this);
+        View inflate = layoutInflater.inflate(R.layout.view_detail_menu, viewGroup, false);
+        this.h = (LinearLayout) inflate.findViewById(R.id.menu_content);
+        inflate.findViewById(R.id.menu_dismiss).setOnClickListener(this);
         if (a.b(getActivity())) {
             fe feVar = new fe(getActivity());
             View childAt = this.h.getChildAt(0);
@@ -206,8 +204,8 @@ public class C0611n extends DialogFragment implements OnClickListener {
             layoutParams.topMargin = feVar.a().a(false) + layoutParams.topMargin;
             childAt.setLayoutParams(layoutParams);
         }
-        this.h.findViewById(l.action_remark).setOnClickListener(this);
-        this.h.findViewById(l.action_remove_friend).setOnClickListener(this);
+        this.h.findViewById(R.id.action_remark).setOnClickListener(this);
+        this.h.findViewById(R.id.action_remove_friend).setOnClickListener(this);
         return inflate;
     }
 

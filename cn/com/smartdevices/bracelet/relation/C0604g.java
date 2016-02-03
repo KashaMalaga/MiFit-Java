@@ -8,9 +8,7 @@ import android.widget.TextView;
 import cn.com.smartdevices.bracelet.ui.widget.DimPanelBottomBar;
 import com.huami.android.view.c;
 import com.xiaomi.e.a;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 
 public class C0604g extends c {
     final /* synthetic */ DetailActivity a;
@@ -20,14 +18,14 @@ public class C0604g extends c {
     }
 
     protected int inflateLayout() {
-        return n.dialog_bind_qq_health_tip;
+        return R.layout.dialog_bind_qq_health_tip;
     }
 
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         View onCreateView = super.onCreateView(layoutInflater, viewGroup, bundle);
-        ((TextView) onCreateView.findViewById(l.title)).setText(a.f);
-        ((TextView) onCreateView.findViewById(l.msg)).setText(getActivity().getString(r.friend_new_user_guide));
-        ((DimPanelBottomBar) onCreateView.findViewById(l.bt_bar)).b(getActivity().getString(r.friend_new_user_guide_ok));
+        ((TextView) onCreateView.findViewById(R.id.title)).setText(a.f);
+        ((TextView) onCreateView.findViewById(R.id.msg)).setText(getActivity().getString(R.string.friend_new_user_guide));
+        ((DimPanelBottomBar) onCreateView.findViewById(R.id.bt_bar)).b(getActivity().getString(R.string.friend_new_user_guide_ok));
         return onCreateView;
     }
 

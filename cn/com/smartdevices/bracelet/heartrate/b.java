@@ -9,13 +9,12 @@ import cn.com.smartdevices.bracelet.gps.c.a.g;
 import cn.com.smartdevices.bracelet.gps.services.O;
 import cn.com.smartdevices.bracelet.j.l;
 import cn.com.smartdevices.bracelet.model.HeartRateItem;
-import com.tencent.open.SocialConstants;
+import com.xiaomi.channel.relationservice.data.a;
 import com.xiaomi.hm.health.dataprocess.HeartRateInfo;
 import com.xiaomi.market.sdk.o;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import kankan.wheel.widget.a;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -59,7 +58,7 @@ public class b {
                 JSONObject jSONObject2 = jSONArray.getJSONObject(i);
                 HeartRateItem heartRateItem = new HeartRateItem();
                 heartRateItem.time = jSONObject2.getLong(g.f);
-                heartRateItem.type = jSONObject2.getInt(SocialConstants.PARAM_TYPE);
+                heartRateItem.type = jSONObject2.getInt(a.h);
                 byte[] decode = Base64.decode(jSONObject2.getString(O.j), 2);
                 if (decode != null && decode.length > 0) {
                     heartRateItem.hr = decode[0] & HeartRateInfo.HR_EMPTY_VALUE;
@@ -111,7 +110,7 @@ public class b {
         while (it.hasNext()) {
             JSONObject toJSONObject = ((HeartRateItem) it.next()).toJSONObject();
             try {
-                toJSONObject.put(a.ak, cn.com.smartdevices.bracelet.e.a.d(this.c));
+                toJSONObject.put(kankan.wheel.widget.a.ak, cn.com.smartdevices.bracelet.e.a.d(this.c));
                 toJSONObject.put(o.L, 4);
             } catch (JSONException e) {
                 C0596r.e(a, e.getMessage());

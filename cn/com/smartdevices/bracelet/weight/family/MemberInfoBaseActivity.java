@@ -6,8 +6,8 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import cn.com.smartdevices.bracelet.C0596r;
 import cn.com.smartdevices.bracelet.ui.SystemBarTintActivity;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.bt.profile.Weight.e;
-import com.xiaomi.hm.health.l;
 
 public class MemberInfoBaseActivity extends SystemBarTintActivity implements OnClickListener {
     protected static final String a = "MemberInfoBaseActivity";
@@ -21,9 +21,9 @@ public class MemberInfoBaseActivity extends SystemBarTintActivity implements OnC
     private View i = null;
 
     protected void b() {
-        this.h = findViewById(l.right_button);
+        this.h = findViewById(R.id.right_button);
         this.h.setOnClickListener(this);
-        this.i = findViewById(l.left_button);
+        this.i = findViewById(R.id.left_button);
         this.i.setOnClickListener(this);
     }
 
@@ -56,10 +56,10 @@ public class MemberInfoBaseActivity extends SystemBarTintActivity implements OnC
 
     public void onClick(View view) {
         switch (view.getId()) {
-            case l.left_button /*2131296944*/:
+            case R.id.left_button:
                 c();
                 return;
-            case l.right_button /*2131296946*/:
+            case R.id.right_button:
                 d();
                 return;
             default:

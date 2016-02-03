@@ -8,8 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 import cn.com.smartdevices.bracelet.tag.a.b;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
+import com.xiaomi.hm.health.R;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -47,10 +46,10 @@ class o extends BaseAdapter {
     public View getView(int i, View view, ViewGroup viewGroup) {
         p pVar;
         if (view == null) {
-            view = LayoutInflater.from(this.c).inflate(n.view_action_tag_menu_item, null);
+            view = LayoutInflater.from(this.c).inflate(R.layout.view_action_tag_menu_item, null);
             p pVar2 = new p();
-            pVar2.b = (ImageView) view.findViewById(l.icon);
-            pVar2.a = (TextView) view.findViewById(l.name);
+            pVar2.b = (ImageView) view.findViewById(R.id.icon);
+            pVar2.a = (TextView) view.findViewById(R.id.name);
             view.setTag(pVar2);
             pVar = pVar2;
         } else {

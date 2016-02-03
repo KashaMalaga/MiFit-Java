@@ -15,7 +15,7 @@ import android.widget.RelativeLayout;
 import android.widget.RelativeLayout.LayoutParams;
 import cn.com.smartdevices.bracelet.C0596r;
 import cn.com.smartdevices.bracelet.gps.c.d;
-import com.xiaomi.hm.health.i;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.t;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -72,7 +72,7 @@ public class RippleBackground extends RelativeLayout {
             TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, t.RippleBackground);
             this.j = obtainStyledAttributes.getBoolean(d, e);
             if (this.j) {
-                this.k = obtainStyledAttributes.getColor(1, getResources().getColor(i.rippelColor));
+                this.k = obtainStyledAttributes.getColor(1, getResources().getColor(R.color.rippelColor));
                 this.l = obtainStyledAttributes.getDimension(2, 4.0f);
                 this.m = obtainStyledAttributes.getDimension(5, g);
                 this.n = obtainStyledAttributes.getInt(a, b);

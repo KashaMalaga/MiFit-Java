@@ -2,6 +2,7 @@ package b.a;
 
 import com.amap.api.services.district.DistrictSearchQuery;
 import com.sina.weibo.sdk.constant.WBPageConstants.ParamKey;
+import com.xiaomi.channel.relationservice.data.a;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.ObjectInputStream;
@@ -26,7 +27,7 @@ public class aQ implements cq<aQ, aV>, Serializable, Cloneable {
     private static final cT r = new cT(ParamKey.LONGITUDE, (byte) 4, (short) 5);
     private static final cT s = new cT("carrier", C0374dh.i, (short) 6);
     private static final cT t = new cT("latency", (byte) 8, (short) 7);
-    private static final cT u = new cT("display_name", C0374dh.i, (short) 8);
+    private static final cT u = new cT(a.d, C0374dh.i, (short) 8);
     private static final cT v = new cT("access_type", (byte) 8, (short) 9);
     private static final cT w = new cT("access_subtype", C0374dh.i, (short) 10);
     private static final cT x = new cT("user_info", C0374dh.j, (short) 11);
@@ -57,7 +58,7 @@ public class aQ implements cq<aQ, aV>, Serializable, Cloneable {
         enumMap.put(aV.LONGITUDE, new cI(ParamKey.LONGITUDE, (byte) 2, new cJ((byte) 4)));
         enumMap.put(aV.CARRIER, new cI("carrier", (byte) 2, new cJ(C0374dh.i)));
         enumMap.put(aV.LATENCY, new cI("latency", (byte) 2, new cJ((byte) 8)));
-        enumMap.put(aV.DISPLAY_NAME, new cI("display_name", (byte) 2, new cJ(C0374dh.i)));
+        enumMap.put(aV.DISPLAY_NAME, new cI(a.d, (byte) 2, new cJ(C0374dh.i)));
         enumMap.put(aV.ACCESS_TYPE, new cI("access_type", (byte) 2, new cH(C0374dh.n, C0382h.class)));
         enumMap.put(aV.ACCESS_SUBTYPE, new cI("access_subtype", (byte) 2, new cJ(C0374dh.i)));
         enumMap.put(aV.USER_INFO, new cI("user_info", (byte) 2, new cN(C0374dh.j, bK.class)));

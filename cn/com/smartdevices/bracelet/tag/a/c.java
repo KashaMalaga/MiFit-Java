@@ -16,6 +16,7 @@ import cn.com.smartdevices.bracelet.partner.NativeInterface;
 import cn.com.smartdevices.bracelet.relation.db.Friend;
 import cn.com.smartdevices.bracelet.shoes.data.db.t;
 import com.tencent.connect.common.Constants;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.bt.d.f;
 import com.xiaomi.hm.health.bt.model.HwConnStatus;
 import com.xiaomi.hm.health.bt.profile.a.j;
@@ -23,8 +24,6 @@ import com.xiaomi.hm.health.bt.profile.a.o;
 import com.xiaomi.hm.health.bt.profile.c.d;
 import com.xiaomi.hm.health.bt.profile.c.g;
 import com.xiaomi.hm.health.bt.profile.c.h;
-import com.xiaomi.hm.health.k;
-import com.xiaomi.hm.health.r;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -38,7 +37,7 @@ public class c extends HandlerThread implements f, com.xiaomi.hm.health.bt.profi
     private static final int A = 4102;
     private static final int B = 4104;
     public static final String a = "BraceletManager";
-    public static final b[] b = new b[]{new b(r.action_sleep, k.ic_sleep, k.ic_sleep_big, Friend.f), new b(r.action_bath, k.ic_bath, k.ic_bath_big, "bath"), new b(r.action_brush_tooth, k.ic_brush_tooth, k.ic_brush_tooth_big, "tooth"), new b(r.action_run, k.ic_run, k.ic_run_big, NativeInterface.RUN), new b(r.action_bike, k.ic_bike, k.ic_bike_big, "bike"), new b(r.action_walk, k.ic_walk, k.ic_walk_big, "walk"), new b(r.action_badminton, k.ic_badminton, k.ic_badminton_big, "badminton"), new b(r.action_basketball, k.ic_basketball, k.ic_basketball_big, "basketball"), new b(r.action_pingpong, k.ic_pingpong, k.ic_pingpong_big, "pingpong"), new b(r.action_sit, k.ic_sit, k.ic_sit_big, "sit"), new b(r.action_stand, k.ic_stand, k.ic_stand_big, "stand"), new b(r.action_bus, k.ic_bus, k.ic_bus_big, "bus")};
+    public static final b[] b = new b[]{new b(R.string.action_sleep, R.drawable.ic_sleep, R.drawable.ic_sleep_big, Friend.f), new b(R.string.action_bath, R.drawable.ic_bath, R.drawable.ic_bath_big, "bath"), new b(R.string.action_brush_tooth, R.drawable.ic_brush_tooth, R.drawable.ic_brush_tooth_big, "tooth"), new b(R.string.action_run, R.drawable.ic_run, R.drawable.ic_run_big, NativeInterface.RUN), new b(R.string.action_bike, R.drawable.ic_bike, R.drawable.ic_bike_big, "bike"), new b(R.string.action_walk, R.drawable.ic_walk, R.drawable.ic_walk_big, "walk"), new b(R.string.action_badminton, R.drawable.ic_badminton, R.drawable.ic_badminton_big, "badminton"), new b(R.string.action_basketball, R.drawable.ic_basketball, R.drawable.ic_basketball_big, "basketball"), new b(R.string.action_pingpong, R.drawable.ic_pingpong, R.drawable.ic_pingpong_big, "pingpong"), new b(R.string.action_sit, R.drawable.ic_sit, R.drawable.ic_sit_big, "sit"), new b(R.string.action_stand, R.drawable.ic_stand, R.drawable.ic_stand_big, "stand"), new b(R.string.action_bus, R.drawable.ic_bus, R.drawable.ic_bus_big, "bus")};
     private static final String c = "tag";
     private static final String d = "tag_record";
     private static final int w = 4097;
@@ -383,13 +382,13 @@ public class c extends HandlerThread implements f, com.xiaomi.hm.health.bt.profi
     }
 
     public List<a> d() {
+        BufferedReader bufferedReader;
         FileNotFoundException e;
         IOException e2;
         Throwable th;
         List arrayList = new ArrayList();
         File file = new File(this.g, d);
         if (file.exists()) {
-            BufferedReader bufferedReader;
             try {
                 bufferedReader = new BufferedReader(new FileReader(file));
                 String readLine;

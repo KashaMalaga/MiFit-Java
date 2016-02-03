@@ -20,11 +20,10 @@ import com.amap.api.maps.model.BitmapDescriptorFactory;
 import com.amap.api.maps.model.GroundOverlayOptions;
 import com.edmodo.cropper.cropwindow.CropOverlayView;
 import com.xiaomi.e.a;
-import com.xiaomi.hm.health.f;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.t;
 import java.util.ArrayList;
 import java.util.List;
-import kankan.wheel.widget.g;
 
 public class WeightGoalSetView extends View implements OnGestureListener {
     public static final int f = 0;
@@ -83,7 +82,7 @@ public class WeightGoalSetView extends View implements OnGestureListener {
         this.J = f;
         this.L = new ArrayList();
         this.M = false;
-        this.N = new int[]{getResources().getColor(g.light_color), getResources().getColor(g.normal_color), getResources().getColor(g.heavy_color), getResources().getColor(g.fat_color)};
+        this.N = new int[]{getResources().getColor(R.color.light_color), getResources().getColor(R.color.normal_color), getResources().getColor(R.color.heavy_color), getResources().getColor(R.color.fat_color)};
         h = context;
         this.a = new Paint();
         this.b = new Paint();
@@ -92,10 +91,10 @@ public class WeightGoalSetView extends View implements OnGestureListener {
         this.e = new Paint();
         this.x = new GestureDetector(context, this);
         TypedArray obtainStyledAttributes = h.obtainStyledAttributes(attributeSet, t.WeightGoalSetView);
-        this.D = obtainStyledAttributes.getColor(f, getResources().getColor(g.light_color));
-        this.E = obtainStyledAttributes.getColor(g, getResources().getColor(g.normal_color));
-        this.F = obtainStyledAttributes.getColor(2, getResources().getColor(g.heavy_color));
-        this.G = obtainStyledAttributes.getColor(3, getResources().getColor(g.fat_color));
+        this.D = obtainStyledAttributes.getColor(f, getResources().getColor(R.color.light_color));
+        this.E = obtainStyledAttributes.getColor(g, getResources().getColor(R.color.normal_color));
+        this.F = obtainStyledAttributes.getColor(2, getResources().getColor(R.color.heavy_color));
+        this.G = obtainStyledAttributes.getColor(3, getResources().getColor(R.color.fat_color));
         this.H = obtainStyledAttributes.getColor(6, -1);
         this.C = Keeper.readPersonInfo().miliConfig.weightUnit;
         this.I = aA.a(h, this.C);
@@ -252,9 +251,9 @@ public class WeightGoalSetView extends View implements OnGestureListener {
             canvas.drawRect((((float) i3) * (((float) i4) / ((float) this.K))) + ((float) (n + m)), (float) ((this.u - k) / 2), (((float) i3) * (((float) (i4 + g)) / ((float) this.K))) + ((float) (n + m)), (float) ((this.u + k) / 2), this.a);
         }
         if (this.J == 0) {
-            this.c.setColor(getResources().getColor(g.text_color_black));
+            this.c.setColor(getResources().getColor(R.color.text_color_black));
         } else {
-            this.c.setColor(getResources().getColor(g.weight_report_white_60));
+            this.c.setColor(getResources().getColor(R.color.weight_report_white_60));
         }
         this.c.setTextSize((float) p);
         this.c.setAntiAlias(true);
@@ -272,9 +271,9 @@ public class WeightGoalSetView extends View implements OnGestureListener {
         this.d.setTextSize((float) Utils.a(11.6f, h));
         for (i = f; i < this.K; i += g) {
             if (this.K == 4) {
-                canvas.drawText(getResources().getStringArray(f.weight_body_figures)[i], (((float) (n + m)) + (((float) i3) * (((float) i) / ((float) this.K)))) + (((((float) i3) / ((float) this.K)) - this.d.measureText(getResources().getStringArray(f.weight_body_figures)[i])) / 2.0f), ((float) (this.u / 2)) + Utils.b(4.0f, h), this.d);
+                canvas.drawText(getResources().getStringArray(R.array.weight_body_figures)[i], (((float) (n + m)) + (((float) i3) * (((float) i) / ((float) this.K)))) + (((((float) i3) / ((float) this.K)) - this.d.measureText(getResources().getStringArray(R.array.weight_body_figures)[i])) / 2.0f), ((float) (this.u / 2)) + Utils.b(4.0f, h), this.d);
             } else if (this.K != g) {
-                canvas.drawText(getResources().getStringArray(f.weight_body_figures_for_child)[i + g], (((float) (n + m)) + (((float) i3) * (((float) i) / ((float) this.K)))) + (((((float) i3) / ((float) this.K)) - this.d.measureText(getResources().getStringArray(f.weight_body_figures)[i])) / 2.0f), ((float) (this.u / 2)) + Utils.b(4.0f, h), this.d);
+                canvas.drawText(getResources().getStringArray(R.array.weight_body_figures_for_child)[i + g], (((float) (n + m)) + (((float) i3) * (((float) i) / ((float) this.K)))) + (((((float) i3) / ((float) this.K)) - this.d.measureText(getResources().getStringArray(R.array.weight_body_figures)[i])) / 2.0f), ((float) (this.u / 2)) + Utils.b(4.0f, h), this.d);
             }
         }
         if (this.v == 0) {

@@ -6,13 +6,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 import cn.com.smartdevices.bracelet.chart.util.t;
-import com.xiaomi.hm.health.l;
+import com.xiaomi.hm.health.R;
 
 public abstract class p extends Fragment {
     protected TextView a;
 
     private void a(View view) {
-        this.a = (TextView) view.findViewById(l.home_back);
+        this.a = (TextView) view.findViewById(R.id.home_back);
         if (this.a != null) {
             this.a.setOnClickListener(new C0816q(this));
             if (t.a() && !b()) {

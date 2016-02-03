@@ -10,9 +10,7 @@ import cn.com.smartdevices.bracelet.Constant;
 import cn.com.smartdevices.bracelet.partner.NativeInterface;
 import cn.com.smartdevices.bracelet.partner.WebActivity;
 import cn.com.smartdevices.bracelet.relation.A;
-import com.xiaomi.hm.health.k;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 import org.json.JSONObject;
 
 public class e extends a {
@@ -43,7 +41,7 @@ public class e extends a {
     }
 
     public int a() {
-        return l.notification_care;
+        return R.id.notification_care;
     }
 
     public void b() {
@@ -66,26 +64,26 @@ public class e extends a {
         } else {
             return;
         }
-        CharSequence string2 = this.d.getString(r.message_title_friend);
+        CharSequence string2 = this.d.getString(R.string.message_title_friend);
         Context context;
         Object[] objArr;
         if (this.v == i) {
             context = this.d;
             objArr = new Object[i];
             objArr[h] = this.s;
-            string = context.getString(r.label_friend_add_message, objArr);
+            string = context.getString(R.string.label_friend_add_message, objArr);
         } else if (this.v == 0) {
             context = this.d;
             objArr = new Object[i];
             objArr[h] = this.s;
-            string = context.getString(r.label_friend_accept_message, objArr);
+            string = context.getString(R.string.label_friend_accept_message, objArr);
         } else {
             context = this.d;
             objArr = new Object[i];
             objArr[h] = this.s;
-            string = context.getString(r.label_friend_refuse_message, objArr);
+            string = context.getString(R.string.label_friend_refuse_message, objArr);
         }
-        aT e = new aT(this.d).a((int) k.app_icon).a(string2).b(string).e(true);
+        aT e = new aT(this.d).a((int) R.drawable.app_icon).a(string2).b(string).e(true);
         e.a(PendingIntent.getBroadcast(this.d, h, intent, 268435456));
         ((NotificationManager) this.d.getSystemService("notification")).notify(i, e.c());
     }

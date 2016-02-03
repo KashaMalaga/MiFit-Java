@@ -5,7 +5,7 @@ import android.os.Message;
 import cn.com.smartdevices.bracelet.Utils;
 import cn.com.smartdevices.bracelet.eventbus.weight.EventScaleStatus;
 import cn.com.smartdevices.bracelet.model.PersonInfo;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 
 class C0404c extends Handler {
     final /* synthetic */ LoginActivity a;
@@ -18,7 +18,7 @@ class C0404c extends Handler {
         super.handleMessage(message);
         switch (message.what) {
             case PersonInfo.INCOMING_CALL_DISABLE_BIT /*256*/:
-                Utils.a(this.a.p, (int) r.wait);
+                Utils.a(this.a.p, (int) R.string.wait);
                 return;
             case EventScaleStatus.SCALE_FOUNDED /*257*/:
                 this.a.a(this.a.q);

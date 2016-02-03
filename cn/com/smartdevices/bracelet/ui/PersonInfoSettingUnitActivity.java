@@ -11,10 +11,8 @@ import cn.com.smartdevices.bracelet.config.b;
 import cn.com.smartdevices.bracelet.datasource.DeviceSource;
 import cn.com.smartdevices.bracelet.eventbus.EventPersonInfoUpdateUnit;
 import cn.com.smartdevices.bracelet.model.PersonInfo;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
+import com.xiaomi.hm.health.R;
 import de.greenrobot.event.EventBus;
-import kankan.wheel.widget.g;
 
 public class PersonInfoSettingUnitActivity extends SystemBarTintActivity implements OnClickListener {
     private PersonInfo a;
@@ -46,73 +44,73 @@ public class PersonInfoSettingUnitActivity extends SystemBarTintActivity impleme
     }
 
     private void a(int i) {
-        if (i == l.person_info_length_unit_metric_area) {
+        if (i == R.id.person_info_length_unit_metric_area) {
             this.h.setVisibility(0);
             this.i.setVisibility(4);
-            this.n.setTextColor(getResources().getColor(g.main_ui_title_color));
-            this.m.setTextColor(getResources().getColor(g.highlight));
-        } else if (i == l.person_info_length_unit_british_area) {
+            this.n.setTextColor(getResources().getColor(R.color.main_ui_title_color));
+            this.m.setTextColor(getResources().getColor(R.color.highlight));
+        } else if (i == R.id.person_info_length_unit_british_area) {
             this.h.setVisibility(4);
             this.i.setVisibility(0);
-            this.m.setTextColor(getResources().getColor(g.main_ui_title_color));
-            this.n.setTextColor(getResources().getColor(g.highlight));
+            this.m.setTextColor(getResources().getColor(R.color.main_ui_title_color));
+            this.n.setTextColor(getResources().getColor(R.color.highlight));
         }
     }
 
     private void b() {
-        this.b = findViewById(l.person_info_length_unit_metric_area);
+        this.b = findViewById(R.id.person_info_length_unit_metric_area);
         this.b.setOnClickListener(this);
-        this.c = findViewById(l.person_info_length_unit_british_area);
+        this.c = findViewById(R.id.person_info_length_unit_british_area);
         this.c.setOnClickListener(this);
-        this.e = findViewById(l.person_info_weight_unit_british_area);
+        this.e = findViewById(R.id.person_info_weight_unit_british_area);
         this.e.setOnClickListener(this);
-        this.d = findViewById(l.person_info_weight_unit_metric_area);
+        this.d = findViewById(R.id.person_info_weight_unit_metric_area);
         this.d.setOnClickListener(this);
-        this.f = findViewById(l.person_info_weight_unit_shijin_area);
+        this.f = findViewById(R.id.person_info_weight_unit_shijin_area);
         this.f.setOnClickListener(this);
-        this.g = findViewById(l.person_info_weight_unit_text_hint_area);
+        this.g = findViewById(R.id.person_info_weight_unit_text_hint_area);
         this.g.setClickable(false);
-        this.h = findViewById(l.length_unit_metric);
-        this.i = findViewById(l.length_unit_british);
-        this.j = findViewById(l.weight_unit_metric);
-        this.k = findViewById(l.weight_unit_british);
-        this.l = findViewById(l.weight_unit_shijin);
-        this.m = (TextView) findViewById(l.length_unit_metric_txt);
-        this.n = (TextView) findViewById(l.length_unit_british_txt);
-        this.o = (TextView) findViewById(l.weight_unit_metric_txt);
-        this.p = (TextView) findViewById(l.weight_unit_british_txt);
-        this.q = (TextView) findViewById(l.weight_unit_shijin_txt);
-        this.r = (TextView) findViewById(l.weight_unit_text_hint);
+        this.h = findViewById(R.id.length_unit_metric);
+        this.i = findViewById(R.id.length_unit_british);
+        this.j = findViewById(R.id.weight_unit_metric);
+        this.k = findViewById(R.id.weight_unit_british);
+        this.l = findViewById(R.id.weight_unit_shijin);
+        this.m = (TextView) findViewById(R.id.length_unit_metric_txt);
+        this.n = (TextView) findViewById(R.id.length_unit_british_txt);
+        this.o = (TextView) findViewById(R.id.weight_unit_metric_txt);
+        this.p = (TextView) findViewById(R.id.weight_unit_british_txt);
+        this.q = (TextView) findViewById(R.id.weight_unit_shijin_txt);
+        this.r = (TextView) findViewById(R.id.weight_unit_text_hint);
     }
 
     private void b(int i) {
-        if (i == l.person_info_weight_unit_british_area) {
+        if (i == R.id.person_info_weight_unit_british_area) {
             this.k.setVisibility(0);
-            this.p.setTextColor(getResources().getColor(g.highlight));
+            this.p.setTextColor(getResources().getColor(R.color.highlight));
             this.j.setVisibility(4);
-            this.o.setTextColor(getResources().getColor(g.main_ui_title_color));
+            this.o.setTextColor(getResources().getColor(R.color.main_ui_title_color));
             this.l.setVisibility(4);
-            this.q.setTextColor(getResources().getColor(g.main_ui_title_color));
-        } else if (i == l.person_info_weight_unit_metric_area) {
+            this.q.setTextColor(getResources().getColor(R.color.main_ui_title_color));
+        } else if (i == R.id.person_info_weight_unit_metric_area) {
             this.k.setVisibility(4);
-            this.p.setTextColor(getResources().getColor(g.main_ui_title_color));
+            this.p.setTextColor(getResources().getColor(R.color.main_ui_title_color));
             this.j.setVisibility(0);
-            this.o.setTextColor(getResources().getColor(g.highlight));
+            this.o.setTextColor(getResources().getColor(R.color.highlight));
             this.l.setVisibility(4);
-            this.q.setTextColor(getResources().getColor(g.main_ui_title_color));
-        } else if (i == l.person_info_weight_unit_shijin_area) {
+            this.q.setTextColor(getResources().getColor(R.color.main_ui_title_color));
+        } else if (i == R.id.person_info_weight_unit_shijin_area) {
             this.k.setVisibility(4);
-            this.p.setTextColor(getResources().getColor(g.main_ui_title_color));
+            this.p.setTextColor(getResources().getColor(R.color.main_ui_title_color));
             this.j.setVisibility(4);
-            this.o.setTextColor(getResources().getColor(g.main_ui_title_color));
+            this.o.setTextColor(getResources().getColor(R.color.main_ui_title_color));
             this.l.setVisibility(0);
-            this.q.setTextColor(getResources().getColor(g.highlight));
+            this.q.setTextColor(getResources().getColor(R.color.highlight));
         }
     }
 
     private void c() {
         if (!this.s.l.a.booleanValue()) {
-            findViewById(l.person_info_weight_unit_shijin_and_txt_area).setVisibility(4);
+            findViewById(R.id.person_info_weight_unit_shijin_and_txt_area).setVisibility(4);
         }
         a(d());
         if (DeviceSource.hasBindWeight()) {
@@ -126,39 +124,39 @@ public class PersonInfoSettingUnitActivity extends SystemBarTintActivity impleme
 
     private void c(int i) {
         f();
-        if (i == l.person_info_weight_unit_british_area) {
+        if (i == R.id.person_info_weight_unit_british_area) {
             this.k.setVisibility(0);
-            this.p.setTextColor(getResources().getColor(g.highlight));
+            this.p.setTextColor(getResources().getColor(R.color.highlight));
             this.j.setVisibility(4);
-            this.o.setTextColor(getResources().getColor(g.text_color_gray));
+            this.o.setTextColor(getResources().getColor(R.color.text_color_gray));
             this.l.setVisibility(4);
-            this.q.setTextColor(getResources().getColor(g.text_color_gray));
-        } else if (i == l.person_info_weight_unit_metric_area) {
+            this.q.setTextColor(getResources().getColor(R.color.text_color_gray));
+        } else if (i == R.id.person_info_weight_unit_metric_area) {
             this.k.setVisibility(4);
-            this.p.setTextColor(getResources().getColor(g.text_color_gray));
+            this.p.setTextColor(getResources().getColor(R.color.text_color_gray));
             this.j.setVisibility(0);
-            this.o.setTextColor(getResources().getColor(g.highlight));
+            this.o.setTextColor(getResources().getColor(R.color.highlight));
             this.l.setVisibility(4);
-            this.q.setTextColor(getResources().getColor(g.text_color_gray));
-        } else if (i == l.person_info_weight_unit_shijin_area) {
+            this.q.setTextColor(getResources().getColor(R.color.text_color_gray));
+        } else if (i == R.id.person_info_weight_unit_shijin_area) {
             this.k.setVisibility(4);
-            this.p.setTextColor(getResources().getColor(g.text_color_gray));
+            this.p.setTextColor(getResources().getColor(R.color.text_color_gray));
             this.j.setVisibility(4);
-            this.o.setTextColor(getResources().getColor(g.text_color_gray));
+            this.o.setTextColor(getResources().getColor(R.color.text_color_gray));
             this.l.setVisibility(0);
-            this.q.setTextColor(getResources().getColor(g.highlight));
+            this.q.setTextColor(getResources().getColor(R.color.highlight));
         }
     }
 
     private int d() {
         int i = this.a.miliConfig.unit;
-        return i == 1 ? l.person_info_length_unit_british_area : i == 0 ? l.person_info_length_unit_metric_area : l.person_info_length_unit_metric_area;
+        return i == 1 ? R.id.person_info_length_unit_british_area : i == 0 ? R.id.person_info_length_unit_metric_area : R.id.person_info_length_unit_metric_area;
     }
 
     private int e() {
         int i = this.a.miliConfig.weightUnit;
         C0596r.e("PersonInfoSettingUnitActivity", "weightUnit: " + this.a.miliConfig.weightUnit);
-        return i == 16 ? l.person_info_weight_unit_shijin_area : i == 1 ? l.person_info_weight_unit_british_area : i == 0 ? l.person_info_weight_unit_metric_area : l.person_info_weight_unit_metric_area;
+        return i == 16 ? R.id.person_info_weight_unit_shijin_area : i == 1 ? R.id.person_info_weight_unit_british_area : i == 0 ? R.id.person_info_weight_unit_metric_area : R.id.person_info_weight_unit_metric_area;
     }
 
     private void f() {
@@ -170,23 +168,23 @@ public class PersonInfoSettingUnitActivity extends SystemBarTintActivity impleme
     public void onClick(View view) {
         int id = view.getId();
         switch (id) {
-            case l.person_info_length_unit_metric_area /*2131296626*/:
+            case R.id.person_info_length_unit_metric_area:
                 this.a.miliConfig.unit = 0;
                 a(id);
                 break;
-            case l.person_info_length_unit_british_area /*2131296629*/:
+            case R.id.person_info_length_unit_british_area:
                 this.a.miliConfig.unit = 1;
                 a(id);
                 break;
-            case l.person_info_weight_unit_metric_area /*2131296633*/:
+            case R.id.person_info_weight_unit_metric_area:
                 this.a.miliConfig.weightUnit = 0;
                 b(id);
                 break;
-            case l.person_info_weight_unit_british_area /*2131296636*/:
+            case R.id.person_info_weight_unit_british_area:
                 this.a.miliConfig.weightUnit = 1;
                 b(id);
                 break;
-            case l.person_info_weight_unit_shijin_area /*2131296640*/:
+            case R.id.person_info_weight_unit_shijin_area:
                 this.a.miliConfig.weightUnit = 16;
                 b(id);
                 break;
@@ -199,7 +197,7 @@ public class PersonInfoSettingUnitActivity extends SystemBarTintActivity impleme
 
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView((int) n.activity_person_info_setting_unit);
+        setContentView((int) R.layout.activity_person_info_setting_unit);
         a();
         C0596r.e("PersonInfoSettingUnitActivity", "weightUnit: " + this.a.miliConfig.weightUnit);
     }

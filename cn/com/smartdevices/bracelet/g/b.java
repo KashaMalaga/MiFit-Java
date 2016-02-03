@@ -2,7 +2,7 @@ package cn.com.smartdevices.bracelet.g;
 
 import android.content.Context;
 import com.d.a.a.C1012a;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 import kankan.wheel.widget.a;
 
 public class b extends a {
@@ -14,7 +14,7 @@ public class b extends a {
 
     protected String a(Context context, String str) {
         a.b(context, "dailywalk");
-        return context.getString(r.share_step_ranking, new Object[]{str});
+        return context.getString(R.string.share_step_ranking, new Object[]{str});
     }
 
     public void a() {

@@ -16,21 +16,21 @@ class e implements LocationListener {
 
     public void onLocationChanged(Location location) {
         AMapLocation aMapLocation;
+        Message message;
         AMapLocation aMapLocation2;
         Exception e;
         Throwable th;
-        Message message;
         Message message2;
         try {
             this.a.d.b(true);
             this.a.d.d = System.currentTimeMillis();
             aMapLocation = null;
             if (location == null) {
-                message2 = new Message();
-                message2.obj = null;
-                message2.what = 100;
+                message = new Message();
+                message.obj = null;
+                message.what = 100;
                 if (this.a.c != null) {
-                    this.a.c.sendMessage(message2);
+                    this.a.c.sendMessage(message);
                 }
                 this.a.d.c = true;
                 this.a.d.d = System.currentTimeMillis();
@@ -50,11 +50,11 @@ class e implements LocationListener {
                     e = e2;
                     try {
                         e.printStackTrace();
-                        message2 = new Message();
-                        message2.obj = aMapLocation2;
-                        message2.what = 100;
+                        message = new Message();
+                        message.obj = aMapLocation2;
+                        message.what = 100;
                         if (this.a.c != null) {
-                            this.a.c.sendMessage(message2);
+                            this.a.c.sendMessage(message);
                         }
                         this.a.d.c = true;
                         this.a.d.d = System.currentTimeMillis();
@@ -65,11 +65,11 @@ class e implements LocationListener {
                     } catch (Throwable th2) {
                         th = th2;
                         aMapLocation = aMapLocation2;
-                        message = new Message();
-                        message.obj = aMapLocation;
-                        message.what = 100;
+                        message2 = new Message();
+                        message2.obj = aMapLocation;
+                        message2.what = 100;
                         if (this.a.c != null) {
-                            this.a.c.sendMessage(message);
+                            this.a.c.sendMessage(message2);
                         }
                         this.a.d.c = true;
                         this.a.d.d = System.currentTimeMillis();
@@ -79,11 +79,11 @@ class e implements LocationListener {
                 }
             }
             aMapLocation2 = new AMapLocation(location);
-            message2 = new Message();
-            message2.obj = aMapLocation2;
-            message2.what = 100;
+            message = new Message();
+            message.obj = aMapLocation2;
+            message.what = 100;
             if (this.a.c != null) {
-                this.a.c.sendMessage(message2);
+                this.a.c.sendMessage(message);
             }
             this.a.d.c = true;
             this.a.d.d = System.currentTimeMillis();
@@ -94,11 +94,11 @@ class e implements LocationListener {
             e = e3;
             aMapLocation2 = null;
             e.printStackTrace();
-            message2 = new Message();
-            message2.obj = aMapLocation2;
-            message2.what = 100;
+            message = new Message();
+            message.obj = aMapLocation2;
+            message.what = 100;
             if (this.a.c != null) {
-                this.a.c.sendMessage(message2);
+                this.a.c.sendMessage(message);
             }
             this.a.d.c = true;
             this.a.d.d = System.currentTimeMillis();

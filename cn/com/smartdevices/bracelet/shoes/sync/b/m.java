@@ -57,7 +57,7 @@ public class m {
                 byte[] bArr2;
                 String str5;
                 JSONObject jSONObject = jSONArray.getJSONObject(i2);
-                int i3 = !jSONObject.isNull(SocialConstants.PARAM_TYPE) ? jSONObject.getInt(SocialConstants.PARAM_TYPE) : i;
+                int i3 = !jSONObject.isNull(com.xiaomi.channel.relationservice.data.a.h) ? jSONObject.getInt(com.xiaomi.channel.relationservice.data.a.h) : i;
                 if (i3 != d.a) {
                     C0596r.d(B.a, "Skip wrong server type:" + i3);
                     bArr2 = bArr;

@@ -16,10 +16,10 @@ class O implements c {
 
     public void a(DialogFragment dialogFragment, int i) {
         if (i == -2) {
-            C0401a.a(this.a.f, C0409b.bD, C0410c.t, Constants.VIA_RESULT_SUCCESS);
+            C0401a.a(this.a.g, C0409b.bD, C0410c.t, Constants.VIA_RESULT_SUCCESS);
             this.a.d();
         } else if (i == -1) {
-            C0401a.a(this.a.f, C0409b.bD, C0410c.t, Constants.VIA_TO_TYPE_QQ_GROUP);
+            C0401a.a(this.a.g, C0409b.bD, C0410c.t, Constants.VIA_TO_TYPE_QQ_GROUP);
         }
     }
 }

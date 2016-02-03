@@ -12,10 +12,8 @@ import cn.com.smartdevices.bracelet.gps.services.O;
 import cn.com.smartdevices.bracelet.ui.SystemBarTintActivity;
 import com.amap.api.location.LocationManagerProxy;
 import com.xiaomi.e.a;
-import com.xiaomi.hm.health.k;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
+import kankan.wheel.widget.l;
 
 public class HeartRateDetailsActivity extends SystemBarTintActivity implements OnClickListener {
     private static final String b = "HeartRateDetailsActivity";
@@ -35,15 +33,15 @@ public class HeartRateDetailsActivity extends SystemBarTintActivity implements O
 
     private void a() {
         b();
-        this.d = (TextView) findViewById(l.title);
-        this.c = (TextView) findViewById(l.hr);
-        this.f = (TextView) findViewById(l.hr_status);
-        this.e = (TextView) findViewById(l.btn_sports);
-        this.m = (ImageView) findViewById(l.hr_img);
+        this.d = (TextView) findViewById(R.id.title);
+        this.c = (TextView) findViewById(R.id.hr);
+        this.f = (TextView) findViewById(R.id.hr_status);
+        this.e = (TextView) findViewById(R.id.btn_sports);
+        this.m = (ImageView) findViewById(R.id.hr_img);
         this.c.setText(this.h + a.f);
         this.l = b.a((Context) this);
-        this.d.setText(getString(r.hr_me));
-        this.n = (LinearLayout) findViewById(l.sports);
+        this.d.setText(getString(R.string.hr_me));
+        this.n = (LinearLayout) findViewById(R.id.sports);
         c();
         if (this.g == 3) {
             this.f.setVisibility(8);
@@ -58,19 +56,19 @@ public class HeartRateDetailsActivity extends SystemBarTintActivity implements O
     private String b() {
         String string;
         if (this.g == 0) {
-            string = getString(r.hr_slow);
-            this.k = getString(r.hr_detail_slow);
+            string = getString(R.string.hr_slow);
+            this.k = getString(R.string.hr_detail_slow);
             return string;
         } else if (this.g == 1) {
-            string = getString(r.hr_normal);
-            this.k = getString(r.hr_detail_normal);
+            string = getString(R.string.hr_normal);
+            this.k = getString(R.string.hr_detail_normal);
             return string;
         } else if (this.g == 2) {
-            string = getString(r.hr_sports);
+            string = getString(R.string.hr_sports);
             this.k = a.f;
             return string;
         } else {
-            string = getString(r.hr_fast);
+            string = getString(R.string.hr_fast);
             this.k = a.f;
             return string;
         }
@@ -79,16 +77,16 @@ public class HeartRateDetailsActivity extends SystemBarTintActivity implements O
     private void c() {
         switch (this.g) {
             case kankan.wheel.widget.a.i /*0*/:
-                this.m.setImageDrawable(getResources().getDrawable(k.heart_rate_slow));
+                this.m.setImageDrawable(getResources().getDrawable(R.drawable.heart_rate_slow));
                 return;
-            case kankan.wheel.widget.l.a /*1*/:
-                this.m.setImageDrawable(getResources().getDrawable(k.heart_rate_normal));
+            case l.a /*1*/:
+                this.m.setImageDrawable(getResources().getDrawable(R.drawable.heart_rate_normal));
                 return;
             case kankan.wheel.widget.a.k /*2*/:
-                this.m.setImageDrawable(getResources().getDrawable(k.heart_rate_fast));
+                this.m.setImageDrawable(getResources().getDrawable(R.drawable.heart_rate_fast));
                 return;
             case kankan.wheel.widget.a.l /*3*/:
-                this.m.setImageDrawable(getResources().getDrawable(k.heart_rate_fast));
+                this.m.setImageDrawable(getResources().getDrawable(R.drawable.heart_rate_fast));
                 return;
             default:
                 return;
@@ -97,7 +95,7 @@ public class HeartRateDetailsActivity extends SystemBarTintActivity implements O
 
     public void onClick(View view) {
         switch (view.getId()) {
-            case l.btn /*2131296573*/:
+            case R.id.btn:
                 finish();
                 return;
             default:
@@ -107,7 +105,7 @@ public class HeartRateDetailsActivity extends SystemBarTintActivity implements O
 
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView((int) n.activity_heart_details);
+        setContentView((int) R.layout.activity_heart_details);
         try {
             this.g = Integer.parseInt(getIntent().getExtras().getString(LocationManagerProxy.KEY_STATUS_CHANGED));
             this.h = Integer.parseInt(getIntent().getExtras().getString(O.j));

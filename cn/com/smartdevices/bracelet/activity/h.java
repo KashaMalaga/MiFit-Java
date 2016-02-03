@@ -14,7 +14,7 @@ import cn.com.smartdevices.bracelet.weight.WeightGoalSetActivity;
 import com.tencent.connect.common.Constants;
 import com.xiaomi.channel.gamesdk.b;
 import com.xiaomi.e.a;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 import java.util.Locale;
 import org.apache.http.Header;
 import org.json.JSONObject;
@@ -71,7 +71,7 @@ class h extends com.d.a.a.h {
                 return;
             }
         }
-        com.huami.android.view.b.a(this.a.p, this.a.getString(r.login_failed) + "\uff0c" + this.a.getString(r.error_code) + kankan.wheel.widget.a.ci + a.h, 1).show();
+        com.huami.android.view.b.a(this.a.p, this.a.getString(R.string.login_failed) + "\uff0c" + this.a.getString(R.string.error_code) + kankan.wheel.widget.a.ci + a.h, 1).show();
         this.a.l();
         C0596r.d(C0401a.cc, "Login webstatus fail, code = " + a.h);
     }

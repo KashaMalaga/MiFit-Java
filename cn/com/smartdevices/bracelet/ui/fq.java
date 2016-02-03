@@ -7,8 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import cn.com.smartdevices.bracelet.ui.widget.DimPanelBottomBar;
 import com.huami.android.view.c;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
+import com.xiaomi.hm.health.R;
 
 public class fq extends c {
     public static final String a = "TITLE";
@@ -24,7 +23,7 @@ public class fq extends c {
     private String k;
 
     protected int inflateLayout() {
-        return n.fragment_logoutcommon;
+        return R.layout.fragment_logoutcommon;
     }
 
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
@@ -33,11 +32,11 @@ public class fq extends c {
         this.i = getArguments().getString(b) == null ? b : getArguments().getString(b);
         this.j = getArguments().getString(c) == null ? c : getArguments().getString(c);
         this.k = getArguments().getString(d) == null ? d : getArguments().getString(d);
-        this.e = (TextView) onCreateView.findViewById(l.logout_title);
+        this.e = (TextView) onCreateView.findViewById(R.id.logout_title);
         this.e.setText(this.h);
-        this.f = (TextView) onCreateView.findViewById(l.logout_content);
+        this.f = (TextView) onCreateView.findViewById(R.id.logout_content);
         this.f.setText(this.i);
-        this.g = (DimPanelBottomBar) onCreateView.findViewById(l.dimbtmbar);
+        this.g = (DimPanelBottomBar) onCreateView.findViewById(R.id.dimbtmbar);
         this.g.a(this.k);
         this.g.b(this.j);
         return onCreateView;

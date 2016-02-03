@@ -23,7 +23,7 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
-import com.xiaomi.hm.health.k;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.t;
 import java.util.Locale;
 
@@ -107,7 +107,7 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
         this.z = null;
         this.A = 1;
         this.B = 0;
-        this.C = k.background_tab;
+        this.C = R.drawable.background_tab;
         setFillViewport(true);
         setWillNotDraw(false);
         this.f = new LinearLayout(context);

@@ -55,6 +55,7 @@ public class ac {
     }
 
     private static HttpHost b(Context context) {
+        Cursor query;
         String string;
         String a;
         int b;
@@ -69,7 +70,6 @@ public class ac {
         az b2;
         Object obj2 = null;
         if (z.g(context) == 0) {
-            Cursor query;
             try {
                 query = context.getContentResolver().query(Uri.parse("content://telephony/carriers/preferapn"), null, null, null, null);
                 if (query != null) {

@@ -8,7 +8,7 @@ import cn.com.smartdevices.bracelet.chart.b.e;
 import cn.com.smartdevices.bracelet.chart.b.f;
 import cn.com.smartdevices.bracelet.chart.util.ChartData;
 import cn.com.smartdevices.bracelet.relation.db.a;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 
 class C0609l implements f {
     final /* synthetic */ C0608k a;
@@ -43,10 +43,10 @@ class C0609l implements f {
         C0401a.a(this.a.f, C0409b.aO);
         if (this.a.h != null && i >= 0 && i < this.a.h.size()) {
             a aVar = (a) this.a.h.get(i);
-            this.a.f.u.setText(this.a.f.a(aVar.o, (int) r.label_activity_record));
+            this.a.f.u.setText(this.a.f.a(aVar.o, (int) R.string.label_activity_record));
             this.a.f.v.setText(aVar.l + com.xiaomi.e.a.f);
             this.a.f.w.setText(ChartData.a(this.a.f, aVar.p)[0]);
-            this.a.f.M.setText(this.a.f.getString(r.label_mileage_dynamic, new Object[]{r1[1]}));
+            this.a.f.M.setText(this.a.f.getString(R.string.label_mileage_dynamic, new Object[]{r1[1]}));
             this.a.f.x.setText(ChartData.a((long) aVar.q));
         }
     }

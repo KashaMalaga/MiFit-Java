@@ -14,9 +14,7 @@ import cn.com.smartdevices.bracelet.Utils;
 import cn.com.smartdevices.bracelet.view.WeightUserAvatar;
 import cn.com.smartdevices.bracelet.weight.UserInfo;
 import com.xiaomi.e.a;
-import com.xiaomi.hm.health.k;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
+import com.xiaomi.hm.health.R;
 
 @SuppressLint({"NewApi"})
 public class UserInfoImgWithName extends RelativeLayout implements OnClickListener {
@@ -36,10 +34,10 @@ public class UserInfoImgWithName extends RelativeLayout implements OnClickListen
 
     public UserInfoImgWithName(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet);
-        View inflate = LayoutInflater.from(context).inflate(n.userimg_with_name, this, true);
-        this.b = (WeightUserAvatar) inflate.findViewById(l.user_icon);
+        View inflate = LayoutInflater.from(context).inflate(R.layout.userimg_with_name, this, true);
+        this.b = (WeightUserAvatar) inflate.findViewById(R.id.user_icon);
         this.b.setOnClickListener(this);
-        this.c = (TextView) inflate.findViewById(l.user_name);
+        this.c = (TextView) inflate.findViewById(R.id.user_name);
     }
 
     public void a(int i) {
@@ -59,7 +57,7 @@ public class UserInfoImgWithName extends RelativeLayout implements OnClickListen
             a(this.d.name);
             return;
         }
-        this.b.setBackgroundResource(k.default_userinfo);
+        this.b.setBackgroundResource(R.drawable.default_userinfo);
         this.c.setText(a.f);
     }
 
@@ -74,9 +72,9 @@ public class UserInfoImgWithName extends RelativeLayout implements OnClickListen
     public void a(boolean z) {
         this.c.setVisibility(8);
         if (z) {
-            this.c = (TextView) findViewById(l.user_name_right);
+            this.c = (TextView) findViewById(R.id.user_name_right);
         } else {
-            this.c = (TextView) findViewById(l.user_name);
+            this.c = (TextView) findViewById(R.id.user_name);
         }
         this.c.setVisibility(0);
     }
@@ -97,7 +95,7 @@ public class UserInfoImgWithName extends RelativeLayout implements OnClickListen
 
     public void onClick(View view) {
         switch (view.getId()) {
-            case l.user_icon /*2131297540*/:
+            case R.id.user_icon:
                 if (this.e != null) {
                     this.e.a(this.d);
                     return;

@@ -11,10 +11,8 @@ import cn.com.smartdevices.bracelet.partner.NativeInterface;
 import cn.com.smartdevices.bracelet.partner.WebActivity;
 import cn.com.smartdevices.bracelet.relation.A;
 import com.xiaomi.e.a;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.bt.a.C1115b;
-import com.xiaomi.hm.health.k;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.r;
 import org.json.JSONObject;
 
 public class b extends a {
@@ -46,7 +44,7 @@ public class b extends a {
     }
 
     public int a() {
-        return l.notification_care;
+        return R.id.notification_care;
     }
 
     public void b() {
@@ -62,8 +60,8 @@ public class b extends a {
         } else {
             return;
         }
-        CharSequence string = this.d.getString(r.message_title_care);
-        aT e = new aT(this.d).a((int) k.app_icon).a(string).b(this.d.getString(r.label_friend_care_message, new Object[]{this.o})).e(true);
+        CharSequence string = this.d.getString(R.string.message_title_care);
+        aT e = new aT(this.d).a((int) R.drawable.app_icon).a(string).b(this.d.getString(R.string.label_friend_care_message, new Object[]{this.o})).e(true);
         e.a(PendingIntent.getBroadcast(this.d, 0, intent, 268435456));
         ((NotificationManager) this.d.getSystemService("notification")).notify(1, e.c());
         new C1115b((byte) 4, new c(this)).f();

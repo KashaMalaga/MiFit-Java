@@ -10,17 +10,13 @@ import cn.com.smartdevices.bracelet.C0596r;
 import cn.com.smartdevices.bracelet.Utils;
 import cn.com.smartdevices.bracelet.ui.C0763dl;
 import com.huami.android.view.c;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 import java.text.DecimalFormat;
 import java.util.Calendar;
 import java.util.Date;
 import kankan.wheel.widget.WheelView;
 import kankan.wheel.widget.a;
 import kankan.wheel.widget.a.f;
-import kankan.wheel.widget.g;
-import kankan.wheel.widget.h;
 
 public class C0882t extends c {
     public static final int a = -11;
@@ -61,11 +57,11 @@ public class C0882t extends c {
             return;
         }
         if (Utils.y(getActivity().getApplicationContext())) {
-            this.i.setText(getString(r.date) + "\t\t" + this.m + "-" + this.t.format((long) this.k) + "-" + this.t.format((long) this.l) + " " + this.t.format((long) this.n) + a.ci + this.t.format((long) this.o));
+            this.i.setText(getString(R.string.date) + "\t\t" + this.m + "-" + this.t.format((long) this.k) + "-" + this.t.format((long) this.l) + " " + this.t.format((long) this.n) + a.ci + this.t.format((long) this.o));
         } else if (this.n >= 12) {
-            this.i.setText(getString(r.date) + "\t\t" + this.m + "-" + this.t.format((long) this.k) + "-" + this.t.format((long) this.l) + " " + this.t.format((long) (this.n - 12)) + a.ci + this.t.format((long) this.o) + " " + getString(r.pm));
+            this.i.setText(getString(R.string.date) + "\t\t" + this.m + "-" + this.t.format((long) this.k) + "-" + this.t.format((long) this.l) + " " + this.t.format((long) (this.n - 12)) + a.ci + this.t.format((long) this.o) + " " + getString(R.string.pm));
         } else {
-            this.i.setText(getString(r.date) + "\t\t" + this.m + "-" + this.t.format((long) this.k) + "-" + this.t.format((long) this.l) + " " + this.t.format((long) this.n) + a.ci + this.t.format((long) this.o) + " " + getString(r.am));
+            this.i.setText(getString(R.string.date) + "\t\t" + this.m + "-" + this.t.format((long) this.k) + "-" + this.t.format((long) this.l) + " " + this.t.format((long) this.n) + a.ci + this.t.format((long) this.o) + " " + getString(R.string.am));
         }
     }
 
@@ -98,7 +94,7 @@ public class C0882t extends c {
     }
 
     protected int inflateLayout() {
-        return n.fragment_setting_date;
+        return R.layout.fragment_setting_date;
     }
 
     public void onCreate(Bundle bundle) {
@@ -109,13 +105,13 @@ public class C0882t extends c {
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         View onCreateView = super.onCreateView(layoutInflater, viewGroup, bundle);
         this.t = new DecimalFormat("00");
-        this.c = (WheelView) onCreateView.findViewById(l.setting_birth_wheel_month);
-        this.d = (WheelView) onCreateView.findViewById(l.setting_birth_wheel_day);
-        this.e = (WheelView) onCreateView.findViewById(l.setting_birth_wheel_hour);
-        this.f = (WheelView) onCreateView.findViewById(l.setting_birth_wheel_minute);
-        this.g = (WheelView) onCreateView.findViewById(l.setting_birth_wheel_ampm);
-        this.h = onCreateView.findViewById(l.wheel_ampm_divider);
-        this.i = (TextView) onCreateView.findViewById(l.setting_date_title);
+        this.c = (WheelView) onCreateView.findViewById(R.id.setting_birth_wheel_month);
+        this.d = (WheelView) onCreateView.findViewById(R.id.setting_birth_wheel_day);
+        this.e = (WheelView) onCreateView.findViewById(R.id.setting_birth_wheel_hour);
+        this.f = (WheelView) onCreateView.findViewById(R.id.setting_birth_wheel_minute);
+        this.g = (WheelView) onCreateView.findViewById(R.id.setting_birth_wheel_ampm);
+        this.h = onCreateView.findViewById(R.id.wheel_ampm_divider);
+        this.i = (TextView) onCreateView.findViewById(R.id.setting_date_title);
         this.k = Calendar.getInstance().get(2) + 1;
         this.l = Calendar.getInstance().get(5);
         this.m = Calendar.getInstance().get(1);
@@ -130,32 +126,32 @@ public class C0882t extends c {
             }
         }
         a();
-        f c0763dl = new C0763dl(getActivity(), 1, 12, this.c, getResources().getColor(g.highlight), getResources().getColor(g.main_ui_content_color), a.bm, false, 46, 24, 21, 21, 1);
-        f c0763dl2 = new C0763dl(getActivity(), 1, a(this.m, this.k), this.d, getResources().getColor(g.highlight), getResources().getColor(g.main_ui_content_color), a.bm, false, 46, 24, 21, 21, 1);
-        f c0763dl3 = new C0763dl(getActivity(), 0, 59, this.f, getResources().getColor(g.highlight), getResources().getColor(g.main_ui_content_color), a.bm, false, 46, 24, 21, 21, 1);
-        f c0763dl4 = new C0763dl(getActivity(), a, b, this.g, getResources().getColor(g.bg_color_blue), getResources().getColor(g.main_ui_content_color), a.bm, false, 46, 18, 15, 21, 1);
+        f c0763dl = new C0763dl(getActivity(), 1, 12, this.c, getResources().getColor(R.color.highlight), getResources().getColor(R.color.main_ui_content_color), a.bm, false, 46, 24, 21, 21, 1);
+        f c0763dl2 = new C0763dl(getActivity(), 1, a(this.m, this.k), this.d, getResources().getColor(R.color.highlight), getResources().getColor(R.color.main_ui_content_color), a.bm, false, 46, 24, 21, 21, 1);
+        f c0763dl3 = new C0763dl(getActivity(), 0, 59, this.f, getResources().getColor(R.color.highlight), getResources().getColor(R.color.main_ui_content_color), a.bm, false, 46, 24, 21, 21, 1);
+        f c0763dl4 = new C0763dl(getActivity(), a, b, this.g, getResources().getColor(R.color.bg_color_blue), getResources().getColor(R.color.main_ui_content_color), a.bm, false, 46, 18, 15, 21, 1);
         c0763dl4.a(C0763dl.c);
         c0763dl4.a(17);
         if (Utils.y(getActivity().getApplicationContext())) {
             this.h.setVisibility(8);
             this.g.setVisibility(8);
-            this.q = new C0763dl(getActivity(), 0, 23, this.e, getResources().getColor(g.highlight), getResources().getColor(g.main_ui_content_color), a.bm, false, 46, 24, 21, 21, 1);
+            this.q = new C0763dl(getActivity(), 0, 23, this.e, getResources().getColor(R.color.highlight), getResources().getColor(R.color.main_ui_content_color), a.bm, false, 46, 24, 21, 21, 1);
         } else {
             this.h.setVisibility(0);
             this.g.setVisibility(0);
-            this.q = new C0763dl(getActivity(), 0, 11, this.e, getResources().getColor(g.highlight), getResources().getColor(g.main_ui_content_color), a.bm, false, 46, 24, 21, 21, 1);
+            this.q = new C0763dl(getActivity(), 0, 11, this.e, getResources().getColor(R.color.highlight), getResources().getColor(R.color.main_ui_content_color), a.bm, false, 46, 24, 21, 21, 1);
         }
-        this.c.a(5).e(h.wheel_custom_val_white_1).a(getString(r.month), (float) aA.h).a(c0763dl).c(this.k - 1).a(true);
-        this.d.a(5).e(h.wheel_custom_val_white_1).a(getString(r.day_ri), (float) aA.h).a(c0763dl2).c(this.l - 1).a(true);
-        this.f.a(5).e(h.wheel_custom_val_white_1).a(getString(r.minute), (float) aA.h).a(c0763dl3).c(this.o).a(true);
-        this.g.a(2).e(h.wheel_custom_val_white_1).a(com.xiaomi.e.a.f, (float) aA.h).a(c0763dl4).c(0).a(false);
+        this.c.a(5).e(R.drawable.wheel_custom_val_white_1).a(getString(R.string.month), (float) aA.h).a(c0763dl).c(this.k - 1).a(true);
+        this.d.a(5).e(R.drawable.wheel_custom_val_white_1).a(getString(R.string.day_ri), (float) aA.h).a(c0763dl2).c(this.l - 1).a(true);
+        this.f.a(5).e(R.drawable.wheel_custom_val_white_1).a(getString(R.string.minute), (float) aA.h).a(c0763dl3).c(this.o).a(true);
+        this.g.a(2).e(R.drawable.wheel_custom_val_white_1).a(com.xiaomi.e.a.f, (float) aA.h).a(c0763dl4).c(0).a(false);
         if (Utils.y(getActivity().getApplicationContext())) {
-            this.e.a(5).e(h.wheel_custom_val_white_1).a(getString(r.hour_1), (float) aA.h).a(this.q).c(this.n).a(true);
+            this.e.a(5).e(R.drawable.wheel_custom_val_white_1).a(getString(R.string.hour_1), (float) aA.h).a(this.q).c(this.n).a(true);
         } else if (this.n >= 12) {
-            this.e.a(5).e(h.wheel_custom_val_white_1).a(getString(r.hour_1), (float) aA.h).a(this.q).c(this.n - 12).a(true);
+            this.e.a(5).e(R.drawable.wheel_custom_val_white_1).a(getString(R.string.hour_1), (float) aA.h).a(this.q).c(this.n - 12).a(true);
             this.g.c(1);
         } else {
-            this.e.a(5).e(h.wheel_custom_val_white_1).a(getString(r.hour_1), (float) aA.h).a(this.q).c(this.n).a(true);
+            this.e.a(5).e(R.drawable.wheel_custom_val_white_1).a(getString(R.string.hour_1), (float) aA.h).a(this.q).c(this.n).a(true);
             this.g.c(0);
         }
         this.c.a(new C0883u(this));

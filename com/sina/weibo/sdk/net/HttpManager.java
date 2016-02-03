@@ -133,7 +133,7 @@ class HttpManager {
             if (file2.exists()) {
                 path = file2.getPath();
             } else if (URLUtil.isValidUrl(str)) {
-                HttpClient newHttpClient = getNewHttpClient();
+                r8 = getNewHttpClient();
                 long j = 0;
                 File file3 = new File(str2, new StringBuilder(String.valueOf(str3)).append("_temp").toString());
                 try {
@@ -146,7 +146,7 @@ class HttpManager {
                     }
                     HttpUriRequest httpGet = new HttpGet(str);
                     httpGet.setHeader("RANGE", "bytes=" + j + "-");
-                    HttpResponse execute = newHttpClient.execute(httpGet);
+                    HttpResponse execute = r8.execute(httpGet);
                     int statusCode = execute.getStatusLine().getStatusCode();
                     if (statusCode == 206) {
                         Header[] headers = execute.getHeaders("Content-Range");
@@ -186,27 +186,28 @@ class HttpManager {
                     content.close();
                     if (parseLong == 0 || file3.length() < parseLong) {
                         file3.delete();
-                        if (newHttpClient != null) {
-                            newHttpClient.getConnectionManager().closeExpiredConnections();
-                            newHttpClient.getConnectionManager().closeIdleConnections(300, TimeUnit.SECONDS);
+                        if (r8 != null) {
+                            r8.getConnectionManager().closeExpiredConnections();
+                            r8.getConnectionManager().closeIdleConnections(300, TimeUnit.SECONDS);
                         }
                         path = a.f;
                     } else {
                         file3.renameTo(file2);
                         path = file2.getPath();
-                        if (newHttpClient != null) {
-                            newHttpClient.getConnectionManager().closeExpiredConnections();
-                            newHttpClient.getConnectionManager().closeIdleConnections(300, TimeUnit.SECONDS);
+                        if (r8 != null) {
+                            r8.getConnectionManager().closeExpiredConnections();
+                            r8.getConnectionManager().closeIdleConnections(300, TimeUnit.SECONDS);
                         }
                     }
                 } catch (IOException e) {
                     e.printStackTrace();
                     file3.delete();
-                    if (newHttpClient != null) {
-                        newHttpClient.getConnectionManager().closeExpiredConnections();
-                        newHttpClient.getConnectionManager().closeIdleConnections(300, TimeUnit.SECONDS);
+                    if (r8 != null) {
+                        r8.getConnectionManager().closeExpiredConnections();
+                        r8.getConnectionManager().closeIdleConnections(300, TimeUnit.SECONDS);
                     }
                 } catch (Throwable th) {
+                    HttpClient newHttpClient;
                     if (newHttpClient != null) {
                         newHttpClient.getConnectionManager().closeExpiredConnections();
                         newHttpClient.getConnectionManager().closeIdleConnections(300, TimeUnit.SECONDS);
@@ -514,7 +515,6 @@ class HttpManager {
 
     private static HttpResponse requestHttpExecute(Context context, String str, String str2, WeiboParameters weiboParameters) {
         HttpClient newHttpClient;
-        OutputStream outputStream;
         Throwable e;
         HttpClient httpClient;
         ByteArrayOutputStream byteArrayOutputStream = null;
@@ -532,6 +532,7 @@ class HttpManager {
                     LogUtil.d(TAG, "requestHttpExecute POST Url : " + str);
                     HttpPost httpPost = new HttpPost(str);
                     OutputStream byteArrayOutputStream2 = new ByteArrayOutputStream();
+                    OutputStream outputStream;
                     try {
                         Object obj;
                         if (weiboParameters.hasBinaryData()) {

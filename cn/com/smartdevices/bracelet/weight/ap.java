@@ -6,7 +6,7 @@ import cn.com.smartdevices.bracelet.eventbus.weight.EventWeightChanged;
 import com.huami.android.view.b;
 import com.huami.android.view.c;
 import com.huami.android.view.e;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 import de.greenrobot.event.EventBus;
 
 class ap implements e {
@@ -35,7 +35,7 @@ class ap implements e {
         C0596r.e("WeightReportActivity", "fromUID " + this.b.p);
         WeightInfo b = ah.a().b(this.b.n.e());
         if (b == null) {
-            b.a(this.b.b, this.b.getString(r.can_not_del_last_weight_info), 0).show();
+            b.a(this.b.b, this.b.getString(R.string.can_not_del_last_weight_info), 0).show();
             return;
         }
         aA.a(b);

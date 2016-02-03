@@ -13,7 +13,7 @@ import cn.com.smartdevices.bracelet.shoes.sync.b.m;
 import com.huami.android.zxing.CaptureActivity;
 import com.tencent.open.SocialConstants;
 import com.xiaomi.channel.gamesdk.b;
-import com.xiaomi.e.a;
+import com.xiaomi.channel.relationservice.data.a;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -23,12 +23,11 @@ class C0642s {
     }
 
     public static n a(Context context, int i, String str, z zVar) {
-        n a;
-        JSONException e;
         int i2 = 0;
         if (zVar == null || context == null) {
             throw new IllegalArgumentException();
         }
+        n a;
         n nVar = new n();
         try {
             JSONObject jSONObject = new JSONObject(str);
@@ -37,10 +36,10 @@ class C0642s {
                 if (a.c()) {
                     JSONObject jSONObject2 = jSONObject.getJSONObject(b.b);
                     jSONObject2.getInt(g.f);
-                    int i3 = jSONObject2.getInt(SocialConstants.PARAM_TYPE);
+                    int i3 = jSONObject2.getInt(a.h);
                     if (i3 != i) {
                         throw new IllegalArgumentException("type is invalid.type = " + i + ",typeserver =" + i3);
-                    } else if (TextUtils.isEmpty(zVar.f) || zVar.f.compareTo(a.f) <= 0) {
+                    } else if (TextUtils.isEmpty(zVar.f) || zVar.f.compareTo(com.xiaomi.e.a.f) <= 0) {
                         JSONArray jSONArray = jSONObject2.getJSONArray(g.t);
                         int length = jSONArray.length();
                         for (int i4 = 0; i4 < length; i4++) {
@@ -49,8 +48,8 @@ class C0642s {
                     } else {
                         JSONArray jSONArray2 = jSONObject2.getJSONArray(g.r);
                         i3 = jSONArray2.length();
-                        String str2 = a.f;
-                        str2 = a.f;
+                        String str2 = com.xiaomi.e.a.f;
+                        str2 = com.xiaomi.e.a.f;
                         while (i2 < i3) {
                             JSONObject jSONObject3 = jSONArray2.getJSONObject(i2);
                             Object string = jSONObject3.getString(g.t);
@@ -63,29 +62,29 @@ class C0642s {
                         }
                     }
                 }
-            } catch (JSONException e2) {
-                e = e2;
+            } catch (JSONException e) {
+                e = e;
                 a.h = 2;
                 C0596r.d(B.a, e.getMessage());
                 return a;
             }
-        } catch (JSONException e3) {
-            JSONException jSONException = e3;
+        } catch (JSONException e2) {
+            JSONException e3;
+            JSONException jSONException = e2;
             a = nVar;
-            e = jSONException;
+            e3 = jSONException;
             a.h = 2;
-            C0596r.d(B.a, e.getMessage());
+            C0596r.d(B.a, e3.getMessage());
             return a;
         }
         return a;
     }
 
     public static n a(Context context, String str, j jVar) {
-        JSONException e;
+        n a;
         if (jVar == null || context == null) {
             throw new IllegalArgumentException();
         }
-        n a;
         n nVar = new n();
         try {
             JSONObject jSONObject = new JSONObject(str);
@@ -96,18 +95,19 @@ class C0642s {
                     jVar.a(jSONObject2.getInt(g.f));
                     jVar.a(jSONObject2.getJSONArray(b.b));
                 }
-            } catch (JSONException e2) {
-                e = e2;
+            } catch (JSONException e) {
+                e = e;
                 a.h = 2;
                 C0596r.d(B.a, e.getMessage());
                 return a;
             }
-        } catch (JSONException e3) {
-            JSONException jSONException = e3;
+        } catch (JSONException e2) {
+            JSONException e3;
+            JSONException jSONException = e2;
             a = nVar;
-            e = jSONException;
+            e3 = jSONException;
             a.h = 2;
-            C0596r.d(B.a, e.getMessage());
+            C0596r.d(B.a, e3.getMessage());
             return a;
         }
         return a;
@@ -128,7 +128,7 @@ class C0642s {
                     CharSequence charSequence;
                     JSONObject jSONObject2 = jSONObject.getJSONObject(b.b);
                     String str2 = kVar.a;
-                    String str3 = a.f;
+                    String str3 = com.xiaomi.e.a.f;
                     if (TextUtils.isEmpty(kVar.a) || jSONObject2.isNull(g.t)) {
                         charSequence = str2;
                     } else {
@@ -141,7 +141,7 @@ class C0642s {
                         C0596r.d(B.a, "deviceId is empty.mac = " + cVar);
                         throw new IllegalArgumentException("deviceId is invalid");
                     }
-                    str3 = a.f;
+                    str3 = com.xiaomi.e.a.f;
                     if (jSONObject2.has(g.p)) {
                         jSONObject2.getString(g.p);
                     }
@@ -149,12 +149,12 @@ class C0642s {
                     if (i < 0) {
                         C0596r.d(B.a, "userId is empty");
                     } else {
-                        String string = jSONObject2.has(CaptureActivity.n) ? jSONObject2.getString(CaptureActivity.n) : a.f;
-                        str2 = jSONObject2.has(g.k) ? jSONObject2.getString(g.k) : a.f;
+                        String string = jSONObject2.has(CaptureActivity.n) ? jSONObject2.getString(CaptureActivity.n) : com.xiaomi.e.a.f;
+                        str2 = jSONObject2.has(g.k) ? jSONObject2.getString(g.k) : com.xiaomi.e.a.f;
                         if (TextUtils.isEmpty(string) || TextUtils.isEmpty(str2)) {
                             C0596r.d(B.a, "brand = " + string + ",brandType = " + str2);
                         } else {
-                            str3 = a.f;
+                            str3 = com.xiaomi.e.a.f;
                             if (jSONObject2.has(SocialConstants.PARAM_SUMMARY)) {
                                 str3 = jSONObject2.getString(SocialConstants.PARAM_SUMMARY);
                             }
@@ -256,7 +256,6 @@ class C0642s {
 
     public static n a(Context context, String str, cn.com.smartdevices.bracelet.shoes.sync.b.n nVar) {
         n a;
-        JSONException e;
         if (nVar == null || context == null) {
             throw new IllegalArgumentException();
         }
@@ -268,18 +267,19 @@ class C0642s {
                 if (a.c()) {
                     nVar.a(jSONObject.getJSONObject(b.b).getInt(g.f));
                 }
-            } catch (JSONException e2) {
-                e = e2;
+            } catch (JSONException e) {
+                e = e;
                 a.h = 2;
                 C0596r.d(B.a, e.getMessage());
                 return a;
             }
-        } catch (JSONException e3) {
-            JSONException jSONException = e3;
+        } catch (JSONException e2) {
+            JSONException e3;
+            JSONException jSONException = e2;
             a = nVar2;
-            e = jSONException;
+            e3 = jSONException;
             a.h = 2;
-            C0596r.d(B.a, e.getMessage());
+            C0596r.d(B.a, e3.getMessage());
             return a;
         }
         return a;

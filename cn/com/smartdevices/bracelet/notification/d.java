@@ -8,8 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
+import com.xiaomi.hm.health.R;
 import java.util.List;
 
 public class d extends ArrayAdapter<c> {
@@ -29,12 +28,12 @@ public class d extends ArrayAdapter<c> {
 
     public View getView(int i, View view, ViewGroup viewGroup) {
         if (view == null) {
-            view = this.a.inflate(n.view_notifi_apps_list_item, viewGroup, false);
+            view = this.a.inflate(R.layout.view_notifi_apps_list_item, viewGroup, false);
         }
         c cVar = (c) getItem(i);
-        ((ImageView) view.findViewById(l.icon)).setImageDrawable(cVar.d());
-        ((TextView) view.findViewById(l.text)).setText(cVar.b());
-        ((CheckBox) view.findViewById(l.check)).setChecked(cVar.c());
+        ((ImageView) view.findViewById(R.id.icon)).setImageDrawable(cVar.d());
+        ((TextView) view.findViewById(R.id.text)).setText(cVar.b());
+        ((CheckBox) view.findViewById(R.id.check)).setChecked(cVar.c());
         return view;
     }
 }

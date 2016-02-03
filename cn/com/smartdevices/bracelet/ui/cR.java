@@ -2,8 +2,8 @@ package cn.com.smartdevices.bracelet.ui;
 
 import cn.com.smartdevices.bracelet.C0596r;
 import com.huami.android.view.b;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.bt.a.d;
-import com.xiaomi.hm.health.r;
 
 class cR extends d {
     final /* synthetic */ cL a;
@@ -24,7 +24,7 @@ class cR extends d {
     public void b(Object obj) {
         super.b(obj);
         if (this.a.getActivity() != null) {
-            b.a(this.a.getActivity(), this.a.getActivity().getString(r.bt_operation_failed_tips), 0).show();
+            b.a(this.a.getActivity(), this.a.getActivity().getString(R.string.bt_operation_failed_tips), 0).show();
         }
     }
 }

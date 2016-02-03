@@ -66,9 +66,9 @@ public class ImageObject extends BaseMediaObject {
     }
 
     public final void setImageObject(Bitmap bitmap) {
+        ByteArrayOutputStream byteArrayOutputStream;
         Exception e;
         Throwable th;
-        ByteArrayOutputStream byteArrayOutputStream;
         try {
             byteArrayOutputStream = new ByteArrayOutputStream();
             try {

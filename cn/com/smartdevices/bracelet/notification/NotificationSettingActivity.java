@@ -8,8 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Switch;
 import cn.com.smartdevices.bracelet.ui.SystemBarTintActivity;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
+import com.xiaomi.hm.health.R;
 
 public class NotificationSettingActivity extends SystemBarTintActivity {
     private static final String a = "NotificationSettingActivity";
@@ -43,10 +42,10 @@ public class NotificationSettingActivity extends SystemBarTintActivity {
 
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView((int) n.activity_notification_setting);
+        setContentView((int) R.layout.activity_notification_setting);
         this.b = h.a((Context) this);
-        this.c = (Switch) findViewById(l.enable_notification);
-        this.d = (RecyclerView) findViewById(l.notifi_app_list);
+        this.c = (Switch) findViewById(R.id.enable_notification);
+        this.d = (RecyclerView) findViewById(R.id.notifi_app_list);
         this.d.a(true);
         this.d.a(new LinearLayoutManager(this));
         this.e = new l(this);

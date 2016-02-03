@@ -27,12 +27,12 @@ public class ConfigProvider extends ContentProvider {
 
     private boolean a(String str) {
         boolean createNewFile;
+        OutputStream fileOutputStream;
         Throwable e;
         Throwable th;
         Throwable th2;
         OutputStream outputStream = null;
         try {
-            OutputStream fileOutputStream;
             createNewFile = !this.d.exists() ? this.d.createNewFile() : true;
             if (createNewFile) {
                 try {

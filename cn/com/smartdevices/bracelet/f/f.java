@@ -7,7 +7,7 @@ import cn.com.smartdevices.bracelet.C0596r;
 import cn.com.smartdevices.bracelet.Utils;
 import cn.com.smartdevices.bracelet.chart.util.t;
 import com.tencent.connect.common.Constants;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -24,9 +24,9 @@ public class f {
         String[] e = e(i);
         t.a(context, 1.33f);
         if (e[0].equals(Constants.VIA_RESULT_SUCCESS)) {
-            return context.getString(r.time_format_min, new Object[]{e[1]});
+            return context.getString(R.string.time_format_min, new Object[]{e[1]});
         }
-        return context.getString(r.time_format_hour_min, new Object[]{e[0], e[1]});
+        return context.getString(R.string.time_format_hour_min, new Object[]{e[0], e[1]});
     }
 
     public static String a(int i) {
@@ -40,15 +40,15 @@ public class f {
 
     public static String a(Context context, int i) {
         if (e(i)[0].equals(Constants.VIA_RESULT_SUCCESS)) {
-            return context.getString(r.time_format_min, new Object[]{e(i)[1]});
+            return context.getString(R.string.time_format_min, new Object[]{e(i)[1]});
         }
-        return context.getString(r.time_format_hour_min, new Object[]{e(i)[0], e(i)[1]});
+        return context.getString(R.string.time_format_hour_min, new Object[]{e(i)[0], e(i)[1]});
     }
 
     public static String a(Boolean bool, long j) {
         Context a = BraceletApp.a();
         String str = bool.booleanValue() ? "yyyy-MM-dd " : "MM-dd ";
-        return !DateFormat.is24HourFormat(a) ? c(new Date(j)) ? str + a.getString(r.detial_ampm_format) : str + a.getString(r.ampm_format) : str + "HH:mm";
+        return !DateFormat.is24HourFormat(a) ? c(new Date(j)) ? str + a.getString(R.string.detial_ampm_format) : str + a.getString(R.string.ampm_format) : str + "HH:mm";
     }
 
     public static String a(Date date) {
@@ -62,7 +62,7 @@ public class f {
 
     public static String b(Context context, int i) {
         String[] d = d(i);
-        return context.getString(r.time_format_hour_min, new Object[]{d[0], d[1]});
+        return context.getString(R.string.time_format_hour_min, new Object[]{d[0], d[1]});
     }
 
     public static String b(Date date) {
@@ -71,10 +71,10 @@ public class f {
         C0596r.e(e, "dateFormat.format(date)24\u65f6\u5236: " + simpleDateFormat.format(date));
         if (!DateFormat.is24HourFormat(a)) {
             if (c(date)) {
-                simpleDateFormat.applyPattern(a.getString(r.detial_ampm_format));
+                simpleDateFormat.applyPattern(a.getString(R.string.detial_ampm_format));
                 C0596r.e(e, "dateFormat.format(date)\u51cc\u6668: " + simpleDateFormat.format(date));
             } else {
-                simpleDateFormat.applyPattern(a.getString(r.ampm_format));
+                simpleDateFormat.applyPattern(a.getString(R.string.ampm_format));
                 C0596r.e(e, "dateFormat.format(date)\u4e0a\u5348: " + simpleDateFormat.format(date));
             }
         }

@@ -18,8 +18,7 @@ import com.amap.api.maps.MapView;
 import com.amap.api.services.geocoder.GeocodeSearch;
 import com.xiaomi.account.openauth.h;
 import com.xiaomi.e.a;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
+import com.xiaomi.hm.health.R;
 import java.io.IOException;
 
 public class GaodeTestActivity extends Activity implements e {
@@ -124,23 +123,23 @@ public class GaodeTestActivity extends Activity implements e {
         try {
             C0596r.e(GeocodeSearch.GPS, "onCreate-in");
             super.onCreate(bundle);
-            setContentView(n.gps_map_route_activity_test_hao);
-            this.i = (MapView) findViewById(l.gaode_test_map);
+            setContentView(R.layout.gps_map_route_activity_test_hao);
+            this.i = (MapView) findViewById(R.id.gaode_test_map);
             this.i.onCreate(bundle);
             this.h = new Z(this, new C(this.i.getMap()), cn.com.smartdevices.bracelet.a.a.d(".MISportLab").getAbsolutePath());
             this.h.a(this.i.getMap());
             this.h.d(1);
             this.h.a((e) this);
-            this.a = (Button) findViewById(l.gps_start_button);
-            this.c = (Button) findViewById(l.gps_test_button);
-            this.b = (Button) findViewById(l.gps_clean_button);
+            this.a = (Button) findViewById(R.id.gps_start_button);
+            this.c = (Button) findViewById(R.id.gps_test_button);
+            this.b = (Button) findViewById(R.id.gps_clean_button);
             this.a.setEnabled(false);
             this.c.setEnabled(false);
             this.b.setEnabled(false);
-            this.d = (TextView) findViewById(l.gps_raw_distance_text);
-            this.e = (TextView) findViewById(l.gps_raw_speed_text);
-            this.f = (TextView) findViewById(l.gps_new_distance_text);
-            this.g = (TextView) findViewById(l.gps_new_speed_text);
+            this.d = (TextView) findViewById(R.id.gps_raw_distance_text);
+            this.e = (TextView) findViewById(R.id.gps_raw_speed_text);
+            this.f = (TextView) findViewById(R.id.gps_new_distance_text);
+            this.g = (TextView) findViewById(R.id.gps_new_speed_text);
             this.a.setOnClickListener(new N(this));
             this.b.setOnClickListener(new O(this));
             this.c.setOnClickListener(new P(this));

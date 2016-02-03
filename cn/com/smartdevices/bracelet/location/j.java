@@ -10,6 +10,7 @@ import cn.com.smartdevices.bracelet.C0596r;
 import cn.com.smartdevices.bracelet.location.Location.Address;
 import com.amap.api.location.LocationManagerProxy;
 import com.amap.api.services.geocoder.GeocodeSearch;
+import com.xiaomi.channel.relationservice.data.a;
 import java.io.IOException;
 import java.util.List;
 
@@ -23,7 +24,7 @@ public class j implements LocationListener, i {
 
     public j(Context context) {
         this.b = context;
-        this.c = (LocationManager) context.getSystemService(LocationManagerProxy.KEY_LOCATION_CHANGED);
+        this.c = (LocationManager) context.getSystemService(a.l);
         C0596r.e(a, "Provider : " + this.c.getAllProviders());
     }
 
@@ -57,12 +58,12 @@ public class j implements LocationListener, i {
     }
 
     public void onLocationChanged(Location location) {
-        Address address;
-        Location location2;
         IOException iOException;
         C0596r.e(a, "Time : " + location.getTime());
         C0596r.e(a, "Latitude : " + location.getLatitude());
         C0596r.e(a, "Longitude : " + location.getLongitude());
+        Address address;
+        Location location2;
         try {
             List fromLocation = new Geocoder(this.b).getFromLocation(location.getLatitude(), location.getLongitude(), 1);
             C0596r.e(a, "Address : " + fromLocation);

@@ -13,9 +13,7 @@ import cn.com.smartdevices.bracelet.model.PersonInfo;
 import com.huami.android.view.b;
 import com.huami.android.view.c;
 import com.xiaomi.e.a;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 import de.greenrobot.event.EventBus;
 
 public class C0759dh extends c {
@@ -23,7 +21,7 @@ public class C0759dh extends c {
     private EditText b;
 
     protected int inflateLayout() {
-        return n.fragment_person_info_setting_signature;
+        return R.layout.fragment_person_info_setting_signature;
     }
 
     public void onCreate(Bundle bundle) {
@@ -33,7 +31,7 @@ public class C0759dh extends c {
 
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         View onCreateView = super.onCreateView(layoutInflater, viewGroup, bundle);
-        this.b = (EditText) onCreateView.findViewById(l.info_person_signature);
+        this.b = (EditText) onCreateView.findViewById(R.id.info_person_signature);
         this.b.setText(this.a.personSignature);
         this.b.setSelection(this.b.length());
         return onCreateView;
@@ -47,7 +45,7 @@ public class C0759dh extends c {
             this.a.personSignature = this.b.getText().toString().replaceAll("\\s+", a.f);
         }
         if (!Utils.b(this.a.personSignature)) {
-            b.a(getActivity(), (int) r.content_too_short, 0).show();
+            b.a(getActivity(), (int) R.string.content_too_short, 0).show();
         } else if (this.a.personSignature.equals(str)) {
             dismiss();
         } else {

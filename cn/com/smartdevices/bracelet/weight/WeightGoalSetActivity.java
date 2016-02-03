@@ -20,9 +20,7 @@ import cn.com.smartdevices.bracelet.weight.goal.a;
 import com.amap.api.maps.model.BitmapDescriptorFactory;
 import com.edmodo.cropper.cropwindow.CropOverlayView;
 import com.huami.android.view.c;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.mipush.sdk.f;
 import de.greenrobot.event.EventBus;
 
@@ -48,16 +46,16 @@ public class WeightGoalSetActivity extends SystemBarTintActivity implements OnCl
     private int s;
 
     private void a() {
-        this.h = (TextView) findViewById(l.person_info_set_weight_info);
-        this.i = (WeightGoalSetView) findViewById(l.weight_goal_seekbar);
+        this.h = (TextView) findViewById(R.id.person_info_set_weight_info);
+        this.i = (WeightGoalSetView) findViewById(R.id.weight_goal_seekbar);
         int age = Birthday.fromStr(this.p.birthday).getAge();
         this.i.b(0);
         int i = this.n;
         if (this.p.height < 100) {
             if (age < 7) {
-                this.h.setText(getString(r.baby_weight_tips));
+                this.h.setText(getString(R.string.baby_weight_tips));
             } else {
-                this.h.setText(getString(r.weight_goal_height_100));
+                this.h.setText(getString(R.string.weight_goal_height_100));
             }
             this.i.a(aA.b(3.0f, Keeper.readPersonInfo().miliConfig.weightUnit), aA.b(75.0f, Keeper.readPersonInfo().miliConfig.weightUnit));
             age = ((int) (aA.b(3.0f, Keeper.readPersonInfo().miliConfig.weightUnit) + aA.b(75.0f, Keeper.readPersonInfo().miliConfig.weightUnit))) / 2;
@@ -66,15 +64,15 @@ public class WeightGoalSetActivity extends SystemBarTintActivity implements OnCl
             float b = aA.b(age, this.p.gender);
             a = aA.a(a, ((float) this.p.height) / CropOverlayView.a, Keeper.readPersonInfo().miliConfig.weightUnit);
             b = aA.a(b, ((float) this.p.height) / CropOverlayView.a, Keeper.readPersonInfo().miliConfig.weightUnit);
-            this.h.setText(getString(r.weight_less_than_tips, new Object[]{((int) (0.5f + a)) + aA.a(this.g, Keeper.readPersonInfo().miliConfig.weightUnit)}));
+            this.h.setText(getString(R.string.weight_less_than_tips, new Object[]{((int) (0.5f + a)) + aA.a(this.g, Keeper.readPersonInfo().miliConfig.weightUnit)}));
             this.i.a(aA.b(3.0f, Keeper.readPersonInfo().miliConfig.weightUnit), a, b, aA.b((float) BitmapDescriptorFactory.HUE_GREEN, Keeper.readPersonInfo().miliConfig.weightUnit));
             age = ((int) (aA.b(3.0f, Keeper.readPersonInfo().miliConfig.weightUnit) + a)) / 2;
         } else if (age < 7) {
-            this.h.setText(getString(r.baby_weight_tips));
+            this.h.setText(getString(R.string.baby_weight_tips));
             this.i.a(aA.b(3.0f, Keeper.readPersonInfo().miliConfig.weightUnit), aA.b(75.0f, Keeper.readPersonInfo().miliConfig.weightUnit));
             age = ((int) (aA.b(3.0f, Keeper.readPersonInfo().miliConfig.weightUnit) + aA.b(75.0f, Keeper.readPersonInfo().miliConfig.weightUnit))) / 2;
         } else {
-            this.h.setText(getString(r.set_goal_weight_tips, new Object[]{Integer.valueOf((int) (((float) this.m) + 0.5f)), Integer.valueOf((int) (((float) this.n) + 0.5f)), aA.a(this.g, Keeper.readPersonInfo().miliConfig.weightUnit)}));
+            this.h.setText(getString(R.string.set_goal_weight_tips, new Object[]{Integer.valueOf((int) (((float) this.m) + 0.5f)), Integer.valueOf((int) (((float) this.n) + 0.5f)), aA.a(this.g, Keeper.readPersonInfo().miliConfig.weightUnit)}));
             this.i.a(aA.b(3.0f, Keeper.readPersonInfo().miliConfig.weightUnit), (float) this.m, (float) this.n, (float) this.o, aA.b((float) BitmapDescriptorFactory.HUE_GREEN, Keeper.readPersonInfo().miliConfig.weightUnit));
             age = (this.m + this.n) / 2;
         }
@@ -86,18 +84,18 @@ public class WeightGoalSetActivity extends SystemBarTintActivity implements OnCl
             this.i.a(aA.c(aA.b(ah.a().a(this.p.uid, 0).weight, Keeper.readPersonInfo().miliConfig.weightUnit), 1));
         }
         this.i.a((ag) this);
-        this.k = findViewById(l.right_button);
+        this.k = findViewById(R.id.right_button);
         this.k.setOnClickListener(this);
-        this.j = findViewById(l.left_button);
+        this.j = findViewById(R.id.left_button);
         this.j.setOnClickListener(this);
         if (this.r) {
-            ((TextView) this.j).setText(getString(r.cancel));
-            ((TextView) this.k).setText(getString(r.set));
+            ((TextView) this.j).setText(getString(R.string.cancel));
+            ((TextView) this.k).setText(getString(R.string.set));
         } else {
-            ((TextView) this.j).setText(getString(r.clear_weight_goal));
-            ((TextView) this.k).setText(getString(r.reset_weight_goal));
+            ((TextView) this.j).setText(getString(R.string.clear_weight_goal));
+            ((TextView) this.k).setText(getString(R.string.reset_weight_goal));
         }
-        this.l = (TextView) findViewById(l.home_back);
+        this.l = (TextView) findViewById(R.id.home_back);
         this.l.setOnClickListener(this);
     }
 
@@ -125,23 +123,23 @@ public class WeightGoalSetActivity extends SystemBarTintActivity implements OnCl
 
     public void onClick(View view) {
         switch (view.getId()) {
-            case l.home_back /*2131296313*/:
+            case R.id.home_back:
                 finish();
                 return;
-            case l.left_button /*2131296944*/:
+            case R.id.left_button:
                 if (this.r) {
                     finish();
                     return;
                 }
                 C0401a.a(this.g, C0401a.gj);
-                String string = getString(r.no_need_weight_goal);
+                String string = getString(R.string.no_need_weight_goal);
                 DialogFragment afVar = new af();
                 afVar.setOpClickListener(new C0863ae(this));
                 Bundle bundle = new Bundle();
                 bundle.putString("Msg", string);
                 c.showPanel((Activity) this, afVar, bundle);
                 return;
-            case l.right_button /*2131296946*/:
+            case R.id.right_button:
                 b(this.e);
                 setResult(c, new Intent());
                 finish();
@@ -181,7 +179,7 @@ public class WeightGoalSetActivity extends SystemBarTintActivity implements OnCl
         } else {
             this.r = true;
         }
-        setContentView((int) n.activity_person_info_set_weightgoal);
+        setContentView((int) R.layout.activity_person_info_set_weightgoal);
         a();
     }
 

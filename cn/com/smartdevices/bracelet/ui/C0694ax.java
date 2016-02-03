@@ -52,20 +52,16 @@ import cn.com.smartdevices.bracelet.weight.am;
 import cn.com.smartdevices.bracelet.weight.family.WeightChooseUserActivity;
 import com.amap.api.maps.model.GroundOverlayOptions;
 import com.edmodo.cropper.cropwindow.CropOverlayView;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.bt.b.c;
 import com.xiaomi.hm.health.bt.d.e;
 import com.xiaomi.hm.health.bt.model.HwConnStatus;
 import com.xiaomi.hm.health.bt.model.HwSyncDataStatus;
-import com.xiaomi.hm.health.i;
-import com.xiaomi.hm.health.k;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
 import com.xiaomi.mistatistic.sdk.d;
 import de.greenrobot.event.EventBus;
 import java.util.Calendar;
 import java.util.Iterator;
 import java.util.List;
-import kankan.wheel.widget.g;
 
 public class C0694ax extends Fragment implements e {
     public static final int a = 0;
@@ -146,7 +142,7 @@ public class C0694ax extends Fragment implements e {
             instance2.setTimeInMillis(readSyncTime);
         }
         C0596r.e(d, "LastSyncTime : " + DateFormat.format("yyyy-MM-dd hh:mm:ss", instance2));
-        str = ((Utils.b(instance2, instance) > 0 || instance2.get(11) < 5) && instance.get(11) >= 5) ? getString(com.xiaomi.hm.health.r.dynamic_tip_sleep_unsynced) : !rVar.m() ? getString(com.xiaomi.hm.health.r.dynamic_tip_unweared) : getString(com.xiaomi.hm.health.r.dynamic_sleep_tip);
+        str = ((Utils.b(instance2, instance) > 0 || instance2.get(11) < 5) && instance.get(11) >= 5) ? getString(R.string.dynamic_tip_sleep_unsynced) : !rVar.m() ? getString(R.string.dynamic_tip_unweared) : getString(R.string.dynamic_sleep_tip);
         rVar.b(str);
         instance2 = Calendar.getInstance();
         readSyncTime = Keeper.readRealtimeStepsTimestamp(this.I);
@@ -157,19 +153,19 @@ public class C0694ax extends Fragment implements e {
         }
         C0596r.e(d, "LastSyncRealStepTime : " + DateFormat.format("yyyy-MM-dd hh:mm:ss", instance2));
         if (Utils.b(instance2, instance) > 0) {
-            str = getString(com.xiaomi.hm.health.r.dynamic_tip_step_unsynced);
+            str = getString(R.string.dynamic_tip_step_unsynced);
         } else {
             long timeInMillis = (long) ((int) ((instance.getTimeInMillis() - instance2.getTimeInMillis()) / d.g));
             if (timeInMillis < 2) {
-                str = getString(com.xiaomi.hm.health.r.dynamic_step_tip);
+                str = getString(R.string.dynamic_step_tip);
             } else if (timeInMillis >= 60) {
                 r3 = new Object[b];
                 r3[a] = Long.valueOf(timeInMillis / 60);
-                str = getString(com.xiaomi.hm.health.r.dynamic_tip_step_sync_time_hour, r3);
+                str = getString(R.string.dynamic_tip_step_sync_time_hour, r3);
             } else {
                 r3 = new Object[b];
                 r3[a] = Long.valueOf(timeInMillis);
-                str = getString(com.xiaomi.hm.health.r.dynamic_tip_step_sync_time_min, r3);
+                str = getString(R.string.dynamic_tip_step_sync_time_min, r3);
             }
         }
         rVar.a(str);
@@ -326,7 +322,7 @@ public class C0694ax extends Fragment implements e {
         }
         eVar.b(aA.b(f, eVar.h()));
         eVar.a((float) GroundOverlayOptions.NO_DIMENSION);
-        this.G.b = getString(com.xiaomi.hm.health.r.visitor);
+        this.G.b = getString(R.string.visitor);
         this.G.d = GroundOverlayOptions.NO_DIMENSION;
         this.G.c = i;
         this.H = this.G;
@@ -345,7 +341,7 @@ public class C0694ax extends Fragment implements e {
         switch (this.z) {
             case b /*1*/:
                 mainUIActivity.c(this.z);
-                mainUIActivity.d((int) k.btn_statistic);
+                mainUIActivity.d((int) R.drawable.btn_statistic);
                 C0401a.a(getActivity(), C0401a.cH, ChartData.KEY_MODE, C0401a.cS);
                 this.p.setVisibility(a);
                 this.p.setText(this.w);
@@ -357,13 +353,13 @@ public class C0694ax extends Fragment implements e {
                 return;
             case kankan.wheel.widget.a.bp /*16*/:
                 mainUIActivity.c(this.z);
-                mainUIActivity.d((int) k.btn_statistic);
+                mainUIActivity.d((int) R.drawable.btn_statistic);
                 this.p.setVisibility(8);
                 C0401a.a(getActivity(), C0401a.cH, ChartData.KEY_MODE, C0401a.cT);
                 return;
             case PersonInfo.INCOMING_CALL_DISABLE_BIT /*256*/:
                 mainUIActivity.c(this.z);
-                mainUIActivity.d((int) k.btn_statistic_weight);
+                mainUIActivity.d((int) R.drawable.btn_statistic_weight);
                 C0401a.a(getActivity(), C0401a.cH, ChartData.KEY_MODE, C0401a.cU);
                 this.p.setText(this.v);
                 if (DeviceSource.hasBindWeight()) {
@@ -491,8 +487,8 @@ public class C0694ax extends Fragment implements e {
     }
 
     private void m() {
-        this.v = getResources().getString(com.xiaomi.hm.health.r.record_weight);
-        this.w = getResources().getString(com.xiaomi.hm.health.r.go_running);
+        this.v = getResources().getString(R.string.record_weight);
+        this.w = getResources().getString(R.string.go_running);
         if (this.z == b) {
             this.p.setText(this.w);
         } else if (this.z == PersonInfo.INCOMING_CALL_DISABLE_BIT) {
@@ -622,10 +618,10 @@ public class C0694ax extends Fragment implements e {
         k();
         EventBus.getDefault().registerSticky(this);
         Resources resources = getActivity().getResources();
-        this.q = resources.getColor(i.bg_mode_sleep);
-        this.r = resources.getColor(i.bg_mode_step);
-        this.s = resources.getColor(i.bg_mode_weight);
-        this.t = resources.getColor(g.bg_mode_unbind);
+        this.q = resources.getColor(R.color.bg_mode_sleep);
+        this.r = resources.getColor(R.color.bg_mode_step);
+        this.s = resources.getColor(R.color.bg_mode_weight);
+        this.t = resources.getColor(R.color.bg_mode_unbind);
         this.I = this.j.r();
         Point point = new Point();
         getActivity().getWindowManager().getDefaultDisplay().getSize(point);
@@ -646,14 +642,14 @@ public class C0694ax extends Fragment implements e {
 
     @SuppressLint({"NewApi"})
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        View inflate = layoutInflater.inflate(n.fragment_dynamic, viewGroup, false);
-        this.m = (ViewPager) inflate.findViewById(l.view_pager);
-        this.n = (cn.com.smartdevices.bracelet.ui.widget.c) inflate.findViewById(l.indicator);
-        this.p = (TextView) inflate.findViewById(l.shortcut);
+        View inflate = layoutInflater.inflate(R.layout.fragment_dynamic, viewGroup, false);
+        this.m = (ViewPager) inflate.findViewById(R.id.view_pager);
+        this.n = (cn.com.smartdevices.bracelet.ui.widget.c) inflate.findViewById(R.id.indicator);
+        this.p = (TextView) inflate.findViewById(R.id.shortcut);
         this.p.setOnClickListener(new C0695ay(this));
         this.B = (int) Utils.b(106.0f, getActivity());
-        this.v = getResources().getString(com.xiaomi.hm.health.r.record_weight);
-        this.w = getResources().getString(com.xiaomi.hm.health.r.go_running);
+        this.v = getResources().getString(R.string.record_weight);
+        this.w = getResources().getString(R.string.go_running);
         if (VERSION.SDK_INT < 17) {
             this.l = getFragmentManager();
         } else {

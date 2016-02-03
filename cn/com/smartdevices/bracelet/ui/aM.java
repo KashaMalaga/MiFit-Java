@@ -7,14 +7,13 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import cn.com.smartdevices.bracelet.Constant;
 import com.huami.android.view.c;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
+import com.xiaomi.hm.health.R;
 
 public class aM extends c {
     private String a;
 
     protected int inflateLayout() {
-        return n.fragment_found_weight_scale;
+        return R.layout.fragment_found_weight_scale;
     }
 
     public void onCreate(Bundle bundle) {
@@ -27,7 +26,7 @@ public class aM extends c {
 
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         View onCreateView = super.onCreateView(layoutInflater, viewGroup, bundle);
-        ((TextView) onCreateView.findViewById(l.found_weight_value)).setText(this.a);
+        ((TextView) onCreateView.findViewById(R.id.found_weight_value)).setText(this.a);
         return onCreateView;
     }
 

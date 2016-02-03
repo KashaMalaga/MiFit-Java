@@ -127,11 +127,11 @@ class m {
     }
 
     public static void b(File file, File file2) {
-        FileChannel channel;
         Throwable th;
         FileChannel fileChannel = null;
         FileInputStream fileInputStream = new FileInputStream(file);
         FileOutputStream fileOutputStream = new FileOutputStream(file2);
+        FileChannel channel;
         try {
             channel = fileInputStream.getChannel();
             try {
@@ -205,9 +205,9 @@ class m {
     }
 
     public static void b(String str) {
+        OutputStreamWriter outputStreamWriter;
         Throwable e;
         String str2 = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").format(new Date()) + "  " + str;
-        OutputStreamWriter outputStreamWriter;
         try {
             outputStreamWriter = new OutputStreamWriter(new FileOutputStream(new File(d.a() + "error.txt"), true), a.bO);
             try {

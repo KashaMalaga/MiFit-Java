@@ -11,10 +11,10 @@ import cn.com.smartdevices.bracelet.weight.WeightInfo;
 import cn.com.smartdevices.bracelet.weight.aA;
 import cn.com.smartdevices.bracelet.weight.ah;
 import com.xiaomi.e.a;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.bt.profile.Weight.e;
 import com.xiaomi.hm.health.bt.profile.Weight.m;
 import com.xiaomi.hm.health.dataprocess.SportDay;
-import com.xiaomi.hm.health.r;
 import de.greenrobot.dao.query.WhereCondition;
 import de.greenrobot.daobracelet.LuaList;
 import de.greenrobot.daobracelet.LuaListDao;
@@ -56,7 +56,7 @@ public class C0891z {
         C0596r.e(a, "addWeightConnectFailedDynamic");
         LuaItem luaItem = new LuaItem();
         luaItem.setStype("weight_connect_failed");
-        luaItem.setT1(this.c.getResources().getString(r.weight_connect_failed_title));
+        luaItem.setT1(this.c.getResources().getString(R.string.weight_connect_failed_title));
         luaItem.setT2(a.f);
         luaItem.setScript("function doAction(context, luaAction)  \n   local intent = luaAction:getIntentFromString('cn.com.smartdevices.bracelet.ui.HelpActivity'); \n   luaAction:putExtra(intent,'REF_DEVICE_TYPE','TYPE_WEIGHT')  \n   context:startActivity(intent)  \nend");
         LuaEvent.getInstance(this.c).showLuaItem(luaItem);
@@ -94,30 +94,30 @@ public class C0891z {
             if (fromStr.getAge() <= 6) {
                 str2 = aA.a(this.c, userInfo, eVar);
             } else if (userInfo.height < 100) {
-                str2 = this.c.getString(r.height_less_than_100);
+                str2 = this.c.getString(R.string.height_less_than_100);
             } else {
-                str2 = this.c.getString(r.bmi_item_tips, new Object[]{a3 + a.f, aA.a(this.c, a3, Birthday.fromStr(userInfo.birthday).getAge(), userInfo.gender)});
+                str2 = this.c.getString(R.string.bmi_item_tips, new Object[]{a3 + a.f, aA.a(this.c, a3, Birthday.fromStr(userInfo.birthday).getAge(), userInfo.gender)});
             }
         } else if (userInfo.targetWeight > 0.0f) {
             r3 = aA.c(((float) ((int) aA.b(userInfo.targetWeight, eVar.h()))) - eVar.j(), 1);
             if (r3 > 0.0f) {
-                str2 = this.c.getString(r.lighter_than_goal, new Object[]{Math.abs(r3) + aA.a(this.c, eVar.h())});
+                str2 = this.c.getString(R.string.lighter_than_goal, new Object[]{Math.abs(r3) + aA.a(this.c, eVar.h())});
             } else if (r3 < 0.0f) {
-                str2 = this.c.getString(r.heavier_than_goal, new Object[]{Math.abs(r3) + aA.a(this.c, eVar.h())});
+                str2 = this.c.getString(R.string.heavier_than_goal, new Object[]{Math.abs(r3) + aA.a(this.c, eVar.h())});
             } else {
-                str2 = this.c.getString(r.weight_reach_goal);
+                str2 = this.c.getString(R.string.weight_reach_goal);
             }
         } else {
             WeightInfo a4 = ah.a().a(userInfo.uid, eVar.e());
             if (a4 != null) {
                 r3 = aA.c(eVar.j() - aA.b(a4.weight, eVar.h()), 1);
                 if (r3 > 0.0f) {
-                    str2 = this.c.getString(r.add_than_last_time, new Object[]{r3 + aA.a(this.c, eVar.h())});
+                    str2 = this.c.getString(R.string.add_than_last_time, new Object[]{r3 + aA.a(this.c, eVar.h())});
                 } else if (r3 < 0.0f) {
                     r3 = Math.abs(r3);
-                    str2 = this.c.getString(r.less_than_last_time, new Object[]{r3 + aA.a(this.c, eVar.h())});
+                    str2 = this.c.getString(R.string.less_than_last_time, new Object[]{r3 + aA.a(this.c, eVar.h())});
                 } else {
-                    str2 = this.c.getString(r.equal_last_time);
+                    str2 = this.c.getString(R.string.equal_last_time);
                 }
             }
         }
@@ -125,12 +125,12 @@ public class C0891z {
         C0596r.e(a, "stype is " + a5);
         luaList.setType(a5);
         if (userInfo.uid == 0) {
-            luaList.setText1(this.c.getResources().getString(r.weight_dynamic_visitor_title, new Object[]{a, Float.valueOf(eVar.j()), a2}));
-            luaList.setText2(this.c.getString(r.weight_dynamic_list_visit_tips));
+            luaList.setText1(this.c.getResources().getString(R.string.weight_dynamic_visitor_title, new Object[]{a, Float.valueOf(eVar.j()), a2}));
+            luaList.setText2(this.c.getString(R.string.weight_dynamic_list_visit_tips));
             luaList.setLuaActionScript(C0891z.a(this.c).a(eVar));
         } else {
-            luaList.setText1(this.c.getResources().getString(r.weight_dynamic_title, new Object[]{a, Utils.h(userInfo.name), Float.valueOf(aA.c(eVar.j(), 1)), a2}));
-            luaList.setText2(this.c.getResources().getString(r.weight_dynamic_detail, new Object[]{str2}));
+            luaList.setText1(this.c.getResources().getString(R.string.weight_dynamic_title, new Object[]{a, Utils.h(userInfo.name), Float.valueOf(aA.c(eVar.j(), 1)), a2}));
+            luaList.setText2(this.c.getResources().getString(R.string.weight_dynamic_detail, new Object[]{str2}));
             luaList.setLuaActionScript(C0891z.a(userInfo, eVar));
             C0596r.e(a, "weightinfo count  is " + b2);
             List list2 = b.queryBuilder().where(Properties.Type.eq("notice_" + userInfo.uid), new WhereCondition[0]).list();
@@ -142,7 +142,7 @@ public class C0891z {
             if (b2 == 1 && h == 0 && userInfo.targetWeight <= 0.0f) {
                 LuaList luaList2 = new LuaList();
                 C0596r.e(a, "lenght " + userInfo.name.length());
-                luaList2.setText1(this.c.getString(r.set_weight_goal_tips, new Object[]{Utils.h(userInfo.name)}));
+                luaList2.setText1(this.c.getString(R.string.set_weight_goal_tips, new Object[]{Utils.h(userInfo.name)}));
                 luaList2.setType("notice_" + userInfo.uid);
                 Date date = new Date();
                 luaList2.setDate(new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(date));
@@ -164,11 +164,11 @@ public class C0891z {
         String d2 = Utils.d(new SportDay(instance2));
         LuaItem luaItem = new LuaItem();
         luaItem.setStype("weight_history_result" + mVar);
-        luaItem.setT1(this.c.getResources().getString(r.weight_history_dynamic_title, new Object[]{Integer.valueOf(i)}));
+        luaItem.setT1(this.c.getResources().getString(R.string.weight_history_dynamic_title, new Object[]{Integer.valueOf(i)}));
         if (Utils.b(instance, instance2) == 0) {
-            luaItem.setT2(this.c.getResources().getString(r.weight_history_dynamic_detail_oneday, new Object[]{d}));
+            luaItem.setT2(this.c.getResources().getString(R.string.weight_history_dynamic_detail_oneday, new Object[]{d}));
         } else {
-            luaItem.setT2(this.c.getResources().getString(r.weight_history_dynamic_detail, new Object[]{d, d2}));
+            luaItem.setT2(this.c.getResources().getString(R.string.weight_history_dynamic_detail, new Object[]{d, d2}));
         }
         luaItem.setScript("function doAction(context, luaAction)  \n   local intent = luaAction:getIntentFromString('cn.com.smartdevices.bracelet.ui.StatisticActivity'); \n   luaAction:putExtra(intent,'Mode',256)  \n   context:startActivity(intent)  \nend");
         LuaEvent.getInstance(this.c).showLuaItem(luaItem);
@@ -181,7 +181,7 @@ public class C0891z {
             LuaItem luaItem = new LuaItem();
             luaItem.setExpire((System.currentTimeMillis() / 1000) + 68400);
             luaItem.setStype(str);
-            luaItem.setT1(this.c.getResources().getString(r.weibo_token_expired_tips));
+            luaItem.setT1(this.c.getResources().getString(R.string.weibo_token_expired_tips));
             luaItem.setT2(a.f);
             luaItem.setScript("function doAction(context, luaAction)  \n   local intent = luaAction:getIntentFromString('cn.com.smartdevices.bracelet.weibo.BindHealthActivity'); \n   luaAction:putExtra(intent,'action_type',2)  \n   context:startActivity(intent)  \nend");
             LuaEvent.getInstance(this.c).showLuaItem(luaItem);
@@ -222,35 +222,35 @@ public class C0891z {
                 if (fromStr.getAge() <= 6) {
                     str = aA.a(this.c, userInfo, eVar);
                 } else if (userInfo.height < 100) {
-                    str = this.c.getString(r.height_less_than_100);
+                    str = this.c.getString(R.string.height_less_than_100);
                 } else {
-                    str = this.c.getString(r.bmi_item_tips, new Object[]{r5 + a.f, aA.a(this.c, r5, Birthday.fromStr(userInfo.birthday).getAge(), userInfo.gender)});
+                    str = this.c.getString(R.string.bmi_item_tips, new Object[]{r5 + a.f, aA.a(this.c, r5, Birthday.fromStr(userInfo.birthday).getAge(), userInfo.gender)});
                 }
             } else if (userInfo.targetWeight > 0.0f) {
                 r0 = aA.c(((float) ((int) aA.b(userInfo.targetWeight, eVar.h()))) - eVar.j(), 1);
                 if (r0 > 0.0f) {
-                    str = this.c.getString(r.lighter_than_goal, new Object[]{Math.abs(r0) + aA.a(this.c, eVar.h())});
+                    str = this.c.getString(R.string.lighter_than_goal, new Object[]{Math.abs(r0) + aA.a(this.c, eVar.h())});
                 } else if (r0 < 0.0f) {
-                    str = this.c.getString(r.heavier_than_goal, new Object[]{Math.abs(r0) + aA.a(this.c, eVar.h())});
+                    str = this.c.getString(R.string.heavier_than_goal, new Object[]{Math.abs(r0) + aA.a(this.c, eVar.h())});
                 } else {
-                    str = this.c.getString(r.weight_reach_goal);
+                    str = this.c.getString(R.string.weight_reach_goal);
                 }
             } else {
                 WeightInfo a3 = ah.a().a(userInfo.uid, eVar.e());
                 if (a3 != null) {
                     r0 = aA.c(eVar.j() - aA.b(a3.weight, eVar.h()), 1);
                     if (r0 > 0.0f) {
-                        str = this.c.getString(r.add_than_last_time, new Object[]{r0 + aA.a(this.c, eVar.h())});
+                        str = this.c.getString(R.string.add_than_last_time, new Object[]{r0 + aA.a(this.c, eVar.h())});
                     } else if (r0 < 0.0f) {
                         r0 = Math.abs(r0);
-                        str = this.c.getString(r.less_than_last_time, new Object[]{r0 + aA.a(this.c, eVar.h())});
+                        str = this.c.getString(R.string.less_than_last_time, new Object[]{r0 + aA.a(this.c, eVar.h())});
                     } else {
-                        str = this.c.getString(r.equal_last_time);
+                        str = this.c.getString(R.string.equal_last_time);
                     }
                 }
             }
         } else {
-            str = this.c.getString(r.weight_dynamic_list_visit_tips);
+            str = this.c.getString(R.string.weight_dynamic_list_visit_tips);
         }
         LuaList luaList = new LuaList();
         Date date = new Date();
@@ -260,10 +260,10 @@ public class C0891z {
         luaList.setType(a4);
         C0596r.e(a, "lua type is " + a4);
         if (userInfo.uid == 0) {
-            luaList.setText1(this.c.getResources().getString(r.weight_dynamic_visitor_title, new Object[]{a, Float.valueOf(eVar.j()), a2}));
+            luaList.setText1(this.c.getResources().getString(R.string.weight_dynamic_visitor_title, new Object[]{a, Float.valueOf(eVar.j()), a2}));
             luaList.setLuaActionScript(C0891z.a(this.c).a(eVar));
         } else {
-            luaList.setText1(this.c.getResources().getString(r.weight_dynamic_title, new Object[]{a, Utils.h(userInfo.name), Float.valueOf(aA.c(eVar.j(), 1)), a2}));
+            luaList.setText1(this.c.getResources().getString(R.string.weight_dynamic_title, new Object[]{a, Utils.h(userInfo.name), Float.valueOf(aA.c(eVar.j(), 1)), a2}));
             luaList.setLuaActionScript(C0891z.a(userInfo, eVar));
             int b3 = ah.a().b(userInfo.uid);
             C0596r.e(a, "weightinfo count  is " + b3);
@@ -276,7 +276,7 @@ public class C0891z {
             if (b3 == 1 && i == 0 && userInfo.targetWeight <= 0.0f) {
                 LuaList luaList2 = new LuaList();
                 C0596r.e(a, "lenght " + userInfo.name.length());
-                luaList2.setText1(this.c.getString(r.set_weight_goal_tips, new Object[]{Utils.h(userInfo.name)}));
+                luaList2.setText1(this.c.getString(R.string.set_weight_goal_tips, new Object[]{Utils.h(userInfo.name)}));
                 luaList2.setType("notice_" + userInfo.uid);
                 Date date2 = new Date();
                 luaList2.setDate(new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(date2));
@@ -286,7 +286,7 @@ public class C0891z {
                 C0401a.a(this.c, C0401a.gq);
             }
         }
-        luaList.setText2(this.c.getResources().getString(r.weight_dynamic_detail, new Object[]{str}));
+        luaList.setText2(this.c.getResources().getString(R.string.weight_dynamic_detail, new Object[]{str}));
         b.insert(luaList);
         List<LuaList> list2 = b.queryBuilder().where(Properties.Type.eq(a4), new WhereCondition[0]).list();
         if (list2 != null && list2.size() > 0) {

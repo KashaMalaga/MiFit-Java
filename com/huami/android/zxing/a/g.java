@@ -83,6 +83,7 @@ public final class g {
     }
 
     public synchronized void a(SurfaceHolder surfaceHolder) {
+        Parameters parameters;
         Camera camera = this.h;
         if (camera == null) {
             camera = a.a(this.n);
@@ -107,10 +108,9 @@ public final class g {
         } catch (RuntimeException e) {
             Log.w(a, "Camera rejected parameters. Setting only minimal safe-mode parameters");
             Log.i(a, "Resetting to saved camera params: " + flatten);
-            r2 = camera.getParameters();
-            r2.unflatten(flatten);
+            parameters = camera.getParameters();
+            parameters.unflatten(flatten);
             try {
-                Parameters parameters;
                 camera.setParameters(parameters);
                 this.g.a(camera, true);
             } catch (RuntimeException e2) {

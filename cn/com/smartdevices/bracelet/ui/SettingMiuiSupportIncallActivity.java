@@ -17,12 +17,8 @@ import cn.com.smartdevices.bracelet.eventbus.EventSettingFragmentUpdate;
 import com.huami.android.view.b;
 import com.huami.android.view.c;
 import com.xiaomi.e.a;
-import com.xiaomi.hm.health.f;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 import de.greenrobot.event.EventBus;
-import kankan.wheel.widget.g;
 
 public class SettingMiuiSupportIncallActivity extends SystemBarTintActivity implements OnClickListener {
     private String a = "SettingMiuiSupportIncallActivity";
@@ -42,29 +38,29 @@ public class SettingMiuiSupportIncallActivity extends SystemBarTintActivity impl
     private String o = a.f;
 
     private void a() {
-        this.b = (TextView) findViewById(l.phone_notify_home_back);
-        this.b.setText(r.incoming_call_notify);
+        this.b = (TextView) findViewById(R.id.phone_notify_home_back);
+        this.b.setText(R.string.incoming_call_notify);
         this.b.setOnClickListener(this);
-        this.e = (Switch) findViewById(l.phone_notify_switch);
+        this.e = (Switch) findViewById(R.id.phone_notify_switch);
         this.e.setOnCheckedChangeListener(new C0800eu(this));
-        this.f = (LinearLayout) findViewById(l.phone_notify_ll);
+        this.f = (LinearLayout) findViewById(R.id.phone_notify_ll);
         this.f.setOnClickListener(this);
-        this.c = (TextView) findViewById(l.phone_notify_switch_title);
-        this.c.setText(r.incoming_call_notify);
-        String[] stringArray = getResources().getStringArray(f.phone_notify_tips);
-        String[] stringArray2 = getResources().getStringArray(f.contacts_notify_title);
-        this.d = (TextView) findViewById(l.phone_notify_tips);
+        this.c = (TextView) findViewById(R.id.phone_notify_switch_title);
+        this.c.setText(R.string.incoming_call_notify);
+        String[] stringArray = getResources().getStringArray(R.array.phone_notify_tips);
+        String[] stringArray2 = getResources().getStringArray(R.array.contacts_notify_title);
+        this.d = (TextView) findViewById(R.id.phone_notify_tips);
         this.d.setText(stringArray[0]);
-        this.i = (TextView) findViewById(l.contacts_notify_switch_title);
+        this.i = (TextView) findViewById(R.id.contacts_notify_switch_title);
         this.i.setText(stringArray2[0]);
-        this.k = (LinearLayout) findViewById(l.contacts_notify_ll);
+        this.k = (LinearLayout) findViewById(R.id.contacts_notify_ll);
         this.k.setOnClickListener(this);
-        this.h = (Switch) findViewById(l.contacts_notify_switch);
+        this.h = (Switch) findViewById(R.id.contacts_notify_switch);
         this.h.setOnCheckedChangeListener(new C0801ev(this));
-        this.j = (LinearLayout) findViewById(l.incoming_delay_sencond_ll);
+        this.j = (LinearLayout) findViewById(R.id.incoming_delay_sencond_ll);
         this.j.setOnClickListener(this);
-        this.n = (TextView) findViewById(l.delay_title_tv);
-        this.l = (TextView) findViewById(l.delay_sencond_tv);
+        this.n = (TextView) findViewById(R.id.delay_title_tv);
+        this.l = (TextView) findViewById(R.id.delay_sencond_tv);
         if (this.m && this.g.c(this.o)) {
             this.e.setChecked(true);
             a(true);
@@ -81,15 +77,15 @@ public class SettingMiuiSupportIncallActivity extends SystemBarTintActivity impl
         this.h.setChecked(false);
         this.h.setEnabled(z);
         if (z) {
-            this.i.setTextColor(getResources().getColor(g.main_ui_title_color));
-            this.l.setTextColor(getResources().getColor(g.main_ui_title_color));
-            this.n.setTextColor(getResources().getColor(g.main_ui_title_color));
+            this.i.setTextColor(getResources().getColor(R.color.main_ui_title_color));
+            this.l.setTextColor(getResources().getColor(R.color.main_ui_title_color));
+            this.n.setTextColor(getResources().getColor(R.color.main_ui_title_color));
             return;
         }
-        this.i.setTextColor(getResources().getColor(g.disabled_text_color));
+        this.i.setTextColor(getResources().getColor(R.color.disabled_text_color));
         this.l.setText(a.f);
-        this.l.setTextColor(getResources().getColor(g.disabled_text_color));
-        this.n.setTextColor(getResources().getColor(g.disabled_text_color));
+        this.l.setTextColor(getResources().getColor(R.color.disabled_text_color));
+        this.n.setTextColor(getResources().getColor(R.color.disabled_text_color));
     }
 
     private void b() {
@@ -113,7 +109,7 @@ public class SettingMiuiSupportIncallActivity extends SystemBarTintActivity impl
             return;
         }
         a(false);
-        b.a((Context) this, (int) r.notify_set_failed, 0).show();
+        b.a((Context) this, (int) R.string.notify_set_failed, 0).show();
     }
 
     private void c() {
@@ -127,14 +123,14 @@ public class SettingMiuiSupportIncallActivity extends SystemBarTintActivity impl
             return;
         }
         this.h.setChecked(false);
-        b.a((Context) this, (int) r.notify_set_failed, 0).show();
+        b.a((Context) this, (int) R.string.notify_set_failed, 0).show();
     }
 
     private void d() {
         int i = 3;
         C0596r.d(this.a, "updateDelaySencondUI ------");
         B a = B.a();
-        String string = getResources().getString(r.unit_sec_short);
+        String string = getResources().getString(R.string.unit_sec_short);
         if (this.m && a.c(this.o)) {
             int e = a.e(this.o);
             C0596r.d(this.a, "api.getIncallDelay   curTime = " + e);
@@ -161,16 +157,16 @@ public class SettingMiuiSupportIncallActivity extends SystemBarTintActivity impl
 
     public void onClick(View view) {
         switch (view.getId()) {
-            case l.phone_notify_home_back /*2131296431*/:
+            case R.id.phone_notify_home_back:
                 finish();
                 return;
-            case l.phone_notify_ll /*2131296433*/:
+            case R.id.phone_notify_ll:
                 this.e.toggle();
                 return;
-            case l.incoming_delay_sencond_ll /*2131296436*/:
+            case R.id.incoming_delay_sencond_ll:
                 c();
                 return;
-            case l.contacts_notify_ll /*2131296439*/:
+            case R.id.contacts_notify_ll:
                 this.h.toggle();
                 return;
             default:
@@ -180,7 +176,7 @@ public class SettingMiuiSupportIncallActivity extends SystemBarTintActivity impl
 
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView((int) n.activity_incoming_supprotmiui_notify);
+        setContentView((int) R.layout.activity_incoming_supprotmiui_notify);
         EventBus.getDefault().register(this);
         this.o = Keeper.readBraceletBtInfo().b;
         this.m = B.a().f();

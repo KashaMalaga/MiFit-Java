@@ -2,7 +2,7 @@ package com.xiaomi.h.a;
 
 import cn.com.smartdevices.bracelet.d.C0432i;
 import cn.com.smartdevices.bracelet.gps.c.a.g;
-import com.tencent.open.SocialConstants;
+import com.xiaomi.channel.relationservice.data.a;
 import com.xiaomi.market.sdk.o;
 import java.util.EnumSet;
 import java.util.HashMap;
@@ -11,7 +11,7 @@ import java.util.Map;
 
 public enum C1101h {
     CHID((short) 1, "chid"),
-    TYPE((short) 2, SocialConstants.PARAM_TYPE),
+    TYPE((short) 2, a.h),
     VALUE((short) 3, C0432i.b),
     CONNPT((short) 4, "connpt"),
     HOST((short) 5, o.A),

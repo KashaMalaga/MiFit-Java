@@ -15,7 +15,7 @@ import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.SearchView.OnQueryTextListener;
 import com.huami.android.view.b;
-import com.xiaomi.hm.health.l;
+import com.xiaomi.hm.health.R;
 import java.util.List;
 
 public class e extends ListFragment implements LoaderCallbacks<List<c>>, OnQueryTextListener {
@@ -59,7 +59,7 @@ public class e extends ListFragment implements LoaderCallbacks<List<c>>, OnQuery
     public void onListItemClick(ListView listView, View view, int i, long j) {
         Log.i("LoaderCustom", "Item clicked: " + j);
         h a = h.a(getActivity());
-        CheckBox checkBox = (CheckBox) view.findViewById(l.check);
+        CheckBox checkBox = (CheckBox) view.findViewById(R.id.check);
         c cVar;
         if (checkBox.isChecked()) {
             checkBox.setChecked(false);

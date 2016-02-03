@@ -24,10 +24,7 @@ import cn.com.smartdevices.bracelet.model.LuaItem;
 import cn.com.smartdevices.bracelet.partner.PartnerDataManager;
 import com.amap.api.maps.model.GroundOverlayOptions;
 import com.xiaomi.e.a;
-import com.xiaomi.hm.health.e;
-import com.xiaomi.hm.health.j;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
+import com.xiaomi.hm.health.R;
 import de.greenrobot.dao.query.QueryBuilder;
 import de.greenrobot.dao.query.WhereCondition;
 import de.greenrobot.daobracelet.LuaList;
@@ -40,7 +37,6 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
-import kankan.wheel.widget.g;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -84,7 +80,7 @@ public class LuaListAdapter extends BaseAdapter {
         this.taRight.setDuration(1000);
         this.taTop.setDuration(1000);
         this.taBlow.setDuration(1000);
-        this.animT2B = AnimationUtils.loadAnimation(this.mContext, e.list_anim_slide_t2b);
+        this.animT2B = AnimationUtils.loadAnimation(this.mContext, R.anim.list_anim_slide_t2b);
     }
 
     private String getDate() {
@@ -163,11 +159,11 @@ public class LuaListAdapter extends BaseAdapter {
         String str = null;
         if (view == null) {
             e eVar2 = new e(this);
-            view = LayoutInflater.from(this.mContext).inflate(n.lua_list_item, null);
-            eVar2.a = (TextView) view.findViewById(l.textView1);
-            eVar2.b = (TextView) view.findViewById(l.textView2);
-            eVar2.c = (ImageView) view.findViewById(l.lua_list_item_icon);
-            eVar2.d = (ImageView) view.findViewById(l.rightArrow);
+            view = LayoutInflater.from(this.mContext).inflate(R.layout.lua_list_item, null);
+            eVar2.a = (TextView) view.findViewById(R.id.textView1);
+            eVar2.b = (TextView) view.findViewById(R.id.textView2);
+            eVar2.c = (ImageView) view.findViewById(R.id.lua_list_item_icon);
+            eVar2.d = (ImageView) view.findViewById(R.id.rightArrow);
             view.setTag(eVar2);
             if (t.a()) {
                 MarginLayoutParams marginLayoutParams = (MarginLayoutParams) eVar2.a.getLayoutParams();
@@ -193,7 +189,7 @@ public class LuaListAdapter extends BaseAdapter {
                 eVar.d.setVisibility(0);
             }
             String jsonString = luaList.getJsonString();
-            int color = this.mContext.getResources().getColor(g.main_ui_title_color);
+            int color = this.mContext.getResources().getColor(R.color.main_ui_title_color);
             try {
                 JSONObject jSONObject = new JSONObject(jsonString);
                 color = jSONObject.optInt(LuaItem.JSON_TXT_COLOR);
@@ -206,10 +202,10 @@ public class LuaListAdapter extends BaseAdapter {
             C0596r.e(TAG, "iconUri = " + str + " txtColor = " + color);
             if (TextUtils.isEmpty(str)) {
                 eVar.c.setVisibility(8);
-                ((LayoutParams) ((LinearLayout) view.findViewById(l.linearLayout1)).getLayoutParams()).leftMargin = (int) this.mContext.getResources().getDimension(j.mili_margin);
+                ((LayoutParams) ((LinearLayout) view.findViewById(R.id.linearLayout1)).getLayoutParams()).leftMargin = (int) this.mContext.getResources().getDimension(R.dimen.mili_margin);
             } else {
                 eVar.c.setVisibility(0);
-                ((LayoutParams) ((LinearLayout) view.findViewById(l.linearLayout1)).getLayoutParams()).leftMargin = 0;
+                ((LayoutParams) ((LinearLayout) view.findViewById(R.id.linearLayout1)).getLayoutParams()).leftMargin = 0;
                 C0544h.a().a(str, eVar.c, new b(this));
             }
             eVar.a.setTextColor(-872415232 | color);

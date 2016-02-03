@@ -47,7 +47,7 @@ public class c {
         String attributeValue2 = xmlPullParser.getAttributeValue(com.xiaomi.e.a.f, "to");
         String attributeValue3 = xmlPullParser.getAttributeValue(com.xiaomi.e.a.f, QQLogin.KEY_FROM);
         String attributeValue4 = xmlPullParser.getAttributeValue(com.xiaomi.e.a.f, "chid");
-        com.xiaomi.f.c.c a = com.xiaomi.f.c.c.a(xmlPullParser.getAttributeValue(com.xiaomi.e.a.f, SocialConstants.PARAM_TYPE));
+        com.xiaomi.f.c.c a = com.xiaomi.f.c.c.a(xmlPullParser.getAttributeValue(com.xiaomi.e.a.f, com.xiaomi.channel.relationservice.data.a.h));
         Object obj = null;
         k kVar = null;
         b bVar = null;
@@ -117,7 +117,7 @@ public class c {
             String attributeValue2 = xmlPullParser.getAttributeValue(com.xiaomi.e.a.f, SyncShoesDataService.d);
             String attributeValue3 = xmlPullParser.getAttributeValue(com.xiaomi.e.a.f, QQLogin.KEY_FROM);
             String attributeValue4 = xmlPullParser.getAttributeValue(com.xiaomi.e.a.f, "to");
-            String attributeValue5 = xmlPullParser.getAttributeValue(com.xiaomi.e.a.f, SocialConstants.PARAM_TYPE);
+            String attributeValue5 = xmlPullParser.getAttributeValue(com.xiaomi.e.a.f, com.xiaomi.channel.relationservice.data.a.h);
             Z b = X.a().b(attributeValue, attributeValue4);
             Z b2 = b == null ? X.a().b(attributeValue, attributeValue3) : b;
             if (b2 == null) {
@@ -207,7 +207,7 @@ public class c {
         }
         z = !TextUtils.isEmpty(attributeValue6) && attributeValue6.equalsIgnoreCase("true");
         dVar.a(z);
-        dVar.f(xmlPullParser.getAttributeValue(com.xiaomi.e.a.f, SocialConstants.PARAM_TYPE));
+        dVar.f(xmlPullParser.getAttributeValue(com.xiaomi.e.a.f, com.xiaomi.channel.relationservice.data.a.h));
         attributeValue8 = g(xmlPullParser);
         if (attributeValue8 == null || com.xiaomi.e.a.f.equals(attributeValue8.trim())) {
             e.u();
@@ -269,7 +269,7 @@ public class c {
 
     public static g b(XmlPullParser xmlPullParser) {
         i iVar = i.available;
-        String attributeValue = xmlPullParser.getAttributeValue(com.xiaomi.e.a.f, SocialConstants.PARAM_TYPE);
+        String attributeValue = xmlPullParser.getAttributeValue(com.xiaomi.e.a.f, com.xiaomi.channel.relationservice.data.a.h);
         if (!(attributeValue == null || attributeValue.equals(com.xiaomi.e.a.f))) {
             try {
                 iVar = i.valueOf(attributeValue);
@@ -326,7 +326,7 @@ public class c {
         String attributeValue2 = xmlPullParser.getAttributeValue(com.xiaomi.e.a.f, "to");
         String attributeValue3 = xmlPullParser.getAttributeValue(com.xiaomi.e.a.f, QQLogin.KEY_FROM);
         String attributeValue4 = xmlPullParser.getAttributeValue(com.xiaomi.e.a.f, "chid");
-        z a = z.a(xmlPullParser.getAttributeValue(com.xiaomi.e.a.f, SocialConstants.PARAM_TYPE));
+        z a = z.a(xmlPullParser.getAttributeValue(com.xiaomi.e.a.f, com.xiaomi.channel.relationservice.data.a.h));
         yVar.k(attributeValue);
         yVar.m(attributeValue2);
         yVar.n(attributeValue3);
@@ -374,7 +374,7 @@ public class c {
         int i = 0;
         while (i < xmlPullParser.getAttributeCount()) {
             attributeValue = xmlPullParser.getAttributeName(i).equals(com.xiaomi.channel.gamesdk.b.a) ? xmlPullParser.getAttributeValue(com.xiaomi.e.a.f, com.xiaomi.channel.gamesdk.b.a) : str4;
-            attributeValue2 = xmlPullParser.getAttributeName(i).equals(SocialConstants.PARAM_TYPE) ? xmlPullParser.getAttributeValue(com.xiaomi.e.a.f, SocialConstants.PARAM_TYPE) : str3;
+            attributeValue2 = xmlPullParser.getAttributeName(i).equals(com.xiaomi.channel.relationservice.data.a.h) ? xmlPullParser.getAttributeValue(com.xiaomi.e.a.f, com.xiaomi.channel.relationservice.data.a.h) : str3;
             if (xmlPullParser.getAttributeName(i).equals("reason")) {
                 str2 = xmlPullParser.getAttributeValue(com.xiaomi.e.a.f, "reason");
             }

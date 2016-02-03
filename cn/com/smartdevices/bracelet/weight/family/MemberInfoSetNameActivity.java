@@ -23,10 +23,8 @@ import cn.com.smartdevices.bracelet.ui.widget.DimPanelBottomBar;
 import com.huami.android.view.b;
 import com.huami.android.widget.share.m;
 import com.xiaomi.e.a;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.bt.profile.Weight.e;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
 
 public class MemberInfoSetNameActivity extends MemberInfoBaseActivity implements OnClickListener, OnGlobalLayoutListener {
     private View h;
@@ -50,10 +48,10 @@ public class MemberInfoSetNameActivity extends MemberInfoBaseActivity implements
         }
         if (!this.e) {
             if (this.o == null || this.o.trim().isEmpty()) {
-                b.a((Context) this, getResources().getString(r.please_input_name), 0).show();
+                b.a((Context) this, getResources().getString(R.string.please_input_name), 0).show();
                 return;
             } else if (!Utils.g(this.o)) {
-                b.a((Context) this, getResources().getString(r.invalid_name), 0).show();
+                b.a((Context) this, getResources().getString(R.string.invalid_name), 0).show();
                 return;
             }
         }
@@ -70,7 +68,7 @@ public class MemberInfoSetNameActivity extends MemberInfoBaseActivity implements
     protected void onActivityResult(int i, int i2, Intent intent) {
         C0596r.e("MemberInfoBaseActivity", "isWeightChooseUser " + this.f + " isVisitorMode " + this.e);
         if (!(this.f || this.e || i2 != -1)) {
-            b.a(this.l, getString(r.generate_user_succ), 0).show();
+            b.a(this.l, getString(R.string.generate_user_succ), 0).show();
         }
         if (!this.f || !this.e) {
             super.onActivityResult(i, i2, intent);
@@ -101,10 +99,10 @@ public class MemberInfoSetNameActivity extends MemberInfoBaseActivity implements
             d();
             return;
         }
-        setContentView((int) n.activity_person_info_set_name);
+        setContentView((int) R.layout.activity_person_info_set_name);
         this.k = (InputMethodManager) this.l.getSystemService("input_method");
         b();
-        this.j = (EditText) findViewById(l.info_name_edittext);
+        this.j = (EditText) findViewById(R.id.info_name_edittext);
         this.o = Keeper.getCurrentUserInfoByTag(Keeper.CURRENT_USER_NAME);
         if (this.o != null) {
             this.j.setText(this.o);
@@ -112,10 +110,10 @@ public class MemberInfoSetNameActivity extends MemberInfoBaseActivity implements
         this.m = this.j.getPaint();
         this.j.setFilters(new InputFilter[]{new LengthFilter(20)});
         this.j.addTextChangedListener(new d(this));
-        this.i = (DimPanelBottomBar) findViewById(l.bottom_bar);
+        this.i = (DimPanelBottomBar) findViewById(R.id.bottom_bar);
         this.n = new LayoutParams(-1, -2);
         this.n.addRule(12);
-        this.h = findViewById(l.info_gender_bg);
+        this.h = findViewById(R.id.info_gender_bg);
         getWindow().getDecorView().getViewTreeObserver().addOnGlobalLayoutListener(this);
     }
 

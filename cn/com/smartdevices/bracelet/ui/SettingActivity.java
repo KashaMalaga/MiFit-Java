@@ -11,9 +11,7 @@ import android.widget.TextView;
 import cn.com.smartdevices.bracelet.C0401a;
 import cn.com.smartdevices.bracelet.datasource.DeviceSource;
 import com.tencent.connect.common.Constants;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 
 public class SettingActivity extends SystemBarTintActivity implements OnClickListener {
     public static final String a = "select_device";
@@ -26,27 +24,27 @@ public class SettingActivity extends SystemBarTintActivity implements OnClickLis
     }
 
     public void onClick(View view) {
-        if (view.getId() == l.skip_bind) {
+        if (view.getId() == R.id.skip_bind) {
             finish();
         }
     }
 
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView((int) n.activity_settings);
-        DeviceListFragment deviceListFragment = (DeviceListFragment) getFragmentManager().findFragmentById(l.content);
+        setContentView((int) R.layout.activity_settings);
+        DeviceListFragment deviceListFragment = (DeviceListFragment) getFragmentManager().findFragmentById(R.id.content);
         Intent intent = getIntent();
         if (intent != null) {
             this.b = intent.getBooleanExtra(a, false);
             if (this.b) {
                 deviceListFragment.a(2);
-                ((TextView) findViewById(l.title)).setText(getResources().getString(r.select_devices));
-                View findViewById = findViewById(l.settings_parent);
-                View findViewById2 = findViewById(l.skip_bind);
+                ((TextView) findViewById(R.id.title)).setText(getResources().getString(R.string.select_devices));
+                View findViewById = findViewById(R.id.settings_parent);
+                View findViewById2 = findViewById(R.id.skip_bind);
                 findViewById.post(new dO(this, findViewById2, findViewById));
                 findViewById2.setVisibility(0);
                 findViewById2.setOnClickListener(this);
-                findViewById(l.home_back).setVisibility(4);
+                findViewById(R.id.home_back).setVisibility(4);
             }
         }
         if (!DeviceSource.hasBindBracelet() && DeviceSource.hasBindWeight()) {

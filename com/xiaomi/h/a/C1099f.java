@@ -1,9 +1,9 @@
 package com.xiaomi.h.a;
 
-import cn.com.smartdevices.bracelet.gps.c.a.g;
 import cn.com.smartdevices.bracelet.partner.NativeInterface;
 import cn.com.smartdevices.bracelet.shoes.sync.SyncShoesDataService;
 import com.tencent.open.SocialConstants;
+import com.xiaomi.channel.relationservice.data.a;
 import java.util.EnumSet;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -19,7 +19,7 @@ public enum C1099f {
     URL((short) 7, SocialConstants.PARAM_URL),
     PASS_THROUGH((short) 8, "passThrough"),
     NOTIFY_ID((short) 9, "notifyId"),
-    EXTRA((short) 10, g.g);
+    EXTRA((short) 10, a.G);
     
     private static final Map<String, C1099f> k = null;
     private final short l;

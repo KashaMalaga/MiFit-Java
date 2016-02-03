@@ -9,11 +9,10 @@ import cn.com.smartdevices.bracelet.Keeper;
 import cn.com.smartdevices.bracelet.eventbus.EventPersonInfoUpdate;
 import cn.com.smartdevices.bracelet.model.PersonInfo;
 import cn.com.smartdevices.bracelet.ui.SystemBarTintActivity;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.bt.a.f;
 import com.xiaomi.hm.health.bt.bleservice.a;
 import com.xiaomi.hm.health.bt.model.HwConnStatus;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
 import de.greenrobot.event.EventBus;
 
 public class LabFactoryReminderActivity extends SystemBarTintActivity {
@@ -37,16 +36,16 @@ public class LabFactoryReminderActivity extends SystemBarTintActivity {
 
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView((int) n.activity_lab_factory_reminder);
-        findViewById(l.lab_factory_reminder_back).setOnClickListener(new C0574j(this));
+        setContentView((int) R.layout.activity_lab_factory_reminder);
+        findViewById(R.id.lab_factory_reminder_back).setOnClickListener(new C0574j(this));
         this.b = Keeper.readPersonInfo();
-        this.c = (LinearLayout) findViewById(l.lab_factory_reminder);
+        this.c = (LinearLayout) findViewById(R.id.lab_factory_reminder);
         this.c.setOnClickListener(new C0575k(this));
-        this.d = (Switch) findViewById(l.lab_factory_reminder_switch);
+        this.d = (Switch) findViewById(R.id.lab_factory_reminder_switch);
         C0596r.e("LabFactoryReminderActivity", "reminder:" + this.b.getMiliDisconnectedReminder());
         this.d.setChecked(this.b.getMiliDisconnectedReminder() == 1);
         this.d.setOnCheckedChangeListener(new C0576l(this));
-        this.e = findViewById(l.lab_factory_reminder_mask_view);
+        this.e = findViewById(R.id.lab_factory_reminder_mask_view);
         EventBus.getDefault().register(this);
     }
 

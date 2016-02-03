@@ -16,9 +16,8 @@ import cn.com.smartdevices.bracelet.tag.a.c;
 import cn.com.smartdevices.bracelet.ui.SystemBarTintActivity;
 import com.huami.android.view.b;
 import com.xiaomi.e.a;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
+import kankan.wheel.widget.l;
 
 public class TagActivity extends SystemBarTintActivity implements OnClickListener, OnLongClickListener, c {
     private static final int f = 4097;
@@ -30,15 +29,15 @@ public class TagActivity extends SystemBarTintActivity implements OnClickListene
     private void a() {
         FragmentTransaction beginTransaction = getFragmentManager().beginTransaction();
         Fragment nVar = new n();
-        this.d.setText(r.action_mark);
+        this.d.setText(R.string.action_mark);
         this.e.setVisibility(0);
-        beginTransaction.replace(l.container, nVar);
+        beginTransaction.replace(R.id.container, nVar);
         beginTransaction.commit();
     }
 
     public void a(int i) {
         switch (i) {
-            case kankan.wheel.widget.l.a /*1*/:
+            case l.a /*1*/:
                 Keeper.keepUploadEnable(true);
                 a();
                 return;
@@ -57,10 +56,10 @@ public class TagActivity extends SystemBarTintActivity implements OnClickListene
 
     public void onClick(View view) {
         switch (view.getId()) {
-            case l.home_back /*2131296313*/:
+            case R.id.home_back:
                 finish();
                 return;
-            case l.history_button /*2131296577*/:
+            case R.id.history_button:
                 startActivity(TagHistoryActivity.a(this));
                 return;
             default:
@@ -70,19 +69,19 @@ public class TagActivity extends SystemBarTintActivity implements OnClickListene
 
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView((int) n.activity_mark);
-        this.d = (TextView) findViewById(l.home_back);
+        setContentView((int) R.layout.activity_mark);
+        this.d = (TextView) findViewById(R.id.home_back);
         this.d.setOnClickListener(this);
-        findViewById(l.title_back_bar).setOnLongClickListener(this);
-        this.e = findViewById(l.history_button);
+        findViewById(R.id.title_back_bar).setOnLongClickListener(this);
+        this.e = findViewById(R.id.history_button);
         this.e.setOnClickListener(this);
         if (bundle == null) {
             FragmentTransaction beginTransaction = getFragmentManager().beginTransaction();
             if (Keeper.readUploadEnable()) {
                 a();
             } else {
-                this.d.setText(r.title_action_tag_agreement);
-                beginTransaction.add(l.container, new k());
+                this.d.setText(R.string.title_action_tag_agreement);
+                beginTransaction.add(R.id.container, new k());
             }
             beginTransaction.commit();
         }

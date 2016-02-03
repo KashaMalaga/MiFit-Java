@@ -21,9 +21,7 @@ import cn.com.smartdevices.bracelet.ui.widget.DimPanelBottomBar;
 import com.huami.android.view.b;
 import com.huami.android.widget.share.m;
 import com.xiaomi.e.a;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 
 public class PersonInfoSetNameActivity extends PersonInfoBaseActivity implements OnClickListener, OnGlobalLayoutListener {
     private static final String c = PersonInfoSetNameActivity.class.getSimpleName();
@@ -46,37 +44,37 @@ public class PersonInfoSetNameActivity extends PersonInfoBaseActivity implements
         this.a.nickname = this.l;
         super.c();
         if (this.a.nickname.isEmpty()) {
-            b.a((Context) this, (int) r.please_input_name, 0).show();
+            b.a((Context) this, (int) R.string.please_input_name, 0).show();
         } else if (Utils.g(this.a.nickname)) {
             Intent intent = new Intent();
             intent.setClass(this, PersonInfoSetGenderActivity.class);
             startActivityForResult(intent, 6);
         } else {
-            b.a((Context) this, (int) r.invalid_name, 0).show();
+            b.a((Context) this, (int) R.string.invalid_name, 0).show();
         }
     }
 
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView((int) n.activity_person_info_set_name);
+        setContentView((int) R.layout.activity_person_info_set_name);
         this.h = (InputMethodManager) this.i.getSystemService("input_method");
         a();
-        this.f = (EditText) findViewById(l.info_name_edittext);
+        this.f = (EditText) findViewById(R.id.info_name_edittext);
         this.l = this.a.nickname;
         if (!(this.l == null || this.l.equals(this.a.uid + a.f))) {
             this.f.setText(this.l);
         }
-        this.g = (TextView) findViewById(l.bracelet_login_title_info);
-        if (getString(r.input_person_name) != null) {
-            this.g.setText(getString(r.input_person_name));
+        this.g = (TextView) findViewById(R.id.bracelet_login_title_info);
+        if (getString(R.string.input_person_name) != null) {
+            this.g.setText(getString(R.string.input_person_name));
         }
         this.j = this.f.getPaint();
         this.f.setFilters(new InputFilter[]{new LengthFilter(20)});
         this.f.addTextChangedListener(new e(this));
-        this.e = (DimPanelBottomBar) findViewById(l.bottom_bar);
+        this.e = (DimPanelBottomBar) findViewById(R.id.bottom_bar);
         this.k = new LayoutParams(-1, -2);
         this.k.addRule(12);
-        this.d = findViewById(l.info_gender_bg);
+        this.d = findViewById(R.id.info_gender_bg);
         getWindow().getDecorView().getViewTreeObserver().addOnGlobalLayoutListener(this);
     }
 

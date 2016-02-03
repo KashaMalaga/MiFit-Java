@@ -5,7 +5,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
-import com.xiaomi.hm.health.l;
+import com.xiaomi.hm.health.R;
 
 public class k extends aj {
     public ImageView r;
@@ -14,8 +14,8 @@ public class k extends aj {
 
     public k(View view) {
         super(view);
-        this.r = (ImageView) view.findViewById(l.icon);
-        this.s = (TextView) view.findViewById(l.text);
-        this.t = (Switch) view.findViewById(l.notifi_on);
+        this.r = (ImageView) view.findViewById(R.id.icon);
+        this.s = (TextView) view.findViewById(R.id.text);
+        this.t = (Switch) view.findViewById(R.id.notifi_on);
     }
 }

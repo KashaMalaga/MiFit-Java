@@ -51,8 +51,8 @@ public final class d {
     }
 
     public void a(int i, String str) {
-        Closeable outputStreamWriter;
         Throwable th;
+        Closeable outputStreamWriter;
         try {
             outputStreamWriter = new OutputStreamWriter(c(i), k.b);
             try {
@@ -83,7 +83,6 @@ public final class d {
     public OutputStream c(int i) {
         OutputStream i2;
         synchronized (this.a) {
-            File b;
             OutputStream fileOutputStream;
             if (this.b.e != this) {
                 throw new IllegalStateException();
@@ -91,12 +90,13 @@ public final class d {
             if (!this.b.d) {
                 this.c[i] = true;
             }
-            b = this.b.b(i);
+            r1 = this.b.b(i);
             try {
-                fileOutputStream = new FileOutputStream(b);
+                fileOutputStream = new FileOutputStream(r1);
             } catch (FileNotFoundException e) {
                 this.a.m.mkdirs();
                 try {
+                    File b;
                     fileOutputStream = new FileOutputStream(b);
                 } catch (FileNotFoundException e2) {
                     i2 = a.B;

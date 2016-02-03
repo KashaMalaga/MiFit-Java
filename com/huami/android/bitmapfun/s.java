@@ -341,7 +341,6 @@ public class s {
     }
 
     public Bitmap b(String str) {
-        InputStream a;
         Object e;
         Throwable th;
         Bitmap bitmap = null;
@@ -354,6 +353,7 @@ public class s {
                 }
             }
             if (this.j != null) {
+                InputStream a;
                 try {
                     r a2 = this.j.a(c);
                     if (a2 != null) {

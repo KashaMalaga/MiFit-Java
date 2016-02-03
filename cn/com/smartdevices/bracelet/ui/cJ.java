@@ -8,23 +8,21 @@ import cn.com.smartdevices.bracelet.C0401a;
 import cn.com.smartdevices.bracelet.view.J;
 import cn.com.smartdevices.bracelet.view.SelectDaysView;
 import com.huami.android.view.c;
-import com.xiaomi.hm.health.f;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
+import com.xiaomi.hm.health.R;
 import kankan.wheel.widget.a;
 
 public class cJ extends c {
     private int a;
 
     protected int inflateLayout() {
-        return n.fragment_setting_alarm_repeat_simple;
+        return R.layout.fragment_setting_alarm_repeat_simple;
     }
 
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         View onCreateView = super.onCreateView(layoutInflater, viewGroup, bundle);
-        SelectDaysView selectDaysView = (SelectDaysView) onCreateView.findViewById(l.days_view);
+        SelectDaysView selectDaysView = (SelectDaysView) onCreateView.findViewById(R.id.days_view);
         this.a = getArguments().getInt(a.bv);
-        selectDaysView.a(new J(getActivity(), getResources().getStringArray(f.select_days_simple), this.a));
+        selectDaysView.a(new J(getActivity(), getResources().getStringArray(R.array.select_days_simple), this.a));
         selectDaysView.a(new cK(this));
         return onCreateView;
     }

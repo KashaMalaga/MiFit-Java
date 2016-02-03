@@ -41,6 +41,8 @@ import cn.com.smartdevices.bracelet.model.PersonInfo;
 import cn.com.smartdevices.bracelet.model.SwitchOperator;
 import com.sina.weibo.sdk.exception.WeiboAuthException;
 import com.tencent.connect.common.Constants;
+import com.xiaomi.hm.health.R;
+import com.xiaomi.hm.health.bt.a.l;
 import com.xiaomi.hm.health.bt.bleservice.BLEService;
 import com.xiaomi.hm.health.bt.e.a;
 import com.xiaomi.hm.health.bt.e.f;
@@ -55,11 +57,6 @@ import com.xiaomi.hm.health.bt.profile.a.i;
 import com.xiaomi.hm.health.bt.profile.a.j;
 import com.xiaomi.hm.health.dataprocess.DaySportData.Summary;
 import com.xiaomi.hm.health.dataprocess.SportDay;
-import com.xiaomi.hm.health.k;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
-import com.xiaomi.hm.health.s;
 import com.xiaomi.hm.view.GifView;
 import com.xiaomi.mistatistic.sdk.d;
 import de.greenrobot.event.EventBus;
@@ -142,19 +139,19 @@ public class SearchSingleBraceletActivity extends SystemBarTintActivity implemen
     private void b(boolean z) {
         if (z) {
             h();
-            this.H.setText(r.bind_bracelet);
-            this.I.setText(r.found_bracelet_info);
+            this.H.setText(R.string.bind_bracelet);
+            this.I.setText(R.string.found_bracelet_info);
             this.J.setVisibility(4);
             this.K.setVisibility(d);
-            this.K.setText(Html.fromHtml("<u>" + getString(r.device_not_response) + "</u>"));
+            this.K.setText(Html.fromHtml("<u>" + getString(R.string.device_not_response) + "</u>"));
             this.P.setVisibility(4);
             this.Q.setVisibility(4);
             this.ac = System.currentTimeMillis();
             return;
         }
         i();
-        this.H.setText(r.search_devices_title);
-        this.I.setText(r.search_devices_info);
+        this.H.setText(R.string.search_devices_title);
+        this.I.setText(R.string.search_devices_info);
         this.J.setVisibility(d);
         this.K.setVisibility(8);
         this.P.setVisibility(d);
@@ -164,32 +161,32 @@ public class SearchSingleBraceletActivity extends SystemBarTintActivity implemen
 
     private void g() {
         this.z = new R(this, this.x);
-        this.T = findViewById(l.search_single_device_list_area);
-        this.w = (ListView) findViewById(l.device_list_lv);
+        this.T = findViewById(R.id.search_single_device_list_area);
+        this.w = (ListView) findViewById(R.id.device_list_lv);
         this.w.setAdapter(this.z);
         this.w.setOnItemClickListener(new C0767dp(this));
-        this.N = (GifView) findViewById(l.bracelet_hand_gifview);
-        this.L = findViewById(l.search_single_area);
-        this.H = (TextView) findViewById(l.search_devices_title);
-        this.I = (TextView) findViewById(l.search_devices_info);
-        this.J = (TextView) findViewById(l.search_devices_exit);
-        this.J.setText(Html.fromHtml("<u>" + getString(r.donot_bind) + "</u>"));
+        this.N = (GifView) findViewById(R.id.bracelet_hand_gifview);
+        this.L = findViewById(R.id.search_single_area);
+        this.H = (TextView) findViewById(R.id.search_devices_title);
+        this.I = (TextView) findViewById(R.id.search_devices_info);
+        this.J = (TextView) findViewById(R.id.search_devices_exit);
+        this.J.setText(Html.fromHtml("<u>" + getString(R.string.donot_bind) + "</u>"));
         this.J.setOnClickListener(this);
         this.J.setVisibility(d);
-        this.K = (TextView) findViewById(l.search_devices_not_response);
+        this.K = (TextView) findViewById(R.id.search_devices_not_response);
         this.K.setOnClickListener(this);
         this.K.setVisibility(8);
-        this.Q = (ImageView) findViewById(l.search_devices_mili_icon);
-        this.S = (ImageButton) findViewById(l.toggle_display_mode_btn);
+        this.Q = (ImageView) findViewById(R.id.search_devices_mili_icon);
+        this.S = (ImageButton) findViewById(R.id.toggle_display_mode_btn);
         this.S.setOnClickListener(this);
-        this.P = (LinePieChartView) findViewById(l.searching_pie_chart);
+        this.P = (LinePieChartView) findViewById(R.id.searching_pie_chart);
         this.P.a(2);
         this.P.d_();
     }
 
     private void h() {
         this.N.setVisibility(d);
-        this.N.c(k.bracelet_bind);
+        this.N.c(R.drawable.bracelet_bind);
         this.N.setOnClickListener(this);
         this.N.a(com.xiaomi.hm.view.f.COVER);
         this.N.b((int) ChartData.d);
@@ -238,7 +235,7 @@ public class SearchSingleBraceletActivity extends SystemBarTintActivity implemen
         if (readSwitchOperator.isValidBaseSteps()) {
             i = readSwitchOperator.steps;
         }
-        new com.xiaomi.hm.health.bt.a.l(q, i, new C0770ds(this)).g();
+        new l(q, i, new C0770ds(this)).g();
     }
 
     private void m() {
@@ -294,7 +291,7 @@ public class SearchSingleBraceletActivity extends SystemBarTintActivity implemen
         Intent intent = new Intent(this.A, MultiDevicesErrActivity.class);
         intent.putExtra(Utils.a, Utils.b);
         if (this.O) {
-            intent.putExtra(a, r.device_not_found_not_knocked);
+            intent.putExtra(a, R.string.device_not_found_not_knocked);
         }
         startActivity(intent);
         setResult(-1);
@@ -396,7 +393,7 @@ public class SearchSingleBraceletActivity extends SystemBarTintActivity implemen
     public void b() {
         long currentTimeMillis = System.currentTimeMillis();
         if (this.u == -1) {
-            com.huami.android.view.b.a((Context) this, (int) r.app_exit_press_again, (int) d).show();
+            com.huami.android.view.b.a((Context) this, (int) R.string.app_exit_press_again, (int) d).show();
             this.u = currentTimeMillis;
             v.sendEmptyMessageDelayed(n, 2000);
         } else if (currentTimeMillis - this.u < 2000) {
@@ -412,14 +409,14 @@ public class SearchSingleBraceletActivity extends SystemBarTintActivity implemen
         C0596r.e(f, "onAuthenticationFailed");
         b(true);
         if (this.b) {
-            com.huami.android.view.b.a(this.A, (int) r.please_knock_bracelet, (int) e).show();
+            com.huami.android.view.b.a(this.A, (int) R.string.please_knock_bracelet, (int) e).show();
         }
     }
 
     public void d() {
         C0596r.e(f, "onResetAuthentiacationFailed");
         if (this.b) {
-            com.huami.android.view.b.a(this.A, (int) r.device_not_found_not_knocked, (int) d).show();
+            com.huami.android.view.b.a(this.A, (int) R.string.device_not_found_not_knocked, (int) d).show();
         }
         this.O = true;
     }
@@ -439,10 +436,10 @@ public class SearchSingleBraceletActivity extends SystemBarTintActivity implemen
         BraceletBtInfo braceletBtInfo = new BraceletBtInfo();
         braceletBtInfo.c = this.B.getName();
         braceletBtInfo.b = this.B.getAddress();
-        braceletBtInfo.d = g.k();
+        braceletBtInfo.d = g.l();
         if (g.a()) {
             C0596r.d(f, "Device is 1S !");
-            braceletBtInfo.e = g.p();
+            braceletBtInfo.e = g.q();
             braceletBtInfo.a = 4;
             PersonInfo readPersonInfo = Keeper.readPersonInfo();
             readPersonInfo.setBinded1S(true);
@@ -472,9 +469,9 @@ public class SearchSingleBraceletActivity extends SystemBarTintActivity implemen
             i = d;
         } else {
             this.P.d();
-            this.H.setText(r.bind_bracelet_ok);
-            this.I.setText(r.welcom_back);
-            this.Q.setImageResource(k.ok_mark);
+            this.H.setText(R.string.bind_bracelet_ok);
+            this.I.setText(R.string.welcom_back);
+            this.Q.setImageResource(R.drawable.ok_mark);
             this.S.setVisibility(8);
             this.J.setVisibility(8);
             Keeper.keepIsPlayEnterAnimation(Boolean.valueOf(true));
@@ -502,7 +499,7 @@ public class SearchSingleBraceletActivity extends SystemBarTintActivity implemen
                     o();
                     break;
                 case d /*0*/:
-                    com.huami.android.view.b.a((Context) this, getString(r.failed_enable_bt), (int) e).show();
+                    com.huami.android.view.b.a((Context) this, getString(R.string.failed_enable_bt), (int) e).show();
                     finish();
                     break;
             }
@@ -523,7 +520,7 @@ public class SearchSingleBraceletActivity extends SystemBarTintActivity implemen
     public void onClick(View view) {
         boolean z = true;
         switch (view.getId()) {
-            case l.toggle_display_mode_btn /*2131296712*/:
+            case R.id.toggle_display_mode_btn:
                 m();
                 if (j()) {
                     o();
@@ -533,7 +530,7 @@ public class SearchSingleBraceletActivity extends SystemBarTintActivity implemen
                 }
                 a(z);
                 return;
-            case l.search_devices_exit /*2131296720*/:
+            case R.id.search_devices_exit:
                 m();
                 n();
                 setResult(-1);
@@ -542,7 +539,7 @@ public class SearchSingleBraceletActivity extends SystemBarTintActivity implemen
                 C0401a.a((Context) this, C0401a.dI);
                 C0401a.a((Context) this, C0409b.V, C0410c.n, Constants.VIA_TO_TYPE_QQ_GROUP);
                 return;
-            case l.search_devices_not_response /*2131296721*/:
+            case R.id.search_devices_not_response:
                 if (this.W != null) {
                     unregisterReceiver(this.W);
                     this.W = null;
@@ -563,8 +560,8 @@ public class SearchSingleBraceletActivity extends SystemBarTintActivity implemen
 
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView((int) n.activity_search_single_bracelet);
-        getWindow().setWindowAnimations(s.NoneTransition);
+        setContentView((int) R.layout.activity_search_single_bracelet);
+        getWindow().setWindowAnimations(R.style.NoneTransition);
         this.U = i;
         C0596r.e(f, "onCreate");
         this.Y = new g().a((int) E).a((h) this).a(true).a(com.xiaomi.hm.health.bt.profile.a.a.h_).a();
@@ -631,7 +628,7 @@ public class SearchSingleBraceletActivity extends SystemBarTintActivity implemen
 
     public boolean onOptionsItemSelected(MenuItem menuItem) {
         switch (menuItem.getItemId()) {
-            case l.dev_mode /*2131297661*/:
+            case R.id.dev_mode:
                 p();
                 a(!this.b ? true : i);
                 if (!j()) {

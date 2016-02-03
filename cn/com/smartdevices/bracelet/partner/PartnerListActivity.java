@@ -23,9 +23,7 @@ import cn.com.smartdevices.bracelet.ui.BindWeixinActivityNew;
 import cn.com.smartdevices.bracelet.ui.SystemBarTintActivity;
 import cn.com.smartdevices.bracelet.weibo.BindHealthActivity;
 import com.huami.android.widget.share.m;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 import de.greenrobot.event.EventBus;
 
 public class PartnerListActivity extends SystemBarTintActivity implements OnChildClickListener, OnGroupClickListener {
@@ -34,8 +32,8 @@ public class PartnerListActivity extends SystemBarTintActivity implements OnChil
     ExpandableListView mServiceView;
 
     private void setTitleBack() {
-        TextView textView = (TextView) findViewById(l.home_back);
-        textView.setText(getString(r.action_pop_service));
+        TextView textView = (TextView) findViewById(R.id.home_back);
+        textView.setText(getString(R.string.action_pop_service));
         textView.setOnClickListener(new OnClickListener() {
             public void onClick(View view) {
                 PartnerListActivity.this.finish();
@@ -82,12 +80,12 @@ public class PartnerListActivity extends SystemBarTintActivity implements OnChil
 
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView((int) n.activity_service_list);
-        ((TextView) findViewById(l.home_back)).setText(r.action_pop_service);
+        setContentView((int) R.layout.activity_service_list);
+        ((TextView) findViewById(R.id.home_back)).setText(R.string.action_pop_service);
         setTitleBack();
         this.mServiceManager = new PartnerDataManager(this);
         this.mListAdapter = new PartnerListAdapter(this, this.mServiceManager.getLocalServiceList());
-        this.mServiceView = (ExpandableListView) findViewById(l.service_list);
+        this.mServiceView = (ExpandableListView) findViewById(R.id.service_list);
         this.mServiceView.setAdapter(this.mListAdapter);
         this.mServiceView.setOnChildClickListener(this);
         this.mServiceView.setOnGroupClickListener(this);

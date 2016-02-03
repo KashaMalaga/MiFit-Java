@@ -26,12 +26,8 @@ import android.view.View.BaseSavedState;
 import android.view.View.MeasureSpec;
 import android.view.ViewConfiguration;
 import com.amap.api.maps.model.GroundOverlayOptions;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.dataprocess.HeartRateInfo;
-import com.xiaomi.hm.health.g;
-import com.xiaomi.hm.health.h;
-import com.xiaomi.hm.health.i;
-import com.xiaomi.hm.health.j;
-import com.xiaomi.hm.health.k;
 import com.xiaomi.hm.health.t;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -92,7 +88,7 @@ public class TitlePageIndicator extends View implements c {
     }
 
     public TitlePageIndicator(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, g.vpiTitlePageIndicatorStyle);
+        this(context, attributeSet, R.attr.vpiTitlePageIndicatorStyle);
     }
 
     @SuppressLint({"NewApi"})
@@ -108,15 +104,15 @@ public class TitlePageIndicator extends View implements c {
         this.A = new HashSet();
         if (!isInEditMode()) {
             Resources resources = getResources();
-            int color = resources.getColor(i.default_title_indicator_footer_color);
-            float dimension = resources.getDimension(j.default_title_indicator_footer_indicator_height);
-            float dimension2 = resources.getDimension(j.default_title_indicator_footer_padding);
-            int color2 = resources.getColor(i.default_title_indicator_selected_color);
-            boolean z = resources.getBoolean(h.default_title_indicator_selected_bold);
-            int color3 = resources.getColor(i.default_title_indicator_text_color);
-            float dimension3 = resources.getDimension(j.default_title_indicator_text_size);
-            float dimension4 = resources.getDimension(j.default_title_indicator_title_padding);
-            float dimension5 = resources.getDimension(j.default_title_indicator_top_padding);
+            int color = resources.getColor(R.color.default_title_indicator_footer_color);
+            float dimension = resources.getDimension(R.dimen.default_title_indicator_footer_indicator_height);
+            float dimension2 = resources.getDimension(R.dimen.default_title_indicator_footer_padding);
+            int color2 = resources.getColor(R.color.default_title_indicator_selected_color);
+            boolean z = resources.getBoolean(R.bool.default_title_indicator_selected_bold);
+            int color3 = resources.getColor(R.color.default_title_indicator_text_color);
+            float dimension3 = resources.getDimension(R.dimen.default_title_indicator_text_size);
+            float dimension4 = resources.getDimension(R.dimen.default_title_indicator_title_padding);
+            float dimension5 = resources.getDimension(R.dimen.default_title_indicator_top_padding);
             TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, t.TitlePageIndicator, i, 0);
             this.p = obtainStyledAttributes.getDimension(7, dimension);
             this.q = obtainStyledAttributes.getDimension(9, dimension2);
@@ -396,7 +392,7 @@ public class TitlePageIndicator extends View implements c {
                             rect2 = a(i5, this.i);
                             i3 = rect2.right - rect2.left;
                             width = rect2.bottom - rect2.top;
-                            canvas.drawBitmap(BitmapFactory.decodeResource(getResources(), k.badge), (float) ((i3 + rect.left) + 5), (float) (rect.top + (rect.height() / 2)), null);
+                            canvas.drawBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.badge), (float) ((i3 + rect.left) + 5), (float) (rect.top + (rect.height() / 2)), null);
                         }
                     }
                     i5++;

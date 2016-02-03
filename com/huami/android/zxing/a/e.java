@@ -44,12 +44,12 @@ public final class e {
             }
             throw new IllegalStateException("Parameters contained no preview size!");
         }
+        Size size;
         List<Size> arrayList = new ArrayList(supportedPreviewSizes);
         Collections.sort(arrayList, new f());
         if (Log.isLoggable(a, 4)) {
             StringBuilder stringBuilder = new StringBuilder();
-            for (Size size : arrayList) {
-                Size size2;
+            for (Size size2 : arrayList) {
                 stringBuilder.append(size2.width).append('x').append(size2.height).append(' ');
             }
             Log.i(a, "Supported preview sizes: " + stringBuilder);

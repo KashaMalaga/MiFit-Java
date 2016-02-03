@@ -19,9 +19,7 @@ import com.huami.android.view.c;
 import com.tencent.open.SocialConstants;
 import com.tencent.tauth.IUiListener;
 import com.xiaomi.e.a;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 
 public class BindQQHealthActivity extends SystemBarTintActivity {
     private QQLogin a;
@@ -61,7 +59,7 @@ public class BindQQHealthActivity extends SystemBarTintActivity {
 
     private void a(Button button, TextView textView) {
         if (this.a.isLoginValid()) {
-            button.setText(r.unbind);
+            button.setText(R.string.unbind);
             QQUserInfo qQUserInfo = this.a.getQQUserInfo();
             if (qQUserInfo == null || TextUtils.isEmpty(qQUserInfo.getNickName())) {
                 textView.setVisibility(4);
@@ -69,10 +67,10 @@ public class BindQQHealthActivity extends SystemBarTintActivity {
                 return;
             }
             textView.setVisibility(0);
-            textView.setText(getString(r.state_binded_nickname, new Object[]{qQUserInfo.getNickName()}));
+            textView.setText(getString(R.string.state_binded_nickname, new Object[]{qQUserInfo.getNickName()}));
             return;
         }
-        button.setText(r.bind_qq_health);
+        button.setText(R.string.bind_qq_health);
         textView.setVisibility(4);
         textView.setText(a.f);
     }
@@ -118,7 +116,7 @@ public class BindQQHealthActivity extends SystemBarTintActivity {
     private void b() {
         DialogFragment f = new F(this);
         Bundle bundle = new Bundle();
-        bundle.putString("Msg", getString(r.bind_qq_health_tip_another_qq));
+        bundle.putString("Msg", getString(R.string.bind_qq_health_tip_another_qq));
         f.setArguments(bundle);
         c.showPanel((Activity) this, f);
     }
@@ -136,13 +134,13 @@ public class BindQQHealthActivity extends SystemBarTintActivity {
 
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView((int) n.activity_bind_qq_health);
+        setContentView((int) R.layout.activity_bind_qq_health);
         if (this.c.c.d.booleanValue()) {
             a();
         }
-        this.f = (Button) findViewById(l.start_bind);
+        this.f = (Button) findViewById(R.id.start_bind);
         this.f.setOnClickListener(new E(this));
-        this.g = (TextView) findViewById(l.binded_qq_nickname);
+        this.g = (TextView) findViewById(R.id.binded_qq_nickname);
         a(this.f, this.g);
     }
 

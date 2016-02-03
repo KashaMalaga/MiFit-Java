@@ -7,9 +7,7 @@ import android.view.View;
 import android.widget.FrameLayout.LayoutParams;
 import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
-import com.xiaomi.hm.health.i;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
+import com.xiaomi.hm.health.R;
 
 public class CircleListScrollView extends HorizontalScrollView {
     private LinearLayout a;
@@ -86,17 +84,17 @@ public class CircleListScrollView extends HorizontalScrollView {
     }
 
     public void a(int i) {
-        View inflate = View.inflate(this.d, n.activity_lab_sport_group_list_item, null);
-        LabCircleView labCircleView = (LabCircleView) inflate.findViewById(l.group_item_member);
+        View inflate = View.inflate(this.d, R.layout.activity_lab_sport_group_list_item, null);
+        LabCircleView labCircleView = (LabCircleView) inflate.findViewById(R.id.group_item_member);
         labCircleView.a(String.valueOf(i));
         labCircleView.a(18.0f);
-        labCircleView.b(this.d.getResources().getColor(i.lab_group_item_current_round));
+        labCircleView.b(this.d.getResources().getColor(R.color.lab_group_item_current_round));
         int childCount = this.a.getChildCount();
         if (childCount == 0) {
-            inflate.findViewById(l.group_item_linker).setVisibility(8);
+            inflate.findViewById(R.id.group_item_linker).setVisibility(8);
         }
         if (childCount >= 1) {
-            ((LabCircleView) this.a.getChildAt(childCount - 1).findViewById(l.group_item_member)).b(this.d.getResources().getColor(17170443));
+            ((LabCircleView) this.a.getChildAt(childCount - 1).findViewById(R.id.group_item_member)).b(this.d.getResources().getColor(17170443));
         }
         this.a.addView(inflate);
     }

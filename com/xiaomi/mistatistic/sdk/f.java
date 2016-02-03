@@ -85,33 +85,33 @@ public class f implements UncaughtExceptionHandler {
     }
 
     public static ArrayList b() {
-        ObjectInputStream objectInputStream;
         ArrayList arrayList;
+        ArrayList arrayList2;
         Object obj;
         Throwable e;
-        ArrayList arrayList2 = new ArrayList();
-        ObjectInputStream objectInputStream2 = null;
+        ArrayList arrayList3 = new ArrayList();
+        ObjectInputStream objectInputStream = null;
+        ObjectInputStream objectInputStream2;
         try {
-            ArrayList arrayList3;
             File filesDir = C1125b.a().getFilesDir();
             if (filesDir != null) {
                 File file = new File(filesDir, ".exception");
                 if (file.isFile()) {
-                    objectInputStream = new ObjectInputStream(new FileInputStream(file));
+                    objectInputStream2 = new ObjectInputStream(new FileInputStream(file));
                     try {
-                        arrayList3 = (ArrayList) objectInputStream.readObject();
-                        objectInputStream2 = objectInputStream;
-                        if (objectInputStream2 == null) {
+                        arrayList = (ArrayList) objectInputStream2.readObject();
+                        objectInputStream = objectInputStream2;
+                        if (objectInputStream == null) {
                             try {
-                                objectInputStream2.close();
-                                arrayList = arrayList3;
+                                objectInputStream.close();
+                                arrayList2 = arrayList;
                                 obj = null;
                             } catch (IOException e2) {
-                                arrayList = arrayList3;
+                                arrayList2 = arrayList;
                                 obj = null;
                             }
                         } else {
-                            arrayList = arrayList3;
+                            arrayList2 = arrayList;
                             obj = null;
                         }
                     } catch (Exception e3) {
@@ -119,26 +119,26 @@ public class f implements UncaughtExceptionHandler {
                         try {
                             new A().a(com.xiaomi.e.a.f, e);
                             obj = 1;
-                            if (objectInputStream == null) {
+                            if (objectInputStream2 == null) {
                                 try {
-                                    objectInputStream.close();
-                                    arrayList = arrayList2;
+                                    objectInputStream2.close();
+                                    arrayList2 = arrayList3;
                                 } catch (IOException e4) {
-                                    arrayList = arrayList2;
+                                    arrayList2 = arrayList3;
                                 }
                             } else {
-                                arrayList = arrayList2;
+                                arrayList2 = arrayList3;
                             }
                             if (obj != null) {
                                 c();
                             }
-                            return arrayList;
+                            return arrayList2;
                         } catch (Throwable th) {
                             e = th;
-                            objectInputStream2 = objectInputStream;
-                            if (objectInputStream2 != null) {
+                            objectInputStream = objectInputStream2;
+                            if (objectInputStream != null) {
                                 try {
-                                    objectInputStream2.close();
+                                    objectInputStream.close();
                                 } catch (IOException e5) {
                                 }
                             }
@@ -148,54 +148,54 @@ public class f implements UncaughtExceptionHandler {
                     if (obj != null) {
                         c();
                     }
-                    return arrayList;
+                    return arrayList2;
                 }
             }
-            arrayList3 = arrayList2;
-            if (objectInputStream2 == null) {
-                arrayList = arrayList3;
+            arrayList = arrayList3;
+            if (objectInputStream == null) {
+                arrayList2 = arrayList;
                 obj = null;
             } else {
-                objectInputStream2.close();
-                arrayList = arrayList3;
+                objectInputStream.close();
+                arrayList2 = arrayList;
                 obj = null;
             }
         } catch (Exception e6) {
             e = e6;
-            objectInputStream = null;
+            objectInputStream2 = null;
             new A().a(com.xiaomi.e.a.f, e);
             obj = 1;
-            if (objectInputStream == null) {
-                arrayList = arrayList2;
+            if (objectInputStream2 == null) {
+                arrayList2 = arrayList3;
             } else {
-                objectInputStream.close();
-                arrayList = arrayList2;
+                objectInputStream2.close();
+                arrayList2 = arrayList3;
             }
             if (obj != null) {
                 c();
             }
-            return arrayList;
+            return arrayList2;
         } catch (Throwable th2) {
             e = th2;
-            if (objectInputStream2 != null) {
-                objectInputStream2.close();
+            if (objectInputStream != null) {
+                objectInputStream.close();
             }
             throw e;
         }
         if (obj != null) {
             c();
         }
-        return arrayList;
+        return arrayList2;
     }
 
     public static void b(Throwable th) {
-        ObjectOutputStream objectOutputStream;
         Throwable e;
         ArrayList b = b();
         b.add(th);
         if (b.size() > 5) {
             b.remove(0);
         }
+        ObjectOutputStream objectOutputStream;
         try {
             objectOutputStream = new ObjectOutputStream(C1125b.a().openFileOutput(".exception", 0));
             try {

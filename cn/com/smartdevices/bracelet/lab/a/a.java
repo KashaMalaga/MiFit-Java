@@ -152,73 +152,73 @@ public class a {
     }
 
     private static void d() {
+        FileWriter fileWriter;
         IOException e;
         Throwable th;
-        FileWriter fileWriter = null;
+        FileWriter fileWriter2 = null;
         if (!c.exists()) {
             c.mkdir();
         }
         if (d.exists() && d.length() > 20971520) {
             d.delete();
         }
-        FileWriter fileWriter2;
         FileWriter fileWriter3;
         try {
-            fileWriter2 = new FileWriter(d, true);
+            fileWriter3 = new FileWriter(d, true);
             try {
-                fileWriter3 = new FileWriter(e, true);
+                fileWriter = new FileWriter(e, true);
                 try {
                     Iterator it = k.iterator();
                     while (it.hasNext()) {
-                        fileWriter2.write((String) it.next());
+                        fileWriter3.write((String) it.next());
                     }
-                    fileWriter3.write(j + "\t" + h + "\n");
-                    if (fileWriter2 != null) {
+                    fileWriter.write(j + "\t" + h + "\n");
+                    if (fileWriter3 != null) {
                         try {
-                            fileWriter2.close();
+                            fileWriter3.close();
                         } catch (IOException e2) {
                             C0596r.a("Lab", e2.getMessage());
                         }
                     }
-                    if (fileWriter3 != null) {
+                    if (fileWriter != null) {
                         try {
-                            fileWriter3.close();
+                            fileWriter.close();
                         } catch (IOException e22) {
                             C0596r.a("Lab", e22.getMessage());
                         }
                     }
                 } catch (IOException e3) {
                     e22 = e3;
-                    fileWriter = fileWriter2;
+                    fileWriter2 = fileWriter3;
                     try {
                         C0596r.a("Lab", e22.getMessage());
-                        if (fileWriter != null) {
+                        if (fileWriter2 != null) {
                             try {
-                                fileWriter.close();
+                                fileWriter2.close();
                             } catch (IOException e222) {
                                 C0596r.a("Lab", e222.getMessage());
                             }
                         }
-                        if (fileWriter3 == null) {
+                        if (fileWriter == null) {
                             try {
-                                fileWriter3.close();
+                                fileWriter.close();
                             } catch (IOException e2222) {
                                 C0596r.a("Lab", e2222.getMessage());
                             }
                         }
                     } catch (Throwable th2) {
                         th = th2;
-                        fileWriter2 = fileWriter;
-                        if (fileWriter2 != null) {
+                        fileWriter3 = fileWriter2;
+                        if (fileWriter3 != null) {
                             try {
-                                fileWriter2.close();
+                                fileWriter3.close();
                             } catch (IOException e4) {
                                 C0596r.a("Lab", e4.getMessage());
                             }
                         }
-                        if (fileWriter3 != null) {
+                        if (fileWriter != null) {
                             try {
-                                fileWriter3.close();
+                                fileWriter.close();
                             } catch (IOException e5) {
                                 C0596r.a("Lab", e5.getMessage());
                             }
@@ -227,55 +227,55 @@ public class a {
                     }
                 } catch (Throwable th3) {
                     th = th3;
-                    if (fileWriter2 != null) {
-                        fileWriter2.close();
-                    }
                     if (fileWriter3 != null) {
                         fileWriter3.close();
+                    }
+                    if (fileWriter != null) {
+                        fileWriter.close();
                     }
                     throw th;
                 }
             } catch (IOException e6) {
                 e2222 = e6;
-                fileWriter3 = null;
-                fileWriter = fileWriter2;
+                fileWriter = null;
+                fileWriter2 = fileWriter3;
                 C0596r.a("Lab", e2222.getMessage());
-                if (fileWriter != null) {
-                    fileWriter.close();
-                }
-                if (fileWriter3 == null) {
-                    fileWriter3.close();
-                }
-            } catch (Throwable th4) {
-                th = th4;
-                fileWriter3 = null;
                 if (fileWriter2 != null) {
                     fileWriter2.close();
                 }
+                if (fileWriter == null) {
+                    fileWriter.close();
+                }
+            } catch (Throwable th4) {
+                th = th4;
+                fileWriter = null;
                 if (fileWriter3 != null) {
                     fileWriter3.close();
+                }
+                if (fileWriter != null) {
+                    fileWriter.close();
                 }
                 throw th;
             }
         } catch (IOException e7) {
             e2222 = e7;
-            fileWriter3 = null;
+            fileWriter = null;
             C0596r.a("Lab", e2222.getMessage());
-            if (fileWriter != null) {
-                fileWriter.close();
-            }
-            if (fileWriter3 == null) {
-                fileWriter3.close();
-            }
-        } catch (Throwable th5) {
-            th = th5;
-            fileWriter3 = null;
-            fileWriter2 = null;
             if (fileWriter2 != null) {
                 fileWriter2.close();
             }
+            if (fileWriter == null) {
+                fileWriter.close();
+            }
+        } catch (Throwable th5) {
+            th = th5;
+            fileWriter = null;
+            fileWriter3 = null;
             if (fileWriter3 != null) {
                 fileWriter3.close();
+            }
+            if (fileWriter != null) {
+                fileWriter.close();
             }
             throw th;
         }

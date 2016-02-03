@@ -58,12 +58,12 @@ public class DrivingRouteOverlay extends RouteOverlay {
     }
 
     private BitmapDescriptor b() {
+        InputStream open;
         Throwable th;
         Throwable th2;
         Throwable th3;
         Bitmap a;
         InputStream inputStream = null;
-        InputStream open;
         try {
             Bitmap decodeStream;
             open = s.a(this.e).open("amap_throughpoint.png");

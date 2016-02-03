@@ -7,8 +7,7 @@ import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.TextSwitcher;
 import android.widget.ViewSwitcher.ViewFactory;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.view.GifView;
 
 public class C0709bk extends Fragment implements ViewFactory {
@@ -23,11 +22,11 @@ public class C0709bk extends Fragment implements ViewFactory {
     }
 
     protected void a(View view) {
-        View findViewById = view.findViewById(l.gif_view);
+        View findViewById = view.findViewById(R.id.gif_view);
         if (findViewById != null) {
             this.b_ = (GifView) findViewById;
         }
-        this.c_ = (TextSwitcher) view.findViewById(l.tip);
+        this.c_ = (TextSwitcher) view.findViewById(R.id.tip);
         this.c_.setFactory(this);
         Animation alphaAnimation = new AlphaAnimation(0.0f, 1.0f);
         alphaAnimation.setDuration(300);
@@ -44,7 +43,7 @@ public class C0709bk extends Fragment implements ViewFactory {
     }
 
     public View makeView() {
-        return LayoutInflater.from(getActivity()).inflate(n.activity_instruction_page_tip_textview, this.c_, false);
+        return LayoutInflater.from(getActivity()).inflate(R.layout.activity_instruction_page_tip_textview, this.c_, false);
     }
 
     public void onDestroy() {

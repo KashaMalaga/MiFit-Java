@@ -1,18 +1,18 @@
 package com.xiaomi.hm.health.b.a;
 
-import com.xiaomi.hm.health.g;
+import com.xiaomi.hm.health.R;
 
 public final class p {
-    public static final int[] CircleImageView = new int[]{g.border_width, g.border_color};
+    public static final int[] CircleImageView = new int[]{R.attr.border_width, R.attr.border_color};
     public static final int CircleImageView_border_color = 1;
     public static final int CircleImageView_border_width = 0;
-    public static final int[] CropImageView = new int[]{g.guidelines, g.fixAspectRatio, g.aspectRatioX, g.aspectRatioY, g.imageResource};
+    public static final int[] CropImageView = new int[]{R.attr.guidelines, R.attr.fixAspectRatio, R.attr.aspectRatioX, R.attr.aspectRatioY, R.attr.imageResource};
     public static final int CropImageView_aspectRatioX = 2;
     public static final int CropImageView_aspectRatioY = 3;
     public static final int CropImageView_fixAspectRatio = 1;
     public static final int CropImageView_guidelines = 0;
     public static final int CropImageView_imageResource = 4;
-    public static final int[] CustomRoundProgressBar = new int[]{g.RoundProgressBarBackgroundColor, g.RoundProgressBarStrockColor, g.RoundProgressBarProgress, g.RoundProgressBarTotal, g.RoundProgressBarStrockWidth, g.RoundProgressBarRadius, g.RoundProgressBarProgressWidth, g.RoundProgressBarProgressColor, g.RoundProgressBarText, g.RoundProgressBarTextSize, g.RoundProgressBarTextColor, g.RoundProgressBarProgressBgColor, g.RoundProgressBarProgressBgWidth};
+    public static final int[] CustomRoundProgressBar = new int[]{R.attr.RoundProgressBarBackgroundColor, R.attr.RoundProgressBarStrockColor, R.attr.RoundProgressBarProgress, R.attr.RoundProgressBarTotal, R.attr.RoundProgressBarStrockWidth, R.attr.RoundProgressBarRadius, R.attr.RoundProgressBarProgressWidth, R.attr.RoundProgressBarProgressColor, R.attr.RoundProgressBarText, R.attr.RoundProgressBarTextSize, R.attr.RoundProgressBarTextColor, R.attr.RoundProgressBarProgressBgColor, R.attr.RoundProgressBarProgressBgWidth};
     public static final int CustomRoundProgressBar_RoundProgressBarBackgroundColor = 0;
     public static final int CustomRoundProgressBar_RoundProgressBarProgress = 2;
     public static final int CustomRoundProgressBar_RoundProgressBarProgressBgColor = 11;
@@ -28,13 +28,13 @@ public final class p {
     public static final int CustomRoundProgressBar_RoundProgressBarTotal = 3;
     public static final int[] CustomViewPager;
     public static final int CustomViewPager_swipeable = 0;
-    public static final int[] DimPanelFragmentBottomBar = new int[]{g.left_text, g.right_text, g.left_text_color, g.right_text_color, g.show_style};
+    public static final int[] DimPanelFragmentBottomBar = new int[]{R.attr.left_text, R.attr.right_text, R.attr.left_text_color, R.attr.right_text_color, R.attr.show_style};
     public static final int DimPanelFragmentBottomBar_left_text = 0;
     public static final int DimPanelFragmentBottomBar_left_text_color = 2;
     public static final int DimPanelFragmentBottomBar_right_text = 1;
     public static final int DimPanelFragmentBottomBar_right_text_color = 3;
     public static final int DimPanelFragmentBottomBar_show_style = 4;
-    public static final int[] PullToRefresh = new int[]{g.ptrRefreshableViewBackground, g.ptrHeaderBackground, g.ptrHeaderTextColor, g.ptrHeaderSubTextColor, g.ptrMode, g.ptrShowIndicator, g.ptrDrawable, g.ptrDrawableStart, g.ptrDrawableEnd, g.ptrOverScroll, g.ptrHeaderTextAppearance, g.ptrSubHeaderTextAppearance, g.ptrAnimationStyle, g.ptrScrollingWhileRefreshingEnabled, g.ptrListViewExtrasEnabled, g.ptrRotateDrawableWhilePulling, g.ptrAdapterViewBackground, g.ptrDrawableTop, g.ptrDrawableBottom};
+    public static final int[] PullToRefresh = new int[]{R.attr.ptrRefreshableViewBackground, R.attr.ptrHeaderBackground, R.attr.ptrHeaderTextColor, R.attr.ptrHeaderSubTextColor, R.attr.ptrMode, R.attr.ptrShowIndicator, R.attr.ptrDrawable, R.attr.ptrDrawableStart, R.attr.ptrDrawableEnd, R.attr.ptrOverScroll, R.attr.ptrHeaderTextAppearance, R.attr.ptrSubHeaderTextAppearance, R.attr.ptrAnimationStyle, R.attr.ptrScrollingWhileRefreshingEnabled, R.attr.ptrListViewExtrasEnabled, R.attr.ptrRotateDrawableWhilePulling, R.attr.ptrAdapterViewBackground, R.attr.ptrDrawableTop, R.attr.ptrDrawableBottom};
     public static final int PullToRefresh_ptrAdapterViewBackground = 16;
     public static final int PullToRefresh_ptrAnimationStyle = 12;
     public static final int PullToRefresh_ptrDrawable = 6;
@@ -59,10 +59,10 @@ public final class p {
 
     static {
         int[] iArr = new int[PullToRefresh_ptrHeaderBackground];
-        iArr[PullToRefresh_ptrRefreshableViewBackground] = g.swipeable;
+        iArr[PullToRefresh_ptrRefreshableViewBackground] = R.attr.swipeable;
         CustomViewPager = iArr;
         iArr = new int[PullToRefresh_ptrHeaderBackground];
-        iArr[PullToRefresh_ptrRefreshableViewBackground] = g.slidepanel_height;
+        iArr[PullToRefresh_ptrRefreshableViewBackground] = R.attr.slidepanel_height;
         SlidableTwoPanelLayout = iArr;
     }
 }

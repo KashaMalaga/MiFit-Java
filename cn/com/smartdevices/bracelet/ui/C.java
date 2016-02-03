@@ -9,8 +9,8 @@ import com.huami.android.view.b;
 import com.tencent.tauth.IUiListener;
 import com.tencent.tauth.UiError;
 import com.xiaomi.account.openauth.h;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.dataprocess.SportDay;
-import com.xiaomi.hm.health.r;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -76,13 +76,13 @@ class C implements IUiListener {
         this.a.a.clean(true);
         this.a.b.clean(true);
         this.a.a(this.a.f, this.a.g);
-        b.a(this.a, (int) r.state_bind_failed, 0).show();
+        b.a(this.a, (int) R.string.state_bind_failed, 0).show();
     }
 
     public void onComplete(Object obj) {
         int i = 0;
         if (this.a.a.isLoginValid()) {
-            b.a(this.a, (int) r.state_binded, 0).show();
+            b.a(this.a, (int) R.string.state_binded, 0).show();
             this.a.a.saveOAuthInfo();
             this.a.a.setNeedLogin(false);
             this.a.a.setNeedSwitchLogin(false);
@@ -99,7 +99,7 @@ class C implements IUiListener {
             this.a.finish();
             return;
         }
-        b.a(this.a, (int) r.state_bind_failed, 0).show();
+        b.a(this.a, (int) R.string.state_bind_failed, 0).show();
     }
 
     public void onError(UiError uiError) {
@@ -107,6 +107,6 @@ class C implements IUiListener {
         this.a.a.setNeedSwitchLogin(false);
         this.a.a.setLoginCanceled(true);
         this.a.a(this.a.f, this.a.g);
-        b.a(this.a, (int) r.state_bind_failed, 0).show();
+        b.a(this.a, (int) R.string.state_bind_failed, 0).show();
     }
 }

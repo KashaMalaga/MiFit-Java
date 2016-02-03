@@ -10,11 +10,8 @@ import cn.com.smartdevices.bracelet.C0401a;
 import cn.com.smartdevices.bracelet.C0596r;
 import cn.com.smartdevices.bracelet.view.C0828b;
 import cn.com.smartdevices.bracelet.view.SelectDaysView;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.bt.model.AlarmClockItem;
-import com.xiaomi.hm.health.f;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
 import kankan.wheel.widget.a;
 
 public class AlarmRepeatActivity extends SystemBarTintActivity implements OnClickListener {
@@ -31,16 +28,16 @@ public class AlarmRepeatActivity extends SystemBarTintActivity implements OnClic
             }
         }
         C0596r.e(a, "bits=" + i);
-        this.d.setText(String.format(getString(r.alarm_repeat_title_format), new Object[]{Integer.valueOf(i)}));
+        this.d.setText(String.format(getString(R.string.alarm_repeat_title_format), new Object[]{Integer.valueOf(i)}));
     }
 
     private void b() {
-        findViewById(l.cancel).setOnClickListener(this);
-        findViewById(l.confirm).setOnClickListener(this);
-        this.d = (TextView) findViewById(l.fragment_alarm_repeat_title);
-        this.b = (SelectDaysView) findViewById(l.days_view);
+        findViewById(R.id.cancel).setOnClickListener(this);
+        findViewById(R.id.confirm).setOnClickListener(this);
+        this.d = (TextView) findViewById(R.id.fragment_alarm_repeat_title);
+        this.b = (SelectDaysView) findViewById(R.id.days_view);
         C0596r.e(a, "Days : " + this.c);
-        this.b.a(new C0828b(this, getResources().getStringArray(f.weeks), this.c));
+        this.b.a(new C0828b(this, getResources().getStringArray(R.array.weeks), this.c));
         this.b.a(new C0809i(this));
     }
 
@@ -50,13 +47,13 @@ public class AlarmRepeatActivity extends SystemBarTintActivity implements OnClic
 
     public void onClick(View view) {
         switch (view.getId()) {
-            case l.confirm /*2131296545*/:
+            case R.id.confirm:
                 Intent intent = new Intent();
                 intent.putExtra(a.bv, this.c);
                 setResult(-1, intent);
                 finish();
                 return;
-            case l.cancel /*2131296581*/:
+            case R.id.cancel:
                 finish();
                 return;
             default:
@@ -66,7 +63,7 @@ public class AlarmRepeatActivity extends SystemBarTintActivity implements OnClic
 
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView((int) n.alarm_repeat_activity);
+        setContentView((int) R.layout.alarm_repeat_activity);
         Intent intent = getIntent();
         if (intent == null) {
             this.c = 0;

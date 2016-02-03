@@ -46,23 +46,23 @@ public final class e extends q {
 
     private static int a(int[] iArr) {
         int i;
-        int i2;
         int length = iArr.length;
-        int i3 = 0;
+        int i2 = 0;
         while (true) {
+            int i3;
             int i4 = Integer.MAX_VALUE;
             for (int i5 : iArr) {
                 if (i5 < i4 && i5 > r0) {
                     i4 = i5;
                 }
             }
-            i3 = 0;
+            i2 = 0;
             int i52 = 0;
             i = 0;
-            for (i2 = 0; i2 < length; i2++) {
-                int i6 = iArr[i2];
+            for (i3 = 0; i3 < length; i3++) {
+                int i6 = iArr[i3];
                 if (i6 > i4) {
-                    i3 |= 1 << ((length - 1) - i2);
+                    i2 |= 1 << ((length - 1) - i3);
                     i++;
                     i52 += i6;
                 }
@@ -72,20 +72,20 @@ public final class e extends q {
             } else if (i <= 3) {
                 return -1;
             } else {
-                i3 = i4;
+                i2 = i4;
             }
         }
         int i7 = i;
         for (i = 0; i < length && i7 > 0; i++) {
-            i2 = iArr[i];
-            if (i2 > i4) {
+            i3 = iArr[i];
+            if (i3 > i4) {
                 i7--;
-                if (i2 * 2 >= i52) {
+                if (i3 * 2 >= i52) {
                     return -1;
                 }
             }
         }
-        return i3;
+        return i2;
     }
 
     private static String a(CharSequence charSequence) {

@@ -11,8 +11,8 @@ import cn.com.smartdevices.bracelet.chart.base.q;
 import cn.com.smartdevices.bracelet.chart.util.ChartData;
 import cn.com.smartdevices.bracelet.chart.util.a;
 import cn.com.smartdevices.bracelet.chart.util.t;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.dataprocess.HeartRateInfo;
-import com.xiaomi.hm.health.k;
 import kankan.wheel.widget.l;
 
 public class o extends q {
@@ -38,10 +38,10 @@ public class o extends q {
 
     public o(Context context) {
         super(context);
-        this.B = ((BitmapDrawable) context.getResources().getDrawable(k.ic_dynamic_step)).getBitmap();
-        this.C = ((BitmapDrawable) context.getResources().getDrawable(k.ic_dynamic_sleep)).getBitmap();
-        this.D = ((BitmapDrawable) context.getResources().getDrawable(k.heart_icon)).getBitmap();
-        this.E = ((BitmapDrawable) context.getResources().getDrawable(k.shose)).getBitmap();
+        this.B = ((BitmapDrawable) context.getResources().getDrawable(R.drawable.ic_dynamic_step)).getBitmap();
+        this.C = ((BitmapDrawable) context.getResources().getDrawable(R.drawable.ic_dynamic_sleep)).getBitmap();
+        this.D = ((BitmapDrawable) context.getResources().getDrawable(R.drawable.heart_icon)).getBitmap();
+        this.E = ((BitmapDrawable) context.getResources().getDrawable(R.drawable.shose)).getBitmap();
         this.F.setColor(-1);
         this.F.setStrokeWidth(this.p * h);
         this.F.setStyle(Style.STROKE);

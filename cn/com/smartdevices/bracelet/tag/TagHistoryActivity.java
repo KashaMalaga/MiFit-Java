@@ -11,8 +11,7 @@ import cn.com.smartdevices.bracelet.C0401a;
 import cn.com.smartdevices.bracelet.tag.a.c;
 import cn.com.smartdevices.bracelet.ui.SystemBarTintActivity;
 import com.xiaomi.e.a;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
+import com.xiaomi.hm.health.R;
 
 public class TagHistoryActivity extends SystemBarTintActivity implements OnClickListener {
     private l a;
@@ -23,16 +22,16 @@ public class TagHistoryActivity extends SystemBarTintActivity implements OnClick
     }
 
     public void onClick(View view) {
-        if (view.getId() == l.home_back) {
+        if (view.getId() == R.id.home_back) {
             finish();
         }
     }
 
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView((int) n.activity_tag_history);
-        findViewById(l.home_back).setOnClickListener(this);
-        ListView listView = (ListView) findViewById(l.history_list);
+        setContentView((int) R.layout.activity_tag_history);
+        findViewById(R.id.home_back).setOnClickListener(this);
+        ListView listView = (ListView) findViewById(R.id.history_list);
         this.a = new l(this);
         listView.setAdapter(this.a);
         this.b = new c(this, a.f);

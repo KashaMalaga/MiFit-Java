@@ -11,7 +11,7 @@ import android.text.TextPaint;
 import cn.com.smartdevices.bracelet.chart.base.e;
 import cn.com.smartdevices.bracelet.chart.util.t;
 import cn.com.smartdevices.bracelet.f.f;
-import com.xiaomi.hm.health.k;
+import com.xiaomi.hm.health.R;
 
 class C0412b extends e {
     final /* synthetic */ C0411a a;
@@ -78,10 +78,10 @@ class C0412b extends e {
 
     private void j() {
         if (this.i == null) {
-            this.i = ((BitmapDrawable) this.t.getResources().getDrawable(k.ic_dynamic_detail_sleep_start)).getBitmap();
+            this.i = ((BitmapDrawable) this.t.getResources().getDrawable(R.drawable.ic_dynamic_detail_sleep_start)).getBitmap();
         }
         if (this.x == null) {
-            this.x = ((BitmapDrawable) this.t.getResources().getDrawable(k.ic_dynamic_detail_sleep_end)).getBitmap();
+            this.x = ((BitmapDrawable) this.t.getResources().getDrawable(R.drawable.ic_dynamic_detail_sleep_end)).getBitmap();
         }
     }
 

@@ -13,8 +13,7 @@ import android.view.View;
 import android.widget.TextView;
 import cn.com.smartdevices.bracelet.ui.SystemBarTintActivity;
 import com.g.a.b.b;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -120,21 +119,21 @@ public class NotificationAppsActivity extends SystemBarTintActivity {
 
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView((int) n.activity_notification_app_list);
+        setContentView((int) R.layout.activity_notification_app_list);
         b = false;
         FragmentManager fragmentManager = getFragmentManager();
         if (fragmentManager.findFragmentById(16908290) == null) {
             this.c = new e();
-            fragmentManager.beginTransaction().add(com.xiaomi.hm.health.l.content, this.c).commit();
+            fragmentManager.beginTransaction().add(R.id.content, this.c).commit();
         }
     }
 
     public void onSystemUserAppSwitch(View view) {
         b = !b;
         if (b) {
-            ((TextView) view).setText(r.phone_app_notifi_download_apps);
+            ((TextView) view).setText(R.string.phone_app_notifi_download_apps);
         } else {
-            ((TextView) view).setText(r.phone_app_notifi_all_apps);
+            ((TextView) view).setText(R.string.phone_app_notifi_all_apps);
         }
         this.c.getLoaderManager().restartLoader(0, null, this.c);
     }

@@ -12,9 +12,7 @@ import cn.com.smartdevices.bracelet.C0596r;
 import cn.com.smartdevices.bracelet.eventbus.Event12HourUpdate;
 import cn.com.smartdevices.bracelet.eventbus.EventAmPmUpdate;
 import com.tencent.connect.common.Constants;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 import de.greenrobot.event.EventBus;
 import kankan.wheel.widget.WheelView;
 import kankan.wheel.widget.a;
@@ -94,9 +92,9 @@ public class C0763dl implements f {
         view = (RelativeLayout) view;
         int i3 = i % this.k;
         if (view == null) {
-            view2 = c.equals(this.w) ? (RelativeLayout) this.s.inflate(n.wheel_item_normal, null) : (RelativeLayout) this.s.inflate(n.wheel_item_miui, null);
+            view2 = c.equals(this.w) ? (RelativeLayout) this.s.inflate(R.layout.wheel_item_normal, null) : (RelativeLayout) this.s.inflate(R.layout.wheel_item_miui, null);
             C0765dn c0765dn = new C0765dn();
-            c0765dn.a = (TextView) view2.findViewById(l.content_txt);
+            c0765dn.a = (TextView) view2.findViewById(R.id.content_txt);
             c0765dn.a.getLayoutParams().height = (int) this.j;
             view2.setTag(c0765dn);
         } else {
@@ -127,7 +125,7 @@ public class C0763dl implements f {
                 }
                 break;
             case a.bu /*17*/:
-                format = i3 == 0 ? this.t.getString(r.am) : this.t.getString(r.pm);
+                format = i3 == 0 ? this.t.getString(R.string.am) : this.t.getString(R.string.pm);
                 if (i == e) {
                     EventBus.getDefault().post(new EventAmPmUpdate(i3));
                     break;
@@ -139,7 +137,7 @@ public class C0763dl implements f {
                     break;
                 }
                 C0596r.e(d, "set close");
-                format = this.t.getString(r.state_close);
+                format = this.t.getString(R.string.state_close);
                 break;
             case a.bs /*19*/:
                 format = "." + String.format("%01d", new Object[]{Integer.valueOf(i3 + this.q)});

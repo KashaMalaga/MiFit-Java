@@ -12,7 +12,7 @@ import android.support.v4.view.a.C0113o;
 import cn.com.smartdevices.bracelet.Utils;
 import cn.com.smartdevices.bracelet.config.b;
 import com.tencent.open.SocialConstants;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 
 public class d {
     private d() {
@@ -89,10 +89,10 @@ public class d {
                 activity.startActivity(intent);
             } else if (z) {
                 h.h.getClass();
-                Utils.a("http://s1.mi.com/m/product/shouhuan/index.html", (int) r.bracelet_store_desc, activity);
+                Utils.a("http://s1.mi.com/m/product/shouhuan/index.html", (int) R.string.bracelet_store_desc, activity);
             } else {
                 h.h.getClass();
-                Utils.a("http://s1.mi.com/m/product/shouhuan/index.html", (int) r.buy_bracelet_desc, activity);
+                Utils.a("http://s1.mi.com/m/product/shouhuan/index.html", (int) R.string.buy_bracelet_desc, activity);
             }
         }
     }

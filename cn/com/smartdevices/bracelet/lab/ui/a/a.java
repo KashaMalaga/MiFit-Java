@@ -4,23 +4,22 @@ import android.os.Bundle;
 import android.view.View;
 import cn.com.smartdevices.bracelet.C0401a;
 import com.huami.android.view.c;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
+import com.xiaomi.hm.health.R;
 
 public class a extends c {
     private View a;
     private View b;
 
     protected int inflateLayout() {
-        return n.fragment_lab_share_photo;
+        return R.layout.fragment_lab_share_photo;
     }
 
     public void onClick(View view) {
         switch (view.getId()) {
-            case l.photo_selection_camera_area /*2131297034*/:
+            case R.id.photo_selection_camera_area:
                 onRightButtonClicked();
                 return;
-            case l.photo_selection_gallery_area /*2131297037*/:
+            case R.id.photo_selection_gallery_area:
                 onRightButtonClicked();
                 return;
             default:
@@ -48,9 +47,9 @@ public class a extends c {
 
     public void onViewCreated(View view, Bundle bundle) {
         super.onViewCreated(view, bundle);
-        this.a = view.findViewById(l.photo_selection_camera_area);
+        this.a = view.findViewById(R.id.photo_selection_camera_area);
         this.a.setOnClickListener(this);
-        this.b = view.findViewById(l.photo_selection_gallery_area);
+        this.b = view.findViewById(R.id.photo_selection_gallery_area);
         this.b.setOnClickListener(this);
     }
 }

@@ -62,11 +62,11 @@ public final class aa {
     }
 
     aj a(int i, int i2, boolean z) {
+        View a;
         int i3 = 0;
         int size = this.a.size();
         int i4 = 0;
         while (i4 < size) {
-            View a;
             aj ajVar = (aj) this.a.get(i4);
             if (ajVar.j() || ajVar.d() != i || ajVar.n() || (!this.c.p.j && ajVar.r())) {
                 i4++;

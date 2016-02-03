@@ -110,7 +110,6 @@ public final class B {
     }
 
     public byte[] b() {
-        InputStream openFileInput;
         Exception e;
         Throwable th;
         byte[] bArr = null;
@@ -119,6 +118,7 @@ public final class B {
         if (a(file)) {
             file.delete();
         } else if (file.exists()) {
+            InputStream openFileInput;
             try {
                 openFileInput = b.openFileInput(m);
                 try {

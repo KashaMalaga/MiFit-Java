@@ -5,8 +5,7 @@ import android.os.Binder;
 import android.text.TextUtils;
 import cn.com.smartdevices.bracelet.C0596r;
 import cn.com.smartdevices.bracelet.shoes.sync.SyncShoesDataService;
-import com.tencent.open.SocialConstants;
-import kankan.wheel.widget.a;
+import com.xiaomi.channel.relationservice.data.a;
 import kankan.wheel.widget.l;
 
 final class P extends Binder implements C0467k {
@@ -23,13 +22,13 @@ final class P extends Binder implements C0467k {
         Intent intent = new Intent();
         switch (dataSyncObject.b.getInt(C0483q.i)) {
             case l.a /*1*/:
-                intent.putExtra(SocialConstants.PARAM_TYPE, 0);
+                intent.putExtra(a.h, 0);
                 break;
-            case a.k /*2*/:
-                intent.putExtra(SocialConstants.PARAM_TYPE, 4);
+            case kankan.wheel.widget.a.k /*2*/:
+                intent.putExtra(a.h, 4);
                 break;
-            case a.l /*3*/:
-                intent.putExtra(SocialConstants.PARAM_TYPE, 9);
+            case kankan.wheel.widget.a.l /*3*/:
+                intent.putExtra(a.h, 9);
                 break;
         }
         intent.putExtra(SyncShoesDataService.a, dataSyncObject.b);

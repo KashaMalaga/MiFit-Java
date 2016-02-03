@@ -33,80 +33,84 @@ public final class h {
     }
 
     public boolean a() {
-        return this.g != -1;
+        return (this.g == -1 || (this.d & HeartRateInfo.HR_EMPTY_VALUE) == 8) ? false : true;
     }
 
     public boolean b() {
-        return ((this.b & HeartRateInfo.HR_EMPTY_VALUE) == 5 && (this.c & HeartRateInfo.HR_EMPTY_VALUE) == 0) || ((this.b & HeartRateInfo.HR_EMPTY_VALUE) == 0 && (this.d & HeartRateInfo.HR_EMPTY_VALUE) == 208);
+        return ((this.b & HeartRateInfo.HR_EMPTY_VALUE) == 5 && (this.c & HeartRateInfo.HR_EMPTY_VALUE) == 0) || (((this.b & HeartRateInfo.HR_EMPTY_VALUE) == 0 && (this.d & HeartRateInfo.HR_EMPTY_VALUE) == 208) || (((this.b & HeartRateInfo.HR_EMPTY_VALUE) == 0 && (this.d & HeartRateInfo.HR_EMPTY_VALUE) == 8) || c()));
     }
 
-    public int c() {
-        return this.f & HeartRateInfo.HR_EMPTY_VALUE;
+    public boolean c() {
+        return (this.b & HeartRateInfo.HR_EMPTY_VALUE) == 4 && (this.d & HeartRateInfo.HR_EMPTY_VALUE) == 8;
     }
 
     public int d() {
-        return (this.f >> 24) & HeartRateInfo.HR_EMPTY_VALUE;
+        return this.f & HeartRateInfo.HR_EMPTY_VALUE;
     }
 
     public int e() {
-        return (this.f >> 16) & HeartRateInfo.HR_EMPTY_VALUE;
+        return (this.f >> 24) & HeartRateInfo.HR_EMPTY_VALUE;
     }
 
     public int f() {
-        return (this.f >> 8) & HeartRateInfo.HR_EMPTY_VALUE;
+        return (this.f >> 16) & HeartRateInfo.HR_EMPTY_VALUE;
     }
 
     public int g() {
-        return this.e & HeartRateInfo.HR_EMPTY_VALUE;
+        return (this.f >> 8) & HeartRateInfo.HR_EMPTY_VALUE;
     }
 
     public int h() {
-        return (this.e >> 24) & HeartRateInfo.HR_EMPTY_VALUE;
+        return this.e & HeartRateInfo.HR_EMPTY_VALUE;
     }
 
     public int i() {
-        return (this.e >> 16) & HeartRateInfo.HR_EMPTY_VALUE;
+        return (this.e >> 24) & HeartRateInfo.HR_EMPTY_VALUE;
     }
 
     public int j() {
+        return (this.e >> 16) & HeartRateInfo.HR_EMPTY_VALUE;
+    }
+
+    public int k() {
         return (this.e >> 8) & HeartRateInfo.HR_EMPTY_VALUE;
     }
 
-    public String k() {
-        return d() + "." + e() + "." + f() + "." + c();
-    }
-
-    public int l() {
-        return this.g & HeartRateInfo.HR_EMPTY_VALUE;
+    public String l() {
+        return e() + "." + f() + "." + g() + "." + d();
     }
 
     public int m() {
-        return (this.g >> 24) & HeartRateInfo.HR_EMPTY_VALUE;
+        return this.g & HeartRateInfo.HR_EMPTY_VALUE;
     }
 
     public int n() {
-        return (this.g >> 16) & HeartRateInfo.HR_EMPTY_VALUE;
+        return (this.g >> 24) & HeartRateInfo.HR_EMPTY_VALUE;
     }
 
     public int o() {
+        return (this.g >> 16) & HeartRateInfo.HR_EMPTY_VALUE;
+    }
+
+    public int p() {
         return (this.g >> 8) & HeartRateInfo.HR_EMPTY_VALUE;
     }
 
-    public String p() {
-        return m() + "." + n() + "." + o() + "." + l();
+    public String q() {
+        return n() + "." + o() + "." + p() + "." + m();
     }
 
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder(PersonInfo.INCOMING_CALL_DISABLE_BIT);
-        String str = a.f + h() + "." + i() + "." + j() + "." + g();
+        String str = a.f + i() + "." + j() + "." + k() + "." + h();
         stringBuilder.append("[[[ " + getClass().getSimpleName() + " ]]]");
         stringBuilder.append("\n         deviceID: " + this.a);
         stringBuilder.append("\n          feature: " + Integer.toHexString(this.b));
         stringBuilder.append("\n       appearance: " + Integer.toHexString(this.c));
         stringBuilder.append("\n  hardwareVersion: " + Integer.toHexString(this.d));
         stringBuilder.append("\n   profileVersion: " + str);
-        stringBuilder.append("\n  firmwareVersion: " + k());
-        stringBuilder.append("\n  firmware2Version: " + p());
+        stringBuilder.append("\n  firmwareVersion: " + l());
+        stringBuilder.append("\n  firmware2Version: " + q());
         return stringBuilder.toString();
     }
 }

@@ -3,7 +3,7 @@ package cn.com.smartdevices.bracelet.lab.b;
 import android.content.Context;
 import android.text.Html;
 import com.tencent.connect.common.Constants;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.TimeZone;
@@ -57,26 +57,26 @@ public final class f {
 
     public static String a(Context context, long j) {
         if (context == null || j < 0) {
-            return context.getString(r.lab_factory_sport_sec, new Object[]{Integer.valueOf(0)});
+            return context.getString(R.string.lab_factory_sport_sec, new Object[]{Integer.valueOf(0)});
         }
         long j2 = (j % 3600) / 60;
         long j3 = j % 60;
         if (j / 3600 <= 0) {
             if (j2 > 0 && j3 <= 0) {
-                return context.getString(r.lab_factory_sport_min, new Object[]{Long.valueOf(j2)});
+                return context.getString(R.string.lab_factory_sport_min, new Object[]{Long.valueOf(j2)});
             } else if (j2 <= 0) {
-                return context.getString(r.lab_factory_sport_sec, new Object[]{Long.valueOf(j3)});
+                return context.getString(R.string.lab_factory_sport_sec, new Object[]{Long.valueOf(j3)});
             } else {
-                return context.getString(r.lab_factory_sport_min_sec, new Object[]{Long.valueOf(j2), Long.valueOf(j3)});
+                return context.getString(R.string.lab_factory_sport_min_sec, new Object[]{Long.valueOf(j2), Long.valueOf(j3)});
             }
         } else if (j2 > 0 && j3 <= 0) {
-            return context.getString(r.lab_factory_sport_hour_min, new Object[]{Long.valueOf(r0), Long.valueOf(j2)});
+            return context.getString(R.string.lab_factory_sport_hour_min, new Object[]{Long.valueOf(r0), Long.valueOf(j2)});
         } else if (j2 <= 0 && j3 <= 0) {
-            return context.getString(r.lab_factory_sport_hour, new Object[]{Long.valueOf(r0)});
+            return context.getString(R.string.lab_factory_sport_hour, new Object[]{Long.valueOf(r0)});
         } else if (j2 > 0 || j3 <= 0) {
-            return context.getString(r.lab_factory_sport_hour_min_sec, new Object[]{Long.valueOf(r0), Long.valueOf(j2), Long.valueOf(j3)});
+            return context.getString(R.string.lab_factory_sport_hour_min_sec, new Object[]{Long.valueOf(r0), Long.valueOf(j2), Long.valueOf(j3)});
         } else {
-            return context.getString(r.lab_factory_sport_hour_sec, new Object[]{Long.valueOf(r0), Long.valueOf(j3)});
+            return context.getString(R.string.lab_factory_sport_hour_sec, new Object[]{Long.valueOf(r0), Long.valueOf(j3)});
         }
     }
 
@@ -86,11 +86,11 @@ public final class f {
 
     public static String b(Context context, long j) {
         if (context == null || j < 0) {
-            return context.getString(r.lab_factory_sport_hour_min_sec, new Object[]{Integer.valueOf(0), Integer.valueOf(0), Integer.valueOf(0)});
+            return context.getString(R.string.lab_factory_sport_hour_min_sec, new Object[]{Integer.valueOf(0), Integer.valueOf(0), Integer.valueOf(0)});
         }
         long j2 = (j % 3600) / 60;
         long j3 = j % 60;
-        return context.getString(r.lab_factory_sport_hour_min_sec, new Object[]{Long.valueOf(j / 3600), Long.valueOf(j2), Long.valueOf(j3)});
+        return context.getString(R.string.lab_factory_sport_hour_min_sec, new Object[]{Long.valueOf(j / 3600), Long.valueOf(j2), Long.valueOf(j3)});
     }
 
     public static String c(long j) {

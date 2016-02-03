@@ -22,7 +22,7 @@ import com.d.a.a.h;
 import com.d.a.a.p;
 import com.huami.android.widget.share.m;
 import com.tencent.open.SocialConstants;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 import de.greenrobot.dao.Property;
 import de.greenrobot.dao.query.QueryBuilder;
 import de.greenrobot.dao.query.WhereCondition;
@@ -282,31 +282,31 @@ public class PartnerDataManager {
         if (this.CONFIG.c.e.booleanValue()) {
             partner = new Partner();
             partner.id = Partner.HEALTH_LINK_ID;
-            partner.title = this.mContext.getString(r.health_link);
+            partner.title = this.mContext.getString(R.string.health_link);
             arrayList.add(partner);
             sparseArray.put(GROUP_SPECIAL, arrayList);
         }
         arrayList = new ArrayList();
         partner = new Partner();
-        partner.title = this.mContext.getString(r.action_pop_weixin_enter);
+        partner.title = this.mContext.getString(R.string.action_pop_weixin_enter);
         partner.id = m.a;
         arrayList.add(partner);
         if (!this.CONFIG.w.booleanValue()) {
             partner = new Partner();
             partner.id = m.c;
-            partner.title = this.mContext.getString(r.bind_qq);
+            partner.title = this.mContext.getString(R.string.bind_qq);
             arrayList.add(partner);
         }
         if (this.CONFIG.c.f.booleanValue()) {
             partner = new Partner();
             partner.id = Partner.WEIBO_HEALTH_ID;
-            partner.title = this.mContext.getString(r.bind_weibo);
+            partner.title = this.mContext.getString(R.string.bind_weibo);
             arrayList.add(partner);
         }
         if (this.CONFIG.c.g.booleanValue()) {
             partner = new Partner();
             partner.id = Partner.GOOGLE_FIT_ID;
-            partner.title = this.mContext.getString(r.bind_google_fit);
+            partner.title = this.mContext.getString(R.string.bind_google_fit);
             arrayList.add(partner);
         }
         sparseArray.put(GROUP_LOCAL, arrayList);

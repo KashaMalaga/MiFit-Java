@@ -2,8 +2,8 @@ package com.d.a.a;
 
 import android.support.v4.view.a.C0113o;
 import android.util.Log;
-import com.amap.api.location.core.AMapLocException;
-import com.tencent.open.SocialConstants;
+import com.xiaomi.channel.relationservice.data.a;
+import com.xiaomi.channel.relationservice.data.b;
 import com.xiaomi.hm.health.t;
 import java.io.FileInputStream;
 import java.io.InputStream;
@@ -12,7 +12,6 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 import java.util.zip.GZIPOutputStream;
-import kankan.wheel.widget.a;
 import org.apache.http.Header;
 import org.apache.http.HttpEntity;
 import org.apache.http.message.BasicHeader;
@@ -26,7 +25,7 @@ class G implements HttpEntity {
     private static final byte[] g = "false".getBytes();
     private static final byte[] h = "null".getBytes();
     private static final byte[] i = a("name");
-    private static final byte[] j = a(SocialConstants.PARAM_TYPE);
+    private static final byte[] j = a(a.h);
     private static final byte[] k = a("contents");
     private static final byte[] l = a("_elapsed");
     private static final Header m = new BasicHeader("Content-Type", "application/json");
@@ -109,22 +108,22 @@ class G implements HttpEntity {
             if (i2 < length) {
                 char charAt = str.charAt(i2);
                 switch (charAt) {
-                    case a.ba /*8*/:
+                    case kankan.wheel.widget.a.ba /*8*/:
                         e.append("\\b");
                         break;
-                    case a.bo /*9*/:
+                    case kankan.wheel.widget.a.bo /*9*/:
                         e.append("\\t");
                         break;
-                    case a.bd /*10*/:
+                    case kankan.wheel.widget.a.bd /*10*/:
                         e.append("\\n");
                         break;
-                    case a.be /*12*/:
+                    case kankan.wheel.widget.a.be /*12*/:
                         e.append("\\f");
                         break;
                     case t.WeightView_wv_bmi_size /*13*/:
                         e.append("\\r");
                         break;
-                    case AMapLocException.ERROR_CODE_FAILURE_LOCATION /*34*/:
+                    case b.I /*34*/:
                         e.append("\\\"");
                         break;
                     case '\\':

@@ -9,8 +9,8 @@ import android.graphics.drawable.BitmapDrawable;
 import android.util.AttributeSet;
 import android.view.View;
 import cn.com.smartdevices.bracelet.model.ShareData;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.dataprocess.HeartRateInfo;
-import com.xiaomi.hm.health.k;
 
 public class FirmwareUpgradeShoesView extends View {
     private float a;
@@ -32,7 +32,7 @@ public class FirmwareUpgradeShoesView extends View {
     public FirmwareUpgradeShoesView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         this.g = 1;
-        this.b = (BitmapDrawable) context.getResources().getDrawable(k.ic_fw_upgrade_shoes);
+        this.b = (BitmapDrawable) context.getResources().getDrawable(R.drawable.ic_fw_upgrade_shoes);
         this.b.setAntiAlias(true);
         this.f = new Path();
     }

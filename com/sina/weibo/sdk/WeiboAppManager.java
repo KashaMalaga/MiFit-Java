@@ -92,9 +92,9 @@ public class WeiboAppManager {
     }
 
     private WeiboInfo queryWeiboInfoByProvider(Context context) {
-        Cursor query;
         Exception e;
         Throwable th;
+        Cursor query;
         try {
             query = context.getContentResolver().query(WEIBO_NAME_URI, null, null, null, null);
             if (query == null) {

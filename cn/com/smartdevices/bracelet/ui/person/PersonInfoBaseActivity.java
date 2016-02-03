@@ -9,7 +9,7 @@ import cn.com.smartdevices.bracelet.C0596r;
 import cn.com.smartdevices.bracelet.Keeper;
 import cn.com.smartdevices.bracelet.model.PersonInfo;
 import cn.com.smartdevices.bracelet.ui.SystemBarTintActivity;
-import com.xiaomi.hm.health.l;
+import com.xiaomi.hm.health.R;
 
 public class PersonInfoBaseActivity extends SystemBarTintActivity implements OnClickListener {
     private static final String c = "PersonInfoBaseActivity";
@@ -19,9 +19,9 @@ public class PersonInfoBaseActivity extends SystemBarTintActivity implements OnC
     private View e = null;
 
     protected void a() {
-        this.d = findViewById(l.right_button);
+        this.d = findViewById(R.id.right_button);
         this.d.setOnClickListener(this);
-        this.e = findViewById(l.left_button);
+        this.e = findViewById(R.id.left_button);
         this.e.setOnClickListener(this);
     }
 
@@ -59,10 +59,10 @@ public class PersonInfoBaseActivity extends SystemBarTintActivity implements OnC
 
     public void onClick(View view) {
         switch (view.getId()) {
-            case l.left_button /*2131296944*/:
+            case R.id.left_button:
                 b();
                 return;
-            case l.right_button /*2131296946*/:
+            case R.id.right_button:
                 c();
                 return;
             default:

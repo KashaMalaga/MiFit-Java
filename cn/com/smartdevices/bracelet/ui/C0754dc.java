@@ -15,10 +15,8 @@ import cn.com.smartdevices.bracelet.model.PersonInfo;
 import cn.com.smartdevices.bracelet.weight.J;
 import cn.com.smartdevices.bracelet.weight.UserInfo;
 import com.huami.android.view.c;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
+import com.xiaomi.hm.health.R;
 import de.greenrobot.event.EventBus;
-import kankan.wheel.widget.g;
 
 public class C0754dc extends c {
     private static final String a = C0754dc.class.getSimpleName();
@@ -43,27 +41,27 @@ public class C0754dc extends c {
         if (this.j == 1) {
             this.d.setVisibility(0);
             this.e.setVisibility(4);
-            this.i.setTextColor(getResources().getColor(g.highlight));
-            this.h.setTextColor(getResources().getColor(g.main_ui_title_color));
+            this.i.setTextColor(getResources().getColor(R.color.highlight));
+            this.h.setTextColor(getResources().getColor(R.color.main_ui_title_color));
         } else if (this.j == 0) {
             this.d.setVisibility(4);
             this.e.setVisibility(0);
-            this.h.setTextColor(getResources().getColor(g.highlight));
-            this.i.setTextColor(getResources().getColor(g.main_ui_title_color));
+            this.h.setTextColor(getResources().getColor(R.color.highlight));
+            this.i.setTextColor(getResources().getColor(R.color.main_ui_title_color));
         }
     }
 
     protected int inflateLayout() {
-        return n.fragment_person_info_setting_gender;
+        return R.layout.fragment_person_info_setting_gender;
     }
 
     public void onClick(View view) {
         switch (view.getId()) {
-            case l.person_info_male_area /*2131297070*/:
+            case R.id.person_info_male_area:
                 this.j = 1;
                 onRightButtonClicked();
                 break;
-            case l.person_info_female_area /*2131297072*/:
+            case R.id.person_info_female_area:
                 this.j = 0;
                 onRightButtonClicked();
                 break;
@@ -82,14 +80,14 @@ public class C0754dc extends c {
 
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         View onCreateView = super.onCreateView(layoutInflater, viewGroup, bundle);
-        this.d = onCreateView.findViewById(l.info_gender_male);
-        this.e = onCreateView.findViewById(l.info_gender_female);
-        this.f = onCreateView.findViewById(l.person_info_female_area);
+        this.d = onCreateView.findViewById(R.id.info_gender_male);
+        this.e = onCreateView.findViewById(R.id.info_gender_female);
+        this.f = onCreateView.findViewById(R.id.person_info_female_area);
         this.f.setOnClickListener(this);
-        this.g = onCreateView.findViewById(l.person_info_male_area);
+        this.g = onCreateView.findViewById(R.id.person_info_male_area);
         this.g.setOnClickListener(this);
-        this.h = (TextView) onCreateView.findViewById(l.info_gender_female_txt);
-        this.i = (TextView) onCreateView.findViewById(l.info_gender_male_txt);
+        this.h = (TextView) onCreateView.findViewById(R.id.info_gender_female_txt);
+        this.i = (TextView) onCreateView.findViewById(R.id.info_gender_male_txt);
         if (this.b != null) {
             this.j = this.b.gender;
         } else {

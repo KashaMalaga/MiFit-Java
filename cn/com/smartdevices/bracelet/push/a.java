@@ -6,9 +6,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v4.app.aT;
-import com.xiaomi.hm.health.k;
+import com.xiaomi.hm.health.R;
 import java.util.List;
-import kankan.wheel.widget.g;
 import org.json.JSONObject;
 
 public abstract class a {
@@ -35,8 +34,8 @@ public abstract class a {
         aTVar.b((CharSequence) str2);
         aTVar.e((CharSequence) str2);
         aTVar.a(pendingIntent);
-        aTVar.a((int) k.app_icon_small);
-        aTVar.a(this.d.getResources().getColor(g.bg_color_blue), 100, 100);
+        aTVar.a((int) R.drawable.app_icon_small);
+        aTVar.a(this.d.getResources().getColor(R.color.bg_color_blue), 100, 100);
         aTVar.e(true);
         aTVar.c((int) g);
         notificationManager.notify(this.c, aTVar.c());

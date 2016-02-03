@@ -39,8 +39,7 @@ import com.xiaomi.account.openauth.h;
 import com.xiaomi.account.openauth.i;
 import com.xiaomi.account.openauth.l;
 import com.xiaomi.account.openauth.p;
-import com.xiaomi.hm.health.k;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 import java.util.Locale;
 import kankan.wheel.widget.a;
 import org.apache.http.Header;
@@ -112,7 +111,7 @@ public class LoginActivity extends SystemBarTintActivity implements OnClickListe
                 return;
             }
         }
-        com.huami.android.view.b.a(this.p, getString(r.login_failed) + "\uff0c" + getString(r.error_code) + a.ci + a.h, 1).show();
+        com.huami.android.view.b.a(this.p, getString(R.string.login_failed) + "\uff0c" + getString(R.string.error_code) + a.ci + a.h, 1).show();
         i();
         C0596r.d(g, "Login webstatus fail, code = " + a.h + Utils.b(bArr));
     }
@@ -153,7 +152,7 @@ public class LoginActivity extends SystemBarTintActivity implements OnClickListe
         m.a(this.q, str);
         if (this.q.userid <= 0) {
             C0596r.d(g, "Login miid is empty!");
-            com.huami.android.view.b.a(this.p, (int) r.login_failed, 1).show();
+            com.huami.android.view.b.a(this.p, (int) R.string.login_failed, 1).show();
         } else if (a(this.q.userid)) {
             cn.com.smartdevices.bracelet.j.l.a(this.q, cn.com.smartdevices.bracelet.e.a.d(this.p), new h(this));
         }
@@ -204,7 +203,7 @@ public class LoginActivity extends SystemBarTintActivity implements OnClickListe
         } else if (j <= Constant.aT) {
             e.t = true;
         } else {
-            com.huami.android.view.b.a((Context) this, (int) r.miid_not_support, 1).show();
+            com.huami.android.view.b.a((Context) this, (int) R.string.miid_not_support, 1).show();
             z = h;
         }
         C0596r.d(g, "BasicServerDef.USE_HOST_OVERSEAS:" + e.t);
@@ -237,13 +236,13 @@ public class LoginActivity extends SystemBarTintActivity implements OnClickListe
     private void c() {
         Object string;
         SpannableString spannableString;
-        this.x = (WebView) findViewById(com.xiaomi.hm.health.l.bracelet_login_webview);
-        this.w = findViewById(com.xiaomi.hm.health.l.bracelet_login_part_2);
-        this.r = findViewById(com.xiaomi.hm.health.l.bracelet_login_title);
-        this.t = (TextView) findViewById(com.xiaomi.hm.health.l.bracelet_login_title_info);
-        this.y = (TextView) findViewById(com.xiaomi.hm.health.l.buy_band_txt);
+        this.x = (WebView) findViewById(R.id.bracelet_login_webview);
+        this.w = findViewById(R.id.bracelet_login_part_2);
+        this.r = findViewById(R.id.bracelet_login_title);
+        this.t = (TextView) findViewById(R.id.bracelet_login_title_info);
+        this.y = (TextView) findViewById(R.id.buy_band_txt);
         if (Locale.getDefault().toString().equals(Locale.SIMPLIFIED_CHINESE.toString())) {
-            string = getString(r.donot_have_band);
+            string = getString(R.string.donot_have_band);
             spannableString = new SpannableString(string);
             spannableString.setSpan(new n(this), 0, string.length(), 33);
             Utils.a(this.y, spannableString);
@@ -251,13 +250,13 @@ public class LoginActivity extends SystemBarTintActivity implements OnClickListe
         } else {
             this.y.setVisibility(8);
         }
-        this.n = (Button) findViewById(com.xiaomi.hm.health.l.mi_login_btn);
+        this.n = (Button) findViewById(R.id.mi_login_btn);
         this.n.setOnClickListener(this);
-        this.o = (Button) findViewById(com.xiaomi.hm.health.l.mi_register_btn);
+        this.o = (Button) findViewById(R.id.mi_register_btn);
         this.o.setOnClickListener(this);
-        this.u = (TextView) findViewById(com.xiaomi.hm.health.l.bracelet_login_info);
-        string = getString(r.user_agreement);
-        this.u.setText(getResources().getString(r.bracelet_login_info_2));
+        this.u = (TextView) findViewById(R.id.bracelet_login_info);
+        string = getString(R.string.user_agreement);
+        this.u.setText(getResources().getString(R.string.bracelet_login_info_2));
         spannableString = new SpannableString(string);
         spannableString.setSpan(new o(this), 0, string.length(), 33);
         Utils.a(this.u, spannableString);
@@ -303,16 +302,16 @@ public class LoginActivity extends SystemBarTintActivity implements OnClickListe
 
     private void i() {
         l();
-        com.huami.android.view.b.a(this.p, (int) r.login_failed, 1).show();
+        com.huami.android.view.b.a(this.p, (int) R.string.login_failed, 1).show();
     }
 
     private void j() {
-        com.huami.android.view.b.a(this.p, (int) r.login_failed, 0).show();
+        com.huami.android.view.b.a(this.p, (int) R.string.login_failed, 0).show();
         l();
     }
 
     private void k() {
-        Utils.a((Activity) this, (int) r.logining);
+        Utils.a((Activity) this, (int) R.string.logining);
     }
 
     private void l() {
@@ -328,15 +327,15 @@ public class LoginActivity extends SystemBarTintActivity implements OnClickListe
 
     public void onClick(View view) {
         switch (view.getId()) {
-            case com.xiaomi.hm.health.l.mi_login_btn /*2131296560*/:
+            case R.id.mi_login_btn:
                 if (Utils.l(this)) {
                     d();
                     C0401a.a((Context) this, C0401a.dv, C0401a.dw);
                     return;
                 }
-                com.huami.android.view.b.a((Context) this, (int) r.network_error, 1).show();
+                com.huami.android.view.b.a((Context) this, (int) R.string.network_error, 1).show();
                 return;
-            case com.xiaomi.hm.health.l.mi_register_btn /*2131296561*/:
+            case R.id.mi_register_btn:
                 if (Utils.l(this)) {
                     Intent intent = new Intent();
                     intent.putExtra(a.d, 0);
@@ -345,7 +344,7 @@ public class LoginActivity extends SystemBarTintActivity implements OnClickListe
                     C0401a.a((Context) this, C0401a.dv, C0401a.dx);
                     return;
                 }
-                com.huami.android.view.b.a((Context) this, (int) r.network_error, 1).show();
+                com.huami.android.view.b.a((Context) this, (int) R.string.network_error, 1).show();
                 return;
             default:
                 return;
@@ -367,9 +366,9 @@ public class LoginActivity extends SystemBarTintActivity implements OnClickListe
         if (!TextUtils.isEmpty(e.u)) {
             this.A = e.u + "huami.health.loginview.do";
         }
-        setContentView((int) com.xiaomi.hm.health.n.activity_login);
+        setContentView((int) R.layout.activity_login);
         disableAutoApplyStatusBarTint();
-        applyStatusBarTintResDrawable(k.bg_login);
+        applyStatusBarTintResDrawable(R.drawable.bg_login);
         this.v = new C0404c(this);
         c();
         a();

@@ -294,7 +294,7 @@ public class TDialog extends b {
     private static void c(Context context, String str) {
         try {
             JSONObject parseJson = Util.parseJson(str);
-            int i = parseJson.getInt(SocialConstants.PARAM_TYPE);
+            int i = parseJson.getInt(com.xiaomi.channel.relationservice.data.a.h);
             CharSequence string = parseJson.getString(SocialConstants.PARAM_SEND_MSG);
             if (i == 0) {
                 if (b == null) {

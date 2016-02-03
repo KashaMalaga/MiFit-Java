@@ -234,7 +234,6 @@ public class m implements Response, IWXAPIEventHandler {
     }
 
     private byte[] a(String str) {
-        ByteArrayOutputStream byteArrayOutputStream;
         InputStream fileInputStream;
         FileNotFoundException e;
         IOException e2;
@@ -242,6 +241,7 @@ public class m implements Response, IWXAPIEventHandler {
         if (str == null) {
             return null;
         }
+        ByteArrayOutputStream byteArrayOutputStream;
         try {
             byteArrayOutputStream = new ByteArrayOutputStream();
             try {

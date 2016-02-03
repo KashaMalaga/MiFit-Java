@@ -56,57 +56,57 @@ public class w {
     }
 
     public static boolean a(Bitmap bitmap, String str, CompressFormat compressFormat, int i) {
+        FileOutputStream fileOutputStream;
         Throwable th;
-        FileOutputStream fileOutputStream = null;
-        FileOutputStream fileOutputStream2;
+        FileOutputStream fileOutputStream2 = null;
         try {
             a(str);
             File file = new File(str);
             if (!file.exists()) {
                 file.createNewFile();
             }
-            fileOutputStream2 = new FileOutputStream(file);
+            fileOutputStream = new FileOutputStream(file);
             try {
-                boolean compress = bitmap.compress(compressFormat, i, fileOutputStream2);
-                if (fileOutputStream2 == null) {
+                boolean compress = bitmap.compress(compressFormat, i, fileOutputStream);
+                if (fileOutputStream == null) {
                     return compress;
                 }
                 try {
-                    fileOutputStream2.close();
+                    fileOutputStream.close();
                     return compress;
                 } catch (IOException e) {
                     return compress;
                 }
             } catch (IOException e2) {
-                fileOutputStream = fileOutputStream2;
-                if (fileOutputStream != null) {
+                fileOutputStream2 = fileOutputStream;
+                if (fileOutputStream2 != null) {
                     try {
-                        fileOutputStream.close();
+                        fileOutputStream2.close();
                     } catch (IOException e3) {
                     }
                 }
                 return false;
             } catch (Throwable th2) {
                 th = th2;
-                if (fileOutputStream2 != null) {
+                if (fileOutputStream != null) {
                     try {
-                        fileOutputStream2.close();
+                        fileOutputStream.close();
                     } catch (IOException e4) {
                     }
                 }
                 throw th;
             }
         } catch (IOException e5) {
-            if (fileOutputStream != null) {
-                fileOutputStream.close();
+            if (fileOutputStream2 != null) {
+                fileOutputStream2.close();
             }
             return false;
         } catch (Throwable th3) {
             Throwable th4 = th3;
-            fileOutputStream2 = null;
+            fileOutputStream = null;
             th = th4;
-            if (fileOutputStream2 != null) {
-                fileOutputStream2.close();
+            if (fileOutputStream != null) {
+                fileOutputStream.close();
             }
             throw th;
         }

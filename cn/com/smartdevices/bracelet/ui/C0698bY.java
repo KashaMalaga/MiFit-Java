@@ -3,7 +3,7 @@ package cn.com.smartdevices.bracelet.ui;
 import android.animation.Animator;
 import android.animation.Animator.AnimatorListener;
 import cn.com.smartdevices.bracelet.Keeper;
-import com.xiaomi.hm.health.i;
+import com.xiaomi.hm.health.R;
 
 class C0698bY implements AnimatorListener {
     final /* synthetic */ MainUIActivity a;
@@ -31,7 +31,7 @@ class C0698bY implements AnimatorListener {
 
     public void onAnimationStart(Animator animator) {
         this.a.X.setTranslationY(800.0f);
-        this.a.W.setBackgroundResource(i.bg_mode_step);
+        this.a.W.setBackgroundResource(R.color.bg_mode_step);
         this.a.Y.setVisibility(8);
         this.a.af.notifyDataSetChanged();
     }

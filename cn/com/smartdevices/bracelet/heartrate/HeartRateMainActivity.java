@@ -30,16 +30,12 @@ import cn.com.smartdevices.bracelet.ui.fg;
 import com.edmodo.cropper.cropwindow.CropOverlayView;
 import com.huami.android.view.b;
 import com.xiaomi.channel.b.v;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.bt.d.c;
 import com.xiaomi.hm.health.bt.model.HwConnStatus;
 import com.xiaomi.hm.health.bt.model.h;
 import com.xiaomi.hm.health.bt.profile.a.d;
 import com.xiaomi.hm.health.bt.profile.a.j;
-import com.xiaomi.hm.health.e;
-import com.xiaomi.hm.health.i;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
 import de.greenrobot.event.EventBus;
 import java.util.ArrayList;
 import java.util.Timer;
@@ -98,7 +94,7 @@ public class HeartRateMainActivity extends SystemBarTintActivity implements OnCl
 
     private void a(ArrayList<HeartRateItem> arrayList) {
         if (arrayList == null || arrayList.isEmpty()) {
-            this.K.setText(r.no_measure_data);
+            this.K.setText(R.string.no_measure_data);
             return;
         }
         this.i.addAll(arrayList);
@@ -141,34 +137,34 @@ public class HeartRateMainActivity extends SystemBarTintActivity implements OnCl
     }
 
     private void c() {
-        this.d = (DynamicPieChartView) findViewById(l.chart);
+        this.d = (DynamicPieChartView) findViewById(R.id.chart);
         this.d.a((int) ChartData.d);
         this.d.a(35200.0f);
-        this.f = findViewById(l.center_host);
-        this.j = (SlidingUpPanelLayout) findViewById(l.sliding_layout);
+        this.f = findViewById(R.id.center_host);
+        this.j = (SlidingUpPanelLayout) findViewById(R.id.sliding_layout);
         this.j.setOverlayed(true);
         this.j.setEnableDragViewTouchEvents(true);
         this.j.setPanelSlideListener(this.L);
-        this.k = findViewById(l.dragView);
-        this.h = (MyListView) findViewById(l.list);
+        this.k = findViewById(R.id.dragView);
+        this.h = (MyListView) findViewById(R.id.list);
         this.z = new h(this, this.i);
         this.h.setAdapter(this.z);
         this.h.setParentPanelLayout(this.j);
         this.j.setListAdapter(this.z);
         f();
-        this.E = (TextView) findViewById(l.fail_msg);
-        this.F = findViewById(l.fail_icon);
-        this.K = (TextView) findViewById(l.hr_label);
-        this.g = findViewById(l.measure_container);
-        this.x = findViewById(l.error_container);
+        this.E = (TextView) findViewById(R.id.fail_msg);
+        this.F = findViewById(R.id.fail_icon);
+        this.K = (TextView) findViewById(R.id.hr_label);
+        this.g = findViewById(R.id.measure_container);
+        this.x = findViewById(R.id.error_container);
         this.I.execute(new Void[0]);
-        this.q = (TextView) findViewById(l.bt_measure);
+        this.q = (TextView) findViewById(R.id.bt_measure);
         this.q.setOnClickListener(this);
-        this.t = (TextView) findViewById(l.hr);
-        this.u = (TextView) findViewById(l.measuring);
-        this.w = findViewById(l.hr_container);
-        this.v = (TextView) findViewById(l.hr_label);
-        this.r = (WebView) findViewById(l.heartrate_waveview);
+        this.t = (TextView) findViewById(R.id.hr);
+        this.u = (TextView) findViewById(R.id.measuring);
+        this.w = findViewById(R.id.hr_container);
+        this.v = (TextView) findViewById(R.id.hr_label);
+        this.r = (WebView) findViewById(R.id.heartrate_waveview);
         WebSettings settings = this.r.getSettings();
         settings.setUseWideViewPort(true);
         settings.setLoadWithOverviewMode(true);
@@ -200,7 +196,7 @@ public class HeartRateMainActivity extends SystemBarTintActivity implements OnCl
         this.r.postDelayed(new q(this), 2000);
         this.s = -1;
         this.p = v.C;
-        this.u.setText(r.measuring);
+        this.u.setText(R.string.measuring);
         this.B = new w();
         this.l.schedule(this.B, 0, 50);
     }
@@ -209,8 +205,8 @@ public class HeartRateMainActivity extends SystemBarTintActivity implements OnCl
         fg a = new fe(this).a();
         if (a.d()) {
             int e = a.e();
-            this.j.setPanelHeight(this.c.getDimensionPixelSize(com.xiaomi.hm.health.j.main_ui_panel_height) - e);
-            this.k.setLayoutParams(new LayoutParams(-1, this.c.getDimensionPixelSize(com.xiaomi.hm.health.j.main_ui_dragview_height) - e));
+            this.j.setPanelHeight(this.c.getDimensionPixelSize(R.dimen.main_ui_panel_height) - e);
+            this.k.setLayoutParams(new LayoutParams(-1, this.c.getDimensionPixelSize(R.dimen.main_ui_dragview_height) - e));
         }
         if (t.d(this)) {
             this.j.setPanelHeight((int) t.a((Context) this, 250.0f));
@@ -230,27 +226,27 @@ public class HeartRateMainActivity extends SystemBarTintActivity implements OnCl
 
     public void onClick(View view) {
         switch (view.getId()) {
-            case l.bt_measure /*2131296415*/:
+            case R.id.bt_measure:
                 C0401a.a(this.b, C0401a.gW);
                 h f = com.xiaomi.hm.health.bt.bleservice.a.f();
                 if (!DeviceSource.hasBind1S() && Keeper.readPersonInfo().hasBinded1S()) {
                     startActivity(new Intent(this, HeartRateBuyGuideActivity.class));
                     return;
                 } else if (!DeviceSource.hasBindBracelet() || (f != null && !f.a())) {
-                    b.a((Context) this, getString(r.cannot_heartrate), 0).show();
+                    b.a((Context) this, getString(R.string.cannot_heartrate), 0).show();
                     return;
                 } else if (!com.xiaomi.hm.health.bt.bleservice.a.c()) {
-                    b.a((Context) this, getString(r.bracelet_disconnected), 0).show();
+                    b.a((Context) this, getString(R.string.bracelet_disconnected), 0).show();
                     return;
                 } else if (Keeper.getHRIfDirection()) {
                     e();
                     return;
                 } else {
                     startActivityForResult(new Intent(this, HeartRateGuideActivity.class), o);
-                    overridePendingTransition(e.hr_guide_in, 0);
+                    overridePendingTransition(R.anim.hr_guide_in, 0);
                     return;
                 }
-            case l.btn /*2131296573*/:
+            case R.id.btn:
                 finish();
                 return;
             default:
@@ -260,9 +256,9 @@ public class HeartRateMainActivity extends SystemBarTintActivity implements OnCl
 
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView((int) n.activity_heart_main);
+        setContentView((int) R.layout.activity_heart_main);
         disableAutoApplyStatusBarTint();
-        applyStatusBarTintRes(i.bg_mode_heartrate);
+        applyStatusBarTintRes(R.color.bg_mode_heartrate);
         b();
         c();
         this.H = new d();
@@ -300,10 +296,10 @@ public class HeartRateMainActivity extends SystemBarTintActivity implements OnCl
             }
             if (!this.D.isEnabled()) {
                 a(false, false);
-                this.E.setText(r.open_bluetooth_tips);
+                this.E.setText(R.string.open_bluetooth_tips);
             } else if (hwConnStatus.b() == com.xiaomi.hm.health.bt.b.c.MILI && hwConnStatus.a() != 6) {
                 a(false, false);
-                this.E.setText(r.bracelet_disconnect_tips);
+                this.E.setText(R.string.bracelet_disconnect_tips);
             }
         }
     }

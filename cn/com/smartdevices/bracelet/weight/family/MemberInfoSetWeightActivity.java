@@ -24,13 +24,8 @@ import cn.com.smartdevices.bracelet.weight.aA;
 import com.amap.api.maps.model.BitmapDescriptorFactory;
 import com.huami.android.view.c;
 import com.xiaomi.e.a;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.bt.profile.Weight.e;
-import com.xiaomi.hm.health.i;
-import com.xiaomi.hm.health.j;
-import com.xiaomi.hm.health.k;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
 import de.greenrobot.event.EventBus;
 
 @SuppressLint({"NewApi"})
@@ -86,21 +81,21 @@ public class MemberInfoSetWeightActivity extends MemberInfoBaseActivity implemen
     }
 
     private void e() {
-        this.k = (TextView) findViewById(l.search_devices_title);
-        this.l = (TextView) findViewById(l.search_devices_info);
-        this.k.setText(r.find_weight_scale_info);
+        this.k = (TextView) findViewById(R.id.search_devices_title);
+        this.l = (TextView) findViewById(R.id.search_devices_info);
+        this.k.setText(R.string.find_weight_scale_info);
         this.l.setText(a.f);
-        this.m = (ImageView) findViewById(l.search_devices_mili_icon);
-        this.m.setImageResource(k.mi_logo);
-        this.j = (LinePieChartView) findViewById(l.searching_pie_chart);
+        this.m = (ImageView) findViewById(R.id.search_devices_mili_icon);
+        this.m.setImageResource(R.drawable.mi_logo);
+        this.j = (LinePieChartView) findViewById(R.id.searching_pie_chart);
         LayoutParams layoutParams = (LayoutParams) this.j.getLayoutParams();
-        layoutParams.width = (int) getResources().getDimension(j.draw_weight_icon_w);
-        layoutParams.height = (int) getResources().getDimension(j.draw_weight_icon_w);
+        layoutParams.width = (int) getResources().getDimension(R.dimen.draw_weight_icon_w);
+        layoutParams.height = (int) getResources().getDimension(R.dimen.draw_weight_icon_w);
         this.j.a(4);
         this.j.d_();
-        findViewById(l.search_single_frame).setBackgroundColor(getResources().getColor(i.bg_mode_weight));
-        this.n = (TextView) findViewById(l.search_devices_weight_value);
-        this.o = findViewById(l.right_button);
+        findViewById(R.id.search_single_frame).setBackgroundColor(getResources().getColor(R.color.bg_mode_weight));
+        this.n = (TextView) findViewById(R.id.search_devices_weight_value);
+        this.o = findViewById(R.id.right_button);
         this.o.setOnClickListener(this);
         if (!DeviceSource.hasBindWeight()) {
             this.o.performClick();
@@ -136,14 +131,14 @@ public class MemberInfoSetWeightActivity extends MemberInfoBaseActivity implemen
 
     public void onClick(View view) {
         switch (view.getId()) {
-            case l.search_devices_exit /*2131296720*/:
+            case R.id.search_devices_exit:
                 setResult(-1);
                 finish();
                 return;
-            case l.left_button /*2131296944*/:
+            case R.id.left_button:
                 C0596r.e(i, "click left btn");
                 return;
-            case l.right_button /*2131296946*/:
+            case R.id.right_button:
                 C0401a.a(this.p, C0401a.gk, C0401a.gl);
                 c.showPanel((Activity) this.p, G.a(this.r ? 8.0f : BitmapDescriptorFactory.HUE_YELLOW).getClass());
                 this.q = true;
@@ -155,7 +150,7 @@ public class MemberInfoSetWeightActivity extends MemberInfoBaseActivity implemen
 
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView((int) n.member_set_weight_layout);
+        setContentView((int) R.layout.member_set_weight_layout);
         this.r = getIntent().getBooleanExtra("FROM_BABY_WEIGHT", false);
         e();
         EventBus.getDefault().register(this);

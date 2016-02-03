@@ -20,11 +20,8 @@ import cn.com.smartdevices.bracelet.ui.MainUIActivity;
 import com.amap.api.maps.model.BitmapDescriptorFactory;
 import com.huami.android.view.b;
 import com.xiaomi.e.a;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 import kankan.wheel.widget.WheelView;
-import kankan.wheel.widget.g;
-import kankan.wheel.widget.h;
 
 public class PersonInfoSetSportGoalActivity extends PersonInfoBaseActivity implements OnClickListener {
     public static final int c = 1000;
@@ -75,18 +72,18 @@ public class PersonInfoSetSportGoalActivity extends PersonInfoBaseActivity imple
 
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView((int) n.activity_person_info_set_sport_goal);
+        setContentView((int) R.layout.activity_person_info_set_sport_goal);
         a();
-        this.e = (WheelView) findViewById(com.xiaomi.hm.health.l.person_info_goal_picker);
-        this.e.a(5).e(h.wheel_custom_val_dark_0).a(getString(r.step), g.content_color, 12, BitmapDescriptorFactory.HUE_YELLOW, kankan.wheel.widget.a.bj).a(new C0763dl(this, 2, 30, this.e, getResources().getColor(g.title_color), getResources().getColor(g.content_color), getResources().getColor(g.content_color_darker), false, 50, 48, 45, 45, c));
-        this.f = (TextView) findViewById(com.xiaomi.hm.health.l.bracelet_title_info);
+        this.e = (WheelView) findViewById(R.id.person_info_goal_picker);
+        this.e.a(5).e(R.drawable.wheel_custom_val_dark_0).a(getString(R.string.step), R.color.content_color, 12, BitmapDescriptorFactory.HUE_YELLOW, kankan.wheel.widget.a.bj).a(new C0763dl(this, 2, 30, this.e, getResources().getColor(R.color.title_color), getResources().getColor(R.color.content_color), getResources().getColor(R.color.content_color_darker), false, 50, 48, 45, 45, c));
+        this.f = (TextView) findViewById(R.id.bracelet_title_info);
         if (this.a.age < 17) {
-            this.f.setText(r.person_info_goal_info_young);
+            this.f.setText(R.string.person_info_goal_info_young);
             if (this.a.getDaySportGoalSteps() < 0) {
                 this.a.setDaySportGoals(kankan.wheel.widget.a.bT);
             }
         } else {
-            this.f.setText(r.person_info_goal_info);
+            this.f.setText(R.string.person_info_goal_info);
             if (this.a.getDaySportGoalSteps() < 0) {
                 this.a.setDaySportGoals(kankan.wheel.widget.a.bS);
             }

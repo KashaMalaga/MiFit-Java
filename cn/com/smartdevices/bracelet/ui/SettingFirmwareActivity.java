@@ -6,8 +6,7 @@ import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.o;
+import com.xiaomi.hm.health.R;
 
 public class SettingFirmwareActivity extends SystemBarTintActivity {
     private dW a = null;
@@ -25,7 +24,7 @@ public class SettingFirmwareActivity extends SystemBarTintActivity {
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(o.ota, menu);
+        getMenuInflater().inflate(R.menu.ota, menu);
         return true;
     }
 
@@ -34,7 +33,7 @@ public class SettingFirmwareActivity extends SystemBarTintActivity {
             finish();
             return true;
         }
-        if (menuItem.getItemId() == l.action_local_ota && this.a != null && this.a.isVisible()) {
+        if (menuItem.getItemId() == R.id.action_local_ota && this.a != null && this.a.isVisible()) {
             this.a.a();
         }
         return super.onOptionsItemSelected(menuItem);

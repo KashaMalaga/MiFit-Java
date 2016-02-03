@@ -13,7 +13,7 @@ import android.widget.TextView;
 import cn.com.smartdevices.bracelet.HomeKeyReceiver;
 import cn.com.smartdevices.bracelet.chart.util.t;
 import cn.com.smartdevices.bracelet.config.b;
-import com.xiaomi.hm.health.l;
+import com.xiaomi.hm.health.R;
 
 public abstract class BaseActivity extends Activity {
     public static final int MI_NOTE_APP_DPI = 480;
@@ -22,7 +22,7 @@ public abstract class BaseActivity extends Activity {
     private HomeKeyReceiver mHomeKeyReceiver;
 
     private void initHomeBack() {
-        this.mHomeBack = (TextView) findViewById(l.home_back);
+        this.mHomeBack = (TextView) findViewById(R.id.home_back);
         if (this.mHomeBack != null) {
             this.mHomeBack.setOnClickListener(new C0815o(this));
             if (t.a() && !isExceptForMiNote()) {

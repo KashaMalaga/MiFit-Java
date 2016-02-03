@@ -32,20 +32,19 @@ public class b {
     }
 
     private static DaySportOriginInfo a(Context context, int i, boolean z, JSONObject jSONObject, JSONObject jSONObject2) {
-        int i2;
         JSONException jSONException;
         if (jSONObject == null || jSONObject2 == null) {
             C0596r.e("Lab", "Error  dataObject = null || serverSummeryObject = null");
             return null;
         }
         c a;
-        int i3;
+        int i2;
         long j;
+        int i3;
         int i4;
         int i5;
         int i6;
         int i7;
-        int i8;
         DaySportOriginInfo daySportUserOriginInfo = new DaySportUserOriginInfo(i);
         c cVar = null;
         try {
@@ -54,34 +53,35 @@ public class b {
             C0596r.e("Lab", e.getMessage());
             a = cVar;
         }
+        int i8 = 0;
         int i9 = 0;
         int i10 = 0;
-        int i11 = 0;
         long j2 = 0;
-        int i12 = 0;
+        int i11 = 0;
         long j3 = 0;
         String str = a.f;
         C0590z c0590z = z ? new C0590z(context, i) : null;
         try {
             JSONObject jSONObject3 = jSONObject2.getJSONObject(SportBaseInfo.KEY_PB);
-            i11 = jSONObject3.getInt(SportBaseInfo.KEY_ROUND_COUNT_OF_PB);
+            i10 = jSONObject3.getInt(SportBaseInfo.KEY_ROUND_COUNT_OF_PB);
             j2 = jSONObject3.getLong(SportBaseInfo.KEY_ROUND_COST_TIME_OF_PB);
-            i12 = jSONObject3.getInt(SportBaseInfo.KEY_COUNT_IN_GROUP_OF_PB);
+            i11 = jSONObject3.getInt(SportBaseInfo.KEY_COUNT_IN_GROUP_OF_PB);
             j3 = jSONObject3.getLong(SportBaseInfo.KEY_COST_TIME_IN_GROUP_OF_PB);
-            i3 = i12;
+            i2 = i11;
             j = j2;
-            i4 = i11;
+            i3 = i10;
         } catch (JSONException e2) {
             C0596r.a("Lab", e2.getMessage());
-            i3 = i12;
+            i2 = i11;
             j = j2;
-            i4 = i11;
+            i3 = i10;
         }
         try {
+            int i12;
             Iterator keys = jSONObject.keys();
             j2 = 0;
-            i11 = 0;
-            i5 = 0;
+            i10 = 0;
+            i4 = 0;
             while (keys.hasNext()) {
                 String str2 = (String) keys.next();
                 Object obj = jSONObject.get(str2);
@@ -91,12 +91,12 @@ public class b {
                     if (length > 0) {
                         String str3;
                         List arrayList = new ArrayList(length);
-                        i6 = 0;
-                        int i13 = i5;
                         i5 = 0;
-                        i2 = i11;
-                        i11 = 0;
-                        i7 = Integer.MAX_VALUE;
+                        int i13 = i4;
+                        i4 = 0;
+                        i12 = i10;
+                        i10 = 0;
+                        i6 = Integer.MAX_VALUE;
                         for (int i14 = 0; i14 < length; i14++) {
                             JSONObject jSONObject4 = jSONArray.getJSONObject(i14);
                             if (!jSONObject4.isNull(GroupItemBaseInfo.KEY_COUNT)) {
@@ -104,58 +104,58 @@ public class b {
                                     int i15 = jSONObject4.getInt(GroupItemBaseInfo.KEY_START_TIME);
                                     int i16 = jSONObject4.getInt(GroupItemBaseInfo.KEY_END_TIME);
                                     int i17 = jSONObject4.getInt(GroupItemBaseInfo.KEY_COUNT);
-                                    i2 = Math.max(i2, i17);
-                                    i11 += Math.max(0, i16 - i15);
+                                    i12 = Math.max(i12, i17);
+                                    i10 += Math.max(0, i16 - i15);
                                     i13 += i17;
                                     j2 += (long) Math.max(0, i16 - i15);
-                                    i7 = Math.min(i15, i7);
-                                    i6 = Math.max(i16, i6);
-                                    i5 += i17;
+                                    i6 = Math.min(i15, i6);
+                                    i5 = Math.max(i16, i5);
+                                    i4 += i17;
                                     arrayList.add(Integer.valueOf(i17));
                                 } catch (JSONException e22) {
-                                    i12 = 0;
-                                    i11 = i10;
-                                    i5 = i9;
-                                    i6 = i2;
-                                    i7 = i13;
+                                    i11 = 0;
+                                    i10 = i9;
+                                    i4 = i8;
+                                    i5 = i12;
+                                    i6 = i13;
                                     jSONException = e22;
-                                    i8 = 0;
+                                    i7 = 0;
                                 }
                             }
                         }
-                        if (i6 >= i10) {
+                        if (i5 >= i9) {
                             str3 = str2;
-                            i10 = i6;
-                            i9 = i7;
+                            i9 = i5;
+                            i8 = i6;
                         } else {
                             str3 = str;
                         }
                         if (c0590z != null) {
-                            if (i11 <= 0) {
+                            if (i10 <= 0) {
                                 str = str3;
-                                i11 = i2;
-                                i5 = i13;
+                                i10 = i12;
+                                i4 = i13;
                             } else {
-                                float a2 = a == null ? 0.0f : a.a(i5, (long) i11);
+                                float a2 = a == null ? 0.0f : a.a(i4, (long) i10);
                                 if (a2 <= 0.0f) {
                                     str = str3;
-                                    i11 = i2;
-                                    i5 = i13;
+                                    i10 = i12;
+                                    i4 = i13;
                                 } else {
                                     LabFactoryActiveItem labFactoryActiveItem = new LabFactoryActiveItem(i);
-                                    labFactoryActiveItem.setCount(i5);
-                                    labFactoryActiveItem.setStart(f.b((long) i7));
-                                    labFactoryActiveItem.setStop(f.b((long) i6));
+                                    labFactoryActiveItem.setCount(i4);
+                                    labFactoryActiveItem.setStart(f.b((long) i6));
+                                    labFactoryActiveItem.setStop(f.b((long) i5));
                                     labFactoryActiveItem.setCalories((int) a2);
-                                    labFactoryActiveItem.setShareData(c0590z.a(i4, arrayList, c0590z.a(i5, (long) i11)));
+                                    labFactoryActiveItem.setShareData(c0590z.a(i3, arrayList, c0590z.a(i4, (long) i10)));
                                     daySportUserOriginInfo.addActiveItem(labFactoryActiveItem);
                                 }
                             }
                         }
                         arrayList.clear();
                         str = str3;
-                        i11 = i2;
-                        i5 = i13;
+                        i10 = i12;
+                        i4 = i13;
                     } else {
                         continue;
                     }
@@ -165,80 +165,80 @@ public class b {
                         }
                     } catch (JSONException e222) {
                         jSONException = e222;
-                        i12 = 0;
-                        i6 = i11;
-                        i7 = i5;
-                        i5 = i9;
-                        i8 = 0;
-                        i11 = i10;
+                        i11 = 0;
+                        i5 = i10;
+                        i6 = i4;
+                        i4 = i8;
+                        i7 = 0;
+                        i10 = i9;
                     }
                 }
             }
             if (jSONObject.isNull(str)) {
-                i8 = 0;
-                i12 = 0;
+                i7 = 0;
+                i11 = 0;
             } else {
                 JSONArray jSONArray2 = jSONObject.getJSONArray(str);
-                i2 = jSONArray2.length();
-                i6 = 0;
-                i12 = 0;
-                i8 = 0;
-                while (i6 < i2) {
+                i12 = jSONArray2.length();
+                i5 = 0;
+                i11 = 0;
+                i7 = 0;
+                while (i5 < i12) {
                     try {
-                        JSONObject jSONObject5 = jSONArray2.getJSONObject(i6);
+                        JSONObject jSONObject5 = jSONArray2.getJSONObject(i5);
                         if (!jSONObject5.isNull(GroupItemBaseInfo.KEY_COUNT)) {
-                            i12 += jSONObject5.getInt(GroupItemBaseInfo.KEY_COUNT);
-                            i8 += Math.max(0, jSONObject5.getInt(GroupItemBaseInfo.KEY_END_TIME) - jSONObject5.getInt(GroupItemBaseInfo.KEY_START_TIME));
+                            i11 += jSONObject5.getInt(GroupItemBaseInfo.KEY_COUNT);
+                            i7 += Math.max(0, jSONObject5.getInt(GroupItemBaseInfo.KEY_END_TIME) - jSONObject5.getInt(GroupItemBaseInfo.KEY_START_TIME));
                         }
-                        i6++;
+                        i5++;
                     } catch (JSONException e3) {
                         jSONException = e3;
-                        i7 = i5;
-                        i5 = i9;
-                        i6 = i11;
-                        i11 = i10;
+                        i6 = i4;
+                        i4 = i8;
+                        i5 = i10;
+                        i10 = i9;
                     }
                 }
             }
-            i6 = i11;
-            i7 = i5;
-            i11 = i10;
-            i5 = i9;
+            i5 = i10;
+            i6 = i4;
+            i10 = i9;
+            i4 = i8;
         } catch (JSONException e2222) {
-            i12 = 0;
-            j2 = 0;
             i11 = 0;
-            i7 = 0;
-            i5 = 0;
+            j2 = 0;
+            i10 = 0;
             i6 = 0;
+            i4 = 0;
+            i5 = 0;
             jSONException = e2222;
-            i8 = 0;
+            i7 = 0;
             C0596r.a("Lab", jSONException.getMessage());
-            daySportUserOriginInfo.setGroupPBCountOfDay(i6);
-            daySportUserOriginInfo.setTotalCountOfDay(i7);
-            daySportUserOriginInfo.setCalOfDay((int) (a != null ? a.a(i7, j2) : 0.0f));
-            daySportUserOriginInfo.setStartTimeOfLatestGroup(i5);
-            daySportUserOriginInfo.setEndTimeOfLatestGroup(i11);
-            daySportUserOriginInfo.setCountOfLatestGroup(i12);
-            daySportUserOriginInfo.setCostTimeOfLatestGroup(i8);
-            daySportUserOriginInfo.setRoundCountOfPB(i4);
+            daySportUserOriginInfo.setGroupPBCountOfDay(i5);
+            daySportUserOriginInfo.setTotalCountOfDay(i6);
+            daySportUserOriginInfo.setCalOfDay((int) (a != null ? a.a(i6, j2) : 0.0f));
+            daySportUserOriginInfo.setStartTimeOfLatestGroup(i4);
+            daySportUserOriginInfo.setEndTimeOfLatestGroup(i10);
+            daySportUserOriginInfo.setCountOfLatestGroup(i11);
+            daySportUserOriginInfo.setCostTimeOfLatestGroup(i7);
+            daySportUserOriginInfo.setRoundCountOfPB(i3);
             daySportUserOriginInfo.setRoundCostTimeOfPB(j);
-            daySportUserOriginInfo.setGroupCountOfPB(i3);
+            daySportUserOriginInfo.setGroupCountOfPB(i2);
             daySportUserOriginInfo.setGroupCostTimeOfPB(j3);
             return daySportUserOriginInfo;
         }
-        daySportUserOriginInfo.setGroupPBCountOfDay(i6);
-        daySportUserOriginInfo.setTotalCountOfDay(i7);
+        daySportUserOriginInfo.setGroupPBCountOfDay(i5);
+        daySportUserOriginInfo.setTotalCountOfDay(i6);
         if (a != null) {
         }
-        daySportUserOriginInfo.setCalOfDay((int) (a != null ? a.a(i7, j2) : 0.0f));
-        daySportUserOriginInfo.setStartTimeOfLatestGroup(i5);
-        daySportUserOriginInfo.setEndTimeOfLatestGroup(i11);
-        daySportUserOriginInfo.setCountOfLatestGroup(i12);
-        daySportUserOriginInfo.setCostTimeOfLatestGroup(i8);
-        daySportUserOriginInfo.setRoundCountOfPB(i4);
+        daySportUserOriginInfo.setCalOfDay((int) (a != null ? a.a(i6, j2) : 0.0f));
+        daySportUserOriginInfo.setStartTimeOfLatestGroup(i4);
+        daySportUserOriginInfo.setEndTimeOfLatestGroup(i10);
+        daySportUserOriginInfo.setCountOfLatestGroup(i11);
+        daySportUserOriginInfo.setCostTimeOfLatestGroup(i7);
+        daySportUserOriginInfo.setRoundCountOfPB(i3);
         daySportUserOriginInfo.setRoundCostTimeOfPB(j);
-        daySportUserOriginInfo.setGroupCountOfPB(i3);
+        daySportUserOriginInfo.setGroupCountOfPB(i2);
         daySportUserOriginInfo.setGroupCostTimeOfPB(j3);
         return daySportUserOriginInfo;
     }

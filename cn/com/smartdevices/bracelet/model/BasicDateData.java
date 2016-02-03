@@ -69,7 +69,7 @@ public class BasicDateData {
             jSONObject.put(H.k, this.indexs);
             jSONObject.put(F.j, this.summaryHR);
             jSONObject.put(o.L, this.source);
-            jSONObject.put(SocialConstants.PARAM_TYPE, this.type);
+            jSONObject.put(com.xiaomi.channel.relationservice.data.a.h, this.type);
             C0596r.e(TAG, "toJSONObject date:\n" + this.date);
             C0596r.e(TAG, "toJSONObject summary:\n" + this.summary);
             C0596r.e(TAG, "toJSONObject data:\n" + encodeToString);

@@ -74,23 +74,23 @@ public class aa {
     }
 
     public static HttpClient a(Context context, NetworkInfo networkInfo) {
-        Cursor query;
-        String string;
+        boolean z;
+        Object obj;
         String toLowerCase;
         String b;
         int i;
         SchemeRegistry schemeRegistry;
         Throwable th;
         Throwable e;
-        boolean z = true;
+        boolean z2 = true;
         Cursor cursor = null;
         HttpParams basicHttpParams = new BasicHttpParams();
         if (networkInfo.getType() == 0) {
-            boolean z2;
+            Cursor query;
+            String string;
             try {
                 query = context.getContentResolver().query(Uri.parse("content://telephony/carriers/preferapn"), null, null, null, null);
                 if (query != null) {
-                    Object obj;
                     try {
                         if (query.moveToFirst()) {
                             string = query.getString(query.getColumnIndex("apn"));
@@ -101,12 +101,12 @@ public class aa {
                             if (string != null && string.contains("ctwap")) {
                                 string = b();
                                 if (TextUtils.isEmpty(string) || string.equals("null")) {
-                                    z2 = false;
+                                    z = false;
                                     obj = null;
                                 } else {
-                                    z2 = true;
+                                    z = true;
                                 }
-                                if (!z2) {
+                                if (!z) {
                                     try {
                                         string = "10.0.0.200";
                                     } catch (SecurityException e2) {
@@ -118,8 +118,8 @@ public class aa {
                                                 if (toLowerCase.indexOf("ctwap") == -1) {
                                                     if (!TextUtils.isEmpty(b)) {
                                                     }
-                                                    z = false;
-                                                    if (!z) {
+                                                    z2 = false;
+                                                    if (!z2) {
                                                         string = "10.0.0.200";
                                                     }
                                                     b = string;
@@ -127,8 +127,8 @@ public class aa {
                                                 } else if (toLowerCase.indexOf("wap") != -1) {
                                                     if (!TextUtils.isEmpty(b)) {
                                                     }
-                                                    z2 = false;
-                                                    if (!z2) {
+                                                    z = false;
+                                                    if (!z) {
                                                         string = "10.0.0.200";
                                                     }
                                                     b = string;
@@ -202,12 +202,12 @@ public class aa {
                                 if (string.contains("wap")) {
                                     string = b();
                                     if (TextUtils.isEmpty(string) || string.equals("null")) {
-                                        z2 = false;
+                                        z = false;
                                         obj = null;
                                     } else {
-                                        z2 = true;
+                                        z = true;
                                     }
-                                    if (!z2) {
+                                    if (!z) {
                                         string = "10.0.0.172";
                                     }
                                     b = string;
@@ -226,23 +226,23 @@ public class aa {
                             b = b();
                             if (toLowerCase.indexOf("ctwap") == -1) {
                                 if (TextUtils.isEmpty(b) || b.equals("null")) {
-                                    z = false;
+                                    z2 = false;
                                 } else {
                                     string = b;
                                 }
-                                if (z) {
+                                if (z2) {
                                     string = "10.0.0.200";
                                 }
                                 b = string;
                                 i = 80;
                             } else if (toLowerCase.indexOf("wap") != -1) {
                                 if (TextUtils.isEmpty(b) || b.equals("null")) {
-                                    z2 = false;
+                                    z = false;
                                 } else {
                                     string = b;
-                                    z2 = true;
+                                    z = true;
                                 }
-                                if (z2) {
+                                if (z) {
                                     string = "10.0.0.200";
                                 }
                                 b = string;
@@ -305,8 +305,8 @@ public class aa {
                     if (toLowerCase.indexOf("ctwap") == -1) {
                         if (TextUtils.isEmpty(b)) {
                         }
-                        z = false;
-                        if (z) {
+                        z2 = false;
+                        if (z2) {
                             string = "10.0.0.200";
                         }
                         b = string;
@@ -314,8 +314,8 @@ public class aa {
                     } else if (toLowerCase.indexOf("wap") != -1) {
                         if (TextUtils.isEmpty(b)) {
                         }
-                        z2 = false;
-                        if (z2) {
+                        z = false;
+                        if (z) {
                             string = "10.0.0.200";
                         }
                         b = string;
@@ -2081,17 +2081,19 @@ public class aa {
     }
 
     public String a(byte[] bArr, Context context, JSONObject jSONObject) {
+        HttpClient a;
+        HttpPost httpPost;
         BufferedReader bufferedReader;
         InputStreamReader inputStreamReader;
         GZIPInputStream gZIPInputStream;
         InputStream inputStream;
-        HttpPost httpPost;
+        HttpPost httpPost2;
         Throwable th;
         NetworkInfo b = ao.b(context);
         if (a(b) == -1) {
             throw new AMapLocException(AMapException.ERROR_CONNECTION);
         }
-        HttpPost httpPost2 = null;
+        HttpPost httpPost3 = null;
         GZIPInputStream gZIPInputStream2 = null;
         BufferedReader bufferedReader2 = null;
         StringBuffer stringBuffer = new StringBuffer();
@@ -2102,13 +2104,11 @@ public class aa {
         InputStream inputStream2 = null;
         HttpClient httpClient = null;
         while (i < 1 && obj == null) {
-            HttpClient a;
-            HttpPost httpPost3;
             try {
                 a = a(context, b);
                 try {
                     String[] a2 = a(jSONObject);
-                    httpPost3 = new HttpPost(c.j());
+                    httpPost = new HttpPost(c.j());
                     try {
                         Object obj2;
                         GZIPInputStream gZIPInputStream3;
@@ -2119,23 +2119,23 @@ public class aa {
                         String str3 = h.DEFAULT_CHARSET;
                         HttpEntity byteArrayEntity = new ByteArrayEntity(ao.a(bArr));
                         byteArrayEntity.setContentType(O.a);
-                        httpPost3.addHeader(C1012a.f, C1012a.g);
-                        httpPost3.addHeader("gzipped", Constants.VIA_TO_TYPE_QQ_GROUP);
-                        httpPost3.addHeader("X-INFO", a2[2]);
-                        httpPost3.addHeader("X-BIZ", a2[3]);
-                        httpPost3.addHeader("KEY", a2[1]);
-                        httpPost3.addHeader("ec", Constants.VIA_TO_TYPE_QQ_GROUP);
-                        httpPost3.addHeader("enginever", "4.2");
+                        httpPost.addHeader(C1012a.f, C1012a.g);
+                        httpPost.addHeader("gzipped", Constants.VIA_TO_TYPE_QQ_GROUP);
+                        httpPost.addHeader("X-INFO", a2[2]);
+                        httpPost.addHeader("X-BIZ", a2[3]);
+                        httpPost.addHeader("KEY", a2[1]);
+                        httpPost.addHeader("ec", Constants.VIA_TO_TYPE_QQ_GROUP);
+                        httpPost.addHeader("enginever", "4.2");
                         if (a2[4] != null && a2[4].length() > 0) {
-                            httpPost3.addHeader("User-Agent", a2[4]);
+                            httpPost.addHeader("User-Agent", a2[4]);
                         }
                         String a3 = d.a();
                         String a4 = d.a(a3, "key=" + a2[1]);
-                        httpPost3.addHeader(ay.H, a3);
-                        httpPost3.addHeader("scode", a4);
+                        httpPost.addHeader(ay.H, a3);
+                        httpPost.addHeader("scode", a4);
                         stringBuffer.delete(0, stringBuffer.length());
-                        httpPost3.setEntity(byteArrayEntity);
-                        HttpResponse execute = a.execute(httpPost3);
+                        httpPost.setEntity(byteArrayEntity);
+                        HttpResponse execute = a.execute(httpPost);
                         int statusCode = execute.getStatusLine().getStatusCode();
                         String str4;
                         if (statusCode == v.C) {
@@ -2176,7 +2176,7 @@ public class aa {
                                 inputStreamReader = inputStreamReader2;
                                 gZIPInputStream = gZIPInputStream2;
                                 inputStream = inputStream2;
-                                httpPost = httpPost3;
+                                httpPost2 = httpPost;
                                 httpClient = a;
                             } catch (SocketException e2) {
                                 bufferedReader2 = bufferedReader;
@@ -2199,9 +2199,9 @@ public class aa {
                             inputStreamReader3 = inputStreamReader2;
                             str2 = str4;
                         }
-                        if (httpPost3 != null) {
-                            httpPost3.abort();
-                            httpPost3 = null;
+                        if (httpPost != null) {
+                            httpPost.abort();
+                            httpPost = null;
                         }
                         if (a != null) {
                             a.getConnectionManager().shutdown();
@@ -2234,7 +2234,7 @@ public class aa {
                         i++;
                         stringBuffer = stringBuffer2;
                         gZIPInputStream2 = gZIPInputStream3;
-                        httpPost2 = httpPost3;
+                        httpPost3 = httpPost;
                         httpClient = a;
                         InputStreamReader inputStreamReader4 = inputStreamReader3;
                         inputStream2 = inputStream3;
@@ -2247,7 +2247,7 @@ public class aa {
                         inputStreamReader = inputStreamReader2;
                         gZIPInputStream = gZIPInputStream2;
                         inputStream = inputStream2;
-                        httpPost = httpPost3;
+                        httpPost2 = httpPost;
                         httpClient = a;
                     } catch (SocketException e6) {
                     } catch (SocketTimeoutException e7) {
@@ -2260,36 +2260,36 @@ public class aa {
                     inputStreamReader = inputStreamReader2;
                     gZIPInputStream = gZIPInputStream2;
                     inputStream = inputStream2;
-                    httpPost = httpPost2;
+                    httpPost2 = httpPost3;
                 } catch (SocketException e10) {
-                    httpPost3 = httpPost2;
+                    httpPost = httpPost3;
                 } catch (SocketTimeoutException e11) {
-                    httpPost3 = httpPost2;
+                    httpPost = httpPost3;
                 } catch (ConnectTimeoutException e12) {
-                    httpPost3 = httpPost2;
+                    httpPost = httpPost3;
                 } catch (Throwable th6) {
                     th = th6;
-                    httpPost3 = httpPost2;
+                    httpPost = httpPost3;
                 }
             } catch (UnknownHostException e13) {
                 bufferedReader = bufferedReader2;
                 inputStreamReader = inputStreamReader2;
                 gZIPInputStream = gZIPInputStream2;
                 inputStream = inputStream2;
-                httpPost = httpPost2;
+                httpPost2 = httpPost3;
             } catch (SocketException e14) {
                 a = httpClient;
-                httpPost3 = httpPost2;
+                httpPost = httpPost3;
             } catch (SocketTimeoutException e15) {
                 a = httpClient;
-                httpPost3 = httpPost2;
+                httpPost = httpPost3;
             } catch (ConnectTimeoutException e16) {
                 a = httpClient;
-                httpPost3 = httpPost2;
+                httpPost = httpPost3;
             } catch (Throwable th7) {
                 th = th7;
                 a = httpClient;
-                httpPost3 = httpPost2;
+                httpPost = httpPost3;
             }
         }
         return TextUtils.isEmpty(str) ? null : str;
@@ -2298,14 +2298,14 @@ public class aa {
             throw new AMapLocException(AMapException.ERROR_UNKNOW_HOST);
         } catch (Throwable th32) {
             a = httpClient;
-            httpPost3 = httpPost;
+            httpPost = httpPost2;
             inputStream2 = inputStream;
             gZIPInputStream2 = gZIPInputStream;
             inputStreamReader2 = inputStreamReader;
             bufferedReader2 = bufferedReader;
             th = th32;
-            if (httpPost3 != null) {
-                httpPost3.abort();
+            if (httpPost != null) {
+                httpPost.abort();
             }
             if (a != null) {
                 a.getConnectionManager().shutdown();

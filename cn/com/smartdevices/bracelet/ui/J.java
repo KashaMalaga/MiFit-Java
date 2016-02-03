@@ -3,9 +3,8 @@ package cn.com.smartdevices.bracelet.ui;
 import android.os.Handler;
 import android.os.Message;
 import com.huami.android.view.b;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 import kankan.wheel.widget.a;
-import kankan.wheel.widget.i;
 import kankan.wheel.widget.l;
 
 class J extends Handler {
@@ -24,7 +23,7 @@ class J extends Handler {
                 this.a.f();
                 return;
             case a.k /*2*/:
-                b.a(this.a, (int) r.bind_weixin_failed, 0).show();
+                b.a(this.a, (int) R.string.bind_weixin_failed, 0).show();
                 this.a.i();
                 return;
             case a.l /*3*/:
@@ -32,7 +31,7 @@ class J extends Handler {
                 this.a.i();
                 return;
             case a.aQ /*4*/:
-                b.a(this.a, this.a.getString(r.bind_weixin_save) + this.a.getString(i.app_name), 0).show();
+                b.a(this.a, this.a.getString(R.string.bind_weixin_save) + this.a.getString(R.string.app_name), 0).show();
                 this.a.a(1);
                 this.a.l.setEnabled(false);
                 return;

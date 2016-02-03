@@ -39,7 +39,7 @@ public class UpgradeService extends IntentService {
 
     public static boolean a(OtaVersionInfo otaVersionInfo, h hVar) {
         C0596r.a("DDDD", "DeviceInfo : " + hVar);
-        String str = hVar.d() + "." + hVar.e() + hVar.f() + hVar.c();
+        String str = hVar.e() + "." + hVar.f() + hVar.g() + hVar.d();
         C0596r.a("DDDD", "DeviceFirmwareVersionCode : " + str);
         if (otaVersionInfo.b <= Float.valueOf(str).floatValue()) {
             return false;

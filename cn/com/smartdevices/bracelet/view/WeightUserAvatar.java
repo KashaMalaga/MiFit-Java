@@ -14,7 +14,7 @@ import android.util.AttributeSet;
 import android.widget.ImageView;
 import cn.com.smartdevices.bracelet.chart.util.t;
 import com.xiaomi.e.a;
-import com.xiaomi.hm.health.k;
+import com.xiaomi.hm.health.R;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -98,7 +98,7 @@ public class WeightUserAvatar extends ImageView {
     }
 
     public void setBackgroundResource(int i) {
-        if (i == k.default_userinfo) {
+        if (i == R.drawable.default_userinfo) {
             this.c = true;
             if (getWidth() > 0) {
                 b();

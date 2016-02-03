@@ -8,8 +8,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 import cn.com.smartdevices.bracelet.lab.ui.view.LabCircleView;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
+import com.xiaomi.hm.health.R;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -57,9 +56,9 @@ public class T extends BaseAdapter {
         U u;
         if (view == null) {
             u = new U();
-            view = this.b.inflate(n.activity_lab_sport_group_list_item, null, false);
-            u.b = (LabCircleView) view.findViewById(l.group_item_member);
-            u.a = (TextView) view.findViewById(l.group_item_linker);
+            view = this.b.inflate(R.layout.activity_lab_sport_group_list_item, null, false);
+            u.b = (LabCircleView) view.findViewById(R.id.group_item_member);
+            u.a = (TextView) view.findViewById(R.id.group_item_linker);
             view.setTag(u);
         } else {
             u = (U) view.getTag();

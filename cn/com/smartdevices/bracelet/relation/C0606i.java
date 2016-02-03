@@ -8,7 +8,7 @@ import cn.com.smartdevices.bracelet.chart.L;
 import cn.com.smartdevices.bracelet.chart.b.e;
 import cn.com.smartdevices.bracelet.chart.b.f;
 import cn.com.smartdevices.bracelet.relation.db.a;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 
 class C0606i implements f {
     final /* synthetic */ C0605h a;
@@ -44,7 +44,7 @@ class C0606i implements f {
         if (this.a.h != null && i >= 0 && i < this.a.h.size()) {
             a aVar = (a) this.a.h.get(i);
             int i2 = aVar.n + aVar.m;
-            this.a.f.y.setText(this.a.f.a(aVar.o, (int) r.label_sleep_record));
+            this.a.f.y.setText(this.a.f.a(aVar.o, (int) R.string.label_sleep_record));
             this.a.f.B.setText(DateFormat.format("HH:mm", aVar.r * 1000));
             this.a.f.z.setText(DateFormat.format("HH:mm", aVar.s * 1000));
             this.a.f.A.setText(DetailActivity.a(i2));

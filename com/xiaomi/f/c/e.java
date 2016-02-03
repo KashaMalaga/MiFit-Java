@@ -334,11 +334,11 @@ public abstract class e {
 
     protected synchronized String s() {
         StringBuilder stringBuilder;
-        ByteArrayOutputStream byteArrayOutputStream;
         Exception e;
         ObjectOutputStream objectOutputStream;
-        ByteArrayOutputStream byteArrayOutputStream2;
+        ByteArrayOutputStream byteArrayOutputStream;
         Throwable th;
+        ByteArrayOutputStream byteArrayOutputStream2;
         ObjectOutputStream objectOutputStream2;
         stringBuilder = new StringBuilder();
         for (a d : q()) {
@@ -367,29 +367,29 @@ public abstract class e {
                     stringBuilder.append("</value>");
                 } else {
                     try {
-                        byteArrayOutputStream = new ByteArrayOutputStream();
+                        byteArrayOutputStream2 = new ByteArrayOutputStream();
                         try {
-                            objectOutputStream2 = new ObjectOutputStream(byteArrayOutputStream);
+                            objectOutputStream2 = new ObjectOutputStream(byteArrayOutputStream2);
                             try {
                                 objectOutputStream2.writeObject(q);
                                 stringBuilder.append("java-object\">");
-                                stringBuilder.append(g.a(byteArrayOutputStream.toByteArray())).append("</value>");
+                                stringBuilder.append(g.a(byteArrayOutputStream2.toByteArray())).append("</value>");
                                 if (objectOutputStream2 != null) {
                                     try {
                                         objectOutputStream2.close();
                                     } catch (Exception e2) {
                                     }
                                 }
-                                if (byteArrayOutputStream != null) {
+                                if (byteArrayOutputStream2 != null) {
                                     try {
-                                        byteArrayOutputStream.close();
+                                        byteArrayOutputStream2.close();
                                     } catch (Exception e3) {
                                     }
                                 }
                             } catch (Exception e4) {
                                 e = e4;
                                 objectOutputStream = objectOutputStream2;
-                                byteArrayOutputStream2 = byteArrayOutputStream;
+                                byteArrayOutputStream = byteArrayOutputStream2;
                                 try {
                                     e.printStackTrace();
                                     if (objectOutputStream != null) {
@@ -398,16 +398,16 @@ public abstract class e {
                                         } catch (Exception e5) {
                                         }
                                     }
-                                    if (byteArrayOutputStream2 == null) {
+                                    if (byteArrayOutputStream == null) {
                                         try {
-                                            byteArrayOutputStream2.close();
+                                            byteArrayOutputStream.close();
                                         } catch (Exception e6) {
                                         }
                                     }
                                     stringBuilder.append("</property>");
                                 } catch (Throwable th2) {
                                     th = th2;
-                                    byteArrayOutputStream = byteArrayOutputStream2;
+                                    byteArrayOutputStream2 = byteArrayOutputStream;
                                     objectOutputStream2 = objectOutputStream;
                                 }
                             } catch (Throwable th3) {
@@ -416,13 +416,13 @@ public abstract class e {
                         } catch (Exception e7) {
                             e = e7;
                             objectOutputStream = null;
-                            byteArrayOutputStream2 = byteArrayOutputStream;
+                            byteArrayOutputStream = byteArrayOutputStream2;
                             e.printStackTrace();
                             if (objectOutputStream != null) {
                                 objectOutputStream.close();
                             }
-                            if (byteArrayOutputStream2 == null) {
-                                byteArrayOutputStream2.close();
+                            if (byteArrayOutputStream == null) {
+                                byteArrayOutputStream.close();
                             }
                             stringBuilder.append("</property>");
                         } catch (Throwable th4) {
@@ -432,19 +432,19 @@ public abstract class e {
                     } catch (Exception e8) {
                         e = e8;
                         objectOutputStream = null;
-                        byteArrayOutputStream2 = null;
+                        byteArrayOutputStream = null;
                         e.printStackTrace();
                         if (objectOutputStream != null) {
                             objectOutputStream.close();
                         }
-                        if (byteArrayOutputStream2 == null) {
-                            byteArrayOutputStream2.close();
+                        if (byteArrayOutputStream == null) {
+                            byteArrayOutputStream.close();
                         }
                         stringBuilder.append("</property>");
                     } catch (Throwable th5) {
                         th = th5;
                         objectOutputStream2 = null;
-                        byteArrayOutputStream = null;
+                        byteArrayOutputStream2 = null;
                     }
                 }
                 stringBuilder.append("</property>");
@@ -459,15 +459,15 @@ public abstract class e {
             } catch (Exception e9) {
             }
         }
-        if (byteArrayOutputStream != null) {
+        if (byteArrayOutputStream2 != null) {
             try {
-                byteArrayOutputStream.close();
+                byteArrayOutputStream2.close();
             } catch (Exception e10) {
             }
         }
         throw th;
-        if (byteArrayOutputStream != null) {
-            byteArrayOutputStream.close();
+        if (byteArrayOutputStream2 != null) {
+            byteArrayOutputStream2.close();
         }
         throw th;
     }

@@ -12,14 +12,10 @@ import cn.com.smartdevices.bracelet.C0596r;
 import cn.com.smartdevices.bracelet.Keeper;
 import cn.com.smartdevices.bracelet.model.Birthday;
 import cn.com.smartdevices.bracelet.ui.C0763dl;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 import java.util.Calendar;
 import kankan.wheel.widget.WheelView;
 import kankan.wheel.widget.a;
-import kankan.wheel.widget.g;
-import kankan.wheel.widget.h;
 
 public class PersonInfoSetBirthActivity extends PersonInfoBaseActivity implements OnClickListener {
     private static final String c = "PersonInfoSetBirthActivity";
@@ -56,24 +52,24 @@ public class PersonInfoSetBirthActivity extends PersonInfoBaseActivity implement
 
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView((int) n.activity_person_info_set_age);
+        setContentView((int) R.layout.activity_person_info_set_age);
         a();
-        this.f = (TextView) findViewById(l.bracelet_login_title_info);
-        this.f.setText(getString(r.input_precise_person_info));
+        this.f = (TextView) findViewById(R.id.bracelet_login_title_info);
+        this.f.setText(getString(R.string.input_precise_person_info));
         this.g = Birthday.fromStr(this.a.getBirthday());
         C0596r.e(c, "onCreate, birthday:" + this.g);
         int i = Calendar.getInstance().get(1);
         this.j = Calendar.getInstance().get(2);
         this.h = i - 100;
         int i2 = i + 0;
-        this.d = (WheelView) findViewById(l.person_info_year_picker);
-        this.d.a(5).e(h.wheel_custom_val_dark_0).a(getString(r.year), g.content_color, 12, a.bh, a.bj).a(new C0763dl(this, this.h, i2, this.d, getResources().getColor(g.title_color), getResources().getColor(g.content_color), getResources().getColor(g.content_color_darker), false, 50, 48, 45, 45));
-        this.e = (WheelView) findViewById(l.person_info_month_picker);
-        this.i = new C0763dl(this, 1, 12, this.e, getResources().getColor(g.title_color), getResources().getColor(g.content_color), getResources().getColor(g.content_color_darker), true, 50, 48, 45, 45);
+        this.d = (WheelView) findViewById(R.id.person_info_year_picker);
+        this.d.a(5).e(R.drawable.wheel_custom_val_dark_0).a(getString(R.string.year), R.color.content_color, 12, a.bh, a.bj).a(new C0763dl(this, this.h, i2, this.d, getResources().getColor(R.color.title_color), getResources().getColor(R.color.content_color), getResources().getColor(R.color.content_color_darker), false, 50, 48, 45, 45));
+        this.e = (WheelView) findViewById(R.id.person_info_month_picker);
+        this.i = new C0763dl(this, 1, 12, this.e, getResources().getColor(R.color.title_color), getResources().getColor(R.color.content_color), getResources().getColor(R.color.content_color_darker), true, 50, 48, 45, 45);
         if (!this.g.isValid() || this.g.getYear() - this.h < 100) {
-            this.e.a(5).e(h.wheel_custom_val_dark_0).a(getString(r.month), g.content_color, 12, a.bi, a.bj).a(this.i);
+            this.e.a(5).e(R.drawable.wheel_custom_val_dark_0).a(getString(R.string.month), R.color.content_color, 12, a.bi, a.bj).a(this.i);
         } else {
-            this.e.a(5).e(h.wheel_custom_val_dark_0).a(getString(r.month), g.content_color, 12, a.bi, a.bj).a(new C0763dl(this, 1, this.j + 1, this.e, getResources().getColor(g.title_color), getResources().getColor(g.content_color), getResources().getColor(g.content_color_darker), false, 50, 48, 45, 45));
+            this.e.a(5).e(R.drawable.wheel_custom_val_dark_0).a(getString(R.string.month), R.color.content_color, 12, a.bi, a.bj).a(new C0763dl(this, 1, this.j + 1, this.e, getResources().getColor(R.color.title_color), getResources().getColor(R.color.content_color), getResources().getColor(R.color.content_color_darker), false, 50, 48, 45, 45));
         }
         if (this.g.isValid()) {
             this.d.c(this.g.getYear() - this.h);

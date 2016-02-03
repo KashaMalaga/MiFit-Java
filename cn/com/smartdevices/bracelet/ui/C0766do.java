@@ -6,13 +6,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import com.huami.android.view.c;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
+import com.xiaomi.hm.health.R;
 import kankan.wheel.widget.a;
 
 public class C0766do extends c {
     protected int inflateLayout() {
-        return n.fragment_progress_bar;
+        return R.layout.fragment_progress_bar;
     }
 
     public void onCreate(Bundle bundle) {
@@ -22,7 +21,7 @@ public class C0766do extends c {
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         View onCreateView = super.onCreateView(layoutInflater, viewGroup, bundle);
         Bundle arguments = getArguments();
-        TextView textView = (TextView) onCreateView.findViewById(l.progress_txt);
+        TextView textView = (TextView) onCreateView.findViewById(R.id.progress_txt);
         if (arguments != null) {
             CharSequence string = arguments.getString(a.bA, "...");
             boolean z = arguments.getBoolean(a.bB, true);

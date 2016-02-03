@@ -4,8 +4,8 @@ import cn.com.smartdevices.bracelet.C0596r;
 import cn.com.smartdevices.bracelet.Utils;
 import cn.com.smartdevices.bracelet.model.PersonInfo;
 import com.huami.android.view.b;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.bt.a.d;
-import com.xiaomi.hm.health.r;
 
 class C0573i extends d {
     final /* synthetic */ boolean a;
@@ -21,7 +21,7 @@ class C0573i extends d {
         super.a(obj);
         if (obj == null || !((Boolean) obj).booleanValue()) {
             C0596r.d("LabFactoryReminderActivity", "enableReminder(" + this.a + ")" + " failed!!!");
-            b.a(this.b, (int) r.bt_operation_failed_tips, 0).show();
+            b.a(this.b, (int) R.string.bt_operation_failed_tips, 0).show();
             return;
         }
         PersonInfo a = this.b.b;
@@ -36,6 +36,6 @@ class C0573i extends d {
     public void b(Object obj) {
         super.b(obj);
         C0596r.d("LabFactoryReminderActivity", "enableReminder(" + this.a + ")" + " failed!!!");
-        b.a(this.b, (int) r.bt_operation_failed_tips, 0).show();
+        b.a(this.b, (int) R.string.bt_operation_failed_tips, 0).show();
     }
 }

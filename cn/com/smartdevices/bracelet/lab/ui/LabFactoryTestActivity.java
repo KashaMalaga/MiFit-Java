@@ -19,10 +19,9 @@ import cn.com.smartdevices.bracelet.C0596r;
 import cn.com.smartdevices.bracelet.gaocept.a;
 import cn.com.smartdevices.bracelet.lab.k;
 import com.activeandroid.b;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.bt.d.f;
 import com.xiaomi.hm.health.bt.profile.a.o;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -235,22 +234,22 @@ public class LabFactoryTestActivity extends Activity implements f {
 
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView(n.activity_lab_factory_test);
-        this.c = (Button) findViewById(l.start_button);
+        setContentView(R.layout.activity_lab_factory_test);
+        this.c = (Button) findViewById(R.id.start_button);
         this.c.setEnabled(true);
-        this.d = (Button) findViewById(l.test_button);
+        this.d = (Button) findViewById(R.id.test_button);
         this.d.setOnClickListener(new C0577m(this));
-        this.e = (Button) findViewById(l.test_button2);
+        this.e = (Button) findViewById(R.id.test_button2);
         this.e.setOnClickListener(new C0581q(this));
-        this.f = (Button) findViewById(l.upload_button);
+        this.f = (Button) findViewById(R.id.upload_button);
         this.f.setOnClickListener(new C0582r(this));
-        this.g = (EditText) findViewById(l.custom_text);
-        this.h = (TextView) findViewById(l.storage_text);
-        this.i = (TextView) findViewById(l.file_text);
-        this.j = (TextView) findViewById(l.number_text);
-        this.k = (Button) findViewById(l.empty_button);
-        this.l = (Spinner) findViewById(l.sport_spinner);
-        this.m = (Spinner) findViewById(l.handside_spinner);
+        this.g = (EditText) findViewById(R.id.custom_text);
+        this.h = (TextView) findViewById(R.id.storage_text);
+        this.i = (TextView) findViewById(R.id.file_text);
+        this.j = (TextView) findViewById(R.id.number_text);
+        this.k = (Button) findViewById(R.id.empty_button);
+        this.l = (Spinner) findViewById(R.id.sport_spinner);
+        this.m = (Spinner) findViewById(R.id.handside_spinner);
         this.c.setText("Start");
         this.c.setOnClickListener(new C0583s(this));
         this.k.setEnabled(true);
@@ -275,12 +274,12 @@ public class LabFactoryTestActivity extends Activity implements f {
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(com.xiaomi.hm.health.o.lab_factory_test_menu, menu);
+        getMenuInflater().inflate(R.menu.lab_factory_test_menu, menu);
         return true;
     }
 
     public boolean onOptionsItemSelected(MenuItem menuItem) {
-        return menuItem.getItemId() == l.action_settings ? true : super.onOptionsItemSelected(menuItem);
+        return menuItem.getItemId() == R.id.action_settings ? true : super.onOptionsItemSelected(menuItem);
     }
 
     public void onPause() {

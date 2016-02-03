@@ -17,9 +17,7 @@ import com.huami.android.ui.ActionBarActivity;
 import com.huami.android.widget.f;
 import com.huami.android.widget.share.s;
 import com.tencent.connect.common.Constants;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 import java.io.File;
 import java.io.Serializable;
 
@@ -56,7 +54,7 @@ public class UserQRCardActivity extends ActionBarActivity implements OnClickList
     }
 
     public void b() {
-        this.k = f.a(getFragmentManager(), getString(r.label_preparing_share_image), false);
+        this.k = f.a(getFragmentManager(), getString(R.string.label_preparing_share_image), false);
         new ab().execute(new Bitmap[]{this.e});
     }
 
@@ -65,15 +63,15 @@ public class UserQRCardActivity extends ActionBarActivity implements OnClickList
     }
 
     public void onClick(View view) {
-        this.k = f.a(getFragmentManager(), getString(r.label_preparing_share_image), false);
+        this.k = f.a(getFragmentManager(), getString(R.string.label_preparing_share_image), false);
         new ab().execute(new Bitmap[]{this.e});
     }
 
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView(n.activity_user_card);
-        this.d = (ImageView) findViewById(l.qr_code);
-        this.f = findViewById(l.share_button);
+        setContentView(R.layout.activity_user_card);
+        this.d = (ImageView) findViewById(R.id.qr_code);
+        this.f = findViewById(R.id.share_button);
         this.f.setOnClickListener(this);
         this.f.setEnabled(false);
         DisplayMetrics displayMetrics = getResources().getDisplayMetrics();

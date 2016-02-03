@@ -8,8 +8,7 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import com.huami.android.view.c;
 import com.xiaomi.channel.b.v;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
+import com.xiaomi.hm.health.R;
 
 public class aN extends c implements OnClickListener {
     private C0704bf a = null;
@@ -20,7 +19,7 @@ public class aN extends c implements OnClickListener {
     }
 
     protected int inflateLayout() {
-        return n.fragment_share_to_miliao_select;
+        return R.layout.fragment_share_to_miliao_select;
     }
 
     public void onAttach(Activity activity) {
@@ -35,13 +34,13 @@ public class aN extends c implements OnClickListener {
     public void onClick(View view) {
         if (this.a != null) {
             switch (view.getId()) {
-                case l.share_to_miliao_target_friends_fl /*2131297228*/:
+                case R.id.share_to_miliao_target_friends_fl:
                     this.a.a(v.O, this.b);
                     break;
-                case l.share_to_miliao_target_union_fl /*2131297229*/:
+                case R.id.share_to_miliao_target_union_fl:
                     this.a.a(v.Q, this.b);
                     break;
-                case l.share_to_miliao_target_feeds_fl /*2131297230*/:
+                case R.id.share_to_miliao_target_feeds_fl:
                     this.a.a(v.P, this.b);
                     break;
             }
@@ -51,9 +50,9 @@ public class aN extends c implements OnClickListener {
 
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         View onCreateView = super.onCreateView(layoutInflater, viewGroup, bundle);
-        onCreateView.findViewById(l.share_to_miliao_target_feeds_fl).setOnClickListener(this);
-        onCreateView.findViewById(l.share_to_miliao_target_friends_fl).setOnClickListener(this);
-        onCreateView.findViewById(l.share_to_miliao_target_union_fl).setOnClickListener(this);
+        onCreateView.findViewById(R.id.share_to_miliao_target_feeds_fl).setOnClickListener(this);
+        onCreateView.findViewById(R.id.share_to_miliao_target_friends_fl).setOnClickListener(this);
+        onCreateView.findViewById(R.id.share_to_miliao_target_union_fl).setOnClickListener(this);
         return onCreateView;
     }
 }

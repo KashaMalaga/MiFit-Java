@@ -13,9 +13,7 @@ import cn.com.smartdevices.bracelet.Utils;
 import cn.com.smartdevices.bracelet.relation.b.g;
 import com.huami.android.ui.ActionBarActivity;
 import com.huami.android.view.b;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 import de.greenrobot.event.EventBus;
 
 public class AddFriendActivity extends ActionBarActivity implements OnClickListener {
@@ -38,14 +36,14 @@ public class AddFriendActivity extends ActionBarActivity implements OnClickListe
             parseLong = -1;
         }
         this.b.a(parseLong);
-        Utils.a((Activity) this, (int) r.data_loading);
+        Utils.a((Activity) this, (int) R.string.data_loading);
     }
 
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView(n.activity_add_friend);
-        this.a = (EditText) findViewById(l.username);
-        ((Button) findViewById(l.search_button)).setOnClickListener(this);
+        setContentView(R.layout.activity_add_friend);
+        this.a = (EditText) findViewById(R.id.username);
+        ((Button) findViewById(R.id.search_button)).setOnClickListener(this);
         this.b = A.a();
         EventBus.getDefault().register(this);
     }
@@ -58,11 +56,11 @@ public class AddFriendActivity extends ActionBarActivity implements OnClickListe
     public void onEvent(g gVar) {
         Utils.a((Activity) this);
         if (gVar.a != 1) {
-            b.a((Context) this, (int) r.network_error, 0);
+            b.a((Context) this, (int) R.string.network_error, 0);
         } else if (gVar.b > 0) {
             startActivity(SearchResultActivity.a(this, gVar.b, gVar.c, gVar.d, gVar.e));
         } else {
-            b.a((Context) this, (int) r.search_result_is_empty, 0);
+            b.a((Context) this, (int) R.string.search_result_is_empty, 0);
         }
     }
 }

@@ -15,6 +15,7 @@ import com.c.b.n;
 import com.c.b.s;
 import com.c.b.u;
 import com.xiaomi.channel.b.v;
+import com.xiaomi.channel.relationservice.data.BuddyData;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
@@ -26,7 +27,7 @@ public final class d extends a {
     private static final int[] b = new int[]{j, 20, 52, cn.com.smartdevices.bracelet.honor.a.d.e, 204};
     private static final int[] c = new int[]{f, 348, 1388, 2948, 3988};
     private static final int[][] d = new int[][]{new int[]{g, 8, j, g}, new int[]{i, 6, j, g}, new int[]{i, j, 6, g}, new int[]{i, h, 8, g}, new int[]{h, 6, k, g}, new int[]{h, h, 9, g}};
-    private static final int[][] e = new int[][]{new int[]{g, i, 9, 27, 81, 32, 96, 77}, new int[]{20, 60, cn.com.smartdevices.bracelet.gps.c.a.i, 118, 143, 7, 21, 63}, new int[]{189, 145, 13, 39, 117, 140, 209, 205}, new int[]{193, 157, 49, 147, 19, 57, 171, 91}, new int[]{62, 186, 136, 197, 169, 85, 44, 132}, new int[]{185, 133, 188, 142, j, 12, 36, 108}, new int[]{113, C0113o.h, 173, 97, 80, 29, 87, 50}, new int[]{kankan.wheel.widget.a.ap, 28, 84, 41, 123, 158, 52, 156}, new int[]{46, 138, 203, 187, 139, 206, 196, 166}, new int[]{76, 17, 51, 153, 37, 111, 122, 155}, new int[]{43, 129, 176, B.o, B.p, 110, 119, 146}, new int[]{16, 48, 144, 10, 30, 90, 59, 177}, new int[]{109, 116, 137, v.C, 178, 112, 125, 164}, new int[]{70, 210, 208, 202, 184, h.k, 179, 115}, new int[]{134, 191, 151, 31, 93, 68, 204, 190}, new int[]{148, 22, 66, 198, 172, 94, 71, h}, new int[]{6, 18, 54, 162, 64, 192, 154, 40}, new int[]{120, 149, 25, 75, 14, 42, h.i, 167}, new int[]{79, 26, 78, 23, 69, 207, 199, 175}, new int[]{ShareData.SHARE_TYPE_LAB_SITUP_ACCUMULATE, 98, 83, 38, 114, 131, 182, 124}, new int[]{161, 61, 183, h.j, kankan.wheel.widget.a.aC, 88, 53, 159}, new int[]{55, 165, 73, 8, 24, 72, k, 15}, new int[]{45, 135, 194, 160, 58, 174, 100, 89}};
+    private static final int[][] e = new int[][]{new int[]{g, i, 9, 27, 81, 32, 96, 77}, new int[]{20, 60, cn.com.smartdevices.bracelet.gps.c.a.i, 118, 143, 7, 21, 63}, new int[]{189, 145, 13, 39, 117, 140, 209, 205}, new int[]{193, 157, 49, 147, 19, 57, 171, 91}, new int[]{62, 186, 136, 197, 169, 85, 44, 132}, new int[]{185, 133, 188, 142, j, 12, 36, 108}, new int[]{113, C0113o.h, 173, 97, 80, 29, 87, 50}, new int[]{kankan.wheel.widget.a.ap, 28, 84, 41, 123, 158, 52, 156}, new int[]{46, 138, 203, 187, 139, 206, 196, 166}, new int[]{76, 17, 51, 153, 37, 111, 122, 155}, new int[]{43, 129, 176, B.o, B.p, 110, 119, 146}, new int[]{16, 48, 144, 10, 30, 90, 59, 177}, new int[]{109, 116, 137, v.C, 178, 112, 125, 164}, new int[]{70, 210, 208, 202, 184, h.k, 179, 115}, new int[]{134, 191, 151, 31, 93, 68, 204, 190}, new int[]{148, 22, 66, 198, 172, 94, 71, h}, new int[]{6, 18, 54, 162, 64, 192, 154, 40}, new int[]{120, 149, 25, 75, 14, 42, h.i, 167}, new int[]{79, 26, 78, 23, 69, 207, 199, 175}, new int[]{ShareData.SHARE_TYPE_LAB_SITUP_ACCUMULATE, 98, 83, 38, BuddyData.s, 131, 182, 124}, new int[]{161, 61, 183, h.j, kankan.wheel.widget.a.aC, 88, 53, 159}, new int[]{55, 165, 73, 8, 24, 72, k, 15}, new int[]{45, 135, 194, 160, 58, 174, 100, 89}};
     private static final int f = 0;
     private static final int g = 1;
     private static final int h = 2;

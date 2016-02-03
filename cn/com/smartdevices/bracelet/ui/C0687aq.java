@@ -7,13 +7,13 @@ import cn.com.smartdevices.bracelet.chart.b.e;
 import cn.com.smartdevices.bracelet.chart.base.c;
 import cn.com.smartdevices.bracelet.datasource.DeviceSource;
 import com.xiaomi.e.a;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.dataprocess.ActiveItem;
 import com.xiaomi.hm.health.dataprocess.DaySportData;
 import com.xiaomi.hm.health.dataprocess.SleepInfo;
 import com.xiaomi.hm.health.dataprocess.SportDay;
 import com.xiaomi.hm.health.dataprocess.StageSteps;
 import com.xiaomi.hm.health.dataprocess.StepsInfo;
-import com.xiaomi.hm.health.r;
 import java.util.Calendar;
 import java.util.Iterator;
 
@@ -137,7 +137,7 @@ class C0687aq implements C0421k {
                 sleepInfo = null;
             }
             if (this.a.N == 1) {
-                this.a.C.setText(r.no_steps);
+                this.a.C.setText(R.string.no_steps);
                 this.a.C.setVisibility(8);
                 if (stepsInfo == null) {
                     stepsInfo = new StepsInfo();
@@ -159,13 +159,13 @@ class C0687aq implements C0421k {
                     this.a.a(stepsInfo, null, this.a.x);
                 }
             } else if (this.a.N == 16) {
-                this.a.C.setText(r.no_wear_bracelet);
+                this.a.C.setText(R.string.no_wear_bracelet);
                 this.a.C.setVisibility(8);
                 if (sleepInfo == null) {
                     sleepInfo = new SleepInfo();
                 } else if (!sleepInfo.getHasSleep()) {
                     if (sleepInfo.getSleepCount() == 0) {
-                        this.a.C.setText(r.no_wear_bracelet);
+                        this.a.C.setText(R.string.no_wear_bracelet);
                     } else {
                         this.a.C.setText(a.f);
                     }

@@ -13,11 +13,11 @@ import cn.com.smartdevices.bracelet.weight.WeightInfo;
 import cn.com.smartdevices.bracelet.weight.aA;
 import cn.com.smartdevices.bracelet.weight.ah;
 import com.amap.api.maps.model.GroundOverlayOptions;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.bt.a.d;
 import com.xiaomi.hm.health.bt.bleservice.BLEService;
 import com.xiaomi.hm.health.bt.profile.Weight.e;
 import com.xiaomi.hm.health.bt.profile.Weight.m;
-import com.xiaomi.hm.health.r;
 import de.greenrobot.event.EventBus;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -180,7 +180,7 @@ public class L extends d {
         p.a.a(readPersonInfo.miliConfig.weightUnit);
         p.a.b(aA.b(h.weight, readPersonInfo.miliConfig.weightUnit));
         p.a.a(a != null ? aA.a(a.height, Birthday.fromStr(a.birthday).getAge(), a.weight) : GroundOverlayOptions.NO_DIMENSION);
-        p.b = a != null ? a.name : this.f.getString(r.visitor);
+        p.b = a != null ? a.name : this.f.getString(R.string.visitor);
         p.c = a != null ? a.uid : 0;
         if (a != null) {
             f = a.targetWeight;

@@ -23,14 +23,11 @@ import cn.com.smartdevices.bracelet.lua.SlidingUpPanelLayout;
 import cn.com.smartdevices.bracelet.lua.SlidingUpPanelLayout.PanelSlideListener;
 import cn.com.smartdevices.bracelet.weight.BabyWeightActivity;
 import com.tencent.connect.common.Constants;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.bt.bleservice.a;
 import com.xiaomi.hm.health.bt.model.i;
 import com.xiaomi.hm.health.bt.profile.Weight.WeightHwInfo;
 import com.xiaomi.hm.health.bt.profile.Weight.f;
-import com.xiaomi.hm.health.j;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
 import de.greenrobot.event.EventBus;
 import kankan.wheel.widget.a.b;
 
@@ -57,30 +54,30 @@ public class eD extends p implements OnClickListener {
     }
 
     private void a(View view) {
-        this.h = (SlidingUpPanelLayout) view.findViewById(l.fragment_setting_sliding_layout);
+        this.h = (SlidingUpPanelLayout) view.findViewById(R.id.fragment_setting_sliding_layout);
         this.h.setOverlayed(true);
         this.h.setEnableDragViewTouchEvents(true);
         this.h.setPanelSlideListener(this.m);
         this.h.setSlidingEnabled(true);
         d();
-        this.e = (TextView) view.findViewById(l.device_firmware_version_text);
-        this.f = (TextView) view.findViewById(l.mili_rebind_tips);
-        this.i = (TextView) view.findViewById(l.weight_settings_merge_state);
+        this.e = (TextView) view.findViewById(R.id.device_firmware_version_text);
+        this.f = (TextView) view.findViewById(R.id.mili_rebind_tips);
+        this.i = (TextView) view.findViewById(R.id.weight_settings_merge_state);
         e();
-        view.findViewById(l.device_unbind).setOnClickListener(this);
-        view.findViewById(l.device_firmware_version).setOnClickListener(this);
-        view.findViewById(l.device_unbind_in_mask).setOnClickListener(this);
-        this.g = view.findViewById(l.mask_view);
-        this.j = (LinePieChartView) view.findViewById(l.weight_battery_pie_chart);
-        this.k = (ImageView) view.findViewById(l.weight_device_battery_low_power);
-        this.l = (TextView) view.findViewById(l.weight_device_battery_tips);
-        view.findViewById(l.weight_setting_babyweight).setOnClickListener(this);
-        view.findViewById(l.weight_settings_about).setOnClickListener(this);
-        view.findViewById(l.weight_settings_merge_ll).setOnClickListener(this);
+        view.findViewById(R.id.device_unbind).setOnClickListener(this);
+        view.findViewById(R.id.device_firmware_version).setOnClickListener(this);
+        view.findViewById(R.id.device_unbind_in_mask).setOnClickListener(this);
+        this.g = view.findViewById(R.id.mask_view);
+        this.j = (LinePieChartView) view.findViewById(R.id.weight_battery_pie_chart);
+        this.k = (ImageView) view.findViewById(R.id.weight_device_battery_low_power);
+        this.l = (TextView) view.findViewById(R.id.weight_device_battery_tips);
+        view.findViewById(R.id.weight_setting_babyweight).setOnClickListener(this);
+        view.findViewById(R.id.weight_settings_about).setOnClickListener(this);
+        view.findViewById(R.id.weight_settings_merge_ll).setOnClickListener(this);
         if (DeviceSource.hasBindWeight()) {
-            this.f.setText(r.unbind);
+            this.f.setText(R.string.unbind);
         } else {
-            this.f.setText(r.bind_weight_scale);
+            this.f.setText(R.string.bind_weight_scale);
         }
     }
 
@@ -94,7 +91,7 @@ public class eD extends p implements OnClickListener {
         fg a = new fe(getActivity()).a();
         if (a.d()) {
             int e = a.e();
-            int dimensionPixelSize = getResources().getDimensionPixelSize(j.main_ui_panel_height);
+            int dimensionPixelSize = getResources().getDimensionPixelSize(R.dimen.main_ui_panel_height);
             C0596r.e(c, "SlidingPanel SystemBarH : " + e + ", OriginalPanelH : " + dimensionPixelSize);
             this.h.setPanelHeight(dimensionPixelSize - e);
         }
@@ -102,9 +99,9 @@ public class eD extends p implements OnClickListener {
 
     private void e() {
         if (Keeper.readPersonInfo().getMiliConfig().getWeightMergeResult()) {
-            this.i.setText(r.state_open);
+            this.i.setText(R.string.state_open);
         } else {
-            this.i.setText(r.state_close);
+            this.i.setText(R.string.state_close);
         }
     }
 
@@ -183,7 +180,7 @@ public class eD extends p implements OnClickListener {
                     k();
                     return;
                 case kankan.wheel.widget.a.i /*0*/:
-                    com.huami.android.view.b.a(getActivity().getApplicationContext(), getString(r.failed_enable_bt), 1).show();
+                    com.huami.android.view.b.a(getActivity().getApplicationContext(), getString(R.string.failed_enable_bt), 1).show();
                     return;
                 default:
                     return;
@@ -193,14 +190,14 @@ public class eD extends p implements OnClickListener {
 
     public void onClick(View view) {
         switch (view.getId()) {
-            case l.weight_settings_merge_ll /*2131297221*/:
+            case R.id.weight_settings_merge_ll:
                 startActivity(new Intent(getActivity(), SettingMergeDuplicateActivity.class));
                 return;
-            case l.weight_settings_about /*2131297223*/:
+            case R.id.weight_settings_about:
                 startActivity(new Intent(getActivity(), InstructionWeightActivity.class));
                 C0401a.a(getActivity().getApplicationContext(), C0401a.fS);
                 return;
-            case l.device_unbind /*2131297509*/:
+            case R.id.device_unbind:
                 if (DeviceSource.hasBindWeight()) {
                     g();
                     return;
@@ -209,17 +206,17 @@ public class eD extends p implements OnClickListener {
                 startActivity(new Intent(getActivity(), SearchWeightScaleActivity.class));
                 getActivity().finish();
                 return;
-            case l.device_firmware_version /*2131297511*/:
-                com.huami.android.view.b.a(getActivity(), getActivity().getString(r.bracelet_info_mac_address, new Object[]{this.b.name, this.b.address}), 1).show();
+            case R.id.device_firmware_version:
+                com.huami.android.view.b.a(getActivity(), getActivity().getString(R.string.bracelet_info_mac_address, new Object[]{this.b.name, this.b.address}), 1).show();
                 return;
-            case l.device_unbind_in_mask /*2131297516*/:
+            case R.id.device_unbind_in_mask:
                 if (Utils.e()) {
                     g();
                     C0401a.a(getActivity().getApplicationContext(), C0401a.fT);
                     return;
                 }
                 return;
-            case l.weight_setting_babyweight /*2131297522*/:
+            case R.id.weight_setting_babyweight:
                 C0596r.e(c, "click " + this.p);
                 if (this.p) {
                     a(true);
@@ -240,7 +237,7 @@ public class eD extends p implements OnClickListener {
     }
 
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        View inflate = layoutInflater.inflate(n.setting_weight_fragment, viewGroup, false);
+        View inflate = layoutInflater.inflate(R.layout.setting_weight_fragment, viewGroup, false);
         a(inflate);
         return inflate;
     }

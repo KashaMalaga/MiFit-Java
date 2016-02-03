@@ -44,6 +44,7 @@ import cn.com.smartdevices.bracelet.chart.n;
 import cn.com.smartdevices.bracelet.chart.util.ChartData;
 import cn.com.smartdevices.bracelet.chart.util.p;
 import cn.com.smartdevices.bracelet.chart.util.q;
+import cn.com.smartdevices.bracelet.chart.util.r;
 import cn.com.smartdevices.bracelet.chart.util.t;
 import cn.com.smartdevices.bracelet.config.b;
 import cn.com.smartdevices.bracelet.datasource.RtStep;
@@ -55,6 +56,7 @@ import cn.com.smartdevices.bracelet.shoes.model.i;
 import com.amap.api.maps.model.BitmapDescriptorFactory;
 import com.amap.api.maps.model.GroundOverlayOptions;
 import com.huami.android.view.c;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.bt.d.e;
 import com.xiaomi.hm.health.bt.model.HwConnStatus;
 import com.xiaomi.hm.health.bt.model.HwSyncDataStatus;
@@ -67,10 +69,6 @@ import com.xiaomi.hm.health.dataprocess.StageSleep;
 import com.xiaomi.hm.health.dataprocess.StageSteps;
 import com.xiaomi.hm.health.dataprocess.StepsInfo;
 import com.xiaomi.hm.health.dataprocess.UserSleepModify;
-import com.xiaomi.hm.health.j;
-import com.xiaomi.hm.health.k;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.r;
 import de.greenrobot.event.EventBus;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -486,8 +484,8 @@ public class C0681ak extends p implements OnClickListener, e {
         int i4;
         View view2 = null;
         if (i == c) {
-            b(r.dynamic_detail_sleep_title_yesterday);
-            this.v.setImageResource(k.btn_dynamic_mode_step);
+            b(R.string.dynamic_detail_sleep_title_yesterday);
+            this.v.setImageResource(R.drawable.btn_dynamic_mode_step);
             view = this.x;
             view2 = this.w;
             i2 = this.S;
@@ -498,7 +496,7 @@ public class C0681ak extends p implements OnClickListener, e {
             if ((this.ag & o) == 0) {
                 d(this.O);
             }
-            this.v.setImageResource(k.btn_dynamic_mode_sleep);
+            this.v.setImageResource(R.drawable.btn_dynamic_mode_sleep);
             view = this.w;
             view2 = this.x;
             i2 = this.R;
@@ -534,26 +532,26 @@ public class C0681ak extends p implements OnClickListener, e {
     }
 
     private void a(View view) {
-        this.s = view.findViewById(l.header);
-        this.t = (TextView) view.findViewById(l.header_sync_tip);
-        this.u = view.findViewById(l.share);
+        this.s = view.findViewById(R.id.header);
+        this.t = (TextView) view.findViewById(R.id.header_sync_tip);
+        this.u = view.findViewById(R.id.share);
         this.u.setOnClickListener(this);
-        this.v = (ImageButton) view.findViewById(l.mode_switch);
+        this.v = (ImageButton) view.findViewById(R.id.mode_switch);
         this.v.setOnClickListener(this);
-        this.w = view.findViewById(l.info_sleep_layout);
-        this.x = view.findViewById(l.info_step_layout);
-        this.z = view.findViewById(l.float_sleep_info);
-        this.A = view.findViewById(l.float_step_info);
-        this.B = (DynamicDetailChartView) view.findViewById(l.day_active_chart);
-        this.C = (TextView) view.findViewById(l.data_state_tip);
-        this.D = view.findViewById(l.modify_sleep_start);
-        this.E = view.findViewById(l.modify_sleep_end);
+        this.w = view.findViewById(R.id.info_sleep_layout);
+        this.x = view.findViewById(R.id.info_step_layout);
+        this.z = view.findViewById(R.id.float_sleep_info);
+        this.A = view.findViewById(R.id.float_step_info);
+        this.B = (DynamicDetailChartView) view.findViewById(R.id.day_active_chart);
+        this.C = (TextView) view.findViewById(R.id.data_state_tip);
+        this.D = view.findViewById(R.id.modify_sleep_start);
+        this.E = view.findViewById(R.id.modify_sleep_end);
         this.D.setVisibility(0);
         this.E.setVisibility(0);
         this.D.setOnClickListener(this);
         this.E.setOnClickListener(this);
-        this.F = view.findViewById(l.btn_prev);
-        this.G = view.findViewById(l.btn_next);
+        this.F = view.findViewById(R.id.btn_prev);
+        this.G = view.findViewById(R.id.btn_next);
         this.F.setOnClickListener(this);
         this.G.setOnClickListener(this);
         this.H = new GestureDetector(getActivity(), new C0684an(this));
@@ -568,25 +566,25 @@ public class C0681ak extends p implements OnClickListener, e {
             ((View) this.v.getParent()).setVisibility(q);
         }
         if ((this.ag & o) > 0) {
-            this.y = ((ViewStub) view.findViewById(l.info_step_piece_layout)).inflate();
+            this.y = ((ViewStub) view.findViewById(R.id.info_step_piece_layout)).inflate();
             this.x.setVisibility(q);
             this.w.setVisibility(q);
             ((View) this.y.getParent()).setVisibility(0);
         }
         if (this.O == com.xiaomi.hm.health.bt.b.c.SENSORHUB.b()) {
             this.v.setVisibility(q);
-            view.findViewById(l.layout_prev_next).setVisibility(0);
-            view.findViewById(l.header_sync_tip_split).setVisibility(q);
+            view.findViewById(R.id.layout_prev_next).setVisibility(0);
+            view.findViewById(R.id.header_sync_tip_split).setVisibility(q);
             this.t.setVisibility(q);
         }
         this.B.h();
         if (((this.ag & p) == 0 || t.a()) && (this.ag & n) == 0) {
             MarginLayoutParams marginLayoutParams = (MarginLayoutParams) this.B.getLayoutParams();
-            marginLayoutParams.height = getResources().getDimensionPixelSize(j.dynamic_detail_piece_chart_height);
+            marginLayoutParams.height = getResources().getDimensionPixelSize(R.dimen.dynamic_detail_piece_chart_height);
             this.B.setLayoutParams(marginLayoutParams);
             View view2 = (View) this.y.getParent();
             MarginLayoutParams marginLayoutParams2 = (MarginLayoutParams) view2.getLayoutParams();
-            marginLayoutParams2.height = getResources().getDimensionPixelSize(j.dynamic_detail_info_min_height);
+            marginLayoutParams2.height = getResources().getDimensionPixelSize(R.dimen.dynamic_detail_info_min_height);
             view2.setLayoutParams(marginLayoutParams2);
         }
     }
@@ -618,34 +616,34 @@ public class C0681ak extends p implements OnClickListener, e {
     }
 
     private void a(cn.com.smartdevices.bracelet.chart.base.c cVar, int i, View view) {
-        TextView textView = (TextView) view.findViewById(l.float_sleep_type);
-        TextView textView2 = (TextView) view.findViewById(l.float_sleep_start_time);
-        TextView textView3 = (TextView) view.findViewById(l.float_sleep_end_time);
+        TextView textView = (TextView) view.findViewById(R.id.float_sleep_type);
+        TextView textView2 = (TextView) view.findViewById(R.id.float_sleep_start_time);
+        TextView textView3 = (TextView) view.findViewById(R.id.float_sleep_end_time);
         CharSequence a = f.a(cVar.c);
         CharSequence a2 = f.a(cVar.c + cVar.d);
-        view.findViewById(l.float_sleep_extra).setVisibility(0);
+        view.findViewById(R.id.float_sleep_extra).setVisibility(0);
         switch (cVar.b) {
             case n /*1*/:
                 if (cVar.c != ae) {
                     if (cVar.c + cVar.d != af) {
-                        textView.setText(r.dynamic_sleep_active);
+                        textView.setText(R.string.dynamic_sleep_active);
                         break;
                     } else {
-                        textView.setText(r.dynamic_sleep_active_end);
+                        textView.setText(R.string.dynamic_sleep_active_end);
                         break;
                     }
                 }
-                textView.setText(r.dynamic_sleep_active_start);
+                textView.setText(R.string.dynamic_sleep_active_start);
                 break;
             case o /*2*/:
-                textView.setText(r.dynamic_sleep_shallow);
+                textView.setText(R.string.dynamic_sleep_shallow);
                 break;
             case kankan.wheel.widget.a.l /*3*/:
-                textView.setText(r.dynamic_sleep_deep);
+                textView.setText(R.string.dynamic_sleep_deep);
                 break;
             case p /*4*/:
-                view.findViewById(l.float_sleep_extra).setVisibility(q);
-                textView.setText(r.no_wear_user_modified);
+                view.findViewById(R.id.float_sleep_extra).setVisibility(q);
+                textView.setText(R.string.no_wear_user_modified);
                 break;
         }
         textView2.setText(a);
@@ -660,40 +658,40 @@ public class C0681ak extends p implements OnClickListener, e {
             textView = this.t;
             objArr = new Object[n];
             objArr[0] = Integer.valueOf(0);
-            textView.setText(getString(r.dynamic_tip_sync_progress, objArr));
+            textView.setText(getString(R.string.dynamic_tip_sync_progress, objArr));
         } else if (hwSyncDataStatus.c()) {
             textView = this.t;
             objArr = new Object[n];
             objArr[0] = Integer.valueOf(hwSyncDataStatus.f());
-            textView.setText(getString(r.dynamic_tip_sync_progress, objArr));
+            textView.setText(getString(R.string.dynamic_tip_sync_progress, objArr));
         } else {
-            this.t.setText(Utils.a(getActivity(), (int) r.dynamic_tip_sync_time));
+            this.t.setText(Utils.a(getActivity(), (int) R.string.dynamic_tip_sync_time));
         }
     }
 
     private void a(ActiveItem activeItem, View view) {
-        TextView textView = (TextView) view.findViewById(l.info_step);
-        View findViewById = view.findViewById(l.info_step_distance);
-        View findViewById2 = view.findViewById(l.info_step_calorie);
-        View findViewById3 = view.findViewById(l.info_step_walk_distance);
-        View findViewById4 = view.findViewById(l.info_step_walk_duration);
-        View findViewById5 = view.findViewById(l.info_step_walk_calorie);
-        View findViewById6 = view.findViewById(l.info_step_run_distance);
-        View findViewById7 = view.findViewById(l.info_step_run_duration);
-        View findViewById8 = view.findViewById(l.info_step_run_calorie);
+        TextView textView = (TextView) view.findViewById(R.id.info_step);
+        View findViewById = view.findViewById(R.id.info_step_distance);
+        View findViewById2 = view.findViewById(R.id.info_step_calorie);
+        View findViewById3 = view.findViewById(R.id.info_step_walk_distance);
+        View findViewById4 = view.findViewById(R.id.info_step_walk_duration);
+        View findViewById5 = view.findViewById(R.id.info_step_walk_calorie);
+        View findViewById6 = view.findViewById(R.id.info_step_run_distance);
+        View findViewById7 = view.findViewById(R.id.info_step_run_duration);
+        View findViewById8 = view.findViewById(R.id.info_step_run_calorie);
         textView.setText(ChartData.a((long) activeItem.getSteps()));
         String[] a = ChartData.a(getActivity(), activeItem.getDistance());
         ChartData.a(findViewById, a[0], a[n]);
-        ChartData.a(findViewById2, ChartData.a((long) activeItem.getCalories()), getString(r.unit_calorie));
+        ChartData.a(findViewById2, ChartData.a((long) activeItem.getCalories()), getString(R.string.unit_calorie));
         if ((this.ag & p) > 0) {
             a = ChartData.a(getActivity(), activeItem.getWalkDistance());
             ChartData.a(findViewById3, a[0], a[n]);
             ChartData.a(findViewById4, activeItem.getActiveTime() - activeItem.getRuntime(), getActivity());
-            ChartData.a(findViewById5, ChartData.a((long) activeItem.getWalkCalories()), getString(r.unit_calorie));
+            ChartData.a(findViewById5, ChartData.a((long) activeItem.getWalkCalories()), getString(R.string.unit_calorie));
             a = ChartData.a(getActivity(), activeItem.getRunDistance());
             ChartData.a(findViewById6, a[0], a[n]);
             ChartData.a(findViewById7, activeItem.getRuntime(), getActivity());
-            ChartData.a(findViewById8, ChartData.a((long) activeItem.getRunCalories()), getString(r.unit_calorie));
+            ChartData.a(findViewById8, ChartData.a((long) activeItem.getRunCalories()), getString(R.string.unit_calorie));
         }
         int start = activeItem.getStart();
         int stop = activeItem.getStop();
@@ -701,17 +699,17 @@ public class C0681ak extends p implements OnClickListener, e {
         Object[] objArr2 = new Object[o];
         objArr2[0] = f.a(start);
         objArr2[n] = f.a(stop);
-        objArr[0] = getString(r.date_from_to, objArr2);
-        a(getString(r.dynamic_detail_step_title, objArr));
+        objArr[0] = getString(R.string.date_from_to, objArr2);
+        a(getString(R.string.dynamic_detail_step_title, objArr));
     }
 
     private void a(SleepInfo sleepInfo, int i, int i2, View view) {
-        View findViewById = view.findViewById(l.info_sleep);
-        View findViewById2 = view.findViewById(l.info_sleep_deep);
-        View findViewById3 = view.findViewById(l.info_sleep_shallow);
-        TextView textView = (TextView) view.findViewById(l.info_sleep_time);
-        TextView textView2 = (TextView) view.findViewById(l.info_sleep_rise_time);
-        View findViewById4 = view.findViewById(l.info_sleep_wake);
+        View findViewById = view.findViewById(R.id.info_sleep);
+        View findViewById2 = view.findViewById(R.id.info_sleep_deep);
+        View findViewById3 = view.findViewById(R.id.info_sleep_shallow);
+        TextView textView = (TextView) view.findViewById(R.id.info_sleep_time);
+        TextView textView2 = (TextView) view.findViewById(R.id.info_sleep_rise_time);
+        View findViewById4 = view.findViewById(R.id.info_sleep_wake);
         ChartData.a(findViewById, sleepInfo.getSleepCount(), getActivity());
         ChartData.a(findViewById2, sleepInfo.getNonRemCount(), getActivity());
         ChartData.a(findViewById3, sleepInfo.getRemCount(), getActivity());
@@ -750,13 +748,13 @@ public class C0681ak extends p implements OnClickListener, e {
     }
 
     private void a(StageSteps stageSteps, int i, View view) {
-        TextView textView = (TextView) view.findViewById(l.float_step);
-        TextView textView2 = (TextView) view.findViewById(l.float_step_time_hour);
-        textView2 = (TextView) view.findViewById(l.float_step_time_min);
-        textView2 = (TextView) view.findViewById(l.info_step_time_unit_hour);
-        textView2 = (TextView) view.findViewById(l.float_step_distance);
-        TextView textView3 = (TextView) view.findViewById(l.info_step_distance_unit);
-        ((TextView) view.findViewById(l.float_time)).setText(f.a(i));
+        TextView textView = (TextView) view.findViewById(R.id.float_step);
+        TextView textView2 = (TextView) view.findViewById(R.id.float_step_time_hour);
+        textView2 = (TextView) view.findViewById(R.id.float_step_time_min);
+        textView2 = (TextView) view.findViewById(R.id.info_step_time_unit_hour);
+        textView2 = (TextView) view.findViewById(R.id.float_step_distance);
+        TextView textView3 = (TextView) view.findViewById(R.id.info_step_distance_unit);
+        ((TextView) view.findViewById(R.id.float_time)).setText(f.a(i));
         textView.setText(ChartData.a((long) stageSteps.steps));
         String[] a = ChartData.a(getActivity(), stageSteps.distance);
         textView2.setText(a[0]);
@@ -767,17 +765,17 @@ public class C0681ak extends p implements OnClickListener, e {
         int c;
         int d;
         int f;
-        TextView textView = (TextView) view.findViewById(l.info_step);
-        View findViewById = view.findViewById(l.info_step_distance);
-        View findViewById2 = view.findViewById(l.info_step_calorie);
-        View findViewById3 = view.findViewById(l.info_step_walk_distance);
-        View findViewById4 = view.findViewById(l.info_step_walk_duration);
-        View findViewById5 = view.findViewById(l.info_step_walk_calorie);
-        View findViewById6 = view.findViewById(l.info_step_run_distance);
-        View findViewById7 = view.findViewById(l.info_step_run_duration);
-        View findViewById8 = view.findViewById(l.info_step_run_calorie);
+        TextView textView = (TextView) view.findViewById(R.id.info_step);
+        View findViewById = view.findViewById(R.id.info_step_distance);
+        View findViewById2 = view.findViewById(R.id.info_step_calorie);
+        View findViewById3 = view.findViewById(R.id.info_step_walk_distance);
+        View findViewById4 = view.findViewById(R.id.info_step_walk_duration);
+        View findViewById5 = view.findViewById(R.id.info_step_walk_calorie);
+        View findViewById6 = view.findViewById(R.id.info_step_run_distance);
+        View findViewById7 = view.findViewById(R.id.info_step_run_duration);
+        View findViewById8 = view.findViewById(R.id.info_step_run_calorie);
         if (ChartData.a().x()) {
-            cn.com.smartdevices.bracelet.chart.util.r a = ChartData.a();
+            r a = ChartData.a();
             c = a.c();
             d = a.d();
             f = a.f();
@@ -789,16 +787,16 @@ public class C0681ak extends p implements OnClickListener, e {
         textView.setText(ChartData.a((long) c));
         String[] a2 = ChartData.a(getActivity(), d);
         ChartData.a(findViewById, a2[0], a2[n]);
-        ChartData.a(findViewById2, ChartData.a((long) f), getString(r.unit_calorie));
+        ChartData.a(findViewById2, ChartData.a((long) f), getString(R.string.unit_calorie));
         if ((this.ag & p) > 0) {
             a2 = ChartData.a(getActivity(), stepsInfo.getWalkDistance());
             ChartData.a(findViewById3, a2[0], a2[n]);
             ChartData.a(findViewById4, stepsInfo.getStepsTimeCount(), getActivity());
-            ChartData.a(findViewById5, ChartData.a((long) stepsInfo.getWalkCalories()), getString(r.unit_calorie));
+            ChartData.a(findViewById5, ChartData.a((long) stepsInfo.getWalkCalories()), getString(R.string.unit_calorie));
             a2 = ChartData.a(getActivity(), stepsInfo.getRunDistance());
             ChartData.a(findViewById6, a2[0], a2[n]);
             ChartData.a(findViewById7, stepsInfo.getRunTimeCount(), getActivity());
-            ChartData.a(findViewById8, ChartData.a((long) stepsInfo.getRunCalories()), getString(r.unit_calorie));
+            ChartData.a(findViewById8, ChartData.a((long) stepsInfo.getRunCalories()), getString(R.string.unit_calorie));
         }
     }
 
@@ -870,9 +868,9 @@ public class C0681ak extends p implements OnClickListener, e {
 
     private void d(int i) {
         if (i == com.xiaomi.hm.health.bt.b.c.SENSORHUB.b()) {
-            b(r.action_pop_sensorhub);
+            b(R.string.action_pop_sensorhub);
         } else {
-            b(r.dynamic_detail_step_title_today);
+            b(R.string.dynamic_detail_step_title_today);
         }
     }
 
@@ -905,10 +903,10 @@ public class C0681ak extends p implements OnClickListener, e {
         DaySportData g = this.I.g(sportDay);
         ShareData shareData;
         if (i == c) {
-            cn.com.smartdevices.bracelet.chart.util.r a = ChartData.a();
+            r a = ChartData.a();
             int h = a.h();
             shareData = new ShareData(o);
-            shareData.title = getString(r.share_sleep_title);
+            shareData.title = getString(R.string.share_sleep_title);
             shareData.content = h + com.xiaomi.e.a.f;
             shareData.time = Utils.d(sportDay);
             h = a.h() - a.i();
@@ -917,7 +915,7 @@ public class C0681ak extends p implements OnClickListener, e {
             if (j == null || k == null) {
                 return null;
             }
-            shareData.description = getString(r.share_sleep_description, new Object[]{Integer.valueOf(r3 / 60), Integer.valueOf(r3 % 60), Integer.valueOf(h / 60), Integer.valueOf(h % 60), f.a(j), f.a(k)});
+            shareData.description = getString(R.string.share_sleep_description, new Object[]{Integer.valueOf(r3 / 60), Integer.valueOf(r3 % 60), Integer.valueOf(h / 60), Integer.valueOf(h % 60), f.a(j), f.a(k)});
             C0596r.e(m, "sleepsd: " + shareData.description);
             return shareData;
         } else if (i != n) {
@@ -926,26 +924,26 @@ public class C0681ak extends p implements OnClickListener, e {
             ShareData shareData2 = new ShareData();
             if (ChartData.n.equals(this.Q)) {
                 shareData2.setType(9);
-                String string = getString(r.walked);
+                String string = getString(R.string.walked);
                 switch (this.ab) {
                     case kankan.wheel.widget.a.i /*0*/:
-                        string = getString(r.walked);
+                        string = getString(R.string.walked);
                         break;
                     case n /*1*/:
-                        string = getString(r.walked);
+                        string = getString(R.string.walked);
                         break;
                     case o /*2*/:
-                        string = getString(r.runed);
+                        string = getString(R.string.runed);
                         break;
                 }
                 Object[] objArr = new Object[n];
                 Object[] objArr2 = new Object[o];
                 objArr2[0] = f.a(this.Z);
                 objArr2[n] = f.a(this.aa);
-                objArr[0] = getString(r.date_from_to, objArr2);
-                shareData2.title = getString(r.dynamic_detail_step_share_title, objArr);
+                objArr[0] = getString(R.string.date_from_to, objArr2);
+                shareData2.title = getString(R.string.dynamic_detail_step_share_title, objArr);
                 shareData2.content = this.ac + com.xiaomi.e.a.f;
-                shareData2.contentUnit = getString(r.unit_step);
+                shareData2.contentUnit = getString(R.string.unit_step);
                 String[] a2 = ChartData.a(getActivity(), this.ad);
                 String str = string + a2[0] + a2[n] + "\n";
                 if (this.ah.w.booleanValue()) {
@@ -1052,31 +1050,31 @@ public class C0681ak extends p implements OnClickListener, e {
 
     public void onClick(View view) {
         switch (view.getId()) {
-            case l.share /*2131296541*/:
+            case R.id.share:
                 e(this.N);
                 C0401a.a(getActivity(), C0401a.aZ, C0401a.cu);
                 return;
-            case l.mode_switch /*2131296976*/:
+            case R.id.mode_switch:
                 g();
                 return;
-            case l.btn_prev /*2131296978*/:
+            case R.id.btn_prev:
                 if (!this.K.equals(this.L)) {
                     this.K = this.K.addDay(-1);
                     l.sendEmptyMessage(n);
                     return;
                 }
                 return;
-            case l.btn_next /*2131296979*/:
+            case R.id.btn_next:
                 if (!this.K.equals(this.M)) {
                     this.K = this.K.addDay(n);
                     l.sendEmptyMessage(n);
                     return;
                 }
                 return;
-            case l.modify_sleep_start /*2131296997*/:
+            case R.id.modify_sleep_start:
                 a((int) n, this.K);
                 return;
-            case l.modify_sleep_end /*2131297000*/:
+            case R.id.modify_sleep_end:
                 a((int) c, this.K);
                 return;
             default:
@@ -1124,12 +1122,12 @@ public class C0681ak extends p implements OnClickListener, e {
             }
         }
         Resources resources = getActivity().getResources();
-        this.R = resources.getColor(com.xiaomi.hm.health.i.bg_mode_sleep);
-        this.S = resources.getColor(com.xiaomi.hm.health.i.bg_mode_step);
+        this.R = resources.getColor(R.color.bg_mode_sleep);
+        this.S = resources.getColor(R.color.bg_mode_step);
     }
 
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        return layoutInflater.inflate(com.xiaomi.hm.health.n.fragment_dynamic_detail, viewGroup, false);
+        return layoutInflater.inflate(R.layout.fragment_dynamic_detail, viewGroup, false);
     }
 
     public void onDestroy() {

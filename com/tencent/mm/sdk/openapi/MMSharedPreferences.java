@@ -9,9 +9,8 @@ import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.database.Cursor;
 import cn.com.smartdevices.bracelet.d.C0430g;
 import cn.com.smartdevices.bracelet.d.C0432i;
-import com.tencent.mm.sdk.b.a;
 import com.tencent.mm.sdk.c.a.b;
-import com.tencent.open.SocialConstants;
+import com.xiaomi.channel.relationservice.data.a;
 import com.xiaomi.market.sdk.p;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -20,7 +19,7 @@ import java.util.Map.Entry;
 import java.util.Set;
 
 class MMSharedPreferences implements SharedPreferences {
-    private final String[] columns = new String[]{p.a, C0430g.b, SocialConstants.PARAM_TYPE, C0432i.b};
+    private final String[] columns = new String[]{p.a, C0430g.b, a.h, C0432i.b};
     private final ContentResolver cr;
     private REditor editor = null;
     private final HashMap<String, Object> values = new HashMap();
@@ -57,7 +56,7 @@ class MMSharedPreferences implements SharedPreferences {
                 boolean z;
                 Object value2 = value.getValue();
                 if (value2 == null) {
-                    a.a("MicroMsg.SDK.PluginProvider.Resolver", "unresolve failed, null value");
+                    com.tencent.mm.sdk.b.a.a("MicroMsg.SDK.PluginProvider.Resolver", "unresolve failed, null value");
                     i = 0;
                 } else if (value2 instanceof Integer) {
                     i = 1;
@@ -72,13 +71,13 @@ class MMSharedPreferences implements SharedPreferences {
                 } else if (value2 instanceof Double) {
                     i = 6;
                 } else {
-                    a.a("MicroMsg.SDK.PluginProvider.Resolver", "unresolve failed, unknown type=" + value2.getClass().toString());
+                    com.tencent.mm.sdk.b.a.a("MicroMsg.SDK.PluginProvider.Resolver", "unresolve failed, unknown type=" + value2.getClass().toString());
                     i = 0;
                 }
                 if (i == 0) {
                     z = false;
                 } else {
-                    contentValues.put(SocialConstants.PARAM_TYPE, Integer.valueOf(i));
+                    contentValues.put(a.h, Integer.valueOf(i));
                     contentValues.put(C0432i.b, value2.toString());
                     z = true;
                 }
@@ -139,7 +138,7 @@ class MMSharedPreferences implements SharedPreferences {
             if (query == null) {
                 return null;
             }
-            Object a = query.moveToFirst() ? com.tencent.mm.sdk.c.a.a.a(query.getInt(query.getColumnIndex(SocialConstants.PARAM_TYPE)), query.getString(query.getColumnIndex(C0432i.b))) : null;
+            Object a = query.moveToFirst() ? com.tencent.mm.sdk.c.a.a.a(query.getInt(query.getColumnIndex(a.h)), query.getString(query.getColumnIndex(C0432i.b))) : null;
             query.close();
             return a;
         } catch (Exception e) {
@@ -166,7 +165,7 @@ class MMSharedPreferences implements SharedPreferences {
                 return null;
             }
             int columnIndex = query.getColumnIndex(C0430g.b);
-            int columnIndex2 = query.getColumnIndex(SocialConstants.PARAM_TYPE);
+            int columnIndex2 = query.getColumnIndex(a.h);
             int columnIndex3 = query.getColumnIndex(C0432i.b);
             while (query.moveToNext()) {
                 this.values.put(query.getString(columnIndex), com.tencent.mm.sdk.c.a.a.a(query.getInt(columnIndex2), query.getString(columnIndex3)));

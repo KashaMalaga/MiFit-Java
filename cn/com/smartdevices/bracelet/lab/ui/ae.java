@@ -12,8 +12,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import com.huami.android.view.c;
 import com.huami.android.view.e;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
+import com.xiaomi.hm.health.R;
 
 public class ae extends c {
     public static final String a = "operation";
@@ -31,13 +30,13 @@ public class ae extends c {
     }
 
     protected int inflateLayout() {
-        return n.fragment_lab_sport_timeout;
+        return R.layout.fragment_lab_sport_timeout;
     }
 
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         View onCreateView = super.onCreateView(layoutInflater, viewGroup, bundle);
-        this.d = (TextView) onCreateView.findViewById(l.sport_timeout_notice_content);
-        this.e = (TextView) onCreateView.findViewById(l.sport_timeout_extra_notice_content);
+        this.d = (TextView) onCreateView.findViewById(R.id.sport_timeout_notice_content);
+        this.e = (TextView) onCreateView.findViewById(R.id.sport_timeout_extra_notice_content);
         Bundle arguments = getArguments();
         if (arguments != null) {
             CharSequence string = arguments.getString(c);

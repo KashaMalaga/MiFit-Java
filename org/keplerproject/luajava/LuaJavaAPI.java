@@ -286,12 +286,12 @@ public final class LuaJavaAPI {
     public static int objectIndex(int i, Object obj, String str) {
         LuaState existingState = LuaStateFactory.getExistingState(i);
         synchronized (existingState) {
-            Object obj2;
             Method method;
             int top = existingState.getTop();
             Object[] objArr = new Object[(top - 1)];
             Method[] methods = (obj instanceof Class ? (Class) obj : obj.getClass()).getMethods();
             for (int i2 = 0; i2 < methods.length; i2++) {
+                Object obj2;
                 if (methods[i2].getName().equals(str)) {
                     Class[] parameterTypes = methods[i2].getParameterTypes();
                     if (parameterTypes.length == top - 1) {

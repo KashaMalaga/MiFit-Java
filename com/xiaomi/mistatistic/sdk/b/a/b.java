@@ -9,8 +9,7 @@ import cn.com.smartdevices.bracelet.d.C0432i;
 import cn.com.smartdevices.bracelet.gps.services.ay;
 import com.sina.weibo.sdk.component.WidgetRequestParam;
 import com.sina.weibo.sdk.constant.WBPageConstants.ParamKey;
-import com.tencent.open.SocialConstants;
-import com.xiaomi.e.a;
+import com.xiaomi.channel.relationservice.data.a;
 import com.xiaomi.mipush.sdk.f;
 import com.xiaomi.mistatistic.sdk.b.A;
 import com.xiaomi.mistatistic.sdk.b.p;
@@ -105,7 +104,7 @@ public class b implements p {
             }
             jSONObject2 = new JSONObject();
             jSONObject2.put(C0430g.b, iVar.c);
-            jSONObject2.put(SocialConstants.PARAM_TYPE, iVar.d);
+            jSONObject2.put(a.h, iVar.d);
             jSONObject2.put(C0432i.b, Long.parseLong(iVar.e));
             jSONObject.getJSONArray("values").put(jSONObject2);
             this.i.put(iVar.c, jSONObject2);
@@ -113,7 +112,7 @@ public class b implements p {
         }
         jSONObject2 = new JSONObject();
         jSONObject2.put(C0430g.b, iVar.c);
-        jSONObject2.put(SocialConstants.PARAM_TYPE, iVar.d);
+        jSONObject2.put(a.h, iVar.d);
         if (ParamKey.COUNT.equals(iVar.d) || "numeric".equals(iVar.d)) {
             jSONObject2.put(C0432i.b, Long.parseLong(iVar.e));
         } else {
@@ -129,12 +128,12 @@ public class b implements p {
         try {
             JSONArray b = b();
             if (b == null) {
-                this.h.a(a.f, this.d);
+                this.h.a(com.xiaomi.e.a.f, this.d);
             } else {
                 this.h.a(b.toString(), this.d);
             }
         } catch (JSONException e) {
-            this.h.a(a.f, this.d);
+            this.h.a(com.xiaomi.e.a.f, this.d);
         }
     }
 

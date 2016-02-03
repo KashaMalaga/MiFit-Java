@@ -5,7 +5,7 @@ import android.text.style.ClickableSpan;
 import android.view.View;
 import cn.com.smartdevices.bracelet.C0401a;
 import cn.com.smartdevices.bracelet.f.d;
-import kankan.wheel.widget.g;
+import com.xiaomi.hm.health.R;
 
 class n extends ClickableSpan {
     final /* synthetic */ LoginActivity a;
@@ -21,7 +21,7 @@ class n extends ClickableSpan {
 
     public void updateDrawState(TextPaint textPaint) {
         super.updateDrawState(textPaint);
-        textPaint.setColor(this.a.getResources().getColor(g.content_color));
+        textPaint.setColor(this.a.getResources().getColor(R.color.content_color));
         textPaint.setUnderlineText(true);
     }
 }

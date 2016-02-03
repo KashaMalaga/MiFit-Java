@@ -2,11 +2,11 @@ package b.a;
 
 import com.amap.api.services.district.DistrictSearchQuery;
 import com.sina.weibo.sdk.constant.WBPageConstants.ParamKey;
+import com.xiaomi.channel.relationservice.data.a;
 import java.util.EnumSet;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
-import kankan.wheel.widget.a;
 import kankan.wheel.widget.l;
 
 public enum aV implements cz {
@@ -17,7 +17,7 @@ public enum aV implements cz {
     LONGITUDE((short) 5, ParamKey.LONGITUDE),
     CARRIER((short) 6, "carrier"),
     LATENCY((short) 7, "latency"),
-    DISPLAY_NAME((short) 8, "display_name"),
+    DISPLAY_NAME((short) 8, a.d),
     ACCESS_TYPE((short) 9, "access_type"),
     ACCESS_SUBTYPE((short) 10, "access_subtype"),
     USER_INFO((short) 11, "user_info");
@@ -44,25 +44,25 @@ public enum aV implements cz {
         switch (i) {
             case l.a /*1*/:
                 return TIME_ZONE;
-            case a.k /*2*/:
+            case kankan.wheel.widget.a.k /*2*/:
                 return LANGUAGE;
-            case a.l /*3*/:
+            case kankan.wheel.widget.a.l /*3*/:
                 return COUNTRY;
-            case a.aQ /*4*/:
+            case kankan.wheel.widget.a.aQ /*4*/:
                 return LATITUDE;
-            case a.X /*5*/:
+            case kankan.wheel.widget.a.X /*5*/:
                 return LONGITUDE;
-            case a.bt /*6*/:
+            case kankan.wheel.widget.a.bt /*6*/:
                 return CARRIER;
-            case a.bc /*7*/:
+            case kankan.wheel.widget.a.bc /*7*/:
                 return LATENCY;
-            case a.ba /*8*/:
+            case kankan.wheel.widget.a.ba /*8*/:
                 return DISPLAY_NAME;
-            case a.bo /*9*/:
+            case kankan.wheel.widget.a.bo /*9*/:
                 return ACCESS_TYPE;
-            case a.bd /*10*/:
+            case kankan.wheel.widget.a.bd /*10*/:
                 return ACCESS_SUBTYPE;
-            case a.aW /*11*/:
+            case kankan.wheel.widget.a.aW /*11*/:
                 return USER_INFO;
             default:
                 return null;

@@ -8,7 +8,7 @@ import android.os.IBinder;
 import cn.com.smartdevices.bracelet.C0595q;
 import cn.com.smartdevices.bracelet.C0596r;
 import cn.com.smartdevices.bracelet.model.SyncedServerDataInfo;
-import com.tencent.open.SocialConstants;
+import com.xiaomi.channel.relationservice.data.a;
 
 public class SyncLabSportService extends IntentService {
     private static final int a = 0;
@@ -21,7 +21,7 @@ public class SyncLabSportService extends IntentService {
     private static Intent a(Context context, int i) {
         Intent intent = new Intent();
         intent.setClass(context, SyncLabSportService.class);
-        intent.putExtra(SocialConstants.PARAM_TYPE, i);
+        intent.putExtra(a.h, i);
         return intent;
     }
 
@@ -92,7 +92,7 @@ public class SyncLabSportService extends IntentService {
 
     protected void onHandleIntent(Intent intent) {
         if (intent != null) {
-            int intExtra = intent.getIntExtra(SocialConstants.PARAM_TYPE, -1);
+            int intExtra = intent.getIntExtra(a.h, -1);
             C0596r.e("Sync", "onHandleIntent command = " + intExtra);
             if (intExtra != -1) {
                 Context application = getApplication();

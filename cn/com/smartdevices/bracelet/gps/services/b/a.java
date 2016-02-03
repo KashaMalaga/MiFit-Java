@@ -77,7 +77,7 @@ class a implements AMapLocationListener {
 
     private void a(Context context, long j, float f, String str) {
         try {
-            this.l = (LocationManager) context.getSystemService(LocationManagerProxy.KEY_LOCATION_CHANGED);
+            this.l = (LocationManager) context.getSystemService(com.xiaomi.channel.relationservice.data.a.l);
             if (this.l.isProviderEnabled("passive")) {
                 this.l.requestLocationUpdates("passive", j, f, this, Looper.getMainLooper());
             }

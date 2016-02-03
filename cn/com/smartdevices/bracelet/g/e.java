@@ -2,7 +2,7 @@ package cn.com.smartdevices.bracelet.g;
 
 import android.content.Context;
 import com.f.a.b.d.a;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 
 public class e extends a {
     private static final int c = 21;
@@ -13,7 +13,7 @@ public class e extends a {
 
     protected String a(Context context, String str) {
         a.b(context, "weeklywalk");
-        return context.getString(r.share_step_ranking, new Object[]{str});
+        return context.getString(R.string.share_step_ranking, new Object[]{str});
     }
 
     public void a() {

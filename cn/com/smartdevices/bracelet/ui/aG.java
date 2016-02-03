@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.AbsListView.LayoutParams;
 import android.widget.ListView;
 import cn.com.smartdevices.bracelet.chart.util.t;
-import com.xiaomi.hm.health.n;
+import com.xiaomi.hm.health.R;
 import java.util.ArrayList;
 
 public class aG extends Fragment {
@@ -35,7 +35,7 @@ public class aG extends Fragment {
     }
 
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        View inflate = layoutInflater.inflate(n.fragment_dynamic_list, viewGroup, false);
+        View inflate = layoutInflater.inflate(R.layout.fragment_dynamic_list, viewGroup, false);
         this.c = (ListView) inflate;
         View view = new View(getActivity());
         view.setLayoutParams(new LayoutParams(-1, (int) (390.0f * t.a(getActivity()))));

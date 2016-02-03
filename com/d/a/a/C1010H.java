@@ -1,6 +1,6 @@
 package com.d.a.a;
 
-import com.amap.api.location.LocationManagerProxy;
+import com.xiaomi.channel.relationservice.data.a;
 import java.net.URI;
 import org.apache.http.Header;
 import org.apache.http.HttpHost;
@@ -26,7 +26,7 @@ class C1010H extends DefaultRedirectHandler {
         if (httpResponse == null) {
             throw new IllegalArgumentException("HTTP response may not be null");
         }
-        Header firstHeader = httpResponse.getFirstHeader(LocationManagerProxy.KEY_LOCATION_CHANGED);
+        Header firstHeader = httpResponse.getFirstHeader(a.l);
         if (firstHeader == null) {
             throw new ProtocolException("Received redirect response " + httpResponse.getStatusLine() + " but no location header");
         }

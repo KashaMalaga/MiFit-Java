@@ -5,8 +5,7 @@ import android.app.Fragment;
 import android.os.Bundle;
 import android.view.MenuItem;
 import cn.com.smartdevices.bracelet.C0401a;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
+import com.xiaomi.hm.health.R;
 
 public class SettingAboutUserAgreementActivity extends SystemBarTintActivity {
     protected boolean isExceptForMiNote() {
@@ -15,9 +14,9 @@ public class SettingAboutUserAgreementActivity extends SystemBarTintActivity {
 
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView((int) n.activity_setting_about_user_agreement);
+        setContentView((int) R.layout.activity_setting_about_user_agreement);
         if (bundle == null) {
-            getFragmentManager().beginTransaction().add(l.container, Fragment.instantiate(this, dM.class.getName())).commit();
+            getFragmentManager().beginTransaction().add(R.id.container, Fragment.instantiate(this, dM.class.getName())).commit();
         }
     }
 

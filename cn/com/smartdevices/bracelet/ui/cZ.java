@@ -10,9 +10,7 @@ import cn.com.smartdevices.bracelet.C0596r;
 import cn.com.smartdevices.bracelet.Keeper;
 import cn.com.smartdevices.bracelet.weight.J;
 import com.huami.android.view.c;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 
 public class cZ extends c {
     private static final String a = cZ.class.getSimpleName();
@@ -27,7 +25,7 @@ public class cZ extends c {
     }
 
     protected int inflateLayout() {
-        return n.fragment_weightgoal_with_noweight;
+        return R.layout.fragment_weightgoal_with_noweight;
     }
 
     public void onCreate(Bundle bundle) {
@@ -36,13 +34,13 @@ public class cZ extends c {
 
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         View onCreateView = super.onCreateView(layoutInflater, viewGroup, bundle);
-        this.b = (TextView) onCreateView.findViewById(l.name_title);
+        this.b = (TextView) onCreateView.findViewById(R.id.name_title);
         this.c = d;
         if (this.c == -1) {
-            this.b.setText(getString(r.no_weight_record, new Object[]{Keeper.readPersonInfo().nickname}));
+            this.b.setText(getString(R.string.no_weight_record, new Object[]{Keeper.readPersonInfo().nickname}));
         } else {
             if (J.a().a(this.c) != null) {
-                this.b.setText(getString(r.no_weight_record, new Object[]{r0.name}));
+                this.b.setText(getString(R.string.no_weight_record, new Object[]{r0.name}));
             }
         }
         return onCreateView;

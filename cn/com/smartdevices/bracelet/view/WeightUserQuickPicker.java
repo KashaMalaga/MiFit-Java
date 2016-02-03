@@ -8,9 +8,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import cn.com.smartdevices.bracelet.chart.util.t;
 import cn.com.smartdevices.bracelet.weight.UserInfo;
-import com.xiaomi.hm.health.j;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
+import com.xiaomi.hm.health.R;
 import java.util.Iterator;
 import java.util.List;
 
@@ -34,12 +32,12 @@ public class WeightUserQuickPicker extends FrameLayout {
 
     public WeightUserQuickPicker(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        inflate(context, n.view_weight_user_picker, this);
-        this.b = (RecyclerView) findViewById(l.user_list);
+        inflate(context, R.layout.view_weight_user_picker, this);
+        this.b = (RecyclerView) findViewById(R.id.user_list);
         this.b.a(true);
         this.d = new LinearLayoutManager(context, 0, false);
         this.b.a(this.d);
-        this.e = getResources().getDimensionPixelSize(j.statistic_weight_user_picker_item_padding);
+        this.e = getResources().getDimensionPixelSize(R.dimen.statistic_weight_user_picker_item_padding);
         this.b.a(new aa(this));
         this.b.setHorizontalFadingEdgeEnabled(true);
         this.b.setFadingEdgeLength(this.e * 3);

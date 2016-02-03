@@ -16,15 +16,11 @@ import cn.com.smartdevices.bracelet.weight.J;
 import cn.com.smartdevices.bracelet.weight.UserInfo;
 import cn.com.smartdevices.bracelet.weight.aA;
 import com.huami.android.view.c;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 import de.greenrobot.event.EventBus;
 import java.util.Calendar;
 import kankan.wheel.widget.WheelView;
 import kankan.wheel.widget.a;
-import kankan.wheel.widget.g;
-import kankan.wheel.widget.h;
 
 public class C0752da extends c {
     private static final String h = C0752da.class.getSimpleName();
@@ -45,7 +41,7 @@ public class C0752da extends c {
     }
 
     protected int inflateLayout() {
-        return n.fragment_person_info_setting_birthday;
+        return R.layout.fragment_person_info_setting_birthday;
     }
 
     public void onCreate(Bundle bundle) {
@@ -61,19 +57,19 @@ public class C0752da extends c {
 
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         View onCreateView = super.onCreateView(layoutInflater, viewGroup, bundle);
-        this.c = (WheelView) onCreateView.findViewById(l.setting_birth_wheel_year);
-        this.d = (WheelView) onCreateView.findViewById(l.setting_birth_wheel_month);
+        this.c = (WheelView) onCreateView.findViewById(R.id.setting_birth_wheel_year);
+        this.d = (WheelView) onCreateView.findViewById(R.id.setting_birth_wheel_month);
         int i = Calendar.getInstance().get(1);
         this.g = Calendar.getInstance().get(2);
         C0596r.e(h, "maxMonth is " + this.g);
         this.f = i - 100;
         int i2 = i + 0;
-        this.c.a(5).e(h.wheel_custom_val_white_1).a(getString(r.year), 40.0f).a(new C0763dl(getActivity(), this.f, i2, this.c, getResources().getColor(g.highlight), getResources().getColor(g.main_ui_content_color), a.bm, false, 46, 24, 21, 21, 1));
-        this.i = new C0763dl(getActivity(), 1, 12, this.d, getResources().getColor(g.highlight), getResources().getColor(g.main_ui_content_color), a.bm, true, 46, 24, 21, 21, 1);
+        this.c.a(5).e(R.drawable.wheel_custom_val_white_1).a(getString(R.string.year), 40.0f).a(new C0763dl(getActivity(), this.f, i2, this.c, getResources().getColor(R.color.highlight), getResources().getColor(R.color.main_ui_content_color), a.bm, false, 46, 24, 21, 21, 1));
+        this.i = new C0763dl(getActivity(), 1, 12, this.d, getResources().getColor(R.color.highlight), getResources().getColor(R.color.main_ui_content_color), a.bm, true, 46, 24, 21, 21, 1);
         if (!this.e.isValid() || this.e.getYear() - this.f < 100) {
-            this.d.a(5).e(h.wheel_custom_val_white_1).a(getString(r.month), (float) aA.h).a(this.i);
+            this.d.a(5).e(R.drawable.wheel_custom_val_white_1).a(getString(R.string.month), (float) aA.h).a(this.i);
         } else {
-            this.d.a(5).e(h.wheel_custom_val_white_1).a(getString(r.month), (float) aA.h).a(new C0763dl(getActivity(), 1, this.g + 1, this.d, getResources().getColor(g.highlight), getResources().getColor(g.main_ui_content_color), a.bm, false, 46, 24, 21, 21, 1));
+            this.d.a(5).e(R.drawable.wheel_custom_val_white_1).a(getString(R.string.month), (float) aA.h).a(new C0763dl(getActivity(), 1, this.g + 1, this.d, getResources().getColor(R.color.highlight), getResources().getColor(R.color.main_ui_content_color), a.bm, false, 46, 24, 21, 21, 1));
         }
         if (this.e.isValid()) {
             this.c.c(this.e.getYear() - this.f);

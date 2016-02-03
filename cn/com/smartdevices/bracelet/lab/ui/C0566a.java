@@ -13,6 +13,7 @@ public class C0566a {
     }
 
     public static boolean a(Context context, String str, String str2) {
+        FileOutputStream fileOutputStream;
         Exception e;
         Throwable th;
         InputStream inputStream = null;
@@ -20,7 +21,6 @@ public class C0566a {
         if (context == null || TextUtils.isEmpty(str) || TextUtils.isEmpty(str2)) {
             throw new IllegalArgumentException();
         }
-        FileOutputStream fileOutputStream;
         try {
             fileOutputStream = new FileOutputStream(str2);
             try {

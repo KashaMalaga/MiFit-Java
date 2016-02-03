@@ -7,9 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import cn.com.smartdevices.bracelet.C0596r;
 import cn.com.smartdevices.bracelet.ui.NewAlarmActivity;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import kankan.wheel.widget.g;
+import com.xiaomi.hm.health.R;
 
 public class J extends Y {
     private static final int e = 3;
@@ -30,21 +28,21 @@ public class J extends Y {
 
     public View getView(int i, View view, ViewGroup viewGroup) {
         if (view == null) {
-            view = LayoutInflater.from(this.a).inflate(n.view_select_days_item, null);
+            view = LayoutInflater.from(this.a).inflate(R.layout.view_select_days_item, null);
         }
-        View findViewById = view.findViewById(l.select_marker);
+        View findViewById = view.findViewById(R.id.select_marker);
         findViewById.setVisibility(4);
-        TextView textView = (TextView) view.findViewById(l.week_tv);
+        TextView textView = (TextView) view.findViewById(R.id.week_tv);
         textView.setText(this.d[i]);
-        textView.setTextColor(this.a.getResources().getColor(g.main_ui_title_color));
+        textView.setTextColor(this.a.getResources().getColor(R.color.main_ui_title_color));
         C0596r.e(f, "Get view : mdays:" + this.b + ", pos:" + i + ", day:" + NewAlarmActivity.a[i]);
         if (i == e) {
             if (b()) {
-                textView.setTextColor(this.a.getResources().getColor(g.bg_color_blue));
+                textView.setTextColor(this.a.getResources().getColor(R.color.bg_color_blue));
                 findViewById.setVisibility(0);
             }
         } else if (this.b == NewAlarmActivity.a[i]) {
-            textView.setTextColor(this.a.getResources().getColor(g.bg_color_blue));
+            textView.setTextColor(this.a.getResources().getColor(R.color.bg_color_blue));
             findViewById.setVisibility(0);
         }
         return view;

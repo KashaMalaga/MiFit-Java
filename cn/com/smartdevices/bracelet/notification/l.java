@@ -6,7 +6,7 @@ import android.support.v7.widget.N;
 import android.support.v7.widget.aj;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
-import com.xiaomi.hm.health.n;
+import com.xiaomi.hm.health.R;
 
 public class l extends N<k> {
     final /* synthetic */ NotificationSettingActivity a;
@@ -50,6 +50,6 @@ public class l extends N<k> {
     }
 
     public k c(ViewGroup viewGroup, int i) {
-        return new k(LayoutInflater.from(viewGroup.getContext()).inflate(n.view_notifi_picked_apps_item, viewGroup, false));
+        return new k(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.view_notifi_picked_apps_item, viewGroup, false));
     }
 }

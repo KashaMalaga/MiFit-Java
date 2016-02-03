@@ -3,8 +3,8 @@ package cn.com.smartdevices.bracelet.heartrate;
 import cn.com.smartdevices.bracelet.C0401a;
 import cn.com.smartdevices.bracelet.C0596r;
 import cn.com.smartdevices.bracelet.model.HeartRateItem;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.dataprocess.HeartRateInfo;
-import com.xiaomi.hm.health.r;
 import java.util.ArrayList;
 import java.util.Date;
 import kankan.wheel.widget.a;
@@ -30,7 +30,7 @@ class l implements Runnable {
             this.c.u.setVisibility(4);
             this.c.d.c(35200.0f);
             this.c.w.setVisibility(0);
-            this.c.v.setText(r.this_measure);
+            this.c.v.setText(R.string.this_measure);
             this.c.t.setText(String.valueOf(this.c.s));
             HeartRateItem heartRateItem = new HeartRateItem(this.c.s, 2, new Date().getTime() / 1000, this.c.b(this.c.s));
             if (this.c.i == null) {
@@ -51,7 +51,7 @@ class l implements Runnable {
         if (!this.b) {
             this.c.d.c(0.0f);
             this.c.x.setVisibility(0);
-            this.c.v.setText(r.pre_measure);
+            this.c.v.setText(R.string.pre_measure);
             this.c.m.postDelayed(new m(this), a.bX);
         }
     }

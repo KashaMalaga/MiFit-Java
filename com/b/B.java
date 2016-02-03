@@ -45,20 +45,20 @@ public final class B {
     }
 
     protected static B a(Context context) {
-        FileInputStream fileInputStream;
         Throwable th;
         B b = new B(context);
         b.h = 0;
         b.i = 0;
         b.j = ((System.currentTimeMillis() + 28800000) / d.h) * d.h;
-        FileInputStream fileInputStream2 = null;
+        FileInputStream fileInputStream = null;
+        FileInputStream fileInputStream2;
         try {
-            fileInputStream = new FileInputStream(new File(b(context) + File.separator + "data_carrier_status"));
+            fileInputStream2 = new FileInputStream(new File(b(context) + File.separator + "data_carrier_status"));
             try {
                 ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
                 byte[] bArr = new byte[32];
                 while (true) {
-                    int read = fileInputStream.read(bArr);
+                    int read = fileInputStream2.read(bArr);
                     if (read == -1) {
                         break;
                     }
@@ -82,39 +82,39 @@ public final class B {
                 }
                 byteArrayOutputStream.close();
                 try {
-                    fileInputStream.close();
+                    fileInputStream2.close();
                 } catch (Exception e) {
                 }
             } catch (Exception e2) {
-                if (fileInputStream != null) {
+                if (fileInputStream2 != null) {
                     try {
-                        fileInputStream.close();
+                        fileInputStream2.close();
                     } catch (Exception e3) {
                     }
                 }
                 return b;
             } catch (Throwable th2) {
                 Throwable th3 = th2;
-                fileInputStream2 = fileInputStream;
+                fileInputStream = fileInputStream2;
                 th = th3;
-                if (fileInputStream2 != null) {
+                if (fileInputStream != null) {
                     try {
-                        fileInputStream2.close();
+                        fileInputStream.close();
                     } catch (Exception e4) {
                     }
                 }
                 throw th;
             }
         } catch (Exception e5) {
-            fileInputStream = null;
-            if (fileInputStream != null) {
-                fileInputStream.close();
+            fileInputStream2 = null;
+            if (fileInputStream2 != null) {
+                fileInputStream2.close();
             }
             return b;
         } catch (Throwable th4) {
             th = th4;
-            if (fileInputStream2 != null) {
-                fileInputStream2.close();
+            if (fileInputStream != null) {
+                fileInputStream.close();
             }
             throw th;
         }

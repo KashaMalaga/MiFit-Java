@@ -33,6 +33,7 @@ public class I extends SSLSocketFactory {
     }
 
     public static KeyStore a(InputStream inputStream) {
+        InputStream bufferedInputStream;
         Certificate generateCertificate;
         CertificateException e;
         Object obj;
@@ -42,7 +43,6 @@ public class I extends SSLSocketFactory {
         Exception exception2;
         Throwable th;
         InputStream inputStream2 = null;
-        InputStream bufferedInputStream;
         try {
             CertificateFactory instance2 = CertificateFactory.getInstance("X.509");
             bufferedInputStream = new BufferedInputStream(inputStream);

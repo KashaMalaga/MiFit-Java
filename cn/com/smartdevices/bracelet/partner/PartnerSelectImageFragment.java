@@ -11,18 +11,17 @@ import cn.com.smartdevices.bracelet.C0401a;
 import cn.com.smartdevices.bracelet.C0596r;
 import cn.com.smartdevices.bracelet.a.a;
 import com.huami.android.view.c;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
+import com.xiaomi.hm.health.R;
 
 public class PartnerSelectImageFragment extends c {
     protected int inflateLayout() {
-        return n.fragment_web_select_image;
+        return R.layout.fragment_web_select_image;
     }
 
     public void onClick(View view) {
         Intent intent;
         switch (view.getId()) {
-            case l.select_image_camera_area /*2131297177*/:
+            case R.id.select_image_camera_area:
                 C0401a.a(getActivity(), C0401a.cf);
                 intent = new Intent("android.media.action.IMAGE_CAPTURE");
                 intent.putExtra("output", Uri.fromFile(a.a("lining_tmp.jpg")));
@@ -33,7 +32,7 @@ public class PartnerSelectImageFragment extends c {
                     C0596r.c("Camrea can't be started");
                     return;
                 }
-            case l.select_image_local_area /*2131297178*/:
+            case R.id.select_image_local_area:
                 C0401a.a(getActivity(), C0401a.cg);
                 intent = new Intent("android.intent.action.GET_CONTENT");
                 intent.addCategory("android.intent.category.OPENABLE");
@@ -56,8 +55,8 @@ public class PartnerSelectImageFragment extends c {
 
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         View onCreateView = super.onCreateView(layoutInflater, viewGroup, bundle);
-        onCreateView.findViewById(l.select_image_camera_area).setOnClickListener(this);
-        onCreateView.findViewById(l.select_image_local_area).setOnClickListener(this);
+        onCreateView.findViewById(R.id.select_image_camera_area).setOnClickListener(this);
+        onCreateView.findViewById(R.id.select_image_local_area).setOnClickListener(this);
         return onCreateView;
     }
 

@@ -399,8 +399,8 @@ public final class bl implements Closeable {
     }
 
     private void e() {
-        int i;
         Closeable bpVar = new bp(new FileInputStream(this.d), bq.a);
+        int i;
         try {
             String a = bpVar.a();
             String a2 = bpVar.a();
@@ -513,15 +513,16 @@ public final class bl implements Closeable {
             c cVar = (c) this.l.get(str);
             if (cVar != null) {
                 if (cVar.d) {
-                    InputStream[] inputStreamArr = new InputStream[this.i];
+                    r6 = new InputStream[this.i];
                     int i2 = 0;
                     while (i2 < this.i) {
                         try {
-                            inputStreamArr[i2] = new FileInputStream(cVar.a(i2));
+                            r6[i2] = new FileInputStream(cVar.a(i2));
                             i2++;
                         } catch (FileNotFoundException e) {
                             i = 0;
-                            while (i < this.i && inputStreamArr[i] != null) {
+                            while (i < this.i && r6[i] != null) {
+                                InputStream[] inputStreamArr;
                                 bq.a(inputStreamArr[i]);
                                 i++;
                             }

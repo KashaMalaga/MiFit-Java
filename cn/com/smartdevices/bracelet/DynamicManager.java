@@ -19,13 +19,12 @@ import cn.com.smartdevices.bracelet.model.ReportInfo;
 import cn.com.smartdevices.bracelet.ui.DailySleepReportActivity;
 import cn.com.smartdevices.bracelet.ui.DailySportReportActivity;
 import com.huami.android.zxing.l;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.dataprocess.ActiveItem;
 import com.xiaomi.hm.health.dataprocess.DaySportData;
 import com.xiaomi.hm.health.dataprocess.SleepInfo;
 import com.xiaomi.hm.health.dataprocess.SportDay;
 import com.xiaomi.hm.health.dataprocess.StepsInfo;
-import com.xiaomi.hm.health.k;
-import com.xiaomi.hm.health.r;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -46,11 +45,11 @@ public class DynamicManager {
         CharSequence string;
         NotificationManager notificationManager = (NotificationManager) context.getSystemService("notification");
         if (i >= i2) {
-            string = context.getString(r.daily_sport_report_notify, new Object[]{Integer.valueOf(i)});
+            string = context.getString(R.string.daily_sport_report_notify, new Object[]{Integer.valueOf(i)});
         } else {
-            string = context.getString(r.daily_sport_report_notify_hurry, new Object[]{Integer.valueOf(i2 - i)});
+            string = context.getString(R.string.daily_sport_report_notify_hurry, new Object[]{Integer.valueOf(i2 - i)});
         }
-        aT e = new aT(context).a((int) k.app_icon).a(string).b(context.getString(r.daily_sport_report_notify_content)).e(true);
+        aT e = new aT(context).a((int) R.drawable.app_icon).a(string).b(context.getString(R.string.daily_sport_report_notify_content)).e(true);
         e.a(new long[]{100, 500});
         e.a(PendingIntent.getActivity(context, 0, new Intent(context, DailySportReportActivity.class), 268435456));
         notificationManager.notify(l.a, e.c());
@@ -58,7 +57,7 @@ public class DynamicManager {
 
     private void a(Context context, String str) {
         NotificationManager notificationManager = (NotificationManager) context.getSystemService("notification");
-        aT e = new aT(context).a((int) k.app_icon).a((CharSequence) str).b(context.getString(r.notify_sleep_content)).e(true);
+        aT e = new aT(context).a((int) R.drawable.app_icon).a((CharSequence) str).b(context.getString(R.string.notify_sleep_content)).e(true);
         e.a(new long[]{100, 500});
         e.a(PendingIntent.getActivity(context, 0, new Intent(context, DailySleepReportActivity.class), 268435456));
         notificationManager.notify(16, e.c());

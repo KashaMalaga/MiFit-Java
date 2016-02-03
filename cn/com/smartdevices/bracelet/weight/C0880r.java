@@ -2,7 +2,7 @@ package cn.com.smartdevices.bracelet.weight;
 
 import cn.com.smartdevices.bracelet.C0596r;
 import cn.com.smartdevices.bracelet.Utils;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import kankan.wheel.widget.a;
@@ -18,9 +18,9 @@ class C0880r implements E {
         if (Utils.y(this.a.a)) {
             this.a.d.setText(i + "-" + this.a.m.format((long) i2) + "-" + this.a.m.format((long) i3) + " " + this.a.m.format((long) i4) + a.ci + this.a.m.format((long) i5));
         } else if (i4 >= 12) {
-            this.a.d.setText(i + "-" + this.a.m.format((long) i2) + "-" + this.a.m.format((long) i3) + " " + this.a.m.format((long) (i4 - 12)) + a.ci + this.a.m.format((long) i5) + " " + this.a.getString(r.pm));
+            this.a.d.setText(i + "-" + this.a.m.format((long) i2) + "-" + this.a.m.format((long) i3) + " " + this.a.m.format((long) (i4 - 12)) + a.ci + this.a.m.format((long) i5) + " " + this.a.getString(R.string.pm));
         } else {
-            this.a.d.setText(i + "-" + this.a.m.format((long) i2) + "-" + this.a.m.format((long) i3) + " " + this.a.m.format((long) i4) + a.ci + this.a.m.format((long) i5) + " " + this.a.getString(r.am));
+            this.a.d.setText(i + "-" + this.a.m.format((long) i2) + "-" + this.a.m.format((long) i3) + " " + this.a.m.format((long) i4) + a.ci + this.a.m.format((long) i5) + " " + this.a.getString(R.string.am));
         }
         String str = i + "-" + this.a.m.format((long) i2) + "-" + this.a.m.format((long) i3) + " " + this.a.m.format((long) i4) + a.ci + this.a.m.format((long) i5) + ":00";
         Date date = new Date();

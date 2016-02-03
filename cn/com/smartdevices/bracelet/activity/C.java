@@ -4,7 +4,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import cn.com.smartdevices.bracelet.Utils;
 import com.huami.android.view.b;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 
 class C implements OnClickListener {
     final /* synthetic */ WebActivity a;
@@ -19,6 +19,6 @@ class C implements OnClickListener {
             this.a.loadPages();
             return;
         }
-        b.a(this.a, (int) r.network_error, 1).show();
+        b.a(this.a, (int) R.string.network_error, 1).show();
     }
 }

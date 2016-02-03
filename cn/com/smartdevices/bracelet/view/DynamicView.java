@@ -41,11 +41,10 @@ import cn.com.smartdevices.bracelet.weight.family.WeightChooseUserActivity;
 import com.amap.api.maps.model.GroundOverlayOptions;
 import com.edmodo.cropper.cropwindow.CropOverlayView;
 import com.huami.android.view.b;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.bt.profile.Weight.e;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
 import java.util.List;
+import kankan.wheel.widget.l;
 
 public class DynamicView extends FrameLayout implements ViewFactory {
     private static final String a = "Chart.DynamicView";
@@ -149,10 +148,10 @@ public class DynamicView extends FrameLayout implements ViewFactory {
         this.N = null;
         this.O = null;
         this.P = null;
-        inflate(context, n.view_dynamic, this);
+        inflate(context, R.layout.view_dynamic, this);
         this.I = (int) Utils.b(106.0f, context);
-        this.b = findViewById(l.center_host);
-        this.c = (DynamicPieChartView) findViewById(l.active_step_chart);
+        this.b = findViewById(R.id.center_host);
+        this.c = (DynamicPieChartView) findViewById(R.id.active_step_chart);
         this.G = Keeper.readIsPlayEnterAnimation();
         if (this.G.booleanValue()) {
         }
@@ -177,7 +176,7 @@ public class DynamicView extends FrameLayout implements ViewFactory {
             return;
         }
         if (this.H.e) {
-            b.a(context, (int) r.weight_no_tips, 0).show();
+            b.a(context, (int) R.string.weight_no_tips, 0).show();
         } else if (!this.H.a.f()) {
         } else {
             if (this.H.c == 0) {
@@ -217,14 +216,14 @@ public class DynamicView extends FrameLayout implements ViewFactory {
     }
 
     private void a(View view) {
-        this.e = (TextView) view.findViewById(l.step);
-        this.f = (TextView) view.findViewById(l.step_distance);
-        this.g = (TextView) view.findViewById(l.step_calorie);
-        this.h = (TextView) view.findViewById(l.step_tip);
-        this.i = (TextView) view.findViewById(l.step_unit);
-        this.j = (TextView) view.findViewById(l.shoes_distance);
-        this.v = view.findViewById(l.shoes_distance_view);
-        this.E = (ImageView) view.findViewById(l.lining_logo_top);
+        this.e = (TextView) view.findViewById(R.id.step);
+        this.f = (TextView) view.findViewById(R.id.step_distance);
+        this.g = (TextView) view.findViewById(R.id.step_calorie);
+        this.h = (TextView) view.findViewById(R.id.step_tip);
+        this.i = (TextView) view.findViewById(R.id.step_unit);
+        this.j = (TextView) view.findViewById(R.id.shoes_distance);
+        this.v = view.findViewById(R.id.shoes_distance_view);
+        this.E = (ImageView) view.findViewById(R.id.lining_logo_top);
         if (DeviceSource.hasBindBracelet() || !DeviceSource.hasBindShoesDevice()) {
             this.E.setVisibility(4);
         } else {
@@ -245,12 +244,12 @@ public class DynamicView extends FrameLayout implements ViewFactory {
     }
 
     private void b(View view) {
-        this.k = (TextView) view.findViewById(l.sleep_hour);
-        this.l = (TextView) view.findViewById(l.sleep_hour_unit);
-        this.m = (TextView) view.findViewById(l.sleep_min);
-        this.n = (TextView) view.findViewById(l.sleep_min_unit);
-        this.o = (TextView) view.findViewById(l.sleep_deep_time);
-        this.p = (TextView) view.findViewById(l.sleep_tip);
+        this.k = (TextView) view.findViewById(R.id.sleep_hour);
+        this.l = (TextView) view.findViewById(R.id.sleep_hour_unit);
+        this.m = (TextView) view.findViewById(R.id.sleep_min);
+        this.n = (TextView) view.findViewById(R.id.sleep_min_unit);
+        this.o = (TextView) view.findViewById(R.id.sleep_deep_time);
+        this.p = (TextView) view.findViewById(R.id.sleep_tip);
         if (t.a()) {
             this.k.setTextSize(32.0f);
             this.l.setTextSize(24.5f);
@@ -268,10 +267,10 @@ public class DynamicView extends FrameLayout implements ViewFactory {
     }
 
     private void c(View view) {
-        this.q = (TextView) view.findViewById(l.weight);
-        this.r = (TextView) view.findViewById(l.weight_unit);
-        this.s = (TextView) view.findViewById(l.weight_bmi);
-        this.t = (TextView) view.findViewById(l.weight_tip);
+        this.q = (TextView) view.findViewById(R.id.weight);
+        this.r = (TextView) view.findViewById(R.id.weight_unit);
+        this.s = (TextView) view.findViewById(R.id.weight_bmi);
+        this.t = (TextView) view.findViewById(R.id.weight_tip);
         if (t.a()) {
             this.q.setTextSize(43.0f);
             MarginLayoutParams marginLayoutParams = (MarginLayoutParams) this.t.getLayoutParams();
@@ -480,14 +479,14 @@ public class DynamicView extends FrameLayout implements ViewFactory {
     public void a(boolean z) {
         if (this.F == PersonInfo.INCOMING_CALL_DISABLE_BIT) {
             if (this.u == null) {
-                this.u = ((ViewStub) this.d.findViewById(l.info_weight_low_battery)).inflate();
+                this.u = ((ViewStub) this.d.findViewById(R.id.info_weight_low_battery)).inflate();
             }
             if (z) {
-                this.d.findViewById(l.weight_container).setVisibility(4);
+                this.d.findViewById(R.id.weight_container).setVisibility(4);
                 this.u.setVisibility(0);
                 return;
             }
-            this.d.findViewById(l.weight_container).setVisibility(0);
+            this.d.findViewById(R.id.weight_container).setVisibility(0);
             this.u.setVisibility(8);
         }
     }
@@ -548,7 +547,7 @@ public class DynamicView extends FrameLayout implements ViewFactory {
         }
         if (this.F == 1) {
             this.e.setText(a.b(this.z));
-            this.i.setText(r.unit_step);
+            this.i.setText(R.string.unit_step);
         } else if (this.F == PersonInfo.INCOMING_CALL_DISABLE_BIT) {
             this.q.setText(String.valueOf(aA.c(this.x)));
         }
@@ -556,7 +555,7 @@ public class DynamicView extends FrameLayout implements ViewFactory {
     }
 
     public void d(int i) {
-        this.g.setText(String.valueOf(i) + getContext().getString(r.unit_calorie));
+        this.g.setText(String.valueOf(i) + getContext().getString(R.string.unit_calorie));
     }
 
     public void d(String str) {
@@ -566,30 +565,30 @@ public class DynamicView extends FrameLayout implements ViewFactory {
     public void e(int i) {
         String[] d = f.d(i);
         this.k.setText(d[0]);
-        this.l.setText(r.unit_hour);
+        this.l.setText(R.string.unit_hour);
         this.m.setText(d[1]);
-        this.n.setText(r.unit_min_short);
+        this.n.setText(R.string.unit_min_short);
     }
 
     public void f(int i) {
-        this.o.setText(getContext().getString(r.dynamic_sleep_deep_title, new Object[]{f.b(getContext(), i)}));
+        this.o.setText(getContext().getString(R.string.dynamic_sleep_deep_title, new Object[]{f.b(getContext(), i)}));
     }
 
     public void g(int i) {
         this.F = i;
         switch (i) {
-            case kankan.wheel.widget.l.a /*1*/:
-                this.d = ((ViewStub) findViewById(l.info_step)).inflate();
+            case l.a /*1*/:
+                this.d = ((ViewStub) findViewById(R.id.info_step)).inflate();
                 this.d.setOnClickListener(new C0829c(this));
                 a(this.d);
                 break;
             case kankan.wheel.widget.a.bp /*16*/:
-                this.d = ((ViewStub) findViewById(l.info_sleep)).inflate();
+                this.d = ((ViewStub) findViewById(R.id.info_sleep)).inflate();
                 this.d.setOnClickListener(new C0835i(this));
                 b(this.d);
                 break;
             case PersonInfo.INCOMING_CALL_DISABLE_BIT /*256*/:
-                this.d = ((ViewStub) findViewById(l.info_weight)).inflate();
+                this.d = ((ViewStub) findViewById(R.id.info_weight)).inflate();
                 this.d.setOnClickListener(new C0836j(this));
                 c(this.d);
                 break;
@@ -598,7 +597,7 @@ public class DynamicView extends FrameLayout implements ViewFactory {
     }
 
     public View makeView() {
-        return inflate(getContext(), n.view_dynamic_textswitcher, null);
+        return inflate(getContext(), R.layout.view_dynamic_textswitcher, null);
     }
 
     protected void onAttachedToWindow() {

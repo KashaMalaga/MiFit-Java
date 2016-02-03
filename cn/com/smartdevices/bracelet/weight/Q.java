@@ -23,9 +23,8 @@ import cn.com.smartdevices.bracelet.C0401a;
 import cn.com.smartdevices.bracelet.C0596r;
 import cn.com.smartdevices.bracelet.Utils;
 import cn.com.smartdevices.bracelet.chart.util.q;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.bt.profile.Weight.e;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -138,12 +137,12 @@ public class Q extends DialogFragment {
 
     @r
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        View inflate = layoutInflater.inflate(n.fragment_userslist, viewGroup, false);
-        this.a = (ListView) inflate.findViewById(l.users_list);
-        this.b = (TextView) inflate.findViewById(l.list_title);
-        this.h = (LinearLayout) inflate.findViewById(l.dlg_empty_area_btn);
-        this.i = (LinearLayout) inflate.findViewById(l.content);
-        this.j = (RelativeLayout) inflate.findViewById(l.main_content);
+        View inflate = layoutInflater.inflate(R.layout.fragment_userslist, viewGroup, false);
+        this.a = (ListView) inflate.findViewById(R.id.users_list);
+        this.b = (TextView) inflate.findViewById(R.id.list_title);
+        this.h = (LinearLayout) inflate.findViewById(R.id.dlg_empty_area_btn);
+        this.i = (LinearLayout) inflate.findViewById(R.id.content);
+        this.j = (RelativeLayout) inflate.findViewById(R.id.main_content);
         this.h.setOnClickListener(new R(this));
         this.d.clear();
         Bundle arguments = getArguments();
@@ -157,9 +156,9 @@ public class Q extends DialogFragment {
         }
         C0596r.e(e, "mUserInfos size is " + this.d.size() + " " + toString());
         this.d = J.a().d();
-        this.b.setText(getString(com.xiaomi.hm.health.r.weight_match_no_suitable_user));
+        this.b.setText(getString(R.string.weight_match_no_suitable_user));
         if (this.c == null) {
-            this.b.setText(getString(com.xiaomi.hm.health.r.please_choose_user));
+            this.b.setText(getString(R.string.please_choose_user));
             this.d.clear();
             this.d = J.a().d();
         }

@@ -15,12 +15,12 @@ public class h {
     private static final String a = "UTF-8";
 
     public static String a(byte[] bArr) {
-        GZIPInputStream gZIPInputStream;
         Throwable e;
         Throwable th;
         String str = null;
         if (!(bArr == null || bArr.length == 0)) {
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+            GZIPInputStream gZIPInputStream;
             try {
                 gZIPInputStream = new GZIPInputStream(new ByteArrayInputStream(bArr));
                 try {
@@ -113,12 +113,12 @@ public class h {
     }
 
     public static String a(byte[] bArr, String str) {
+        GZIPInputStream gZIPInputStream;
         IOException e;
         Throwable th;
         String str2 = null;
         if (!(bArr == null || bArr.length == 0)) {
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-            GZIPInputStream gZIPInputStream;
             try {
                 gZIPInputStream = new GZIPInputStream(new ByteArrayInputStream(bArr));
                 try {

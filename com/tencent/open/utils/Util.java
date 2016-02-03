@@ -230,7 +230,7 @@ public class Util {
         bundle.putString("via", str4);
         bundle.putString(v.u, str5);
         bundle.putString(C0483q.g, str6);
-        bundle.putString(SocialConstants.PARAM_TYPE, str7);
+        bundle.putString(com.xiaomi.channel.relationservice.data.a.h, str7);
         bundle.putString("login_status", str8);
         bundle.putString("need_user_auth", str9);
         bundle.putString("to_uin", str10);
@@ -409,7 +409,7 @@ public class Util {
             return a.f;
         }
         try {
-            LocationManager locationManager = (LocationManager) context.getSystemService(LocationManagerProxy.KEY_LOCATION_CHANGED);
+            LocationManager locationManager = (LocationManager) context.getSystemService(com.xiaomi.channel.relationservice.data.a.l);
             Criteria criteria = new Criteria();
             criteria.setCostAllowed(false);
             criteria.setAccuracy(2);

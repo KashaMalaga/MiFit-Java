@@ -13,10 +13,10 @@ import cn.com.smartdevices.bracelet.model.ShareData;
 import cn.com.smartdevices.bracelet.model.ShareData.TimeType;
 import cn.com.smartdevices.bracelet.weight.WeightInfo;
 import com.xiaomi.e.a;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.bt.b.c;
 import com.xiaomi.hm.health.dataprocess.DaySportData.Summary;
 import com.xiaomi.hm.health.dataprocess.SportDay;
-import com.xiaomi.hm.health.r;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -32,12 +32,12 @@ class fb extends eZ {
     public fb(StatisticFragment statisticFragment) {
         this.v = statisticFragment;
         super(statisticFragment);
-        this.y = statisticFragment.getString(r.date_this_month);
-        this.z = statisticFragment.getString(r.date_last_month);
-        this.A = statisticFragment.getString(r.date_month);
-        this.B = statisticFragment.getString(r.date_year_month);
-        this.w = statisticFragment.getString(r.date_month_day_short);
-        this.x = statisticFragment.getString(r.date_from_to_short);
+        this.y = statisticFragment.getString(R.string.date_this_month);
+        this.z = statisticFragment.getString(R.string.date_last_month);
+        this.A = statisticFragment.getString(R.string.date_month);
+        this.B = statisticFragment.getString(R.string.date_year_month);
+        this.w = statisticFragment.getString(R.string.date_month_day_short);
+        this.x = statisticFragment.getString(R.string.date_from_to_short);
     }
 
     protected L a(int i) {
@@ -97,18 +97,18 @@ class fb extends eZ {
             str = this.y;
         } else {
             simpleDateFormat.applyPattern(this.A);
-            str = this.v.getString(r.in) + simpleDateFormat.format(new Date(sportDay.getCalendar().getTimeInMillis()));
+            str = this.v.getString(R.string.in) + simpleDateFormat.format(new Date(sportDay.getCalendar().getTimeInMillis()));
         }
         if (i == 16) {
             a(this.v.s, shareData, sportDay);
-            shareData.title = str + ", " + this.v.getString(r.share_sleep_title_average);
+            shareData.title = str + ", " + this.v.getString(R.string.share_sleep_title_average);
         } else if (i == 1) {
             shareData.setType(6);
             a = Utils.a(this.v.getActivity(), this.a, this.b, this.c, Utils.d(this.v.az), this.v.aA, this.g);
-            shareData.title = str + this.v.getString(r.share_step_walk);
+            shareData.title = str + this.v.getString(R.string.share_step_walk);
             shareData.content = a.f + this.a;
             shareData.description = a;
-            shareData.contentUnit = this.v.getString(r.unit_step);
+            shareData.contentUnit = this.v.getString(R.string.unit_step);
             Bundle bundle = new Bundle();
             bundle.putInt(f.ax, TimeType.MONTH.ordinal());
             bundle.putInt(l.c, c.MILI.b());

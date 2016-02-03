@@ -18,11 +18,9 @@ import cn.com.smartdevices.bracelet.datasource.DeviceSource;
 import cn.com.smartdevices.bracelet.eventbus.shoes.EventDeviceBoundState;
 import cn.com.smartdevices.bracelet.j.l;
 import com.tencent.connect.common.Constants;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.bt.bleservice.a;
 import com.xiaomi.hm.health.bt.model.HwBatteryStatus;
-import com.xiaomi.hm.health.k;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
 import de.greenrobot.event.EventBus;
 
 public class UnBindActivity extends SystemBarTintActivity implements OnClickListener {
@@ -30,7 +28,7 @@ public class UnBindActivity extends SystemBarTintActivity implements OnClickList
 
     private void a(String str) {
         int i;
-        Utils.a((Activity) this, (int) r.unbinding);
+        Utils.a((Activity) this, (int) R.string.unbinding);
         C0596r.d("switch", "unbind device " + str);
         if (str.equals(Utils.c)) {
             i = 1;
@@ -59,11 +57,11 @@ public class UnBindActivity extends SystemBarTintActivity implements OnClickList
 
     public void onClick(View view) {
         switch (view.getId()) {
-            case com.xiaomi.hm.health.l.left_button /*2131296944*/:
+            case R.id.left_button:
                 a(this.a);
                 C0401a.a((Context) this, C0401a.dQ, this.a, C0401a.dC);
                 return;
-            case com.xiaomi.hm.health.l.right_button /*2131296946*/:
+            case R.id.right_button:
                 onHomeBackPressed();
                 return;
             default:
@@ -73,22 +71,22 @@ public class UnBindActivity extends SystemBarTintActivity implements OnClickList
 
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView((int) n.fragment_mili_unbind);
+        setContentView((int) R.layout.fragment_mili_unbind);
         String stringExtra = getIntent().getStringExtra(Constants.VIA_RESULT_SUCCESS);
         if (stringExtra != null) {
             this.a = stringExtra;
         }
-        findViewById(com.xiaomi.hm.health.l.left_button).setOnClickListener(this);
-        findViewById(com.xiaomi.hm.health.l.right_button).setOnClickListener(this);
-        TextView textView = (TextView) findViewById(com.xiaomi.hm.health.l.mili_unbind_info_1);
+        findViewById(R.id.left_button).setOnClickListener(this);
+        findViewById(R.id.right_button).setOnClickListener(this);
+        TextView textView = (TextView) findViewById(R.id.mili_unbind_info_1);
         if (this.a.equals(Utils.c)) {
             textView.setVisibility(4);
-            ((TextView) findViewById(com.xiaomi.hm.health.l.mili_unbind_title_tv)).setText(r.weight_unbind_question);
-            ((TextView) findViewById(com.xiaomi.hm.health.l.mili_unbind_info)).setText(r.mili_weight_unbind_info);
-            textView = (TextView) findViewById(com.xiaomi.hm.health.l.mili_unbind_info_1);
+            ((TextView) findViewById(R.id.mili_unbind_title_tv)).setText(R.string.weight_unbind_question);
+            ((TextView) findViewById(R.id.mili_unbind_info)).setText(R.string.mili_weight_unbind_info);
+            textView = (TextView) findViewById(R.id.mili_unbind_info_1);
             textView.setVisibility(0);
-            textView.setText(r.mili_weight_unbind_info_1);
-            ((ImageView) findViewById(com.xiaomi.hm.health.l.not_binded_iv)).setImageResource(k.weight_not_binded);
+            textView.setText(R.string.mili_weight_unbind_info_1);
+            ((ImageView) findViewById(R.id.not_binded_iv)).setImageResource(R.drawable.weight_not_binded);
         } else if (!C0667t.c(this)) {
             textView.setVisibility(4);
         }

@@ -11,7 +11,6 @@ import cn.com.smartdevices.bracelet.model.LoginData;
 import cn.com.smartdevices.bracelet.model.PersonInfo;
 import cn.com.smartdevices.bracelet.push.a.b;
 import cn.com.smartdevices.bracelet.push.a.c;
-import com.tencent.open.SocialConstants;
 import com.xiaomi.channel.a.b.a;
 import com.xiaomi.mipush.sdk.f;
 import de.greenrobot.event.EventBus;
@@ -96,7 +95,7 @@ public class h implements a {
     public a a(Context context, String str) {
         try {
             JSONObject jSONObject = new JSONObject(str);
-            String string = jSONObject.getString(SocialConstants.PARAM_TYPE);
+            String string = jSONObject.getString(com.xiaomi.channel.relationservice.data.a.h);
             long optLong = jSONObject.optLong(kankan.wheel.widget.a.n);
             long optLong2 = jSONObject.optLong(cn.com.smartdevices.bracelet.push.a.a.b);
             LoginData f = cn.com.smartdevices.bracelet.e.a.f(context);

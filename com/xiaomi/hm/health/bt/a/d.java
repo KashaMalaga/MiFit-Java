@@ -1,13 +1,14 @@
 package com.xiaomi.hm.health.bt.a;
 
 import android.os.Handler;
+import android.os.Looper;
 import android.os.Message;
 import cn.com.smartdevices.bracelet.C0596r;
 
 public class d {
     private static final int a = 0;
     private final int b = 1;
-    Handler c = new C1117e(this);
+    Handler c = new C1117e(this, Looper.getMainLooper());
     private final int d = 2;
     private final int e = 3;
     private final String f = "BleCallBack";

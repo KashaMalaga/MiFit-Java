@@ -7,12 +7,12 @@ import android.database.sqlite.SQLiteDatabase;
 import android.text.TextUtils;
 import cn.com.smartdevices.bracelet.C0596r;
 import cn.com.smartdevices.bracelet.shoes.c.g;
-import cn.com.smartdevices.bracelet.shoes.model.a;
 import cn.com.smartdevices.bracelet.shoes.model.e;
 import cn.com.smartdevices.bracelet.shoes.model.j;
 import cn.com.smartdevices.bracelet.shoes.model.k;
 import com.huami.android.zxing.CaptureActivity;
 import com.tencent.open.SocialConstants;
+import com.xiaomi.channel.relationservice.data.a;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,7 +25,7 @@ class v {
     private static ContentValues a(j jVar) {
         ContentValues contentValues = new ContentValues();
         contentValues.put(CaptureActivity.n, jVar.e);
-        contentValues.put(SocialConstants.PARAM_TYPE, Integer.valueOf(jVar.f));
+        contentValues.put(a.h, Integer.valueOf(jVar.f));
         contentValues.put(j.g, Long.valueOf(jVar.o));
         contentValues.put(SocialConstants.PARAM_SUMMARY, jVar.l());
         if (!TextUtils.isEmpty(jVar.m)) {
@@ -46,7 +46,7 @@ class v {
             C0596r.e(a, "No partners");
             return null;
         }
-        a a = q.a(context, k.SYNC_STATE_DEFAULT);
+        cn.com.smartdevices.bracelet.shoes.model.a a = q.a(context, k.SYNC_STATE_DEFAULT);
         if (a == null) {
             C0596r.d(a, "getMergedShoesPartners no boundShoes");
             return c;
@@ -120,12 +120,12 @@ class v {
     }
 
     public static List<j> b(Context context) {
+        Cursor query;
         Exception e;
         Throwable th;
         if (context == null) {
             throw new IllegalArgumentException();
         }
-        Cursor query;
         try {
             List<j> arrayList;
             query = s.a(context).a(false).query(i.a, null, null, null, null, null, null);
@@ -137,7 +137,7 @@ class v {
                             Object string = query.getString(query.getColumnIndex(CaptureActivity.n));
                             if (!TextUtils.isEmpty(string)) {
                                 long j = (long) query.getInt(query.getColumnIndex(j.g));
-                                j jVar = new j(string, query.getInt(query.getColumnIndex(SocialConstants.PARAM_TYPE)));
+                                j jVar = new j(string, query.getInt(query.getColumnIndex(a.h)));
                                 jVar.a(j);
                                 arrayList.add(jVar);
                             }
@@ -219,12 +219,12 @@ class v {
     }
 
     private static List<e> c(Context context) {
+        Cursor query;
         Exception e;
         Throwable th;
         if (context == null) {
             throw new IllegalArgumentException();
         }
-        Cursor query;
         try {
             List<e> arrayList;
             query = s.a(context).a(false).query(i.a, null, null, null, null, null, null);
@@ -237,7 +237,7 @@ class v {
                         str = com.xiaomi.e.a.f;
                         while (query.moveToNext()) {
                             str = query.getString(query.getColumnIndex(CaptureActivity.n));
-                            int i = query.getInt(query.getColumnIndex(SocialConstants.PARAM_TYPE));
+                            int i = query.getInt(query.getColumnIndex(a.h));
                             String string = query.getString(query.getColumnIndex(SocialConstants.PARAM_SUMMARY));
                             String string2 = query.getString(query.getColumnIndex(j.e));
                             String string3 = query.getString(query.getColumnIndex(j.f));

@@ -1,10 +1,10 @@
 package com.xiaomi.hm.health;
 
 public final class t {
-    public static final int[] CircleImageView = new int[]{g.border_width, g.border_color};
+    public static final int[] CircleImageView = new int[]{R.attr.border_width, R.attr.border_color};
     public static final int CircleImageView_border_color = 1;
     public static final int CircleImageView_border_width = 0;
-    public static final int[] CirclePageIndicator = new int[]{16842948, 16842964, g.centered, g.strokeWidth, g.fillColor, g.pageColor, g.radius, g.snap, g.strokeColor, g.gap};
+    public static final int[] CirclePageIndicator = new int[]{16842948, 16842964, R.attr.centered, R.attr.strokeWidth, R.attr.fillColor, R.attr.pageColor, R.attr.radius, R.attr.snap, R.attr.strokeColor, R.attr.gap};
     public static final int CirclePageIndicator_android_background = 1;
     public static final int CirclePageIndicator_android_orientation = 0;
     public static final int CirclePageIndicator_centered = 2;
@@ -15,13 +15,13 @@ public final class t {
     public static final int CirclePageIndicator_snap = 7;
     public static final int CirclePageIndicator_strokeColor = 8;
     public static final int CirclePageIndicator_strokeWidth = 3;
-    public static final int[] CropImageView = new int[]{g.guidelines, g.fixAspectRatio, g.aspectRatioX, g.aspectRatioY, g.imageResource};
+    public static final int[] CropImageView = new int[]{R.attr.guidelines, R.attr.fixAspectRatio, R.attr.aspectRatioX, R.attr.aspectRatioY, R.attr.imageResource};
     public static final int CropImageView_aspectRatioX = 2;
     public static final int CropImageView_aspectRatioY = 3;
     public static final int CropImageView_fixAspectRatio = 1;
     public static final int CropImageView_guidelines = 0;
     public static final int CropImageView_imageResource = 4;
-    public static final int[] CustomRoundProgressBar = new int[]{g.RoundProgressBarBackgroundColor, g.RoundProgressBarStrockColor, g.RoundProgressBarProgress, g.RoundProgressBarTotal, g.RoundProgressBarStrockWidth, g.RoundProgressBarRadius, g.RoundProgressBarProgressWidth, g.RoundProgressBarProgressColor, g.RoundProgressBarText, g.RoundProgressBarTextSize, g.RoundProgressBarTextColor, g.RoundProgressBarProgressBgColor, g.RoundProgressBarProgressBgWidth};
+    public static final int[] CustomRoundProgressBar = new int[]{R.attr.RoundProgressBarBackgroundColor, R.attr.RoundProgressBarStrockColor, R.attr.RoundProgressBarProgress, R.attr.RoundProgressBarTotal, R.attr.RoundProgressBarStrockWidth, R.attr.RoundProgressBarRadius, R.attr.RoundProgressBarProgressWidth, R.attr.RoundProgressBarProgressColor, R.attr.RoundProgressBarText, R.attr.RoundProgressBarTextSize, R.attr.RoundProgressBarTextColor, R.attr.RoundProgressBarProgressBgColor, R.attr.RoundProgressBarProgressBgWidth};
     public static final int CustomRoundProgressBar_RoundProgressBarBackgroundColor = 0;
     public static final int CustomRoundProgressBar_RoundProgressBarProgress = 2;
     public static final int CustomRoundProgressBar_RoundProgressBarProgressBgColor = 11;
@@ -37,19 +37,19 @@ public final class t {
     public static final int CustomRoundProgressBar_RoundProgressBarTotal = 3;
     public static final int[] CustomViewPager;
     public static final int CustomViewPager_swipeable = 0;
-    public static final int[] DimPanelFragmentBottomBar = new int[]{g.left_text, g.right_text, g.left_text_color, g.right_text_color, g.show_style};
+    public static final int[] DimPanelFragmentBottomBar = new int[]{R.attr.left_text, R.attr.right_text, R.attr.left_text_color, R.attr.right_text_color, R.attr.show_style};
     public static final int DimPanelFragmentBottomBar_left_text = 0;
     public static final int DimPanelFragmentBottomBar_left_text_color = 2;
     public static final int DimPanelFragmentBottomBar_right_text = 1;
     public static final int DimPanelFragmentBottomBar_right_text_color = 3;
     public static final int DimPanelFragmentBottomBar_show_style = 4;
-    public static final int[] JazzyListView = new int[]{g.effect, g.only_animate_new_items, g.only_animate_fling, g.simulate_grid_with_list, g.max_velocity};
+    public static final int[] JazzyListView = new int[]{R.attr.effect, R.attr.only_animate_new_items, R.attr.only_animate_fling, R.attr.simulate_grid_with_list, R.attr.max_velocity};
     public static final int JazzyListView_effect = 0;
     public static final int JazzyListView_max_velocity = 4;
     public static final int JazzyListView_only_animate_fling = 2;
     public static final int JazzyListView_only_animate_new_items = 1;
     public static final int JazzyListView_simulate_grid_with_list = 3;
-    public static final int[] LabCircleView = new int[]{g.labCircleSrc, g.labCircleBackground, g.labCircleText, g.labCircleWidth, g.labCircleHeight, g.labCircleStroke, g.labCircleStrokeWidth};
+    public static final int[] LabCircleView = new int[]{R.attr.labCircleSrc, R.attr.labCircleBackground, R.attr.labCircleText, R.attr.labCircleWidth, R.attr.labCircleHeight, R.attr.labCircleStroke, R.attr.labCircleStrokeWidth};
     public static final int LabCircleView_labCircleBackground = 1;
     public static final int LabCircleView_labCircleHeight = 4;
     public static final int LabCircleView_labCircleSrc = 0;
@@ -57,10 +57,10 @@ public final class t {
     public static final int LabCircleView_labCircleStrokeWidth = 6;
     public static final int LabCircleView_labCircleText = 2;
     public static final int LabCircleView_labCircleWidth = 3;
-    public static final int[] LinePieChartView = new int[]{g.line_mode, g.center_img};
+    public static final int[] LinePieChartView = new int[]{R.attr.line_mode, R.attr.center_img};
     public static final int LinePieChartView_center_img = 1;
     public static final int LinePieChartView_line_mode = 0;
-    public static final int[] PagerSlidingTabStrip = new int[]{g.pstsIndicatorColor, g.pstsUnderlineColor, g.pstsDividerColor, g.pstsIndicatorHeight, g.pstsUnderlineHeight, g.pstsDividerPadding, g.pstsTabPaddingLeftRight, g.pstsScrollOffset, g.pstsTabBackground, g.pstsShouldExpand, g.pstsTextAllCaps};
+    public static final int[] PagerSlidingTabStrip = new int[]{R.attr.pstsIndicatorColor, R.attr.pstsUnderlineColor, R.attr.pstsDividerColor, R.attr.pstsIndicatorHeight, R.attr.pstsUnderlineHeight, R.attr.pstsDividerPadding, R.attr.pstsTabPaddingLeftRight, R.attr.pstsScrollOffset, R.attr.pstsTabBackground, R.attr.pstsShouldExpand, R.attr.pstsTextAllCaps};
     public static final int PagerSlidingTabStrip_pstsDividerColor = 2;
     public static final int PagerSlidingTabStrip_pstsDividerPadding = 5;
     public static final int PagerSlidingTabStrip_pstsIndicatorColor = 0;
@@ -72,12 +72,12 @@ public final class t {
     public static final int PagerSlidingTabStrip_pstsTextAllCaps = 10;
     public static final int PagerSlidingTabStrip_pstsUnderlineColor = 1;
     public static final int PagerSlidingTabStrip_pstsUnderlineHeight = 4;
-    public static final int[] ParallaxScroll = new int[]{g.parallax_factor, g.inner_parallax_factor, g.parallax_views_num, g.circular_parallax};
+    public static final int[] ParallaxScroll = new int[]{R.attr.parallax_factor, R.attr.inner_parallax_factor, R.attr.parallax_views_num, R.attr.circular_parallax};
     public static final int ParallaxScroll_circular_parallax = 3;
     public static final int ParallaxScroll_inner_parallax_factor = 1;
     public static final int ParallaxScroll_parallax_factor = 0;
     public static final int ParallaxScroll_parallax_views_num = 2;
-    public static final int[] PullToRefresh = new int[]{g.ptrRefreshableViewBackground, g.ptrHeaderBackground, g.ptrHeaderTextColor, g.ptrHeaderSubTextColor, g.ptrMode, g.ptrShowIndicator, g.ptrDrawable, g.ptrDrawableStart, g.ptrDrawableEnd, g.ptrOverScroll, g.ptrHeaderTextAppearance, g.ptrSubHeaderTextAppearance, g.ptrAnimationStyle, g.ptrScrollingWhileRefreshingEnabled, g.ptrListViewExtrasEnabled, g.ptrRotateDrawableWhilePulling, g.ptrAdapterViewBackground, g.ptrDrawableTop, g.ptrDrawableBottom};
+    public static final int[] PullToRefresh = new int[]{R.attr.ptrRefreshableViewBackground, R.attr.ptrHeaderBackground, R.attr.ptrHeaderTextColor, R.attr.ptrHeaderSubTextColor, R.attr.ptrMode, R.attr.ptrShowIndicator, R.attr.ptrDrawable, R.attr.ptrDrawableStart, R.attr.ptrDrawableEnd, R.attr.ptrOverScroll, R.attr.ptrHeaderTextAppearance, R.attr.ptrSubHeaderTextAppearance, R.attr.ptrAnimationStyle, R.attr.ptrScrollingWhileRefreshingEnabled, R.attr.ptrListViewExtrasEnabled, R.attr.ptrRotateDrawableWhilePulling, R.attr.ptrAdapterViewBackground, R.attr.ptrDrawableTop, R.attr.ptrDrawableBottom};
     public static final int PullToRefresh_ptrAdapterViewBackground = 16;
     public static final int PullToRefresh_ptrAnimationStyle = 12;
     public static final int PullToRefresh_ptrDrawable = 6;
@@ -97,7 +97,7 @@ public final class t {
     public static final int PullToRefresh_ptrScrollingWhileRefreshingEnabled = 13;
     public static final int PullToRefresh_ptrShowIndicator = 5;
     public static final int PullToRefresh_ptrSubHeaderTextAppearance = 11;
-    public static final int[] RippleBackground = new int[]{g.rb_enable, g.rb_color, g.rb_strokeWidth, g.rb_cx, g.rb_cy, g.rb_radius, g.rb_duration, g.rb_rippleAmount, g.rb_scale, g.rb_type};
+    public static final int[] RippleBackground = new int[]{R.attr.rb_enable, R.attr.rb_color, R.attr.rb_strokeWidth, R.attr.rb_cx, R.attr.rb_cy, R.attr.rb_radius, R.attr.rb_duration, R.attr.rb_rippleAmount, R.attr.rb_scale, R.attr.rb_type};
     public static final int RippleBackground_rb_color = 1;
     public static final int RippleBackground_rb_cx = 3;
     public static final int RippleBackground_rb_cy = 4;
@@ -108,7 +108,7 @@ public final class t {
     public static final int RippleBackground_rb_scale = 8;
     public static final int RippleBackground_rb_strokeWidth = 2;
     public static final int RippleBackground_rb_type = 9;
-    public static final int[] RoundProgressBar = new int[]{g.roundColor, g.roundProgressColor, g.roundWidth, g.textColor, g.textSize, g.max, g.textIsDisplayable, g.style, g.centerImg};
+    public static final int[] RoundProgressBar = new int[]{R.attr.roundColor, R.attr.roundProgressColor, R.attr.roundWidth, R.attr.textColor, R.attr.textSize, R.attr.max, R.attr.textIsDisplayable, R.attr.style, R.attr.centerImg};
     public static final int RoundProgressBar_centerImg = 8;
     public static final int RoundProgressBar_max = 5;
     public static final int RoundProgressBar_roundColor = 0;
@@ -118,7 +118,7 @@ public final class t {
     public static final int RoundProgressBar_textColor = 3;
     public static final int RoundProgressBar_textIsDisplayable = 6;
     public static final int RoundProgressBar_textSize = 4;
-    public static final int[] ScrollSlidingUpPanelLayout = new int[]{g.panelHeights, g.shadowHeights, g.paralaxOffsets, g.fadeColors, g.flingVelocitys, g.dragViews, g.overlays, g.touchEvents, g.scrollViews};
+    public static final int[] ScrollSlidingUpPanelLayout = new int[]{R.attr.panelHeights, R.attr.shadowHeights, R.attr.paralaxOffsets, R.attr.fadeColors, R.attr.flingVelocitys, R.attr.dragViews, R.attr.overlays, R.attr.touchEvents, R.attr.scrollViews};
     public static final int ScrollSlidingUpPanelLayout_dragViews = 5;
     public static final int ScrollSlidingUpPanelLayout_fadeColors = 3;
     public static final int ScrollSlidingUpPanelLayout_flingVelocitys = 4;
@@ -130,7 +130,7 @@ public final class t {
     public static final int ScrollSlidingUpPanelLayout_touchEvents = 7;
     public static final int[] SlidableTwoPanelLayout;
     public static final int SlidableTwoPanelLayout_slidepanel_height = 0;
-    public static final int[] SlideMenu = new int[]{g.primaryShadowWidth, g.secondaryShadowWidth, g.primaryShadowDrawable, g.secondaryShadowDrawable, g.edgeSlide, g.edgeSlideWidth, g.slideDirection, g.interpolator};
+    public static final int[] SlideMenu = new int[]{R.attr.primaryShadowWidth, R.attr.secondaryShadowWidth, R.attr.primaryShadowDrawable, R.attr.secondaryShadowDrawable, R.attr.edgeSlide, R.attr.edgeSlideWidth, R.attr.slideDirection, R.attr.interpolator};
     public static final int[] SlideMenu_Layout;
     public static final int SlideMenu_Layout_layout_role = 0;
     public static final int SlideMenu_edgeSlide = 4;
@@ -141,7 +141,7 @@ public final class t {
     public static final int SlideMenu_secondaryShadowDrawable = 3;
     public static final int SlideMenu_secondaryShadowWidth = 1;
     public static final int SlideMenu_slideDirection = 6;
-    public static final int[] SlidingUpPanelLayout = new int[]{g.panelHeight, g.shadowHeight, g.paralaxOffset, g.fadeColor, g.flingVelocity, g.dragView, g.overlay, g.touchEvent};
+    public static final int[] SlidingUpPanelLayout = new int[]{R.attr.panelHeight, R.attr.shadowHeight, R.attr.paralaxOffset, R.attr.fadeColor, R.attr.flingVelocity, R.attr.dragView, R.attr.overlay, R.attr.touchEvent};
     public static final int SlidingUpPanelLayout_dragView = 5;
     public static final int SlidingUpPanelLayout_fadeColor = 3;
     public static final int SlidingUpPanelLayout_flingVelocity = 4;
@@ -150,7 +150,7 @@ public final class t {
     public static final int SlidingUpPanelLayout_paralaxOffset = 2;
     public static final int SlidingUpPanelLayout_shadowHeight = 1;
     public static final int SlidingUpPanelLayout_touchEvent = 7;
-    public static final int[] TitlePageIndicator = new int[]{16842901, 16842904, 16842964, g.selectedColor, g.clipPadding, g.footerColor, g.footerLineHeight, g.footerIndicatorHeight, g.footerIndicatorUnderlinePadding, g.footerPadding, g.selectedBold, g.titlePadding, g.topPadding, g.leftPadding, g.rightPadding};
+    public static final int[] TitlePageIndicator = new int[]{16842901, 16842904, 16842964, R.attr.selectedColor, R.attr.clipPadding, R.attr.footerColor, R.attr.footerLineHeight, R.attr.footerIndicatorHeight, R.attr.footerIndicatorUnderlinePadding, R.attr.footerPadding, R.attr.selectedBold, R.attr.titlePadding, R.attr.topPadding, R.attr.leftPadding, R.attr.rightPadding};
     public static final int TitlePageIndicator_android_background = 2;
     public static final int TitlePageIndicator_android_textColor = 1;
     public static final int TitlePageIndicator_android_textSize = 0;
@@ -166,14 +166,14 @@ public final class t {
     public static final int TitlePageIndicator_selectedColor = 3;
     public static final int TitlePageIndicator_titlePadding = 11;
     public static final int TitlePageIndicator_topPadding = 12;
-    public static final int[] ViewPagerIndicator = new int[]{g.vpiCirclePageIndicatorStyle, g.vpiIconPageIndicatorStyle, g.vpiLinePageIndicatorStyle, g.vpiTitlePageIndicatorStyle, g.vpiTabPageIndicatorStyle, g.vpiUnderlinePageIndicatorStyle};
+    public static final int[] ViewPagerIndicator = new int[]{R.attr.vpiCirclePageIndicatorStyle, R.attr.vpiIconPageIndicatorStyle, R.attr.vpiLinePageIndicatorStyle, R.attr.vpiTitlePageIndicatorStyle, R.attr.vpiTabPageIndicatorStyle, R.attr.vpiUnderlinePageIndicatorStyle};
     public static final int ViewPagerIndicator_vpiCirclePageIndicatorStyle = 0;
     public static final int ViewPagerIndicator_vpiIconPageIndicatorStyle = 1;
     public static final int ViewPagerIndicator_vpiLinePageIndicatorStyle = 2;
     public static final int ViewPagerIndicator_vpiTabPageIndicatorStyle = 4;
     public static final int ViewPagerIndicator_vpiTitlePageIndicatorStyle = 3;
     public static final int ViewPagerIndicator_vpiUnderlinePageIndicatorStyle = 5;
-    public static final int[] WeightGoalSetView = new int[]{g.lightColor, g.normalColor, g.heavyColor, g.fatColor, g.weightUnit, g.type, g.txtColor};
+    public static final int[] WeightGoalSetView = new int[]{R.attr.lightColor, R.attr.normalColor, R.attr.heavyColor, R.attr.fatColor, R.attr.weightUnit, R.attr.type, R.attr.txtColor};
     public static final int WeightGoalSetView_fatColor = 3;
     public static final int WeightGoalSetView_heavyColor = 2;
     public static final int WeightGoalSetView_lightColor = 0;
@@ -181,7 +181,7 @@ public final class t {
     public static final int WeightGoalSetView_txtColor = 6;
     public static final int WeightGoalSetView_type = 5;
     public static final int WeightGoalSetView_weightUnit = 4;
-    public static final int[] WeightProgressBar = new int[]{g.stroke_width, g.indicator_color, g.background_color, g.stroke_color, g.progress_color, g.weight_max, g.weight_value, g.weight_target};
+    public static final int[] WeightProgressBar = new int[]{R.attr.stroke_width, R.attr.indicator_color, R.attr.background_color, R.attr.stroke_color, R.attr.progress_color, R.attr.weight_max, R.attr.weight_value, R.attr.weight_target};
     public static final int WeightProgressBar_background_color = 2;
     public static final int WeightProgressBar_indicator_color = 1;
     public static final int WeightProgressBar_progress_color = 4;
@@ -190,7 +190,7 @@ public final class t {
     public static final int WeightProgressBar_weight_max = 5;
     public static final int WeightProgressBar_weight_target = 7;
     public static final int WeightProgressBar_weight_value = 6;
-    public static final int[] WeightView = new int[]{g.pb_stroke_width, g.pb_stroke_color, g.pb_indicator_color, g.pb_progress_color, g.pb_max, g.wv_value, g.wv_value_color, g.wv_value_size, g.wv_unit, g.wv_unit_color, g.wv_unit_size, g.wv_bmi, g.wv_bmi_color, g.wv_bmi_size, g.wv_tips, g.wv_tips_color, g.wv_tips_size};
+    public static final int[] WeightView = new int[]{R.attr.pb_stroke_width, R.attr.pb_stroke_color, R.attr.pb_indicator_color, R.attr.pb_progress_color, R.attr.pb_max, R.attr.wv_value, R.attr.wv_value_color, R.attr.wv_value_size, R.attr.wv_unit, R.attr.wv_unit_color, R.attr.wv_unit_size, R.attr.wv_bmi, R.attr.wv_bmi_color, R.attr.wv_bmi_size, R.attr.wv_tips, R.attr.wv_tips_color, R.attr.wv_tips_size};
     public static final int WeightView_pb_indicator_color = 2;
     public static final int WeightView_pb_max = 4;
     public static final int WeightView_pb_progress_color = 3;
@@ -211,13 +211,13 @@ public final class t {
 
     static {
         int[] iArr = new int[WeightView_pb_stroke_color];
-        iArr[WeightView_pb_stroke_width] = g.swipeable;
+        iArr[WeightView_pb_stroke_width] = R.attr.swipeable;
         CustomViewPager = iArr;
         iArr = new int[WeightView_pb_stroke_color];
-        iArr[WeightView_pb_stroke_width] = g.slidepanel_height;
+        iArr[WeightView_pb_stroke_width] = R.attr.slidepanel_height;
         SlidableTwoPanelLayout = iArr;
         iArr = new int[WeightView_pb_stroke_color];
-        iArr[WeightView_pb_stroke_width] = g.layout_role;
+        iArr[WeightView_pb_stroke_width] = R.attr.layout_role;
         SlideMenu_Layout = iArr;
     }
 }

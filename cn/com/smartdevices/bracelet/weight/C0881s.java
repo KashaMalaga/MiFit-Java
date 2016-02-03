@@ -4,8 +4,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.EditText;
 import com.huami.android.view.b;
-import com.xiaomi.hm.health.r;
-import kankan.wheel.widget.g;
+import com.xiaomi.hm.health.R;
 
 class C0881s implements TextWatcher {
     EditText a;
@@ -24,10 +23,10 @@ class C0881s implements TextWatcher {
             String obj2 = editable.toString();
             if (obj2.isEmpty()) {
                 this.b.j.setClickable(false);
-                this.b.j.setTextColor(this.b.a.getResources().getColor(g.disable_text_color_dark));
+                this.b.j.setTextColor(this.b.a.getResources().getColor(R.color.disable_text_color_dark));
             } else {
                 this.b.j.setClickable(true);
-                this.b.j.setTextColor(this.b.a.getResources().getColor(g.content_color));
+                this.b.j.setTextColor(this.b.a.getResources().getColor(R.color.content_color));
             }
             this.c = true;
             int length = obj2.length() - 1;
@@ -37,7 +36,7 @@ class C0881s implements TextWatcher {
                     if (obj2.endsWith(".")) {
                         obj2 = obj2.substring(0, length + 1);
                     }
-                    b.makeText(this.b.a, this.b.a.getResources().getText(r.only_one_decimal), 0).show();
+                    b.makeText(this.b.a, this.b.a.getResources().getText(R.string.only_one_decimal), 0).show();
                     obj = obj2;
                     z = true;
                     if (z) {

@@ -9,14 +9,14 @@ import android.view.ViewGroup;
 import cn.com.smartdevices.bracelet.C0401a;
 import cn.com.smartdevices.bracelet.Utils;
 import com.huami.android.view.c;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.dataprocess.SportDay;
-import com.xiaomi.hm.health.n;
 
 public class fm extends c implements OnClickListener {
     private static final String a = "UseLazyDaysFragment";
 
     protected int inflateLayout() {
-        return n.fragment_confirm_lazyday;
+        return R.layout.fragment_confirm_lazyday;
     }
 
     public void onCreate(Bundle bundle) {

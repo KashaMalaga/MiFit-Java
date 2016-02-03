@@ -98,34 +98,34 @@ public class aa {
         int length = bytes.length;
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream(length);
         while (i < length) {
+            byte b;
             while (true) {
                 int i2 = i + 1;
-                byte b = b[bytes[i]];
-                byte b2;
+                byte b2 = b[bytes[i]];
                 byte b3;
                 byte b4;
-                if (i2 >= length || b != (byte) -1) {
-                    if (b != (byte) -1) {
+                if (i2 >= length || b2 != (byte) -1) {
+                    if (b2 != (byte) -1) {
                         while (true) {
                             i = i2 + 1;
-                            b2 = b[bytes[i2]];
-                            if (i >= length || b2 != (byte) -1) {
-                                if (b2 == (byte) -1) {
+                            b3 = b[bytes[i2]];
+                            if (i >= length || b3 != (byte) -1) {
+                                if (b3 == (byte) -1) {
                                     break;
                                 }
-                                byteArrayOutputStream.write((b << 2) | ((b2 & 48) >>> 4));
+                                byteArrayOutputStream.write((b2 << 2) | ((b3 & 48) >>> 4));
                                 while (true) {
                                     i2 = i + 1;
-                                    b3 = bytes[i];
-                                    if (b3 != (byte) 61) {
+                                    b = bytes[i];
+                                    if (b != (byte) 61) {
                                         return byteArrayOutputStream.toByteArray();
                                     }
-                                    b = b[b3];
-                                    if (i2 >= length || b != (byte) -1) {
-                                        if (b == (byte) -1) {
+                                    b2 = b[b];
+                                    if (i2 >= length || b2 != (byte) -1) {
+                                        if (b2 == (byte) -1) {
                                             break;
                                         }
-                                        byteArrayOutputStream.write(((b2 & 15) << 4) | ((b & 60) >>> 2));
+                                        byteArrayOutputStream.write(((b3 & 15) << 4) | ((b2 & 60) >>> 2));
                                         while (true) {
                                             i = i2 + 1;
                                             b4 = bytes[i2];
@@ -137,7 +137,7 @@ public class aa {
                                                 if (b4 == (byte) -1) {
                                                     break;
                                                 }
-                                                byteArrayOutputStream.write(b4 | ((b & 3) << 6));
+                                                byteArrayOutputStream.write(b4 | ((b2 & 3) << 6));
                                             } else {
                                                 i2 = i;
                                             }
@@ -145,13 +145,13 @@ public class aa {
                                         if (b4 == (byte) -1) {
                                             break;
                                         }
-                                        byteArrayOutputStream.write(b4 | ((b & 3) << 6));
+                                        byteArrayOutputStream.write(b4 | ((b2 & 3) << 6));
                                     } else {
                                         i = i2;
                                     }
                                 }
-                                if (b == (byte) -1) {
-                                    byteArrayOutputStream.write(((b2 & 15) << 4) | ((b & 60) >>> 2));
+                                if (b2 == (byte) -1) {
+                                    byteArrayOutputStream.write(((b3 & 15) << 4) | ((b2 & 60) >>> 2));
                                     while (true) {
                                         i = i2 + 1;
                                         b4 = bytes[i2];
@@ -168,20 +168,20 @@ public class aa {
                                     if (b4 == (byte) -1) {
                                         break;
                                     }
-                                    byteArrayOutputStream.write(b4 | ((b & 3) << 6));
+                                    byteArrayOutputStream.write(b4 | ((b2 & 3) << 6));
                                 } else {
                                     break;
                                 }
                             }
                             i2 = i;
                         }
-                        if (b2 == (byte) -1) {
-                            byteArrayOutputStream.write((b << 2) | ((b2 & 48) >>> 4));
+                        if (b3 == (byte) -1) {
+                            byteArrayOutputStream.write((b2 << 2) | ((b3 & 48) >>> 4));
                             while (true) {
                                 i2 = i + 1;
-                                b3 = bytes[i];
-                                if (b3 != (byte) 61) {
-                                    b = b[b3];
+                                b = bytes[i];
+                                if (b != (byte) 61) {
+                                    b2 = b[b];
                                     if (i2 >= length) {
                                         break;
                                     }
@@ -190,10 +190,10 @@ public class aa {
                                 return byteArrayOutputStream.toByteArray();
                                 i = i2;
                             }
-                            if (b == (byte) -1) {
+                            if (b2 == (byte) -1) {
                                 break;
                             }
-                            byteArrayOutputStream.write(((b2 & 15) << 4) | ((b & 60) >>> 2));
+                            byteArrayOutputStream.write(((b3 & 15) << 4) | ((b2 & 60) >>> 2));
                             while (true) {
                                 i = i2 + 1;
                                 b4 = bytes[i2];
@@ -210,7 +210,7 @@ public class aa {
                             if (b4 == (byte) -1) {
                                 break;
                             }
-                            byteArrayOutputStream.write(b4 | ((b & 3) << 6));
+                            byteArrayOutputStream.write(b4 | ((b2 & 3) << 6));
                         } else {
                             break;
                         }
@@ -219,27 +219,27 @@ public class aa {
                 }
                 i = i2;
             }
-            if (b != (byte) -1) {
+            if (b2 != (byte) -1) {
                 break;
             }
             while (true) {
                 i = i2 + 1;
-                b2 = b[bytes[i2]];
+                b3 = b[bytes[i2]];
                 if (i >= length) {
                     break;
                 }
                 break;
                 i2 = i;
             }
-            if (b2 == (byte) -1) {
+            if (b3 == (byte) -1) {
                 break;
             }
-            byteArrayOutputStream.write((b << 2) | ((b2 & 48) >>> 4));
+            byteArrayOutputStream.write((b2 << 2) | ((b3 & 48) >>> 4));
             while (true) {
                 i2 = i + 1;
-                b3 = bytes[i];
-                if (b3 != (byte) 61) {
-                    b = b[b3];
+                b = bytes[i];
+                if (b != (byte) 61) {
+                    b2 = b[b];
                     if (i2 >= length) {
                         break;
                     }
@@ -248,8 +248,8 @@ public class aa {
                 return byteArrayOutputStream.toByteArray();
                 i = i2;
             }
-            if (b == (byte) -1) {
-                byteArrayOutputStream.write(((b2 & 15) << 4) | ((b & 60) >>> 2));
+            if (b2 == (byte) -1) {
+                byteArrayOutputStream.write(((b3 & 15) << 4) | ((b2 & 60) >>> 2));
                 while (true) {
                     i = i2 + 1;
                     b4 = bytes[i2];
@@ -266,7 +266,7 @@ public class aa {
                 if (b4 == (byte) -1) {
                     break;
                 }
-                byteArrayOutputStream.write(b4 | ((b & 3) << 6));
+                byteArrayOutputStream.write(b4 | ((b2 & 3) << 6));
             } else {
                 break;
             }

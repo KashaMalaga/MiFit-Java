@@ -42,10 +42,7 @@ import cn.com.smartdevices.bracelet.weight.aA;
 import cn.com.smartdevices.bracelet.weight.ah;
 import com.huami.android.ui.a;
 import com.xiaomi.channel.b.v;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
-import com.xiaomi.hm.health.s;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.mipush.sdk.f;
 
 public class bH extends DialogFragment {
@@ -73,8 +70,8 @@ public class bH extends DialogFragment {
     }
 
     private void a(View view) {
-        this.e = view.findViewById(l.bg_blur);
-        this.f = view.findViewById(l.menu_content);
+        this.e = view.findViewById(R.id.bg_blur);
+        this.f = view.findViewById(R.id.menu_content);
         if (a.b(getActivity())) {
             fe feVar = new fe(getActivity());
             View childAt = ((ViewGroup) this.f).getChildAt(0);
@@ -82,40 +79,40 @@ public class bH extends DialogFragment {
             layoutParams.topMargin = feVar.a().b() + layoutParams.topMargin;
             childAt.setLayoutParams(layoutParams);
         }
-        View findViewById = view.findViewById(l.menu_running);
-        a(findViewById, l.menu_running_new_sign, "RUNNING");
+        View findViewById = view.findViewById(R.id.menu_running);
+        a(findViewById, R.id.menu_running_new_sign, "RUNNING");
         if (!this.l.g.ENABLE_RUNNING.booleanValue()) {
             findViewById.setVisibility(8);
-            view.findViewById(l.v9).setVisibility(8);
+            view.findViewById(R.id.v9).setVisibility(8);
         }
-        findViewById = view.findViewById(l.menu_service);
-        a(findViewById, l.menu_service_new_sign, "SERVICE");
+        findViewById = view.findViewById(R.id.menu_service);
+        a(findViewById, R.id.menu_service_new_sign, "SERVICE");
         if (!this.l.c.b.booleanValue()) {
             findViewById.setVisibility(8);
-            view.findViewById(l.v5).setVisibility(8);
+            view.findViewById(R.id.v5).setVisibility(8);
         }
         if (!this.l.l.a.booleanValue()) {
-            view.findViewById(l.menu_weight).setVisibility(8);
-            view.findViewById(l.v6).setVisibility(8);
+            view.findViewById(R.id.menu_weight).setVisibility(8);
+            view.findViewById(R.id.v6).setVisibility(8);
         }
-        findViewById = view.findViewById(l.menu_relation);
-        a(findViewById, l.menu_relation_new_sign, "RELATION");
+        findViewById = view.findViewById(R.id.menu_relation);
+        a(findViewById, R.id.menu_relation_new_sign, "RELATION");
         if (!this.l.p.ENABLE_RELATION.booleanValue()) {
             findViewById.setVisibility(8);
-            view.findViewById(l.line).setVisibility(8);
+            view.findViewById(R.id.line).setVisibility(8);
         }
-        findViewById = view.findViewById(l.menu_smart_alarms);
+        findViewById = view.findViewById(R.id.menu_smart_alarms);
         if (e.a().b() && !DeviceSource.hasBindBracelet()) {
             findViewById.setVisibility(8);
-            view.findViewById(l.v2).setVisibility(8);
+            view.findViewById(R.id.v2).setVisibility(8);
         }
         if (e.a().b() && DeviceSource.hasBindBracelet()) {
-            view.findViewById(l.menu_sensorhub).setVisibility(0);
-            view.findViewById(l.menu_sensorhub_split).setVisibility(0);
+            view.findViewById(R.id.menu_sensorhub).setVisibility(0);
+            view.findViewById(R.id.menu_sensorhub_split).setVisibility(0);
             return;
         }
-        view.findViewById(l.menu_sensorhub).setVisibility(8);
-        view.findViewById(l.menu_sensorhub_split).setVisibility(8);
+        view.findViewById(R.id.menu_sensorhub).setVisibility(8);
+        view.findViewById(R.id.menu_sensorhub_split).setVisibility(8);
     }
 
     public static void a(View view, int i, String str) {
@@ -181,9 +178,9 @@ public class bH extends DialogFragment {
             shareData.weightFigure = "- -";
             shareData.weightBMI = "- -";
             shareData.weightValue = aA.c(b.j()) + com.xiaomi.e.a.f;
-            shareData.weightTitle = getString(r.current_weight) + "(" + aA.a(getActivity().getApplicationContext(), b.h()) + ")";
+            shareData.weightTitle = getString(R.string.current_weight) + "(" + aA.a(getActivity().getApplicationContext(), b.h()) + ")";
             i = Birthday.fromStr(Keeper.readPersonInfo().getBirthday()).getAgeInMonths();
-            shareData.babyMonthsStr = Utils.d(getActivity().getApplicationContext(), i) + getString(r.weight_ref) + "(" + aA.a(getActivity().getApplicationContext(), b.h()) + ")";
+            shareData.babyMonthsStr = Utils.d(getActivity().getApplicationContext(), i) + getString(R.string.weight_ref) + "(" + aA.a(getActivity().getApplicationContext(), b.h()) + ")";
             str = com.xiaomi.e.a.f;
             r1 = str;
             for (String str2 : Utils.a(i, Keeper.readPersonInfo().gender, b.h())) {
@@ -208,9 +205,9 @@ public class bH extends DialogFragment {
             shareData.weightFigure = "- -";
             shareData.weightBMI = "- -";
             shareData.weightValue = aA.c(b.j()) + com.xiaomi.e.a.f;
-            shareData.weightTitle = getString(r.current_weight) + "(" + aA.a(getActivity().getApplicationContext(), b.h()) + ")";
+            shareData.weightTitle = getString(R.string.current_weight) + "(" + aA.a(getActivity().getApplicationContext(), b.h()) + ")";
             i = Birthday.fromStr(a.birthday).getAgeInMonths();
-            shareData.babyMonthsStr = Utils.d(getActivity().getApplicationContext(), i) + getString(r.weight_ref) + "(" + aA.a(getActivity().getApplicationContext(), b.h()) + ")";
+            shareData.babyMonthsStr = Utils.d(getActivity().getApplicationContext(), i) + getString(R.string.weight_ref) + "(" + aA.a(getActivity().getApplicationContext(), b.h()) + ")";
             str = com.xiaomi.e.a.f;
             String[] a2 = Utils.a(i, a.gender, b.h());
             r1 = str;
@@ -233,21 +230,21 @@ public class bH extends DialogFragment {
             if (this.m) {
                 c = aA.c(((float) ((int) aA.b(a.targetWeight, b.h()))) - b.j(), 1);
                 if (c > 0.0f) {
-                    shareData.weightTips = getString(r.lighter_than_goal, new Object[]{Math.abs(c) + aA.a(getActivity().getApplicationContext(), b.h())});
+                    shareData.weightTips = getString(R.string.lighter_than_goal, new Object[]{Math.abs(c) + aA.a(getActivity().getApplicationContext(), b.h())});
                 } else if (c < 0.0f) {
-                    shareData.weightTips = getString(r.heavier_than_goal, new Object[]{Math.abs(c) + aA.a(getActivity().getApplicationContext(), b.h())});
+                    shareData.weightTips = getString(R.string.heavier_than_goal, new Object[]{Math.abs(c) + aA.a(getActivity().getApplicationContext(), b.h())});
                 } else {
-                    shareData.weightTips = getString(r.weight_reach_goal);
+                    shareData.weightTips = getString(R.string.weight_reach_goal);
                 }
             } else {
                 WeightInfo a3 = ah.a().a(a.uid, b.e());
                 if (a3 != null) {
                     c = aA.c(b.j() - aA.b(a3.weight, b.h()), 1);
                     if (c > 0.0f) {
-                        shareData.weightTips = getString(r.add_than_last_time, new Object[]{c + aA.a(getActivity().getApplicationContext(), b.h())});
+                        shareData.weightTips = getString(R.string.add_than_last_time, new Object[]{c + aA.a(getActivity().getApplicationContext(), b.h())});
                     } else if (c < 0.0f) {
                         c = Math.abs(c);
-                        shareData.weightTips = getString(r.less_than_last_time, new Object[]{c + aA.a(getActivity().getApplicationContext(), b.h())});
+                        shareData.weightTips = getString(R.string.less_than_last_time, new Object[]{c + aA.a(getActivity().getApplicationContext(), b.h())});
                     }
                 }
             }
@@ -353,9 +350,9 @@ public class bH extends DialogFragment {
 
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        int i = s.MenuPanel;
+        int i = R.style.MenuPanel;
         if (a.b(getActivity())) {
-            i = s.MenuPanelTint;
+            i = R.style.MenuPanelTint;
         }
         setStyle(0, i);
     }
@@ -371,7 +368,7 @@ public class bH extends DialogFragment {
         if (t.a()) {
             t.a(bMVar, (int) kankan.wheel.widget.a.ax);
         }
-        View inflate = layoutInflater.cloneInContext(bMVar).inflate(n.view_main_menu, viewGroup, false);
+        View inflate = layoutInflater.cloneInContext(bMVar).inflate(R.layout.view_main_menu, viewGroup, false);
         a(inflate);
         return inflate;
     }

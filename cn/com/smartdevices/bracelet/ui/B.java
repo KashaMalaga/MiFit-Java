@@ -12,10 +12,7 @@ import cn.com.smartdevices.bracelet.C0401a;
 import cn.com.smartdevices.bracelet.C0596r;
 import cn.com.smartdevices.bracelet.Utils;
 import cn.com.smartdevices.bracelet.lua.SlidingUpPanelLayout;
-import com.xiaomi.hm.health.j;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 
 public class B extends p implements OnClickListener {
     private static final String b = "BindDevicesWeightFragment";
@@ -26,7 +23,7 @@ public class B extends p implements OnClickListener {
         fg a = new fe(getActivity()).a();
         if (a.d()) {
             int e = a.e();
-            int dimensionPixelSize = getResources().getDimensionPixelSize(j.main_ui_panel_height);
+            int dimensionPixelSize = getResources().getDimensionPixelSize(R.dimen.main_ui_panel_height);
             C0596r.e(b, "SlidingPanel SystemBarH : " + e + ", OriginalPanelH : " + dimensionPixelSize);
             this.d.setPanelHeight(dimensionPixelSize - e);
         }
@@ -47,11 +44,11 @@ public class B extends p implements OnClickListener {
 
     public void onClick(View view) {
         switch (view.getId()) {
-            case l.about_mi_band /*2131296337*/:
+            case R.id.about_mi_band:
                 C0401a.a(getActivity().getApplicationContext(), C0401a.gp);
-                Utils.a("http://s1.mi.com/m/product/scale/", (int) r.bracelet_store_desc, getActivity());
+                Utils.a("http://s1.mi.com/m/product/scale/", (int) R.string.bracelet_store_desc, getActivity());
                 return;
-            case l.start_bind /*2131296338*/:
+            case R.id.start_bind:
                 c();
                 return;
             default:
@@ -64,11 +61,11 @@ public class B extends p implements OnClickListener {
     }
 
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        View inflate = layoutInflater.inflate(n.activity_bind_devices_weight, viewGroup, false);
-        ((TextView) inflate.findViewById(l.about_mi_band)).setText(Html.fromHtml(getString(r.bind_mi_weight_about)));
-        inflate.findViewById(l.about_mi_band).setOnClickListener(this);
-        inflate.findViewById(l.start_bind).setOnClickListener(this);
-        this.d = (SlidingUpPanelLayout) inflate.findViewById(l.fragment_setting_sliding_layout);
+        View inflate = layoutInflater.inflate(R.layout.activity_bind_devices_weight, viewGroup, false);
+        ((TextView) inflate.findViewById(R.id.about_mi_band)).setText(Html.fromHtml(getString(R.string.bind_mi_weight_about)));
+        inflate.findViewById(R.id.about_mi_band).setOnClickListener(this);
+        inflate.findViewById(R.id.start_bind).setOnClickListener(this);
+        this.d = (SlidingUpPanelLayout) inflate.findViewById(R.id.fragment_setting_sliding_layout);
         this.d.setSlidingEnabled(false);
         d();
         return inflate;

@@ -14,7 +14,7 @@ import cn.com.smartdevices.bracelet.gps.model.k;
 import cn.com.smartdevices.bracelet.shoes.sync.SyncShoesDataService;
 import com.sina.weibo.sdk.exception.WeiboAuthException;
 import com.tencent.connect.common.Constants;
-import com.tencent.open.SocialConstants;
+import com.xiaomi.channel.relationservice.data.a;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -79,7 +79,7 @@ public class SyncSportDataService extends C0468b {
     private static Intent b(Context context, int i) {
         Intent intent = new Intent();
         intent.setClass(context, SyncSportDataService.class);
-        intent.putExtra(SocialConstants.PARAM_TYPE, i);
+        intent.putExtra(a.h, i);
         return intent;
     }
 
@@ -127,7 +127,7 @@ public class SyncSportDataService extends C0468b {
 
     public void a(Intent intent) {
         if (intent != null) {
-            int intExtra = intent.getIntExtra(SocialConstants.PARAM_TYPE, -1);
+            int intExtra = intent.getIntExtra(a.h, -1);
             C0596r.e("Sync", "onHandleIntent command = " + intExtra);
             if (intExtra != -1) {
                 Context application = getApplication();

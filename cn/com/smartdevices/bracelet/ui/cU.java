@@ -12,7 +12,7 @@ import cn.com.smartdevices.bracelet.lab.sync.i;
 import cn.com.smartdevices.bracelet.model.BasicDateData;
 import cn.com.smartdevices.bracelet.shoes.sync.J;
 import cn.com.smartdevices.bracelet.weight.aA;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 import java.util.ArrayList;
 import java.util.Iterator;
 import org.json.JSONArray;
@@ -76,7 +76,7 @@ final class cU extends AsyncTask<Void, Integer, Boolean> {
 
     public void onPreExecute() {
         super.onPreExecute();
-        Utils.a(this.a.getActivity(), (int) r.sync_to_server, false);
+        Utils.a(this.a.getActivity(), (int) R.string.sync_to_server, false);
         C0596r.d("PersonInfoFragment", "onPreExecute");
     }
 }

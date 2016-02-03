@@ -57,18 +57,18 @@ class d {
 
     private void a(File file) {
         FileInputStream fileInputStream;
-        BufferedReader bufferedReader;
         Throwable e;
         FileInputStream fileInputStream2;
-        BufferedReader bufferedReader2 = null;
+        BufferedReader bufferedReader = null;
         StringBuffer stringBuffer = new StringBuffer();
+        BufferedReader bufferedReader2;
         try {
             fileInputStream = new FileInputStream(file);
             try {
-                bufferedReader = new BufferedReader(new InputStreamReader(fileInputStream, a.bO));
+                bufferedReader2 = new BufferedReader(new InputStreamReader(fileInputStream, a.bO));
                 while (true) {
                     try {
-                        String readLine = bufferedReader.readLine();
+                        String readLine = bufferedReader2.readLine();
                         if (readLine == null) {
                             break;
                         }
@@ -78,19 +78,19 @@ class d {
                         fileInputStream2 = fileInputStream;
                     } catch (IOException e3) {
                         e = e3;
-                        bufferedReader2 = bufferedReader;
+                        bufferedReader = bufferedReader2;
                     } catch (JSONException e4) {
                         e = e4;
-                        bufferedReader2 = bufferedReader;
+                        bufferedReader = bufferedReader2;
                     } catch (Throwable th) {
                         e = th;
-                        bufferedReader2 = bufferedReader;
+                        bufferedReader = bufferedReader2;
                     }
                 }
                 a(stringBuffer.toString());
-                if (bufferedReader != null) {
+                if (bufferedReader2 != null) {
                     try {
-                        bufferedReader.close();
+                        bufferedReader2.close();
                     } catch (IOException e5) {
                         e5.printStackTrace();
                     }
@@ -104,14 +104,14 @@ class d {
                 }
             } catch (FileNotFoundException e6) {
                 e = e6;
-                bufferedReader = null;
+                bufferedReader2 = null;
                 fileInputStream2 = fileInputStream;
                 try {
                     az.a(e, "MapDownloadManager", "readOfflineSD filenotfound");
                     e.printStackTrace();
-                    if (bufferedReader != null) {
+                    if (bufferedReader2 != null) {
                         try {
-                            bufferedReader.close();
+                            bufferedReader2.close();
                         } catch (IOException e522) {
                             e522.printStackTrace();
                         }
@@ -126,10 +126,10 @@ class d {
                 } catch (Throwable th2) {
                     e = th2;
                     fileInputStream = fileInputStream2;
-                    bufferedReader2 = bufferedReader;
-                    if (bufferedReader2 != null) {
+                    bufferedReader = bufferedReader2;
+                    if (bufferedReader != null) {
                         try {
-                            bufferedReader2.close();
+                            bufferedReader.close();
                         } catch (IOException e7) {
                             e7.printStackTrace();
                         }
@@ -148,9 +148,9 @@ class d {
                 try {
                     az.a(e, "MapDownloadManager", "readOfflineSD io");
                     e.printStackTrace();
-                    if (bufferedReader2 != null) {
+                    if (bufferedReader != null) {
                         try {
-                            bufferedReader2.close();
+                            bufferedReader.close();
                         } catch (IOException e52222) {
                             e52222.printStackTrace();
                         }
@@ -164,8 +164,8 @@ class d {
                     }
                 } catch (Throwable th3) {
                     e = th3;
-                    if (bufferedReader2 != null) {
-                        bufferedReader2.close();
+                    if (bufferedReader != null) {
+                        bufferedReader.close();
                     }
                     if (fileInputStream != null) {
                         fileInputStream.close();
@@ -176,9 +176,9 @@ class d {
                 e = e9;
                 az.a(e, "MapDownloadManager", "readOfflineSD parseJson");
                 e.printStackTrace();
-                if (bufferedReader2 != null) {
+                if (bufferedReader != null) {
                     try {
-                        bufferedReader2.close();
+                        bufferedReader.close();
                     } catch (IOException e5222222) {
                         e5222222.printStackTrace();
                     }
@@ -193,11 +193,11 @@ class d {
             }
         } catch (FileNotFoundException e10) {
             e = e10;
-            bufferedReader = null;
+            bufferedReader2 = null;
             az.a(e, "MapDownloadManager", "readOfflineSD filenotfound");
             e.printStackTrace();
-            if (bufferedReader != null) {
-                bufferedReader.close();
+            if (bufferedReader2 != null) {
+                bufferedReader2.close();
             }
             if (fileInputStream2 != null) {
                 fileInputStream2.close();
@@ -207,8 +207,8 @@ class d {
             fileInputStream = null;
             az.a(e, "MapDownloadManager", "readOfflineSD io");
             e.printStackTrace();
-            if (bufferedReader2 != null) {
-                bufferedReader2.close();
+            if (bufferedReader != null) {
+                bufferedReader.close();
             }
             if (fileInputStream != null) {
                 fileInputStream.close();
@@ -218,8 +218,8 @@ class d {
             fileInputStream = null;
             az.a(e, "MapDownloadManager", "readOfflineSD parseJson");
             e.printStackTrace();
-            if (bufferedReader2 != null) {
-                bufferedReader2.close();
+            if (bufferedReader != null) {
+                bufferedReader.close();
             }
             if (fileInputStream != null) {
                 fileInputStream.close();
@@ -227,8 +227,8 @@ class d {
         } catch (Throwable th4) {
             e = th4;
             fileInputStream = null;
-            if (bufferedReader2 != null) {
-                bufferedReader2.close();
+            if (bufferedReader != null) {
+                bufferedReader.close();
             }
             if (fileInputStream != null) {
                 fileInputStream.close();

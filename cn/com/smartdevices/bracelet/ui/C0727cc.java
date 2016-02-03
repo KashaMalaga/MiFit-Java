@@ -4,7 +4,7 @@ import android.animation.Animator;
 import android.animation.Animator.AnimatorListener;
 import cn.com.smartdevices.bracelet.Utils;
 import com.amap.api.maps.model.BitmapDescriptorFactory;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 
 class C0727cc implements AnimatorListener {
     final /* synthetic */ MainUIActivity a;
@@ -40,7 +40,7 @@ class C0727cc implements AnimatorListener {
         this.a.ab.setAlpha(0.5f);
         this.a.ac.setAlpha(0.5f);
         this.a.Z.setRotation(0.0f);
-        this.a.ab.setText(r.dynamic_pull_release_to_sync);
-        this.a.ac.setText(Utils.a(this.a, (int) r.dynamic_pull_last_sync_time));
+        this.a.ab.setText(R.string.dynamic_pull_release_to_sync);
+        this.a.ac.setText(Utils.a(this.a, (int) R.string.dynamic_pull_last_sync_time));
     }
 }

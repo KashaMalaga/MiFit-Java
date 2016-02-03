@@ -14,12 +14,8 @@ import cn.com.smartdevices.bracelet.Keeper;
 import cn.com.smartdevices.bracelet.ui.widget.DimPanelBottomBar;
 import com.huami.android.view.b;
 import com.xiaomi.e.a;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.bt.profile.Weight.e;
-import com.xiaomi.hm.health.k;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
-import kankan.wheel.widget.g;
 
 public class MemberInfoSetGenderActivity extends MemberInfoBaseActivity implements OnClickListener {
     private ImageView h;
@@ -32,24 +28,24 @@ public class MemberInfoSetGenderActivity extends MemberInfoBaseActivity implemen
 
     private void a(int i) {
         if (i == 1) {
-            this.h.setImageResource(k.male_enable);
-            this.i.setImageResource(k.female_disable);
-            this.k.setBackgroundResource(g.bg_color_blue_dark);
-            applyStatusBarTintRes(g.bg_color_blue_dark);
-            this.l.a(getResources().getColor(g.content_color));
-            this.l.b(getResources().getColor(g.title_color));
+            this.h.setImageResource(R.drawable.male_enable);
+            this.i.setImageResource(R.drawable.female_disable);
+            this.k.setBackgroundResource(R.color.bg_color_blue_dark);
+            applyStatusBarTintRes(R.color.bg_color_blue_dark);
+            this.l.a(getResources().getColor(R.color.content_color));
+            this.l.b(getResources().getColor(R.color.title_color));
             this.l.b().setClickable(true);
         } else if (i == 0) {
-            this.i.setImageResource(k.female_enable);
-            this.h.setImageResource(k.male_disable);
-            this.k.setBackgroundResource(g.bg_color_red);
-            applyStatusBarTintRes(g.bg_color_red);
-            this.l.a(getResources().getColor(g.content_color));
-            this.l.b(getResources().getColor(g.title_color));
+            this.i.setImageResource(R.drawable.female_enable);
+            this.h.setImageResource(R.drawable.male_disable);
+            this.k.setBackgroundResource(R.color.bg_color_red);
+            applyStatusBarTintRes(R.color.bg_color_red);
+            this.l.a(getResources().getColor(R.color.content_color));
+            this.l.b(getResources().getColor(R.color.title_color));
             this.l.b().setClickable(true);
         } else {
-            this.l.a(getResources().getColor(g.content_color));
-            this.l.b(getResources().getColor(g.disable_text_color_dark));
+            this.l.a(getResources().getColor(R.color.content_color));
+            this.l.b(getResources().getColor(R.color.disable_text_color_dark));
             this.l.b().setClickable(false);
         }
     }
@@ -70,16 +66,16 @@ public class MemberInfoSetGenderActivity extends MemberInfoBaseActivity implemen
             startActivityForResult(intent, 6);
             return;
         }
-        b.a((Context) this, (int) r.please_input_gender, 0).show();
+        b.a((Context) this, (int) R.string.please_input_gender, 0).show();
     }
 
     public void onClick(View view) {
         switch (view.getId()) {
-            case l.info_gender_male /*2131296616*/:
+            case R.id.info_gender_male:
                 this.m = 1;
                 a(this.m);
                 break;
-            case l.info_gender_female /*2131296617*/:
+            case R.id.info_gender_female:
                 this.m = 0;
                 a(this.m);
                 break;
@@ -95,16 +91,16 @@ public class MemberInfoSetGenderActivity extends MemberInfoBaseActivity implemen
         if (!(getIntent() == null || getIntent().getExtras() == null)) {
             this.g = e.b(getIntent().getStringExtra(e.d));
         }
-        setContentView((int) n.activity_person_info_set_gender);
+        setContentView((int) R.layout.activity_person_info_set_gender);
         b();
-        this.h = (ImageView) findViewById(l.info_gender_male);
+        this.h = (ImageView) findViewById(R.id.info_gender_male);
         this.h.setOnClickListener(this);
-        this.i = (ImageView) findViewById(l.info_gender_female);
+        this.i = (ImageView) findViewById(R.id.info_gender_female);
         this.i.setOnClickListener(this);
-        this.j = (TextView) findViewById(l.bracelet_login_title_info);
-        this.j.setText(getString(r.input_precise_user_info));
-        this.l = (DimPanelBottomBar) findViewById(l.bottom_bar);
-        this.k = findViewById(l.info_gender_bg);
+        this.j = (TextView) findViewById(R.id.bracelet_login_title_info);
+        this.j.setText(getString(R.string.input_precise_user_info));
+        this.l = (DimPanelBottomBar) findViewById(R.id.bottom_bar);
+        this.k = findViewById(R.id.info_gender_bg);
         String currentUserInfoByTag = Keeper.getCurrentUserInfoByTag(Keeper.CURRENT_USER_GENDER);
         if (!currentUserInfoByTag.isEmpty()) {
             this.m = Integer.parseInt(currentUserInfoByTag);

@@ -7,8 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.TextView;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
+import com.xiaomi.hm.health.R;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -64,10 +63,10 @@ final class PartnerListAdapter extends BaseExpandableListAdapter {
     public View getChildView(int i, int i2, boolean z, View view, ViewGroup viewGroup) {
         Holder holder;
         if (view == null) {
-            view = this.mInflater.inflate(n.activity_service_list_item, null);
+            view = this.mInflater.inflate(R.layout.activity_service_list_item, null);
             Holder holder2 = new Holder();
-            holder2.labelText = (TextView) view.findViewById(l.service_name);
-            holder2.divider = view.findViewById(l.divider);
+            holder2.labelText = (TextView) view.findViewById(R.id.service_name);
+            holder2.divider = view.findViewById(R.id.divider);
             view.setTag(holder2);
             holder = holder2;
         } else {
@@ -103,7 +102,7 @@ final class PartnerListAdapter extends BaseExpandableListAdapter {
     }
 
     public View getGroupView(int i, boolean z, View view, ViewGroup viewGroup) {
-        return view == null ? this.mInflater.inflate(n.activity_service_list_item_category, null) : view;
+        return view == null ? this.mInflater.inflate(R.layout.activity_service_list_item_category, null) : view;
     }
 
     public boolean hasStableIds() {

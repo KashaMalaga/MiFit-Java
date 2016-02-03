@@ -128,13 +128,13 @@ public class V {
     }
 
     private static String c() {
-        Process exec;
         BufferedReader bufferedReader;
         Throwable th;
         Throwable e;
         String str;
         Throwable th2;
         String str2 = null;
+        Process exec;
         try {
             exec = Runtime.getRuntime().exec("ip route");
             try {

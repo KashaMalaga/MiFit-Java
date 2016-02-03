@@ -18,10 +18,7 @@ import cn.com.smartdevices.bracelet.relation.b.g;
 import cn.com.smartdevices.bracelet.relation.db.Friend;
 import com.huami.android.ui.ActionBarActivity;
 import com.huami.android.view.b;
-import com.xiaomi.hm.health.k;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 import java.util.ArrayList;
 
 public class SearchResultActivity extends ActionBarActivity implements OnClickListener {
@@ -55,19 +52,19 @@ public class SearchResultActivity extends ActionBarActivity implements OnClickLi
         Utils.a((Activity) this);
         if (z) {
             C0401a.a((Context) this, C0409b.aI);
-            b.a((Context) this, (int) r.toast_add_friend_success, 0).show();
+            b.a((Context) this, (int) R.string.toast_add_friend_success, 0).show();
             finish();
             return;
         }
         C0401a.a((Context) this, C0409b.aJ);
         this.h.setEnabled(true);
-        b.a((Context) this, (int) r.toast_add_friend_failed, 0).show();
+        b.a((Context) this, (int) R.string.toast_add_friend_failed, 0).show();
     }
 
     public void onClick(View view) {
-        if (view.getId() == l.add_button && this.e > 0) {
+        if (view.getId() == R.id.add_button && this.e > 0) {
             this.h.setEnabled(false);
-            Utils.a((Activity) this, (int) r.data_loading, false);
+            Utils.a((Activity) this, (int) R.string.data_loading, false);
             this.j.a((Context) this, this.e);
             C0401a.a((Context) this, C0409b.aK);
         }
@@ -75,12 +72,12 @@ public class SearchResultActivity extends ActionBarActivity implements OnClickLi
 
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView(n.activity_search_result);
-        ListView listView = (ListView) findViewById(l.list);
-        this.h = (Button) findViewById(l.add_button);
+        setContentView(R.layout.activity_search_result);
+        ListView listView = (ListView) findViewById(R.id.list);
+        this.h = (Button) findViewById(R.id.add_button);
         this.h.setOnClickListener(this);
-        View findViewById = findViewById(l.result_view);
-        View findViewById2 = findViewById(l.empty_view);
+        View findViewById = findViewById(R.id.result_view);
+        View findViewById2 = findViewById(R.id.empty_view);
         Intent intent = getIntent();
         if (intent != null) {
             this.e = intent.getLongExtra(b, -1);
@@ -152,11 +149,11 @@ public class SearchResultActivity extends ActionBarActivity implements OnClickLi
                 }
                 button.setEnabled(z);
                 if (this.i) {
-                    this.h.setText(r.label_friend_added);
-                    this.h.setBackgroundResource(k.btn_unable_bg);
+                    this.h.setText(R.string.label_friend_added);
+                    this.h.setBackgroundResource(R.drawable.btn_unable_bg);
                 } else {
-                    this.h.setText(r.title_add_friend);
-                    this.h.setBackgroundResource(k.btn_blue_bg);
+                    this.h.setText(R.string.title_add_friend);
+                    this.h.setBackgroundResource(R.drawable.btn_blue_bg);
                 }
                 this.l.notifyDataSetChanged();
             }

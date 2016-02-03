@@ -4,6 +4,7 @@ import cn.com.smartdevices.bracelet.shoes.sync.b.g;
 import com.amap.api.location.LocationManagerProxy;
 import com.sina.weibo.sdk.component.WidgetRequestParam;
 import com.xiaomi.channel.b.v;
+import com.xiaomi.channel.relationservice.data.a;
 import com.xiaomi.market.sdk.o;
 import java.util.EnumSet;
 import java.util.HashMap;
@@ -16,7 +17,7 @@ public enum d {
     VERSION((short) 3, o.x),
     NETWORK((short) 4, LocationManagerProxy.NETWORK_PROVIDER),
     CLIENT_IP((short) 5, "client_ip"),
-    LOCATION((short) 6, LocationManagerProxy.KEY_LOCATION_CHANGED),
+    LOCATION((short) 6, a.l),
     HOST_INFO((short) 7, "host_info"),
     VERSION_TYPE((short) 8, "version_type"),
     APP_NAME((short) 9, v.v),

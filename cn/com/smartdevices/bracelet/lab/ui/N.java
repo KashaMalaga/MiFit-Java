@@ -8,8 +8,7 @@ import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.TextView;
 import cn.com.smartdevices.bracelet.lab.a;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
+import com.xiaomi.hm.health.R;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -51,10 +50,10 @@ class N extends BaseExpandableListAdapter {
     public View getChildView(int i, int i2, boolean z, View view, ViewGroup viewGroup) {
         M m;
         if (view == null) {
-            view = this.b.inflate(n.activity_service_list_item, null);
+            view = this.b.inflate(R.layout.activity_service_list_item, null);
             M m2 = new M();
-            m2.a = (TextView) view.findViewById(l.service_name);
-            m2.b = view.findViewById(l.divider);
+            m2.a = (TextView) view.findViewById(R.id.service_name);
+            m2.b = view.findViewById(R.id.divider);
             view.setTag(m2);
             m = m2;
         } else {
@@ -90,7 +89,7 @@ class N extends BaseExpandableListAdapter {
     }
 
     public View getGroupView(int i, boolean z, View view, ViewGroup viewGroup) {
-        return view == null ? this.b.inflate(n.activity_service_list_item_category, null) : view;
+        return view == null ? this.b.inflate(R.layout.activity_service_list_item_category, null) : view;
     }
 
     public boolean hasStableIds() {

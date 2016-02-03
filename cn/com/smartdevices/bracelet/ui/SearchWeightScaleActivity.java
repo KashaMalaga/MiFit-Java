@@ -28,23 +28,21 @@ import cn.com.smartdevices.bracelet.activity.MultiDevicesErrActivity;
 import cn.com.smartdevices.bracelet.chart.LinePieChartView;
 import cn.com.smartdevices.bracelet.datasource.DeviceSource;
 import cn.com.smartdevices.bracelet.eventbus.shoes.EventDeviceBoundState;
+import cn.com.smartdevices.bracelet.j.j;
+import cn.com.smartdevices.bracelet.j.l;
 import cn.com.smartdevices.bracelet.model.BtDevice;
 import com.huami.android.view.b;
 import com.huami.android.view.c;
 import com.tencent.connect.common.Constants;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.bt.bleservice.BLEService;
 import com.xiaomi.hm.health.bt.e.a;
 import com.xiaomi.hm.health.bt.e.f;
 import com.xiaomi.hm.health.bt.e.g;
 import com.xiaomi.hm.health.bt.e.h;
+import com.xiaomi.hm.health.bt.model.i;
 import com.xiaomi.hm.health.bt.profile.Weight.WeightHwInfo;
 import com.xiaomi.hm.health.bt.profile.Weight.e;
-import com.xiaomi.hm.health.i;
-import com.xiaomi.hm.health.j;
-import com.xiaomi.hm.health.k;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
 import com.xiaomi.mistatistic.sdk.d;
 import de.greenrobot.event.EventBus;
 import java.util.ArrayList;
@@ -118,34 +116,34 @@ public class SearchWeightScaleActivity extends SystemBarTintActivity implements 
 
     private void b() {
         this.k = new R(this, this.s);
-        this.l = findViewById(l.search_single_device_list_area);
-        this.mHomeBack.setText(r.weight_device_list);
-        this.m = (ListView) findViewById(l.device_list_lv);
+        this.l = findViewById(R.id.search_single_device_list_area);
+        this.mHomeBack.setText(R.string.weight_device_list);
+        this.m = (ListView) findViewById(R.id.device_list_lv);
         this.m.setAdapter(this.k);
         this.m.setOnItemClickListener(new C0775dx(this));
-        this.n = findViewById(l.search_single_area);
-        this.o = (TextView) findViewById(l.search_devices_title);
-        this.p = (TextView) findViewById(l.search_devices_info);
-        this.o.setText(r.find_weight_scale_info);
+        this.n = findViewById(R.id.search_single_area);
+        this.o = (TextView) findViewById(R.id.search_devices_title);
+        this.p = (TextView) findViewById(R.id.search_devices_info);
+        this.o.setText(R.string.find_weight_scale_info);
         this.p.setText(com.xiaomi.e.a.f);
-        this.j = (TextView) findViewById(l.search_devices_exit);
-        this.j.setText(Html.fromHtml("<u>" + getString(r.donot_bind) + "</u>"));
+        this.j = (TextView) findViewById(R.id.search_devices_exit);
+        this.j.setText(Html.fromHtml("<u>" + getString(R.string.donot_bind) + "</u>"));
         this.j.setOnClickListener(this);
         this.j.setVisibility(0);
-        this.q = (TextView) findViewById(l.search_devices_not_response);
+        this.q = (TextView) findViewById(R.id.search_devices_not_response);
         this.q.setOnClickListener(this);
         this.q.setVisibility(8);
-        this.r = (ImageView) findViewById(l.search_devices_mili_icon);
-        this.r.setImageResource(k.mi_logo);
-        this.i = (LinePieChartView) findViewById(l.searching_pie_chart);
+        this.r = (ImageView) findViewById(R.id.search_devices_mili_icon);
+        this.r.setImageResource(R.drawable.mi_logo);
+        this.i = (LinePieChartView) findViewById(R.id.searching_pie_chart);
         LayoutParams layoutParams = (LayoutParams) this.i.getLayoutParams();
-        layoutParams.width = (int) getResources().getDimension(j.draw_weight_icon_w);
-        layoutParams.height = (int) getResources().getDimension(j.draw_weight_icon_w);
+        layoutParams.width = (int) getResources().getDimension(R.dimen.draw_weight_icon_w);
+        layoutParams.height = (int) getResources().getDimension(R.dimen.draw_weight_icon_w);
         this.i.a(4);
         this.i.d_();
-        this.B = (TextView) findViewById(l.search_devices_weight_value);
-        this.C = (ImageView) findViewById(l.search_devices_weight_smile);
-        findViewById(l.search_single_frame).setBackgroundColor(getResources().getColor(i.bg_mode_weight));
+        this.B = (TextView) findViewById(R.id.search_devices_weight_value);
+        this.C = (ImageView) findViewById(R.id.search_devices_weight_smile);
+        findViewById(R.id.search_single_frame).setBackgroundColor(getResources().getColor(R.color.bg_mode_weight));
     }
 
     private boolean c() {
@@ -174,8 +172,8 @@ public class SearchWeightScaleActivity extends SystemBarTintActivity implements 
     }
 
     private void f() {
-        b.a(this.v, (int) r.bind_weight_ok, 0).show();
-        com.xiaomi.hm.health.bt.model.i iVar = null;
+        b.a(this.v, (int) R.string.bind_weight_ok, 0).show();
+        i iVar = null;
         com.xiaomi.hm.health.bt.profile.Weight.f i = com.xiaomi.hm.health.bt.bleservice.a.i();
         if (i != null) {
             iVar = i.z();
@@ -199,7 +197,7 @@ public class SearchWeightScaleActivity extends SystemBarTintActivity implements 
     }
 
     private void g() {
-        cn.com.smartdevices.bracelet.j.j.a(this.v, cn.com.smartdevices.bracelet.j.l.a(getApplicationContext(), (int) c), new C0776dy(this), true);
+        j.a(this.v, l.a(getApplicationContext(), (int) c), new C0776dy(this), true);
     }
 
     private void h() {
@@ -293,7 +291,7 @@ public class SearchWeightScaleActivity extends SystemBarTintActivity implements 
     public void b(boolean z) {
         if (z) {
             C0401a.a(this.v, C0409b.av, C0410c.q, this.x.getAddress());
-            this.o.setText(r.pairing);
+            this.o.setText(R.string.pairing);
             a(this.x);
         } else {
             C0401a.a(this.v, C0409b.au, C0410c.q, this.x.getAddress());
@@ -312,7 +310,7 @@ public class SearchWeightScaleActivity extends SystemBarTintActivity implements 
                     d();
                     break;
                 case kankan.wheel.widget.a.i /*0*/:
-                    b.a((Context) this, getString(r.failed_enable_bt), (int) c).show();
+                    b.a((Context) this, getString(R.string.failed_enable_bt), (int) c).show();
                     finish();
                     break;
             }
@@ -322,13 +320,13 @@ public class SearchWeightScaleActivity extends SystemBarTintActivity implements 
 
     public void onClick(View view) {
         switch (view.getId()) {
-            case l.search_devices_exit /*2131296720*/:
+            case R.id.search_devices_exit:
                 C0401a.a(this.v, C0401a.fU);
                 C0401a.a((Context) this, C0409b.an, C0410c.n, Constants.VIA_TO_TYPE_QQ_GROUP);
                 setResult(-1);
                 finish();
                 return;
-            case l.search_devices_not_response /*2131296721*/:
+            case R.id.search_devices_not_response:
                 i();
                 return;
             default:
@@ -338,7 +336,7 @@ public class SearchWeightScaleActivity extends SystemBarTintActivity implements 
 
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView((int) n.activity_search_single_bracelet);
+        setContentView((int) R.layout.activity_search_single_bracelet);
         this.v = this;
         this.G = new g().a((int) h).a((h) this).a(com.xiaomi.hm.health.bt.profile.Weight.a.y_).a();
         this.s = new ArrayList();

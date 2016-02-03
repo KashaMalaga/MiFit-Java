@@ -9,7 +9,7 @@ import cn.com.smartdevices.bracelet.C0596r;
 import cn.com.smartdevices.bracelet.Utils;
 import cn.com.smartdevices.bracelet.view.WeightUserAvatar;
 import cn.com.smartdevices.bracelet.weight.UserInfo;
-import com.xiaomi.hm.health.l;
+import com.xiaomi.hm.health.R;
 
 class n extends BaseAdapter {
     final /* synthetic */ WeightFamilyMemberActivity a;
@@ -34,11 +34,11 @@ class n extends BaseAdapter {
         o oVar;
         C0596r.e("WeightFamilyMemberActivity", "adapter getView()");
         if (view == null) {
-            view = LayoutInflater.from(this.a.a).inflate(com.xiaomi.hm.health.n.family_member_item, null);
+            view = LayoutInflater.from(this.a.a).inflate(R.layout.family_member_item, null);
             o oVar2 = new o(this);
-            oVar2.a = (WeightUserAvatar) view.findViewById(l.member_icon);
-            oVar2.b = (TextView) view.findViewById(l.member_name);
-            oVar2.c = (TextView) view.findViewById(l.member_content);
+            oVar2.a = (WeightUserAvatar) view.findViewById(R.id.member_icon);
+            oVar2.b = (TextView) view.findViewById(R.id.member_name);
+            oVar2.c = (TextView) view.findViewById(R.id.member_content);
             view.setTag(oVar2);
             oVar = oVar2;
         } else {

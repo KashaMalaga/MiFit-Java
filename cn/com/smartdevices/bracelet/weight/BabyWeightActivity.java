@@ -24,11 +24,8 @@ import cn.com.smartdevices.bracelet.ui.SystemBarTintActivity;
 import cn.com.smartdevices.bracelet.weight.family.WeightChooseUserActivity;
 import com.huami.android.view.c;
 import com.xiaomi.e.a;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.bt.profile.Weight.e;
-import com.xiaomi.hm.health.k;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
 import de.greenrobot.event.EventBus;
 import java.util.List;
 
@@ -67,16 +64,16 @@ public class BabyWeightActivity extends SystemBarTintActivity {
     private float z = 0.0f;
 
     private void a() {
-        this.d = (TextView) findViewById(l.home_back);
+        this.d = (TextView) findViewById(R.id.home_back);
         this.d.setOnClickListener(new C0858a(this));
-        this.e = (TextView) findViewById(l.baby_weight_title);
-        this.f = (TextView) findViewById(l.baby_weight_content);
-        this.g = (TextView) findViewById(l.baby_weight_value);
-        this.h = (TextView) findViewById(l.baby_weight_value_unit);
-        this.k = (RelativeLayout) findViewById(l.baby_weight_img_layout);
-        this.i = (ImageView) findViewById(l.baby_weight_img_body);
-        this.j = (ImageView) findViewById(l.baby_weight_img_scale);
-        this.l = (RelativeLayout) findViewById(l.baby_weight_no_scale_view);
+        this.e = (TextView) findViewById(R.id.baby_weight_title);
+        this.f = (TextView) findViewById(R.id.baby_weight_content);
+        this.g = (TextView) findViewById(R.id.baby_weight_value);
+        this.h = (TextView) findViewById(R.id.baby_weight_value_unit);
+        this.k = (RelativeLayout) findViewById(R.id.baby_weight_img_layout);
+        this.i = (ImageView) findViewById(R.id.baby_weight_img_body);
+        this.j = (ImageView) findViewById(R.id.baby_weight_img_scale);
+        this.l = (RelativeLayout) findViewById(R.id.baby_weight_no_scale_view);
         b();
     }
 
@@ -84,9 +81,9 @@ public class BabyWeightActivity extends SystemBarTintActivity {
         C0401a.a(this.o, C0401a.hu);
         DialogFragment c0811k = new C0811k();
         Bundle bundle = new Bundle();
-        bundle.putString(C0812l.b, getString(r.baby_weight_too_small_weight));
-        bundle.putString(C0812l.d, getString(r.give_up));
-        bundle.putString(C0812l.c, getString(r.confirm));
+        bundle.putString(C0812l.b, getString(R.string.baby_weight_too_small_weight));
+        bundle.putString(C0812l.d, getString(R.string.give_up));
+        bundle.putString(C0812l.c, getString(R.string.confirm));
         c0811k.setArguments(bundle);
         c0811k.setOpClickListener(new C0869g(this, eVar));
         c.showPanel((Activity) this, c0811k);
@@ -99,8 +96,8 @@ public class BabyWeightActivity extends SystemBarTintActivity {
             if (this.m) {
                 C0401a.a(this.o, C0401a.hp);
                 this.v = false;
-                this.e.setText(getString(r.dynamic_title_weight_not_nearby));
-                this.f.setText(getString(r.baby_weight_scale_not_nearby_content));
+                this.e.setText(getString(R.string.dynamic_title_weight_not_nearby));
+                this.f.setText(getString(R.string.baby_weight_scale_not_nearby_content));
                 this.g.setVisibility(8);
                 this.h.setVisibility(8);
                 this.k.setVisibility(8);
@@ -110,9 +107,9 @@ public class BabyWeightActivity extends SystemBarTintActivity {
             if (a) {
                 C0401a.a(this.o, C0401a.hr);
                 this.v = false;
-                this.i.setBackgroundResource(k.baby_weight_adult);
-                this.e.setText(getString(r.baby_weight_adult_weight_title));
-                this.f.setText(getString(r.baby_weight_adult_weight_content));
+                this.i.setBackgroundResource(R.drawable.baby_weight_adult);
+                this.e.setText(getString(R.string.baby_weight_adult_weight_title));
+                this.f.setText(getString(R.string.baby_weight_adult_weight_content));
             } else if (b) {
                 C0401a.a(this.o, C0401a.hq);
                 this.u = this.i.getX();
@@ -122,8 +119,8 @@ public class BabyWeightActivity extends SystemBarTintActivity {
                 ofFloat.setInterpolator(new DecelerateInterpolator());
                 ofFloat.setDuration(700);
                 ofFloat.start();
-                this.e.setText(getString(r.baby_weight_baby_weight_title));
-                this.f.setText(getString(r.baby_weight_baby_weight_content));
+                this.e.setText(getString(R.string.baby_weight_baby_weight_title));
+                this.f.setText(getString(R.string.baby_weight_baby_weight_content));
             }
             this.v = false;
             this.g.setVisibility(0);
@@ -156,9 +153,9 @@ public class BabyWeightActivity extends SystemBarTintActivity {
     private void c() {
         DialogFragment c0812l = new C0812l();
         Bundle bundle = new Bundle();
-        bundle.putString(C0812l.a, getString(r.baby_weight_warning_title));
-        bundle.putString(C0812l.b, getString(r.baby_weight_warning_content));
-        bundle.putString(C0812l.d, getString(r.gotit));
+        bundle.putString(C0812l.a, getString(R.string.baby_weight_warning_title));
+        bundle.putString(C0812l.b, getString(R.string.baby_weight_warning_content));
+        bundle.putString(C0812l.d, getString(R.string.gotit));
         bundle.putString(C0812l.c, a.f);
         c0812l.setArguments(bundle);
         c0812l.a(new C0867e(this));
@@ -206,7 +203,7 @@ public class BabyWeightActivity extends SystemBarTintActivity {
         List a = aA.a(eVar);
         UserInfo userInfo = new UserInfo();
         userInfo.uid = 0;
-        userInfo.name = getString(r.visitor);
+        userInfo.name = getString(R.string.visitor);
         if (a != null && a.size() == 1) {
             userInfo = (UserInfo) a.get(0);
         }
@@ -272,9 +269,9 @@ public class BabyWeightActivity extends SystemBarTintActivity {
     private void f(e eVar) {
         DialogFragment c0811k = new C0811k();
         Bundle bundle = new Bundle();
-        bundle.putString(C0812l.b, getString(r.generate_baby_weight_content, new Object[]{eVar.j() + aA.a(this.o, eVar.h())}));
-        bundle.putString(C0812l.d, getString(r.give_up));
-        bundle.putString(C0812l.c, getString(r.confirm));
+        bundle.putString(C0812l.b, getString(R.string.generate_baby_weight_content, new Object[]{eVar.j() + aA.a(this.o, eVar.h())}));
+        bundle.putString(C0812l.d, getString(R.string.give_up));
+        bundle.putString(C0812l.c, getString(R.string.confirm));
         c0811k.setArguments(bundle);
         c0811k.setOpClickListener(new C0871i(this, eVar));
         c.showPanel((Activity) this, c0811k);
@@ -298,7 +295,7 @@ public class BabyWeightActivity extends SystemBarTintActivity {
 
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView((int) n.activity_baby_weight);
+        setContentView((int) R.layout.activity_baby_weight);
         this.o = this;
         this.t = Keeper.readPersonInfo().getWeightUnit();
         EventBus.getDefault().register(this);

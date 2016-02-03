@@ -3,7 +3,7 @@ package cn.com.smartdevices.bracelet.model;
 import android.text.TextUtils;
 import cn.com.smartdevices.bracelet.BraceletApp;
 import cn.com.smartdevices.bracelet.C0596r;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -79,7 +79,7 @@ public class Birthday {
     }
 
     public String toString() {
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(BraceletApp.a().getResources().getString(r.date_year_month));
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(BraceletApp.a().getResources().getString(R.string.date_year_month));
         Calendar instance = Calendar.getInstance();
         instance.set(this.year, this.month - 1, 1);
         return simpleDateFormat.format(new Date(instance.getTimeInMillis()));

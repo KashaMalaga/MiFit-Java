@@ -36,6 +36,7 @@ public class FwUpgradeManager implements h, b {
     private static final String MILI_1S_FW_FILEN_NAME = "Mili_hr.fw";
     private static final String MILI_FW_FILEN_NAME = "Mili.fw";
     private static final String SHOES_FW_FILE_NAME = "running.fw";
+    private static final String SHOES_QQ_FW_FILE_NAME = "HM05.fw";
     private static final String TAG = "FwUpgradeMananger";
     public static final int UPGRADE_FOR_MILI = 0;
     public static final int UPGRADE_FOR_SHOES = 2;
@@ -137,179 +138,130 @@ public class FwUpgradeManager implements h, b {
         }
     }
 
-    /* JADX WARNING: inconsistent code. */
-    /* Code decompiled incorrectly, please refer to instructions dump. */
     private boolean shoesFwUpgrade() {
-        /*
-        r7 = this;
-        r2 = 0;
-        r1 = 0;
-        r0 = r7.mContextRef;
-        r0 = r0.get();
-        r0 = (android.content.Context) r0;
-        if (r0 != 0) goto L_0x000e;
-    L_0x000c:
-        r0 = r1;
-    L_0x000d:
-        return r0;
-    L_0x000e:
-        r3 = new java.lang.StringBuilder;
-        r3.<init>();
-        r4 = android.os.Environment.getExternalStorageDirectory();
-        r4 = r4.getPath();
-        r3 = r3.append(r4);
-        r4 = "/";
-        r3 = r3.append(r4);
-        r4 = "running.fw";
-        r3 = r3.append(r4);
-        r4 = r3.toString();
-        r5 = new java.io.File;
-        r5.<init>(r4);
-        r3 = r5.exists();	 Catch:{ Exception -> 0x0081, all -> 0x009d }
-        if (r3 == 0) goto L_0x003d;
-    L_0x003a:
-        r5.delete();	 Catch:{ Exception -> 0x0081, all -> 0x009d }
-    L_0x003d:
-        r3 = new java.io.FileOutputStream;	 Catch:{ Exception -> 0x0081, all -> 0x009d }
-        r3.<init>(r5);	 Catch:{ Exception -> 0x0081, all -> 0x009d }
-        r0 = r0.getResources();	 Catch:{ Exception -> 0x00df, all -> 0x00d8 }
-        r0 = r0.getAssets();	 Catch:{ Exception -> 0x00df, all -> 0x00d8 }
-        r5 = "running.fw";
-        r2 = r0.open(r5);	 Catch:{ Exception -> 0x00df, all -> 0x00d8 }
-        r0 = r2.available();	 Catch:{ Exception -> 0x00e4, all -> 0x00d8 }
-        r0 = new byte[r0];	 Catch:{ Exception -> 0x00e4, all -> 0x00d8 }
-        r2.read(r0);	 Catch:{ Exception -> 0x00e4, all -> 0x00d8 }
-        r3.write(r0);	 Catch:{ Exception -> 0x00e4, all -> 0x00d8 }
-        r3.flush();	 Catch:{ Exception -> 0x00e4, all -> 0x00d8 }
-        if (r3 == 0) goto L_0x0064;
-    L_0x0061:
-        r3.close();	 Catch:{ IOException -> 0x00cc, all -> 0x007d }
-    L_0x0064:
-        if (r2 == 0) goto L_0x0069;
-    L_0x0066:
-        r2.close();	 Catch:{ IOException -> 0x00ce, all -> 0x007f }
-    L_0x0069:
-        r0 = com.xiaomi.hm.health.bt.profile.c.d.a();
-        r2 = com.xiaomi.hm.health.bt.b.c.SHOES;
-        r0 = r0.a(r2);
-        if (r0 == 0) goto L_0x007b;
-    L_0x0075:
-        r2 = r0.f();
-        if (r2 != 0) goto L_0x00ae;
-    L_0x007b:
-        r0 = r1;
-        goto L_0x000d;
-    L_0x007d:
-        r0 = move-exception;
-        throw r0;
-    L_0x007f:
-        r0 = move-exception;
-        throw r0;
-    L_0x0081:
-        r0 = move-exception;
-        r3 = r2;
-    L_0x0083:
-        r4 = "FwUpgradeMananger";
-        r0 = r0.getMessage();	 Catch:{ all -> 0x00da }
-        cn.com.smartdevices.bracelet.C0596r.e(r4, r0);	 Catch:{ all -> 0x00da }
-        if (r2 == 0) goto L_0x0091;
-    L_0x008e:
-        r2.close();	 Catch:{ IOException -> 0x00d0, all -> 0x0099 }
-    L_0x0091:
-        if (r3 == 0) goto L_0x0096;
-    L_0x0093:
-        r3.close();	 Catch:{ IOException -> 0x00d2, all -> 0x009b }
-    L_0x0096:
-        r0 = r1;
-        goto L_0x000d;
-    L_0x0099:
-        r0 = move-exception;
-        throw r0;
-    L_0x009b:
-        r0 = move-exception;
-        throw r0;
-    L_0x009d:
-        r0 = move-exception;
-        r3 = r2;
-    L_0x009f:
-        if (r3 == 0) goto L_0x00a4;
-    L_0x00a1:
-        r3.close();	 Catch:{ IOException -> 0x00d4, all -> 0x00aa }
-    L_0x00a4:
-        if (r2 == 0) goto L_0x00a9;
-    L_0x00a6:
-        r2.close();	 Catch:{ IOException -> 0x00d6, all -> 0x00ac }
-    L_0x00a9:
-        throw r0;
-    L_0x00aa:
-        r0 = move-exception;
-        throw r0;
-    L_0x00ac:
-        r0 = move-exception;
-        throw r0;
-    L_0x00ae:
-        r0.a(r4, r7);
-        r0 = "FwUpgradeMananger";
-        r1 = new java.lang.StringBuilder;
-        r1.<init>();
-        r2 = "shoesFwUpgrade startFwUpgrade";
-        r1 = r1.append(r2);
-        r1 = r1.append(r4);
-        r1 = r1.toString();
-        cn.com.smartdevices.bracelet.C0596r.e(r0, r1);
-        r0 = 1;
-        goto L_0x000d;
-    L_0x00cc:
-        r0 = move-exception;
-        goto L_0x0064;
-    L_0x00ce:
-        r0 = move-exception;
-        goto L_0x0069;
-    L_0x00d0:
-        r0 = move-exception;
-        goto L_0x0091;
-    L_0x00d2:
-        r0 = move-exception;
-        goto L_0x0096;
-    L_0x00d4:
-        r1 = move-exception;
-        goto L_0x00a4;
-    L_0x00d6:
-        r1 = move-exception;
-        goto L_0x00a9;
-    L_0x00d8:
-        r0 = move-exception;
-        goto L_0x009f;
-    L_0x00da:
-        r0 = move-exception;
-        r6 = r2;
-        r2 = r3;
-        r3 = r6;
-        goto L_0x009f;
-    L_0x00df:
-        r0 = move-exception;
-        r6 = r3;
-        r3 = r2;
-        r2 = r6;
-        goto L_0x0083;
-    L_0x00e4:
-        r0 = move-exception;
-        r6 = r3;
-        r3 = r2;
-        r2 = r6;
-        goto L_0x0083;
-        */
-        throw new UnsupportedOperationException("Method not decompiled: cn.com.smartdevices.bracelet.upgrade.FwUpgradeManager.shoesFwUpgrade():boolean");
+        Exception e;
+        FileOutputStream fileOutputStream;
+        Throwable th;
+        InputStream inputStream = null;
+        Context context = (Context) this.mContextRef.get();
+        if (context == null) {
+            return false;
+        }
+        com.xiaomi.hm.health.bt.profile.c.a a = d.a().a(c.SHOES);
+        if (a == null || !a.f()) {
+            return false;
+        }
+        i e2 = a.e();
+        if (e2 == null) {
+            return false;
+        }
+        String str = e2.d.b == 5 ? SHOES_QQ_FW_FILE_NAME : SHOES_FW_FILE_NAME;
+        String str2 = Environment.getExternalStorageDirectory().getPath() + "/" + str;
+        File file = new File(str2);
+        FileOutputStream fileOutputStream2;
+        try {
+            if (file.exists()) {
+                file.delete();
+            }
+            fileOutputStream2 = new FileOutputStream(file);
+            try {
+                inputStream = context.getResources().getAssets().open(str);
+                byte[] bArr = new byte[inputStream.available()];
+                inputStream.read(bArr);
+                fileOutputStream2.write(bArr);
+                fileOutputStream2.flush();
+                if (fileOutputStream2 != null) {
+                    try {
+                        fileOutputStream2.close();
+                    } catch (IOException e3) {
+                    }
+                }
+                if (inputStream != null) {
+                    try {
+                        inputStream.close();
+                    } catch (IOException e4) {
+                    }
+                }
+                a.a(str2, (b) this);
+                C0596r.e(TAG, "shoesFwUpgrade startFwUpgrade" + str2);
+                return true;
+            } catch (Exception e5) {
+                e = e5;
+                fileOutputStream = fileOutputStream2;
+                try {
+                    C0596r.e(TAG, e.getMessage());
+                    if (fileOutputStream != null) {
+                        try {
+                            fileOutputStream.close();
+                        } catch (IOException e6) {
+                        }
+                    }
+                    if (inputStream != null) {
+                        try {
+                            inputStream.close();
+                        } catch (IOException e7) {
+                        }
+                    }
+                    return false;
+                } catch (Throwable th2) {
+                    th = th2;
+                    fileOutputStream2 = fileOutputStream;
+                    if (fileOutputStream2 != null) {
+                        try {
+                            fileOutputStream2.close();
+                        } catch (IOException e8) {
+                        }
+                    }
+                    if (inputStream != null) {
+                        try {
+                            inputStream.close();
+                        } catch (IOException e9) {
+                        }
+                    }
+                    throw th;
+                }
+            } catch (Throwable th3) {
+                th = th3;
+                if (fileOutputStream2 != null) {
+                    fileOutputStream2.close();
+                }
+                if (inputStream != null) {
+                    inputStream.close();
+                }
+                throw th;
+            }
+        } catch (Exception e10) {
+            e = e10;
+            fileOutputStream = null;
+            C0596r.e(TAG, e.getMessage());
+            if (fileOutputStream != null) {
+                fileOutputStream.close();
+            }
+            if (inputStream != null) {
+                inputStream.close();
+            }
+            return false;
+        } catch (Throwable th4) {
+            th = th4;
+            fileOutputStream2 = null;
+            if (fileOutputStream2 != null) {
+                fileOutputStream2.close();
+            }
+            if (inputStream != null) {
+                inputStream.close();
+            }
+            throw th;
+        }
     }
 
     private boolean weightFwUpgrade() {
-        FileOutputStream fileOutputStream;
         Exception e;
         Throwable th;
         InputStream inputStream = null;
         String str = Environment.getExternalStorageDirectory().getPath() + "/weight.fw";
         File file = new File(str);
         InputStream inputStream2 = null;
+        FileOutputStream fileOutputStream;
         try {
             if (file.exists()) {
                 file.delete();
@@ -452,77 +404,77 @@ public class FwUpgradeManager implements h, b {
         goto L_0x000a;
     L_0x0027:
         r3 = 0;
-        r4 = r5.a();	 Catch:{ Exception -> 0x0192, all -> 0x01a7 }
+        r4 = r5.a();	 Catch:{ Exception -> 0x01a2, all -> 0x01b7 }
         if (r4 == 0) goto L_0x00f4;
     L_0x002e:
-        r0 = r0.getResources();	 Catch:{ Exception -> 0x0192, all -> 0x01a7 }
-        r0 = r0.getAssets();	 Catch:{ Exception -> 0x0192, all -> 0x01a7 }
+        r0 = r0.getResources();	 Catch:{ Exception -> 0x01a2, all -> 0x01b7 }
+        r0 = r0.getAssets();	 Catch:{ Exception -> 0x01a2, all -> 0x01b7 }
         r4 = "Mili_hr.fw";
-        r3 = r0.open(r4);	 Catch:{ Exception -> 0x0192, all -> 0x01a7 }
+        r3 = r0.open(r4);	 Catch:{ Exception -> 0x01a2, all -> 0x01b7 }
         r0 = "FwUpgradeMananger";
-        r4 = new java.lang.StringBuilder;	 Catch:{ Exception -> 0x01c4, all -> 0x01a7 }
-        r4.<init>();	 Catch:{ Exception -> 0x01c4, all -> 0x01a7 }
+        r4 = new java.lang.StringBuilder;	 Catch:{ Exception -> 0x01d7, all -> 0x01b7 }
+        r4.<init>();	 Catch:{ Exception -> 0x01d7, all -> 0x01b7 }
         r6 = "new fw length:";
-        r4 = r4.append(r6);	 Catch:{ Exception -> 0x01c4, all -> 0x01a7 }
-        r6 = r3.available();	 Catch:{ Exception -> 0x01c4, all -> 0x01a7 }
-        r4 = r4.append(r6);	 Catch:{ Exception -> 0x01c4, all -> 0x01a7 }
-        r4 = r4.toString();	 Catch:{ Exception -> 0x01c4, all -> 0x01a7 }
-        cn.com.smartdevices.bracelet.C0596r.e(r0, r4);	 Catch:{ Exception -> 0x01c4, all -> 0x01a7 }
-        r0 = r3.available();	 Catch:{ Exception -> 0x01c4, all -> 0x01a7 }
-        r0 = new byte[r0];	 Catch:{ Exception -> 0x01c4, all -> 0x01a7 }
-        r3.read(r0);	 Catch:{ Exception -> 0x01c4, all -> 0x01a7 }
-        r4 = com.xiaomi.hm.health.bt.profile.a.d(r0);	 Catch:{ Exception -> 0x01c4, all -> 0x01a7 }
-        r0 = com.xiaomi.hm.health.bt.profile.a.e(r0);	 Catch:{ Exception -> 0x01c4, all -> 0x01a7 }
+        r4 = r4.append(r6);	 Catch:{ Exception -> 0x01d7, all -> 0x01b7 }
+        r6 = r3.available();	 Catch:{ Exception -> 0x01d7, all -> 0x01b7 }
+        r4 = r4.append(r6);	 Catch:{ Exception -> 0x01d7, all -> 0x01b7 }
+        r4 = r4.toString();	 Catch:{ Exception -> 0x01d7, all -> 0x01b7 }
+        cn.com.smartdevices.bracelet.C0596r.e(r0, r4);	 Catch:{ Exception -> 0x01d7, all -> 0x01b7 }
+        r0 = r3.available();	 Catch:{ Exception -> 0x01d7, all -> 0x01b7 }
+        r0 = new byte[r0];	 Catch:{ Exception -> 0x01d7, all -> 0x01b7 }
+        r3.read(r0);	 Catch:{ Exception -> 0x01d7, all -> 0x01b7 }
+        r4 = com.xiaomi.hm.health.bt.profile.a.d(r0);	 Catch:{ Exception -> 0x01d7, all -> 0x01b7 }
+        r0 = com.xiaomi.hm.health.bt.profile.a.e(r0);	 Catch:{ Exception -> 0x01d7, all -> 0x01b7 }
         r6 = "FwUpgradeMananger";
-        r7 = new java.lang.StringBuilder;	 Catch:{ Exception -> 0x01c4, all -> 0x01a7 }
-        r7.<init>();	 Catch:{ Exception -> 0x01c4, all -> 0x01a7 }
+        r7 = new java.lang.StringBuilder;	 Catch:{ Exception -> 0x01d7, all -> 0x01b7 }
+        r7.<init>();	 Catch:{ Exception -> 0x01d7, all -> 0x01b7 }
         r8 = "assetsFwVersion: ";
-        r7 = r7.append(r8);	 Catch:{ Exception -> 0x01c4, all -> 0x01a7 }
-        r7 = r7.append(r4);	 Catch:{ Exception -> 0x01c4, all -> 0x01a7 }
+        r7 = r7.append(r8);	 Catch:{ Exception -> 0x01d7, all -> 0x01b7 }
+        r7 = r7.append(r4);	 Catch:{ Exception -> 0x01d7, all -> 0x01b7 }
         r8 = "---";
-        r7 = r7.append(r8);	 Catch:{ Exception -> 0x01c4, all -> 0x01a7 }
-        r8 = r5.k();	 Catch:{ Exception -> 0x01c4, all -> 0x01a7 }
-        r7 = r7.append(r8);	 Catch:{ Exception -> 0x01c4, all -> 0x01a7 }
+        r7 = r7.append(r8);	 Catch:{ Exception -> 0x01d7, all -> 0x01b7 }
+        r8 = r5.l();	 Catch:{ Exception -> 0x01d7, all -> 0x01b7 }
+        r7 = r7.append(r8);	 Catch:{ Exception -> 0x01d7, all -> 0x01b7 }
         r8 = "---";
-        r7 = r7.append(r8);	 Catch:{ Exception -> 0x01c4, all -> 0x01a7 }
-        r8 = r5.f;	 Catch:{ Exception -> 0x01c4, all -> 0x01a7 }
-        r7 = r7.append(r8);	 Catch:{ Exception -> 0x01c4, all -> 0x01a7 }
-        r7 = r7.toString();	 Catch:{ Exception -> 0x01c4, all -> 0x01a7 }
-        cn.com.smartdevices.bracelet.C0596r.e(r6, r7);	 Catch:{ Exception -> 0x01c4, all -> 0x01a7 }
+        r7 = r7.append(r8);	 Catch:{ Exception -> 0x01d7, all -> 0x01b7 }
+        r8 = r5.f;	 Catch:{ Exception -> 0x01d7, all -> 0x01b7 }
+        r7 = r7.append(r8);	 Catch:{ Exception -> 0x01d7, all -> 0x01b7 }
+        r7 = r7.toString();	 Catch:{ Exception -> 0x01d7, all -> 0x01b7 }
+        cn.com.smartdevices.bracelet.C0596r.e(r6, r7);	 Catch:{ Exception -> 0x01d7, all -> 0x01b7 }
         r6 = "FwUpgradeMananger";
-        r7 = new java.lang.StringBuilder;	 Catch:{ Exception -> 0x01c4, all -> 0x01a7 }
-        r7.<init>();	 Catch:{ Exception -> 0x01c4, all -> 0x01a7 }
+        r7 = new java.lang.StringBuilder;	 Catch:{ Exception -> 0x01d7, all -> 0x01b7 }
+        r7.<init>();	 Catch:{ Exception -> 0x01d7, all -> 0x01b7 }
         r8 = "assetsFwVersion2:  ";
-        r7 = r7.append(r8);	 Catch:{ Exception -> 0x01c4, all -> 0x01a7 }
-        r7 = r7.append(r4);	 Catch:{ Exception -> 0x01c4, all -> 0x01a7 }
+        r7 = r7.append(r8);	 Catch:{ Exception -> 0x01d7, all -> 0x01b7 }
+        r7 = r7.append(r4);	 Catch:{ Exception -> 0x01d7, all -> 0x01b7 }
         r8 = "---";
-        r7 = r7.append(r8);	 Catch:{ Exception -> 0x01c4, all -> 0x01a7 }
-        r8 = r5.p();	 Catch:{ Exception -> 0x01c4, all -> 0x01a7 }
-        r7 = r7.append(r8);	 Catch:{ Exception -> 0x01c4, all -> 0x01a7 }
+        r7 = r7.append(r8);	 Catch:{ Exception -> 0x01d7, all -> 0x01b7 }
+        r8 = r5.q();	 Catch:{ Exception -> 0x01d7, all -> 0x01b7 }
+        r7 = r7.append(r8);	 Catch:{ Exception -> 0x01d7, all -> 0x01b7 }
         r8 = "---";
-        r7 = r7.append(r8);	 Catch:{ Exception -> 0x01c4, all -> 0x01a7 }
-        r8 = r5.g;	 Catch:{ Exception -> 0x01c4, all -> 0x01a7 }
-        r7 = r7.append(r8);	 Catch:{ Exception -> 0x01c4, all -> 0x01a7 }
-        r7 = r7.toString();	 Catch:{ Exception -> 0x01c4, all -> 0x01a7 }
-        cn.com.smartdevices.bracelet.C0596r.e(r6, r7);	 Catch:{ Exception -> 0x01c4, all -> 0x01a7 }
-        r6 = r5.f;	 Catch:{ Exception -> 0x01c4, all -> 0x01a7 }
+        r7 = r7.append(r8);	 Catch:{ Exception -> 0x01d7, all -> 0x01b7 }
+        r8 = r5.g;	 Catch:{ Exception -> 0x01d7, all -> 0x01b7 }
+        r7 = r7.append(r8);	 Catch:{ Exception -> 0x01d7, all -> 0x01b7 }
+        r7 = r7.toString();	 Catch:{ Exception -> 0x01d7, all -> 0x01b7 }
+        cn.com.smartdevices.bracelet.C0596r.e(r6, r7);	 Catch:{ Exception -> 0x01d7, all -> 0x01b7 }
+        r6 = r5.f;	 Catch:{ Exception -> 0x01d7, all -> 0x01b7 }
         if (r4 > r6) goto L_0x00d8;
     L_0x00d1:
-        r6 = r5.g;	 Catch:{ Exception -> 0x01c4, all -> 0x01a7 }
+        r6 = r5.g;	 Catch:{ Exception -> 0x01d7, all -> 0x01b7 }
         if (r0 <= r6) goto L_0x00d8;
     L_0x00d5:
         r6 = 1;
-        r9.mIsExceptForHrFw = r6;	 Catch:{ Exception -> 0x01c4, all -> 0x01a7 }
+        r9.mIsExceptForHrFw = r6;	 Catch:{ Exception -> 0x01d7, all -> 0x01b7 }
     L_0x00d8:
-        r6 = r5.f;	 Catch:{ Exception -> 0x01c4, all -> 0x01a7 }
+        r6 = r5.f;	 Catch:{ Exception -> 0x01d7, all -> 0x01b7 }
         if (r4 > r6) goto L_0x00e0;
     L_0x00dc:
-        r4 = r5.g;	 Catch:{ Exception -> 0x01c4, all -> 0x01a7 }
+        r4 = r5.g;	 Catch:{ Exception -> 0x01d7, all -> 0x01b7 }
         if (r0 <= r4) goto L_0x00ea;
     L_0x00e0:
         if (r3 == 0) goto L_0x00e5;
     L_0x00e2:
-        r3.close();	 Catch:{ IOException -> 0x01b0, all -> 0x00e8 }
+        r3.close();	 Catch:{ IOException -> 0x01c0, all -> 0x00e8 }
     L_0x00e5:
         r0 = r2;
         goto L_0x000a;
@@ -532,7 +484,7 @@ public class FwUpgradeManager implements h, b {
     L_0x00ea:
         if (r3 == 0) goto L_0x00ef;
     L_0x00ec:
-        r3.close();	 Catch:{ IOException -> 0x01b3, all -> 0x00f2 }
+        r3.close();	 Catch:{ IOException -> 0x01c3, all -> 0x00f2 }
     L_0x00ef:
         r0 = r1;
         goto L_0x000a;
@@ -540,140 +492,156 @@ public class FwUpgradeManager implements h, b {
         r0 = move-exception;
         throw r0;
     L_0x00f4:
-        r4 = "Mili.fw";
-        r6 = r5.b();	 Catch:{ Exception -> 0x0192, all -> 0x01a7 }
-        if (r6 == 0) goto L_0x0117;
+        r4 = r5.c();	 Catch:{ Exception -> 0x01a2, all -> 0x01b7 }
+        if (r4 == 0) goto L_0x0104;
+    L_0x00fa:
+        if (r3 == 0) goto L_0x00ff;
     L_0x00fc:
+        r3.close();	 Catch:{ IOException -> 0x01c6, all -> 0x0102 }
+    L_0x00ff:
+        r0 = r2;
+        goto L_0x000a;
+    L_0x0102:
+        r0 = move-exception;
+        throw r0;
+    L_0x0104:
+        r4 = "Mili.fw";
+        r6 = r5.b();	 Catch:{ Exception -> 0x01a2, all -> 0x01b7 }
+        if (r6 == 0) goto L_0x0127;
+    L_0x010c:
         r4 = "Mili_1a.fw";
-        r6 = r5.f;	 Catch:{ Exception -> 0x0192, all -> 0x01a7 }
+        r6 = r5.f;	 Catch:{ Exception -> 0x01a2, all -> 0x01b7 }
         r7 = 16845145; // 0x1010959 float:2.3700265E-38 double:8.3226074E-317;
-        if (r6 != r7) goto L_0x0117;
-    L_0x0105:
-        r6 = r5.d;	 Catch:{ Exception -> 0x0192, all -> 0x01a7 }
+        if (r6 != r7) goto L_0x0127;
+    L_0x0115:
+        r6 = r5.d;	 Catch:{ Exception -> 0x01a2, all -> 0x01b7 }
         r6 = r6 & 255;
         r7 = 208; // 0xd0 float:2.91E-43 double:1.03E-321;
-        if (r6 != r7) goto L_0x0117;
-    L_0x010d:
-        if (r3 == 0) goto L_0x0112;
-    L_0x010f:
-        r3.close();	 Catch:{ IOException -> 0x01b6, all -> 0x0115 }
-    L_0x0112:
+        if (r6 != r7) goto L_0x0127;
+    L_0x011d:
+        if (r3 == 0) goto L_0x0122;
+    L_0x011f:
+        r3.close();	 Catch:{ IOException -> 0x01c9, all -> 0x0125 }
+    L_0x0122:
         r0 = r2;
         goto L_0x000a;
-    L_0x0115:
+    L_0x0125:
         r0 = move-exception;
         throw r0;
-    L_0x0117:
-        r0 = r0.getResources();	 Catch:{ Exception -> 0x0192, all -> 0x01a7 }
-        r0 = r0.getAssets();	 Catch:{ Exception -> 0x0192, all -> 0x01a7 }
-        r3 = r0.open(r4);	 Catch:{ Exception -> 0x0192, all -> 0x01a7 }
+    L_0x0127:
+        r0 = r0.getResources();	 Catch:{ Exception -> 0x01a2, all -> 0x01b7 }
+        r0 = r0.getAssets();	 Catch:{ Exception -> 0x01a2, all -> 0x01b7 }
+        r3 = r0.open(r4);	 Catch:{ Exception -> 0x01a2, all -> 0x01b7 }
         r0 = "FwUpgradeMananger";
-        r4 = new java.lang.StringBuilder;	 Catch:{ Exception -> 0x01c4, all -> 0x01a7 }
-        r4.<init>();	 Catch:{ Exception -> 0x01c4, all -> 0x01a7 }
+        r4 = new java.lang.StringBuilder;	 Catch:{ Exception -> 0x01d7, all -> 0x01b7 }
+        r4.<init>();	 Catch:{ Exception -> 0x01d7, all -> 0x01b7 }
         r6 = "new fw length:";
-        r4 = r4.append(r6);	 Catch:{ Exception -> 0x01c4, all -> 0x01a7 }
-        r6 = r3.available();	 Catch:{ Exception -> 0x01c4, all -> 0x01a7 }
-        r4 = r4.append(r6);	 Catch:{ Exception -> 0x01c4, all -> 0x01a7 }
-        r4 = r4.toString();	 Catch:{ Exception -> 0x01c4, all -> 0x01a7 }
-        cn.com.smartdevices.bracelet.C0596r.e(r0, r4);	 Catch:{ Exception -> 0x01c4, all -> 0x01a7 }
-        r0 = com.xiaomi.hm.health.bt.profile.a.a(r3);	 Catch:{ Exception -> 0x01c4, all -> 0x01a7 }
+        r4 = r4.append(r6);	 Catch:{ Exception -> 0x01d7, all -> 0x01b7 }
+        r6 = r3.available();	 Catch:{ Exception -> 0x01d7, all -> 0x01b7 }
+        r4 = r4.append(r6);	 Catch:{ Exception -> 0x01d7, all -> 0x01b7 }
+        r4 = r4.toString();	 Catch:{ Exception -> 0x01d7, all -> 0x01b7 }
+        cn.com.smartdevices.bracelet.C0596r.e(r0, r4);	 Catch:{ Exception -> 0x01d7, all -> 0x01b7 }
+        r0 = com.xiaomi.hm.health.bt.profile.a.a(r3);	 Catch:{ Exception -> 0x01d7, all -> 0x01b7 }
         r4 = "FwUpgradeMananger";
-        r6 = new java.lang.StringBuilder;	 Catch:{ Exception -> 0x01c4, all -> 0x01a7 }
-        r6.<init>();	 Catch:{ Exception -> 0x01c4, all -> 0x01a7 }
+        r6 = new java.lang.StringBuilder;	 Catch:{ Exception -> 0x01d7, all -> 0x01b7 }
+        r6.<init>();	 Catch:{ Exception -> 0x01d7, all -> 0x01b7 }
         r7 = "new fw version:";
-        r6 = r6.append(r7);	 Catch:{ Exception -> 0x01c4, all -> 0x01a7 }
-        r6 = r6.append(r0);	 Catch:{ Exception -> 0x01c4, all -> 0x01a7 }
+        r6 = r6.append(r7);	 Catch:{ Exception -> 0x01d7, all -> 0x01b7 }
+        r6 = r6.append(r0);	 Catch:{ Exception -> 0x01d7, all -> 0x01b7 }
         r7 = ",fw version:";
-        r6 = r6.append(r7);	 Catch:{ Exception -> 0x01c4, all -> 0x01a7 }
-        r7 = r5.f;	 Catch:{ Exception -> 0x01c4, all -> 0x01a7 }
-        r6 = r6.append(r7);	 Catch:{ Exception -> 0x01c4, all -> 0x01a7 }
+        r6 = r6.append(r7);	 Catch:{ Exception -> 0x01d7, all -> 0x01b7 }
+        r7 = r5.f;	 Catch:{ Exception -> 0x01d7, all -> 0x01b7 }
+        r6 = r6.append(r7);	 Catch:{ Exception -> 0x01d7, all -> 0x01b7 }
         r7 = ",pcb version:";
-        r6 = r6.append(r7);	 Catch:{ Exception -> 0x01c4, all -> 0x01a7 }
-        r7 = r5.d;	 Catch:{ Exception -> 0x01c4, all -> 0x01a7 }
-        r6 = r6.append(r7);	 Catch:{ Exception -> 0x01c4, all -> 0x01a7 }
-        r6 = r6.toString();	 Catch:{ Exception -> 0x01c4, all -> 0x01a7 }
-        cn.com.smartdevices.bracelet.C0596r.e(r4, r6);	 Catch:{ Exception -> 0x01c4, all -> 0x01a7 }
-        r4 = r5.f;	 Catch:{ Exception -> 0x01c4, all -> 0x01a7 }
-        if (r0 > r4) goto L_0x0188;
-    L_0x0177:
+        r6 = r6.append(r7);	 Catch:{ Exception -> 0x01d7, all -> 0x01b7 }
+        r7 = r5.d;	 Catch:{ Exception -> 0x01d7, all -> 0x01b7 }
+        r6 = r6.append(r7);	 Catch:{ Exception -> 0x01d7, all -> 0x01b7 }
+        r6 = r6.toString();	 Catch:{ Exception -> 0x01d7, all -> 0x01b7 }
+        cn.com.smartdevices.bracelet.C0596r.e(r4, r6);	 Catch:{ Exception -> 0x01d7, all -> 0x01b7 }
+        r4 = r5.f;	 Catch:{ Exception -> 0x01d7, all -> 0x01b7 }
+        if (r0 > r4) goto L_0x0198;
+    L_0x0187:
         r0 = "FwUpgradeMananger";
         r2 = "bracelet firmware is the lastest,do nothing!";
-        cn.com.smartdevices.bracelet.C0596r.e(r0, r2);	 Catch:{ Exception -> 0x01c4, all -> 0x01a7 }
-        if (r3 == 0) goto L_0x0183;
-    L_0x0180:
-        r3.close();	 Catch:{ IOException -> 0x01b9, all -> 0x0186 }
-    L_0x0183:
+        cn.com.smartdevices.bracelet.C0596r.e(r0, r2);	 Catch:{ Exception -> 0x01d7, all -> 0x01b7 }
+        if (r3 == 0) goto L_0x0193;
+    L_0x0190:
+        r3.close();	 Catch:{ IOException -> 0x01cc, all -> 0x0196 }
+    L_0x0193:
         r0 = r1;
         goto L_0x000a;
-    L_0x0186:
+    L_0x0196:
         r0 = move-exception;
         throw r0;
-    L_0x0188:
-        if (r3 == 0) goto L_0x018d;
-    L_0x018a:
-        r3.close();	 Catch:{ IOException -> 0x01bb, all -> 0x0190 }
-    L_0x018d:
+    L_0x0198:
+        if (r3 == 0) goto L_0x019d;
+    L_0x019a:
+        r3.close();	 Catch:{ IOException -> 0x01ce, all -> 0x01a0 }
+    L_0x019d:
         r0 = r2;
         goto L_0x000a;
-    L_0x0190:
+    L_0x01a0:
         r0 = move-exception;
         throw r0;
-    L_0x0192:
+    L_0x01a2:
         r0 = move-exception;
         r2 = r3;
-    L_0x0194:
+    L_0x01a4:
         r3 = "FwUpgradeMananger";
-        r0 = r0.getMessage();	 Catch:{ all -> 0x01c1 }
-        cn.com.smartdevices.bracelet.C0596r.e(r3, r0);	 Catch:{ all -> 0x01c1 }
-        if (r2 == 0) goto L_0x01a2;
-    L_0x019f:
-        r2.close();	 Catch:{ IOException -> 0x01bd, all -> 0x01a5 }
-    L_0x01a2:
+        r0 = r0.getMessage();	 Catch:{ all -> 0x01d4 }
+        cn.com.smartdevices.bracelet.C0596r.e(r3, r0);	 Catch:{ all -> 0x01d4 }
+        if (r2 == 0) goto L_0x01b2;
+    L_0x01af:
+        r2.close();	 Catch:{ IOException -> 0x01d0, all -> 0x01b5 }
+    L_0x01b2:
         r0 = r1;
         goto L_0x000a;
-    L_0x01a5:
+    L_0x01b5:
         r0 = move-exception;
         throw r0;
-    L_0x01a7:
+    L_0x01b7:
         r0 = move-exception;
-    L_0x01a8:
-        if (r3 == 0) goto L_0x01ad;
-    L_0x01aa:
-        r3.close();	 Catch:{ IOException -> 0x01bf, all -> 0x01ae }
-    L_0x01ad:
+    L_0x01b8:
+        if (r3 == 0) goto L_0x01bd;
+    L_0x01ba:
+        r3.close();	 Catch:{ IOException -> 0x01d2, all -> 0x01be }
+    L_0x01bd:
         throw r0;
-    L_0x01ae:
+    L_0x01be:
         r0 = move-exception;
         throw r0;
-    L_0x01b0:
+    L_0x01c0:
         r0 = move-exception;
         goto L_0x00e5;
-    L_0x01b3:
+    L_0x01c3:
         r0 = move-exception;
         goto L_0x00ef;
-    L_0x01b6:
+    L_0x01c6:
         r0 = move-exception;
-        goto L_0x0112;
-    L_0x01b9:
+        goto L_0x00ff;
+    L_0x01c9:
         r0 = move-exception;
-        goto L_0x0183;
-    L_0x01bb:
+        goto L_0x0122;
+    L_0x01cc:
         r0 = move-exception;
-        goto L_0x018d;
-    L_0x01bd:
+        goto L_0x0193;
+    L_0x01ce:
         r0 = move-exception;
-        goto L_0x01a2;
-    L_0x01bf:
+        goto L_0x019d;
+    L_0x01d0:
+        r0 = move-exception;
+        goto L_0x01b2;
+    L_0x01d2:
         r1 = move-exception;
-        goto L_0x01ad;
-    L_0x01c1:
+        goto L_0x01bd;
+    L_0x01d4:
         r0 = move-exception;
         r3 = r2;
-        goto L_0x01a8;
-    L_0x01c4:
+        goto L_0x01b8;
+    L_0x01d7:
         r0 = move-exception;
         r2 = r3;
-        goto L_0x0194;
+        goto L_0x01a4;
         */
         throw new UnsupportedOperationException("Method not decompiled: cn.com.smartdevices.bracelet.upgrade.FwUpgradeManager.checkMiliFwUpgrade():boolean");
     }
@@ -696,7 +664,7 @@ public class FwUpgradeManager implements h, b {
         }
         InputStream inputStream = null;
         try {
-            inputStream = context.getResources().getAssets().open(SHOES_FW_FILE_NAME);
+            inputStream = context.getResources().getAssets().open(e.d.b == 5 ? SHOES_QQ_FW_FILE_NAME : SHOES_FW_FILE_NAME);
             String versionNameFromFwStream = getVersionNameFromFwStream(inputStream);
             this.mLastestShoesVersion = getVersionCodeFromVersionName(versionNameFromFwStream);
             if (inputStream != null) {

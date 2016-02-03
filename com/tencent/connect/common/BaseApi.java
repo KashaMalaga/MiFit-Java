@@ -174,22 +174,22 @@ public abstract class BaseApi {
     }
 
     public static void handleDataToListener(Intent intent, IUiListener iUiListener) {
+        String stringExtra;
         if (intent == null) {
             iUiListener.onCancel();
             return;
         }
-        String stringExtra = intent.getStringExtra(Constants.KEY_ACTION);
-        String stringExtra2;
-        if (SystemUtils.ACTION_LOGIN.equals(stringExtra)) {
+        String stringExtra2 = intent.getStringExtra(Constants.KEY_ACTION);
+        if (SystemUtils.ACTION_LOGIN.equals(stringExtra2)) {
             int intExtra = intent.getIntExtra(Constants.KEY_ERROR_CODE, MSG_COMPLETE);
             if (intExtra == 0) {
-                stringExtra2 = intent.getStringExtra(Constants.KEY_RESPONSE);
-                if (stringExtra2 != null) {
+                stringExtra = intent.getStringExtra(Constants.KEY_RESPONSE);
+                if (stringExtra != null) {
                     try {
-                        iUiListener.onComplete(Util.parseJson(stringExtra2));
+                        iUiListener.onComplete(Util.parseJson(stringExtra));
                         return;
                     } catch (Throwable e) {
-                        iUiListener.onError(new UiError(-4, Constants.MSG_JSON_ERROR, stringExtra2));
+                        iUiListener.onError(new UiError(-4, Constants.MSG_JSON_ERROR, stringExtra));
                         f.b("openSDK_LOG", "OpenUi, onActivityResult, json error", e);
                         return;
                     }
@@ -200,19 +200,19 @@ public abstract class BaseApi {
             }
             f.e("openSDK_LOG", "OpenUi, onActivityResult, onError = " + intExtra + a.f);
             iUiListener.onError(new UiError(intExtra, intent.getStringExtra(Constants.KEY_ERROR_MSG), intent.getStringExtra(Constants.KEY_ERROR_DETAIL)));
-        } else if (SystemUtils.ACTION_SHARE.equals(stringExtra)) {
-            stringExtra = intent.getStringExtra(C0483q.g);
-            stringExtra2 = intent.getStringExtra("response");
-            if (com.huami.android.widget.f.b.equals(stringExtra)) {
+        } else if (SystemUtils.ACTION_SHARE.equals(stringExtra2)) {
+            stringExtra2 = intent.getStringExtra(C0483q.g);
+            stringExtra = intent.getStringExtra("response");
+            if (com.huami.android.widget.f.b.equals(stringExtra2)) {
                 iUiListener.onCancel();
-            } else if (h.P.equals(stringExtra)) {
-                iUiListener.onError(new UiError(-6, "unknown error", stringExtra2 + a.f));
-            } else if ("complete".equals(stringExtra)) {
+            } else if (h.P.equals(stringExtra2)) {
+                iUiListener.onError(new UiError(-6, "unknown error", stringExtra + a.f));
+            } else if ("complete".equals(stringExtra2)) {
                 try {
-                    iUiListener.onComplete(new JSONObject(stringExtra2 == null ? "{\"ret\": 0}" : stringExtra2));
+                    iUiListener.onComplete(new JSONObject(stringExtra == null ? "{\"ret\": 0}" : stringExtra));
                 } catch (JSONException e2) {
                     e2.printStackTrace();
-                    iUiListener.onError(new UiError(-4, "json error", stringExtra2 + a.f));
+                    iUiListener.onError(new UiError(-4, "json error", stringExtra + a.f));
                 }
             }
         }

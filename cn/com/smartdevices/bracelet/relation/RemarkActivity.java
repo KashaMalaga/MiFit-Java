@@ -11,10 +11,7 @@ import cn.com.smartdevices.bracelet.relation.db.Friend;
 import cn.com.smartdevices.bracelet.view.ClearEditText;
 import com.huami.android.ui.ActionBarActivity;
 import com.huami.android.view.b;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.o;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 
 public class RemarkActivity extends ActionBarActivity {
     public static final String a = "friend";
@@ -36,28 +33,28 @@ public class RemarkActivity extends ActionBarActivity {
 
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView(n.activity_remark);
+        setContentView(R.layout.activity_remark);
         this.d = (Friend) getIntent().getParcelableExtra(a);
         if (this.d == null || this.d.n < 0) {
-            b.a((Context) this, (int) r.toast_user_info_error, 0);
+            b.a((Context) this, (int) R.string.toast_user_info_error, 0);
             finish();
             return;
         }
         this.e = A.a();
-        this.f = (ClearEditText) findViewById(l.remark_name);
+        this.f = (ClearEditText) findViewById(R.id.remark_name);
         if (!TextUtils.isEmpty(this.d.x)) {
             this.f.setText(this.d.x);
         }
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(o.menu_remark, menu);
-        menu.findItem(l.action_save).getActionView();
+        getMenuInflater().inflate(R.menu.menu_remark, menu);
+        menu.findItem(R.id.action_save).getActionView();
         return true;
     }
 
     public boolean onOptionsItemSelected(MenuItem menuItem) {
-        if (menuItem.getItemId() != l.action_save) {
+        if (menuItem.getItemId() != R.id.action_save) {
             return super.onOptionsItemSelected(menuItem);
         }
         String obj = this.f.getText().toString();

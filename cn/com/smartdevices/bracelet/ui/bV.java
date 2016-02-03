@@ -8,12 +8,12 @@ import cn.com.smartdevices.bracelet.Utils;
 import cn.com.smartdevices.bracelet.datasource.DeviceSource;
 import cn.com.smartdevices.bracelet.lua.SlidingUpPanelLayout.PanelSlideListener;
 import cn.com.smartdevices.bracelet.weight.family.h;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.bt.a.A;
 import com.xiaomi.hm.health.bt.b.c;
 import com.xiaomi.hm.health.bt.bleservice.a;
 import com.xiaomi.hm.health.bt.model.HwConnStatus;
 import com.xiaomi.hm.health.bt.model.HwSyncDataStatus;
-import com.xiaomi.hm.health.r;
 import com.xiaomi.mipush.sdk.f;
 
 class bV implements PanelSlideListener {
@@ -110,7 +110,7 @@ class bV implements PanelSlideListener {
                 this.a.ae.setVisibility(8);
                 if (!(this.a.aj && this.a.ai == 1)) {
                     if (f < this.a.ak) {
-                        this.a.a(this.a.getString(r.dynamic_pull_pull_to_sync), Utils.a(this.a, (int) r.dynamic_pull_last_sync_time), 0, f);
+                        this.a.a(this.a.getString(R.string.dynamic_pull_pull_to_sync), Utils.a(this.a, (int) R.string.dynamic_pull_last_sync_time), 0, f);
                         this.a.Z.setRotation(0.0f);
                     } else {
                         if (this.a.ah < this.a.ak) {
@@ -124,7 +124,7 @@ class bV implements PanelSlideListener {
                         } else if (DeviceSource.hasBindShoesDevice() && c.SHOES.equals(this.a.s.h()) && !this.a.s.e()) {
                             this.a.o = true;
                         }
-                        this.a.a(this.a.getString(r.dynamic_pull_release_to_sync), Utils.a(this.a, (int) r.dynamic_pull_last_sync_time), 0, f);
+                        this.a.a(this.a.getString(R.string.dynamic_pull_release_to_sync), Utils.a(this.a, (int) R.string.dynamic_pull_last_sync_time), 0, f);
                     }
                 }
             }

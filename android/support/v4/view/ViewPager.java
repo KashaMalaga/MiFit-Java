@@ -1698,77 +1698,77 @@ public class ViewPager extends ViewGroup {
     }
 
     void f() {
+        int i;
         int b = this.s.b();
         this.m = b;
         boolean z = (this.p.size() >= (this.K * c) + g || this.p.size() >= b) ? f : true;
         boolean z2 = f;
-        int i = this.t;
+        int i2 = this.t;
         boolean z3 = z;
-        int i2 = at;
-        while (i2 < this.p.size()) {
-            int i3;
-            boolean z4;
+        int i3 = at;
+        while (i3 < this.p.size()) {
             int i4;
+            boolean z4;
             boolean z5;
-            C0179bw c0179bw = (C0179bw) this.p.get(i2);
+            C0179bw c0179bw = (C0179bw) this.p.get(i3);
             int a = this.s.a(c0179bw.a);
             if (a == W) {
-                i3 = i2;
+                i4 = i3;
                 z4 = z2;
-                i4 = i;
+                i = i2;
                 z5 = z3;
             } else if (a == -2) {
-                this.p.remove(i2);
-                i2 += W;
+                this.p.remove(i3);
+                i3 += W;
                 if (!z2) {
                     this.s.a((ViewGroup) this);
                     z2 = true;
                 }
                 this.s.a((ViewGroup) this, c0179bw.b, c0179bw.a);
                 if (this.t == c0179bw.b) {
-                    i3 = i2;
+                    i4 = i3;
                     z4 = z2;
-                    i4 = Math.max(at, Math.min(this.t, b + W));
+                    i = Math.max(at, Math.min(this.t, b + W));
                     z5 = true;
                 } else {
-                    i3 = i2;
+                    i4 = i3;
                     z4 = z2;
-                    i4 = i;
+                    i = i2;
                     z5 = true;
                 }
             } else if (c0179bw.b != a) {
                 if (c0179bw.b == this.t) {
-                    i = a;
+                    i2 = a;
                 }
                 c0179bw.b = a;
-                i3 = i2;
+                i4 = i3;
                 z4 = z2;
-                i4 = i;
+                i = i2;
                 z5 = true;
             } else {
-                i3 = i2;
+                i4 = i3;
                 z4 = z2;
-                i4 = i;
+                i = i2;
                 z5 = z3;
             }
             z3 = z5;
-            i = i4;
+            i2 = i;
             z2 = z4;
-            i2 = i3 + g;
+            i3 = i4 + g;
         }
         if (z2) {
             this.s.b((ViewGroup) this);
         }
         Collections.sort(this.p, n);
         if (z3) {
-            i4 = getChildCount();
-            for (i2 = at; i2 < i4; i2 += g) {
-                LayoutParams layoutParams = (LayoutParams) getChildAt(i2).getLayoutParams();
+            i = getChildCount();
+            for (i3 = at; i3 < i; i3 += g) {
+                LayoutParams layoutParams = (LayoutParams) getChildAt(i3).getLayoutParams();
                 if (!layoutParams.a) {
                     layoutParams.c = 0.0f;
                 }
             }
-            a(i, (boolean) f, true);
+            a(i2, (boolean) f, true);
             requestLayout();
         }
     }
@@ -2044,7 +2044,6 @@ public class ViewPager extends ViewGroup {
     }
 
     protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        LayoutParams layoutParams;
         int max;
         int childCount = getChildCount();
         int i5 = i3 - i;
@@ -2057,6 +2056,7 @@ public class ViewPager extends ViewGroup {
         int i7 = at;
         int i8 = at;
         while (i8 < childCount) {
+            LayoutParams layoutParams;
             int measuredWidth;
             View childAt = getChildAt(i8);
             if (childAt.getVisibility() != 8) {
@@ -2160,6 +2160,7 @@ public class ViewPager extends ViewGroup {
     }
 
     protected void onMeasure(int i, int i2) {
+        LayoutParams layoutParams;
         int i3;
         setMeasuredDimension(getDefaultSize(at, i), getDefaultSize(at, i2));
         int measuredWidth = getMeasuredWidth();
@@ -2168,7 +2169,6 @@ public class ViewPager extends ViewGroup {
         int measuredHeight = (getMeasuredHeight() - getPaddingTop()) - getPaddingBottom();
         int childCount = getChildCount();
         for (int i4 = at; i4 < childCount; i4 += g) {
-            LayoutParams layoutParams;
             int i5;
             View childAt = getChildAt(i4);
             if (childAt.getVisibility() != 8) {

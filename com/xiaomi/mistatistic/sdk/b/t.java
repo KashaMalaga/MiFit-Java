@@ -6,10 +6,8 @@ import android.database.sqlite.SQLiteException;
 import android.text.TextUtils;
 import cn.com.smartdevices.bracelet.d.C0430g;
 import cn.com.smartdevices.bracelet.d.C0432i;
-import cn.com.smartdevices.bracelet.gps.c.a.g;
 import cn.com.smartdevices.bracelet.gps.services.ay;
 import com.sina.weibo.sdk.component.WidgetRequestParam;
-import com.tencent.open.SocialConstants;
 import com.xiaomi.e.a;
 import com.xiaomi.mistatistic.sdk.c.i;
 
@@ -106,9 +104,9 @@ public class t {
         contentValues.put(WidgetRequestParam.REQ_PARAM_COMMENT_CATEGORY, iVar.a);
         contentValues.put(C0430g.b, TextUtils.isEmpty(iVar.c) ? a.f : iVar.c);
         contentValues.put(ay.H, Long.valueOf(iVar.b));
-        contentValues.put(SocialConstants.PARAM_TYPE, TextUtils.isEmpty(iVar.d) ? a.f : iVar.d);
+        contentValues.put(com.xiaomi.channel.relationservice.data.a.h, TextUtils.isEmpty(iVar.d) ? a.f : iVar.d);
         contentValues.put(C0432i.b, TextUtils.isEmpty(iVar.e) ? a.f : iVar.e);
-        contentValues.put(g.g, TextUtils.isEmpty(iVar.f) ? a.f : iVar.f);
+        contentValues.put(com.xiaomi.channel.relationservice.data.a.G, TextUtils.isEmpty(iVar.f) ? a.f : iVar.f);
         try {
             a.getWritableDatabase().insert("mistat_event", a.f, contentValues);
         } catch (Throwable e) {

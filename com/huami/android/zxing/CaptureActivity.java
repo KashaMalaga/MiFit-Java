@@ -20,7 +20,6 @@ import cn.com.smartdevices.bracelet.C0401a;
 import cn.com.smartdevices.bracelet.C0409b;
 import cn.com.smartdevices.bracelet.C0410c;
 import cn.com.smartdevices.bracelet.C0596r;
-import com.amap.api.services.core.AMapException;
 import com.c.b.a;
 import com.c.b.e;
 import com.c.b.s;
@@ -33,6 +32,7 @@ import com.huami.android.widget.f;
 import com.huami.android.zxing.a.g;
 import com.tencent.connect.common.Constants;
 import com.tencent.open.SocialConstants;
+import com.xiaomi.channel.relationservice.data.b;
 import java.io.File;
 import java.io.Serializable;
 import java.util.Collection;
@@ -320,10 +320,10 @@ public final class CaptureActivity extends ActionBarActivity implements Callback
                 setResult(q);
                 finish();
                 return true;
-            case AMapException.ERROR_CODE_INVALID_PARAMETER /*24*/:
+            case b.y /*24*/:
                 this.w.a(true);
                 return true;
-            case AMapException.ERROR_CODE_NULL_PARAMETER /*25*/:
+            case b.z /*25*/:
                 this.w.a(false);
                 return true;
             case com.xiaomi.hm.health.bt.profile.a.a.ab /*27*/:

@@ -3,7 +3,7 @@ package cn.com.smartdevices.bracelet.g;
 import android.content.Context;
 import android.support.v4.media.h;
 import cn.com.smartdevices.bracelet.gps.c.a;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 
 public class f extends a {
     private static final int c = 33;
@@ -14,7 +14,7 @@ public class f extends a {
 
     protected String a(Context context, String str) {
         a.b(context, "ropeskipping");
-        return context.getResources().getString(r.sport_ranking_desc_normal, new Object[]{str, context.getResources().getString(r.lab_factory_sport_type_ropeskipping)});
+        return context.getResources().getString(R.string.sport_ranking_desc_normal, new Object[]{str, context.getResources().getString(R.string.lab_factory_sport_type_ropeskipping)});
     }
 
     public void a() {

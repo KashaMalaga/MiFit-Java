@@ -902,13 +902,13 @@ public final class L {
     }
 
     public void a(C1079j c1079j) {
-        C1083n c1083n;
         l();
         if (c1079j == null) {
             throw new IllegalArgumentException("Message body may not be null");
         }
         this.h.lock();
         if (d() || a((C1078u) c1079j)) {
+            C1083n c1083n;
             try {
                 C1078u a;
                 long a2 = this.p.a();

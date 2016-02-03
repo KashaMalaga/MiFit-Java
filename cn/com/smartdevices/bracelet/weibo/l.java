@@ -5,7 +5,7 @@ import cn.com.smartdevices.bracelet.C0401a;
 import cn.com.smartdevices.bracelet.C0596r;
 import com.sina.weibo.sdk.auth.WeiboAuthListener;
 import com.sina.weibo.sdk.exception.WeiboException;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 
 class l implements WeiboAuthListener {
     final /* synthetic */ BindHealthActivity a;
@@ -17,7 +17,7 @@ class l implements WeiboAuthListener {
 
     public void onCancel() {
         this.a.a(true);
-        this.a.c((int) r.weibosdk_toast_auth_canceled);
+        this.a.c((int) R.string.weibosdk_toast_auth_canceled);
         C0401a.a(this.a, C0401a.aI);
     }
 
@@ -28,7 +28,7 @@ class l implements WeiboAuthListener {
 
     public void onWeiboException(WeiboException weiboException) {
         this.a.a(true);
-        this.a.c((int) r.weibosdk_toast_auth_canceled_f);
+        this.a.c((int) R.string.weibosdk_toast_auth_canceled_f);
         C0401a.a(this.a, C0401a.aH);
     }
 }

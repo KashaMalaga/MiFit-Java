@@ -5,7 +5,7 @@ import android.os.Message;
 import cn.com.smartdevices.bracelet.C0401a;
 import cn.com.smartdevices.bracelet.Utils;
 import com.huami.android.view.b;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 import kankan.wheel.widget.a;
 import kankan.wheel.widget.l;
 
@@ -26,7 +26,7 @@ class C0773dv extends Handler {
                 return;
             case a.k /*2*/:
             case a.X /*5*/:
-                b.a(this.a.v, (int) r.bind_weight_fail, 1).show();
+                b.a(this.a.v, (int) R.string.bind_weight_fail, 1).show();
                 Utils.a(this.a.v);
                 this.a.i();
                 C0401a.a(this.a.v, C0401a.fW);

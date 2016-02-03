@@ -13,9 +13,7 @@ import cn.com.smartdevices.bracelet.C0596r;
 import cn.com.smartdevices.bracelet.ui.SystemBarTintActivity;
 import com.huami.android.view.b;
 import com.tencent.open.SocialConstants;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 
 public class AdvClickTargetActivity extends SystemBarTintActivity {
     private static final String g = "AdvClickTargetActivity";
@@ -44,23 +42,23 @@ public class AdvClickTargetActivity extends SystemBarTintActivity {
     }
 
     private void b() {
-        this.d = (TextView) findViewById(l.title_tv);
+        this.d = (TextView) findViewById(R.id.title_tv);
         this.d.setText(this.b);
         if (C.a(this.c)) {
-            this.e = (WebView) findViewById(l.webview);
-            this.f = (ProgressBar) findViewById(l.webview_progress);
+            this.e = (WebView) findViewById(R.id.webview);
+            this.f = (ProgressBar) findViewById(R.id.webview_progress);
             this.e.getSettings().setJavaScriptEnabled(true);
             this.e.setWebViewClient(this.h);
             this.e.setWebChromeClient(this.i);
             this.e.loadUrl(this.a);
             return;
         }
-        b.a(this.c, (int) r.no_network_connection, 1).show();
+        b.a(this.c, (int) R.string.no_network_connection, 1).show();
     }
 
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView((int) n.activity_click_startup);
+        setContentView((int) R.layout.activity_click_startup);
         this.c = getApplicationContext();
         a();
         b();

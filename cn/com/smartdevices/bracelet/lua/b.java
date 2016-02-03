@@ -5,7 +5,7 @@ import android.view.View;
 import android.widget.ImageView;
 import cn.com.smartdevices.bracelet.C0596r;
 import com.f.a.b.f.a;
-import com.xiaomi.hm.health.k;
+import com.xiaomi.hm.health.R;
 
 class b implements a {
     final /* synthetic */ LuaListAdapter a;
@@ -23,7 +23,7 @@ class b implements a {
 
     public void a(String str, View view, com.f.a.b.a.b bVar) {
         C0596r.e("LuaListAdapter", "onLoadingFailed");
-        ((ImageView) view).setImageResource(k.game_banner_icon);
+        ((ImageView) view).setImageResource(R.drawable.game_banner_icon);
     }
 
     public void b(String str, View view) {

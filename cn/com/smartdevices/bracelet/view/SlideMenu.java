@@ -31,7 +31,7 @@ import android.widget.Scroller;
 import cn.com.smartdevices.bracelet.push.MiPushMessageReceiver;
 import com.amap.api.maps.model.BitmapDescriptorFactory;
 import com.xiaomi.account.openauth.h;
-import com.xiaomi.hm.health.g;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.t;
 import kankan.wheel.widget.a;
 
@@ -177,7 +177,7 @@ public class SlideMenu extends ViewGroup {
     }
 
     public SlideMenu(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, g.slideMenuStyle);
+        this(context, attributeSet, R.attr.slideMenuStyle);
     }
 
     public SlideMenu(Context context, AttributeSet attributeSet, int i) {

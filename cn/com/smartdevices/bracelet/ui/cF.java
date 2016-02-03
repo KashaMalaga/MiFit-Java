@@ -2,8 +2,8 @@ package cn.com.smartdevices.bracelet.ui;
 
 import cn.com.smartdevices.bracelet.C0596r;
 import com.huami.android.view.b;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.bt.a.d;
-import com.xiaomi.hm.health.r;
 
 class cF extends d {
     final /* synthetic */ NewAlarmActivity a;
@@ -19,6 +19,6 @@ class cF extends d {
 
     public void b(Object obj) {
         super.b(obj);
-        b.a(this.a.o, this.a.o.getString(r.bt_operation_failed_tips), 0).show();
+        b.a(this.a.o, this.a.o.getString(R.string.bt_operation_failed_tips), 0).show();
     }
 }

@@ -58,16 +58,12 @@ import cn.com.smartdevices.bracelet.weight.WeightInfo;
 import cn.com.smartdevices.bracelet.weight.aA;
 import cn.com.smartdevices.bracelet.weight.ah;
 import com.amap.api.maps.model.GroundOverlayOptions;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.bt.d.e;
 import com.xiaomi.hm.health.bt.model.HwConnStatus;
 import com.xiaomi.hm.health.bt.model.HwSyncDataStatus;
 import com.xiaomi.hm.health.dataprocess.DaySportData.Summary;
 import com.xiaomi.hm.health.dataprocess.SportDay;
-import com.xiaomi.hm.health.i;
-import com.xiaomi.hm.health.k;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
 import de.greenrobot.event.EventBus;
 import java.util.Calendar;
 import java.util.HashMap;
@@ -271,7 +267,7 @@ public class StatisticFragment extends p implements OnClickListener, e {
             this.ah.setVisibility(0);
             this.ai.setVisibility(8);
             this.aj.setVisibility(8);
-            this.ah.setImageResource(k.btn_dynamic_mode_step);
+            this.ah.setImageResource(R.drawable.btn_dynamic_mode_step);
             i2 = this.as;
             i3 = i2;
             i2 = this.ar;
@@ -279,14 +275,14 @@ public class StatisticFragment extends p implements OnClickListener, e {
             this.ah.setVisibility(0);
             this.ai.setVisibility(8);
             this.aj.setVisibility(8);
-            this.ah.setImageResource(k.btn_dynamic_mode_sleep);
+            this.ah.setImageResource(R.drawable.btn_dynamic_mode_sleep);
             i2 = this.ar;
             i3 = i2;
             i2 = this.as;
         } else if (i == f) {
             this.ah.setVisibility(8);
             this.aj.setVisibility(0);
-            this.ah.setImageResource(k.btn_statistic_mode_weight_modify);
+            this.ah.setImageResource(R.drawable.btn_statistic_mode_weight_modify);
             i2 = this.as;
             i3 = i2;
             i2 = this.at;
@@ -315,36 +311,36 @@ public class StatisticFragment extends p implements OnClickListener, e {
     }
 
     private void a(View view) {
-        this.Z = view.findViewById(l.header);
-        this.aa = (TextView) view.findViewById(l.header_sync_tip);
-        this.ab = (TextView) view.findViewById(l.header_sub_title);
-        this.ac = view.findViewById(l.share);
+        this.Z = view.findViewById(R.id.header);
+        this.aa = (TextView) view.findViewById(R.id.header_sync_tip);
+        this.ab = (TextView) view.findViewById(R.id.header_sub_title);
+        this.ac = view.findViewById(R.id.share);
         this.ac.setOnClickListener(this);
-        this.ad = view.findViewById(l.add_member);
+        this.ad = view.findViewById(R.id.add_member);
         this.ad.setOnClickListener(this);
-        this.ae = (StatisticChartView) view.findViewById(l.statistic_chart);
-        this.af = (StatisticChartView) view.findViewById(l.next_statistic_chart);
-        this.ah = (ImageButton) view.findViewById(l.mode_switch);
+        this.ae = (StatisticChartView) view.findViewById(R.id.statistic_chart);
+        this.af = (StatisticChartView) view.findViewById(R.id.next_statistic_chart);
+        this.ah = (ImageButton) view.findViewById(R.id.mode_switch);
         this.ah.setOnClickListener(this);
-        this.ai = (ImageButton) view.findViewById(l.weight_report_edit_btn);
+        this.ai = (ImageButton) view.findViewById(R.id.weight_report_edit_btn);
         this.ai.setOnClickListener(this);
-        this.aj = (ImageButton) view.findViewById(l.weight_report_dele_btn);
+        this.aj = (ImageButton) view.findViewById(R.id.weight_report_dele_btn);
         this.aj.setOnClickListener(this);
-        this.al = view.findViewById(l.mode_statistic_zoom_in);
-        this.ak = view.findViewById(l.mode_statistic_zoom_out);
+        this.al = view.findViewById(R.id.mode_statistic_zoom_in);
+        this.ak = view.findViewById(R.id.mode_statistic_zoom_out);
         this.al.setOnClickListener(this);
         this.ak.setOnClickListener(this);
         if ((this.aC & p) == 0) {
             this.ah.setVisibility(8);
         }
         if (this.r == f) {
-            View findViewById = view.findViewById(l.info_weight_layout);
+            View findViewById = view.findViewById(R.id.info_weight_layout);
             this.ao = new SparseArray(o);
             this.ao.put(p, findViewById);
             this.ao.put(q, findViewById);
             this.ao.put(f, findViewById);
             d();
-            this.D = (WeightUserQuickPicker) view.findViewById(l.user_picker);
+            this.D = (WeightUserQuickPicker) view.findViewById(R.id.user_picker);
             this.D.setVisibility(0);
             this.D.setOnClickListener(new eP(this));
             this.D.a(new eQ(this));
@@ -371,12 +367,12 @@ public class StatisticFragment extends p implements OnClickListener, e {
         this.aj.setVisibility(8);
         this.ai.setVisibility(8);
         this.ah.setVisibility(0);
-        findViewById = view.findViewById(l.info_sleep_daily_layout);
-        View findViewById2 = view.findViewById(l.info_sleep_weekly_layout);
-        View findViewById3 = view.findViewById(l.info_sleep_monthly_layout);
-        View findViewById4 = view.findViewById(l.info_step_daily_layout);
-        View findViewById5 = view.findViewById(l.info_step_weekly_layout);
-        View findViewById6 = view.findViewById(l.info_step_monthly_layout);
+        findViewById = view.findViewById(R.id.info_sleep_daily_layout);
+        View findViewById2 = view.findViewById(R.id.info_sleep_weekly_layout);
+        View findViewById3 = view.findViewById(R.id.info_sleep_monthly_layout);
+        View findViewById4 = view.findViewById(R.id.info_step_daily_layout);
+        View findViewById5 = view.findViewById(R.id.info_step_weekly_layout);
+        View findViewById6 = view.findViewById(R.id.info_step_monthly_layout);
         this.am = new SparseArray(o);
         this.an = new SparseArray(o);
         this.am.put(p, findViewById);
@@ -468,14 +464,14 @@ public class StatisticFragment extends p implements OnClickListener, e {
                 textView = this.aa;
                 objArr = new Object[p];
                 objArr[0] = Integer.valueOf(0);
-                textView.setText(getString(r.dynamic_tip_sync_progress, objArr));
+                textView.setText(getString(R.string.dynamic_tip_sync_progress, objArr));
             } else if (hwSyncDataStatus.c()) {
                 textView = this.aa;
                 objArr = new Object[p];
                 objArr[0] = Integer.valueOf(hwSyncDataStatus.f());
-                textView.setText(getString(r.dynamic_tip_sync_progress, objArr));
+                textView.setText(getString(R.string.dynamic_tip_sync_progress, objArr));
             } else {
-                this.aa.setText(Utils.a(getActivity(), (int) r.dynamic_tip_sync_time, this.aF));
+                this.aa.setText(Utils.a(getActivity(), (int) R.string.dynamic_tip_sync_time, this.aF));
             }
         }
     }
@@ -665,7 +661,7 @@ public class StatisticFragment extends p implements OnClickListener, e {
         Bundle bundle = new Bundle();
         Object[] objArr = new Object[p];
         objArr[0] = DateFormat.format(cn.com.smartdevices.bracelet.f.f.a(Boolean.valueOf(true), this.F.timestamp), this.F.timestamp);
-        bundle.putString("Msg", getString(r.weight_delete_confirm_msg, objArr));
+        bundle.putString("Msg", getString(R.string.weight_delete_confirm_msg, objArr));
         com.huami.android.view.c.showPanel(getActivity(), eYVar, bundle);
     }
 
@@ -902,9 +898,9 @@ public class StatisticFragment extends p implements OnClickListener, e {
     public void onActivityCreated(Bundle bundle) {
         super.onActivityCreated(bundle);
         if (this.r == f) {
-            ((ViewStub) getView().findViewById(l.chart_weight_layout)).inflate();
+            ((ViewStub) getView().findViewById(R.id.chart_weight_layout)).inflate();
         } else {
-            ((ViewStub) getView().findViewById(l.chart_stepsleep_layout)).inflate();
+            ((ViewStub) getView().findViewById(R.id.chart_stepsleep_layout)).inflate();
         }
         a(getView());
         f();
@@ -923,7 +919,7 @@ public class StatisticFragment extends p implements OnClickListener, e {
         this.aG = getActivity().getIntent().getStringExtra(StatisticActivity.EXTRA_SYNC_ACTION);
         if (!TextUtils.isEmpty(this.aG) && this.r == p) {
             this.ac.setVisibility(8);
-            View findViewById = getView().findViewById(l.sync);
+            View findViewById = getView().findViewById(R.id.sync);
             findViewById.setVisibility(0);
             findViewById.setOnClickListener(this);
             this.aH = true;
@@ -944,37 +940,37 @@ public class StatisticFragment extends p implements OnClickListener, e {
 
     public void onClick(View view) {
         switch (view.getId()) {
-            case l.share /*2131296541*/:
+            case R.id.share:
                 l();
                 return;
-            case l.weight_report_dele_btn /*2131296856*/:
+            case R.id.weight_report_dele_btn:
                 j();
                 return;
-            case l.mode_switch /*2131296976*/:
+            case R.id.mode_switch:
                 if (this.r != f) {
                     n();
                     return;
                 }
                 return;
-            case l.add_member /*2131297232*/:
+            case R.id.add_member:
                 Intent intent = new Intent(getActivity(), RecordWeightActivity.class);
                 intent.putExtra(WeightGoalSetActivity.a, this.E);
                 getActivity().startActivity(intent);
                 C0401a.a(getActivity().getApplicationContext(), C0401a.gr, C0401a.gu);
                 return;
-            case l.sync /*2131297233*/:
+            case R.id.sync:
                 i();
                 return;
-            case l.mode_statistic_zoom_in /*2131297236*/:
+            case R.id.mode_statistic_zoom_in:
                 q();
                 return;
-            case l.weight_report_edit_btn /*2131297238*/:
+            case R.id.weight_report_edit_btn:
                 k();
                 return;
-            case l.mode_statistic_zoom_out /*2131297239*/:
+            case R.id.mode_statistic_zoom_out:
                 o();
                 return;
-            case l.user_picker /*2131297248*/:
+            case R.id.user_picker:
                 d((int) p);
                 return;
             default:
@@ -1023,9 +1019,9 @@ public class StatisticFragment extends p implements OnClickListener, e {
         }
         this.w = this.v;
         C0596r.e(c, "Today : " + this.u + " , StartDay : " + this.x + " , StopDay : " + this.y + " , CurrentDay : " + this.w);
-        this.U = getString(r.dynamic_detail_sleep_title);
-        this.V = getString(r.dynamic_detail_step_title);
-        this.W = getString(r.dynamic_detail_weight_title);
+        this.U = getString(R.string.dynamic_detail_sleep_title);
+        this.V = getString(R.string.dynamic_detail_step_title);
+        this.W = getString(R.string.dynamic_detail_weight_title);
         this.X = new HashMap();
         this.Y = new SparseArray();
         this.aB = Locale.getDefault().toString().startsWith(Locale.ENGLISH.toString());
@@ -1033,11 +1029,11 @@ public class StatisticFragment extends p implements OnClickListener, e {
     }
 
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        View inflate = layoutInflater.inflate(n.fragment_statistic, viewGroup, false);
+        View inflate = layoutInflater.inflate(R.layout.fragment_statistic, viewGroup, false);
         Resources resources = getActivity().getResources();
-        this.ar = resources.getColor(i.bg_mode_sleep);
-        this.as = resources.getColor(i.bg_mode_step);
-        this.at = resources.getColor(i.bg_mode_weight);
+        this.ar = resources.getColor(R.color.bg_mode_sleep);
+        this.as = resources.getColor(R.color.bg_mode_step);
+        this.at = resources.getColor(R.color.bg_mode_weight);
         return inflate;
     }
 
@@ -1102,11 +1098,11 @@ public class StatisticFragment extends p implements OnClickListener, e {
         if (this.aF == hwConnStatus.b().b()) {
             if (this.aF == com.xiaomi.hm.health.bt.b.c.SHOES.b()) {
                 if (hwConnStatus.e()) {
-                    this.aa.setText(getString(r.shoes_connecting));
+                    this.aa.setText(getString(R.string.shoes_connecting));
                 } else if (hwConnStatus.f()) {
-                    this.aa.setText(getString(r.shoes_alert_body_connect_failed));
+                    this.aa.setText(getString(R.string.shoes_alert_body_connect_failed));
                 } else if (hwConnStatus.h()) {
-                    this.aa.setText(getString(r.shoes_connect_failed));
+                    this.aa.setText(getString(R.string.shoes_connect_failed));
                 }
             } else if (hwConnStatus.k()) {
                 C0596r.e(c, "Enable Realtime Steps : " + isVisible());

@@ -15,7 +15,7 @@ import com.huami.android.zxing.CaptureActivity;
 import com.sina.weibo.sdk.constant.WBPageConstants.ParamKey;
 import com.tencent.open.SocialConstants;
 import com.xiaomi.channel.gamesdk.b;
-import com.xiaomi.e.a;
+import com.xiaomi.channel.relationservice.data.a;
 import com.xiaomi.market.sdk.o;
 
 class C0641r extends e {
@@ -38,7 +38,7 @@ class C0641r extends e {
         O a = f.a(iVar.o);
         a.a(g.t, iVar.i);
         a.a(o.L, String.valueOf(iVar.n));
-        a.a(SocialConstants.PARAM_TYPE, String.valueOf(iVar.m));
+        a.a(a.h, String.valueOf(iVar.m));
         a.a(g.n, c.h());
         if (!TextUtils.isEmpty(iVar.k)) {
             a.a(g.h, iVar.k);
@@ -69,9 +69,9 @@ class C0641r extends e {
             throw new IllegalArgumentException();
         }
         O a = f.a(iVar.o);
-        a.a(SocialConstants.PARAM_TYPE, a.f + iVar.m);
+        a.a(a.h, com.xiaomi.e.a.f + iVar.m);
         a.a(g.t, iVar.i);
-        a.a(o.L, a.f + iVar.n);
+        a.a(o.L, com.xiaomi.e.a.f + iVar.n);
         a.a(g.n, c.h());
         if (!TextUtils.isEmpty(iVar.c)) {
             a.a(CaptureActivity.n, iVar.c);
@@ -83,17 +83,17 @@ class C0641r extends e {
             a.a(g.a, iVar.r);
         }
         if (TextUtils.isEmpty(str3)) {
-            a.a(SocialConstants.PARAM_SUMMARY, a.f);
+            a.a(SocialConstants.PARAM_SUMMARY, com.xiaomi.e.a.f);
         } else {
             a.a(SocialConstants.PARAM_SUMMARY, str3);
         }
         if (TextUtils.isEmpty(str2)) {
-            a.a(b.b, a.f);
+            a.a(b.b, com.xiaomi.e.a.f);
         } else {
             a.a(b.b, str2);
         }
         if (!TextUtils.isEmpty(g.d)) {
-            a.a(g.d, a.f);
+            a.a(g.d, com.xiaomi.e.a.f);
         }
         if (!TextUtils.isEmpty(iVar.g)) {
             a.a(g.p, iVar.g);

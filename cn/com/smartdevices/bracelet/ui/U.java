@@ -3,7 +3,7 @@ package cn.com.smartdevices.bracelet.ui;
 import android.text.Html;
 import cn.com.smartdevices.bracelet.Utils;
 import cn.com.smartdevices.bracelet.g.d;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 
 class U implements d {
     final /* synthetic */ DailySportReportActivity a;
@@ -19,7 +19,7 @@ class U implements d {
             return;
         }
         this.a.e.setTextSize(1, 13.0f);
-        this.a.e.setText(r.connect_to_retrive);
+        this.a.e.setText(R.string.connect_to_retrive);
         this.a.e.setVisibility(8);
     }
 }

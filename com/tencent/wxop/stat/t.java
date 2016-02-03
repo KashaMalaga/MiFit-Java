@@ -9,7 +9,6 @@ import cn.com.smartdevices.bracelet.gps.services.ay;
 import cn.com.smartdevices.bracelet.push.i;
 import com.amap.api.location.LocationManagerProxy;
 import com.sina.weibo.sdk.constant.WBPageConstants.ParamKey;
-import com.tencent.open.SocialConstants;
 import com.tencent.wxop.stat.a.d;
 import com.tencent.wxop.stat.b.b;
 import com.tencent.wxop.stat.b.c;
@@ -337,8 +336,8 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Exception block dominato
     }
 
     private synchronized void a(ah ahVar) {
-        Cursor query;
         Throwable th;
+        Cursor query;
         try {
             Object obj;
             long update;
@@ -365,7 +364,7 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Exception block dominato
             if (1 == obj) {
                 update = (long) this.bW.getWritableDatabase().update(i.e, contentValues, "type=?", new String[]{Integer.toString(ahVar.aI)});
             } else {
-                contentValues.put(SocialConstants.PARAM_TYPE, Integer.valueOf(ahVar.aI));
+                contentValues.put(com.xiaomi.channel.relationservice.data.a.h, Integer.valueOf(ahVar.aI));
                 update = this.bW.getWritableDatabase().insert(i.e, null, contentValues);
             }
             if (update == -1) {
@@ -416,12 +415,12 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Exception block dominato
     }
 
     private synchronized void a(List<ad> list, int i, boolean z) {
+        SQLiteDatabase c;
         Throwable th;
         String str = null;
         synchronized (this) {
             if (list.size() != 0) {
                 int p = !z ? c.p() : c.n();
-                SQLiteDatabase c;
                 try {
                     String str2;
                     c = c(z);
@@ -822,8 +821,8 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Exception block dominato
     }
 
     private void an() {
-        Throwable th;
         Cursor query;
+        Throwable th;
         try {
             query = this.bW.getReadableDatabase().query("keyvalues", null, null, null, null, null, null);
             while (query.moveToNext()) {

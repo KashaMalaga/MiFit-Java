@@ -25,14 +25,11 @@ import cn.com.smartdevices.bracelet.C0623s;
 import cn.com.smartdevices.bracelet.Keeper;
 import cn.com.smartdevices.bracelet.Utils;
 import com.huami.android.view.b;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.bt.a.m;
 import com.xiaomi.hm.health.bt.bleservice.a;
 import com.xiaomi.hm.health.bt.model.HwConnStatus;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
 import de.greenrobot.event.EventBus;
-import kankan.wheel.widget.g;
 
 public class UnlockScreenHelperActivity extends SystemBarTintActivity implements OnClickListener, OnCheckedChangeListener {
     private static final int A = -50;
@@ -71,11 +68,11 @@ public class UnlockScreenHelperActivity extends SystemBarTintActivity implements
     private int z = 10;
 
     private void a() {
-        this.t = findViewById(l.set_rssi_layout);
-        this.u = (RadioButton) findViewById(l.rb_very_close);
-        this.v = (RadioButton) findViewById(l.rb_close);
-        this.w = (RadioButton) findViewById(l.rb_nearby);
-        this.D = findViewById(l.set_success_tv);
+        this.t = findViewById(R.id.set_rssi_layout);
+        this.u = (RadioButton) findViewById(R.id.rb_very_close);
+        this.v = (RadioButton) findViewById(R.id.rb_close);
+        this.w = (RadioButton) findViewById(R.id.rb_nearby);
+        this.D = findViewById(R.id.set_success_tv);
         this.u.setOnCheckedChangeListener(this);
         this.v.setOnCheckedChangeListener(this);
         this.w.setOnCheckedChangeListener(this);
@@ -93,7 +90,7 @@ public class UnlockScreenHelperActivity extends SystemBarTintActivity implements
 
     private void a(boolean z) {
         int i = z ? 8 : a;
-        int i2 = z ? g.bg_color_blue : g.bg_color_grey;
+        int i2 = z ? R.color.bg_color_blue : R.color.bg_color_grey;
         this.p.setVisibility(i);
         this.d.setBackgroundColor(getResources().getColor(i2));
         applyStatusBarTintAuto();
@@ -114,29 +111,29 @@ public class UnlockScreenHelperActivity extends SystemBarTintActivity implements
         boolean c = c();
         if (c) {
             this.g.setEnabled(false);
-            this.j.setText(getString(r.unlock_screen_set_password_tips_has_set));
-            this.k.setTextColor(getResources().getColor(g.disabled_text_color));
+            this.j.setText(getString(R.string.unlock_screen_set_password_tips_has_set));
+            this.k.setTextColor(getResources().getColor(R.color.disabled_text_color));
             this.h.setEnabled(F);
-            this.i.setTextColor(getResources().getColor(g.main_ui_title_color));
+            this.i.setTextColor(getResources().getColor(R.color.main_ui_title_color));
         } else {
             this.g.setEnabled(F);
-            this.j.setText(getString(r.unlock_screen_set_password_tips_set));
-            this.k.setTextColor(getResources().getColor(g.main_ui_title_color));
+            this.j.setText(getString(R.string.unlock_screen_set_password_tips_set));
+            this.k.setTextColor(getResources().getColor(R.color.main_ui_title_color));
             this.h.setEnabled(false);
-            this.i.setTextColor(getResources().getColor(g.disabled_text_color));
+            this.i.setTextColor(getResources().getColor(R.color.disabled_text_color));
         }
         if (c && Utils.o(getApplicationContext())) {
             this.o.setVisibility(8);
             this.m.setVisibility(8);
             this.l.setVisibility(a);
             if (Integer.parseInt(Utils.f((Context) this)) < 4) {
-                this.n.setText(r.unlock_screen_modify_unlock_v5);
+                this.n.setText(R.string.unlock_screen_modify_unlock_v5);
             }
         } else if (d()) {
             this.o.setVisibility(a);
             this.m.setVisibility(a);
             this.l.setVisibility(8);
-            this.d.setBackgroundColor(getResources().getColor(g.bg_color_blue));
+            this.d.setBackgroundColor(getResources().getColor(R.color.bg_color_blue));
             this.s.setVisibility(8);
             if (a.c()) {
                 a((boolean) F);
@@ -147,7 +144,7 @@ public class UnlockScreenHelperActivity extends SystemBarTintActivity implements
             this.o.setVisibility(8);
             this.m.setVisibility(8);
             this.l.setVisibility(8);
-            this.d.setBackgroundColor(getResources().getColor(g.bg_color_grey));
+            this.d.setBackgroundColor(getResources().getColor(R.color.bg_color_grey));
             this.s.setVisibility(a);
         }
     }
@@ -158,7 +155,7 @@ public class UnlockScreenHelperActivity extends SystemBarTintActivity implements
         try {
             if (this.x == null) {
                 if (!this.E) {
-                    b.a((Context) this, (int) r.set_rssi_failed, (int) a).show();
+                    b.a((Context) this, (int) R.string.set_rssi_failed, (int) a).show();
                 }
                 this.E = false;
                 return;
@@ -168,10 +165,10 @@ public class UnlockScreenHelperActivity extends SystemBarTintActivity implements
             if (d) {
                 Keeper.setRssiSignal(i);
                 if (!this.E) {
-                    b.a((Context) this, (int) r.set_rssi_success, (int) a).show();
+                    b.a((Context) this, (int) R.string.set_rssi_success, (int) a).show();
                 }
             } else if (!this.E) {
-                b.a((Context) this, (int) r.set_rssi_failed, (int) a).show();
+                b.a((Context) this, (int) R.string.set_rssi_failed, (int) a).show();
             }
             this.E = false;
         } catch (Exception e) {
@@ -263,19 +260,19 @@ public class UnlockScreenHelperActivity extends SystemBarTintActivity implements
 
     public void onCheckedChanged(CompoundButton compoundButton, boolean z) {
         switch (compoundButton.getId()) {
-            case l.rb_very_close /*2131297330*/:
+            case R.id.rb_very_close:
                 if (z) {
                     b((int) A);
                     return;
                 }
                 return;
-            case l.rb_close /*2131297331*/:
+            case R.id.rb_close:
                 if (z) {
                     b((int) B);
                     return;
                 }
                 return;
-            case l.rb_nearby /*2131297332*/:
+            case R.id.rb_nearby:
                 C0596r.d(c, "onCheckedChanged init...");
                 if (z) {
                     b((int) C);
@@ -289,7 +286,7 @@ public class UnlockScreenHelperActivity extends SystemBarTintActivity implements
 
     public void onClick(View view) {
         switch (view.getId()) {
-            case l.unlock_screen_header_fl /*2131296821*/:
+            case R.id.unlock_screen_header_fl:
                 this.y += b;
                 if (this.y == this.z) {
                     this.y = a;
@@ -297,13 +294,13 @@ public class UnlockScreenHelperActivity extends SystemBarTintActivity implements
                     return;
                 }
                 return;
-            case l.unlock_screen_set_password_ll /*2131296825*/:
+            case R.id.unlock_screen_set_password_ll:
                 a((int) a);
                 return;
-            case l.unlock_screen_set_unlock_ll /*2131296827*/:
+            case R.id.unlock_screen_set_unlock_ll:
                 a((int) b);
                 return;
-            case l.unlock_screen_invalid_tv /*2131296833*/:
+            case R.id.unlock_screen_invalid_tv:
                 Intent intent = new Intent(this, HelpActivity.class);
                 intent.putExtra(Utils.a, Utils.e);
                 startActivity(intent);
@@ -315,27 +312,27 @@ public class UnlockScreenHelperActivity extends SystemBarTintActivity implements
 
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView((int) n.activity_unlock_screen_helper);
-        this.d = findViewById(l.content);
-        this.e = findViewById(l.unlock_for_miuilock);
-        this.f = findViewById(l.unlock_for_smartlock);
-        this.g = findViewById(l.unlock_screen_set_password_ll);
+        setContentView((int) R.layout.activity_unlock_screen_helper);
+        this.d = findViewById(R.id.content);
+        this.e = findViewById(R.id.unlock_for_miuilock);
+        this.f = findViewById(R.id.unlock_for_smartlock);
+        this.g = findViewById(R.id.unlock_screen_set_password_ll);
         this.g.setOnClickListener(this);
-        this.h = findViewById(l.unlock_screen_set_unlock_ll);
+        this.h = findViewById(R.id.unlock_screen_set_unlock_ll);
         this.h.setOnClickListener(this);
-        this.i = (TextView) findViewById(l.unlock_screen_set_unlock_tv);
-        this.l = (LinearLayout) findViewById(l.has_unlock_with_bracelet_ll);
-        this.m = (LinearLayout) findViewById(l.not_unlock_with_bracelet_ll);
-        this.n = (TextView) findViewById(l.unlock_screen_modify_unlock_tv);
-        this.p = findViewById(l.unlock_screen_mask_view);
-        this.o = (TextView) findViewById(l.unlock_screen_tips_tv);
-        this.q = (TextView) findViewById(l.unlock_screen_invalid_tv);
+        this.i = (TextView) findViewById(R.id.unlock_screen_set_unlock_tv);
+        this.l = (LinearLayout) findViewById(R.id.has_unlock_with_bracelet_ll);
+        this.m = (LinearLayout) findViewById(R.id.not_unlock_with_bracelet_ll);
+        this.n = (TextView) findViewById(R.id.unlock_screen_modify_unlock_tv);
+        this.p = findViewById(R.id.unlock_screen_mask_view);
+        this.o = (TextView) findViewById(R.id.unlock_screen_tips_tv);
+        this.q = (TextView) findViewById(R.id.unlock_screen_invalid_tv);
         this.q.getPaint().setFlags(this.q.getPaint().getFlags() | 8);
         this.q.setOnClickListener(this);
-        this.j = (TextView) findViewById(l.unlock_screen_set_password_tips);
-        this.k = (TextView) findViewById(l.unlock_screen_set_password_tv);
-        this.r = (FrameLayout) findViewById(l.unlock_screen_header_fl);
-        this.s = (TextView) findViewById(l.unlock_screen_miui_not_support_tv);
+        this.j = (TextView) findViewById(R.id.unlock_screen_set_password_tips);
+        this.k = (TextView) findViewById(R.id.unlock_screen_set_password_tv);
+        this.r = (FrameLayout) findViewById(R.id.unlock_screen_header_fl);
+        this.s = (TextView) findViewById(R.id.unlock_screen_miui_not_support_tv);
         a();
         EventBus.getDefault().register(this);
     }
@@ -380,9 +377,9 @@ public class UnlockScreenHelperActivity extends SystemBarTintActivity implements
     public void onStartSettingClick(View view) {
         if (C0623s.a(this)) {
             C0596r.e(c, "Start Setting For SmartLock!!");
-            findViewById(l.start_setting).setEnabled(false);
+            findViewById(R.id.start_setting).setEnabled(false);
             C0401a.a((Context) this, C0401a.fh);
-            b.a((Context) this, (int) r.unlock_for_smartlock_pair_start_tip, (int) b).show();
+            b.a((Context) this, (int) R.string.unlock_for_smartlock_pair_start_tip, (int) b).show();
             new m(new fj(this)).f();
         }
     }

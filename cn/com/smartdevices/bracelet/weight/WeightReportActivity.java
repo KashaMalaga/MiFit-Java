@@ -30,16 +30,12 @@ import com.amap.api.maps.model.GroundOverlayOptions;
 import com.huami.android.ui.a;
 import com.huami.android.view.c;
 import com.xiaomi.channel.b.v;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.bt.profile.Weight.e;
-import com.xiaomi.hm.health.k;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
 import com.xiaomi.mipush.sdk.f;
 import de.greenrobot.event.EventBus;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import kankan.wheel.widget.i;
 
 public class WeightReportActivity extends SystemBarTintActivity implements OnClickListener {
     private static final String a = "WeightReportActivity";
@@ -81,19 +77,19 @@ public class WeightReportActivity extends SystemBarTintActivity implements OnCli
     private TextView z;
 
     private void a() {
-        this.v = (ImageButton) findViewById(l.weight_report_dele_btn);
+        this.v = (ImageButton) findViewById(R.id.weight_report_dele_btn);
         this.v.setOnClickListener(this);
-        this.t = (WeightUserAvatar) findViewById(l.user_icon);
-        this.u = (TextView) findViewById(l.user_name);
-        this.f = (LinearLayout) findViewById(l.bg_layout);
-        this.h = (ImageButton) findViewById(l.wr_share);
-        this.g = (RelativeLayout) findViewById(l.app_share_layout);
+        this.t = (WeightUserAvatar) findViewById(R.id.user_icon);
+        this.u = (TextView) findViewById(R.id.user_name);
+        this.f = (LinearLayout) findViewById(R.id.bg_layout);
+        this.h = (ImageButton) findViewById(R.id.wr_share);
+        this.g = (RelativeLayout) findViewById(R.id.app_share_layout);
         this.h.setOnClickListener(this);
-        this.q = (TextView) findViewById(l.current_weight_title);
-        this.r = (TextView) findViewById(l.current_weight_value);
-        this.s = (TextView) findViewById(l.current_weight_tips);
-        this.c = (TextView) findViewById(l.wr_bmi_tips_tv);
-        this.d = (TextView) findViewById(l.wr_figure_tips_tv);
+        this.q = (TextView) findViewById(R.id.current_weight_title);
+        this.r = (TextView) findViewById(R.id.current_weight_value);
+        this.s = (TextView) findViewById(R.id.current_weight_tips);
+        this.c = (TextView) findViewById(R.id.wr_bmi_tips_tv);
+        this.d = (TextView) findViewById(R.id.wr_figure_tips_tv);
         if (Utils.m()) {
             C0596r.e(a, "isNoChinese");
             this.c.setTextSize((float) Utils.a(5.0f, this.b));
@@ -103,12 +99,12 @@ public class WeightReportActivity extends SystemBarTintActivity implements OnCli
             this.c.setTextSize((float) Utils.a(10.0f, this.b));
             this.d.setTextSize((float) Utils.a(10.0f, this.b));
         }
-        this.e = (TextView) findViewById(l.wr_home_back);
+        this.e = (TextView) findViewById(R.id.wr_home_back);
         this.e.setOnClickListener(this);
-        this.i = (RelativeLayout) findViewById(l.bmi_layout);
+        this.i = (RelativeLayout) findViewById(R.id.bmi_layout);
         this.i.setOnClickListener(this);
-        this.j = (TextView) findViewById(l.share_text);
-        this.j.setText(getString(i.app_name) + " " + new SimpleDateFormat(getString(r.date_month_day)).format(new Date()));
+        this.j = (TextView) findViewById(R.id.share_text);
+        this.j.setText(getString(R.string.app_name) + " " + new SimpleDateFormat(getString(R.string.date_month_day)).format(new Date()));
         C0596r.e("SHARE", "share time text " + this.j.getText().toString());
         b();
     }
@@ -122,7 +118,7 @@ public class WeightReportActivity extends SystemBarTintActivity implements OnCli
         this.D.setText(Utils.i(this.G[6]));
         this.E.setText(Utils.i(this.G[7]));
         this.F.setText(Utils.i(this.G[8]));
-        this.x.setText(Utils.d(this.b, i) + getString(r.weight_ref) + "(" + aA.a(this.b, this.n.h()) + ")");
+        this.x.setText(Utils.d(this.b, i) + getString(R.string.weight_ref) + "(" + aA.a(this.b, this.n.h()) + ")");
     }
 
     private void a(Bundle bundle) {
@@ -182,26 +178,26 @@ public class WeightReportActivity extends SystemBarTintActivity implements OnCli
     }
 
     private void b() {
-        this.w = (RelativeLayout) findViewById(l.baby_layout);
-        this.x = (TextView) findViewById(l.left_title);
-        this.y = (TextView) findViewById(l.right_title);
+        this.w = (RelativeLayout) findViewById(R.id.baby_layout);
+        this.x = (TextView) findViewById(R.id.left_title);
+        this.y = (TextView) findViewById(R.id.right_title);
         this.y.setOnClickListener(new ao(this));
-        this.z = (TextView) findViewById(l.content_min_3);
-        this.A = (TextView) findViewById(l.content_min_2);
-        this.B = (TextView) findViewById(l.content_min_1);
-        this.C = (TextView) findViewById(l.content_min_0);
-        this.D = (TextView) findViewById(l.content_add_1);
-        this.E = (TextView) findViewById(l.content_add_2);
-        this.F = (TextView) findViewById(l.content_add_3);
+        this.z = (TextView) findViewById(R.id.content_min_3);
+        this.A = (TextView) findViewById(R.id.content_min_2);
+        this.B = (TextView) findViewById(R.id.content_min_1);
+        this.C = (TextView) findViewById(R.id.content_min_0);
+        this.D = (TextView) findViewById(R.id.content_add_1);
+        this.E = (TextView) findViewById(R.id.content_add_2);
+        this.F = (TextView) findViewById(R.id.content_add_3);
     }
 
     private void c() {
-        this.u.setText(this.m.name.isEmpty() ? getString(r.visitor) : this.m.name);
-        this.t.a(this.m.name.isEmpty() ? getString(r.visitor) : this.m.name);
+        this.u.setText(this.m.name.isEmpty() ? getString(R.string.visitor) : this.m.name);
+        this.t.a(this.m.name.isEmpty() ? getString(R.string.visitor) : this.m.name);
         Utils.a(this.m, this.t);
         this.r.setText(aA.c(this.n.j()) + com.xiaomi.e.a.f);
-        this.q.setText(getString(r.current_weight) + "(" + aA.a(this.b, this.n.h()) + ")");
-        this.f.setBackgroundResource(k.weight_report_bg);
+        this.q.setText(getString(R.string.current_weight) + "(" + aA.a(this.b, this.n.h()) + ")");
+        this.f.setBackgroundResource(R.drawable.weight_report_bg);
         this.H = this.m.targetWeight > 0.0f;
         this.I = aA.a(this.m.height, Birthday.fromStr(this.m.birthday).getAge(), aA.a(this.n.j(), this.n.h()));
         int ageInMonths = Birthday.fromStr(this.m.birthday).getAgeInMonths();
@@ -224,13 +220,13 @@ public class WeightReportActivity extends SystemBarTintActivity implements OnCli
         if (this.H) {
             c = aA.c(((float) ((int) aA.b(this.m.targetWeight, this.n.h()))) - this.n.j(), 1);
             if (c > 0.0f) {
-                this.s.setText(getString(r.lighter_than_goal, new Object[]{Math.abs(c) + aA.a(this.b, this.n.h())}));
+                this.s.setText(getString(R.string.lighter_than_goal, new Object[]{Math.abs(c) + aA.a(this.b, this.n.h())}));
                 return;
             } else if (c < 0.0f) {
-                this.s.setText(getString(r.heavier_than_goal, new Object[]{Math.abs(c) + aA.a(this.b, this.n.h())}));
+                this.s.setText(getString(R.string.heavier_than_goal, new Object[]{Math.abs(c) + aA.a(this.b, this.n.h())}));
                 return;
             } else {
-                this.s.setText(getString(r.weight_reach_goal));
+                this.s.setText(getString(R.string.weight_reach_goal));
                 return;
             }
         }
@@ -238,10 +234,10 @@ public class WeightReportActivity extends SystemBarTintActivity implements OnCli
         if (a != null) {
             c = aA.c(this.n.j() - aA.b(a.weight, this.n.h()), 1);
             if (c > 0.0f) {
-                this.s.setText(getString(r.add_than_last_time, new Object[]{c + aA.a(this.b, this.n.h())}));
+                this.s.setText(getString(R.string.add_than_last_time, new Object[]{c + aA.a(this.b, this.n.h())}));
             } else if (c < 0.0f) {
                 c = Math.abs(c);
-                this.s.setText(getString(r.less_than_last_time, new Object[]{c + aA.a(this.b, this.n.h())}));
+                this.s.setText(getString(R.string.less_than_last_time, new Object[]{c + aA.a(this.b, this.n.h())}));
             }
         }
     }
@@ -295,14 +291,14 @@ public class WeightReportActivity extends SystemBarTintActivity implements OnCli
 
     public void onClick(View view) {
         switch (view.getId()) {
-            case l.wr_share /*2131296738*/:
+            case R.id.wr_share:
                 d();
                 C0401a.a(this.b, C0401a.gn);
                 return;
-            case l.wr_home_back /*2131296739*/:
+            case R.id.wr_home_back:
                 onBackPressed();
                 return;
-            case l.bmi_layout /*2131296743*/:
+            case R.id.bmi_layout:
                 Bundle bundle = new Bundle();
                 bundle.putFloat(as.a, this.I);
                 bundle.putInt(as.b, Birthday.fromStr(this.m.birthday).getAge());
@@ -311,9 +307,9 @@ public class WeightReportActivity extends SystemBarTintActivity implements OnCli
                 a(bundle);
                 C0401a.a(this.b, C0401a.go);
                 return;
-            case l.weight_report_dele_btn /*2131296856*/:
+            case R.id.weight_report_dele_btn:
                 C0401a.a(this.b, C0401a.fA);
-                String string = getString(r.sure_to_delete_weight);
+                String string = getString(R.string.sure_to_delete_weight);
                 DialogFragment arVar = new ar();
                 arVar.setOpClickListener(new ap(this, arVar));
                 Bundle bundle2 = new Bundle();
@@ -327,7 +323,7 @@ public class WeightReportActivity extends SystemBarTintActivity implements OnCli
 
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView((int) n.activity_weight_report);
+        setContentView((int) R.layout.activity_weight_report);
         a();
         Intent intent = getIntent();
         if (intent != null) {
@@ -336,7 +332,7 @@ public class WeightReportActivity extends SystemBarTintActivity implements OnCli
             if (this.m == null) {
                 C0596r.e(a, "info is null");
                 this.m = new UserInfo();
-                this.m.name = getString(r.visitor);
+                this.m.name = getString(R.string.visitor);
                 this.m.uid = 0;
                 this.m.height = kankan.wheel.widget.a.aC;
                 this.m.birthday = "2000-10";

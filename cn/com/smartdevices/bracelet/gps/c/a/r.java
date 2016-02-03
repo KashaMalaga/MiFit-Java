@@ -7,13 +7,13 @@ import android.database.sqlite.SQLiteDatabase;
 import cn.com.smartdevices.bracelet.C0596r;
 import cn.com.smartdevices.bracelet.d.C0425b;
 import cn.com.smartdevices.bracelet.lab.sportmode.SportBaseInfo;
-import cn.com.smartdevices.bracelet.relation.db.a;
 import cn.com.smartdevices.bracelet.shoes.data.db.h;
 import cn.com.smartdevices.bracelet.shoes.data.db.j;
 import cn.com.smartdevices.bracelet.shoes.sync.b.g;
 import com.sina.weibo.sdk.constant.WBPageConstants.ParamKey;
 import com.tencent.open.SocialConstants;
 import com.xiaomi.channel.gamesdk.b;
+import com.xiaomi.channel.relationservice.data.a;
 import com.xiaomi.market.sdk.p;
 
 class r {
@@ -36,7 +36,7 @@ class r {
 
     private static void a(SQLiteDatabase sQLiteDatabase, Cursor cursor) {
         try {
-            sQLiteDatabase.execSQL("INSERT INTO sportconfig(_id,type,data,sync) VALUES(?,?,?,?)", new Object[]{Integer.valueOf(cursor.getInt(cursor.getColumnIndex(p.a))), Integer.valueOf(cursor.getInt(cursor.getColumnIndex(SocialConstants.PARAM_TYPE))), cursor.getString(cursor.getColumnIndex(b.b)), Integer.valueOf(cursor.getInt(cursor.getColumnIndex(i.d)))});
+            sQLiteDatabase.execSQL("INSERT INTO sportconfig(_id,type,data,sync) VALUES(?,?,?,?)", new Object[]{Integer.valueOf(cursor.getInt(cursor.getColumnIndex(p.a))), Integer.valueOf(cursor.getInt(cursor.getColumnIndex(a.h))), cursor.getString(cursor.getColumnIndex(b.b)), Integer.valueOf(cursor.getInt(cursor.getColumnIndex(i.d)))});
         } catch (SQLiteConstraintException e) {
             C0596r.a("SDB", e.getMessage());
         }
@@ -235,7 +235,7 @@ class r {
 
     private static void b(SQLiteDatabase sQLiteDatabase, Cursor cursor) {
         try {
-            sQLiteDatabase.execSQL("INSERT INTO contourtrack(_id,trackid,uri,summery,data,synced,gcnt,v,type) values(?,?,?,?,?,?,?,?,?)", new Object[]{Integer.valueOf(cursor.getInt(cursor.getColumnIndex(p.a))), Long.valueOf(cursor.getLong(cursor.getColumnIndex(m.b))), cursor.getString(cursor.getColumnIndex(j.e)), cursor.getString(cursor.getColumnIndex(c.d)), cursor.getString(cursor.getColumnIndex(b.b)), Integer.valueOf(cursor.getInt(cursor.getColumnIndex(h.k))), Integer.valueOf(cursor.getInt(cursor.getColumnIndex(c.g))), Integer.valueOf(cursor.getInt(cursor.getColumnIndex(SportBaseInfo.VERSION))), Integer.valueOf(cursor.getInt(cursor.getColumnIndex(SocialConstants.PARAM_TYPE)))});
+            sQLiteDatabase.execSQL("INSERT INTO contourtrack(_id,trackid,uri,summery,data,synced,gcnt,v,type) values(?,?,?,?,?,?,?,?,?)", new Object[]{Integer.valueOf(cursor.getInt(cursor.getColumnIndex(p.a))), Long.valueOf(cursor.getLong(cursor.getColumnIndex(m.b))), cursor.getString(cursor.getColumnIndex(j.e)), cursor.getString(cursor.getColumnIndex(c.d)), cursor.getString(cursor.getColumnIndex(b.b)), Integer.valueOf(cursor.getInt(cursor.getColumnIndex(h.k))), Integer.valueOf(cursor.getInt(cursor.getColumnIndex(c.g))), Integer.valueOf(cursor.getInt(cursor.getColumnIndex(SportBaseInfo.VERSION))), Integer.valueOf(cursor.getInt(cursor.getColumnIndex(a.h)))});
         } catch (SQLiteConstraintException e) {
             C0596r.a("SDB", e.getMessage());
         }
@@ -243,7 +243,7 @@ class r {
 
     private static void c(SQLiteDatabase sQLiteDatabase, Cursor cursor) {
         try {
-            sQLiteDatabase.execSQL("INSERT INTO trackdeathbook(_id,trackid,type,summary,data) values(?,?,?,?)", new Object[]{Integer.valueOf(cursor.getInt(cursor.getColumnIndex(p.a))), Long.valueOf(cursor.getLong(cursor.getColumnIndex(m.b))), Integer.valueOf(cursor.getInt(cursor.getColumnIndex(SocialConstants.PARAM_TYPE))), cursor.getString(cursor.getColumnIndex(SocialConstants.PARAM_SUMMARY)), cursor.getString(cursor.getColumnIndex(b.b))});
+            sQLiteDatabase.execSQL("INSERT INTO trackdeathbook(_id,trackid,type,summary,data) values(?,?,?,?)", new Object[]{Integer.valueOf(cursor.getInt(cursor.getColumnIndex(p.a))), Long.valueOf(cursor.getLong(cursor.getColumnIndex(m.b))), Integer.valueOf(cursor.getInt(cursor.getColumnIndex(a.h))), cursor.getString(cursor.getColumnIndex(SocialConstants.PARAM_SUMMARY)), cursor.getString(cursor.getColumnIndex(b.b))});
         } catch (SQLiteConstraintException e) {
             C0596r.a("SDB", e.getMessage());
         }
@@ -251,7 +251,7 @@ class r {
 
     private static void d(SQLiteDatabase sQLiteDatabase, Cursor cursor) {
         try {
-            sQLiteDatabase.execSQL("INSERT INTO trackinfo(_id,type,date,trackid,distance,usedtime,summary,data,groupCnt,sync) values(?,?,?,?,?,?,?,?,?,?)", new Object[]{Integer.valueOf(cursor.getInt(cursor.getColumnIndex(p.a))), Integer.valueOf(cursor.getInt(cursor.getColumnIndex(SocialConstants.PARAM_TYPE))), cursor.getString(cursor.getColumnIndex(g.a)), Long.valueOf(cursor.getLong(cursor.getColumnIndex(m.b))), Float.valueOf(cursor.getFloat(cursor.getColumnIndex(a.g))), Integer.valueOf(cursor.getInt(cursor.getColumnIndex(e.f))), cursor.getString(cursor.getColumnIndex(SocialConstants.PARAM_SUMMARY)), cursor.getString(cursor.getColumnIndex(b.b)), Integer.valueOf(cursor.getInt(cursor.getColumnIndex(e.i))), Integer.valueOf(cursor.getInt(cursor.getColumnIndex(i.d)))});
+            sQLiteDatabase.execSQL("INSERT INTO trackinfo(_id,type,date,trackid,distance,usedtime,summary,data,groupCnt,sync) values(?,?,?,?,?,?,?,?,?,?)", new Object[]{Integer.valueOf(cursor.getInt(cursor.getColumnIndex(p.a))), Integer.valueOf(cursor.getInt(cursor.getColumnIndex(a.h))), cursor.getString(cursor.getColumnIndex(g.a)), Long.valueOf(cursor.getLong(cursor.getColumnIndex(m.b))), Float.valueOf(cursor.getFloat(cursor.getColumnIndex(cn.com.smartdevices.bracelet.relation.db.a.g))), Integer.valueOf(cursor.getInt(cursor.getColumnIndex(e.f))), cursor.getString(cursor.getColumnIndex(SocialConstants.PARAM_SUMMARY)), cursor.getString(cursor.getColumnIndex(b.b)), Integer.valueOf(cursor.getInt(cursor.getColumnIndex(e.i))), Integer.valueOf(cursor.getInt(cursor.getColumnIndex(i.d)))});
         } catch (SQLiteConstraintException e) {
             C0596r.a("SDB", e.getMessage());
         }
@@ -259,7 +259,7 @@ class r {
 
     private static void e(SQLiteDatabase sQLiteDatabase, Cursor cursor) {
         try {
-            sQLiteDatabase.execSQL("INSERT INTO trackloc(_id,trackid,latitude,longitude,altitude,time,extra) values(?,?,?,?,?,?,?)", new Object[]{Integer.valueOf(cursor.getInt(cursor.getColumnIndex(p.a))), Long.valueOf(cursor.getLong(cursor.getColumnIndex(m.b))), Double.valueOf(cursor.getDouble(cursor.getColumnIndex(ParamKey.LATITUDE))), Double.valueOf(cursor.getDouble(cursor.getColumnIndex(ParamKey.LONGITUDE))), Double.valueOf(cursor.getDouble(cursor.getColumnIndex(g.e))), Long.valueOf(cursor.getLong(cursor.getColumnIndex(g.f))), cursor.getString(cursor.getColumnIndex(g.g))});
+            sQLiteDatabase.execSQL("INSERT INTO trackloc(_id,trackid,latitude,longitude,altitude,time,extra) values(?,?,?,?,?,?,?)", new Object[]{Integer.valueOf(cursor.getInt(cursor.getColumnIndex(p.a))), Long.valueOf(cursor.getLong(cursor.getColumnIndex(m.b))), Double.valueOf(cursor.getDouble(cursor.getColumnIndex(ParamKey.LATITUDE))), Double.valueOf(cursor.getDouble(cursor.getColumnIndex(ParamKey.LONGITUDE))), Double.valueOf(cursor.getDouble(cursor.getColumnIndex(g.e))), Long.valueOf(cursor.getLong(cursor.getColumnIndex(g.f))), cursor.getString(cursor.getColumnIndex(a.G))});
         } catch (SQLiteConstraintException e) {
             C0596r.a("SDB", e.getMessage());
         }

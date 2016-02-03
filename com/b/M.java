@@ -45,7 +45,7 @@ public class M {
                 this.e = (float) jSONObject.getLong("speed");
                 this.f = (float) jSONObject.getLong("bearing");
                 this.g = jSONObject.getLong(g.f);
-                this.i = jSONObject.getString(SocialConstants.PARAM_TYPE);
+                this.i = jSONObject.getString(com.xiaomi.channel.relationservice.data.a.h);
                 this.j = jSONObject.getString("retype");
                 this.k = jSONObject.getString("citycode");
                 this.l = jSONObject.getString(SocialConstants.PARAM_APP_DESC);
@@ -251,7 +251,7 @@ public class M {
             jSONObject.put("speed", (double) this.e);
             jSONObject.put("bearing", (double) this.f);
             jSONObject.put(g.f, this.g);
-            jSONObject.put(SocialConstants.PARAM_TYPE, this.i);
+            jSONObject.put(com.xiaomi.channel.relationservice.data.a.h, this.i);
             jSONObject.put("retype", this.j);
             jSONObject.put("citycode", this.k);
             jSONObject.put(SocialConstants.PARAM_APP_DESC, this.l);

@@ -21,8 +21,8 @@ import android.view.ViewGroup.MarginLayoutParams;
 import cn.com.smartdevices.bracelet.C0596r;
 import cn.com.smartdevices.bracelet.lua.SlidingUpPanelLayoutSavedState.SlideState;
 import com.e.c.a.a;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.dataprocess.HeartRateInfo;
-import com.xiaomi.hm.health.k;
 import com.xiaomi.hm.health.t;
 import kankan.wheel.widget.l;
 
@@ -229,9 +229,9 @@ public class ScrollSlidingUpPanelLayout extends ViewGroup {
         if (this.mShadowHeight <= 0) {
             this.mShadowDrawable = null;
         } else if (this.mIsSlidingUp) {
-            this.mShadowDrawable = getResources().getDrawable(k.above_shadow);
+            this.mShadowDrawable = getResources().getDrawable(R.drawable.above_shadow);
         } else {
-            this.mShadowDrawable = getResources().getDrawable(k.below_shadow);
+            this.mShadowDrawable = getResources().getDrawable(R.drawable.below_shadow);
         }
         setWillNotDraw(DEFAULT_OVERLAY_FLAG);
         this.mDragHelper = bf.a((ViewGroup) this, 0.5f, new k());

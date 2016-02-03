@@ -8,8 +8,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.edmodo.cropper.cropwindow.CropOverlayView;
 import com.xiaomi.e.a;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.t;
 
 public class WeightView extends LinearLayout {
@@ -34,12 +33,12 @@ public class WeightView extends LinearLayout {
         this.c = null;
         this.d = null;
         this.e = null;
-        LayoutInflater.from(context).inflate(n.view_weight_std, this);
-        this.a = (WeightProgressBar) findViewById(l.weight_pb);
-        this.b = (TextView) findViewById(l.weight_value_tv);
-        this.c = (TextView) findViewById(l.weight_unit_tv);
-        this.d = (TextView) findViewById(l.weight_bmi_tv);
-        this.e = (TextView) findViewById(l.weight_tips_tv);
+        LayoutInflater.from(context).inflate(R.layout.view_weight_std, this);
+        this.a = (WeightProgressBar) findViewById(R.id.weight_pb);
+        this.b = (TextView) findViewById(R.id.weight_value_tv);
+        this.c = (TextView) findViewById(R.id.weight_unit_tv);
+        this.d = (TextView) findViewById(R.id.weight_bmi_tv);
+        this.e = (TextView) findViewById(R.id.weight_tips_tv);
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, t.WeightView);
         b(obtainStyledAttributes.getDimension(0, 20.0f));
         e(obtainStyledAttributes.getDimension(7, 40.0f));

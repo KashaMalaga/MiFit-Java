@@ -23,17 +23,14 @@ import cn.com.smartdevices.bracelet.ui.SystemBarTintActivity;
 import cn.com.smartdevices.bracelet.weight.family.WeightChooseUserActivity;
 import com.amap.api.maps.model.BitmapDescriptorFactory;
 import com.huami.android.view.b;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.bt.profile.Weight.e;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
 import de.greenrobot.event.EventBus;
 import java.text.DateFormat;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import kankan.wheel.widget.a;
-import kankan.wheel.widget.g;
 
 public class RecordWeightActivity extends SystemBarTintActivity {
     private static final String b = "RecordWeightActivity";
@@ -53,20 +50,20 @@ public class RecordWeightActivity extends SystemBarTintActivity {
     private boolean o = false;
 
     private void a() {
-        this.c = (EditText) findViewById(l.manual_weight_edittext);
+        this.c = (EditText) findViewById(R.id.manual_weight_edittext);
         this.c.addTextChangedListener(new C0881s(this, this.c));
         this.c.setFocusable(true);
         this.c.setFocusableInTouchMode(true);
         this.c.requestFocus();
         ((InputMethodManager) this.c.getContext().getSystemService("input_method")).showSoftInput(this.c, 0);
-        this.d = (TextView) findViewById(l.manual_weight_date);
-        this.e = (TextView) findViewById(l.manual_weight_name);
+        this.d = (TextView) findViewById(R.id.manual_weight_date);
+        this.e = (TextView) findViewById(R.id.manual_weight_name);
         this.e.setText(J.a().a(this.n).name);
-        this.f = (TextView) findViewById(l.manual_weight_unit);
+        this.f = (TextView) findViewById(R.id.manual_weight_unit);
         this.f.setText(aA.a(this.a, Keeper.readPersonInfo().miliConfig.weightUnit));
-        this.g = (RelativeLayout) findViewById(l.weight_layout);
-        this.h = (RelativeLayout) findViewById(l.date_layout);
-        this.i = (RelativeLayout) findViewById(l.user_layout);
+        this.g = (RelativeLayout) findViewById(R.id.weight_layout);
+        this.h = (RelativeLayout) findViewById(R.id.date_layout);
+        this.i = (RelativeLayout) findViewById(R.id.user_layout);
         DateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
         this.m = new DecimalFormat("00");
         int hours = new Date().getHours();
@@ -74,21 +71,21 @@ public class RecordWeightActivity extends SystemBarTintActivity {
         if (Utils.y(this.a)) {
             this.d.setText(simpleDateFormat.format(new Date()) + " " + this.m.format((long) hours) + a.ci + this.m.format((long) minutes));
         } else if (hours >= 12) {
-            this.d.setText(simpleDateFormat.format(new Date()) + " " + this.m.format((long) (hours - 12)) + a.ci + this.m.format((long) minutes) + " " + getString(r.pm));
+            this.d.setText(simpleDateFormat.format(new Date()) + " " + this.m.format((long) (hours - 12)) + a.ci + this.m.format((long) minutes) + " " + getString(R.string.pm));
         } else {
-            this.d.setText(simpleDateFormat.format(new Date()) + " " + this.m.format((long) hours) + a.ci + this.m.format((long) minutes) + " " + getString(r.am));
+            this.d.setText(simpleDateFormat.format(new Date()) + " " + this.m.format((long) hours) + a.ci + this.m.format((long) minutes) + " " + getString(R.string.am));
         }
         this.g.setOnClickListener(new C0874l(this));
         this.h.setOnClickListener(new C0875m(this));
         this.i.setOnClickListener(new C0876n(this));
-        this.j = (Button) findViewById(l.confirm);
+        this.j = (Button) findViewById(R.id.confirm);
         this.j.setOnClickListener(new C0877o(this));
-        this.k = (Button) findViewById(l.cancel);
+        this.k = (Button) findViewById(R.id.cancel);
         this.k.setOnClickListener(new C0878p(this));
         String obj = this.c.getText().toString();
         if (obj == null || obj.isEmpty()) {
             this.j.setClickable(false);
-            this.j.setTextColor(this.a.getResources().getColor(g.disable_text_color_dark));
+            this.j.setTextColor(this.a.getResources().getColor(R.color.disable_text_color_dark));
         }
     }
 
@@ -121,12 +118,12 @@ public class RecordWeightActivity extends SystemBarTintActivity {
             try {
                 f = aA.a(aA.c(Float.parseFloat(obj), 1), Keeper.readPersonInfo().miliConfig.weightUnit);
                 if (f < 3.0f || f > 634.9f) {
-                    b.a(this.a, getString(r.weight_not_in_range), 0).show();
+                    b.a(this.a, getString(R.string.weight_not_in_range), 0).show();
                     return;
                 }
             } catch (Exception e) {
                 C0596r.e(b, "weight is invalid");
-                b.a(this.a, getString(r.please_input_correct_weight), 0).show();
+                b.a(this.a, getString(R.string.please_input_correct_weight), 0).show();
                 return;
             }
         }
@@ -161,7 +158,7 @@ public class RecordWeightActivity extends SystemBarTintActivity {
 
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView((int) n.activity_record_weight);
+        setContentView((int) R.layout.activity_record_weight);
         if (getIntent() != null) {
             this.n = getIntent().getIntExtra(WeightGoalSetActivity.a, -1);
             if (this.n == 0) {

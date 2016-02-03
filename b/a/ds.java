@@ -81,13 +81,13 @@ public class ds {
     }
 
     public void b() {
-        InputStream openFileInput;
         byte[] b;
         Exception e;
-        cq c0300as;
         Throwable th;
         InputStream inputStream = null;
         if (new File(this.d.getFilesDir(), a).exists()) {
+            cq c0300as;
+            InputStream openFileInput;
             try {
                 openFileInput = this.d.openFileInput(a);
                 try {

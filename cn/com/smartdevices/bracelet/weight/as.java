@@ -28,10 +28,7 @@ import cn.com.smartdevices.bracelet.C0596r;
 import cn.com.smartdevices.bracelet.chart.util.q;
 import cn.com.smartdevices.bracelet.config.b;
 import com.amap.api.maps.model.BitmapDescriptorFactory;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
-import com.xiaomi.hm.health.s;
+import com.xiaomi.hm.health.R;
 import kankan.wheel.widget.a;
 
 public class as extends DialogFragment {
@@ -59,13 +56,13 @@ public class as extends DialogFragment {
     private az v;
 
     private void a(View view) {
-        this.q = (RelativeLayout) view.findViewById(l.tips_bg);
-        this.k = (RelativeLayout) view.findViewById(l.other_tips_layout);
-        this.f = (WeightGoalSetView) view.findViewById(l.weight_tip_bmi_img);
-        this.j = (TextView) view.findViewById(l.weight_tip_weight_ref_content);
-        this.g = (TextView) view.findViewById(l.tips_notice);
-        View findViewById = view.findViewById(l.weight_tip_weight_ref_title);
-        View findViewById2 = view.findViewById(l.weight_tip_divider4);
+        this.q = (RelativeLayout) view.findViewById(R.id.tips_bg);
+        this.k = (RelativeLayout) view.findViewById(R.id.other_tips_layout);
+        this.f = (WeightGoalSetView) view.findViewById(R.id.weight_tip_bmi_img);
+        this.j = (TextView) view.findViewById(R.id.weight_tip_weight_ref_content);
+        this.g = (TextView) view.findViewById(R.id.tips_notice);
+        View findViewById = view.findViewById(R.id.weight_tip_weight_ref_title);
+        View findViewById2 = view.findViewById(R.id.weight_tip_divider4);
         if (b.h().w.booleanValue()) {
             findViewById.setVisibility(4);
             findViewById2.setVisibility(4);
@@ -75,9 +72,9 @@ public class as extends DialogFragment {
             this.f.setVisibility(8);
             this.k.setVisibility(0);
             if (this.m < 7) {
-                this.g.setText(getString(r.cannot_figure_bmi_causedby_age));
+                this.g.setText(getString(R.string.cannot_figure_bmi_causedby_age));
             } else if (this.o < 100) {
-                this.g.setText(getString(r.cannot_figure_bmi_causedby_height));
+                this.g.setText(getString(R.string.cannot_figure_bmi_causedby_height));
             }
         } else {
             this.f.setVisibility(0);
@@ -85,12 +82,12 @@ public class as extends DialogFragment {
         }
         if (this.m < 7 || this.m > 18) {
             this.f.b(1);
-            this.j.setText(getString(r.china_adult_overweight_ref));
+            this.j.setText(getString(R.string.china_adult_overweight_ref));
             this.f.a(0.0f, aA.g, aA.h, a.bf, BitmapDescriptorFactory.HUE_MAGENTA);
         } else {
             float a = aA.a(this.m, this.n);
             C0596r.e(e, "child min " + a + " max " + aA.b(this.m, this.n));
-            this.j.setText(getString(r.china_child_overweight_ref));
+            this.j.setText(getString(R.string.china_child_overweight_ref));
             this.f.b(1);
             this.f.a(0.0f, a, r1, BitmapDescriptorFactory.HUE_MAGENTA);
         }
@@ -98,7 +95,7 @@ public class as extends DialogFragment {
             this.l = aA.h;
         }
         this.f.a(this.l);
-        this.h = (ImageButton) view.findViewById(l.bmi_view_cancel);
+        this.h = (ImageButton) view.findViewById(R.id.bmi_view_cancel);
         this.h.setOnClickListener(new at(this));
     }
 
@@ -199,9 +196,9 @@ public class as extends DialogFragment {
 
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        int i = s.MenuPanel;
+        int i = R.style.MenuPanel;
         if (com.huami.android.ui.a.b(getActivity())) {
-            i = s.MenuPanelTint;
+            i = R.style.MenuPanelTint;
         }
         setStyle(0, i);
         if (getArguments() != null) {
@@ -213,7 +210,7 @@ public class as extends DialogFragment {
     }
 
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        View inflate = layoutInflater.inflate(n.activity_weight_tips, viewGroup, false);
+        View inflate = layoutInflater.inflate(R.layout.activity_weight_tips, viewGroup, false);
         a(inflate);
         return inflate;
     }

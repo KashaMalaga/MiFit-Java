@@ -8,7 +8,7 @@ import cn.com.smartdevices.bracelet.gps.services.O;
 import com.amap.api.location.LocationManagerProxy;
 import com.tencent.connect.common.Constants;
 import com.xiaomi.e.a;
-import com.xiaomi.hm.health.l;
+import com.xiaomi.hm.health.R;
 
 class f implements OnClickListener {
     final /* synthetic */ HeartRateDetailsActivity a;
@@ -19,7 +19,7 @@ class f implements OnClickListener {
 
     public void onClick(View view) {
         switch (view.getId()) {
-            case l.btn_sports /*2131296409*/:
+            case R.id.btn_sports:
                 Intent intent = new Intent();
                 intent.putExtra(O.j, this.a.h + a.f);
                 intent.putExtra(g.f, this.a.i + a.f);

@@ -129,12 +129,12 @@ public class ResourceManager {
     }
 
     private static Drawable getDrawableFromAssert(Context context, String str, boolean z) {
+        InputStream open;
+        Drawable ninePatchDrawable;
         IOException e;
         InputStream inputStream;
         Throwable th;
-        InputStream open;
         try {
-            Drawable ninePatchDrawable;
             open = context.getAssets().open(str);
             if (open != null) {
                 try {

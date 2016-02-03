@@ -26,8 +26,7 @@ import com.huami.android.widget.share.h;
 import com.huami.android.widget.share.l;
 import com.huami.android.widget.share.q;
 import com.xiaomi.e.a;
-import com.xiaomi.hm.health.k;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 import java.io.File;
 import java.io.Serializable;
 
@@ -82,7 +81,7 @@ class ab extends AsyncTask<Bitmap, Integer, File> {
             }
         }
         if (bitmap2 == null) {
-            bitmap2 = BitmapFactory.decodeResource(resources, k.default_friend_avatar);
+            bitmap2 = BitmapFactory.decodeResource(resources, R.drawable.default_friend_avatar);
         }
         canvas.drawBitmap(bitmap2, new Rect(0, 0, bitmap2.getWidth(), bitmap2.getHeight()), new RectF(41.0f, 35.0f, 131.0f, 125.0f), paint);
         paint.setColor(Color.rgb(86, 86, 86));
@@ -97,17 +96,17 @@ class ab extends AsyncTask<Bitmap, Integer, File> {
         Rect rect2 = new Rect(142, 210, 538, 606);
         paint.setColor(C0151az.s);
         canvas.drawBitmap(bitmap, rect, rect2, paint);
-        String string = this.a.getString(r.label_share_info1);
+        String string = this.a.getString(R.string.label_share_info1);
         paint.setColor(Color.rgb(86, 86, 86));
         paint.setTextSize(BitmapDescriptorFactory.HUE_ORANGE);
         canvas.drawText(string, (float) ((680 - (string.length() * 30)) / 2), (float) n.e, paint);
         paint.setColor(Color.rgb(186, 186, 186));
         paint.setTextSize(26.0f);
-        a(this.a.getString(r.label_share_info2), 340.0f, (float) 722, paint, canvas);
+        a(this.a.getString(R.string.label_share_info2), 340.0f, (float) 722, paint, canvas);
         rect2 = new Rect(0, 858, b, c);
         paint.setColor(Color.rgb(246, 246, 246));
         canvas.drawRect(rect2, paint);
-        bitmap2 = BitmapFactory.decodeResource(resources, k.ic_share_logo);
+        bitmap2 = BitmapFactory.decodeResource(resources, R.drawable.ic_share_logo);
         int height = (((100 - bitmap2.getHeight()) / 2) + c) - 100;
         int width = (680 - bitmap2.getWidth()) / 2;
         paint.setColor(C0151az.s);
@@ -118,8 +117,8 @@ class ab extends AsyncTask<Bitmap, Integer, File> {
     }
 
     protected void a(File file) {
-        String string = this.a.getString(r.label_my_qrcode);
-        String string2 = this.a.getString(r.share_to_topic);
+        String string = this.a.getString(R.string.label_my_qrcode);
+        String string2 = this.a.getString(R.string.share_to_topic);
         Serializable lVar = new l();
         lVar.a = string;
         lVar.d = a.f;

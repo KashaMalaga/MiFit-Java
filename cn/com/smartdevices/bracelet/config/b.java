@@ -590,12 +590,12 @@ public class b {
     }
 
     public void i() {
-        BufferedOutputStream bufferedOutputStream;
         Throwable e;
         if (O == null) {
             Log.e(C, "config don't init");
             return;
         }
+        BufferedOutputStream bufferedOutputStream;
         try {
             bufferedOutputStream = new BufferedOutputStream(new FileOutputStream(P));
             try {

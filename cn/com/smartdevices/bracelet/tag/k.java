@@ -8,8 +8,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import cn.com.smartdevices.bracelet.C0401a;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
+import com.xiaomi.hm.health.R;
 
 public class k extends Fragment implements OnClickListener {
     private c a;
@@ -31,7 +30,7 @@ public class k extends Fragment implements OnClickListener {
 
     public void onClick(View view) {
         switch (view.getId()) {
-            case l.action_button /*2131296395*/:
+            case R.id.action_button:
                 if (this.a != null) {
                     this.a.a(1);
                     return;
@@ -48,8 +47,8 @@ public class k extends Fragment implements OnClickListener {
     }
 
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        View inflate = layoutInflater.inflate(n.fragment_mark_guide, viewGroup, false);
-        inflate.findViewById(l.action_button).setOnClickListener(this);
+        View inflate = layoutInflater.inflate(R.layout.fragment_mark_guide, viewGroup, false);
+        inflate.findViewById(R.id.action_button).setOnClickListener(this);
         return inflate;
     }
 

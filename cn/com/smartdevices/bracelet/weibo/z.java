@@ -7,7 +7,7 @@ import com.d.a.a.p;
 import com.huami.android.widget.f;
 import com.xiaomi.channel.gamesdk.b;
 import com.xiaomi.e.a;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 import org.apache.http.Header;
 import org.json.JSONObject;
 
@@ -39,7 +39,7 @@ class z extends p<ResponseEntity> {
                 responseEntity.msg = str2;
             } catch (Exception e) {
                 responseEntity.state = false;
-                responseEntity.msg = this.b.getString(r.parse_data_failed);
+                responseEntity.msg = this.b.getString(R.string.parse_data_failed);
             }
         }
         return responseEntity;

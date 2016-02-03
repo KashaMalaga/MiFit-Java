@@ -14,10 +14,9 @@ import cn.com.smartdevices.bracelet.j.d;
 import cn.com.smartdevices.bracelet.upgrade.OtaVersionInfo;
 import cn.com.smartdevices.bracelet.upgrade.UpgradeService;
 import com.xiaomi.e.a;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.bt.a.i;
 import com.xiaomi.hm.health.bt.model.h;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
 import java.io.File;
 import java.io.IOException;
 
@@ -51,10 +50,10 @@ public class dW extends Fragment {
     }
 
     private void a(View view) {
-        this.g = (TextView) view.findViewById(l.current_firmware_version);
-        this.h = (TextView) view.findViewById(l.new_firmware_version);
-        this.i = (TextView) view.findViewById(l.firmware_change_log);
-        this.j = view.findViewById(l.firmware_upgrade);
+        this.g = (TextView) view.findViewById(R.id.current_firmware_version);
+        this.h = (TextView) view.findViewById(R.id.new_firmware_version);
+        this.i = (TextView) view.findViewById(R.id.firmware_change_log);
+        this.j = view.findViewById(R.id.firmware_upgrade);
         this.j.setOnClickListener(new C0780eb(this));
         this.j.setEnabled(false);
     }
@@ -123,11 +122,11 @@ public class dW extends Fragment {
     }
 
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        View inflate = layoutInflater.inflate(n.fragment_setting_firmware_upgrade, viewGroup, false);
+        View inflate = layoutInflater.inflate(R.layout.fragment_setting_firmware_upgrade, viewGroup, false);
         a(inflate);
         c();
         this.l = com.xiaomi.hm.health.bt.bleservice.a.f();
-        this.g.setText(this.l.k());
+        this.g.setText(this.l.l());
         UpgradeService.start(getActivity(), 2);
         return inflate;
     }

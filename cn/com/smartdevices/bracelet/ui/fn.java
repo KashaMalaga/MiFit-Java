@@ -11,11 +11,8 @@ import android.widget.TextView;
 import cn.com.smartdevices.bracelet.Keeper;
 import cn.com.smartdevices.bracelet.Utils;
 import com.huami.android.view.c;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 import java.util.Locale;
-import kankan.wheel.widget.g;
 
 public class fn extends c implements OnClickListener {
     private static final String a = "UserAgreementFragment";
@@ -26,7 +23,7 @@ public class fn extends c implements OnClickListener {
     private boolean f;
 
     protected int inflateLayout() {
-        return n.fragment_useragreement;
+        return R.layout.fragment_useragreement;
     }
 
     public void onCreate(Bundle bundle) {
@@ -37,23 +34,23 @@ public class fn extends c implements OnClickListener {
 
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         View onCreateView = super.onCreateView(layoutInflater, viewGroup, bundle);
-        this.b = (TextView) onCreateView.findViewById(l.useragreement_info);
-        Object string = getString(r.user_agreement);
-        this.b.setText(r.user_agreement_prefix);
+        this.b = (TextView) onCreateView.findViewById(R.id.useragreement_info);
+        Object string = getString(R.string.user_agreement);
+        this.b.setText(R.string.user_agreement_prefix);
         SpannableString spannableString = new SpannableString(string);
         spannableString.setSpan(new fo(this), 0, string.length(), 33);
         Utils.a(this.b, spannableString);
         if (Locale.getDefault().getLanguage().equals(Locale.ENGLISH.getLanguage())) {
             this.b.append(".");
         }
-        this.d = (CheckBox) onCreateView.findViewById(l.useragreement_ux_checkbox);
-        this.e = (TextView) onCreateView.findViewById(l.useragreement_ux);
+        this.d = (CheckBox) onCreateView.findViewById(R.id.useragreement_ux_checkbox);
+        this.e = (TextView) onCreateView.findViewById(R.id.useragreement_ux);
         if (Utils.k()) {
             this.d.setVisibility(0);
             this.e.setVisibility(0);
-            this.e.setText(r.agree_ux);
+            this.e.setText(R.string.agree_ux);
             TextView rightButton = getRightButton();
-            rightButton.setTextColor(getResources().getColor(g.main_ui_title_color));
+            rightButton.setTextColor(getResources().getColor(R.color.main_ui_title_color));
             this.d.setOnCheckedChangeListener(new fp(this, rightButton));
         } else {
             this.d.setVisibility(8);

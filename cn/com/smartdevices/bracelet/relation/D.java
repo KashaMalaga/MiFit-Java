@@ -6,7 +6,7 @@ import cn.com.smartdevices.bracelet.relation.db.Friend;
 import com.d.a.a.h;
 import com.huami.android.view.b;
 import com.xiaomi.e.a;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 import org.apache.http.Header;
 
 class D extends h {
@@ -26,7 +26,7 @@ class D extends h {
         if (th != null) {
             th.printStackTrace();
         }
-        b.a(this.c, (int) r.friend_set_nick_name_failed, 1).show();
+        b.a(this.c, (int) R.string.friend_set_nick_name_failed, 1).show();
     }
 
     public void onSuccess(int i, Header[] headerArr, byte[] bArr) {

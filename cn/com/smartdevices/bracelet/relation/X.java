@@ -12,10 +12,7 @@ import cn.com.smartdevices.bracelet.C0544h;
 import cn.com.smartdevices.bracelet.relation.db.Friend;
 import com.f.a.b.a.b;
 import com.f.a.b.f.a;
-import com.xiaomi.hm.health.k;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 import java.util.List;
 
 class X extends ArrayAdapter<Friend> implements a {
@@ -41,33 +38,33 @@ class X extends ArrayAdapter<Friend> implements a {
     }
 
     public void a(String str, View view) {
-        ((ImageView) view).setBackgroundResource(k.default_friend_avatar);
+        ((ImageView) view).setBackgroundResource(R.drawable.default_friend_avatar);
     }
 
     public void a(String str, View view, Bitmap bitmap) {
         if (bitmap == null) {
-            ((ImageView) view).setBackgroundResource(k.default_friend_avatar);
+            ((ImageView) view).setBackgroundResource(R.drawable.default_friend_avatar);
         }
     }
 
     public void a(String str, View view, b bVar) {
-        ((ImageView) view).setBackgroundResource(k.default_friend_avatar);
+        ((ImageView) view).setBackgroundResource(R.drawable.default_friend_avatar);
     }
 
     public void b(String str, View view) {
         if (view != null) {
-            ((ImageView) view).setBackgroundResource(k.default_friend_avatar);
+            ((ImageView) view).setBackgroundResource(R.drawable.default_friend_avatar);
         }
     }
 
     public View getView(int i, View view, ViewGroup viewGroup) {
         Y y;
         if (view == null) {
-            view = this.b.inflate(n.search_result_list_item, null);
+            view = this.b.inflate(R.layout.search_result_list_item, null);
             y = new Y();
-            y.a = (ImageView) view.findViewById(l.icon);
-            y.b = (TextView) view.findViewById(l.username);
-            y.c = (TextView) view.findViewById(l.uid);
+            y.a = (ImageView) view.findViewById(R.id.icon);
+            y.b = (TextView) view.findViewById(R.id.username);
+            y.c = (TextView) view.findViewById(R.id.uid);
             view.setTag(y);
         } else {
             y = (Y) view.getTag();
@@ -75,7 +72,7 @@ class X extends ArrayAdapter<Friend> implements a {
         Friend friend = (Friend) getItem(i);
         C0544h.a().b(friend.p, y.a, this);
         y.b.setText(friend.o);
-        y.c.setText(this.a.getString(r.label_uid, new Object[]{Long.valueOf(friend.n)}));
+        y.c.setText(this.a.getString(R.string.label_uid, new Object[]{Long.valueOf(friend.n)}));
         return view;
     }
 }

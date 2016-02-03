@@ -9,6 +9,7 @@ import cn.com.smartdevices.bracelet.C0596r;
 import cn.com.smartdevices.bracelet.Utils;
 import cn.com.smartdevices.bracelet.chart.L;
 import cn.com.smartdevices.bracelet.chart.util.ChartData;
+import cn.com.smartdevices.bracelet.j.f;
 import cn.com.smartdevices.bracelet.lab.sync.l;
 import cn.com.smartdevices.bracelet.model.PersonInfo;
 import cn.com.smartdevices.bracelet.model.ShareData;
@@ -16,11 +17,10 @@ import cn.com.smartdevices.bracelet.model.ShareData.TimeType;
 import cn.com.smartdevices.bracelet.shoes.sync.b.g;
 import cn.com.smartdevices.bracelet.weight.WeightInfo;
 import com.xiaomi.e.a;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.bt.b.c;
 import com.xiaomi.hm.health.dataprocess.DaySportData.Summary;
 import com.xiaomi.hm.health.dataprocess.SportDay;
-import com.xiaomi.hm.health.f;
-import com.xiaomi.hm.health.r;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -36,12 +36,12 @@ class fa extends eZ {
     public fa(StatisticFragment statisticFragment) {
         this.v = statisticFragment;
         super(statisticFragment);
-        this.w = statisticFragment.getResources().getStringArray(f.weeks);
-        this.x = statisticFragment.getString(r.date_today);
-        this.y = statisticFragment.getString(r.date_yesterday);
-        this.z = statisticFragment.getString(r.date_month_day);
-        this.A = statisticFragment.getString(r.date_year_month_day);
-        this.B = statisticFragment.getString(r.date_month_day_short);
+        this.w = statisticFragment.getResources().getStringArray(R.array.weeks);
+        this.x = statisticFragment.getString(R.string.date_today);
+        this.y = statisticFragment.getString(R.string.date_yesterday);
+        this.z = statisticFragment.getString(R.string.date_month_day);
+        this.A = statisticFragment.getString(R.string.date_year_month_day);
+        this.B = statisticFragment.getString(R.string.date_month_day_short);
     }
 
     protected L a(int i) {
@@ -94,18 +94,18 @@ class fa extends eZ {
         if (i == 16) {
             a(this.v.s, shareData, sportDay);
             if (sportDay.equals(this.v.u)) {
-                shareData.title = this.v.getString(r.share_sleep_title);
+                shareData.title = this.v.getString(R.string.share_sleep_title);
             } else {
-                shareData.title = this.v.getString(r.share_sleep_title_daily);
+                shareData.title = this.v.getString(R.string.share_sleep_title_daily);
             }
         } else if (i == 1) {
             Utils.a(this.v.getActivity(), this.a, this.b, this.g, this.c, this.v.w, shareData);
             shareData.time = Utils.d(this.v.w);
             if (shareData.mExtraData == null) {
                 Bundle bundle = new Bundle();
-                bundle.putInt(cn.com.smartdevices.bracelet.j.f.ax, TimeType.DAY.ordinal());
+                bundle.putInt(f.ax, TimeType.DAY.ordinal());
                 bundle.putInt(l.c, c.MILI.b());
-                bundle.putInt(cn.com.smartdevices.bracelet.j.f.aw, this.a);
+                bundle.putInt(f.aw, this.a);
                 bundle.putString(g.a, sportDay.toString());
                 shareData.mExtraData = bundle;
             }
@@ -150,28 +150,28 @@ class fa extends eZ {
     }
 
     protected void b(View view) {
-        TextView textView = (TextView) view.findViewById(com.xiaomi.hm.health.l.info_step);
-        View findViewById = view.findViewById(com.xiaomi.hm.health.l.info_step_distance);
-        View findViewById2 = view.findViewById(com.xiaomi.hm.health.l.info_step_calorie);
-        View findViewById3 = view.findViewById(com.xiaomi.hm.health.l.info_step_walk_distance);
-        View findViewById4 = view.findViewById(com.xiaomi.hm.health.l.info_step_walk_duration);
-        View findViewById5 = view.findViewById(com.xiaomi.hm.health.l.info_step_walk_calorie);
-        View findViewById6 = view.findViewById(com.xiaomi.hm.health.l.info_step_run_distance);
-        View findViewById7 = view.findViewById(com.xiaomi.hm.health.l.info_step_run_duration);
-        View findViewById8 = view.findViewById(com.xiaomi.hm.health.l.info_step_run_calorie);
+        TextView textView = (TextView) view.findViewById(R.id.info_step);
+        View findViewById = view.findViewById(R.id.info_step_distance);
+        View findViewById2 = view.findViewById(R.id.info_step_calorie);
+        View findViewById3 = view.findViewById(R.id.info_step_walk_distance);
+        View findViewById4 = view.findViewById(R.id.info_step_walk_duration);
+        View findViewById5 = view.findViewById(R.id.info_step_walk_calorie);
+        View findViewById6 = view.findViewById(R.id.info_step_run_distance);
+        View findViewById7 = view.findViewById(R.id.info_step_run_duration);
+        View findViewById8 = view.findViewById(R.id.info_step_run_calorie);
         textView.setText(ChartData.a((long) this.a));
         String[] a = ChartData.a(this.v.getActivity(), this.b);
         ChartData.a(findViewById, a[0], a[1]);
-        ChartData.a(findViewById2, ChartData.a((long) this.c), this.v.getString(r.unit_calorie));
+        ChartData.a(findViewById2, ChartData.a((long) this.c), this.v.getString(R.string.unit_calorie));
         if ((this.v.aC & 2) > 0) {
             a = ChartData.a(this.v.getActivity(), this.d);
             ChartData.a(findViewById3, a[0], a[1]);
             ChartData.a(findViewById4, this.e, this.v.getActivity());
-            ChartData.a(findViewById5, ChartData.a((long) this.f), this.v.getString(r.unit_calorie));
+            ChartData.a(findViewById5, ChartData.a((long) this.f), this.v.getString(R.string.unit_calorie));
             a = ChartData.a(this.v.getActivity(), this.g);
             ChartData.a(findViewById6, a[0], a[1]);
             ChartData.a(findViewById7, this.h, this.v.getActivity());
-            ChartData.a(findViewById8, ChartData.a((long) this.i), this.v.getString(r.unit_calorie));
+            ChartData.a(findViewById8, ChartData.a((long) this.i), this.v.getString(R.string.unit_calorie));
         }
     }
 

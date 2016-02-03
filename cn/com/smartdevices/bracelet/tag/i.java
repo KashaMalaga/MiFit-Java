@@ -3,7 +3,7 @@ package cn.com.smartdevices.bracelet.tag;
 import android.app.DialogFragment;
 import cn.com.smartdevices.bracelet.Utils;
 import com.huami.android.view.e;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 
 class i implements e {
     final /* synthetic */ TagDataActivity a;
@@ -17,7 +17,7 @@ class i implements e {
 
     public void b(DialogFragment dialogFragment) {
         this.a.f();
-        Utils.a(this.a, (int) r.tag_data_collecting);
+        Utils.a(this.a, (int) R.string.tag_data_collecting);
         this.a.l.g();
         this.a.n.setVisibility(0);
         this.a.s.setVisibility(8);

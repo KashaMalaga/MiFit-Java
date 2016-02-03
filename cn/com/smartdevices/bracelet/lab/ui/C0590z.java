@@ -10,8 +10,7 @@ import cn.com.smartdevices.bracelet.g.g;
 import cn.com.smartdevices.bracelet.lab.b.d;
 import cn.com.smartdevices.bracelet.model.ShareData;
 import com.xiaomi.e.a;
-import com.xiaomi.hm.health.i;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 import java.util.List;
 
 public class C0590z {
@@ -44,7 +43,7 @@ public class C0590z {
     }
 
     private String a(Context context, int i) {
-        return 1 == i ? context.getString(r.lab_factory_sport_type_ropeskipping) : 2 == i ? context.getString(r.lab_factory_sport_type_situp) : a.f;
+        return 1 == i ? context.getString(R.string.lab_factory_sport_type_ropeskipping) : 2 == i ? context.getString(R.string.lab_factory_sport_type_situp) : a.f;
     }
 
     public ShareData a(int i, List<Integer> list, String str) {
@@ -58,24 +57,24 @@ public class C0590z {
         if (obj != null) {
             if (this.b == 1) {
                 shareData.setType(100);
-                shareData.title = this.a.getString(r.sport_new_record_ropeskipping);
+                shareData.title = this.a.getString(R.string.sport_new_record_ropeskipping);
             } else if (this.b == 2) {
                 shareData.setType(ShareData.SHARE_TYPE_LAB_SITUP_NEW_RECORD);
-                shareData.title = this.a.getString(r.lab_factory_sport_share_info_new_record);
+                shareData.title = this.a.getString(R.string.lab_factory_sport_share_info_new_record);
             }
-            shareData.color = resources.getColor(i.lab_record_broken_bg);
+            shareData.color = resources.getColor(R.color.lab_record_broken_bg);
         } else if (this.b == 1) {
             shareData.setType(ShareData.SHARE_TYPE_LAB_ROPE_SKIPPING_ACCUMULATE);
-            shareData.title = this.a.getString(r.lab_factory_sport_continuous_ropeskipping);
-            shareData.color = resources.getColor(i.lab_ropeskipping_bg);
+            shareData.title = this.a.getString(R.string.lab_factory_sport_continuous_ropeskipping);
+            shareData.color = resources.getColor(R.color.lab_ropeskipping_bg);
         } else if (this.b == 2) {
             shareData.setType(ShareData.SHARE_TYPE_LAB_SITUP_ACCUMULATE);
-            shareData.title = this.a.getString(r.lab_factory_sport_continuous_situp);
-            shareData.color = resources.getColor(i.lab_situp_bg);
+            shareData.title = this.a.getString(R.string.lab_factory_sport_continuous_situp);
+            shareData.color = resources.getColor(R.color.lab_situp_bg);
         } else {
-            shareData.color = resources.getColor(i.lab_record_broken_bg);
+            shareData.color = resources.getColor(R.color.lab_record_broken_bg);
         }
-        shareData.contentUnit = this.a.getString(r.lab_factory_sport_unit);
+        shareData.contentUnit = this.a.getString(R.string.lab_factory_sport_unit);
         shareData.description = str;
         shareData.time = a(this.a, this.b);
         shareData.content = String.valueOf(a);
@@ -94,10 +93,10 @@ public class C0590z {
             a = 0.0f;
         }
         if (i > 0) {
-            stringBuilder.append(this.a.getString(r.lab_factory_sport_accumulate, new Object[]{Integer.valueOf(i)})).append("\n").append(this.a.getString(r.lab_factory_sport_share_info_accumulated_time_once)).append(a2).append(this.a.getString(r.lab_factory_sport_result_dot)).append(this.a.getString(r.lab_factory_sport_result_cost_cal, new Object[]{Integer.valueOf((int) a)}));
+            stringBuilder.append(this.a.getString(R.string.lab_factory_sport_accumulate, new Object[]{Integer.valueOf(i)})).append("\n").append(this.a.getString(R.string.lab_factory_sport_share_info_accumulated_time_once)).append(a2).append(this.a.getString(R.string.lab_factory_sport_result_dot)).append(this.a.getString(R.string.lab_factory_sport_result_cost_cal, new Object[]{Integer.valueOf((int) a)}));
         } else {
             int a3 = d.a(i, j);
-            stringBuilder.append(this.a.getString(r.lab_factory_sport_share_info_accumulated_time_once)).append(a2).append(this.a.getString(r.lab_factory_sport_result_dot)).append(this.a.getString(r.lab_factory_sport_result_cost_cal, new Object[]{Integer.valueOf((int) a)})).append("\n").append(this.a.getString(r.lab_factory_sport_steps_converted, new Object[]{Integer.valueOf(a3)}));
+            stringBuilder.append(this.a.getString(R.string.lab_factory_sport_share_info_accumulated_time_once)).append(a2).append(this.a.getString(R.string.lab_factory_sport_result_dot)).append(this.a.getString(R.string.lab_factory_sport_result_cost_cal, new Object[]{Integer.valueOf((int) a)})).append("\n").append(this.a.getString(R.string.lab_factory_sport_steps_converted, new Object[]{Integer.valueOf(a3)}));
         }
         return stringBuilder.toString();
     }

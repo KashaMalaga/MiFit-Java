@@ -13,6 +13,7 @@ public class C1116c extends C {
     }
 
     public void a(d dVar) {
+        boolean a;
         NoSuchAlgorithmException e;
         int i = 0;
         if (dVar != null) {
@@ -20,7 +21,6 @@ public class C1116c extends C {
         }
         h j_ = this.q.j_();
         if (j_ != null) {
-            boolean a;
             String str = "gh_f65f9f1aa87a";
             String str2 = "gh_f65f9f1aa87a" + j_.a;
             try {

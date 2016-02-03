@@ -66,7 +66,6 @@ public class h {
     }
 
     private l a(String str, String str2, boolean z, boolean z2, n nVar) {
-        HttpURLConnection a;
         Object e;
         Throwable th;
         HttpURLConnection httpURLConnection;
@@ -74,6 +73,7 @@ public class h {
         arrayList.add(str);
         Iterator it = arrayList.iterator();
         while (it.hasNext()) {
+            HttpURLConnection a;
             String str3 = (String) it.next();
             if (x.b) {
                 Log.d(l, "hosted connection url: " + str3);

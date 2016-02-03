@@ -17,13 +17,8 @@ import cn.com.smartdevices.bracelet.Utils;
 import cn.com.smartdevices.bracelet.eventbus.EventNotifyStatusClosed;
 import com.huami.android.view.b;
 import com.xiaomi.e.a;
-import com.xiaomi.hm.health.f;
-import com.xiaomi.hm.health.k;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 import de.greenrobot.event.EventBus;
-import kankan.wheel.widget.g;
 
 public class SettingPhoneNotifyActivity extends SystemBarTintActivity implements OnClickListener {
     public static final String a = "phone_notify_type";
@@ -46,9 +41,9 @@ public class SettingPhoneNotifyActivity extends SystemBarTintActivity implements
     private String r = a.f;
 
     private void a() {
-        String[] stringArray = getResources().getStringArray(f.phone_notify_tips);
-        String[] stringArray2 = getResources().getStringArray(f.contacts_notify_title);
-        TextView textView = (TextView) findViewById(l.tips_tv);
+        String[] stringArray = getResources().getStringArray(R.array.phone_notify_tips);
+        String[] stringArray2 = getResources().getStringArray(R.array.contacts_notify_title);
+        TextView textView = (TextView) findViewById(R.id.tips_tv);
         LayoutParams layoutParams = (LinearLayout.LayoutParams) textView.getLayoutParams();
         if (layoutParams == null) {
             layoutParams = new LinearLayout.LayoutParams(-1, -2);
@@ -56,11 +51,11 @@ public class SettingPhoneNotifyActivity extends SystemBarTintActivity implements
         switch (this.d) {
             case b /*1*/:
                 layoutParams.topMargin = Utils.a(this.m, 144.0f);
-                this.e.setText(r.alarm_notify);
-                this.f.setText(r.alarm_notify);
+                this.e.setText(R.string.alarm_notify);
+                this.f.setText(R.string.alarm_notify);
                 this.g.setText(stringArray[b]);
-                this.j.setBackgroundResource(k.alarm_notify_icon);
-                this.k.setText(r.alarm_notify_tips2);
+                this.j.setBackgroundResource(R.drawable.alarm_notify_icon);
+                this.k.setText(R.string.alarm_notify_tips2);
                 if (!this.l.b(this.r)) {
                     this.h.setChecked(false);
                     break;
@@ -70,11 +65,11 @@ public class SettingPhoneNotifyActivity extends SystemBarTintActivity implements
                 }
             case c /*2*/:
                 layoutParams.topMargin = Utils.a(this.m, 117.0f);
-                this.e.setText(r.sms_notify);
-                this.f.setText(r.sms_notify);
+                this.e.setText(R.string.sms_notify);
+                this.f.setText(R.string.sms_notify);
                 this.g.setText(stringArray[c]);
-                this.j.setBackgroundResource(k.sms_notify_icon);
-                this.k.setText(r.sms_notify_tips2);
+                this.j.setBackgroundResource(R.drawable.sms_notify_icon);
+                this.k.setText(R.string.sms_notify_tips2);
                 if (this.l.d(this.r)) {
                     this.h.setChecked(true);
                     b(true);
@@ -107,7 +102,7 @@ public class SettingPhoneNotifyActivity extends SystemBarTintActivity implements
                     }
                     return;
                 }
-                b.a((Context) this, (int) r.notify_set_failed, 0).show();
+                b.a((Context) this, (int) R.string.notify_set_failed, 0).show();
                 return;
             case c /*2*/:
                 C0401a.a(this.m, C0401a.gw, z + a.f);
@@ -120,7 +115,7 @@ public class SettingPhoneNotifyActivity extends SystemBarTintActivity implements
                     return;
                 }
                 b(false);
-                b.a((Context) this, (int) r.notify_set_failed, 0).show();
+                b.a((Context) this, (int) R.string.notify_set_failed, 0).show();
                 return;
             default:
                 return;
@@ -133,9 +128,9 @@ public class SettingPhoneNotifyActivity extends SystemBarTintActivity implements
         this.p.setChecked(false);
         this.p.setEnabled(z);
         if (z) {
-            this.q.setTextColor(getResources().getColor(g.main_ui_title_color));
+            this.q.setTextColor(getResources().getColor(R.color.main_ui_title_color));
         } else {
-            this.q.setTextColor(getResources().getColor(g.disabled_text_color));
+            this.q.setTextColor(getResources().getColor(R.color.disabled_text_color));
         }
     }
 
@@ -146,18 +141,18 @@ public class SettingPhoneNotifyActivity extends SystemBarTintActivity implements
             return;
         }
         this.p.setChecked(false);
-        b.a((Context) this, (int) r.notify_set_failed, 0).show();
+        b.a((Context) this, (int) R.string.notify_set_failed, 0).show();
     }
 
     public void onClick(View view) {
         switch (view.getId()) {
-            case l.phone_notify_home_back /*2131296431*/:
+            case R.id.phone_notify_home_back:
                 finish();
                 return;
-            case l.phone_notify_ll /*2131296433*/:
+            case R.id.phone_notify_ll:
                 this.h.toggle();
                 return;
-            case l.contacts_notify_ll /*2131296439*/:
+            case R.id.contacts_notify_ll:
                 this.p.toggle();
                 return;
             default:
@@ -167,24 +162,24 @@ public class SettingPhoneNotifyActivity extends SystemBarTintActivity implements
 
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView((int) n.activity_phone_notify);
+        setContentView((int) R.layout.activity_phone_notify);
         this.r = Keeper.readBraceletBtInfo().b;
         this.d = getIntent().getIntExtra(a, b);
-        this.e = (TextView) findViewById(l.phone_notify_home_back);
+        this.e = (TextView) findViewById(R.id.phone_notify_home_back);
         this.e.setOnClickListener(this);
-        this.h = (Switch) findViewById(l.phone_notify_switch);
+        this.h = (Switch) findViewById(R.id.phone_notify_switch);
         this.h.setOnCheckedChangeListener(new C0802ew(this));
-        this.i = (LinearLayout) findViewById(l.phone_notify_ll);
+        this.i = (LinearLayout) findViewById(R.id.phone_notify_ll);
         this.i.setOnClickListener(this);
-        this.f = (TextView) findViewById(l.phone_notify_switch_title);
-        this.g = (TextView) findViewById(l.phone_notify_tips);
-        this.j = (ImageView) findViewById(l.phone_notify_help_iv);
-        this.k = (TextView) findViewById(l.phone_notify_tips2_tv);
-        this.n = (LinearLayout) findViewById(l.contacts_ll);
-        this.o = (LinearLayout) findViewById(l.contacts_notify_ll);
+        this.f = (TextView) findViewById(R.id.phone_notify_switch_title);
+        this.g = (TextView) findViewById(R.id.phone_notify_tips);
+        this.j = (ImageView) findViewById(R.id.phone_notify_help_iv);
+        this.k = (TextView) findViewById(R.id.phone_notify_tips2_tv);
+        this.n = (LinearLayout) findViewById(R.id.contacts_ll);
+        this.o = (LinearLayout) findViewById(R.id.contacts_notify_ll);
         this.o.setOnClickListener(this);
-        this.q = (TextView) findViewById(l.contacts_notify_switch_title);
-        this.p = (Switch) findViewById(l.contacts_notify_switch);
+        this.q = (TextView) findViewById(R.id.contacts_notify_switch_title);
+        this.p = (Switch) findViewById(R.id.contacts_notify_switch);
         this.p.setOnCheckedChangeListener(new C0803ex(this));
         a();
     }

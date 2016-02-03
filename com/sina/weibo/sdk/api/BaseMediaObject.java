@@ -63,9 +63,9 @@ public abstract class BaseMediaObject implements Parcelable {
     public abstract int getObjType();
 
     public final void setThumbImage(Bitmap bitmap) {
+        ByteArrayOutputStream byteArrayOutputStream;
         Exception e;
         Throwable th;
-        ByteArrayOutputStream byteArrayOutputStream;
         try {
             byteArrayOutputStream = new ByteArrayOutputStream();
             try {

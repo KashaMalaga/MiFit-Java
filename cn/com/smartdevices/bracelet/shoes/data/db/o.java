@@ -8,8 +8,7 @@ import cn.com.smartdevices.bracelet.C0596r;
 import cn.com.smartdevices.bracelet.shoes.d;
 import cn.com.smartdevices.bracelet.shoes.model.c;
 import cn.com.smartdevices.bracelet.shoes.sync.b.g;
-import com.tencent.open.SocialConstants;
-import com.xiaomi.e.a;
+import com.xiaomi.channel.relationservice.data.a;
 
 class o {
     private static final String a = "SDB";
@@ -122,11 +121,11 @@ class o {
                 z = z2;
             } else {
                 contentValues.put(com.xiaomi.market.sdk.o.L, Integer.valueOf(0));
-                contentValues.put(SocialConstants.PARAM_TYPE, Integer.valueOf(d.a));
-                contentValues.put(g.q, cVar == null ? a.f : k.a(cVar.b()));
-                contentValues.put(g.p, cVar == null ? a.f : k.a(cVar.d()));
-                contentValues.put(b.e, cVar == null ? a.f : k.a(cVar.c()));
-                contentValues.put(g.t, cVar == null ? a.f : k.a(cVar.a()));
+                contentValues.put(a.h, Integer.valueOf(d.a));
+                contentValues.put(g.q, cVar == null ? com.xiaomi.e.a.f : k.a(cVar.b()));
+                contentValues.put(g.p, cVar == null ? com.xiaomi.e.a.f : k.a(cVar.d()));
+                contentValues.put(b.e, cVar == null ? com.xiaomi.e.a.f : k.a(cVar.c()));
+                contentValues.put(g.t, cVar == null ? com.xiaomi.e.a.f : k.a(cVar.a()));
                 if (a.insert(e.a, null, contentValues) <= 0) {
                     z = false;
                 }

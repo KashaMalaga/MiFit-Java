@@ -7,9 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 import cn.com.smartdevices.bracelet.model.HeartRateItem;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -23,11 +21,11 @@ public class h extends BaseAdapter {
     public h(Context context, List<HeartRateItem> list) {
         this.c = context;
         this.d = list;
-        this.b = new SimpleDateFormat(this.c.getString(r.hr_item_date));
+        this.b = new SimpleDateFormat(this.c.getString(R.string.hr_item_date));
     }
 
     private String a(int i) {
-        return i == 0 ? this.c.getString(r.hr_slow) : i == 1 ? this.c.getString(r.hr_normal) : i == 2 ? this.c.getString(r.hr_sports) : this.c.getString(r.hr_fast);
+        return i == 0 ? this.c.getString(R.string.hr_slow) : i == 1 ? this.c.getString(R.string.hr_normal) : i == 2 ? this.c.getString(R.string.hr_sports) : this.c.getString(R.string.hr_fast);
     }
 
     private String a(long j) {
@@ -35,7 +33,7 @@ public class h extends BaseAdapter {
     }
 
     private String b(int i) {
-        return i < 60 ? this.c.getString(r.hr_slow) : (i < 60 || i > 100) ? this.c.getString(r.hr_fast) : this.c.getString(r.hr_normal);
+        return i < 60 ? this.c.getString(R.string.hr_slow) : (i < 60 || i > 100) ? this.c.getString(R.string.hr_fast) : this.c.getString(R.string.hr_normal);
     }
 
     private int c(int i) {
@@ -65,10 +63,10 @@ public class h extends BaseAdapter {
         j jVar;
         if (view == null) {
             jVar = new j(this);
-            view = LayoutInflater.from(this.c).inflate(n.hr_list_item, null);
-            jVar.a = (TextView) view.findViewById(l.date);
-            jVar.b = (TextView) view.findViewById(l.hr);
-            jVar.c = (TextView) view.findViewById(l.hr_level);
+            view = LayoutInflater.from(this.c).inflate(R.layout.hr_list_item, null);
+            jVar.a = (TextView) view.findViewById(R.id.date);
+            jVar.b = (TextView) view.findViewById(R.id.hr);
+            jVar.c = (TextView) view.findViewById(R.id.hr_level);
             view.setTag(jVar);
         } else {
             jVar = (j) view.getTag();

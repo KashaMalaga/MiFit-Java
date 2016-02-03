@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import cn.com.smartdevices.bracelet.C0596r;
 import cn.com.smartdevices.bracelet.Keeper;
-import com.xiaomi.hm.health.q;
+import com.xiaomi.hm.health.R;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -28,7 +28,7 @@ public final class a {
         if (context != null) {
             SharedPreferences sharedPref = Keeper.getSharedPref();
             if (sharedPref.getInt(d, 0) < e) {
-                InputStream openRawResource = context.getResources().openRawResource(q.exercise_db);
+                InputStream openRawResource = context.getResources().openRawResource(R.raw.exercise_db);
                 if (openRawResource != null) {
                     FileOutputStream fileOutputStream = null;
                     try {

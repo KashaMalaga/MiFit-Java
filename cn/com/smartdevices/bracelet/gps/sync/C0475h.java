@@ -42,7 +42,7 @@ class C0475h extends e {
         LoginData f = a.f(context);
         if (f.isValid()) {
             O a = f.a(f);
-            a.a(SocialConstants.PARAM_TYPE, 1);
+            a.a(com.xiaomi.channel.relationservice.data.a.h, 1);
             a.a(l.f, j);
             cn.com.smartdevices.bracelet.j.a.a(d.b, e.a(g.P), a, hVar);
             return;

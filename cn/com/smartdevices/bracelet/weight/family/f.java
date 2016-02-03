@@ -14,8 +14,8 @@ import cn.com.smartdevices.bracelet.weight.aA;
 import cn.com.smartdevices.bracelet.weight.ah;
 import com.huami.android.view.b;
 import com.xiaomi.e.a;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.bt.profile.Weight.e;
-import com.xiaomi.hm.health.r;
 import de.greenrobot.event.EventBus;
 
 class f extends AsyncTask<Void, Void, Boolean> {
@@ -73,7 +73,7 @@ class f extends AsyncTask<Void, Void, Boolean> {
         }
         C0596r.e("MemberInfoSetWeightActivity", "onSyncFail");
         J.a().c(this.a);
-        b.a(this.c.p, this.c.getString(r.please_connect_internet), 0).show();
+        b.a(this.c.p, this.c.getString(R.string.please_connect_internet), 0).show();
     }
 
     protected /* synthetic */ Object doInBackground(Object[] objArr) {
@@ -86,6 +86,6 @@ class f extends AsyncTask<Void, Void, Boolean> {
 
     protected void onPreExecute() {
         super.onPreExecute();
-        Utils.a((Activity) this.c.p, (int) r.add_family_member);
+        Utils.a((Activity) this.c.p, (int) R.string.add_family_member);
     }
 }

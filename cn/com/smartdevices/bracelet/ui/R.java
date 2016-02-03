@@ -8,9 +8,6 @@ import android.widget.BaseAdapter;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
 import cn.com.smartdevices.bracelet.model.BtDevice;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
 import java.util.ArrayList;
 
 class R extends BaseAdapter {
@@ -35,15 +32,15 @@ class R extends BaseAdapter {
     }
 
     public View getView(int i, View view, ViewGroup viewGroup) {
-        View inflate = LayoutInflater.from(this.b).inflate(n.search_device_item, null);
+        View inflate = LayoutInflater.from(this.b).inflate(com.xiaomi.hm.health.R.layout.search_device_item, null);
         BtDevice btDevice = (BtDevice) this.a.get(i);
-        TextView textView = (TextView) inflate.findViewById(l.searched_device_item_mac_tv);
-        TextView textView2 = (TextView) inflate.findViewById(l.searched_device_item_signal_tv);
-        ((LayoutParams) inflate.findViewById(l.searched_device_item_signal_bar).getLayoutParams()).rightMargin = (-btDevice.signal) * 5;
+        TextView textView = (TextView) inflate.findViewById(com.xiaomi.hm.health.R.id.searched_device_item_mac_tv);
+        TextView textView2 = (TextView) inflate.findViewById(com.xiaomi.hm.health.R.id.searched_device_item_signal_tv);
+        ((LayoutParams) inflate.findViewById(com.xiaomi.hm.health.R.id.searched_device_item_signal_bar).getLayoutParams()).rightMargin = (-btDevice.signal) * 5;
         inflate.invalidate();
         String address = btDevice.device.getAddress();
         textView.setText(address.substring(address.length() - "MM:AA:CC".length(), address.length()));
-        textView2.setText(this.b.getString(r.signal_strength) + btDevice.signal);
+        textView2.setText(this.b.getString(com.xiaomi.hm.health.R.string.signal_strength) + btDevice.signal);
         return inflate;
     }
 }

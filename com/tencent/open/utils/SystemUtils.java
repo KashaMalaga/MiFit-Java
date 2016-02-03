@@ -122,7 +122,6 @@ public class SystemUtils {
 
     @SuppressLint({"SdCardPath"})
     public static boolean extractSecureLib(String str, String str2, int i) {
-        InputStream open;
         Throwable e;
         Throwable th;
         OutputStream outputStream = null;
@@ -149,6 +148,7 @@ public class SystemUtils {
                 e2.printStackTrace();
             }
         }
+        InputStream open;
         try {
             open = context.getAssets().open(str);
             try {

@@ -39,6 +39,7 @@ class h extends ProtocalHandler<String, List<OfflineMapProvince>> {
     }
 
     private void b(String str) {
+        OutputStream fileOutputStream;
         Throwable e;
         if (!u.b(this.d).equals(com.xiaomi.e.a.f)) {
             File file = new File(u.b(this.d) + "offlinemap3.png");
@@ -51,7 +52,6 @@ class h extends ProtocalHandler<String, List<OfflineMapProvince>> {
                 }
             }
             if (a() > 1048576) {
-                OutputStream fileOutputStream;
                 try {
                     fileOutputStream = new FileOutputStream(file);
                     try {
@@ -154,9 +154,9 @@ class h extends ProtocalHandler<String, List<OfflineMapProvince>> {
     }
 
     protected List<OfflineMapProvince> a(byte[] bArr) {
+        String str;
         Throwable e;
         List<OfflineMapProvince> arrayList = new ArrayList();
-        String str;
         try {
             str = new String(bArr, kankan.wheel.widget.a.bO);
             try {

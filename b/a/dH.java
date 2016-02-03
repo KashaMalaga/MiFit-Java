@@ -87,6 +87,7 @@ public class dH {
     }
 
     private byte[] a(byte[] bArr, String str) {
+        InputStream content;
         HttpUriRequest httpPost = new HttpPost(str);
         HttpParams basicHttpParams = new BasicHttpParams();
         HttpConnectionParams.setConnectionTimeout(basicHttpParams, C1012a.b);
@@ -94,7 +95,6 @@ public class dH {
         HttpClient defaultHttpClient = new DefaultHttpClient(basicHttpParams);
         httpPost.addHeader("X-Umeng-Sdk", this.e);
         httpPost.addHeader("Msg-Type", "envelope");
-        InputStream content;
         try {
             if (a()) {
                 defaultHttpClient.getParams().setParameter("http.route.default-proxy", new HttpHost(this.f, this.g));

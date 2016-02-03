@@ -18,10 +18,7 @@ import cn.com.smartdevices.bracelet.Utils;
 import com.huami.android.view.b;
 import com.huami.android.view.c;
 import com.xiaomi.e.a;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
-import kankan.wheel.widget.i;
+import com.xiaomi.hm.health.R;
 
 public class C0810j extends c {
     public static final String a = "DOWNLOAD_ID_REF";
@@ -32,7 +29,7 @@ public class C0810j extends c {
     private String f;
 
     protected int inflateLayout() {
-        return n.apk_upgrade;
+        return R.layout.apk_upgrade;
     }
 
     public void onCancel(DialogInterface dialogInterface) {
@@ -50,7 +47,7 @@ public class C0810j extends c {
         this.d = arguments.getString(Utils.h);
         this.e = arguments.getString(Utils.i);
         this.f = arguments.getString(Utils.g);
-        ((TextView) onCreateView.findViewById(l.update_apk_content)).setText(this.f);
+        ((TextView) onCreateView.findViewById(R.id.update_apk_content)).setText(this.f);
         return onCreateView;
     }
 
@@ -64,14 +61,14 @@ public class C0810j extends c {
     }
 
     protected void onRightButtonClicked() {
-        b.a(getActivity(), (int) r.start_download, 1).show();
+        b.a(getActivity(), (int) R.string.start_download, 1).show();
         Request request = new Request(Uri.parse(this.e));
         request.setAllowedNetworkTypes(3);
         request.setAllowedOverRoaming(false);
         request.setMimeType(MimeTypeMap.getSingleton().getMimeTypeFromExtension(MimeTypeMap.getFileExtensionFromUrl(this.e)));
         request.setShowRunningNotification(true);
         request.setVisibleInDownloadsUi(true);
-        String str = getString(i.app_name) + ".apk";
+        String str = getString(R.string.app_name) + ".apk";
         try {
             if (Environment.getExternalStorageState().equals("mounted")) {
                 request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, str);
@@ -90,7 +87,7 @@ public class C0810j extends c {
                 dismiss();
                 return;
             }
-            Toast.makeText(getActivity(), r.sdcarderror, 0).show();
+            Toast.makeText(getActivity(), R.string.sdcarderror, 0).show();
         } catch (Exception e22) {
             Exception exception = e22;
             C0596r.d(c, new StringBuilder().append("setDestinationInExternalPublicDir = ").append(exception).toString() != null ? exception.toString() : a.f);

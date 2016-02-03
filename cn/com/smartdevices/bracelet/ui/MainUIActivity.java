@@ -88,21 +88,14 @@ import com.huami.android.view.c;
 import com.huami.android.widget.share.ShareDataManager;
 import com.huami.android.widget.share.m;
 import com.xiaomi.channel.b.v;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.bt.model.HwBatteryStatus;
 import com.xiaomi.hm.health.bt.model.HwConnStatus;
 import com.xiaomi.hm.health.bt.model.HwSyncDataStatus;
-import com.xiaomi.hm.health.i;
-import com.xiaomi.hm.health.j;
-import com.xiaomi.hm.health.k;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.p;
-import com.xiaomi.hm.health.r;
 import com.xiaomi.mistatistic.sdk.d;
 import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Locale;
-import kankan.wheel.widget.g;
 
 public class MainUIActivity extends BaseSCActivity implements OnClickListener {
     private static final int I = 0;
@@ -194,7 +187,7 @@ public class MainUIActivity extends BaseSCActivity implements OnClickListener {
     }
 
     private void B() {
-        updateTitle(r.battery_low_info);
+        updateTitle(R.string.battery_low_info);
     }
 
     private void C() {
@@ -260,15 +253,15 @@ public class MainUIActivity extends BaseSCActivity implements OnClickListener {
         this.ao = (int) Utils.b(33.0f, (Context) this);
         this.ap = (int) Utils.b(33.0f, (Context) this);
         this.aq = (int) Utils.b((float) CropOverlayView.a, (Context) this);
-        this.W = findViewById(l.backView);
-        this.X = findViewById(l.dragView);
-        this.Y = findViewById(l.msgDV);
-        this.Z = (ImageView) findViewById(l.rightArrow);
-        this.aa = (ProgressBar) findViewById(l.progressBar1);
-        this.ab = (TextView) findViewById(l.tMsg1);
-        this.ac = (TextView) findViewById(l.tMsg2);
-        this.ad = (MyListView) findViewById(l.lv2);
-        this.ae = (TextView) findViewById(l.listMsg);
+        this.W = findViewById(R.id.backView);
+        this.X = findViewById(R.id.dragView);
+        this.Y = findViewById(R.id.msgDV);
+        this.Z = (ImageView) findViewById(R.id.rightArrow);
+        this.aa = (ProgressBar) findViewById(R.id.progressBar1);
+        this.ab = (TextView) findViewById(R.id.tMsg1);
+        this.ac = (TextView) findViewById(R.id.tMsg2);
+        this.ad = (MyListView) findViewById(R.id.lv2);
+        this.ae = (TextView) findViewById(R.id.listMsg);
         G();
         F();
         this.W.setBackgroundColor(O);
@@ -284,10 +277,10 @@ public class MainUIActivity extends BaseSCActivity implements OnClickListener {
         fg a = new fe(this).a();
         if (a.d()) {
             int e = a.e();
-            int dimensionPixelSize = this.H.getDimensionPixelSize(j.main_ui_panel_height);
+            int dimensionPixelSize = this.H.getDimensionPixelSize(R.dimen.main_ui_panel_height);
             C0596r.e(d, "SlidingPanel SystemBarH : " + e + ", OriginalPanelH : " + dimensionPixelSize);
             this.V.setPanelHeight(dimensionPixelSize - e);
-            dimensionPixelSize = this.H.getDimensionPixelSize(j.main_ui_dragview_height);
+            dimensionPixelSize = this.H.getDimensionPixelSize(R.dimen.main_ui_dragview_height);
             C0596r.e(d, "SlidingPanel DragViewH : " + dimensionPixelSize);
             this.X.setLayoutParams(new LayoutParams(-1, dimensionPixelSize - e));
             this.ak = 1.3f;
@@ -583,7 +576,7 @@ public class MainUIActivity extends BaseSCActivity implements OnClickListener {
                 this.Y.setAlpha(1.0f);
             }
             this.Z.setVisibility(O);
-            this.Z.setImageResource(k.pulldown);
+            this.Z.setImageResource(R.drawable.pulldown);
             this.aa.setVisibility(8);
             this.ab.setTextColor(-11184811);
             this.ac.setTextColor(-6316129);
@@ -593,7 +586,7 @@ public class MainUIActivity extends BaseSCActivity implements OnClickListener {
             this.ab.setTextColor(-2143214);
             this.ac.setTextColor(-1400947);
             this.Z.setVisibility(O);
-            this.Z.setImageResource(k.pulldown2);
+            this.Z.setImageResource(R.drawable.pulldown2);
             this.aa.setVisibility(8);
             K();
         } else {
@@ -712,7 +705,7 @@ public class MainUIActivity extends BaseSCActivity implements OnClickListener {
             Resources resources = this.H;
             Object[] objArr = new Object[J];
             objArr[O] = Integer.valueOf(newItemCount);
-            a(resources.getQuantityString(p.numberOfPullUpdateReport, newItemCount, objArr), (int) P);
+            a(resources.getQuantityString(R.plurals.numberOfPullUpdateReport, newItemCount, objArr), (int) P);
         }
     }
 
@@ -720,29 +713,29 @@ public class MainUIActivity extends BaseSCActivity implements OnClickListener {
         String str = null;
         int r = C0591m.a().r();
         if (r == Q) {
-            Object string = getString(r.devices_shoes_label);
+            Object string = getString(R.string.devices_shoes_label);
         } else {
-            String string2 = r == 0 ? getString(r.devices_miband_label) : null;
+            String string2 = r == 0 ? getString(R.string.devices_miband_label) : null;
         }
         Object[] objArr;
         if (i == 0) {
             String format;
             Object[] objArr2;
             if (r == Q) {
-                str = getString(r.shoes_home_tips_connect_failed);
+                str = getString(R.string.shoes_home_tips_connect_failed);
                 objArr = new Object[J];
                 objArr[O] = string;
                 format = String.format(str, objArr);
-                str = getString(r.shoes_alert_body_connect_failed);
+                str = getString(R.string.shoes_alert_body_connect_failed);
                 objArr2 = new Object[J];
                 objArr2[O] = string;
                 str = String.format(str, objArr2);
             } else if (r == 0) {
-                str = getString(r.dynamic_pull_connect_failed);
+                str = getString(R.string.dynamic_pull_connect_failed);
                 objArr = new Object[J];
                 objArr[O] = string;
                 format = String.format(str, objArr);
-                str = getString(r.dynamic_pull_connect_failed_hint);
+                str = getString(R.string.dynamic_pull_connect_failed_hint);
                 objArr2 = new Object[J];
                 objArr2[O] = string;
                 str = String.format(str, objArr2);
@@ -751,10 +744,10 @@ public class MainUIActivity extends BaseSCActivity implements OnClickListener {
             }
             a(format, str, P, 0.0f);
         } else if (i == J) {
-            str = getString(r.dynamic_pull_connecting_bracelet);
+            str = getString(R.string.dynamic_pull_connecting_bracelet);
             objArr = new Object[J];
             objArr[O] = string;
-            a(String.format(str, objArr), String.format(getString(r.dynamic_pull_sync_after_connected), new Object[O]));
+            a(String.format(str, objArr), String.format(getString(R.string.dynamic_pull_sync_after_connected), new Object[O]));
         }
     }
 
@@ -809,7 +802,7 @@ public class MainUIActivity extends BaseSCActivity implements OnClickListener {
     }
 
     private void q() {
-        this.V = (SlidingUpPanelLayout) findViewById(l.sliding_layout);
+        this.V = (SlidingUpPanelLayout) findViewById(R.id.sliding_layout);
         this.V.setOverlayed(true);
         this.V.setEnableDragViewTouchEvents(true);
         this.V.setPanelSlideListener(this.az);
@@ -854,12 +847,12 @@ public class MainUIActivity extends BaseSCActivity implements OnClickListener {
     }
 
     private void u() {
-        this.g = findViewById(l.header_nav_left);
+        this.g = findViewById(R.id.header_nav_left);
         this.g.setOnClickListener(this);
-        this.h = findViewById(l.header_nav_right);
+        this.h = findViewById(R.id.header_nav_right);
         this.h.setOnClickListener(this);
-        this.i = (TextView) findViewById(l.dynamic_title);
-        this.j = (TextView) findViewById(l.dynamic_subtitle);
+        this.i = (TextView) findViewById(R.id.dynamic_title);
+        this.j = (TextView) findViewById(R.id.dynamic_subtitle);
         this.i.setOnClickListener(new C0743cs(this));
         if (t.a()) {
             this.i.setTextSize(14.0f);
@@ -870,7 +863,7 @@ public class MainUIActivity extends BaseSCActivity implements OnClickListener {
         FragmentManager fragmentManager = getFragmentManager();
         FragmentTransaction beginTransaction = fragmentManager.beginTransaction();
         this.k = (C0694ax) Fragment.instantiate(this, C0694ax.class.getName());
-        beginTransaction.add(l.container, this.k, "DynamicFragment");
+        beginTransaction.add(R.id.container, this.k, "DynamicFragment");
         beginTransaction.commit();
         fragmentManager.executePendingTransactions();
         if (DeviceSource.hasBindWeight() && !DeviceSource.hasBindBracelet()) {
@@ -908,9 +901,9 @@ public class MainUIActivity extends BaseSCActivity implements OnClickListener {
 
     private void y() {
         if (cn.com.smartdevices.bracelet.lab.h.a()) {
-            findViewById(l.header_nav_right_new_sign).setVisibility(O);
+            findViewById(R.id.header_nav_right_new_sign).setVisibility(O);
         } else {
-            findViewById(l.header_nav_right_new_sign).setVisibility(8);
+            findViewById(R.id.header_nav_right_new_sign).setVisibility(8);
         }
     }
 
@@ -976,29 +969,29 @@ public class MainUIActivity extends BaseSCActivity implements OnClickListener {
     }
 
     public void c(int i) {
-        int i2 = r.dynamic_title_weight_unbind;
-        int i3 = r.dynamic_title_bracelet_unbind;
+        int i2 = R.string.dynamic_title_weight_unbind;
+        int i3 = R.string.dynamic_title_bracelet_unbind;
         if (!this.p || i == PersonInfo.INCOMING_CALL_DISABLE_BIT) {
             switch (i) {
                 case J /*1*/:
                     if (DeviceSource.hasBindBracelet() || DeviceSource.hasBindShoesDevice()) {
-                        i3 = r.dynamic_title_step;
+                        i3 = R.string.dynamic_title_step;
                     }
                     updateTitle(i3);
                     return;
                 case kankan.wheel.widget.a.bp /*16*/:
                     if (DeviceSource.hasBindBracelet()) {
-                        i3 = r.dynamic_title_sleep;
+                        i3 = R.string.dynamic_title_sleep;
                     }
                     updateTitle(i3);
                     return;
                 case PersonInfo.INCOMING_CALL_DISABLE_BIT /*256*/:
                     if (this.G) {
-                        updateTitle(DeviceSource.hasBindWeight() ? r.dynamic_title_weight_not_nearby : r.dynamic_title_weight_unbind);
+                        updateTitle(DeviceSource.hasBindWeight() ? R.string.dynamic_title_weight_not_nearby : R.string.dynamic_title_weight_unbind);
                         return;
                     }
                     if (DeviceSource.hasBindWeight()) {
-                        i2 = r.dynamic_title_weight;
+                        i2 = R.string.dynamic_title_weight;
                     }
                     updateTitle(i2);
                     return;
@@ -1017,7 +1010,7 @@ public class MainUIActivity extends BaseSCActivity implements OnClickListener {
     }
 
     public void d(int i) {
-        ((ImageView) this.g.findViewById(l.btn)).setImageResource(i);
+        ((ImageView) this.g.findViewById(R.id.btn)).setImageResource(i);
     }
 
     protected void e() {
@@ -1074,7 +1067,7 @@ public class MainUIActivity extends BaseSCActivity implements OnClickListener {
     }
 
     public void k() {
-        LayoutAnimationController layoutAnimationController = new LayoutAnimationController(AnimationUtils.loadAnimation(this, com.xiaomi.hm.health.e.list_fadein));
+        LayoutAnimationController layoutAnimationController = new LayoutAnimationController(AnimationUtils.loadAnimation(this, R.anim.list_fadein));
         layoutAnimationController.setOrder(O);
         layoutAnimationController.setInterpolator(new DecelerateInterpolator());
         layoutAnimationController.setDelay(0.5f);
@@ -1088,7 +1081,7 @@ public class MainUIActivity extends BaseSCActivity implements OnClickListener {
     public void onBackPressed() {
         long currentTimeMillis = System.currentTimeMillis();
         if (this.D == -1) {
-            com.huami.android.view.b.a((Context) this, (int) r.app_exit_press_again, (int) O).show();
+            com.huami.android.view.b.a((Context) this, (int) R.string.app_exit_press_again, (int) O).show();
             this.D = currentTimeMillis;
             this.r.sendEmptyMessageDelayed(c, 2000);
         } else if (currentTimeMillis - this.D < 2000) {
@@ -1099,10 +1092,10 @@ public class MainUIActivity extends BaseSCActivity implements OnClickListener {
 
     public void onClick(View view) {
         switch (view.getId()) {
-            case l.header_nav_left /*2131296572*/:
+            case R.id.header_nav_left:
                 C();
                 return;
-            case l.header_nav_right /*2131296574*/:
+            case R.id.header_nav_right:
                 D();
                 return;
             default:
@@ -1121,14 +1114,14 @@ public class MainUIActivity extends BaseSCActivity implements OnClickListener {
         super.onCreate(bundle);
         this.E = this;
         this.H = getResources();
-        setContentView((int) n.activity_main);
+        setContentView((int) R.layout.activity_main);
         disableAutoApplyStatusBarTint();
         if (DeviceSource.hasBindBracelet() || DeviceSource.hasBindShoesDevice()) {
-            findViewById(l.backView).setBackgroundColor(this.H.getColor(i.bg_mode_step));
-            applyStatusBarTintRes(i.bg_mode_step);
+            findViewById(R.id.backView).setBackgroundColor(this.H.getColor(R.color.bg_mode_step));
+            applyStatusBarTintRes(R.color.bg_mode_step);
         } else {
-            findViewById(l.backView).setBackgroundColor(this.H.getColor(g.bg_mode_unbind));
-            applyStatusBarTintRes(g.bg_mode_unbind);
+            findViewById(R.id.backView).setBackgroundColor(this.H.getColor(R.color.bg_mode_unbind));
+            applyStatusBarTintRes(R.color.bg_mode_unbind);
         }
         q();
         r();
@@ -1216,8 +1209,8 @@ public class MainUIActivity extends BaseSCActivity implements OnClickListener {
         runOnUiThread(new C0740cp(this));
         if (!Utils.w(this.E) && !Utils.x(this.E)) {
             Partner a = C0425b.a(this.E).a("2833961550");
-            a.title = getString(r.bohee_title);
-            a.subTitle = getString(r.bohee_subtitle);
+            a.title = getString(R.string.bohee_title);
+            a.subTitle = getString(R.string.bohee_subtitle);
             LuaEvent.getInstance(this.E).showLuaItem(PartnerDataManager.buildLuaItem(a));
         }
     }
@@ -1297,17 +1290,17 @@ public class MainUIActivity extends BaseSCActivity implements OnClickListener {
         C0596r.e(d, "HwSyncDataStatus:" + hwSyncDataStatus + ",type = " + hwSyncDataStatus.h());
         if (hwSyncDataStatus.h().b() == C0591m.a().r()) {
             this.s = hwSyncDataStatus;
-            String string = getString(r.dynamic_pull_syncing);
+            String string = getString(R.string.dynamic_pull_syncing);
             String str = com.xiaomi.e.a.f;
             if (hwSyncDataStatus.b()) {
                 this.r.removeMessages(N);
                 Object[] objArr = new Object[J];
                 objArr[O] = Integer.valueOf(O);
-                a(string, getString(r.dynamic_pull_syncing_progress, objArr));
+                a(string, getString(R.string.dynamic_pull_syncing_progress, objArr));
             } else if (hwSyncDataStatus.c()) {
                 Object[] objArr2 = new Object[J];
                 objArr2[O] = Integer.valueOf(Math.max(O, Math.min(U, hwSyncDataStatus.f())));
-                a(string, getString(r.dynamic_pull_syncing_progress, objArr2));
+                a(string, getString(R.string.dynamic_pull_syncing_progress, objArr2));
             } else if (hwSyncDataStatus.d()) {
                 if (hwSyncDataStatus.g()) {
                     I();
@@ -1316,7 +1309,7 @@ public class MainUIActivity extends BaseSCActivity implements OnClickListener {
                     Utils.u(this.E);
                     C0596r.e(d, "Sync step data to Google Fit");
                 } else {
-                    a(getString(r.dynamic_pull_sync_error), Utils.a((Context) this, (int) r.dynamic_pull_last_sync_time), Q, 0.0f);
+                    a(getString(R.string.dynamic_pull_sync_error), Utils.a((Context) this, (int) R.string.dynamic_pull_last_sync_time), Q, 0.0f);
                 }
             }
             C0596r.e(d, "out HwSyncDataStatus");

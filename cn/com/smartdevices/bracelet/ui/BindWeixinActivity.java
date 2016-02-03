@@ -19,23 +19,21 @@ import cn.com.smartdevices.bracelet.C0596r;
 import cn.com.smartdevices.bracelet.Utils;
 import cn.com.smartdevices.bracelet.j.l;
 import com.c.b.c.b;
+import com.c.b.g;
 import com.huami.android.widget.share.m;
 import com.tencent.mm.sdk.constants.ConstantsAPI.WXApp;
 import com.tencent.mm.sdk.openapi.IWXAPI;
 import com.tencent.mm.sdk.openapi.WXAPIFactory;
 import com.xiaomi.e.a;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.bt.a.C1116c;
 import com.xiaomi.hm.health.bt.model.HwConnStatus;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
 import de.greenrobot.event.EventBus;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.OutputStream;
 import java.util.Hashtable;
 import java.util.Map;
-import kankan.wheel.widget.g;
-import kankan.wheel.widget.i;
 
 public class BindWeixinActivity extends SystemBarTintActivity implements OnClickListener {
     private static final int a = 0;
@@ -80,16 +78,16 @@ public class BindWeixinActivity extends SystemBarTintActivity implements OnClick
         }
         if (a(WXApp.WXAPP_PACKAGE_NAME) == null) {
             a(this.q, false);
-            this.q.setText(r.start_weixin_not_installed);
+            this.q.setText(R.string.start_weixin_not_installed);
         }
     }
 
     private void a(Button button, boolean z) {
         button.setEnabled(z);
         if (z) {
-            button.setTextColor(getResources().getColor(g.main_ui_content_color));
+            button.setTextColor(getResources().getColor(R.color.main_ui_content_color));
         } else {
-            button.setTextColor(getResources().getColor(g.disabled_text_color));
+            button.setTextColor(getResources().getColor(R.color.disabled_text_color));
         }
     }
 
@@ -102,7 +100,7 @@ public class BindWeixinActivity extends SystemBarTintActivity implements OnClick
         Exception e;
         try {
             Map hashtable = new Hashtable();
-            hashtable.put(com.c.b.g.CHARACTER_SET, kankan.wheel.widget.a.bO);
+            hashtable.put(g.CHARACTER_SET, kankan.wheel.widget.a.bO);
             b a = new com.c.b.i.b().a(str, com.c.b.a.QR_CODE, h, h, hashtable);
             int[] iArr = new int[250000];
             for (int i = j; i < h; i += i) {
@@ -159,7 +157,7 @@ public class BindWeixinActivity extends SystemBarTintActivity implements OnClick
     }
 
     private void h() {
-        Utils.a((Activity) this, (int) r.bind_weixin_now);
+        Utils.a((Activity) this, (int) R.string.bind_weixin_now);
     }
 
     private void i() {
@@ -168,15 +166,15 @@ public class BindWeixinActivity extends SystemBarTintActivity implements OnClick
 
     public void onClick(View view) {
         switch (view.getId()) {
-            case com.xiaomi.hm.health.l.start_weixin_btn /*2131296348*/:
+            case R.id.start_weixin_btn:
                 a();
                 C0401a.a((Context) this, C0401a.dR, C0401a.dU);
                 return;
-            case com.xiaomi.hm.health.l.gen_qr_code_btn /*2131296349*/:
+            case R.id.gen_qr_code_btn:
                 if (Utils.l(this)) {
                     b();
                 } else {
-                    com.huami.android.view.b.a((Context) this, (int) r.no_network_connection, (int) j).show();
+                    com.huami.android.view.b.a((Context) this, (int) R.string.no_network_connection, (int) j).show();
                 }
                 C0401a.a((Context) this, C0401a.dR, C0401a.dT);
                 return;
@@ -187,18 +185,18 @@ public class BindWeixinActivity extends SystemBarTintActivity implements OnClick
 
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView((int) n.activity_bind_weixin);
+        setContentView((int) R.layout.activity_bind_weixin);
         this.s = getApplicationContext();
-        File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/" + getString(i.app_name));
+        File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + "/" + getString(R.string.app_name));
         if (!file.exists()) {
             file.mkdirs();
         }
-        this.p = file.getAbsolutePath() + "/" + getString(r.bind_weixin_qrcode_name) + ".jpg";
-        this.l = (Button) findViewById(com.xiaomi.hm.health.l.gen_qr_code_btn);
+        this.p = file.getAbsolutePath() + "/" + getString(R.string.bind_weixin_qrcode_name) + ".jpg";
+        this.l = (Button) findViewById(R.id.gen_qr_code_btn);
         this.l.setOnClickListener(this);
-        this.q = (Button) findViewById(com.xiaomi.hm.health.l.start_weixin_btn);
+        this.q = (Button) findViewById(R.id.start_weixin_btn);
         this.q.setOnClickListener(this);
-        this.r = findViewById(com.xiaomi.hm.health.l.mask_view);
+        this.r = findViewById(R.id.mask_view);
         this.m = new J(this);
         a((int) j);
         EventBus.getDefault().register(this);

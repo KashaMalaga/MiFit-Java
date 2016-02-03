@@ -35,6 +35,7 @@ import cn.com.smartdevices.bracelet.config.b;
 import cn.com.smartdevices.bracelet.datasource.DeviceSource;
 import cn.com.smartdevices.bracelet.eventbus.EventPersonInfoUpdate;
 import cn.com.smartdevices.bracelet.eventbus.EventPersonInfoUpdateUnit;
+import cn.com.smartdevices.bracelet.j.l;
 import cn.com.smartdevices.bracelet.lab.sync.i;
 import cn.com.smartdevices.bracelet.lua.SlidingUpPanelLayout;
 import cn.com.smartdevices.bracelet.lua.SlidingUpPanelLayout.PanelSlideListener;
@@ -54,12 +55,8 @@ import com.amap.api.maps.model.BitmapDescriptorFactory;
 import com.c.a.C0993k;
 import com.huami.android.view.c;
 import com.sina.weibo.sdk.exception.WeiboAuthException;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.bt.a.w;
-import com.xiaomi.hm.health.j;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.p;
-import com.xiaomi.hm.health.r;
 import de.greenrobot.event.EventBus;
 import java.io.FileOutputStream;
 import java.io.OutputStream;
@@ -119,40 +116,40 @@ public class cL extends p implements OnClickListener {
     }
 
     private void a(View view) {
-        this.R = getResources().getDimensionPixelSize(j.person_page_scroll_parallax);
-        this.j = (TextView) view.findViewById(l.info_gender_value);
-        this.l = view.findViewById(l.info_gender);
+        this.R = getResources().getDimensionPixelSize(R.dimen.person_page_scroll_parallax);
+        this.j = (TextView) view.findViewById(R.id.info_gender_value);
+        this.l = view.findViewById(R.id.info_gender);
         this.l.setOnClickListener(this);
-        this.m = (TextView) view.findViewById(l.info_height_value);
-        this.n = view.findViewById(l.info_height);
+        this.m = (TextView) view.findViewById(R.id.info_height_value);
+        this.n = view.findViewById(R.id.info_height);
         this.n.setOnClickListener(this);
-        this.o = (TextView) view.findViewById(l.info_weight_value);
-        this.p = view.findViewById(l.info_weight);
+        this.o = (TextView) view.findViewById(R.id.info_weight_value);
+        this.p = view.findViewById(R.id.info_weight);
         this.p.setOnClickListener(this);
-        this.q = (TextView) view.findViewById(l.info_age_value);
-        this.r = view.findViewById(l.info_age_area);
+        this.q = (TextView) view.findViewById(R.id.info_age_value);
+        this.r = view.findViewById(R.id.info_age_area);
         this.r.setOnClickListener(this);
-        this.s = view.findViewById(l.info_unit_set);
+        this.s = view.findViewById(R.id.info_unit_set);
         this.s.setOnClickListener(this);
-        this.k = (TextView) view.findViewById(l.info_unit_value);
-        this.K = (TextView) view.findViewById(l.device_set_goal_text);
-        this.J = view.findViewById(l.device_set_goal);
+        this.k = (TextView) view.findViewById(R.id.info_unit_value);
+        this.K = (TextView) view.findViewById(R.id.device_set_goal_text);
+        this.J = view.findViewById(R.id.device_set_goal);
         this.J.setOnClickListener(this);
-        this.M = view.findViewById(l.info_weight_goal);
+        this.M = view.findViewById(R.id.info_weight_goal);
         this.M.setOnClickListener(this);
         if (!b.h().l.a.booleanValue()) {
             this.M.setVisibility(8);
         }
-        this.N = (TextView) view.findViewById(l.info_weight_goal_value);
-        view.findViewById(l.mili_exit_login).setOnClickListener(this);
-        this.v = view.findViewById(l.person_info_user_info_area);
-        this.G = view.findViewById(l.person_info_edit_area);
+        this.N = (TextView) view.findViewById(R.id.info_weight_goal_value);
+        view.findViewById(R.id.mili_exit_login).setOnClickListener(this);
+        this.v = view.findViewById(R.id.person_info_user_info_area);
+        this.G = view.findViewById(R.id.person_info_edit_area);
         if (Keeper.readPersonInfo().uid == this.u.uid) {
             this.G.setVisibility(0);
         } else {
             this.G.setVisibility(8);
         }
-        this.L = (SlidingUpPanelLayout) view.findViewById(l.fragment_setting_sliding_layout);
+        this.L = (SlidingUpPanelLayout) view.findViewById(R.id.fragment_setting_sliding_layout);
         this.L.setEnableDragViewTouchEvents(true);
         this.L.setPanelSlideListener(this.S);
         h();
@@ -223,13 +220,13 @@ public class cL extends p implements OnClickListener {
             C0596r.d(g, "exit login now! but the context is null!");
             return;
         }
-        Utils.a(getActivity(), (int) r.mili_exit_login_info_exiting, false);
-        cn.com.smartdevices.bracelet.j.l.d(cn.com.smartdevices.bracelet.e.a.f(getActivity()), cn.com.smartdevices.bracelet.e.a.d(getActivity()), new cM(this));
+        Utils.a(getActivity(), (int) R.string.mili_exit_login_info_exiting, false);
+        l.d(cn.com.smartdevices.bracelet.e.a.f(getActivity()), cn.com.smartdevices.bracelet.e.a.d(getActivity()), new cM(this));
         f();
     }
 
     private void f() {
-        cn.com.smartdevices.bracelet.j.l.g(cn.com.smartdevices.bracelet.e.a.f(getActivity()), new cN(this));
+        l.g(cn.com.smartdevices.bracelet.e.a.f(getActivity()), new cN(this));
     }
 
     private void g() {
@@ -240,29 +237,29 @@ public class cL extends p implements OnClickListener {
         fg a = new fe(getActivity()).a();
         if (a.d()) {
             int e = a.e();
-            int dimensionPixelSize = getResources().getDimensionPixelSize(j.person_fragment_panel);
+            int dimensionPixelSize = getResources().getDimensionPixelSize(R.dimen.person_fragment_panel);
             C0596r.e(g, "SlidingPanel SystemBarH : " + e + ", OriginalPanelH : " + dimensionPixelSize);
             this.L.setPanelHeight(dimensionPixelSize - e);
         }
     }
 
     private void i() {
-        this.w = (ImageButton) this.v.findViewById(l.person_page_icon);
+        this.w = (ImageButton) this.v.findViewById(R.id.person_page_icon);
         this.w.setOnClickListener(this);
-        this.x = (TextView) this.v.findViewById(l.person_page_nickname);
+        this.x = (TextView) this.v.findViewById(R.id.person_page_nickname);
         this.x.setOnClickListener(this);
-        this.y = (TextView) this.v.findViewById(l.person_page_signiture);
-        this.z = (TextView) this.v.findViewById(l.person_page_location);
+        this.y = (TextView) this.v.findViewById(R.id.person_page_signiture);
+        this.z = (TextView) this.v.findViewById(R.id.person_page_location);
         this.z.setOnClickListener(this);
-        this.A = (ImageButton) this.v.findViewById(l.edit_member_name);
+        this.A = (ImageButton) this.v.findViewById(R.id.edit_member_name);
         this.A.setOnClickListener(this);
-        this.D = (TextView) this.v.findViewById(l.person_page_uid);
-        this.B = (TextView) this.v.findViewById(l.person_page_odo);
-        this.C = (TextView) this.v.findViewById(l.person_page_odo_title);
-        this.E = (TextView) this.v.findViewById(l.person_page_ave_steps);
-        this.H = (TextView) this.v.findViewById(l.person_page_weared_days);
-        this.O = (LinearLayout) this.v.findViewById(l.person_page_header_center_area);
-        this.P = (LinearLayout) this.v.findViewById(l.person_info_static_layout_id);
+        this.D = (TextView) this.v.findViewById(R.id.person_page_uid);
+        this.B = (TextView) this.v.findViewById(R.id.person_page_odo);
+        this.C = (TextView) this.v.findViewById(R.id.person_page_odo_title);
+        this.E = (TextView) this.v.findViewById(R.id.person_page_ave_steps);
+        this.H = (TextView) this.v.findViewById(R.id.person_page_weared_days);
+        this.O = (LinearLayout) this.v.findViewById(R.id.person_page_header_center_area);
+        this.P = (LinearLayout) this.v.findViewById(R.id.person_info_static_layout_id);
         if (DeviceSource.hasBindBracelet() || !b.h().l.a.booleanValue()) {
             this.P.setVisibility(0);
         } else {
@@ -340,7 +337,7 @@ public class cL extends p implements OnClickListener {
     }
 
     private void p() {
-        this.K.setText(this.u.getDaySportGoalSteps() + getString(r.step_per_day));
+        this.K.setText(this.u.getDaySportGoalSteps() + getString(R.string.step_per_day));
     }
 
     private void q() {
@@ -375,7 +372,7 @@ public class cL extends p implements OnClickListener {
             C0596r.a(g, "getActivity is null");
             return;
         }
-        this.j.setText(this.u.gender == 1 ? getString(r.male) : getString(r.female));
+        this.j.setText(this.u.gender == 1 ? getString(R.string.male) : getString(R.string.female));
         t();
         WeightInfo a = ah.a().a(-1, 0);
         C0596r.e("PERSON_WEIGHT", "person info .weight " + this.u.weight);
@@ -398,8 +395,8 @@ public class cL extends p implements OnClickListener {
 
     private void t() {
         this.B.setText(ChartData.a(getActivity(), this.u.getTotalDistance(), 1)[0]);
-        this.C.setText(getString(r.odo, new Object[]{r0[1]}));
-        this.k.setText(this.u.getUnit() == 0 ? getString(r.unit_metric) : getString(r.unit_british));
+        this.C.setText(getString(R.string.odo, new Object[]{r0[1]}));
+        this.k.setText(this.u.getUnit() == 0 ? getString(R.string.unit_metric) : getString(R.string.unit_british));
         this.m.setText(u());
     }
 
@@ -407,10 +404,10 @@ public class cL extends p implements OnClickListener {
         int i = this.u.height;
         int a = C0890y.a(i);
         if (this.u.getUnit() == 0) {
-            return i + getString(r.cm);
+            return i + getString(R.string.cm);
         }
-        String quantityString = getResources().getQuantityString(p.numberFoot, a / 12, new Object[]{Integer.valueOf(a / 12)});
-        return quantityString + " " + getResources().getQuantityString(p.numberInch, a % 12, new Object[]{Integer.valueOf(a % 12)});
+        String quantityString = getResources().getQuantityString(R.plurals.numberFoot, a / 12, new Object[]{Integer.valueOf(a / 12)});
+        return quantityString + " " + getResources().getQuantityString(R.plurals.numberInch, a % 12, new Object[]{Integer.valueOf(a % 12)});
     }
 
     private void v() {
@@ -431,7 +428,7 @@ public class cL extends p implements OnClickListener {
     }
 
     private void x() {
-        com.huami.android.view.b.a(getActivity(), (int) r.logout_failed_retry, 0).show();
+        com.huami.android.view.b.a(getActivity(), (int) R.string.logout_failed_retry, 0).show();
     }
 
     private void y() {
@@ -499,22 +496,22 @@ public class cL extends p implements OnClickListener {
     public void onClick(View view) {
         Intent intent;
         switch (view.getId()) {
-            case l.info_nick_name /*2131297076*/:
+            case R.id.info_nick_name:
                 c.showPanel(getActivity(), C0758dg.a(-1).getClass());
                 return;
-            case l.info_person_signature /*2131297077*/:
+            case R.id.info_person_signature:
                 c.showPanel(getActivity(), C0759dh.class);
                 return;
-            case l.info_gender /*2131297129*/:
+            case R.id.info_gender:
                 c.showPanel(getActivity(), C0754dc.a(-1).getClass());
                 return;
-            case l.info_age_area /*2131297131*/:
+            case R.id.info_age_area:
                 c.showPanel(getActivity(), C0752da.a(-1).getClass());
                 return;
-            case l.info_height /*2131297133*/:
+            case R.id.info_height:
                 c.showPanel(getActivity(), C0755dd.a(-1).getClass());
                 return;
-            case l.info_weight /*2131297260*/:
+            case R.id.info_weight:
                 if (b.h().l.a.booleanValue()) {
                     intent = new Intent(getActivity(), StatisticActivity.class);
                     intent.putExtra(ChartData.KEY_MODE, PersonInfo.INCOMING_CALL_DISABLE_BIT);
@@ -524,30 +521,30 @@ public class cL extends p implements OnClickListener {
                 }
                 c.showPanel(getActivity(), C0760di.a(-1).getClass());
                 return;
-            case l.device_set_goal /*2131297347*/:
+            case R.id.device_set_goal:
                 startActivityForResult(new Intent(getActivity(), HealthGoalsActivity.class), h);
                 return;
-            case l.edit_member_name /*2131297355*/:
-            case l.person_page_nickname /*2131297394*/:
+            case R.id.edit_member_name:
+            case R.id.person_page_nickname:
                 c.showPanel(getActivity(), C0758dg.a(-1).getClass());
                 return;
-            case l.info_weight_goal /*2131297381*/:
+            case R.id.info_weight_goal:
                 intent = new Intent(getActivity(), WeightGoalSetActivity.class);
                 intent.putExtra(WeightGoalSetActivity.a, -1);
                 getActivity().startActivityForResult(intent, i);
                 return;
-            case l.info_unit_set /*2131297384*/:
+            case R.id.info_unit_set:
                 startActivity(new Intent(getActivity(), PersonInfoSettingUnitActivity.class));
                 return;
-            case l.mili_exit_login /*2131297391*/:
+            case R.id.mili_exit_login:
                 if (Utils.l(getActivity())) {
                     j();
                     return;
                 }
-                com.huami.android.view.b.a(getActivity(), (int) r.no_network_connection, 0).show();
+                com.huami.android.view.b.a(getActivity(), (int) R.string.no_network_connection, 0).show();
                 a();
                 return;
-            case l.person_page_icon /*2131297393*/:
+            case R.id.person_page_icon:
                 c.showPanel(getActivity(), dC.class);
                 return;
             default:
@@ -566,7 +563,7 @@ public class cL extends p implements OnClickListener {
 
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         C0596r.e(g, "onCreateView");
-        View inflate = layoutInflater.inflate(n.person_info_fragment, null);
+        View inflate = layoutInflater.inflate(R.layout.person_info_fragment, null);
         a(inflate);
         g();
         return inflate;

@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Message;
-import android.text.TextUtils;
 import android.view.Menu;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -183,7 +182,7 @@ public class ShoesBindActivity extends CustomActionBarActivity {
             return;
         }
         cn.com.smartdevices.bracelet.shoes.a.d a = cn.com.smartdevices.bracelet.shoes.a.c.a(getIntent().getStringExtra(CaptureActivity.b));
-        if (a == null || TextUtils.isEmpty(a.b()) || !(TextUtils.isEmpty(a.a()) || a.a().startsWith(this.j.a()))) {
+        if (a == null) {
             i();
             this.q = true;
             return;

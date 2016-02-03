@@ -12,7 +12,7 @@ import android.support.v7.widget.RecyclerView.LayoutParams;
 import android.util.Log;
 import android.view.View;
 import android.view.accessibility.AccessibilityEvent;
-import com.c.b.a.c.c;
+import com.xiaomi.channel.relationservice.data.b;
 import java.util.List;
 import kankan.wheel.widget.a;
 
@@ -118,7 +118,7 @@ public class LinearLayoutManager extends W {
                 return k;
             case a.bu /*17*/:
                 return this.m != 0 ? l : -1;
-            case c.a /*33*/:
+            case b.H /*33*/:
                 return this.m != k ? l : -1;
             case 66:
                 if (this.m != 0) {

@@ -30,16 +30,14 @@ import cn.com.smartdevices.bracelet.Utils;
 import cn.com.smartdevices.bracelet.config.b;
 import cn.com.smartdevices.bracelet.model.LoginData;
 import cn.com.smartdevices.bracelet.model.ShareData;
+import cn.com.smartdevices.bracelet.shoes.sync.b.g;
 import cn.com.smartdevices.bracelet.ui.ShareActivity;
 import cn.com.smartdevices.bracelet.ui.SystemBarTintActivity;
 import com.d.a.a.O;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 import java.io.IOException;
 import java.util.Locale;
 import kankan.wheel.widget.a;
-import kankan.wheel.widget.g;
 
 public class WebActivity extends SystemBarTintActivity implements OnClickListener {
     private static final boolean CAPTURE_FULL_SCREEN = true;
@@ -118,11 +116,11 @@ public class WebActivity extends SystemBarTintActivity implements OnClickListene
                 settings.setUseWideViewPort(CAPTURE_FULL_SCREEN);
                 settings.setLoadWithOverviewMode(CAPTURE_FULL_SCREEN);
             }
-            intExtra = intent.getIntExtra(a.f, getResources().getColor(g.bg_color_blue));
+            intExtra = intent.getIntExtra(a.f, getResources().getColor(R.color.bg_color_blue));
             C0596r.e(TAG, "actionBarColor = " + intExtra);
             intExtra |= C0151az.s;
             this.mActionBar.setBackgroundColor(intExtra);
-            findViewById(l.webview_padding).setBackgroundColor(intExtra);
+            findViewById(R.id.webview_padding).setBackgroundColor(intExtra);
             if (intent.getIntExtra(a.g, 0) > 0) {
                 this.mShare.setVisibility(0);
             }
@@ -151,7 +149,7 @@ public class WebActivity extends SystemBarTintActivity implements OnClickListene
     private String processExtras(String str) {
         LoginData f = cn.com.smartdevices.bracelet.e.a.f(this.mContext);
         O o = new O();
-        o.a(cn.com.smartdevices.bracelet.shoes.sync.b.g.f, com.xiaomi.e.a.f + f.uid);
+        o.a(g.f, com.xiaomi.e.a.f + f.uid);
         o.a(a.o, f.security);
         String str2 = str + ("?" + o.toString());
         C0596r.e(TAG, "url = " + str2);
@@ -159,15 +157,15 @@ public class WebActivity extends SystemBarTintActivity implements OnClickListene
     }
 
     private void setupViews() {
-        this.mShare = findViewById(l.share);
-        this.mActionBar = findViewById(l.action_bar);
-        this.mWebView = (WebView) findViewById(l.webview);
-        this.mWebErrorTip = (TextView) findViewById(l.web_error_tip);
-        this.mWebViewContainer = findViewById(l.webview_container);
-        this.mWebViewCenterProgress = (ProgressBar) findViewById(l.progress_bar);
+        this.mShare = findViewById(R.id.share);
+        this.mActionBar = findViewById(R.id.action_bar);
+        this.mWebView = (WebView) findViewById(R.id.webview);
+        this.mWebErrorTip = (TextView) findViewById(R.id.web_error_tip);
+        this.mWebViewContainer = findViewById(R.id.webview_container);
+        this.mWebViewCenterProgress = (ProgressBar) findViewById(R.id.progress_bar);
         this.mShare.setOnClickListener(this);
         this.mWebView.getSettings().setJavaScriptEnabled(CAPTURE_FULL_SCREEN);
-        this.mWebViewProgress = (ProgressBar) findViewById(l.webview_progress);
+        this.mWebViewProgress = (ProgressBar) findViewById(R.id.webview_progress);
         this.mWebView.setLayerType(1, null);
         this.mWebView.setWebViewClient(new B(this));
         this.mWebView.setWebChromeClient(this.mChromeClient);
@@ -175,11 +173,11 @@ public class WebActivity extends SystemBarTintActivity implements OnClickListene
     }
 
     private void share() {
+        Bitmap decodeStream;
         Exception e;
         Bitmap bitmap = null;
         C0596r.e(TAG, "Start Share!!");
         if (getIntent() != null) {
-            Bitmap decodeStream;
             String str;
             int intExtra = getIntent().getIntExtra(a.h, 0);
             if (intExtra == 1) {
@@ -235,7 +233,7 @@ public class WebActivity extends SystemBarTintActivity implements OnClickListene
 
     public void onClick(View view) {
         switch (view.getId()) {
-            case l.share /*2131296541*/:
+            case R.id.share:
                 share();
                 return;
             default:
@@ -245,7 +243,7 @@ public class WebActivity extends SystemBarTintActivity implements OnClickListene
 
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView((int) n.fragment_webview);
+        setContentView((int) R.layout.fragment_webview);
         this.mContext = getApplicationContext();
         setupViews();
         loadPages();
@@ -282,7 +280,7 @@ public class WebActivity extends SystemBarTintActivity implements OnClickListene
                 str = C0401a.o;
                 break;
             case a.k /*2*/:
-                if (getString(r.user_agreement).equals(this.mLabel)) {
+                if (getString(R.string.user_agreement).equals(this.mLabel)) {
                     str = C0401a.p;
                     break;
                 }
@@ -300,7 +298,7 @@ public class WebActivity extends SystemBarTintActivity implements OnClickListene
                 str = C0401a.o;
                 break;
             case a.k /*2*/:
-                if (getString(r.user_agreement).equals(this.mLabel)) {
+                if (getString(R.string.user_agreement).equals(this.mLabel)) {
                     str = C0401a.p;
                     break;
                 }

@@ -7,6 +7,7 @@ import cn.com.smartdevices.bracelet.Keeper;
 import cn.com.smartdevices.bracelet.Utils;
 import cn.com.smartdevices.bracelet.chart.L;
 import cn.com.smartdevices.bracelet.chart.util.ChartData;
+import cn.com.smartdevices.bracelet.chart.util.r;
 import cn.com.smartdevices.bracelet.f.f;
 import cn.com.smartdevices.bracelet.model.Birthday;
 import cn.com.smartdevices.bracelet.model.PersonInfo;
@@ -15,10 +16,10 @@ import cn.com.smartdevices.bracelet.shoes.model.i;
 import cn.com.smartdevices.bracelet.weight.UserInfo;
 import cn.com.smartdevices.bracelet.weight.WeightInfo;
 import cn.com.smartdevices.bracelet.weight.aA;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.dataprocess.DaySportData;
 import com.xiaomi.hm.health.dataprocess.DaySportData.Summary;
 import com.xiaomi.hm.health.dataprocess.SportDay;
-import com.xiaomi.hm.health.r;
 import java.util.Calendar;
 import kankan.wheel.widget.a;
 import kankan.wheel.widget.l;
@@ -104,18 +105,18 @@ abstract class eZ {
 
     protected void a(int i, ShareData shareData, SportDay sportDay) {
         shareData.setType(2);
-        int i2 = r.share_sleep_description;
+        int i2 = R.string.share_sleep_description;
         switch (i) {
             case l.a /*1*/:
                 shareData.setType(2);
                 break;
             case a.bp /*16*/:
                 shareData.setType(3);
-                i2 = r.share_sleep_description_average;
+                i2 = R.string.share_sleep_description_average;
                 break;
             case PersonInfo.INCOMING_CALL_DISABLE_BIT /*256*/:
                 shareData.setType(4);
-                i2 = r.share_sleep_description_average;
+                i2 = R.string.share_sleep_description_average;
                 break;
         }
         if (this.r == 0) {
@@ -131,12 +132,12 @@ abstract class eZ {
     }
 
     protected void a(View view) {
-        View findViewById = view.findViewById(com.xiaomi.hm.health.l.info_sleep);
-        View findViewById2 = view.findViewById(com.xiaomi.hm.health.l.info_sleep_deep);
-        View findViewById3 = view.findViewById(com.xiaomi.hm.health.l.info_sleep_shallow);
-        TextView textView = (TextView) view.findViewById(com.xiaomi.hm.health.l.info_sleep_time);
-        TextView textView2 = (TextView) view.findViewById(com.xiaomi.hm.health.l.info_sleep_rise_time);
-        View findViewById4 = view.findViewById(com.xiaomi.hm.health.l.info_sleep_wake);
+        View findViewById = view.findViewById(R.id.info_sleep);
+        View findViewById2 = view.findViewById(R.id.info_sleep_deep);
+        View findViewById3 = view.findViewById(R.id.info_sleep_shallow);
+        TextView textView = (TextView) view.findViewById(R.id.info_sleep_time);
+        TextView textView2 = (TextView) view.findViewById(R.id.info_sleep_rise_time);
+        View findViewById4 = view.findViewById(R.id.info_sleep_wake);
         if (this.s == 0) {
             this.s = 1;
         }
@@ -175,7 +176,7 @@ abstract class eZ {
         int d;
         int i = 0;
         if (this.u.c() && sportDay.equals(this.u.u)) {
-            cn.com.smartdevices.bracelet.chart.util.r a = ChartData.a();
+            r a = ChartData.a();
             c = a.c();
             d = a.d();
             i = a.f();
@@ -203,47 +204,47 @@ abstract class eZ {
 
     protected void b() {
         View view = (View) this.u.ao.get(this.u.s);
-        View findViewById = view.findViewById(com.xiaomi.hm.health.l.info_weight);
-        TextView textView = (TextView) view.findViewById(com.xiaomi.hm.health.l.info_weight_body_type);
-        TextView textView2 = (TextView) view.findViewById(com.xiaomi.hm.health.l.info_weight_bmi);
+        View findViewById = view.findViewById(R.id.info_weight);
+        TextView textView = (TextView) view.findViewById(R.id.info_weight_body_type);
+        TextView textView2 = (TextView) view.findViewById(R.id.info_weight_bmi);
         ChartData.a(findViewById, "--", com.xiaomi.e.a.f);
         textView.setText("--");
         textView2.setText("--");
     }
 
     protected void b(View view) {
-        TextView textView = (TextView) view.findViewById(com.xiaomi.hm.health.l.info_step);
-        View findViewById = view.findViewById(com.xiaomi.hm.health.l.info_step_distance);
-        View findViewById2 = view.findViewById(com.xiaomi.hm.health.l.info_step_calorie);
-        TextView textView2 = (TextView) view.findViewById(com.xiaomi.hm.health.l.info_step_average);
-        View findViewById3 = view.findViewById(com.xiaomi.hm.health.l.info_step_distance_average);
-        View findViewById4 = view.findViewById(com.xiaomi.hm.health.l.info_step_calorie_average);
-        View findViewById5 = view.findViewById(com.xiaomi.hm.health.l.info_step_walk_distance_average);
-        View findViewById6 = view.findViewById(com.xiaomi.hm.health.l.info_step_walk_duration_average);
-        View findViewById7 = view.findViewById(com.xiaomi.hm.health.l.info_step_walk_calories_average);
-        View findViewById8 = view.findViewById(com.xiaomi.hm.health.l.info_step_run_distance_average);
-        View findViewById9 = view.findViewById(com.xiaomi.hm.health.l.info_step_run_duration_average);
-        View findViewById10 = view.findViewById(com.xiaomi.hm.health.l.info_step_run_calories_average);
+        TextView textView = (TextView) view.findViewById(R.id.info_step);
+        View findViewById = view.findViewById(R.id.info_step_distance);
+        View findViewById2 = view.findViewById(R.id.info_step_calorie);
+        TextView textView2 = (TextView) view.findViewById(R.id.info_step_average);
+        View findViewById3 = view.findViewById(R.id.info_step_distance_average);
+        View findViewById4 = view.findViewById(R.id.info_step_calorie_average);
+        View findViewById5 = view.findViewById(R.id.info_step_walk_distance_average);
+        View findViewById6 = view.findViewById(R.id.info_step_walk_duration_average);
+        View findViewById7 = view.findViewById(R.id.info_step_walk_calories_average);
+        View findViewById8 = view.findViewById(R.id.info_step_run_distance_average);
+        View findViewById9 = view.findViewById(R.id.info_step_run_duration_average);
+        View findViewById10 = view.findViewById(R.id.info_step_run_calories_average);
         textView.setText(ChartData.a((long) this.a));
         String[] a = ChartData.a(this.u.getActivity(), this.b);
         ChartData.a(findViewById, a[0], a[1]);
-        ChartData.a(findViewById2, ChartData.a((long) this.c), this.u.getString(r.unit_calorie));
+        ChartData.a(findViewById2, ChartData.a((long) this.c), this.u.getString(R.string.unit_calorie));
         if (this.r == 0) {
             this.r = 1;
         }
         textView2.setText(ChartData.a((long) (this.a / this.r)));
         a = ChartData.a(this.u.getActivity(), this.b / this.r);
         ChartData.a(findViewById3, a[0], a[1]);
-        ChartData.a(findViewById4, ChartData.a((long) (this.c / this.r)), this.u.getString(r.unit_calorie));
+        ChartData.a(findViewById4, ChartData.a((long) (this.c / this.r)), this.u.getString(R.string.unit_calorie));
         if ((this.u.aC & 2) > 0) {
             a = ChartData.a(this.u.getActivity(), this.d / this.r);
             ChartData.a(findViewById5, a[0], a[1]);
             ChartData.a(findViewById6, this.e / this.r, this.u.getActivity());
-            ChartData.a(findViewById7, ChartData.a((long) (this.f / this.r)), this.u.getString(r.unit_calorie));
+            ChartData.a(findViewById7, ChartData.a((long) (this.f / this.r)), this.u.getString(R.string.unit_calorie));
             a = ChartData.a(this.u.getActivity(), this.g / this.r);
             ChartData.a(findViewById8, a[0], a[1]);
             ChartData.a(findViewById9, this.h / this.r, this.u.getActivity());
-            ChartData.a(findViewById10, ChartData.a((long) (this.i / this.r)), this.u.getString(r.unit_calorie));
+            ChartData.a(findViewById10, ChartData.a((long) (this.i / this.r)), this.u.getString(R.string.unit_calorie));
         }
     }
 
@@ -256,9 +257,9 @@ abstract class eZ {
         float a;
         int i;
         CharSequence a2;
-        View findViewById = view.findViewById(com.xiaomi.hm.health.l.info_weight);
-        TextView textView = (TextView) view.findViewById(com.xiaomi.hm.health.l.info_weight_body_type);
-        TextView textView2 = (TextView) view.findViewById(com.xiaomi.hm.health.l.info_weight_bmi);
+        View findViewById = view.findViewById(R.id.info_weight);
+        TextView textView = (TextView) view.findViewById(R.id.info_weight_body_type);
+        TextView textView2 = (TextView) view.findViewById(R.id.info_weight_bmi);
         if (this.t == 0) {
             this.t = 1;
         }

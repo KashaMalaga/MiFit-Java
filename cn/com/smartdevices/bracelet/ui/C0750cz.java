@@ -7,8 +7,8 @@ import android.view.View;
 import cn.com.smartdevices.bracelet.Utils;
 import cn.com.smartdevices.bracelet.model.ReportData;
 import cn.com.smartdevices.bracelet.model.ShareListDelegateActivity;
+import com.xiaomi.hm.health.R;
 import kankan.wheel.widget.a;
-import kankan.wheel.widget.g;
 
 class C0750cz implements Runnable {
     final /* synthetic */ View a;
@@ -23,7 +23,7 @@ class C0750cz implements Runnable {
 
     public void run() {
         this.c.i.setVisibility(4);
-        this.c.W.setBackgroundResource(g.window_bg);
+        this.c.W.setBackgroundResource(R.color.window_bg);
         this.c.W.buildDrawingCache();
         Bitmap drawingCache = this.c.W.getDrawingCache();
         this.c.g.setVisibility(0);

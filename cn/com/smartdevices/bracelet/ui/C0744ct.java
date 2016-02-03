@@ -5,7 +5,7 @@ import cn.com.smartdevices.bracelet.C0401a;
 import cn.com.smartdevices.bracelet.weather.WeatherInfo;
 import cn.com.smartdevices.bracelet.weather.WeatherListener;
 import com.xiaomi.e.a;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 
 class C0744ct implements WeatherListener {
     final /* synthetic */ MainUIActivity a;
@@ -20,7 +20,7 @@ class C0744ct implements WeatherListener {
             charSequence = charSequence + weatherInfo.getWeatherDescription();
         }
         if (!TextUtils.isEmpty(weatherInfo.getAqiDescription())) {
-            charSequence = charSequence + " " + this.a.getString(r.weather_aqi, new Object[]{weatherInfo.getAqiDescription()});
+            charSequence = charSequence + " " + this.a.getString(R.string.weather_aqi, new Object[]{weatherInfo.getAqiDescription()});
         }
         if (!TextUtils.isEmpty(charSequence)) {
             C0401a.a(this.a.w.getContext(), C0401a.eB);

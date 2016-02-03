@@ -1,6 +1,6 @@
 package cn.com.smartdevices.bracelet.weibo;
 
-import com.tencent.open.SocialConstants;
+import com.xiaomi.channel.relationservice.data.a;
 import org.json.JSONObject;
 
 public class u {
@@ -16,7 +16,7 @@ public class u {
             return null;
         }
         u uVar = new u();
-        uVar.e = jSONObject.optInt(SocialConstants.PARAM_TYPE, a);
+        uVar.e = jSONObject.optInt(a.h, a);
         uVar.f = jSONObject.optInt("list_id", a);
         return uVar;
     }

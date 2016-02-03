@@ -23,7 +23,7 @@ import com.amap.api.maps.AMap;
 import com.amap.api.maps.AMap.OnMapLoadedListener;
 import com.amap.api.maps.MapView;
 import com.amap.api.maps.UiSettings;
-import com.xiaomi.hm.health.l;
+import com.xiaomi.hm.health.R;
 import java.util.List;
 
 public class MapTestActivity extends SystemBarTintActivity implements OnClickListener, a, OnMapLoadedListener {
@@ -103,10 +103,10 @@ public class MapTestActivity extends SystemBarTintActivity implements OnClickLis
 
     public void onClick(View view) {
         switch (view.getId()) {
-            case l.header_nav_right /*2131296574*/:
+            case R.id.header_nav_right:
                 startActivity(new Intent(this, HistoryActivity.class));
                 return;
-            case l.left_button /*2131296944*/:
+            case R.id.left_button:
                 if (this.j != aC.PAUSED) {
                     this.j = aC.PAUSED;
                     c();
@@ -117,7 +117,7 @@ public class MapTestActivity extends SystemBarTintActivity implements OnClickLis
                 d();
                 this.h.setText("pause");
                 return;
-            case l.right_button /*2131296946*/:
+            case R.id.right_button:
                 this.j = aC.STOPPED;
                 f();
                 Intent intent = new Intent(getApplicationContext(), GPSResultActivity.class);
@@ -126,7 +126,7 @@ public class MapTestActivity extends SystemBarTintActivity implements OnClickLis
                 this.g.setVisibility(c);
                 finish();
                 return;
-            case l.start /*2131297287*/:
+            case R.id.start:
                 this.j = aC.STARTED;
                 e();
                 this.g.setVisibility(8);
@@ -138,8 +138,8 @@ public class MapTestActivity extends SystemBarTintActivity implements OnClickLis
 
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView((int) com.xiaomi.hm.health.n.activity_running_gps_main);
-        this.f = (MapView) findViewById(l.map);
+        setContentView((int) R.layout.activity_running_gps_main);
+        this.f = (MapView) findViewById(R.id.map);
         this.f.onCreate(bundle);
         this.k = this.f.getMap();
         this.k.setOnMapLoadedListener(this);

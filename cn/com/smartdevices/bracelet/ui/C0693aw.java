@@ -9,15 +9,14 @@ import cn.com.smartdevices.bracelet.C0401a;
 import cn.com.smartdevices.bracelet.C0591m;
 import cn.com.smartdevices.bracelet.C0596r;
 import cn.com.smartdevices.bracelet.chart.util.ChartData;
+import cn.com.smartdevices.bracelet.chart.util.r;
 import cn.com.smartdevices.bracelet.eventbus.EventDynamicDetailSleepUserModified;
 import com.huami.android.view.c;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.dataprocess.DaySportData;
 import com.xiaomi.hm.health.dataprocess.SleepInfo;
 import com.xiaomi.hm.health.dataprocess.SportDay;
 import com.xiaomi.hm.health.dataprocess.UserSleepModify;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
 import de.greenrobot.event.EventBus;
 import java.util.Calendar;
 import java.util.HashMap;
@@ -25,8 +24,7 @@ import kankan.wheel.widget.WheelView;
 import kankan.wheel.widget.a;
 import kankan.wheel.widget.a.f;
 import kankan.wheel.widget.e;
-import kankan.wheel.widget.g;
-import kankan.wheel.widget.h;
+import kankan.wheel.widget.l;
 
 public class C0693aw extends c implements kankan.wheel.widget.c, e {
     private static final String a = "Dynamic.Detail.SleepModify";
@@ -60,10 +58,10 @@ public class C0693aw extends c implements kankan.wheel.widget.c, e {
     }
 
     private void a(View view) {
-        this.b = (TextView) view.findViewById(l.modify_sleep_title);
-        this.c = (TextView) view.findViewById(l.modify_sleep_today_yesterday);
-        this.d = (WheelView) view.findViewById(l.modify_sleep_time_hour);
-        this.e = (WheelView) view.findViewById(l.modify_sleep_time_minute);
+        this.b = (TextView) view.findViewById(R.id.modify_sleep_title);
+        this.c = (TextView) view.findViewById(R.id.modify_sleep_today_yesterday);
+        this.d = (WheelView) view.findViewById(R.id.modify_sleep_time_hour);
+        this.e = (WheelView) view.findViewById(R.id.modify_sleep_time_minute);
         Bundle arguments = getArguments();
         this.f = (SportDay) arguments.getSerializable(C0681ak.d);
         this.g = arguments.getInt(C0681ak.e);
@@ -74,25 +72,25 @@ public class C0693aw extends c implements kankan.wheel.widget.c, e {
         this.l = arguments.getInt(C0681ak.j);
         this.m = arguments.getInt(C0681ak.k);
         switch (this.g) {
-            case kankan.wheel.widget.l.a /*1*/:
-                this.b.setText(r.dynamic_detail_modify_sleep_start_time);
+            case l.a /*1*/:
+                this.b.setText(R.string.dynamic_detail_modify_sleep_start_time);
                 break;
             case a.bp /*16*/:
-                this.b.setText(r.dynamic_detail_modify_sleep_end_time);
+                this.b.setText(R.string.dynamic_detail_modify_sleep_end_time);
                 break;
         }
         if (this.j >= 0) {
-            this.c.setText(r.date_today);
+            this.c.setText(R.string.date_today);
         } else {
-            this.c.setText(r.date_yesterday);
+            this.c.setText(R.string.date_yesterday);
         }
-        f c0763dl = new C0763dl(getActivity(), this.h, this.i, this.d, getResources().getColor(g.bg_color_blue), getResources().getColor(g.main_ui_content_color), a.bm, false, 46, 24, 21, 21, 1);
+        f c0763dl = new C0763dl(getActivity(), this.h, this.i, this.d, getResources().getColor(R.color.bg_color_blue), getResources().getColor(R.color.main_ui_content_color), a.bm, false, 46, 24, 21, 21, 1);
         c0763dl.a(9);
-        this.d.a(5).e(h.wheel_custom_val_white_1).a(getString(r.hour_1), g.bg_color_blue, 18.0f).a(c0763dl);
+        this.d.a(5).e(R.drawable.wheel_custom_val_white_1).a(getString(R.string.hour_1), R.color.bg_color_blue, 18.0f).a(c0763dl);
         a(this.j);
         this.d.a((kankan.wheel.widget.c) this);
         this.d.a((e) this);
-        this.e.a(5).e(h.wheel_custom_val_white_1).a(getString(r.minute), g.bg_color_blue, 18.0f).a(new C0763dl(getActivity(), 0, 59, this.e, getResources().getColor(g.bg_color_blue), getResources().getColor(g.main_ui_content_color), a.bm, true, 46, 24, 21, 21, 1));
+        this.e.a(5).e(R.drawable.wheel_custom_val_white_1).a(getString(R.string.minute), R.color.bg_color_blue, 18.0f).a(new C0763dl(getActivity(), 0, 59, this.e, getResources().getColor(R.color.bg_color_blue), getResources().getColor(R.color.main_ui_content_color), a.bm, true, 46, 24, 21, 21, 1));
         b(this.k);
         this.e.a((kankan.wheel.widget.c) this);
         this.e.a((e) this);
@@ -104,7 +102,7 @@ public class C0693aw extends c implements kankan.wheel.widget.c, e {
             if (sleepInfo == null) {
                 sleepInfo = new SleepInfo();
             }
-            cn.com.smartdevices.bracelet.chart.util.r a = ChartData.a();
+            r a = ChartData.a();
             a.e(sleepInfo.getSleepCount());
             a.f(sleepInfo.getNonRemCount());
             a.a(sleepInfo.getStartDate());
@@ -147,9 +145,9 @@ public class C0693aw extends c implements kankan.wheel.widget.c, e {
             return;
         }
         if (a() >= 0) {
-            this.c.setText(r.date_today);
+            this.c.setText(R.string.date_today);
         } else {
-            this.c.setText(r.date_yesterday);
+            this.c.setText(R.string.date_yesterday);
         }
     }
 
@@ -178,7 +176,7 @@ public class C0693aw extends c implements kankan.wheel.widget.c, e {
     }
 
     protected int inflateLayout() {
-        return n.fragment_dynamic_detail_sleep_modify;
+        return R.layout.fragment_dynamic_detail_sleep_modify;
     }
 
     public void onActivityCreated(Bundle bundle) {
@@ -244,7 +242,7 @@ public class C0693aw extends c implements kankan.wheel.widget.c, e {
             C0596r.e(a, "Sleep Time Modified : " + a + a.ci + String.format("%02d", new Object[]{Integer.valueOf(b)}) + " , " + a2 + " , " + this.g + " , " + this.f);
             UserSleepModify a3 = ChartData.a().a(this.f);
             switch (this.g) {
-                case kankan.wheel.widget.l.a /*1*/:
+                case l.a /*1*/:
                     a3.sleepStart = a2;
                     break;
                 case a.bp /*16*/:

@@ -18,18 +18,14 @@ import cn.com.smartdevices.bracelet.eventbus.Event12HourUpdate;
 import cn.com.smartdevices.bracelet.eventbus.EventAmPmUpdate;
 import cn.com.smartdevices.bracelet.model.PersonInfo;
 import com.huami.android.view.c;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.bt.a.p;
 import com.xiaomi.hm.health.bt.model.AlarmClockItem;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
 import de.greenrobot.event.EventBus;
 import java.util.ArrayList;
 import kankan.wheel.widget.WheelView;
 import kankan.wheel.widget.a;
 import kankan.wheel.widget.a.f;
-import kankan.wheel.widget.g;
-import kankan.wheel.widget.h;
 
 public class NewAlarmActivity extends SystemBarTintActivity implements OnClickListener {
     public static final int[] a = new int[]{AlarmClockItem.ALARM_ONCE, AlarmClockItem.ALARM_EVERY_DAY, AlarmClockItem.ALARM_MON_2_FRI, -1};
@@ -121,7 +117,7 @@ public class NewAlarmActivity extends SystemBarTintActivity implements OnClickLi
     public void onClick(View view) {
         boolean z = true;
         switch (view.getId()) {
-            case l.confirm /*2131296545*/:
+            case R.id.confirm:
                 b();
                 if (this.k.toJson().equals(this.w)) {
                     finish();
@@ -135,10 +131,10 @@ public class NewAlarmActivity extends SystemBarTintActivity implements OnClickLi
                 setResult(-1, intent);
                 finish();
                 return;
-            case l.cancel /*2131296581*/:
+            case R.id.cancel:
                 a();
                 return;
-            case l.new_alarm_smart_wakeup_area /*2131296584*/:
+            case R.id.new_alarm_smart_wakeup_area:
                 Switch switchR = this.s;
                 if (this.s.isChecked()) {
                     z = false;
@@ -152,40 +148,40 @@ public class NewAlarmActivity extends SystemBarTintActivity implements OnClickLi
 
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView((int) n.activity_new_alarm);
+        setContentView((int) R.layout.activity_new_alarm);
         this.o = this;
         EventBus.getDefault().register(this);
-        this.n = findViewById(l.new_alarm_cycle_area);
+        this.n = findViewById(R.id.new_alarm_cycle_area);
         this.n.setOnClickListener(new cD(this));
-        this.p = (TextView) findViewById(l.alarm_days_txt);
-        this.t = (WheelView) findViewById(l.setting_alarm_wheel_ampm);
-        f c0763dl = new C0763dl(this, b, c, this.t, getResources().getColor(g.bg_color_blue), getResources().getColor(g.main_ui_content_color), a.bm, false, 46, 18, 15, 21, i);
+        this.p = (TextView) findViewById(R.id.alarm_days_txt);
+        this.t = (WheelView) findViewById(R.id.setting_alarm_wheel_ampm);
+        f c0763dl = new C0763dl(this, b, c, this.t, getResources().getColor(R.color.bg_color_blue), getResources().getColor(R.color.main_ui_content_color), a.bm, false, 46, 18, 15, 21, i);
         c0763dl.a(C0763dl.c);
         c0763dl.a(17);
-        this.t.a(5).e(h.wheel_custom_val_white_1).a(com.xiaomi.e.a.f, 18.0f).a(c0763dl);
-        this.l = (WheelView) findViewById(l.setting_alarm_wheel_hour);
-        this.v = new C0763dl(this, g, h, this.l, getResources().getColor(g.bg_color_blue), getResources().getColor(g.main_ui_content_color), a.bm, true, 46, 24, 21, 21, i);
+        this.t.a(5).e(R.drawable.wheel_custom_val_white_1).a(com.xiaomi.e.a.f, 18.0f).a(c0763dl);
+        this.l = (WheelView) findViewById(R.id.setting_alarm_wheel_hour);
+        this.v = new C0763dl(this, g, h, this.l, getResources().getColor(R.color.bg_color_blue), getResources().getColor(R.color.main_ui_content_color), a.bm, true, 46, 24, 21, 21, i);
         this.v.a(16);
-        this.l.a(5).e(h.wheel_custom_val_white_1).a(getString(r.hour_1), g.bg_color_blue, 18.0f).a(this.v);
-        this.m = (WheelView) findViewById(l.setting_alarm_wheel_minute);
-        this.m.a(5).e(h.wheel_custom_val_white_1).a(getString(r.minute), g.bg_color_blue, 18.0f).a(new C0763dl(this, g, 59, this.m, getResources().getColor(g.bg_color_blue), getResources().getColor(g.main_ui_content_color), a.bm, true, 46, 24, 21, 21, i));
+        this.l.a(5).e(R.drawable.wheel_custom_val_white_1).a(getString(R.string.hour_1), R.color.bg_color_blue, 18.0f).a(this.v);
+        this.m = (WheelView) findViewById(R.id.setting_alarm_wheel_minute);
+        this.m.a(5).e(R.drawable.wheel_custom_val_white_1).a(getString(R.string.minute), R.color.bg_color_blue, 18.0f).a(new C0763dl(this, g, 59, this.m, getResources().getColor(R.color.bg_color_blue), getResources().getColor(R.color.main_ui_content_color), a.bm, true, 46, 24, 21, 21, i));
         int intExtra = getIntent().getIntExtra(AlarmActivity.b, g);
         this.q = Keeper.readPersonInfo();
         this.r = this.q.getAlarmClockItems();
         this.k = (AlarmClockItem) this.r.get(intExtra);
         this.w = this.k.toJson();
         C0596r.e(d, "mClockItemKey = " + this.w);
-        this.s = (Switch) findViewById(l.new_alarm_smart_wakeup_switch);
+        this.s = (Switch) findViewById(R.id.new_alarm_smart_wakeup_switch);
         boolean z = this.k.getDuration() > 0;
         C0596r.e(d, "smartSwitch: " + z + ", mItem duration=" + this.k.getDuration());
         this.s.setChecked(z);
         this.s.setOnCheckedChangeListener(new cE(this));
-        findViewById(l.new_alarm_smart_wakeup_area).setOnClickListener(this);
+        findViewById(R.id.new_alarm_smart_wakeup_area).setOnClickListener(this);
         this.p.setText(Utils.a(this.o, this.k));
         this.l.d(this.k.getHour());
         this.m.d(this.k.getMinute());
-        findViewById(l.confirm).setOnClickListener(this);
-        findViewById(l.cancel).setOnClickListener(this);
+        findViewById(R.id.confirm).setOnClickListener(this);
+        findViewById(R.id.cancel).setOnClickListener(this);
     }
 
     protected void onDestroy() {

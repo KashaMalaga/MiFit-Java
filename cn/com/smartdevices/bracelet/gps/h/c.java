@@ -176,6 +176,7 @@ public class c {
     }
 
     public static boolean a(String str, Bitmap bitmap) {
+        FileOutputStream fileOutputStream;
         Throwable th;
         boolean z = false;
         if (!(TextUtils.isEmpty(str) || bitmap == null)) {
@@ -183,7 +184,6 @@ public class c {
             if (file.exists()) {
                 file.delete();
             }
-            FileOutputStream fileOutputStream;
             try {
                 fileOutputStream = new FileOutputStream(file);
                 try {

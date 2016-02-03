@@ -19,9 +19,7 @@ import cn.com.smartdevices.bracelet.weight.UserInfo;
 import com.huami.android.view.b;
 import com.huami.android.view.c;
 import com.xiaomi.e.a;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 import de.greenrobot.event.EventBus;
 
 public class C0758dg extends c {
@@ -38,7 +36,7 @@ public class C0758dg extends c {
     }
 
     protected int inflateLayout() {
-        return n.fragment_person_info_setting_nickname;
+        return R.layout.fragment_person_info_setting_nickname;
     }
 
     public void onCreate(Bundle bundle) {
@@ -56,7 +54,7 @@ public class C0758dg extends c {
 
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         View onCreateView = super.onCreateView(layoutInflater, viewGroup, bundle);
-        this.d = (EditText) onCreateView.findViewById(l.info_nick_name);
+        this.d = (EditText) onCreateView.findViewById(R.id.info_nick_name);
         if (this.c != null) {
             this.d.setText(this.c.nickname != null ? this.c.nickname : a.f);
         } else {
@@ -81,10 +79,10 @@ public class C0758dg extends c {
                 this.c.nickname = this.d.getText().toString().trim();
             }
             if (!Utils.b(this.c.nickname)) {
-                b.a(getActivity(), (int) r.content_too_short, 0).show();
+                b.a(getActivity(), (int) R.string.content_too_short, 0).show();
                 return;
             } else if (!Utils.g(this.c.nickname)) {
-                b.a(getActivity(), (int) r.invalid_name, 0).show();
+                b.a(getActivity(), (int) R.string.invalid_name, 0).show();
                 return;
             } else if (this.c.nickname.equals(str)) {
                 dismiss();
@@ -102,10 +100,10 @@ public class C0758dg extends c {
                 this.b.name = this.d.getText().toString().trim();
             }
             if (!Utils.b(this.b.name)) {
-                b.a(getActivity(), (int) r.content_too_short, 0).show();
+                b.a(getActivity(), (int) R.string.content_too_short, 0).show();
                 return;
             } else if (!Utils.g(this.b.name)) {
-                b.a(getActivity(), (int) r.invalid_name, 0).show();
+                b.a(getActivity(), (int) R.string.invalid_name, 0).show();
                 return;
             } else if (this.b.equals(str)) {
                 dismiss();

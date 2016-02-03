@@ -22,9 +22,8 @@ import cn.com.smartdevices.bracelet.chart.util.ChartData;
 import cn.com.smartdevices.bracelet.config.b;
 import cn.com.smartdevices.bracelet.e.a;
 import cn.com.smartdevices.bracelet.f.d;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
+import cn.com.smartdevices.bracelet.j.l;
+import com.xiaomi.hm.health.R;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -55,42 +54,42 @@ public class dE extends p implements OnClickListener {
     }
 
     private void a(View view) {
-        this.d = view.findViewById(l.setting_about_user_agreement);
+        this.d = view.findViewById(R.id.setting_about_user_agreement);
         if (Utils.k()) {
-            ((TextView) view.findViewById(l.user_agreement_txt)).setText(getString(r.user_agreement_play));
+            ((TextView) view.findViewById(R.id.user_agreement_txt)).setText(getString(R.string.user_agreement_play));
         }
-        this.e = view.findViewById(l.setting_about_website);
+        this.e = view.findViewById(R.id.setting_about_website);
         this.d.setOnClickListener(this);
         this.e.setOnClickListener(this);
-        View findViewById = view.findViewById(l.setting_check_apk_upgrade);
+        View findViewById = view.findViewById(R.id.setting_check_apk_upgrade);
         findViewById.setOnClickListener(this);
-        View findViewById2 = view.findViewById(l.buy_bracelet_stuff);
+        View findViewById2 = view.findViewById(R.id.buy_bracelet_stuff);
         findViewById2.setOnClickListener(this);
         if (this.l.n.a.booleanValue()) {
-            this.o = view.findViewById(l.setting_check_apk_upgrade_new_icon);
+            this.o = view.findViewById(R.id.setting_check_apk_upgrade_new_icon);
             if (this.n) {
                 this.o.setVisibility(0);
             }
             findViewById.setVisibility(0);
-            view.findViewById(l.split_line_about_apk_upgrade).setVisibility(0);
+            view.findViewById(R.id.split_line_about_apk_upgrade).setVisibility(0);
         } else {
             findViewById.setVisibility(8);
-            view.findViewById(l.split_line_about_apk_upgrade).setVisibility(8);
+            view.findViewById(R.id.split_line_about_apk_upgrade).setVisibility(8);
         }
         if (this.l.h.a.booleanValue()) {
             findViewById2.setVisibility(0);
-            view.findViewById(l.split_line_about_buy_band).setVisibility(0);
+            view.findViewById(R.id.split_line_about_buy_band).setVisibility(0);
         } else {
             findViewById2.setVisibility(8);
-            view.findViewById(l.split_line_about_buy_band).setVisibility(8);
+            view.findViewById(R.id.split_line_about_buy_band).setVisibility(8);
         }
-        this.g = (TextView) view.findViewById(l.setting_about_version_value);
-        view.findViewById(l.setting_feedback).setOnClickListener(this);
-        view.findViewById(l.setting_feedback).setOnLongClickListener(new dG(this));
-        this.f = view.findViewById(l.logo);
+        this.g = (TextView) view.findViewById(R.id.setting_about_version_value);
+        view.findViewById(R.id.setting_feedback).setOnClickListener(this);
+        view.findViewById(R.id.setting_feedback).setOnLongClickListener(new dG(this));
+        this.f = view.findViewById(R.id.logo);
         this.f.setOnClickListener(this);
         this.f.setOnLongClickListener(new dH(this));
-        view.findViewById(l.enable_hidden_feature).setOnClickListener(this);
+        view.findViewById(R.id.enable_hidden_feature).setOnClickListener(this);
     }
 
     private void b(Context context) {
@@ -126,7 +125,7 @@ public class dE extends p implements OnClickListener {
                     zipOutputStream.closeEntry();
                     fileInputStream.close();
                     zipOutputStream.close();
-                    cn.com.smartdevices.bracelet.j.l.a(context, a.f(context), file, new dL(this, context, file));
+                    l.a(context, a.f(context), file, new dL(this, context, file));
                     return;
                 }
             }
@@ -151,10 +150,10 @@ public class dE extends p implements OnClickListener {
 
     private void e() {
         Builder builder = new Builder(getActivity());
-        builder.setTitle(r.upload_log);
-        builder.setMessage(r.upload_log_info);
-        builder.setPositiveButton(r.confirm, new dI(this));
-        builder.setNegativeButton(r.cancel, new dJ(this));
+        builder.setTitle(R.string.upload_log);
+        builder.setMessage(R.string.upload_log_info);
+        builder.setPositiveButton(R.string.confirm, new dI(this));
+        builder.setNegativeButton(R.string.cancel, new dJ(this));
         builder.show();
     }
 
@@ -173,11 +172,11 @@ public class dE extends p implements OnClickListener {
 
     public void onClick(View view) {
         switch (view.getId()) {
-            case l.setting_feedback /*2131297187*/:
+            case R.id.setting_feedback:
                 startActivity(new Intent(getActivity(), SettingFeedbackActivity.class));
                 C0401a.a(getActivity(), C0401a.ed);
                 return;
-            case l.setting_about_website /*2131297189*/:
+            case R.id.setting_about_website:
                 String str = "http://www.mi.com/en/";
                 String locale = Locale.getDefault().toString();
                 if (locale.startsWith(Locale.ENGLISH.toString())) {
@@ -195,23 +194,23 @@ public class dE extends p implements OnClickListener {
                 startActivity(intent);
                 C0401a.a(getActivity(), C0401a.ec);
                 return;
-            case l.setting_check_apk_upgrade /*2131297191*/:
+            case R.id.setting_check_apk_upgrade:
                 if (Utils.l(getActivity())) {
                     if (this.n) {
                         this.o.setVisibility(8);
                     }
-                    com.huami.android.view.b.a(getActivity(), (int) r.checking_new_apk, 0).show();
+                    com.huami.android.view.b.a(getActivity(), (int) R.string.checking_new_apk, 0).show();
                     Utils.a(getActivity(), true);
                 } else {
-                    com.huami.android.view.b.a(getActivity(), (int) r.no_network_connection, 0).show();
+                    com.huami.android.view.b.a(getActivity(), (int) R.string.no_network_connection, 0).show();
                 }
                 C0401a.a(getActivity(), C0401a.eb);
                 return;
-            case l.buy_bracelet_stuff /*2131297194*/:
+            case R.id.buy_bracelet_stuff:
                 d.a(getActivity(), true);
                 C0401a.a(getActivity(), C0401a.be, C0401a.ce);
                 return;
-            case l.setting_about_user_agreement /*2131297196*/:
+            case R.id.setting_about_user_agreement:
                 f();
                 return;
             default:
@@ -230,7 +229,7 @@ public class dE extends p implements OnClickListener {
     }
 
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        View inflate = layoutInflater.inflate(n.fragment_setting_about, viewGroup, false);
+        View inflate = layoutInflater.inflate(R.layout.fragment_setting_about, viewGroup, false);
         a(inflate);
         return inflate;
     }

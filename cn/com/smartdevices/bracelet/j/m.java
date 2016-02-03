@@ -34,6 +34,7 @@ public class m {
 
     public static n a(Context context, int i, String str, ArrayList<BasicDateData> arrayList) {
         n a;
+        JSONException e;
         n nVar = new n();
         try {
             C0596r.b(a, "parseDownload:\n" + str);
@@ -71,19 +72,18 @@ public class m {
                         arrayList.add(a(jSONArray.getJSONObject(i2), 0));
                     }
                 }
-            } catch (JSONException e) {
-                e = e;
+            } catch (JSONException e2) {
+                e = e2;
                 a.h = 2;
                 C0596r.d(a, e.getMessage());
                 return a;
             }
-        } catch (JSONException e2) {
-            JSONException e3;
-            JSONException jSONException = e2;
+        } catch (JSONException e3) {
+            JSONException jSONException = e3;
             a = nVar;
-            e3 = jSONException;
+            e = jSONException;
             a.h = 2;
-            C0596r.d(a, e3.getMessage());
+            C0596r.d(a, e.getMessage());
             return a;
         }
         return a;
@@ -128,7 +128,6 @@ public class m {
 
     public static n a(Context context, String str, ArrayList<PersonInfo> arrayList) {
         n a;
-        Exception e;
         C0596r.f(a, "parseFriendList:" + str);
         n nVar = new n();
         try {
@@ -145,18 +144,19 @@ public class m {
                         C0596r.e(a, a2.toString());
                     }
                 }
-            } catch (Exception e2) {
-                e = e2;
+            } catch (Exception e) {
+                e = e;
                 a.h = 2;
                 C0596r.e(a, e.getMessage());
                 return a;
             }
-        } catch (Exception e3) {
-            Exception exception = e3;
+        } catch (Exception e2) {
+            Exception e3;
+            Exception exception = e2;
             a = nVar;
-            e = exception;
+            e3 = exception;
             a.h = 2;
-            C0596r.e(a, e.getMessage());
+            C0596r.e(a, e3.getMessage());
             return a;
         }
         return a;
@@ -230,13 +230,13 @@ public class m {
             personInfo.weight = (float) jSONObject.getInt(Friend.d);
         }
         personInfo.avatarUrl = jSONObject.getString("avatar");
-        personInfo.birthday = jSONObject.getString(f.E);
+        personInfo.birthday = jSONObject.getString(com.xiaomi.channel.relationservice.data.a.m);
         String[] split = personInfo.birthday.split("-");
         int i = Calendar.getInstance().get(1);
         if (split[0] != null && split[0].length() > 0) {
             personInfo.age = i - Integer.parseInt(split[0]);
         }
-        personInfo.location = UserLocationData.fromJsonStr(jSONObject.optString(LocationManagerProxy.KEY_LOCATION_CHANGED));
+        personInfo.location = UserLocationData.fromJsonStr(jSONObject.optString(com.xiaomi.channel.relationservice.data.a.l));
         personInfo.source = jSONObject.getString(o.L);
         if (jSONObject.has(LocationManagerProxy.KEY_STATUS_CHANGED) && jSONObject.getString(LocationManagerProxy.KEY_STATUS_CHANGED).length() > 0) {
             personInfo.state = jSONObject.getInt(LocationManagerProxy.KEY_STATUS_CHANGED);
@@ -321,9 +321,9 @@ public class m {
         }
         personInfo.lastLoginTime = jSONObject.getString("last_login_time");
         personInfo.createTime = jSONObject.getString("creat_time");
-        personInfo.birthday = jSONObject.getString(f.E);
+        personInfo.birthday = jSONObject.getString(com.xiaomi.channel.relationservice.data.a.m);
         personInfo.avatarUrl = jSONObject.getString("avatar");
-        UserLocationData fromJsonStr = UserLocationData.fromJsonStr(jSONObject.optString(LocationManagerProxy.KEY_LOCATION_CHANGED));
+        UserLocationData fromJsonStr = UserLocationData.fromJsonStr(jSONObject.optString(com.xiaomi.channel.relationservice.data.a.l));
         if (fromJsonStr != null && fromJsonStr.isValid()) {
             personInfo.location = fromJsonStr;
         }

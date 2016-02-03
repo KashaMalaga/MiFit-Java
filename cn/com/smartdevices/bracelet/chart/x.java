@@ -16,8 +16,7 @@ import cn.com.smartdevices.bracelet.chart.base.q;
 import cn.com.smartdevices.bracelet.chart.util.t;
 import com.amap.api.maps.model.BitmapDescriptorFactory;
 import com.xiaomi.account.openauth.h;
-import com.xiaomi.hm.health.j;
-import com.xiaomi.hm.health.k;
+import com.xiaomi.hm.health.R;
 import kankan.wheel.widget.a;
 import kankan.wheel.widget.l;
 
@@ -45,7 +44,7 @@ public class x extends q {
 
     public x(Context context) {
         super(context);
-        this.D = ((BitmapDrawable) context.getResources().getDrawable(k.ic_small_mili)).getBitmap();
+        this.D = ((BitmapDrawable) context.getResources().getDrawable(R.drawable.ic_small_mili)).getBitmap();
         this.F = new Paint(1);
         this.G = new Paint(1);
         this.F.setColor(Color.parseColor("#e8edf3"));
@@ -66,7 +65,7 @@ public class x extends q {
         this.z = new Paint(1);
         this.z.setStrokeWidth(4.0f);
         this.z.setStyle(Style.STROKE);
-        this.x = context.getResources().getDimensionPixelSize(j.draw_weight_icon_round);
+        this.x = context.getResources().getDimensionPixelSize(R.dimen.draw_weight_icon_round);
     }
 
     private void a(Canvas canvas, RectF rectF) {

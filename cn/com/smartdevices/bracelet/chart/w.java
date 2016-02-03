@@ -10,7 +10,7 @@ import android.graphics.drawable.BitmapDrawable;
 import cn.com.smartdevices.bracelet.chart.base.q;
 import cn.com.smartdevices.bracelet.chart.util.t;
 import com.amap.api.maps.model.BitmapDescriptorFactory;
-import com.xiaomi.hm.health.k;
+import com.xiaomi.hm.health.R;
 
 public class w extends q {
     private static final float g = 15.0f;
@@ -30,7 +30,7 @@ public class w extends q {
 
     public w(Context context) {
         super(context);
-        this.i = ((BitmapDrawable) context.getResources().getDrawable(k.ic_dynamic_weight)).getBitmap();
+        this.i = ((BitmapDrawable) context.getResources().getDrawable(R.drawable.ic_dynamic_weight)).getBitmap();
         this.x.setColor(-2130706433);
         this.x.setStrokeWidth(this.p * g);
         this.x.setStyle(Style.STROKE);

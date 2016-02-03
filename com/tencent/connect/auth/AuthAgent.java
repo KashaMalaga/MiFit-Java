@@ -136,8 +136,8 @@ public class AuthAgent extends BaseApi {
         }
 
         private Drawable a(String str, Context context) {
-            Drawable createFromStream;
             IOException e;
+            Drawable createFromStream;
             try {
                 InputStream open = context.getApplicationContext().getAssets().open(str);
                 if (open == null) {

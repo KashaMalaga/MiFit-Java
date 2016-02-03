@@ -9,8 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import cn.com.smartdevices.bracelet.C0596r;
 import com.xiaomi.e.a;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
+import com.xiaomi.hm.health.R;
 
 public class b extends Fragment implements Runnable {
     public static final int a = 3;
@@ -54,8 +53,8 @@ public class b extends Fragment implements Runnable {
 
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         C0596r.e(c, "onCreateView");
-        View inflate = layoutInflater.inflate(n.fragment_counter, viewGroup, false);
-        this.d = (TextView) inflate.findViewById(l.counter);
+        View inflate = layoutInflater.inflate(R.layout.fragment_counter, viewGroup, false);
+        this.d = (TextView) inflate.findViewById(R.id.counter);
         return inflate;
     }
 

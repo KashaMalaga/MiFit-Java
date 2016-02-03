@@ -16,7 +16,6 @@ import cn.com.smartdevices.bracelet.C0401a;
 import cn.com.smartdevices.bracelet.C0826v;
 import cn.com.smartdevices.bracelet.Keeper;
 import cn.com.smartdevices.bracelet.Utils;
-import cn.com.smartdevices.bracelet.a.a;
 import cn.com.smartdevices.bracelet.gps.c.a.g;
 import cn.com.smartdevices.bracelet.lab.k;
 import cn.com.smartdevices.bracelet.model.PersonInfo;
@@ -28,9 +27,8 @@ import com.tencent.mm.sdk.modelbase.BaseReq;
 import com.tencent.mm.sdk.modelbase.BaseResp;
 import com.tencent.mm.sdk.openapi.IWXAPIEventHandler;
 import com.tencent.open.SocialConstants;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.channel.relationservice.data.a;
+import com.xiaomi.hm.health.R;
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -61,7 +59,7 @@ public class SportResultActivity extends SystemBarTintActivity implements OnClic
             return shareData;
         }
         shareData = new ShareData();
-        shareData.type = intent.getIntExtra(SocialConstants.PARAM_TYPE, 100);
+        shareData.type = intent.getIntExtra(a.h, 100);
         shareData.title = intent.getStringExtra(SocialConstants.PARAM_TITLE);
         shareData.content = intent.getStringExtra(ParamKey.CONTENT);
         shareData.contentUnit = intent.getStringExtra("unit");
@@ -79,7 +77,7 @@ public class SportResultActivity extends SystemBarTintActivity implements OnClic
                 file.delete();
             }
         }
-        this.l = a.c();
+        this.l = cn.com.smartdevices.bracelet.a.a.c();
         file = new File(this.l);
         if (file.exists()) {
             file.delete();
@@ -113,7 +111,7 @@ public class SportResultActivity extends SystemBarTintActivity implements OnClic
     }
 
     private void b() {
-        this.a = (TextView) findViewById(l.back_btn);
+        this.a = (TextView) findViewById(R.id.back_btn);
         this.a.setOnClickListener(this);
         c();
     }
@@ -123,11 +121,11 @@ public class SportResultActivity extends SystemBarTintActivity implements OnClic
             switch (this.j.type) {
                 case kankan.wheel.widget.a.ar /*100*/:
                 case ShareData.SHARE_TYPE_LAB_ROPE_SKIPPING_ACCUMULATE /*101*/:
-                    this.a.setText(r.lab_factory_sport_type_ropeskipping);
+                    this.a.setText(R.string.lab_factory_sport_type_ropeskipping);
                     return;
                 case ShareData.SHARE_TYPE_LAB_SITUP_NEW_RECORD /*102*/:
                 case ShareData.SHARE_TYPE_LAB_SITUP_ACCUMULATE /*103*/:
-                    this.a.setText(r.lab_factory_sport_type_situp);
+                    this.a.setText(R.string.lab_factory_sport_type_situp);
                     return;
                 default:
                     return;
@@ -136,19 +134,19 @@ public class SportResultActivity extends SystemBarTintActivity implements OnClic
     }
 
     private void d() {
-        this.c = (ImageView) findViewById(l.share_person_avatar_iv);
-        this.d = (TextView) findViewById(l.share_person_name_tv);
+        this.c = (ImageView) findViewById(R.id.share_person_avatar_iv);
+        this.d = (TextView) findViewById(R.id.share_person_name_tv);
         PersonInfo readPersonInfo = Keeper.readPersonInfo();
         Utils.a(readPersonInfo, this.c);
         this.d.setText(readPersonInfo.nickname);
-        this.e = (TextView) findViewById(l.share_main_content);
-        this.f = (TextView) findViewById(l.share_main_content_unit);
-        this.g = (TextView) findViewById(l.share_description);
-        this.h = findViewById(l.share_background_v);
-        this.i = (TextView) findViewById(l.share_title);
-        this.b = (TextView) findViewById(l.sport_name);
-        this.n = (TextView) findViewById(l.ranking);
-        this.m = (TextView) findViewById(l.share);
+        this.e = (TextView) findViewById(R.id.share_main_content);
+        this.f = (TextView) findViewById(R.id.share_main_content_unit);
+        this.g = (TextView) findViewById(R.id.share_description);
+        this.h = findViewById(R.id.share_background_v);
+        this.i = (TextView) findViewById(R.id.share_title);
+        this.b = (TextView) findViewById(R.id.sport_name);
+        this.n = (TextView) findViewById(R.id.ranking);
+        this.m = (TextView) findViewById(R.id.share);
         if (this.m != null) {
             this.m.setOnClickListener(this);
         }
@@ -168,7 +166,7 @@ public class SportResultActivity extends SystemBarTintActivity implements OnClic
 
     private void g() {
         this.p = BitmapFactory.decodeFile(this.o);
-        ((TextView) findViewById(l.share_from_mi_band_txt)).setText(getString(r.come_from_xiaomi_bracelet) + " " + new SimpleDateFormat(getString(r.date_month_day)).format(new Date()));
+        ((TextView) findViewById(R.id.share_from_mi_band_txt)).setText(getString(R.string.come_from_xiaomi_bracelet) + " " + new SimpleDateFormat(getString(R.string.date_month_day)).format(new Date()));
     }
 
     public void onBackPressed() {
@@ -179,12 +177,12 @@ public class SportResultActivity extends SystemBarTintActivity implements OnClic
 
     public void onClick(View view) {
         switch (view.getId()) {
-            case l.share /*2131296541*/:
+            case R.id.share:
                 f();
                 C0401a.a((Context) this, C0401a.aZ, C0401a.cx);
                 finish();
                 return;
-            case l.back_btn /*2131296542*/:
+            case R.id.back_btn:
                 e();
                 finish();
                 return;
@@ -195,7 +193,7 @@ public class SportResultActivity extends SystemBarTintActivity implements OnClic
 
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView((int) n.activity_lab_sport_result);
+        setContentView((int) R.layout.activity_lab_sport_result);
         Intent intent = getIntent();
         this.j = a(intent);
         this.q = intent.getBooleanExtra("timeout", false);
@@ -242,9 +240,9 @@ public class SportResultActivity extends SystemBarTintActivity implements OnClic
         super.onResume();
         if (this.q) {
             Bundle bundle = new Bundle();
-            bundle.putString(ae.a, getString(r.confirm));
-            bundle.putString(ae.b, getString(r.lab_factory_sport_monitor_timeout_notice));
-            bundle.putString(ae.c, getString(r.lab_factory_sport_finish_desc));
+            bundle.putString(ae.a, getString(R.string.confirm));
+            bundle.putString(ae.b, getString(R.string.lab_factory_sport_monitor_timeout_notice));
+            bundle.putString(ae.c, getString(R.string.lab_factory_sport_finish_desc));
             ae.a(this, ae.class, bundle, new ac());
         }
         C0401a.a(C0401a.ab);

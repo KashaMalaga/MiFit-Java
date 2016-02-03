@@ -17,9 +17,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.ViewSwitcher.ViewFactory;
-import com.xiaomi.hm.health.i;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.t;
 
 public class LabCircleView extends FrameLayout implements ViewFactory {
@@ -79,7 +77,7 @@ public class LabCircleView extends FrameLayout implements ViewFactory {
                 this.a.setColor(context.getResources().getColor(17170444));
             }
             this.b = new Paint();
-            this.b.setColor(context.getResources().getColor(i.lab_circle_dynamic_color));
+            this.b.setColor(context.getResources().getColor(R.color.lab_circle_dynamic_color));
             this.b.setStyle(Style.FILL);
             this.b.setAlpha(90);
         }
@@ -126,10 +124,10 @@ public class LabCircleView extends FrameLayout implements ViewFactory {
         float dimension = obtainStyledAttributes.getDimension(3, 0.0f);
         boolean z = obtainStyledAttributes.getBoolean(5, true);
         float f = obtainStyledAttributes.getFloat(6, 1.0f);
-        inflate(context, n.layout_lab_circle_view, this);
-        this.b = (CircleView) findViewById(l.sport_progresscircle_view);
-        this.c = (TextView) findViewById(l.circle_view_sport_progress_state);
-        this.i = (ImageView) findViewById(l.bracelet_offline);
+        inflate(context, R.layout.layout_lab_circle_view, this);
+        this.b = (CircleView) findViewById(R.id.sport_progresscircle_view);
+        this.c = (TextView) findViewById(R.id.circle_view_sport_progress_state);
+        this.i = (ImageView) findViewById(R.id.bracelet_offline);
         this.b.a(dimension / 2.0f);
         this.b.a(context, z, f);
         obtainStyledAttributes.recycle();

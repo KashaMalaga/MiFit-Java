@@ -4,7 +4,7 @@ import android.text.TextUtils;
 import cn.com.smartdevices.bracelet.C0401a;
 import cn.com.smartdevices.bracelet.C0596r;
 import cn.com.smartdevices.bracelet.model.ResponseEntity;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 
 class j implements Runnable {
     final /* synthetic */ String a;
@@ -41,7 +41,7 @@ class j implements Runnable {
         }
         ResponseEntity a = v.a().a(this.b.a, this.b.a.r, 0);
         if (!a.state) {
-            this.b.a.c((int) r.weibosdk_toast_auth_failed);
+            this.b.a.c((int) R.string.weibosdk_toast_auth_failed);
             C0401a.a(this.b.a, C0401a.aJ);
         } else if (a.code == 1) {
             q.a(this.b.a, this.b.a.r);

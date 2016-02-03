@@ -7,7 +7,7 @@ import cn.com.smartdevices.bracelet.C0409b;
 import cn.com.smartdevices.bracelet.C0410c;
 import cn.com.smartdevices.bracelet.Keeper;
 import com.huami.android.view.b;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 import java.util.HashMap;
 import kankan.wheel.widget.a;
 import kankan.wheel.widget.l;
@@ -42,7 +42,7 @@ class aR extends Handler {
                 }
             case a.aQ /*4*/:
                 if (message.arg1 != 0) {
-                    b.a(this.a.j, this.a.getString(r.fw_upgrade_failed), 0).show();
+                    b.a(this.a.j, this.a.getString(R.string.fw_upgrade_failed), 0).show();
                     HashMap hashMap = new HashMap();
                     hashMap.put(C0410c.c, (this.a.w - this.a.v) + com.xiaomi.e.a.f);
                     if (this.a.m == 1) {
@@ -53,7 +53,7 @@ class aR extends Handler {
                         C0401a.a(this.a.j, C0409b.ai, hashMap);
                     }
                 } else {
-                    b.a(this.a.j, this.a.getString(r.fw_upgrade_succ), 0).show();
+                    b.a(this.a.j, this.a.getString(R.string.fw_upgrade_succ), 0).show();
                     if (this.a.m == 1) {
                         C0401a.a(this.a.j, C0409b.az, (this.a.w - this.a.v) + com.xiaomi.e.a.f);
                     } else {

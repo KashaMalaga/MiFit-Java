@@ -7,13 +7,12 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import cn.com.smartdevices.bracelet.C0401a;
 import cn.com.smartdevices.bracelet.ui.SystemBarTintActivity;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
+import com.xiaomi.hm.health.R;
 
 public class SystemNotSupportActivity extends SystemBarTintActivity implements OnClickListener {
     public void onClick(View view) {
         switch (view.getId()) {
-            case l.exit /*2131297537*/:
+            case R.id.exit:
                 finish();
                 return;
             default:
@@ -23,8 +22,8 @@ public class SystemNotSupportActivity extends SystemBarTintActivity implements O
 
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView((int) n.system_not_support);
-        ((Button) findViewById(l.exit)).setOnClickListener(this);
+        setContentView((int) R.layout.system_not_support);
+        ((Button) findViewById(R.id.exit)).setOnClickListener(this);
     }
 
     protected void onPause() {

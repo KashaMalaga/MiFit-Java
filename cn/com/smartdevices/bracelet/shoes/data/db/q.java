@@ -38,7 +38,7 @@ final class q {
         contentValues.put(h.k, Integer.valueOf(aVar.p()));
         contentValues.put(h.N, Integer.valueOf(aVar.b()));
         contentValues.put(SocialConstants.PARAM_SUMMARY, aVar.h().toString());
-        contentValues.put(SocialConstants.PARAM_TYPE, Integer.valueOf(aVar.o()));
+        contentValues.put(com.xiaomi.channel.relationservice.data.a.h, Integer.valueOf(aVar.o()));
         contentValues.put(CaptureActivity.n, aVar.c());
         return contentValues;
     }
@@ -52,13 +52,13 @@ final class q {
     }
 
     public static a a(Context context, c cVar, k kVar) {
+        Cursor query;
         Exception e;
         Throwable th;
         Cursor cursor = null;
         if (context == null || cVar == null || cVar.e() || kVar == null) {
             throw new IllegalArgumentException();
         }
-        Cursor query;
         try {
             String[] strArr;
             SQLiteDatabase a = s.a(context).a(false);
@@ -206,7 +206,7 @@ final class q {
                 int i2 = cursor.getInt(cursor.getColumnIndex(h.k));
                 String string5 = cursor.getString(cursor.getColumnIndex(SocialConstants.PARAM_SUMMARY));
                 long j = cursor.getLong(cursor.getColumnIndex(g.a));
-                a a = cn.com.smartdevices.bracelet.shoes.data.c.a(cursor.getString(cursor.getColumnIndex(CaptureActivity.n)), cursor.getInt(cursor.getColumnIndex(SocialConstants.PARAM_TYPE)), new c(string, string2, string3, string4));
+                a a = cn.com.smartdevices.bracelet.shoes.data.c.a(cursor.getString(cursor.getColumnIndex(CaptureActivity.n)), cursor.getInt(cursor.getColumnIndex(com.xiaomi.channel.relationservice.data.a.h)), new c(string, string2, string3, string4));
                 a.c(i);
                 a.f(i2);
                 a.b(string5);
@@ -290,6 +290,7 @@ final class q {
     }
 
     public static List<a> b(Context context, c cVar, k kVar) {
+        Cursor query;
         Exception e;
         Throwable th;
         Cursor cursor = null;
@@ -308,7 +309,6 @@ final class q {
             arrayList.add(cVar.d());
             arrayList.add(cVar.b());
         }
-        Cursor query;
         try {
             query = s.a(context).a(false).query(c.a, null, stringBuilder.length() > 0 ? stringBuilder.toString() : null, arrayList.size() > 0 ? (String[]) arrayList.toArray(new String[arrayList.size()]) : null, null, null, "date DESC ");
             try {
@@ -353,9 +353,9 @@ final class q {
     }
 
     public static boolean c(Context context) {
+        Cursor query;
         Exception e;
         Throwable th;
-        Cursor query;
         try {
             query = s.a(context).a(false).query(c.a, null, null, null, null, null, "date DESC ");
             try {

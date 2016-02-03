@@ -7,7 +7,7 @@ import android.graphics.Paint;
 import android.graphics.Paint.Style;
 import android.util.AttributeSet;
 import android.view.View;
-import com.xiaomi.hm.health.j;
+import com.xiaomi.hm.health.R;
 
 public class ThirdRingView extends View {
     private final Paint a;
@@ -25,8 +25,8 @@ public class ThirdRingView extends View {
         this.a = new Paint();
         this.a.setAntiAlias(true);
         this.a.setStyle(Style.STROKE);
-        this.b = (float) getResources().getDimensionPixelSize(j.tag_third_ring_radius);
-        this.e = (float) getResources().getDimensionPixelSize(j.tag_third_ring_padding);
+        this.b = (float) getResources().getDimensionPixelSize(R.dimen.tag_third_ring_radius);
+        this.e = (float) getResources().getDimensionPixelSize(R.dimen.tag_third_ring_padding);
         this.c = this.b - this.e;
         this.d = this.c - this.e;
     }

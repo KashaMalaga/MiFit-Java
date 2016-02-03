@@ -11,8 +11,7 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
+import com.xiaomi.hm.health.R;
 
 public class C0701bc extends Fragment {
     private String a;
@@ -32,10 +31,10 @@ public class C0701bc extends Fragment {
     }
 
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        View inflate = layoutInflater.inflate(n.fragment_webview, null);
+        View inflate = layoutInflater.inflate(R.layout.fragment_webview, null);
         this.a = "http://ota.app-xae.xiaomi.net/help.html";
-        this.b = (WebView) inflate.findViewById(l.webview);
-        this.c = (ProgressBar) inflate.findViewById(l.webview_progress);
+        this.b = (WebView) inflate.findViewById(R.id.webview);
+        this.c = (ProgressBar) inflate.findViewById(R.id.webview_progress);
         this.b.setWebViewClient(this.d);
         this.b.setWebChromeClient(this.e);
         this.b.loadUrl(this.a);

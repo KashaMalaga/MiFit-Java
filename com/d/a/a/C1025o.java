@@ -49,12 +49,12 @@ public class C1025o extends FilterOutputStream {
     }
 
     public void close() {
+        IOException e;
         IOException iOException = null;
         try {
             a();
             a(e, 0, 0, true);
-        } catch (IOException e) {
-            IOException e2;
+        } catch (IOException e2) {
             iOException = e2;
         }
         try {

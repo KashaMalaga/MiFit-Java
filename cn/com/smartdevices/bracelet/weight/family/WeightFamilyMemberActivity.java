@@ -14,9 +14,7 @@ import cn.com.smartdevices.bracelet.ui.SystemBarTintActivity;
 import cn.com.smartdevices.bracelet.weight.J;
 import cn.com.smartdevices.bracelet.weight.UserInfo;
 import com.huami.android.view.b;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,19 +27,19 @@ public class WeightFamilyMemberActivity extends SystemBarTintActivity implements
     private ImageView f;
 
     private void a() {
-        this.c = (ListView) findViewById(l.family_members_dymantic_list);
-        this.f = (ImageView) findViewById(l.add_member_plus);
+        this.c = (ListView) findViewById(R.id.family_members_dymantic_list);
+        this.f = (ImageView) findViewById(R.id.add_member_plus);
         this.f.setOnClickListener(this);
     }
 
     public void onClick(View view) {
         switch (view.getId()) {
-            case l.add_member_plus /*2131296391*/:
+            case R.id.add_member_plus:
                 if (!Utils.l(this.a)) {
-                    b.a(this.a, getString(r.please_connect_internet), 0).show();
+                    b.a(this.a, getString(R.string.please_connect_internet), 0).show();
                     return;
                 } else if (J.a().c() >= 16) {
-                    b.a(this.a, getString(r.over_the_max_user_count), 0).show();
+                    b.a(this.a, getString(R.string.over_the_max_user_count), 0).show();
                     return;
                 } else {
                     this.a.startActivity(new Intent(this.a, MemberInfoSetNameActivity.class));
@@ -55,7 +53,7 @@ public class WeightFamilyMemberActivity extends SystemBarTintActivity implements
 
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView((int) n.activity_family_member);
+        setContentView((int) R.layout.activity_family_member);
         a();
     }
 

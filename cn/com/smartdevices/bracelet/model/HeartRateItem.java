@@ -8,7 +8,7 @@ import cn.com.smartdevices.bracelet.C0596r;
 import cn.com.smartdevices.bracelet.gps.c.a.g;
 import cn.com.smartdevices.bracelet.gps.c.a.i;
 import cn.com.smartdevices.bracelet.gps.services.O;
-import com.tencent.open.SocialConstants;
+import com.xiaomi.channel.relationservice.data.a;
 import java.util.ArrayList;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -55,7 +55,7 @@ public class HeartRateItem {
         if (columnIndex != -1) {
             heartRateItem.time = cursor.getLong(columnIndex);
         }
-        columnIndex = cursor.getColumnIndex(SocialConstants.PARAM_TYPE);
+        columnIndex = cursor.getColumnIndex(a.h);
         if (columnIndex != -1) {
             heartRateItem.type = cursor.getInt(columnIndex);
         }
@@ -64,7 +64,7 @@ public class HeartRateItem {
 
     public ContentValues toContentValues() {
         ContentValues contentValues = new ContentValues();
-        contentValues.put(SocialConstants.PARAM_TYPE, Integer.valueOf(this.type));
+        contentValues.put(a.h, Integer.valueOf(this.type));
         contentValues.put(O.j, Integer.valueOf(this.hr));
         contentValues.put(g.f, Long.valueOf(this.time));
         contentValues.put(i.d, Integer.valueOf(STATE_NOT_SYNCED));
@@ -78,7 +78,7 @@ public class HeartRateItem {
             byte[] bArr = new byte[TYPE_AUTO];
             bArr[STATE_NOT_SYNCED] = (byte) this.hr;
             jSONObject.put("rate", Base64.encodeToString(bArr, TYPE_MANUAL));
-            jSONObject.put(SocialConstants.PARAM_TYPE, this.type);
+            jSONObject.put(a.h, this.type);
         } catch (JSONException e) {
             C0596r.e(TAG, "toJSONObject:" + e.getMessage());
         }

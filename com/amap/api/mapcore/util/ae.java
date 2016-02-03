@@ -120,6 +120,7 @@ public class ae {
     }
 
     public static byte[] b(byte[] bArr) {
+        ByteArrayOutputStream byteArrayOutputStream;
         ZipOutputStream zipOutputStream;
         Throwable th;
         az b;
@@ -127,7 +128,6 @@ public class ae {
         Throwable th2;
         byte[] bArr2 = null;
         if (!(bArr == null || bArr.length == 0)) {
-            ByteArrayOutputStream byteArrayOutputStream;
             try {
                 byteArrayOutputStream = new ByteArrayOutputStream();
                 try {
@@ -236,13 +236,13 @@ public class ae {
     }
 
     private static byte[] f(byte[] bArr) {
-        ByteArrayOutputStream byteArrayOutputStream;
+        GZIPOutputStream gZIPOutputStream;
         IOException e;
         Throwable th;
         Throwable th2;
         byte[] bArr2 = null;
         if (bArr != null) {
-            GZIPOutputStream gZIPOutputStream;
+            ByteArrayOutputStream byteArrayOutputStream;
             try {
                 byteArrayOutputStream = new ByteArrayOutputStream();
                 try {

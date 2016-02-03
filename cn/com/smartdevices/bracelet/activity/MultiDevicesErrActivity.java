@@ -24,9 +24,7 @@ import cn.com.smartdevices.bracelet.ui.SearchSingleBraceletActivity;
 import cn.com.smartdevices.bracelet.ui.SearchWeightScaleActivity;
 import cn.com.smartdevices.bracelet.ui.SystemBarTintActivity;
 import com.tencent.connect.common.Constants;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 import java.util.Locale;
 import kankan.wheel.widget.a;
 
@@ -54,7 +52,7 @@ public class MultiDevicesErrActivity extends SystemBarTintActivity implements On
     public void onClick(View view) {
         Intent intent = new Intent();
         switch (view.getId()) {
-            case l.donot_bind_txt /*2131296910*/:
+            case R.id.donot_bind_txt:
                 Keeper.keepNeedBind(0);
                 intent.setClass(this, MainUIActivity.class);
                 startActivity(intent);
@@ -67,18 +65,18 @@ public class MultiDevicesErrActivity extends SystemBarTintActivity implements On
                 }
                 C0401a.a((Context) this, C0401a.dI);
                 return;
-            case l.buy_bracelet_stuff /*2131297194*/:
+            case R.id.buy_bracelet_stuff:
                 d.a((Activity) this, false);
                 C0401a.a(this.g, C0409b.ad);
                 C0401a.a(getApplicationContext(), C0401a.be, C0401a.cd);
                 return;
-            case l.multi_devices_err_help_btn /*2131297369*/:
+            case R.id.multi_devices_err_help_btn:
                 intent = new Intent(this, HelpActivity.class);
                 intent.putExtra(Utils.a, this.b);
                 startActivity(intent);
                 C0401a.a(this.g, C0401a.gb, C0401a.gd);
                 return;
-            case l.multi_devices_err_device_list_btn /*2131297370*/:
+            case R.id.multi_devices_err_device_list_btn:
                 intent.putExtra(a.bz, true);
                 if (Utils.b.equals(this.b)) {
                     intent.setClass(this, SearchSingleBraceletActivity.class);
@@ -89,7 +87,7 @@ public class MultiDevicesErrActivity extends SystemBarTintActivity implements On
                 startActivityForResult(intent, 6);
                 C0401a.a((Context) this, C0401a.dJ);
                 return;
-            case l.multi_devices_err_search_again /*2131297371*/:
+            case R.id.multi_devices_err_search_again:
                 intent.setClass(this, SearchSingleBraceletActivity.class);
                 intent.putExtra(a.bz, false);
                 if (Utils.b.equals(this.b)) {
@@ -109,38 +107,38 @@ public class MultiDevicesErrActivity extends SystemBarTintActivity implements On
 
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView((int) n.multi_devices_err);
+        setContentView((int) R.layout.multi_devices_err);
         Intent intent = getIntent();
         if (intent != null) {
             this.b = intent.getStringExtra(Utils.a);
             int intExtra = intent.getIntExtra(SearchSingleBraceletActivity.a, -1);
             C0596r.e(a, "infoResId " + intExtra);
             if (intExtra > 0) {
-                ((TextView) findViewById(l.multi_devices_info)).setText(intExtra);
+                ((TextView) findViewById(R.id.multi_devices_info)).setText(intExtra);
             }
         }
-        LinePieChartView linePieChartView = (LinePieChartView) findViewById(l.searching_pie_chart);
-        findViewById(l.multi_devices_err_search_again).setOnClickListener(this);
-        this.e = (Button) findViewById(l.multi_devices_err_device_list_btn);
+        LinePieChartView linePieChartView = (LinePieChartView) findViewById(R.id.searching_pie_chart);
+        findViewById(R.id.multi_devices_err_search_again).setOnClickListener(this);
+        this.e = (Button) findViewById(R.id.multi_devices_err_device_list_btn);
         this.e.setOnClickListener(this);
-        this.f = (Button) findViewById(l.multi_devices_err_help_btn);
+        this.f = (Button) findViewById(R.id.multi_devices_err_help_btn);
         this.f.setOnClickListener(this);
-        View findViewById = findViewById(l.buy_bracelet_stuff);
+        View findViewById = findViewById(R.id.buy_bracelet_stuff);
         findViewById.setOnClickListener(this);
-        TextView textView = (TextView) findViewById(l.donot_bind_txt);
-        textView.setText(Html.fromHtml("<u>" + getString(r.donot_bind) + "</u>"));
+        TextView textView = (TextView) findViewById(R.id.donot_bind_txt);
+        textView.setText(Html.fromHtml("<u>" + getString(R.string.donot_bind) + "</u>"));
         textView.setOnClickListener(this);
         if (b.h().h.a.booleanValue()) {
             findViewById.setVisibility(0);
         } else {
             findViewById.setVisibility(8);
         }
-        this.c = (TextView) findViewById(l.multi_devices_err_title);
-        this.d = (TextView) findViewById(l.multi_devices_info);
+        this.c = (TextView) findViewById(R.id.multi_devices_err_title);
+        this.d = (TextView) findViewById(R.id.multi_devices_info);
         if (Utils.b.equals(this.b)) {
-            this.c.setText(r.multi_devices_title);
-            this.d.setText(r.multi_devices_info);
-            this.e.setText(r.look_device_list);
+            this.c.setText(R.string.multi_devices_title);
+            this.d.setText(R.string.multi_devices_info);
+            this.e.setText(R.string.look_device_list);
             linePieChartView.a(0);
             if (Locale.getDefault().toString().equals(Locale.SIMPLIFIED_CHINESE.toString())) {
                 findViewById.setVisibility(0);
@@ -149,9 +147,9 @@ public class MultiDevicesErrActivity extends SystemBarTintActivity implements On
             }
             this.f.setVisibility(8);
         } else if (a()) {
-            this.c.setText(r.multi_devices_weight_title);
-            this.d.setText(r.multi_weight_devices_info);
-            this.e.setText(r.look_weight_device_list);
+            this.c.setText(R.string.multi_devices_weight_title);
+            this.d.setText(R.string.multi_weight_devices_info);
+            this.e.setText(R.string.look_weight_device_list);
             this.e.setVisibility(8);
             linePieChartView.a(3);
             findViewById.setVisibility(8);

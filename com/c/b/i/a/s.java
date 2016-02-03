@@ -6,6 +6,7 @@ import cn.com.smartdevices.bracelet.honor.a.d;
 import cn.com.smartdevices.bracelet.model.ShareData;
 import com.c.b.c.b;
 import com.c.b.h;
+import com.xiaomi.channel.relationservice.data.BuddyData;
 import kankan.wheel.widget.a;
 
 public final class s {
@@ -200,7 +201,7 @@ public final class s {
         r0[17] = new s(18, iArr, uVarArr);
         iArr = new int[]{6, 30, 58, 86};
         uVarArr = new u[4];
-        uVarArr[0] = new u(28, new t(3, 113), new t(4, 114));
+        uVarArr[0] = new u(28, new t(3, 113), new t(4, BuddyData.s));
         uVarArr[1] = new u(26, new t(3, 44), new t(11, 45));
         uVarArr[2] = new u(26, new t(17, 21), new t(4, 22));
         uVarArr[3] = new u(26, new t(9, 13), new t(16, 14));
@@ -247,9 +248,9 @@ public final class s {
         uVarArr[2] = new u(30, new t(7, 24), new t(22, 25));
         uVarArr[3] = new u(30, new t(22, 15), new t(13, 16));
         r0[24] = new s(25, iArr, uVarArr);
-        iArr = new int[]{6, 30, 58, 86, 114};
+        iArr = new int[]{6, 30, 58, 86, BuddyData.s};
         uVarArr = new u[4];
-        uVarArr[0] = new u(28, new t(10, 114), new t(2, 115));
+        uVarArr[0] = new u(28, new t(10, BuddyData.s), new t(2, 115));
         uVarArr[1] = new u(28, new t(19, 46), new t(4, 47));
         uVarArr[2] = new u(28, new t(28, 22), new t(6, 23));
         uVarArr[3] = new u(30, new t(33, 16), new t(4, 17));
@@ -296,7 +297,7 @@ public final class s {
         uVarArr[2] = new u(30, new t(10, 24), new t(35, 25));
         uVarArr[3] = new u(30, new t(19, 15), new t(35, 16));
         r0[31] = new s(32, iArr, uVarArr);
-        iArr = new int[]{6, 30, 58, 86, 114, 142};
+        iArr = new int[]{6, 30, 58, 86, BuddyData.s, 142};
         uVarArr = new u[4];
         uVarArr[0] = new u(30, new t(17, 115), new t(1, 116));
         uVarArr[1] = new u(28, new t(14, 46), new t(21, 47));
@@ -345,7 +346,7 @@ public final class s {
         uVarArr[2] = new u(30, new t(43, 24), new t(22, 25));
         uVarArr[3] = new u(30, new t(10, 15), new t(67, 16));
         r0[38] = new s(39, iArr, uVarArr);
-        iArr = new int[]{6, 30, 58, 86, 114, 142, a.aC};
+        iArr = new int[]{6, 30, 58, 86, BuddyData.s, 142, a.aC};
         uVarArr = new u[4];
         uVarArr[0] = new u(30, new t(19, 118), new t(6, 119));
         uVarArr[1] = new u(28, new t(18, 47), new t(31, 48));

@@ -6,8 +6,7 @@ import cn.com.smartdevices.bracelet.C0410c;
 import cn.com.smartdevices.bracelet.Utils;
 import com.huami.android.view.c;
 import com.tencent.connect.common.Constants;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 
 public class C0603f extends c {
     final /* synthetic */ DetailActivity a;
@@ -17,12 +16,12 @@ public class C0603f extends c {
     }
 
     protected int inflateLayout() {
-        return n.fragment_friend_unfollow_confirm;
+        return R.layout.fragment_friend_unfollow_confirm;
     }
 
     protected void onLeftButtonClicked() {
         C0401a.a(this.a, C0409b.aU, C0410c.w, Constants.VIA_TO_TYPE_QQ_GROUP);
-        Utils.a(this.a, (int) r.data_loading, true);
+        Utils.a(this.a, (int) R.string.data_loading, true);
         this.a.j.c(this.a.i.n);
     }
 

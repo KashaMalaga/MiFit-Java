@@ -134,7 +134,7 @@ class y {
     }
 
     public static ArrayList<HeartRateItem> a(SQLiteDatabase sQLiteDatabase, int i) {
-        String[] strArr = new String[]{O.j, g.f, SocialConstants.PARAM_TYPE};
+        String[] strArr = new String[]{O.j, g.f, com.xiaomi.channel.relationservice.data.a.h};
         String[] strArr2 = new String[]{String.valueOf(i), String.valueOf(0)};
         SQLiteDatabase sQLiteDatabase2 = sQLiteDatabase;
         Cursor query = sQLiteDatabase2.query(cn.com.smartdevices.bracelet.shoes.sync.b.g.d, strArr, "type=? AND sync= ?", strArr2, null, null, null);
@@ -175,7 +175,7 @@ class y {
 
     public static ArrayList<BasicDateData> a(SQLiteDatabase sQLiteDatabase, C0595q c0595q) {
         ArrayList<BasicDateData> arrayList = null;
-        String[] strArr = new String[]{cn.com.smartdevices.bracelet.shoes.sync.b.g.a, b.b, SocialConstants.PARAM_SUMMARY, H.k, F.i, F.j, o.L, SocialConstants.PARAM_TYPE};
+        String[] strArr = new String[]{cn.com.smartdevices.bracelet.shoes.sync.b.g.a, b.b, SocialConstants.PARAM_SUMMARY, H.k, F.i, F.j, o.L, com.xiaomi.channel.relationservice.data.a.h};
         String[] strArr2 = new String[]{a.f + c0595q.b(), Constants.VIA_RESULT_SUCCESS};
         SQLiteDatabase sQLiteDatabase2 = sQLiteDatabase;
         Cursor query = sQLiteDatabase2.query(E.a, strArr, "type=? AND sync=?", strArr2, null, null, "date ASC");
@@ -185,7 +185,7 @@ class y {
                 arrayList.ensureCapacity(query.getCount());
                 while (query.moveToNext()) {
                     BasicDateData basicDateData = new BasicDateData();
-                    basicDateData.type = query.getInt(query.getColumnIndex(SocialConstants.PARAM_TYPE));
+                    basicDateData.type = query.getInt(query.getColumnIndex(com.xiaomi.channel.relationservice.data.a.h));
                     basicDateData.source = query.getInt(query.getColumnIndex(o.L));
                     basicDateData.date = query.getString(query.getColumnIndex(cn.com.smartdevices.bracelet.shoes.sync.b.g.a));
                     basicDateData.data = query.getBlob(query.getColumnIndex(b.b));
@@ -357,7 +357,7 @@ class y {
             return false;
         }
         try {
-            sQLiteDatabase.execSQL("update date_data set summary = " + str + " where " + cn.com.smartdevices.bracelet.shoes.sync.b.g.a + " = " + "'" + str2 + "'" + " and " + SocialConstants.PARAM_TYPE + " = " + c0595q.b() + " and " + o.L + " = " + c0595q.a() + ";");
+            sQLiteDatabase.execSQL("update date_data set summary = " + str + " where " + cn.com.smartdevices.bracelet.shoes.sync.b.g.a + " = " + "'" + str2 + "'" + " and " + com.xiaomi.channel.relationservice.data.a.h + " = " + c0595q.b() + " and " + o.L + " = " + c0595q.a() + ";");
             return true;
         } catch (Exception e) {
             C0596r.a("DB", e.getMessage());
@@ -372,7 +372,7 @@ class y {
     public static boolean a(SQLiteDatabase sQLiteDatabase, String str, byte[] bArr, C0595q c0595q, int i, String str2, String str3, byte[] bArr2, String str4) {
         Throwable th;
         ContentValues contentValues = new ContentValues();
-        contentValues.put(SocialConstants.PARAM_TYPE, Integer.valueOf(c0595q.b()));
+        contentValues.put(com.xiaomi.channel.relationservice.data.a.h, Integer.valueOf(c0595q.b()));
         contentValues.put(o.L, Integer.valueOf(c0595q.a()));
         contentValues.put(cn.com.smartdevices.bracelet.shoes.sync.b.g.a, str);
         contentValues.put(SocialConstants.PARAM_SUMMARY, str2);
@@ -426,7 +426,7 @@ class y {
     public static boolean a(SQLiteDatabase sQLiteDatabase, String str, byte[] bArr, String str2, String str3, C0595q c0595q) {
         Throwable th;
         ContentValues contentValues = new ContentValues();
-        contentValues.put(SocialConstants.PARAM_TYPE, Integer.valueOf(c0595q.b()));
+        contentValues.put(com.xiaomi.channel.relationservice.data.a.h, Integer.valueOf(c0595q.b()));
         contentValues.put(o.L, Integer.valueOf(c0595q.a()));
         contentValues.put(cn.com.smartdevices.bracelet.shoes.sync.b.g.a, str);
         contentValues.put(SocialConstants.PARAM_SUMMARY, str2);
@@ -474,7 +474,7 @@ class y {
     public static boolean a(SQLiteDatabase sQLiteDatabase, String str, byte[] bArr, String str2, String str3, C0595q c0595q, byte[] bArr2, String str4) {
         Throwable th;
         ContentValues contentValues = new ContentValues();
-        contentValues.put(SocialConstants.PARAM_TYPE, Integer.valueOf(c0595q.b()));
+        contentValues.put(com.xiaomi.channel.relationservice.data.a.h, Integer.valueOf(c0595q.b()));
         contentValues.put(o.L, Integer.valueOf(c0595q.a()));
         contentValues.put(cn.com.smartdevices.bracelet.shoes.sync.b.g.a, str);
         contentValues.put(SocialConstants.PARAM_SUMMARY, str2);
@@ -719,7 +719,7 @@ class y {
             sQLiteDatabase.beginTransaction();
             Iterator it = arrayList.iterator();
             while (it.hasNext()) {
-                sQLiteDatabase.execSQL("update date_data set sync = " + i + " where " + cn.com.smartdevices.bracelet.shoes.sync.b.g.a + " = " + "'" + ((BasicDateData) it.next()).date + "'" + " and " + SocialConstants.PARAM_TYPE + " = " + c0595q.b());
+                sQLiteDatabase.execSQL("update date_data set sync = " + i + " where " + cn.com.smartdevices.bracelet.shoes.sync.b.g.a + " = " + "'" + ((BasicDateData) it.next()).date + "'" + " and " + com.xiaomi.channel.relationservice.data.a.h + " = " + c0595q.b());
             }
             sQLiteDatabase.setTransactionSuccessful();
             return str;

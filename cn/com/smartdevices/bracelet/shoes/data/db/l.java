@@ -16,7 +16,7 @@ import cn.com.smartdevices.bracelet.shoes.model.k;
 import cn.com.smartdevices.bracelet.shoes.sync.b.g;
 import com.tencent.open.SocialConstants;
 import com.xiaomi.channel.gamesdk.b;
-import com.xiaomi.e.a;
+import com.xiaomi.channel.relationservice.data.a;
 import com.xiaomi.hm.health.dataprocess.SportDay;
 import com.xiaomi.market.sdk.o;
 import java.util.ArrayList;
@@ -53,7 +53,7 @@ class l {
 
     private static ContentValues a(h hVar) {
         ContentValues contentValues = new ContentValues();
-        contentValues.put(SocialConstants.PARAM_TYPE, Integer.valueOf(d.a));
+        contentValues.put(a.h, Integer.valueOf(d.a));
         contentValues.put(o.L, Integer.valueOf(0));
         contentValues.put(g.q, hVar.l());
         if (!TextUtils.isEmpty(hVar.s())) {
@@ -263,7 +263,7 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can't find block by offs
             if (rawQuery != null) {
                 try {
                     if (rawQuery.getCount() != 0) {
-                        String str3 = a.f;
+                        String str3 = com.xiaomi.e.a.f;
                         arrayList = new ArrayList(rawQuery.getCount());
                         while (rawQuery.moveToNext()) {
                             CharSequence string = rawQuery.getString(rawQuery.getColumnIndex(g.a));
@@ -387,7 +387,7 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can't find block by offs
         if (a == null || a.size() == 0) {
             return null;
         }
-        CharSequence charSequence = a.f;
+        CharSequence charSequence = com.xiaomi.e.a.f;
         int i = 0;
         for (h hVar : a) {
             String e;
@@ -406,13 +406,13 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can't find block by offs
         Object obj;
         Object key;
         if (TextUtils.isEmpty(str)) {
-            obj = a.f;
+            obj = com.xiaomi.e.a.f;
         }
         if (TextUtils.isEmpty(str2)) {
             key = new SportDay().getKey();
         }
-        String str3 = a.f;
-        String str4 = a.f;
+        String str3 = com.xiaomi.e.a.f;
+        String str4 = com.xiaomi.e.a.f;
         List arrayList = new ArrayList(8);
         arrayList.add(obj);
         arrayList.add(key);
@@ -433,7 +433,7 @@ Error: jadx.core.utils.exceptions.JadxRuntimeException: Can't find block by offs
         if (!z) {
             str3 = "_id,date,mac,sn,deviceid,shoesid,summary,type,source,synced";
         }
-        return new m("SELECT " + str3 + " FROM " + g.a + " WHERE " + g.a + " >=? AND " + g.a + " <=? AND " + SocialConstants.PARAM_TYPE + " =? AND " + o.L + " =? " + str5 + str4 + " ORDER BY " + g.a + " DESC ", (String[]) arrayList.toArray(new String[arrayList.size()]));
+        return new m("SELECT " + str3 + " FROM " + g.a + " WHERE " + g.a + " >=? AND " + g.a + " <=? AND " + a.h + " =? AND " + o.L + " =? " + str5 + str4 + " ORDER BY " + g.a + " DESC ", (String[]) arrayList.toArray(new String[arrayList.size()]));
     }
 
     private static void b(android.content.Context r7) {
@@ -749,21 +749,21 @@ Error: java.util.NoSuchElementException
 
     public static boolean d(Context context, c cVar) {
         if (context != null && cVar != null && !cVar.e()) {
-            return a(context, cVar, a.f, k.STATE_SYNCED_FROM_SERVER);
+            return a(context, cVar, com.xiaomi.e.a.f, k.STATE_SYNCED_FROM_SERVER);
         }
         throw new IllegalArgumentException();
     }
 
     public static boolean e(Context context, c cVar) {
         if (context != null && cVar != null && !cVar.e()) {
-            return a(context, cVar, a.f, k.STATE_SYNCED_TO_SERVER);
+            return a(context, cVar, com.xiaomi.e.a.f, k.STATE_SYNCED_TO_SERVER);
         }
         throw new IllegalArgumentException();
     }
 
     public static boolean f(Context context, c cVar) {
         if (context != null && cVar != null && !cVar.e()) {
-            return a(context, cVar, a.f, k.STATE_UNSYNCED);
+            return a(context, cVar, com.xiaomi.e.a.f, k.STATE_UNSYNCED);
         }
         throw new IllegalArgumentException();
     }

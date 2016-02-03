@@ -41,7 +41,6 @@ import com.sina.weibo.sdk.component.WidgetRequestParam;
 import com.sina.weibo.sdk.constant.WBPageConstants.ParamKey;
 import com.sina.weibo.sdk.exception.WeiboAuthException;
 import com.tencent.connect.common.Constants;
-import com.tencent.open.SocialConstants;
 import com.xiaomi.hm.health.bt.model.BraceletBtInfo;
 import com.xiaomi.hm.health.bt.profile.Weight.WeightHwInfo;
 import com.xiaomi.market.sdk.o;
@@ -396,7 +395,7 @@ public class l {
     public static void a(LoginData loginData, PersonInfo personInfo, h hVar) {
         if (loginData.isValid()) {
             O a = f.a(loginData);
-            a.a(f.E, personInfo.birthday);
+            a.a(com.xiaomi.channel.relationservice.data.a.m, personInfo.birthday);
             a.a(f.B, com.xiaomi.e.a.f + personInfo.gender);
             a.a(f.C, com.xiaomi.e.a.f + personInfo.height);
             a.a(Friend.d, com.xiaomi.e.a.f + (personInfo.weight * 1000.0f));
@@ -416,7 +415,7 @@ public class l {
             }
             C0993k i = new r().i();
             try {
-                a.a(LocationManagerProxy.KEY_LOCATION_CHANGED, Utils.c(URLEncoder.encode(i.b(personInfo.location), a.bO)));
+                a.a(com.xiaomi.channel.relationservice.data.a.l, Utils.c(URLEncoder.encode(i.b(personInfo.location), a.bO)));
                 a.a(f.W, Utils.c(URLEncoder.encode(i.b(personInfo.alarmClockItems), a.bO)));
                 a.a(i.e, Utils.c(URLEncoder.encode(i.b(personInfo.miliConfig), a.bO)));
                 C0596r.d(a, "pInfo.miliConfig = " + personInfo.miliConfig);
@@ -447,7 +446,7 @@ public class l {
         if (loginData.isValid()) {
             O a = f.a(loginData);
             try {
-                a.a(LocationManagerProxy.KEY_LOCATION_CHANGED, com.xiaomi.e.a.f + URLEncoder.encode(userLocationData.toString(), a.bO));
+                a.a(com.xiaomi.channel.relationservice.data.a.l, com.xiaomi.e.a.f + URLEncoder.encode(userLocationData.toString(), a.bO));
             } catch (UnsupportedEncodingException e) {
                 e.printStackTrace();
             }
@@ -810,7 +809,7 @@ public class l {
         LoginData f = cn.com.smartdevices.bracelet.e.a.f(context);
         if (f.isValid()) {
             O a = f.a(f);
-            a.a(SocialConstants.PARAM_TYPE, 2);
+            a.a(com.xiaomi.channel.relationservice.data.a.h, 2);
             a.a(ParamKey.COUNT, 100);
             a.a(d.b, e.a(g.P), a, hVar);
             return;

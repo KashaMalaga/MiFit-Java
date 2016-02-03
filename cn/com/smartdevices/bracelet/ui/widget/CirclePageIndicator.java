@@ -20,11 +20,7 @@ import android.view.View.BaseSavedState;
 import android.view.View.MeasureSpec;
 import android.view.ViewConfiguration;
 import com.amap.api.maps.model.GroundOverlayOptions;
-import com.xiaomi.hm.health.g;
-import com.xiaomi.hm.health.h;
-import com.xiaomi.hm.health.i;
-import com.xiaomi.hm.health.j;
-import com.xiaomi.hm.health.m;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.t;
 import kankan.wheel.widget.a;
 import kankan.wheel.widget.l;
@@ -74,7 +70,7 @@ public class CirclePageIndicator extends View implements c {
     }
 
     public CirclePageIndicator(Context context, AttributeSet attributeSet) {
-        this(context, attributeSet, g.vpiCirclePageIndicatorStyle);
+        this(context, attributeSet, R.attr.vpiCirclePageIndicatorStyle);
     }
 
     public CirclePageIndicator(Context context, AttributeSet attributeSet, int i) {
@@ -86,14 +82,14 @@ public class CirclePageIndicator extends View implements c {
         this.r = a;
         if (!isInEditMode()) {
             Resources resources = getResources();
-            int color = resources.getColor(i.default_circle_indicator_page_color);
-            int color2 = resources.getColor(i.default_circle_indicator_fill_color);
-            int integer = resources.getInteger(m.default_circle_indicator_orientation);
-            int color3 = resources.getColor(i.default_circle_indicator_stroke_color);
-            float dimension = resources.getDimension(j.default_circle_indicator_stroke_width);
-            float dimension2 = resources.getDimension(j.default_circle_indicator_radius);
-            boolean z = resources.getBoolean(h.default_circle_indicator_centered);
-            boolean z2 = resources.getBoolean(h.default_circle_indicator_snap);
+            int color = resources.getColor(R.color.default_circle_indicator_page_color);
+            int color2 = resources.getColor(R.color.default_circle_indicator_fill_color);
+            int integer = resources.getInteger(R.integer.default_circle_indicator_orientation);
+            int color3 = resources.getColor(R.color.default_circle_indicator_stroke_color);
+            float dimension = resources.getDimension(R.dimen.default_circle_indicator_stroke_width);
+            float dimension2 = resources.getDimension(R.dimen.default_circle_indicator_radius);
+            boolean z = resources.getBoolean(R.bool.default_circle_indicator_centered);
+            boolean z2 = resources.getBoolean(R.bool.default_circle_indicator_snap);
             TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, t.CirclePageIndicator, i, 0);
             this.m = obtainStyledAttributes.getBoolean(2, z);
             this.l = obtainStyledAttributes.getInt(0, integer);

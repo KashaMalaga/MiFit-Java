@@ -37,13 +37,13 @@ class x {
     }
 
     public static ArrayList<BasicDateData> a(SQLiteDatabase sQLiteDatabase, C0595q c0595q) {
-        Cursor query;
         Exception e;
         Throwable th;
         if (c0595q.b() != 0) {
             throw new IllegalArgumentException();
         }
         String[] strArr = new String[]{a.f + c0595q.b(), a.f + c0595q.a(), Constants.VIA_RESULT_SUCCESS};
+        Cursor query;
         try {
             query = sQLiteDatabase.query(G.a, new String[]{g.a, b.b, SocialConstants.PARAM_SUMMARY, H.k}, "type=? AND source=? AND sync=?", strArr, null, null, "date ASC");
             ArrayList<BasicDateData> arrayList;
@@ -117,7 +117,7 @@ class x {
             return false;
         } else {
             try {
-                sQLiteDatabase.execSQL("update date_data_1 set summary = " + str + " where " + g.a + " = " + "'" + str2 + "'" + " and " + SocialConstants.PARAM_TYPE + " = " + c0595q.b() + " and " + o.L + " = " + c0595q.a() + ";");
+                sQLiteDatabase.execSQL("update date_data_1 set summary = " + str + " where " + g.a + " = " + "'" + str2 + "'" + " and " + com.xiaomi.channel.relationservice.data.a.h + " = " + c0595q.b() + " and " + o.L + " = " + c0595q.a() + ";");
                 return true;
             } catch (Exception e) {
                 C0596r.a("DB", e.getMessage());
@@ -130,7 +130,7 @@ class x {
         Exception e;
         Throwable th;
         ContentValues contentValues = new ContentValues();
-        contentValues.put(SocialConstants.PARAM_TYPE, Integer.valueOf(c0595q.b()));
+        contentValues.put(com.xiaomi.channel.relationservice.data.a.h, Integer.valueOf(c0595q.b()));
         contentValues.put(o.L, Integer.valueOf(c0595q.a()));
         contentValues.put(g.a, str);
         contentValues.put(SocialConstants.PARAM_SUMMARY, str2);
@@ -195,11 +195,10 @@ class x {
     }
 
     public static boolean a(SQLiteDatabase sQLiteDatabase, String str, byte[] bArr, String str2, String str3, C0595q c0595q) {
-        Cursor query;
         Exception e;
         Throwable th;
         ContentValues contentValues = new ContentValues();
-        contentValues.put(SocialConstants.PARAM_TYPE, Integer.valueOf(c0595q.b()));
+        contentValues.put(com.xiaomi.channel.relationservice.data.a.h, Integer.valueOf(c0595q.b()));
         contentValues.put(o.L, Integer.valueOf(c0595q.a()));
         contentValues.put(g.a, str);
         contentValues.put(SocialConstants.PARAM_SUMMARY, str2);
@@ -208,6 +207,7 @@ class x {
         contentValues.put(i.d, Integer.valueOf(0));
         String str4 = "date=? AND type=? AND source=?";
         String[] strArr = new String[]{str, a.f + c0595q.b(), a.f + c0595q.a()};
+        Cursor query;
         try {
             boolean z;
             query = sQLiteDatabase.query(G.a, null, str4, strArr, null, null, null);
@@ -273,7 +273,7 @@ class x {
                 sQLiteDatabase.beginTransaction();
                 Iterator it = arrayList.iterator();
                 while (it.hasNext()) {
-                    sQLiteDatabase.execSQL("update date_data_1 set sync = " + i + " where " + g.a + " = " + "'" + ((BasicDateData) it.next()).date + "'" + " and " + SocialConstants.PARAM_TYPE + " = " + c0595q.b() + " and " + o.L + " = " + c0595q.a() + ";");
+                    sQLiteDatabase.execSQL("update date_data_1 set sync = " + i + " where " + g.a + " = " + "'" + ((BasicDateData) it.next()).date + "'" + " and " + com.xiaomi.channel.relationservice.data.a.h + " = " + c0595q.b() + " and " + o.L + " = " + c0595q.a() + ";");
                 }
                 sQLiteDatabase.setTransactionSuccessful();
                 return str;
@@ -435,13 +435,13 @@ class x {
     }
 
     public static byte[] c(SQLiteDatabase sQLiteDatabase, String str, C0595q c0595q) {
-        Cursor query;
         Exception e;
         Throwable th;
         if (c0595q.b() != 0) {
             throw new IllegalArgumentException();
         }
         String[] strArr = new String[]{str, a.f + c0595q.b(), a.f + c0595q.a()};
+        Cursor query;
         try {
             query = sQLiteDatabase.query(G.a, new String[]{SocialConstants.PARAM_SUMMARY}, "date=? AND type=? AND source=?", strArr, null, null, null);
             if (query != null) {

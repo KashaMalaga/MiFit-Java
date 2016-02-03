@@ -18,13 +18,10 @@ import com.huami.android.view.b;
 import com.huami.android.widget.share.m;
 import com.tencent.mm.sdk.openapi.IWXAPI;
 import com.tencent.mm.sdk.openapi.WXAPIFactory;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.bt.a.C1116c;
 import com.xiaomi.hm.health.bt.model.HwConnStatus;
-import com.xiaomi.hm.health.k;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
 import de.greenrobot.event.EventBus;
-import kankan.wheel.widget.g;
 
 public class BindWeixinActivityNew extends SystemBarTintActivity implements OnClickListener {
     private static final String a = "BindWeixinActivityNew";
@@ -46,19 +43,19 @@ public class BindWeixinActivityNew extends SystemBarTintActivity implements OnCl
 
     private void b() {
         this.g.setVisibility(8);
-        this.mHomeBack.setBackgroundResource(g.bg_color_blue);
-        this.h.setBackgroundResource(g.bg_color_blue);
-        this.i.setBackgroundResource(k.bind_weixin_help_new);
-        this.j.setText(r.bind_weixin_new_tips);
+        this.mHomeBack.setBackgroundResource(R.color.bg_color_blue);
+        this.h.setBackgroundResource(R.color.bg_color_blue);
+        this.i.setBackgroundResource(R.drawable.bind_weixin_help_new);
+        this.j.setText(R.string.bind_weixin_new_tips);
         this.e.setVisibility(b);
     }
 
     private void c() {
         this.g.setVisibility(b);
-        this.mHomeBack.setBackgroundResource(g.bg_color_grey);
-        this.h.setBackgroundResource(g.bg_color_grey);
-        this.i.setBackgroundResource(k.bind_weixin_help_new_disable);
-        this.j.setText(r.bind_weixin_new_disable_tips);
+        this.mHomeBack.setBackgroundResource(R.color.bg_color_grey);
+        this.h.setBackgroundResource(R.color.bg_color_grey);
+        this.i.setBackgroundResource(R.drawable.bind_weixin_help_new_disable);
+        this.j.setText(R.string.bind_weixin_new_disable_tips);
         this.e.setVisibility(8);
     }
 
@@ -71,7 +68,7 @@ public class BindWeixinActivityNew extends SystemBarTintActivity implements OnCl
     }
 
     private void f() {
-        Utils.a((Activity) this, (int) r.bind_weixin_new_now);
+        Utils.a((Activity) this, (int) R.string.bind_weixin_new_now);
     }
 
     private void g() {
@@ -84,11 +81,11 @@ public class BindWeixinActivityNew extends SystemBarTintActivity implements OnCl
 
     public void onClick(View view) {
         switch (view.getId()) {
-            case com.xiaomi.hm.health.l.start_weixin_btn /*2131296348*/:
+            case R.id.start_weixin_btn:
                 if (Utils.l(this)) {
                     h();
                 } else {
-                    b.a((Context) this, (int) r.no_network_connection, (int) b).show();
+                    b.a((Context) this, (int) R.string.no_network_connection, (int) b).show();
                 }
                 C0401a.a((Context) this, C0401a.dR, C0401a.dT);
                 return;
@@ -99,14 +96,14 @@ public class BindWeixinActivityNew extends SystemBarTintActivity implements OnCl
 
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView((int) n.activity_bind_weixin_new);
+        setContentView((int) R.layout.activity_bind_weixin_new);
         this.l = getApplicationContext();
-        this.e = (Button) findViewById(com.xiaomi.hm.health.l.start_weixin_btn);
+        this.e = (Button) findViewById(R.id.start_weixin_btn);
         this.e.setOnClickListener(this);
-        this.g = findViewById(com.xiaomi.hm.health.l.mask_view);
-        this.h = findViewById(com.xiaomi.hm.health.l.bind_weixin_new_img_ll);
-        this.i = (ImageView) findViewById(com.xiaomi.hm.health.l.bind_weixin_new_help_iv);
-        this.j = (TextView) findViewById(com.xiaomi.hm.health.l.bind_weixin_new_tips_tv);
+        this.g = findViewById(R.id.mask_view);
+        this.h = findViewById(R.id.bind_weixin_new_img_ll);
+        this.i = (ImageView) findViewById(R.id.bind_weixin_new_help_iv);
+        this.j = (TextView) findViewById(R.id.bind_weixin_new_tips_tv);
         this.f = new O(this);
         EventBus.getDefault().register(this);
         this.k = WXAPIFactory.createWXAPI(this, m.j);

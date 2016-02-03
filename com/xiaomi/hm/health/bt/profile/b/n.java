@@ -224,110 +224,110 @@ public class n extends b implements B {
         r14 = r0[r14];
         r0 = new java.util.GregorianCalendar;
         r0.<init>(r1, r2, r3, r4, r5, r6);
-        r1 = r12 & 255;
-        r2 = r11 & 255;
-        r2 = r2 << 8;
-        r1 = r1 | r2;
-        r2 = r13 & 255;
-        r2 = r2 << 16;
-        r1 = r1 | r2;
-        r2 = r14 & 255;
-        r2 = r2 << 24;
-        r3 = r1 | r2;
-        r1 = "RunningSyncDataTask";
-        r2 = new java.lang.StringBuilder;
-        r2.<init>();
+        r2 = r12 & 255;
+        r3 = r11 & 255;
+        r3 = r3 << 8;
+        r2 = r2 | r3;
+        r3 = r13 & 255;
+        r3 = r3 << 16;
+        r2 = r2 | r3;
+        r3 = r14 & 255;
+        r3 = r3 << 24;
+        r5 = r2 | r3;
+        r2 = "RunningSyncDataTask";
+        r3 = new java.lang.StringBuilder;
+        r3.<init>();
         r4 = "type:";
-        r2 = r2.append(r4);
-        r2 = r2.append(r10);
+        r3 = r3.append(r4);
+        r3 = r3.append(r10);
         r4 = ",len:";
-        r2 = r2.append(r4);
-        r2 = r2.append(r3);
+        r3 = r3.append(r4);
+        r3 = r3.append(r5);
         r4 = ",date:";
-        r2 = r2.append(r4);
+        r3 = r3.append(r4);
         r4 = new java.util.Date;
         r10 = r0.getTimeInMillis();
         r4.<init>(r10);
         r4 = r4.toString();
-        r2 = r2.append(r4);
-        r2 = r2.toString();
-        cn.com.smartdevices.bracelet.C0596r.d(r1, r2);
-        r4 = new com.xiaomi.hm.health.bt.model.b;
-        r4.<init>(r0, r3);
-        r0 = 0;
-        r15.f = r0;
-        r0 = r15.j;	 Catch:{ IOException -> 0x024a }
-        if (r0 == 0) goto L_0x0167;
+        r3 = r3.append(r4);
+        r3 = r3.toString();
+        cn.com.smartdevices.bracelet.C0596r.d(r2, r3);
+        r6 = new com.xiaomi.hm.health.bt.model.b;
+        r6.<init>(r0, r5);
+        r2 = 0;
+        r15.f = r2;
+        r2 = r15.j;	 Catch:{ IOException -> 0x026e }
+        if (r2 == 0) goto L_0x0167;
     L_0x015f:
-        r0 = r15.j;	 Catch:{ IOException -> 0x024a }
-        r0.close();	 Catch:{ IOException -> 0x024a }
-        r0 = 0;
-        r15.j = r0;	 Catch:{ IOException -> 0x024a }
+        r2 = r15.j;	 Catch:{ IOException -> 0x026e }
+        r2.close();	 Catch:{ IOException -> 0x026e }
+        r2 = 0;
+        r15.j = r2;	 Catch:{ IOException -> 0x026e }
     L_0x0167:
-        r0 = new java.io.ByteArrayOutputStream;	 Catch:{ IOException -> 0x024a }
-        r0.<init>();	 Catch:{ IOException -> 0x024a }
-        r15.j = r0;	 Catch:{ IOException -> 0x024a }
+        r2 = new java.io.ByteArrayOutputStream;	 Catch:{ IOException -> 0x026e }
+        r2.<init>();	 Catch:{ IOException -> 0x026e }
+        r15.j = r2;	 Catch:{ IOException -> 0x026e }
     L_0x016e:
-        r0 = r15.d;
-        r1 = 3;
-        r0 = r0.a(r1);
-        if (r0 == 0) goto L_0x00ac;
+        r2 = r15.d;
+        r3 = 3;
+        r2 = r2.a(r3);
+        if (r2 == 0) goto L_0x00ac;
     L_0x0177:
-        r0 = r15.f;
-        if (r0 == 0) goto L_0x0186;
+        r2 = r15.f;
+        if (r2 == 0) goto L_0x0186;
     L_0x017b:
-        r0 = r15.f;
-        r1 = 0;
-        r0 = r0[r1];
-        r0 = r0 & 255;
-        r1 = 131; // 0x83 float:1.84E-43 double:6.47E-322;
-        if (r0 == r1) goto L_0x01ab;
+        r2 = r15.f;
+        r3 = 0;
+        r2 = r2[r3];
+        r2 = r2 & 255;
+        r3 = 131; // 0x83 float:1.84E-43 double:6.47E-322;
+        if (r2 == r3) goto L_0x01ab;
     L_0x0186:
-        r0 = "RunningSyncDataTask";
-        r1 = "mControlObj waiting data transfer~";
-        cn.com.smartdevices.bracelet.C0596r.d(r0, r1);
-        r1 = r15.g;	 Catch:{ InterruptedException -> 0x01a8 }
-        monitor-enter(r1);	 Catch:{ InterruptedException -> 0x01a8 }
-        r0 = r15.d;	 Catch:{ all -> 0x01a5 }
-        if (r0 == 0) goto L_0x01aa;
+        r2 = "RunningSyncDataTask";
+        r3 = "mControlObj waiting data transfer~";
+        cn.com.smartdevices.bracelet.C0596r.d(r2, r3);
+        r3 = r15.g;	 Catch:{ InterruptedException -> 0x01a8 }
+        monitor-enter(r3);	 Catch:{ InterruptedException -> 0x01a8 }
+        r2 = r15.d;	 Catch:{ all -> 0x01a5 }
+        if (r2 == 0) goto L_0x01aa;
     L_0x0194:
-        r0 = r15.d;	 Catch:{ all -> 0x01a5 }
-        r0 = r0.u();	 Catch:{ all -> 0x01a5 }
-        if (r0 == 0) goto L_0x01aa;
+        r2 = r15.d;	 Catch:{ all -> 0x01a5 }
+        r2 = r2.u();	 Catch:{ all -> 0x01a5 }
+        if (r2 == 0) goto L_0x01aa;
     L_0x019c:
-        r0 = r15.g;	 Catch:{ all -> 0x01a5 }
+        r2 = r15.g;	 Catch:{ all -> 0x01a5 }
         r10 = 5000; // 0x1388 float:7.006E-42 double:2.4703E-320;
-        r0.wait(r10);	 Catch:{ all -> 0x01a5 }
-        monitor-exit(r1);	 Catch:{ all -> 0x01a5 }
+        r2.wait(r10);	 Catch:{ all -> 0x01a5 }
+        monitor-exit(r3);	 Catch:{ all -> 0x01a5 }
         goto L_0x0177;
     L_0x01a5:
-        r0 = move-exception;
-        monitor-exit(r1);	 Catch:{ all -> 0x01a5 }
-        throw r0;	 Catch:{ InterruptedException -> 0x01a8 }
+        r2 = move-exception;
+        monitor-exit(r3);	 Catch:{ all -> 0x01a5 }
+        throw r2;	 Catch:{ InterruptedException -> 0x01a8 }
     L_0x01a8:
-        r0 = move-exception;
+        r2 = move-exception;
         goto L_0x0177;
     L_0x01aa:
-        monitor-exit(r1);	 Catch:{ all -> 0x01a5 }
+        monitor-exit(r3);	 Catch:{ all -> 0x01a5 }
     L_0x01ab:
-        r0 = r15.j;
-        r5 = r0.toByteArray();
-        r0 = r5.length;
-        r1 = "RunningSyncDataTask";
-        r2 = new java.lang.StringBuilder;
-        r2.<init>();
-        r6 = "bytesOfData:";
-        r2 = r2.append(r6);
-        r2 = r2.append(r0);
-        r6 = ",dataLen:";
-        r2 = r2.append(r6);
-        r2 = r2.append(r3);
-        r2 = r2.toString();
-        cn.com.smartdevices.bracelet.C0596r.d(r1, r2);
-        if (r0 != r3) goto L_0x01da;
+        r2 = r15.j;
+        r10 = r2.toByteArray();
+        r2 = r10.length;
+        r3 = "RunningSyncDataTask";
+        r4 = new java.lang.StringBuilder;
+        r4.<init>();
+        r11 = "bytesOfData:";
+        r4 = r4.append(r11);
+        r4 = r4.append(r2);
+        r11 = ",dataLen:";
+        r4 = r4.append(r11);
+        r4 = r4.append(r5);
+        r4 = r4.toString();
+        cn.com.smartdevices.bracelet.C0596r.d(r3, r4);
+        if (r2 != r5) goto L_0x01da;
     L_0x01d6:
-        r0 = r0 % 3;
-        if (r0 == 0) goto L_0x0209;
+        r2 = r2 % 3;
+        if (r2 == 0) goto L_0x0209;
     L_0x01da:
         r0 = "RunningSyncDataTask";
         r1 = new java.lang.StringBuilder;
@@ -353,47 +353,61 @@ public class n extends b implements B {
         r7 = r0;
         goto L_0x0091;
     L_0x0209:
-        r0 = 0;
-        r1 = 0;
-        r2 = r1;
-        r1 = r8;
+        r2 = 0;
+        r3 = 0;
+        r4 = r3;
+        r3 = r8;
     L_0x020d:
-        if (r2 >= r3) goto L_0x0232;
+        if (r4 >= r5) goto L_0x0232;
     L_0x020f:
-        r6 = new com.xiaomi.hm.health.bt.model.d;
-        r7 = r5[r2];
-        r8 = r2 + 1;
-        r8 = r5[r8];
-        r10 = r2 + 2;
-        r10 = r5[r10];
-        r6.<init>(r7, r8, r10);
-        r4.a(r6);
-        r8 = r1 + 3;
-        r1 = r15.e;
-        r6 = r8 * 100;
-        r7 = r15.h;
-        r6 = r6 / r7;
-        r1.b(r6);
-        r1 = r2 + 3;
-        r2 = r1;
-        r1 = r8;
+        r7 = new com.xiaomi.hm.health.bt.model.d;
+        r8 = r10[r4];
+        r11 = r4 + 1;
+        r11 = r10[r11];
+        r12 = r4 + 2;
+        r12 = r10[r12];
+        r7.<init>(r8, r11, r12);
+        r6.a(r7);
+        r8 = r3 + 3;
+        r3 = r15.e;
+        r7 = r8 * 100;
+        r11 = r15.h;
+        r7 = r7 / r11;
+        r3.b(r7);
+        r3 = r4 + 3;
+        r4 = r3;
+        r3 = r8;
         goto L_0x020d;
     L_0x0232:
-        r9.add(r4);
-        r2 = r15.e;
-        r2 = r2.e(r4);
-        if (r2 != 0) goto L_0x0246;
-    L_0x023d:
+        r4 = 1970; // 0x7b2 float:2.76E-42 double:9.733E-321;
+        if (r1 == r4) goto L_0x024a;
+    L_0x0236:
+        r9.add(r6);
+        r0 = r15.e;
+        r0 = r0.e(r6);
+        if (r0 != 0) goto L_0x026a;
+    L_0x0241:
         r0 = "RunningSyncDataTask";
         r1 = "error happened for app,set clear flag to false and break!!!";
         cn.com.smartdevices.bracelet.C0596r.d(r0, r1);
         goto L_0x00ac;
-    L_0x0246:
-        r7 = r0;
-        r8 = r1;
-        goto L_0x0091;
     L_0x024a:
-        r0 = move-exception;
+        r1 = "RunningSyncDataTask";
+        r4 = new java.lang.StringBuilder;
+        r4.<init>();
+        r5 = "drop as wrong data time : ";
+        r4 = r4.append(r5);
+        r0 = r0.getTime();
+        r0 = r0.toString();
+        r0 = r4.append(r0);
+        r0 = r0.toString();
+        cn.com.smartdevices.bracelet.C0596r.d(r1, r0);
+    L_0x026a:
+        r7 = r2;
+        r8 = r3;
+        goto L_0x0091;
+    L_0x026e:
+        r2 = move-exception;
         goto L_0x016e;
         */
         throw new UnsupportedOperationException("Method not decompiled: com.xiaomi.hm.health.bt.profile.b.n.d():void");

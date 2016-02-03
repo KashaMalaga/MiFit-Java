@@ -16,6 +16,7 @@ import cn.com.smartdevices.bracelet.C0401a;
 import cn.com.smartdevices.bracelet.C0409b;
 import cn.com.smartdevices.bracelet.C0596r;
 import cn.com.smartdevices.bracelet.Utils;
+import cn.com.smartdevices.bracelet.push.e;
 import cn.com.smartdevices.bracelet.push.h;
 import cn.com.smartdevices.bracelet.push.j;
 import cn.com.smartdevices.bracelet.relation.b.a;
@@ -25,10 +26,7 @@ import cn.com.smartdevices.bracelet.shoes.sync.b.g;
 import com.huami.android.ui.ActionBarActivity;
 import com.huami.android.view.c;
 import com.huami.android.widget.f;
-import com.xiaomi.hm.health.e;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 import de.greenrobot.event.EventBus;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -62,7 +60,7 @@ public class MessageActivity extends ActionBarActivity implements OnClickListene
     public void a(View view, int i) {
         if (i == 2) {
             this.l.setVisibility(0);
-            Animation loadAnimation = AnimationUtils.loadAnimation(this, e.header_notify_in);
+            Animation loadAnimation = AnimationUtils.loadAnimation(this, R.anim.header_notify_in);
             if (loadAnimation != null) {
                 this.l.startAnimation(loadAnimation);
             }
@@ -102,7 +100,7 @@ public class MessageActivity extends ActionBarActivity implements OnClickListene
         int id = view.getId();
         this.k = ((cn.com.smartdevices.bracelet.relation.db.f) view.getTag()).q;
         switch (id) {
-            case l.care_button /*2131296371*/:
+            case R.id.care_button:
                 if (this.g.a((Context) this)) {
                     C0401a.a((Context) this, C0409b.ba);
                     this.g.b(this, this.k, false);
@@ -112,13 +110,13 @@ public class MessageActivity extends ActionBarActivity implements OnClickListene
                 }
                 c.showPanel((Activity) this, this.i);
                 return;
-            case l.ok_button /*2131296548*/:
-                Utils.a((Activity) this, (int) r.data_loading, true);
+            case R.id.ok_button:
+                Utils.a((Activity) this, (int) R.string.data_loading, true);
                 this.g.a((Context) this, this.k, true);
                 return;
-            case l.refuse_button /*2131297625*/:
+            case R.id.refuse_button:
                 this.g.a((Context) this, this.k, false);
-                Utils.a((Activity) this, (int) r.data_loading, true);
+                Utils.a((Activity) this, (int) R.string.data_loading, true);
                 return;
             default:
                 return;
@@ -127,11 +125,11 @@ public class MessageActivity extends ActionBarActivity implements OnClickListene
 
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView(n.activity_message);
-        this.c = (ListView) findViewById(l.message_list);
-        this.d = findViewById(l.logo_bracelet);
-        this.e = findViewById(l.no_data_refresh);
-        this.l = findViewById(l.toast_view);
+        setContentView(R.layout.activity_message);
+        this.c = (ListView) findViewById(R.id.message_list);
+        this.d = findViewById(R.id.logo_bracelet);
+        this.e = findViewById(R.id.no_data_refresh);
+        this.l = findViewById(R.id.toast_view);
         this.f = new U(this);
         this.f.a(this.g.b(0, 10));
         this.c.setAdapter(this.f);
@@ -157,7 +155,7 @@ public class MessageActivity extends ActionBarActivity implements OnClickListene
         }
     }
 
-    public void onEvent(cn.com.smartdevices.bracelet.push.e eVar) {
+    public void onEvent(e eVar) {
         int i = n;
         cn.com.smartdevices.bracelet.relation.db.f a;
         if (eVar.v == n) {
@@ -195,7 +193,7 @@ public class MessageActivity extends ActionBarActivity implements OnClickListene
                 this.f.notifyDataSetChanged();
             }
             if (aVar.a != n) {
-                com.huami.android.view.b.a((Context) this, (int) r.toast_operation_failed, 0);
+                com.huami.android.view.b.a((Context) this, (int) R.string.toast_operation_failed, 0);
             } else if (aVar.d) {
                 startActivityForResult(RemarkActivity.a(this, aVar.c), n);
             }
@@ -210,9 +208,9 @@ public class MessageActivity extends ActionBarActivity implements OnClickListene
             }
             this.f.a(cVar.b, 0).v = 0;
             if (cVar.a) {
-                com.huami.android.view.b.a((Context) this, (int) r.toast_care_send_success, 0);
+                com.huami.android.view.b.a((Context) this, (int) R.string.toast_care_send_success, 0);
             } else {
-                com.huami.android.view.b.a((Context) this, (int) r.toast_care_send_failed, 0);
+                com.huami.android.view.b.a((Context) this, (int) R.string.toast_care_send_failed, 0);
             }
         }
     }
@@ -229,7 +227,7 @@ public class MessageActivity extends ActionBarActivity implements OnClickListene
             if (this.f.getCount() < 10) {
                 this.c.setOnScrollListener(null);
             } else if (b == null || b.size() < 10) {
-                com.huami.android.view.b.a((Context) this, (int) r.toast_no_more_data, 0);
+                com.huami.android.view.b.a((Context) this, (int) R.string.toast_no_more_data, 0);
                 this.c.setOnScrollListener(null);
             }
         }

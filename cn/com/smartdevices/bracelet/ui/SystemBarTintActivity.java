@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import cn.com.smartdevices.bracelet.C0667t;
 import com.huami.android.ui.a;
-import com.xiaomi.hm.health.s;
+import com.xiaomi.hm.health.R;
 
 public class SystemBarTintActivity extends BaseActivity {
     private View mContentView;
@@ -75,7 +75,7 @@ public class SystemBarTintActivity extends BaseActivity {
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         if (a.b(this) && VERSION.SDK_INT <= 19) {
-            setTheme(s.AppThemeTint);
+            setTheme(R.style.AppThemeTint);
         }
         configStatusBarTint();
         applyStatusBarTintAuto();

@@ -49,6 +49,7 @@ public class MapLoader {
     }
 
     private void processRecivedData() {
+        GZIPInputStream gZIPInputStream;
         Throwable th;
         if (this.nextImgDataLength == 0) {
             if (this.recievedDataSize >= 8) {
@@ -59,7 +60,6 @@ public class MapLoader {
             int i = Convert.getInt(this.recievedDataBuffer, 0);
             int i2 = Convert.getInt(this.recievedDataBuffer, 4);
             if (i2 != 0) {
-                GZIPInputStream gZIPInputStream;
                 try {
                     gZIPInputStream = new GZIPInputStream(new ByteArrayInputStream(this.recievedDataBuffer, 8, i));
                     try {

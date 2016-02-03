@@ -5,7 +5,7 @@ import cn.com.smartdevices.bracelet.C0401a;
 import cn.com.smartdevices.bracelet.Utils;
 import com.huami.android.view.b;
 import com.huami.android.view.e;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 
 class i implements e {
     final /* synthetic */ h a;
@@ -23,7 +23,7 @@ class i implements e {
         if (Utils.l(this.a.getActivity().getApplicationContext())) {
             new j(this).execute(new Void[0]);
         } else {
-            b.a(this.a.getActivity().getApplicationContext(), this.a.getString(r.please_connect_internet), 0).show();
+            b.a(this.a.getActivity().getApplicationContext(), this.a.getString(R.string.please_connect_internet), 0).show();
         }
     }
 

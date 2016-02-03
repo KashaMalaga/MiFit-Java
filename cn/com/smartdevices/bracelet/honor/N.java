@@ -1,11 +1,11 @@
 package cn.com.smartdevices.bracelet.honor;
 
-import com.xiaomi.hm.health.g;
+import com.xiaomi.hm.health.R;
 
 public final class N {
     public static final int[] CustomViewPager;
     public static final int CustomViewPager_swipeable = 0;
-    public static final int[] DimPanelFragmentBottomBar = new int[]{g.left_text, g.right_text, g.left_text_color, g.right_text_color, g.show_style};
+    public static final int[] DimPanelFragmentBottomBar = new int[]{R.attr.left_text, R.attr.right_text, R.attr.left_text_color, R.attr.right_text_color, R.attr.show_style};
     public static final int DimPanelFragmentBottomBar_left_text = 0;
     public static final int DimPanelFragmentBottomBar_left_text_color = 2;
     public static final int DimPanelFragmentBottomBar_right_text = 1;
@@ -14,7 +14,7 @@ public final class N {
 
     static {
         int[] iArr = new int[DimPanelFragmentBottomBar_right_text];
-        iArr[DimPanelFragmentBottomBar_left_text] = g.swipeable;
+        iArr[DimPanelFragmentBottomBar_left_text] = R.attr.swipeable;
         CustomViewPager = iArr;
     }
 }

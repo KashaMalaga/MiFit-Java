@@ -493,10 +493,10 @@ public class AidTask {
     }
 
     private synchronized AidInfo loadAidInfoFromCache() {
+        FileInputStream fileInputStream;
         Throwable th;
         AidInfo aidInfo = null;
         synchronized (this) {
-            FileInputStream fileInputStream;
             try {
                 fileInputStream = new FileInputStream(getAidInfoFile(VERSION));
                 try {

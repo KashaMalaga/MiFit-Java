@@ -26,7 +26,6 @@ import android.telephony.gsm.GsmCellLocation;
 import android.text.TextUtils;
 import cn.com.smartdevices.bracelet.chart.util.ChartData;
 import cn.com.smartdevices.bracelet.weight.family.h;
-import com.amap.api.location.LocationManagerProxy;
 import com.amap.api.services.geocoder.GeocodeSearch;
 import com.d.a.a.C1012a;
 import com.tencent.connect.common.Constants;
@@ -77,7 +76,7 @@ public final class C0930o {
             this.a = context;
             this.f = Build.MODEL;
             this.b = (TelephonyManager) context.getSystemService("phone");
-            this.c = (LocationManager) context.getSystemService(LocationManagerProxy.KEY_LOCATION_CHANGED);
+            this.c = (LocationManager) context.getSystemService(com.xiaomi.channel.relationservice.data.a.l);
             this.d = (WifiManager) context.getSystemService("wifi");
             this.e = (SensorManager) context.getSystemService("sensor");
             if (this.b != null && this.d != null) {
@@ -146,7 +145,7 @@ public final class C0930o {
     protected static C0930o a(Context context) {
         if (u == null && C0930o.c(context)) {
             Object obj;
-            LocationManager locationManager = (LocationManager) context.getSystemService(LocationManagerProxy.KEY_LOCATION_CHANGED);
+            LocationManager locationManager = (LocationManager) context.getSystemService(com.xiaomi.channel.relationservice.data.a.l);
             if (locationManager != null) {
                 for (String str : locationManager.getAllProviders()) {
                     if (!str.equals("passive")) {

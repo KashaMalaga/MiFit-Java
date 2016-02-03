@@ -20,10 +20,10 @@ public class bk {
     static synchronized String a(Throwable th) {
         Writer stringWriter;
         PrintWriter printWriter;
-        Throwable cause;
         Throwable th2;
         String str = null;
         synchronized (bk.class) {
+            Throwable cause;
             try {
                 stringWriter = new StringWriter();
                 try {

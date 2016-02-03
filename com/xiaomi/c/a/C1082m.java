@@ -11,9 +11,9 @@ import java.util.zip.GZIPOutputStream;
 
 final class C1082m {
     public static byte[] a(byte[] bArr) {
-        GZIPOutputStream gZIPOutputStream;
         Throwable th;
         OutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        GZIPOutputStream gZIPOutputStream;
         try {
             gZIPOutputStream = new GZIPOutputStream(byteArrayOutputStream);
             try {

@@ -14,11 +14,11 @@ class u implements Runnable {
     }
 
     public void run() {
+        Cursor a;
         Throwable th;
         if (this.a.a.d == null || this.a.a.c == null || this.a.a.f == null) {
             this.a.a.d = d.b(this.a.a.b);
             if (this.a.a.d != null) {
-                Cursor a;
                 try {
                     a = w.a(this.a.a.b).a(q.b, q.l, "package_name=?", new String[]{this.a.a.d.a}, null, null, null);
                     if (a != null) {

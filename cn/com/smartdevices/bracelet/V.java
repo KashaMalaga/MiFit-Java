@@ -3,7 +3,7 @@ package cn.com.smartdevices.bracelet;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import com.huami.android.view.b;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.market.sdk.C1123b;
 import com.xiaomi.market.sdk.e;
 import kankan.wheel.widget.a;
@@ -30,31 +30,31 @@ final class V implements e {
                 return;
             case l.a /*1*/:
                 if (this.b) {
-                    b.a(this.a, (int) r.apk_uptodate, 1).show();
+                    b.a(this.a, (int) R.string.apk_uptodate, 1).show();
                     return;
                 }
                 return;
             case a.k /*2*/:
                 if (this.b) {
-                    b.a(this.a, (int) r.network_error, 1).show();
+                    b.a(this.a, (int) R.string.network_error, 1).show();
                     return;
                 }
                 return;
             case a.l /*3*/:
                 if (this.b) {
-                    b.a(this.a, (int) r.network_error, 1).show();
+                    b.a(this.a, (int) R.string.network_error, 1).show();
                     return;
                 }
                 return;
             case a.aQ /*4*/:
                 if (this.b) {
-                    b.a(this.a, (int) r.network_error, 1).show();
+                    b.a(this.a, (int) R.string.network_error, 1).show();
                     return;
                 }
                 return;
             case a.X /*5*/:
                 if (this.b) {
-                    b.a(this.a, (int) r.local_app_failed, 1).show();
+                    b.a(this.a, (int) R.string.local_app_failed, 1).show();
                     return;
                 }
                 return;

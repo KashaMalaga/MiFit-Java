@@ -7,9 +7,7 @@ import android.widget.TextView;
 import cn.com.smartdevices.bracelet.chart.DynamicShareChartView;
 import com.edmodo.cropper.cropwindow.CropOverlayView;
 import com.xiaomi.account.openauth.h;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 import java.util.HashMap;
 import kankan.wheel.widget.a;
 
@@ -30,12 +28,12 @@ public class ActiveShareDataView extends FrameLayout {
 
     public ActiveShareDataView(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
-        inflate(context, n.view_active_share_data, this);
-        this.a = (DynamicShareChartView) findViewById(l.share_chart);
-        this.b = (TextView) findViewById(l.active_step_value);
-        this.c = (TextView) findViewById(l.active_step_distance_value);
-        this.d = (TextView) findViewById(l.active_step_distance_unit);
-        this.e = (TextView) findViewById(l.active_step_calorie_value);
+        inflate(context, R.layout.view_active_share_data, this);
+        this.a = (DynamicShareChartView) findViewById(R.id.share_chart);
+        this.b = (TextView) findViewById(R.id.active_step_value);
+        this.c = (TextView) findViewById(R.id.active_step_distance_value);
+        this.d = (TextView) findViewById(R.id.active_step_distance_unit);
+        this.e = (TextView) findViewById(R.id.active_step_calorie_value);
     }
 
     private HashMap<Integer, Integer> a() {
@@ -55,10 +53,10 @@ public class ActiveShareDataView extends FrameLayout {
         float f = (float) i;
         if (i >= h.E) {
             strArr[0] = String.valueOf(((float) Math.round((f / 1000.0f) * CropOverlayView.a)) / CropOverlayView.a);
-            strArr[1] = context.getString(r.unit_kilometer);
+            strArr[1] = context.getString(R.string.unit_kilometer);
         } else {
             strArr[0] = String.valueOf(i);
-            strArr[1] = context.getString(r.unit_meter);
+            strArr[1] = context.getString(R.string.unit_meter);
         }
         return strArr;
     }

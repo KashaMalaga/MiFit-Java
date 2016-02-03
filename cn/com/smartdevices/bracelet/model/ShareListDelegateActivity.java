@@ -18,10 +18,10 @@ import cn.com.smartdevices.bracelet.model.ShareData.TimeType;
 import cn.com.smartdevices.bracelet.shoes.sync.b.g;
 import cn.com.smartdevices.bracelet.ui.ShareActivity;
 import com.xiaomi.e.a;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.dataprocess.DaySportData;
 import com.xiaomi.hm.health.dataprocess.SportDay;
 import com.xiaomi.hm.health.dataprocess.StepsInfo;
-import com.xiaomi.hm.health.r;
 import de.greenrobot.event.EventBus;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -99,34 +99,34 @@ public class ShareListDelegateActivity extends Activity {
                     if (!SHARE_TYPE_LAST_MONTH.equals(this.mShareType)) {
                         date = new Date();
                         date.setMonth(sportDayFromDateStr2.mon);
-                        shareData.title = getString(r.in) + new SimpleDateFormat(getString(r.date_month)).format(date) + getString(r.share_step_walk);
+                        shareData.title = getString(R.string.in) + new SimpleDateFormat(getString(R.string.date_month)).format(date) + getString(R.string.share_step_walk);
                         shareData.setType(6);
                         shareData.description = Utils.a((Context) this, this.mReportData.steps, this.mReportData.distance, this.mReportData.calories, str2, this.mReportData.maxDateStep, this.mReportData.runDistance);
                         i = this.mReportData.steps;
-                        shareData.contentUnit = getString(r.unit_step);
+                        shareData.contentUnit = getString(R.string.unit_step);
                         shareData.time = Utils.n();
                         shareData.ranking = new e().a((Context) this, i);
                         shareData.mExtraData = Utils.a(this.mNewRecordSteps, new SportDay(), TimeType.MONTH.ordinal());
                     } else if (!SHARE_TYPE_LAST_WEEK.equals(this.mShareType)) {
-                        shareData.title = getString(r.one_week) + getString(r.share_step_walk);
+                        shareData.title = getString(R.string.one_week) + getString(R.string.share_step_walk);
                         shareData.setType(7);
                         shareData.description = Utils.a(this, this.mReportData.distance, this.mReportData.calories, str2, this.mReportData.maxDateStep, this.mReportData.runDistance);
                         i = this.mReportData.steps;
-                        shareData.contentUnit = getString(r.unit_step);
+                        shareData.contentUnit = getString(R.string.unit_step);
                         shareData.time = Utils.o();
                         shareData.ranking = new h().a((Context) this, i);
                         shareData.mExtraData = Utils.a(this.mNewRecordSteps, new SportDay(), TimeType.WEEK.ordinal());
                     } else if (!SHARE_TYPE_NEW_RECORD.equals(this.mShareType)) {
                         shareData.setType(5);
-                        shareData.title = getString(r.new_record_born);
+                        shareData.title = getString(R.string.new_record_born);
                         i = this.mNewRecordSteps;
-                        shareData.contentUnit = getString(r.unit_step);
+                        shareData.contentUnit = getString(R.string.unit_step);
                         sportDayFromDateStr2 = new SportDay();
                         shareData.time = Utils.c(sportDayFromDateStr2);
                         a = ChartData.a((Context) this, this.mReportData.getDistance());
                         str = a[0] + a[1];
                         str2 = a.f + this.mReportData.getCalories();
-                        shareData.description = getString(r.new_record_format_str, new Object[]{str, str2});
+                        shareData.description = getString(R.string.new_record_format_str, new Object[]{str, str2});
                         shareData.mExtraData = Utils.a(this.mNewRecordSteps, sportDayFromDateStr2);
                     } else if (!SHARE_TYPE_CONTIUE_REACH_GOAL_MANUAL.equals(this.mShareType)) {
                         EventBus.getDefault().post(new EventUseManualLazyDay());
@@ -136,14 +136,14 @@ public class ShareListDelegateActivity extends Activity {
                         C0596r.e(TAG, "Continue status = " + this.mReportData.getContinueStatus());
                         if (this.mReportData.getContinueDays() > this.mReportData.getMaxContinueDays()) {
                             shareData.setType(10);
-                            shareData.title = getString(r.continue_reach_goal_new_record);
+                            shareData.title = getString(R.string.continue_reach_goal_new_record);
                         } else {
                             shareData.setType(8);
-                            shareData.title = getString(r.continue_reach_goal);
+                            shareData.title = getString(R.string.continue_reach_goal);
                         }
                         continueDays = this.mReportData.getContinueDays();
-                        shareData.contentUnit = getString(r.day);
-                        shareData.time = getString(r.until_hit_goals, new Object[]{Utils.d(sportDay)});
+                        shareData.contentUnit = getString(R.string.day);
+                        shareData.time = getString(R.string.until_hit_goals, new Object[]{Utils.d(sportDay)});
                         shareData.time_tips = a.f;
                         shareData.description = Utils.a((Context) this, this.mReportData);
                         i = continueDays;
@@ -190,34 +190,34 @@ public class ShareListDelegateActivity extends Activity {
                 if (!SHARE_TYPE_LAST_MONTH.equals(this.mShareType)) {
                     date = new Date();
                     date.setMonth(sportDayFromDateStr2.mon);
-                    shareData.title = getString(r.in) + new SimpleDateFormat(getString(r.date_month)).format(date) + getString(r.share_step_walk);
+                    shareData.title = getString(R.string.in) + new SimpleDateFormat(getString(R.string.date_month)).format(date) + getString(R.string.share_step_walk);
                     shareData.setType(6);
                     shareData.description = Utils.a((Context) this, this.mReportData.steps, this.mReportData.distance, this.mReportData.calories, str2, this.mReportData.maxDateStep, this.mReportData.runDistance);
                     i = this.mReportData.steps;
-                    shareData.contentUnit = getString(r.unit_step);
+                    shareData.contentUnit = getString(R.string.unit_step);
                     shareData.time = Utils.n();
                     shareData.ranking = new e().a((Context) this, i);
                     shareData.mExtraData = Utils.a(this.mNewRecordSteps, new SportDay(), TimeType.MONTH.ordinal());
                 } else if (!SHARE_TYPE_LAST_WEEK.equals(this.mShareType)) {
-                    shareData.title = getString(r.one_week) + getString(r.share_step_walk);
+                    shareData.title = getString(R.string.one_week) + getString(R.string.share_step_walk);
                     shareData.setType(7);
                     shareData.description = Utils.a(this, this.mReportData.distance, this.mReportData.calories, str2, this.mReportData.maxDateStep, this.mReportData.runDistance);
                     i = this.mReportData.steps;
-                    shareData.contentUnit = getString(r.unit_step);
+                    shareData.contentUnit = getString(R.string.unit_step);
                     shareData.time = Utils.o();
                     shareData.ranking = new h().a((Context) this, i);
                     shareData.mExtraData = Utils.a(this.mNewRecordSteps, new SportDay(), TimeType.WEEK.ordinal());
                 } else if (!SHARE_TYPE_NEW_RECORD.equals(this.mShareType)) {
                     shareData.setType(5);
-                    shareData.title = getString(r.new_record_born);
+                    shareData.title = getString(R.string.new_record_born);
                     i = this.mNewRecordSteps;
-                    shareData.contentUnit = getString(r.unit_step);
+                    shareData.contentUnit = getString(R.string.unit_step);
                     sportDayFromDateStr2 = new SportDay();
                     shareData.time = Utils.c(sportDayFromDateStr2);
                     a = ChartData.a((Context) this, this.mReportData.getDistance());
                     str = a[0] + a[1];
                     str2 = a.f + this.mReportData.getCalories();
-                    shareData.description = getString(r.new_record_format_str, new Object[]{str, str2});
+                    shareData.description = getString(R.string.new_record_format_str, new Object[]{str, str2});
                     shareData.mExtraData = Utils.a(this.mNewRecordSteps, sportDayFromDateStr2);
                 } else if (!SHARE_TYPE_CONTIUE_REACH_GOAL_MANUAL.equals(this.mShareType)) {
                     EventBus.getDefault().post(new EventUseManualLazyDay());
@@ -250,14 +250,14 @@ public class ShareListDelegateActivity extends Activity {
                     C0596r.e(TAG, "Continue status = " + this.mReportData.getContinueStatus());
                     if (this.mReportData.getContinueDays() > this.mReportData.getMaxContinueDays()) {
                         shareData.setType(8);
-                        shareData.title = getString(r.continue_reach_goal);
+                        shareData.title = getString(R.string.continue_reach_goal);
                     } else {
                         shareData.setType(10);
-                        shareData.title = getString(r.continue_reach_goal_new_record);
+                        shareData.title = getString(R.string.continue_reach_goal_new_record);
                     }
                     continueDays = this.mReportData.getContinueDays();
-                    shareData.contentUnit = getString(r.day);
-                    shareData.time = getString(r.until_hit_goals, new Object[]{Utils.d(sportDay)});
+                    shareData.contentUnit = getString(R.string.day);
+                    shareData.time = getString(R.string.until_hit_goals, new Object[]{Utils.d(sportDay)});
                     shareData.time_tips = a.f;
                     shareData.description = Utils.a((Context) this, this.mReportData);
                     i = continueDays;
@@ -279,34 +279,34 @@ public class ShareListDelegateActivity extends Activity {
         if (!SHARE_TYPE_LAST_MONTH.equals(this.mShareType)) {
             date = new Date();
             date.setMonth(sportDayFromDateStr2.mon);
-            shareData.title = getString(r.in) + new SimpleDateFormat(getString(r.date_month)).format(date) + getString(r.share_step_walk);
+            shareData.title = getString(R.string.in) + new SimpleDateFormat(getString(R.string.date_month)).format(date) + getString(R.string.share_step_walk);
             shareData.setType(6);
             shareData.description = Utils.a((Context) this, this.mReportData.steps, this.mReportData.distance, this.mReportData.calories, str2, this.mReportData.maxDateStep, this.mReportData.runDistance);
             i = this.mReportData.steps;
-            shareData.contentUnit = getString(r.unit_step);
+            shareData.contentUnit = getString(R.string.unit_step);
             shareData.time = Utils.n();
             shareData.ranking = new e().a((Context) this, i);
             shareData.mExtraData = Utils.a(this.mNewRecordSteps, new SportDay(), TimeType.MONTH.ordinal());
         } else if (!SHARE_TYPE_LAST_WEEK.equals(this.mShareType)) {
-            shareData.title = getString(r.one_week) + getString(r.share_step_walk);
+            shareData.title = getString(R.string.one_week) + getString(R.string.share_step_walk);
             shareData.setType(7);
             shareData.description = Utils.a(this, this.mReportData.distance, this.mReportData.calories, str2, this.mReportData.maxDateStep, this.mReportData.runDistance);
             i = this.mReportData.steps;
-            shareData.contentUnit = getString(r.unit_step);
+            shareData.contentUnit = getString(R.string.unit_step);
             shareData.time = Utils.o();
             shareData.ranking = new h().a((Context) this, i);
             shareData.mExtraData = Utils.a(this.mNewRecordSteps, new SportDay(), TimeType.WEEK.ordinal());
         } else if (!SHARE_TYPE_NEW_RECORD.equals(this.mShareType)) {
             shareData.setType(5);
-            shareData.title = getString(r.new_record_born);
+            shareData.title = getString(R.string.new_record_born);
             i = this.mNewRecordSteps;
-            shareData.contentUnit = getString(r.unit_step);
+            shareData.contentUnit = getString(R.string.unit_step);
             sportDayFromDateStr2 = new SportDay();
             shareData.time = Utils.c(sportDayFromDateStr2);
             a = ChartData.a((Context) this, this.mReportData.getDistance());
             str = a[0] + a[1];
             str2 = a.f + this.mReportData.getCalories();
-            shareData.description = getString(r.new_record_format_str, new Object[]{str, str2});
+            shareData.description = getString(R.string.new_record_format_str, new Object[]{str, str2});
             shareData.mExtraData = Utils.a(this.mNewRecordSteps, sportDayFromDateStr2);
         } else if (!SHARE_TYPE_CONTIUE_REACH_GOAL_MANUAL.equals(this.mShareType)) {
             EventBus.getDefault().post(new EventUseManualLazyDay());
@@ -316,14 +316,14 @@ public class ShareListDelegateActivity extends Activity {
             C0596r.e(TAG, "Continue status = " + this.mReportData.getContinueStatus());
             if (this.mReportData.getContinueDays() > this.mReportData.getMaxContinueDays()) {
                 shareData.setType(10);
-                shareData.title = getString(r.continue_reach_goal_new_record);
+                shareData.title = getString(R.string.continue_reach_goal_new_record);
             } else {
                 shareData.setType(8);
-                shareData.title = getString(r.continue_reach_goal);
+                shareData.title = getString(R.string.continue_reach_goal);
             }
             continueDays = this.mReportData.getContinueDays();
-            shareData.contentUnit = getString(r.day);
-            shareData.time = getString(r.until_hit_goals, new Object[]{Utils.d(sportDay)});
+            shareData.contentUnit = getString(R.string.day);
+            shareData.time = getString(R.string.until_hit_goals, new Object[]{Utils.d(sportDay)});
             shareData.time_tips = a.f;
             shareData.description = Utils.a((Context) this, this.mReportData);
             i = continueDays;

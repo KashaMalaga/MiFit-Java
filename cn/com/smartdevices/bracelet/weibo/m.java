@@ -5,7 +5,7 @@ import android.text.TextUtils;
 import cn.com.smartdevices.bracelet.C0401a;
 import cn.com.smartdevices.bracelet.C0596r;
 import com.xiaomi.channel.gamesdk.b;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 
 class m implements Runnable {
     final /* synthetic */ Bundle a;
@@ -25,7 +25,7 @@ class m implements Runnable {
             return;
         }
         String string = this.a.getString(b.a);
-        String string2 = this.b.a.getString(r.weibosdk_toast_auth_failed);
+        String string2 = this.b.a.getString(R.string.weibosdk_toast_auth_failed);
         if (!TextUtils.isEmpty(string)) {
             string2 = string2 + "\nObtained the code: " + string;
         }

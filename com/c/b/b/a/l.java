@@ -1,11 +1,9 @@
 package com.c.b.b.a;
 
-import com.amap.api.location.core.AMapLocException;
-import com.amap.api.services.core.AMapException;
 import com.c.b.a;
-import com.c.b.a.c.c;
 import com.c.b.s;
 import com.tencent.connect.common.Constants;
+import com.xiaomi.channel.relationservice.data.b;
 import com.xiaomi.hm.health.t;
 import java.util.HashMap;
 import java.util.Map;
@@ -330,25 +328,25 @@ public final class l extends u {
                 case kankan.wheel.widget.a.aF /*20*/:
                 case com.xiaomi.hm.health.bt.profile.a.a.Z /*21*/:
                 case com.xiaomi.hm.health.bt.profile.a.a.aa /*22*/:
-                case AMapException.ERROR_CODE_SOCKE_TIME_OUT /*23*/:
-                case AMapException.ERROR_CODE_INVALID_PARAMETER /*24*/:
-                case AMapException.ERROR_CODE_NULL_PARAMETER /*25*/:
-                case AMapException.ERROR_CODE_URL /*26*/:
+                case b.x /*23*/:
+                case b.y /*24*/:
+                case b.z /*25*/:
+                case b.A /*26*/:
                     str9 = C1009k.b;
                     str10 = a.substring(3);
                     str8 = b;
                     break;
                 case com.xiaomi.hm.health.bt.profile.a.a.ab /*27*/:
-                case AMapException.ERROR_CODE_UNKNOW_SERVICE /*28*/:
-                case AMapException.ERROR_CODE_PROTOCOL /*29*/:
+                case b.C /*28*/:
+                case b.D /*29*/:
                 case kankan.wheel.widget.a.bR /*30*/:
                     str12 = a.substring(3);
                     str11 = b;
                     break;
-                case AMapException.ERROR_CODE_UNKNOWN /*31*/:
+                case b.F /*31*/:
                 case kankan.wheel.widget.a.bl /*32*/:
-                case c.a /*33*/:
-                case AMapLocException.ERROR_CODE_FAILURE_LOCATION /*34*/:
+                case b.H /*33*/:
+                case b.I /*34*/:
                     if (b.length() >= 4) {
                         str11 = b.substring(3);
                         str13 = b.substring(0, 3);

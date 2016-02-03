@@ -7,10 +7,9 @@ import android.widget.Switch;
 import cn.com.smartdevices.bracelet.Keeper;
 import cn.com.smartdevices.bracelet.model.PersonInfo;
 import cn.com.smartdevices.bracelet.ui.SystemBarTintActivity;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.bt.bleservice.a;
 import com.xiaomi.hm.health.bt.model.HwConnStatus;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
 import de.greenrobot.event.EventBus;
 
 public class LabFactoryConnectedAdvActivity extends SystemBarTintActivity {
@@ -29,15 +28,15 @@ public class LabFactoryConnectedAdvActivity extends SystemBarTintActivity {
 
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView((int) n.activity_lab_factory_connected_adv);
+        setContentView((int) R.layout.activity_lab_factory_connected_adv);
         this.d = Keeper.readPersonInfo();
-        findViewById(l.home_back).setOnClickListener(new C0569e(this));
-        this.a = (LinearLayout) findViewById(l.lab_factory_connected_adv);
+        findViewById(R.id.home_back).setOnClickListener(new C0569e(this));
+        this.a = (LinearLayout) findViewById(R.id.lab_factory_connected_adv);
         this.a.setOnClickListener(new C0570f(this));
-        this.b = (Switch) findViewById(l.lab_factory_connected_adv_switch);
+        this.b = (Switch) findViewById(R.id.lab_factory_connected_adv_switch);
         this.b.setChecked(this.d.isEnableConnectedBtAdv());
         this.b.setOnCheckedChangeListener(new C0571g(this));
-        this.c = findViewById(l.lab_factory_connected_adv_mask_view);
+        this.c = findViewById(R.id.lab_factory_connected_adv_mask_view);
         EventBus.getDefault().register(this);
     }
 

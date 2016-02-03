@@ -2,9 +2,7 @@ package com.amap.api.services.core;
 
 import cn.com.smartdevices.bracelet.j.f;
 import cn.com.smartdevices.bracelet.partner.NativeInterface;
-import cn.com.smartdevices.bracelet.relation.db.a;
 import cn.com.smartdevices.bracelet.shoes.sync.SyncShoesDataService;
-import com.amap.api.location.LocationManagerProxy;
 import com.amap.api.services.busline.BusLineItem;
 import com.amap.api.services.busline.BusStationItem;
 import com.amap.api.services.district.DistrictItem;
@@ -41,6 +39,7 @@ import com.amap.api.services.route.WalkStep;
 import com.tencent.connect.common.Constants;
 import com.tencent.open.SocialConstants;
 import com.tencent.tauth.AuthActivity;
+import com.xiaomi.channel.relationservice.data.a;
 import java.util.ArrayList;
 import java.util.List;
 import org.json.JSONArray;
@@ -56,7 +55,7 @@ public class m {
         scenic.setLevel(b(jSONObject, "level"));
         scenic.setPrice(b(jSONObject, "price"));
         scenic.setSeason(b(jSONObject, "season"));
-        scenic.setRecommend(b(jSONObject, "recommend"));
+        scenic.setRecommend(b(jSONObject, a.B));
         scenic.setTheme(b(jSONObject, "theme"));
         scenic.setOrderWapUrl(b(jSONObject, "ordering_wap_url"));
         scenic.setOrderWebUrl(b(jSONObject, "ordering_web_url"));
@@ -178,8 +177,8 @@ public class m {
             JSONObject jSONObject = jSONArray.getJSONObject(i);
             crossroad.setId(b(jSONObject, SyncShoesDataService.d));
             crossroad.setDirection(b(jSONObject, "direction"));
-            crossroad.setDistance(j(b(jSONObject, a.g)));
-            crossroad.setCenterPoint(c(jSONObject, LocationManagerProxy.KEY_LOCATION_CHANGED));
+            crossroad.setDistance(j(b(jSONObject, cn.com.smartdevices.bracelet.relation.db.a.g)));
+            crossroad.setCenterPoint(c(jSONObject, a.l));
             crossroad.setFirstRoadId(b(jSONObject, "first_id"));
             crossroad.setFirstRoadName(b(jSONObject, "first_name"));
             crossroad.setSecondRoadId(b(jSONObject, "second_id"));
@@ -213,9 +212,9 @@ public class m {
         JSONObject jSONObject2 = jSONObject.getJSONObject("streetNumber");
         streetNumber.setStreet(b(jSONObject2, "street"));
         streetNumber.setNumber(b(jSONObject2, "number"));
-        streetNumber.setLatLonPoint(c(jSONObject2, LocationManagerProxy.KEY_LOCATION_CHANGED));
+        streetNumber.setLatLonPoint(c(jSONObject2, a.l));
         streetNumber.setDirection(b(jSONObject2, "direction"));
-        streetNumber.setDistance(j(b(jSONObject2, a.g)));
+        streetNumber.setDistance(j(b(jSONObject2, cn.com.smartdevices.bracelet.relation.db.a.g)));
         regeocodeAddress.setStreetNumber(streetNumber);
     }
 
@@ -286,7 +285,7 @@ public class m {
                 JSONObject jSONObject2 = jSONArray.getJSONObject(i);
                 Groupbuy groupbuy = new Groupbuy();
                 groupbuy.setTypeCode(b(jSONObject2, "typecode"));
-                groupbuy.setTypeDes(b(jSONObject2, SocialConstants.PARAM_TYPE));
+                groupbuy.setTypeDes(b(jSONObject2, a.h));
                 groupbuy.setDetail(b(jSONObject2, f.au));
                 groupbuy.setStartTime(e.c(b(jSONObject2, "start_time")));
                 groupbuy.setEndTime(e.c(b(jSONObject2, "end_time")));
@@ -328,9 +327,9 @@ public class m {
             JSONObject jSONObject = jSONArray.getJSONObject(i);
             regeocodeRoad.setId(b(jSONObject, SyncShoesDataService.d));
             regeocodeRoad.setName(b(jSONObject, "name"));
-            regeocodeRoad.setLatLngPoint(c(jSONObject, LocationManagerProxy.KEY_LOCATION_CHANGED));
+            regeocodeRoad.setLatLngPoint(c(jSONObject, a.l));
             regeocodeRoad.setDirection(b(jSONObject, "direction"));
-            regeocodeRoad.setDistance(j(b(jSONObject, a.g)));
+            regeocodeRoad.setDistance(j(b(jSONObject, cn.com.smartdevices.bracelet.relation.db.a.g)));
             arrayList.add(regeocodeRoad);
         }
         regeocodeAddress.setRoads(arrayList);
@@ -355,7 +354,7 @@ public class m {
                     for (int i = 0; i < jSONArray.length(); i++) {
                         DrivePath drivePath = new DrivePath();
                         jSONObject = jSONArray.getJSONObject(i);
-                        drivePath.setDistance(j(b(jSONObject, a.g)));
+                        drivePath.setDistance(j(b(jSONObject, cn.com.smartdevices.bracelet.relation.db.a.g)));
                         drivePath.setDuration(k(b(jSONObject, "duration")));
                         drivePath.setStrategy(b(jSONObject, "strategy"));
                         drivePath.setTolls(j(b(jSONObject, "tolls")));
@@ -369,7 +368,7 @@ public class m {
                                 driveStep.setInstruction(b(jSONObject2, "instruction"));
                                 driveStep.setOrientation(b(jSONObject2, "orientation"));
                                 driveStep.setRoad(b(jSONObject2, "road"));
-                                driveStep.setDistance(j(b(jSONObject2, a.g)));
+                                driveStep.setDistance(j(b(jSONObject2, cn.com.smartdevices.bracelet.relation.db.a.g)));
                                 driveStep.setTolls(j(b(jSONObject2, "tolls")));
                                 driveStep.setTollDistance(j(b(jSONObject2, "toll_distance")));
                                 driveStep.setTollRoad(b(jSONObject2, "toll_road"));
@@ -449,26 +448,26 @@ public class m {
         List arrayList = new ArrayList();
         for (int i = 0; i < jSONArray.length(); i++) {
             JSONObject jSONObject = jSONArray.getJSONObject(i);
-            PoiItem poiItem = new PoiItem(b(jSONObject, SyncShoesDataService.d), c(jSONObject, LocationManagerProxy.KEY_LOCATION_CHANGED), b(jSONObject, "name"), com.xiaomi.e.a.f);
+            PoiItem poiItem = new PoiItem(b(jSONObject, SyncShoesDataService.d), c(jSONObject, a.l), b(jSONObject, "name"), com.xiaomi.e.a.f);
             poiItem.setDirection(b(jSONObject, "direction"));
-            poiItem.setDistance(i(b(jSONObject, a.g)));
+            poiItem.setDistance(i(b(jSONObject, cn.com.smartdevices.bracelet.relation.db.a.g)));
             poiItem.setTel(b(jSONObject, "tel"));
-            poiItem.setTypeDes(b(jSONObject, SocialConstants.PARAM_TYPE));
+            poiItem.setTypeDes(b(jSONObject, a.h));
             arrayList.add(poiItem);
         }
         regeocodeAddress.setPois(arrayList);
     }
 
     public static PoiItemDetail d(JSONObject jSONObject) {
-        PoiItemDetail poiItemDetail = new PoiItemDetail(b(jSONObject, SyncShoesDataService.d), c(jSONObject, LocationManagerProxy.KEY_LOCATION_CHANGED), b(jSONObject, "name"), b(jSONObject, "address"));
+        PoiItemDetail poiItemDetail = new PoiItemDetail(b(jSONObject, SyncShoesDataService.d), c(jSONObject, a.l), b(jSONObject, "name"), b(jSONObject, "address"));
         poiItemDetail.setAdCode(b(jSONObject, "adcode"));
         poiItemDetail.setProvinceName(b(jSONObject, "pname"));
         poiItemDetail.setCityName(b(jSONObject, "cityname"));
         poiItemDetail.setAdName(b(jSONObject, "adname"));
         poiItemDetail.setCityCode(b(jSONObject, "citycode"));
         poiItemDetail.setProvinceCode(b(jSONObject, "pcode"));
-        if (jSONObject.has(a.g)) {
-            String string = jSONObject.getString(a.g);
+        if (jSONObject.has(cn.com.smartdevices.bracelet.relation.db.a.g)) {
+            String string = jSONObject.getString(cn.com.smartdevices.bracelet.relation.db.a.g);
             if (!h(string)) {
                 try {
                     poiItemDetail.setDistance(Integer.parseInt(string));
@@ -482,7 +481,7 @@ public class m {
             }
         }
         poiItemDetail.setTel(b(jSONObject, "tel"));
-        poiItemDetail.setTypeDes(b(jSONObject, SocialConstants.PARAM_TYPE));
+        poiItemDetail.setTypeDes(b(jSONObject, a.h));
         poiItemDetail.setEnter(c(jSONObject, "entr_location"));
         poiItemDetail.setExit(c(jSONObject, "exit_location"));
         poiItemDetail.setWebsite(b(jSONObject, "website"));
@@ -525,7 +524,7 @@ public class m {
                 for (int i = 0; i < jSONArray.length(); i++) {
                     WalkPath walkPath = new WalkPath();
                     jSONObject2 = jSONArray.getJSONObject(i);
-                    walkPath.setDistance(j(b(jSONObject2, a.g)));
+                    walkPath.setDistance(j(b(jSONObject2, cn.com.smartdevices.bracelet.relation.db.a.g)));
                     walkPath.setDuration(k(b(jSONObject2, "duration")));
                     if (jSONObject2.has("steps")) {
                         JSONArray jSONArray2 = jSONObject2.getJSONArray("steps");
@@ -536,7 +535,7 @@ public class m {
                             walkStep.setInstruction(b(jSONObject3, "instruction"));
                             walkStep.setOrientation(b(jSONObject3, "orientation"));
                             walkStep.setRoad(b(jSONObject3, "road"));
-                            walkStep.setDistance(j(b(jSONObject3, a.g)));
+                            walkStep.setDistance(j(b(jSONObject3, cn.com.smartdevices.bracelet.relation.db.a.g)));
                             walkStep.setDuration(j(b(jSONObject3, "duration")));
                             walkStep.setPolyline(d(jSONObject3, "polyline"));
                             walkStep.setAction(b(jSONObject3, AuthActivity.ACTION_KEY));
@@ -573,7 +572,7 @@ public class m {
         dining.setEnvironmentRating(b(jSONObject, "environment_rating"));
         dining.setServiceRating(b(jSONObject, "service_rating"));
         dining.setCost(b(jSONObject, "cost"));
-        dining.setRecommend(b(jSONObject, "recommend"));
+        dining.setRecommend(b(jSONObject, a.B));
         dining.setAtmosphere(b(jSONObject, "atmosphere"));
         dining.setOrderingWapUrl(b(jSONObject, "ordering_wap_url"));
         dining.setOrderingWebUrl(b(jSONObject, "ordering_web_url"));
@@ -615,7 +614,7 @@ public class m {
 
     public static void e(PoiItemDetail poiItemDetail, JSONObject jSONObject, JSONObject jSONObject2) {
         if (jSONObject != null) {
-            String b = b(jSONObject, SocialConstants.PARAM_TYPE);
+            String b = b(jSONObject, a.h);
             if (b.equalsIgnoreCase("hotel")) {
                 c(poiItemDetail, jSONObject, jSONObject2);
             }
@@ -658,7 +657,7 @@ public class m {
     public static BusStationItem g(JSONObject jSONObject) {
         BusStationItem busStationItem = new BusStationItem();
         busStationItem.setBusStationId(b(jSONObject, SyncShoesDataService.d));
-        busStationItem.setLatLonPoint(c(jSONObject, LocationManagerProxy.KEY_LOCATION_CHANGED));
+        busStationItem.setLatLonPoint(c(jSONObject, a.l));
         busStationItem.setBusStationName(b(jSONObject, "name"));
         return busStationItem;
     }
@@ -670,7 +669,7 @@ public class m {
     public static BusLineItem h(JSONObject jSONObject) {
         BusLineItem busLineItem = new BusLineItem();
         busLineItem.setBusLineId(b(jSONObject, SyncShoesDataService.d));
-        busLineItem.setBusLineType(b(jSONObject, SocialConstants.PARAM_TYPE));
+        busLineItem.setBusLineType(b(jSONObject, a.h));
         busLineItem.setBusLineName(b(jSONObject, "name"));
         busLineItem.setDirectionsCoordinates(d(jSONObject, "polyline"));
         busLineItem.setCityCode(b(jSONObject, "citycode"));
@@ -718,8 +717,8 @@ public class m {
         BusLineItem h = h(jSONObject);
         h.setFirstBusTime(e.d(b(jSONObject, "start_time")));
         h.setLastBusTime(e.d(b(jSONObject, "end_time")));
-        h.setBusCompany(b(jSONObject, "company"));
-        h.setDistance(j(b(jSONObject, a.g)));
+        h.setBusCompany(b(jSONObject, a.o));
+        h.setDistance(j(b(jSONObject, cn.com.smartdevices.bracelet.relation.db.a.g)));
         h.setBasicPrice(j(b(jSONObject, "basic_price")));
         h.setTotalPrice(j(b(jSONObject, "total_price")));
         h.setBounds(d(jSONObject, "bounds"));
@@ -800,7 +799,7 @@ public class m {
             geocodeAddress.setNeighborhood(b(jSONObject2.getJSONObject("neighborhood"), "name"));
             geocodeAddress.setBuilding(b(jSONObject2.getJSONObject("building"), "name"));
             geocodeAddress.setAdcode(b(jSONObject2, "adcode"));
-            geocodeAddress.setLatLonPoint(c(jSONObject2, LocationManagerProxy.KEY_LOCATION_CHANGED));
+            geocodeAddress.setLatLonPoint(c(jSONObject2, a.l));
             geocodeAddress.setLevel(b(jSONObject2, "level"));
             arrayList.add(geocodeAddress);
         }
@@ -851,7 +850,7 @@ public class m {
         RouteBusWalkItem routeBusWalkItem = new RouteBusWalkItem();
         routeBusWalkItem.setOrigin(c(jSONObject, "origin"));
         routeBusWalkItem.setDestination(c(jSONObject, "destination"));
-        routeBusWalkItem.setDistance(j(b(jSONObject, a.g)));
+        routeBusWalkItem.setDistance(j(b(jSONObject, cn.com.smartdevices.bracelet.relation.db.a.g)));
         routeBusWalkItem.setDuration(k(b(jSONObject, "duration")));
         if (!jSONObject.has("steps")) {
             return routeBusWalkItem;
@@ -880,7 +879,7 @@ public class m {
     public static Doorway s(JSONObject jSONObject) {
         Doorway doorway = new Doorway();
         doorway.setName(b(jSONObject, "name"));
-        doorway.setLatLonPoint(c(jSONObject, LocationManagerProxy.KEY_LOCATION_CHANGED));
+        doorway.setLatLonPoint(c(jSONObject, a.l));
         return doorway;
     }
 
@@ -889,7 +888,7 @@ public class m {
         walkStep.setInstruction(b(jSONObject, "instruction"));
         walkStep.setOrientation(b(jSONObject, "orientation"));
         walkStep.setRoad(b(jSONObject, "road"));
-        walkStep.setDistance(j(b(jSONObject, a.g)));
+        walkStep.setDistance(j(b(jSONObject, cn.com.smartdevices.bracelet.relation.db.a.g)));
         walkStep.setDuration(j(b(jSONObject, "duration")));
         walkStep.setPolyline(d(jSONObject, "polyline"));
         walkStep.setAction(b(jSONObject, AuthActivity.ACTION_KEY));
@@ -907,8 +906,8 @@ public class m {
         }
         routeBusLineItem.setBusLineName(b(jSONObject, "name"));
         routeBusLineItem.setBusLineId(b(jSONObject, SyncShoesDataService.d));
-        routeBusLineItem.setBusLineType(b(jSONObject, SocialConstants.PARAM_TYPE));
-        routeBusLineItem.setDistance(j(b(jSONObject, a.g)));
+        routeBusLineItem.setBusLineType(b(jSONObject, a.h));
+        routeBusLineItem.setDistance(j(b(jSONObject, cn.com.smartdevices.bracelet.relation.db.a.g)));
         routeBusLineItem.setDuration(j(b(jSONObject, "duration")));
         routeBusLineItem.setPolyline(d(jSONObject, "polyline"));
         routeBusLineItem.setFirstBusTime(e.d(b(jSONObject, "start_time")));
@@ -934,7 +933,7 @@ public class m {
         BusStationItem busStationItem = new BusStationItem();
         busStationItem.setBusStationName(b(jSONObject, "name"));
         busStationItem.setBusStationId(b(jSONObject, SyncShoesDataService.d));
-        busStationItem.setLatLonPoint(c(jSONObject, LocationManagerProxy.KEY_LOCATION_CHANGED));
+        busStationItem.setLatLonPoint(c(jSONObject, a.l));
         return busStationItem;
     }
 }

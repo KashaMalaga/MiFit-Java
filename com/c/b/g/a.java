@@ -194,50 +194,50 @@ public final class a extends q {
     }
 
     void a(int i) {
+        int i2;
         int[] iArr = new int[]{0, 0, 0, 0};
         int[] iArr2 = new int[]{0, 0, 0, 0};
         int length = this.h.length() - 1;
-        int i2 = 0;
-        int i3 = i;
+        int i3 = 0;
+        int i4 = i;
         while (true) {
-            int i4;
-            int i5 = b[this.h.charAt(i2)];
-            for (i4 = 6; i4 >= 0; i4--) {
-                int i6 = (i4 & 1) + ((i5 & 1) * 2);
-                iArr[i6] = iArr[i6] + this.i[i3 + i4];
+            int i5 = b[this.h.charAt(i3)];
+            for (i2 = 6; i2 >= 0; i2--) {
+                int i6 = (i2 & 1) + ((i5 & 1) * 2);
+                iArr[i6] = iArr[i6] + this.i[i4 + i2];
                 iArr2[i6] = iArr2[i6] + 1;
                 i5 >>= 1;
             }
-            if (i2 >= length) {
+            if (i3 >= length) {
                 break;
             }
-            i3 += 8;
-            i2++;
+            i4 += 8;
+            i3++;
         }
         float[] fArr = new float[4];
         float[] fArr2 = new float[4];
-        for (i2 = 0; i2 < 2; i2++) {
-            fArr2[i2] = 0.0f;
-            fArr2[i2 + 2] = ((((float) iArr[i2]) / ((float) iArr2[i2])) + (((float) iArr[i2 + 2]) / ((float) iArr2[i2 + 2]))) / c;
-            fArr[i2] = fArr2[i2 + 2];
-            fArr[i2 + 2] = ((((float) iArr[i2 + 2]) * c) + d) / ((float) iArr2[i2 + 2]);
+        for (i3 = 0; i3 < 2; i3++) {
+            fArr2[i3] = 0.0f;
+            fArr2[i3 + 2] = ((((float) iArr[i3]) / ((float) iArr2[i3])) + (((float) iArr[i3 + 2]) / ((float) iArr2[i3 + 2]))) / c;
+            fArr[i3] = fArr2[i3 + 2];
+            fArr[i3 + 2] = ((((float) iArr[i3 + 2]) * c) + d) / ((float) iArr2[i3 + 2]);
         }
-        i2 = 0;
+        i3 = 0;
         loop3:
         while (true) {
-            i4 = b[this.h.charAt(i2)];
-            i3 = 6;
-            while (i3 >= 0) {
-                int i7 = (i3 & 1) + ((i4 & 1) * 2);
-                int i8 = this.i[i + i3];
+            i2 = b[this.h.charAt(i3)];
+            i4 = 6;
+            while (i4 >= 0) {
+                int i7 = (i4 & 1) + ((i2 & 1) * 2);
+                int i8 = this.i[i + i4];
                 if (((float) i8) >= fArr2[i7] && ((float) i8) <= fArr[i7]) {
-                    i4 >>= 1;
-                    i3--;
+                    i2 >>= 1;
+                    i4--;
                 }
             }
-            if (i2 < length) {
+            if (i3 < length) {
                 i += 8;
-                i2++;
+                i3++;
             } else {
                 return;
             }

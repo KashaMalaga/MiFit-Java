@@ -5,7 +5,7 @@ import cn.com.smartdevices.bracelet.shoes.sync.b.g;
 import com.amap.api.location.LocationManagerProxy;
 import com.sina.weibo.sdk.component.WidgetRequestParam;
 import com.xiaomi.channel.b.v;
-import com.xiaomi.e.a;
+import com.xiaomi.channel.relationservice.data.a;
 import com.xiaomi.market.sdk.o;
 import java.io.Serializable;
 import java.util.Collections;
@@ -28,21 +28,21 @@ public class c implements Serializable, Cloneable, b<c, d> {
     private static final org.apache.thrift.protocol.c e = new org.apache.thrift.protocol.c(o.x, C0374dh.i, (short) 3);
     private static final org.apache.thrift.protocol.c f = new org.apache.thrift.protocol.c(LocationManagerProxy.NETWORK_PROVIDER, C0374dh.i, (short) 4);
     private static final org.apache.thrift.protocol.c g = new org.apache.thrift.protocol.c("client_ip", C0374dh.i, (short) 5);
-    private static final org.apache.thrift.protocol.c h = new org.apache.thrift.protocol.c(LocationManagerProxy.KEY_LOCATION_CHANGED, C0374dh.j, (short) 6);
+    private static final org.apache.thrift.protocol.c h = new org.apache.thrift.protocol.c(a.l, C0374dh.j, (short) 6);
     private static final org.apache.thrift.protocol.c i = new org.apache.thrift.protocol.c("host_info", C0374dh.l, (short) 7);
     private static final org.apache.thrift.protocol.c j = new org.apache.thrift.protocol.c("version_type", C0374dh.i, (short) 8);
     private static final org.apache.thrift.protocol.c k = new org.apache.thrift.protocol.c(v.v, C0374dh.i, (short) 9);
     private static final org.apache.thrift.protocol.c l = new org.apache.thrift.protocol.c("app_version", C0374dh.i, (short) 10);
-    private String m = a.f;
+    private String m = com.xiaomi.e.a.f;
     private String n;
     private String o;
     private String p;
     private String q;
     private i r;
     private Set<a> s;
-    private String t = a.f;
-    private String u = a.f;
-    private String v = a.f;
+    private String t = com.xiaomi.e.a.f;
+    private String u = com.xiaomi.e.a.f;
+    private String v = com.xiaomi.e.a.f;
 
     static {
         Map enumMap = new EnumMap(d.class);
@@ -51,7 +51,7 @@ public class c implements Serializable, Cloneable, b<c, d> {
         enumMap.put(d.VERSION, new org.apache.thrift.meta_data.b(o.x, (byte) 1, new org.apache.thrift.meta_data.c(C0374dh.i)));
         enumMap.put(d.NETWORK, new org.apache.thrift.meta_data.b(LocationManagerProxy.NETWORK_PROVIDER, (byte) 1, new org.apache.thrift.meta_data.c(C0374dh.i)));
         enumMap.put(d.CLIENT_IP, new org.apache.thrift.meta_data.b("client_ip", (byte) 2, new org.apache.thrift.meta_data.c(C0374dh.i)));
-        enumMap.put(d.LOCATION, new org.apache.thrift.meta_data.b(LocationManagerProxy.KEY_LOCATION_CHANGED, (byte) 2, new org.apache.thrift.meta_data.g(C0374dh.j, i.class)));
+        enumMap.put(d.LOCATION, new org.apache.thrift.meta_data.b(a.l, (byte) 2, new org.apache.thrift.meta_data.g(C0374dh.j, i.class)));
         enumMap.put(d.HOST_INFO, new org.apache.thrift.meta_data.b("host_info", (byte) 2, new f(C0374dh.l, new org.apache.thrift.meta_data.g(C0374dh.j, a.class))));
         enumMap.put(d.VERSION_TYPE, new org.apache.thrift.meta_data.b("version_type", (byte) 2, new org.apache.thrift.meta_data.c(C0374dh.i)));
         enumMap.put(d.APP_NAME, new org.apache.thrift.meta_data.b(v.v, (byte) 2, new org.apache.thrift.meta_data.c(C0374dh.i)));

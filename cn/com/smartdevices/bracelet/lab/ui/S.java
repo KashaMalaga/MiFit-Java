@@ -8,8 +8,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
+import com.xiaomi.hm.health.R;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -62,10 +61,10 @@ final class S extends BaseAdapter {
         int i2;
         if (view == null) {
             r = new R(this.a);
-            view = this.c.inflate(n.activity_lab_factory_more_sport_favorite_item, null);
-            r.b = (ImageView) view.findViewById(l.sport_item_img);
-            r.a = (TextView) view.findViewById(l.sport_name);
-            r.c = (ImageView) view.findViewById(l.sport_done_flag);
+            view = this.c.inflate(R.layout.activity_lab_factory_more_sport_favorite_item, null);
+            r.b = (ImageView) view.findViewById(R.id.sport_item_img);
+            r.a = (TextView) view.findViewById(R.id.sport_name);
+            r.c = (ImageView) view.findViewById(R.id.sport_done_flag);
             view.setTag(r);
         } else {
             r = (R) view.getTag();

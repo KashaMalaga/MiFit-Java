@@ -52,8 +52,7 @@ import com.huami.android.widget.share.q;
 import com.sina.weibo.sdk.constant.WBPageConstants.ParamKey;
 import com.tencent.connect.common.Constants;
 import com.tencent.open.SocialConstants;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 import de.greenrobot.event.EventBus;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -150,7 +149,7 @@ public class WebActivity extends SystemBarTintActivity implements OnClickListene
 
         public void onReceivedError(WebView webView, int i, String str, String str2) {
             this.mErrorCode = i;
-            WebActivity.this.toast(WebActivity.this.getString(r.no_network_connection));
+            WebActivity.this.toast(WebActivity.this.getString(R.string.no_network_connection));
             super.onReceivedError(webView, i, str, str2);
         }
 
@@ -202,7 +201,7 @@ public class WebActivity extends SystemBarTintActivity implements OnClickListene
                     if (WebActivity.this.mTaskIsRunning) {
                         return true;
                     }
-                    Utils.a(WebActivity.this, (int) r.state_authorization_doing);
+                    Utils.a(WebActivity.this, (int) R.string.state_authorization_doing);
                     WebActivity.this.mTaskIsRunning = true;
                     WebActivity.this.mDataManager.bind(WebActivity.this.mPartner.id);
                     C0401a.a(WebActivity.this, C0401a.bg, WebActivity.this.mPartner.id);
@@ -456,24 +455,24 @@ public class WebActivity extends SystemBarTintActivity implements OnClickListene
 
     public void onClick(View view) {
         switch (view.getId()) {
-            case com.xiaomi.hm.health.l.back_btn /*2131296542*/:
+            case R.id.back_btn:
                 finish();
                 return;
-            case com.xiaomi.hm.health.l.share_button /*2131296602*/:
+            case R.id.share_button:
                 share();
                 return;
-            case com.xiaomi.hm.health.l.unbind_partner /*2131296603*/:
+            case R.id.unbind_partner:
                 if (!this.mTaskIsRunning) {
                     this.mTaskIsRunning = true;
-                    Utils.a((Activity) this, (int) r.state_deauthorization_doing);
+                    Utils.a((Activity) this, (int) R.string.state_deauthorization_doing);
                     this.mDataManager.unbind(this.mPartner.id);
                     C0401a.a((Context) this, C0401a.bh, this.mPartner.id);
                     return;
                 }
                 return;
-            case com.xiaomi.hm.health.l.error_page /*2131296605*/:
-                if (this.mErrorView.findViewById(com.xiaomi.hm.health.l.label).getVisibility() == 0) {
-                    this.mErrorView.findViewById(com.xiaomi.hm.health.l.progress).setVisibility(0);
+            case R.id.error_page:
+                if (this.mErrorView.findViewById(R.id.label).getVisibility() == 0) {
+                    this.mErrorView.findViewById(R.id.progress).setVisibility(0);
                     this.mErrorView.setOnClickListener(null);
                     this.mWebContainer.reload();
                     return;
@@ -486,16 +485,16 @@ public class WebActivity extends SystemBarTintActivity implements OnClickListene
 
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView((int) n.activity_open);
-        this.mLoadProgress = (ProgressBar) findViewById(com.xiaomi.hm.health.l.load_progress);
-        this.mWebContainer = (WebView) findViewById(com.xiaomi.hm.health.l.open_web_container);
-        this.mErrorView = findViewById(com.xiaomi.hm.health.l.error_page);
-        this.mUnBindButton = (ImageButton) findViewById(com.xiaomi.hm.health.l.unbind_partner);
-        ImageButton imageButton = (ImageButton) findViewById(com.xiaomi.hm.health.l.share_button);
-        this.mTitleBar = findViewById(com.xiaomi.hm.health.l.title_bar);
-        this.mProgressBar = findViewById(com.xiaomi.hm.health.l.progress);
-        this.mErrorLabel = findViewById(com.xiaomi.hm.health.l.label);
-        TextView textView = (TextView) findViewById(com.xiaomi.hm.health.l.back_btn);
+        setContentView((int) R.layout.activity_open);
+        this.mLoadProgress = (ProgressBar) findViewById(R.id.load_progress);
+        this.mWebContainer = (WebView) findViewById(R.id.open_web_container);
+        this.mErrorView = findViewById(R.id.error_page);
+        this.mUnBindButton = (ImageButton) findViewById(R.id.unbind_partner);
+        ImageButton imageButton = (ImageButton) findViewById(R.id.share_button);
+        this.mTitleBar = findViewById(R.id.title_bar);
+        this.mProgressBar = findViewById(R.id.progress);
+        this.mErrorLabel = findViewById(R.id.label);
+        TextView textView = (TextView) findViewById(R.id.back_btn);
         this.mInvoker = new JavaScriptInvoker(this.mWebContainer);
         this.mPartner = PartnerDataManager.buildService(getIntent());
         buildShareData(this.mPartner);
@@ -517,7 +516,7 @@ public class WebActivity extends SystemBarTintActivity implements OnClickListene
             }
             this.config = b.h();
         } catch (Exception e) {
-            com.huami.android.view.b.a((Context) this, (int) r.toast_url_parse_error, 0).show();
+            com.huami.android.view.b.a((Context) this, (int) R.string.toast_url_parse_error, 0).show();
         }
     }
 
@@ -536,9 +535,9 @@ public class WebActivity extends SystemBarTintActivity implements OnClickListene
             this.mPartner.url = eventServiceStateChanged.url;
             this.mWebContainer.loadUrl(eventServiceStateChanged.url);
             if (eventServiceStateChanged.success) {
-                toast(getString(r.state_deauthorization_success));
+                toast(getString(R.string.state_deauthorization_success));
             } else {
-                toast(getString(r.state_deauthorization_error));
+                toast(getString(R.string.state_deauthorization_error));
             }
         } else if (eventServiceStateChanged.action == 0) {
             this.mPartner.authorizeStatus = 1;
@@ -546,9 +545,9 @@ public class WebActivity extends SystemBarTintActivity implements OnClickListene
             this.mWebContainer.loadUrl(eventServiceStateChanged.url);
             this.mPartner.url = eventServiceStateChanged.url;
             if (eventServiceStateChanged.success) {
-                toast(getString(r.state_authorization_success));
+                toast(getString(R.string.state_authorization_success));
             } else {
-                toast(getString(r.state_authorization_error));
+                toast(getString(R.string.state_authorization_error));
             }
         }
     }

@@ -3,7 +3,7 @@ package cn.com.smartdevices.bracelet.weibo;
 import cn.com.smartdevices.bracelet.C0596r;
 import cn.com.smartdevices.bracelet.model.ResponseEntity;
 import com.xiaomi.e.a;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 
 class h implements Runnable {
     final /* synthetic */ BindHealthActivity a;
@@ -21,7 +21,7 @@ class h implements Runnable {
             C0596r.e("BindWeiboHealthActivity", "Unbind OP ERROR");
             String str = a.msg;
             if (str == null || a.f.equals(str)) {
-                this.a.c((int) r.weibosdk_toast_unbind_failed);
+                this.a.c((int) R.string.weibosdk_toast_unbind_failed);
             } else {
                 this.a.a(str);
             }

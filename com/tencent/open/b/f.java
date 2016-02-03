@@ -8,8 +8,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.support.v4.view.a.C0113o;
 import android.text.TextUtils;
 import cn.com.smartdevices.bracelet.d.C0430g;
-import com.tencent.open.SocialConstants;
 import com.tencent.open.utils.Global;
+import com.xiaomi.channel.relationservice.data.a;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -45,10 +45,11 @@ public class f extends SQLiteOpenHelper {
         List<Serializable> list;
         Cursor query;
         ObjectInputStream objectInputStream;
+        Object obj;
+        ObjectInputStream objectInputStream2;
         Throwable th;
         Cursor cursor;
         InputStream byteArrayInputStream;
-        ObjectInputStream objectInputStream2;
         List<Serializable> synchronizedList = Collections.synchronizedList(new ArrayList());
         if (TextUtils.isEmpty(str)) {
             list = synchronizedList;
@@ -65,15 +66,14 @@ public class f extends SQLiteOpenHelper {
                             if (query.getCount() > 0) {
                                 query.moveToFirst();
                                 do {
-                                    Object obj;
                                     byteArrayInputStream = new ByteArrayInputStream(query.getBlob(query.getColumnIndex("blob")));
                                     try {
-                                        objectInputStream2 = new ObjectInputStream(byteArrayInputStream);
+                                        objectInputStream = new ObjectInputStream(byteArrayInputStream);
                                         try {
-                                            obj = (Serializable) objectInputStream2.readObject();
-                                            if (objectInputStream2 != null) {
+                                            obj = (Serializable) objectInputStream.readObject();
+                                            if (objectInputStream != null) {
                                                 try {
-                                                    objectInputStream2.close();
+                                                    objectInputStream.close();
                                                 } catch (IOException e) {
                                                 }
                                             }
@@ -82,10 +82,10 @@ public class f extends SQLiteOpenHelper {
                                             } catch (IOException e2) {
                                             }
                                         } catch (Exception e3) {
-                                            objectInputStream = objectInputStream2;
-                                            if (objectInputStream != null) {
+                                            objectInputStream2 = objectInputStream;
+                                            if (objectInputStream2 != null) {
                                                 try {
-                                                    objectInputStream.close();
+                                                    objectInputStream2.close();
                                                 } catch (IOException e4) {
                                                 }
                                             }
@@ -119,9 +119,9 @@ public class f extends SQLiteOpenHelper {
                                             th = th2;
                                         }
                                     } catch (Exception e7) {
-                                        objectInputStream = null;
-                                        if (objectInputStream != null) {
-                                            objectInputStream.close();
+                                        objectInputStream2 = null;
+                                        if (objectInputStream2 != null) {
+                                            objectInputStream2.close();
                                         }
                                         byteArrayInputStream.close();
                                         obj = null;
@@ -143,7 +143,7 @@ public class f extends SQLiteOpenHelper {
                                         }
                                     } catch (Throwable th3) {
                                         th = th3;
-                                        objectInputStream2 = null;
+                                        objectInputStream = null;
                                     }
                                     if (obj != null) {
                                         synchronizedList.add(obj);
@@ -221,9 +221,9 @@ public class f extends SQLiteOpenHelper {
         }
         return list;
         throw th;
-        if (objectInputStream2 != null) {
+        if (objectInputStream != null) {
             try {
-                objectInputStream2.close();
+                objectInputStream.close();
             } catch (IOException e11) {
             }
         }
@@ -237,6 +237,7 @@ public class f extends SQLiteOpenHelper {
     }
 
     public synchronized void a(String str, List<Serializable> list) {
+        SQLiteDatabase writableDatabase;
         OutputStream byteArrayOutputStream;
         ObjectOutputStream objectOutputStream;
         Throwable th;
@@ -247,14 +248,14 @@ public class f extends SQLiteOpenHelper {
                 int i = size <= 20 ? size : 20;
                 if (!TextUtils.isEmpty(str)) {
                     b(str);
-                    SQLiteDatabase writableDatabase = getWritableDatabase();
+                    writableDatabase = getWritableDatabase();
                     if (writableDatabase != null) {
                         writableDatabase.beginTransaction();
                         ContentValues contentValues = new ContentValues();
                         for (int i2 = 0; i2 < i; i2++) {
                             Serializable serializable = (Serializable) list.get(i2);
                             if (serializable != null) {
-                                contentValues.put(SocialConstants.PARAM_TYPE, str);
+                                contentValues.put(a.h, str);
                                 byteArrayOutputStream = new ByteArrayOutputStream(C0113o.j);
                                 try {
                                     ObjectOutputStream objectOutputStream3 = new ObjectOutputStream(byteArrayOutputStream);

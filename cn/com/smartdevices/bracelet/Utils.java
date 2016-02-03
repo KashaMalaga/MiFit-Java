@@ -77,6 +77,7 @@ import cn.com.smartdevices.bracelet.weight.goal.WeightGoal;
 import com.amap.api.location.LocationManagerProxy;
 import com.amap.api.maps.model.GroundOverlayOptions;
 import com.c.a.C0993k;
+import com.c.a.r;
 import com.d.a.a.C1012a;
 import com.huami.android.view.c;
 import com.huami.android.widget.share.m;
@@ -84,6 +85,7 @@ import com.sina.weibo.sdk.component.WidgetRequestParam;
 import com.tencent.connect.common.Constants;
 import com.tencent.mm.sdk.constants.ConstantsAPI.WXApp;
 import com.tencent.mm.sdk.openapi.WXAPIFactory;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.bt.model.AlarmClockItem;
 import com.xiaomi.hm.health.bt.model.BraceletBtInfo;
 import com.xiaomi.hm.health.bt.model.UserInfo;
@@ -95,8 +97,6 @@ import com.xiaomi.hm.health.dataprocess.SleepInfo;
 import com.xiaomi.hm.health.dataprocess.SportData;
 import com.xiaomi.hm.health.dataprocess.SportDay;
 import com.xiaomi.hm.health.dataprocess.StepsInfo;
-import com.xiaomi.hm.health.k;
-import com.xiaomi.hm.health.r;
 import com.xiaomi.market.sdk.C1123b;
 import com.xiaomi.mipush.sdk.f;
 import de.greenrobot.event.EventBus;
@@ -295,22 +295,22 @@ public class Utils {
             a = ChartData.a(context, i2 - i3);
             str = a[0] + a[1];
             String[] a2 = ChartData.a(context, i3);
-            str = context.getString(r.share_step_description_run, new Object[]{str, a2[0] + a2[1], Integer.valueOf(i4)});
+            str = context.getString(R.string.share_step_description_run, new Object[]{str, a2[0] + a2[1], Integer.valueOf(i4)});
         } else {
-            str = context.getString(r.share_step_description, new Object[]{str, Integer.valueOf(i4)});
+            str = context.getString(R.string.share_step_description, new Object[]{str, Integer.valueOf(i4)});
         }
         if (daySportGoalSteps > i) {
             shareData.setType(1);
-            shareData.title = context.getString(r.share_step_goal_failed_title);
-            str = str + context.getString(r.share_goal_tips_fail);
+            shareData.title = context.getString(R.string.share_step_goal_failed_title);
+            str = str + context.getString(R.string.share_goal_tips_fail);
         } else {
             shareData.setType(0);
-            shareData.title = context.getString(r.share_step_goal_succ_title);
-            str = str + context.getString(r.share_goal_tips_succ);
+            shareData.title = context.getString(R.string.share_step_goal_succ_title);
+            str = str + context.getString(R.string.share_goal_tips_succ);
         }
         shareData.content = com.xiaomi.e.a.f + i;
         shareData.description = str;
-        shareData.contentUnit = context.getString(r.unit_step);
+        shareData.contentUnit = context.getString(R.string.unit_step);
         shareData.mExtraData = a(i, sportDay);
         return shareData;
     }
@@ -334,26 +334,26 @@ public class Utils {
         C0596r.e(l, "get ranking percent : " + d);
         Resources resources = context.getResources();
         if (d == 0.0d) {
-            return Html.fromHtml(resources.getString(r.sport_ranking_desc_poor, new Object[]{com.xiaomi.e.a.f})).toString();
+            return Html.fromHtml(resources.getString(R.string.sport_ranking_desc_poor, new Object[]{com.xiaomi.e.a.f})).toString();
         } else if (d >= 99.99d) {
-            return Html.fromHtml(resources.getString(r.sport_ranking_desc_great)).toString();
+            return Html.fromHtml(resources.getString(R.string.sport_ranking_desc_great)).toString();
         } else {
             String str = com.xiaomi.e.a.f;
             str = d <= 99.0d ? h.b(d, 1) : h.b(d, 2);
-            return resources.getString(r.share_step_ranking, new Object[]{str + resources.getString(r.percent_mark)});
+            return resources.getString(R.string.share_step_ranking, new Object[]{str + resources.getString(R.string.percent_mark)});
         }
     }
 
     public static String a(Context context, int i) {
         if (!a(Keeper.readSyncTime(C0591m.a().r()))) {
-            return context.getString(r.dynamic_pull_not_sync_today);
+            return context.getString(R.string.dynamic_pull_not_sync_today);
         }
         return context.getString(i, new Object[]{cn.com.smartdevices.bracelet.f.f.a(new Date(Keeper.readSyncTime(C0591m.a().r())))});
     }
 
     public static String a(Context context, int i, int i2) {
         if (!a(Keeper.readSyncTime(i2))) {
-            return context.getString(r.dynamic_pull_not_sync_today);
+            return context.getString(R.string.dynamic_pull_not_sync_today);
         }
         return context.getString(i, new Object[]{cn.com.smartdevices.bracelet.f.f.a(new Date(Keeper.readSyncTime(i2)))});
     }
@@ -368,9 +368,9 @@ public class Utils {
             a = ChartData.a(context, i5);
             str2 = a[0] + a[1];
             String[] a2 = ChartData.a(context, i2 - i5);
-            return context.getString(r.share_step_description_monthly_run, new Object[]{a2[0] + a2[1], str2, e, b, str, i4 + com.xiaomi.e.a.f});
+            return context.getString(R.string.share_step_description_monthly_run, new Object[]{a2[0] + a2[1], str2, e, b, str, i4 + com.xiaomi.e.a.f});
         }
-        return context.getString(r.share_step_description_monthly, new Object[]{str2, e, Integer.valueOf(i3), b, str, i4 + com.xiaomi.e.a.f});
+        return context.getString(R.string.share_step_description_monthly, new Object[]{str2, e, Integer.valueOf(i3), b, str, i4 + com.xiaomi.e.a.f});
     }
 
     public static String a(Context context, int i, int i2, String str, int i3, int i4) {
@@ -382,13 +382,13 @@ public class Utils {
             if (!TextUtils.isEmpty(e)) {
                 e = ", " + e;
             }
-            return context.getString(r.share_step_description_weekly, new Object[]{str2, e, Integer.valueOf(i2), str, i3 + com.xiaomi.e.a.f});
+            return context.getString(R.string.share_step_description_weekly, new Object[]{str2, e, Integer.valueOf(i2), str, i3 + com.xiaomi.e.a.f});
         }
         String[] a2 = ChartData.a(context, i - i4);
         str2 = a2[0] + a2[1];
         String[] a3 = ChartData.a(context, i4);
         str3 = a3[0] + a3[1];
-        return context.getString(r.share_step_description_weekly_run, new Object[]{str2, str3, e, str, i3 + com.xiaomi.e.a.f});
+        return context.getString(R.string.share_step_description_weekly_run, new Object[]{str2, str3, e, str, i3 + com.xiaomi.e.a.f});
     }
 
     public static String a(Context context, ReportData reportData) {
@@ -398,7 +398,7 @@ public class Utils {
         int runDistance = reportData.getRunDistance();
         String e = e(context, distance);
         String str = (steps / continueDays) + com.xiaomi.e.a.f;
-        String[] stringArray = context.getResources().getStringArray(com.xiaomi.hm.health.f.fortune);
+        String[] stringArray = context.getResources().getStringArray(R.array.fortune);
         String str2 = com.xiaomi.e.a.f;
         int length = stringArray.length;
         if (length >= 0) {
@@ -407,28 +407,28 @@ public class Utils {
         stringArray = ChartData.a(context, distance);
         String str3 = stringArray[0] + stringArray[1];
         if (runDistance <= 0) {
-            return context.getString(r.share_continue_goal_format, new Object[]{str3, str, e, str2});
+            return context.getString(R.string.share_continue_goal_format, new Object[]{str3, str, e, str2});
         }
         String[] a = ChartData.a(context, runDistance);
         str = a[0] + a[1];
         String[] a2 = ChartData.a(context, distance - runDistance);
-        return context.getString(r.share_continue_goal_format_run, new Object[]{a2[0] + a2[1], str, e, str2});
+        return context.getString(R.string.share_continue_goal_format_run, new Object[]{a2[0] + a2[1], str, e, str2});
     }
 
     public static String a(Context context, AlarmClockItem alarmClockItem) {
         StringBuilder stringBuilder = new StringBuilder();
         int days = alarmClockItem.getDays();
         if (days == AlarmClockItem.ALARM_ONCE) {
-            return context.getString(r.alarm_once);
+            return context.getString(R.string.alarm_once);
         }
         if (days == AlarmClockItem.ALARM_EVERY_DAY) {
-            return context.getString(r.everyday);
+            return context.getString(R.string.everyday);
         }
         if (days == AlarmClockItem.ALARM_MON_2_FRI) {
-            return context.getString(r.mon_fri);
+            return context.getString(R.string.mon_fri);
         }
         if (days == AlarmClockItem.ALARM_MON_2_SAT) {
-            return context.getString(r.mon_sat);
+            return context.getString(R.string.mon_sat);
         }
         int i = 0;
         for (int i2 = days; i2 > 0; i2 >>= 1) {
@@ -436,8 +436,8 @@ public class Utils {
                 i++;
             }
         }
-        String[] stringArray = context.getResources().getStringArray(com.xiaomi.hm.health.f.weeks_short);
-        String[] stringArray2 = context.getResources().getStringArray(com.xiaomi.hm.health.f.weeks);
+        String[] stringArray = context.getResources().getStringArray(R.array.weeks_short);
+        String[] stringArray2 = context.getResources().getStringArray(R.array.weeks);
         if (i <= 1) {
             stringArray = stringArray2;
         }
@@ -452,7 +452,7 @@ public class Utils {
             }
         }
         if (stringBuilder.length() > 0 && i > 1) {
-            stringBuilder.insert(0, context.getResources().getString(r.week));
+            stringBuilder.insert(0, context.getResources().getString(R.string.week));
         }
         return stringBuilder.toString();
     }
@@ -681,17 +681,17 @@ public class Utils {
                 a = cn.com.smartdevices.bracelet.f.f.a(context, stepsInfo.getStepsTimeCount() + stepsInfo.getRunTimeCount());
                 str = com.xiaomi.e.a.f;
                 if (stepsInfo.getRunTimeCount() > 0) {
-                    str = ", " + context.getString(r.ran) + cn.com.smartdevices.bracelet.f.f.a(context, stepsInfo.getRunTimeCount());
+                    str = ", " + context.getString(R.string.ran) + cn.com.smartdevices.bracelet.f.f.a(context, stepsInfo.getRunTimeCount());
                 }
-                string = context.getString(r.share_goal_tips_fail);
+                string = context.getString(R.string.share_goal_tips_fail);
                 shareData.setType(1);
                 if (stepsInfo.getStepsCount() >= Keeper.readPersonInfo().getDaySportGoalSteps()) {
-                    string2 = context.getString(r.share_goal_tips_succ);
+                    string2 = context.getString(R.string.share_goal_tips_succ);
                     shareData.setType(0);
                 } else {
                     string2 = string;
                 }
-                shareData.description = context.getString(r.main_ui_share_tips, new Object[]{a, str, string2});
+                shareData.description = context.getString(R.string.main_ui_share_tips, new Object[]{a, str, string2});
             } else if (u == 16) {
                 SleepInfo sleepInfo = daySportData.getSleepInfo();
                 if (sleepInfo == null) {
@@ -704,13 +704,13 @@ public class Utils {
                 str = com.xiaomi.e.a.f;
                 int awakeNum = sleepInfo.getAwakeNum();
                 if (awakeNum == 1) {
-                    string2 = context.getString(r.awake_format_1);
+                    string2 = context.getString(R.string.awake_format_1);
                 } else if (awakeNum > 1) {
-                    string2 = context.getString(r.awake_format, new Object[]{Integer.valueOf(sleepInfo.getAwakeNum())});
+                    string2 = context.getString(R.string.awake_format, new Object[]{Integer.valueOf(sleepInfo.getAwakeNum())});
                 } else {
                     string2 = str;
                 }
-                shareData.description = context.getString(r.main_ui_sleep_share_tips, new Object[]{a2, string2, string, a});
+                shareData.description = context.getString(R.string.main_ui_sleep_share_tips, new Object[]{a2, string2, string, a});
             }
         }
     }
@@ -817,16 +817,16 @@ public class Utils {
                     C0596r.e(l, "set background from avatarSource");
                     return;
                 }
-                imageView.setBackgroundResource(k.default_userinfo);
+                imageView.setBackgroundResource(R.drawable.default_userinfo);
                 return;
             } else if (!(userInfo.avatarUrl == null || userInfo.avatarUrl.equals(com.xiaomi.e.a.f))) {
-                imageView.setBackgroundResource(k.default_userinfo);
+                imageView.setBackgroundResource(R.drawable.default_userinfo);
                 C0596r.e(l, "avatar Url =" + userInfo.avatarUrl);
                 C0544h.a().b(userInfo.avatarUrl, imageView);
                 return;
             }
         }
-        imageView.setBackgroundResource(k.default_userinfo);
+        imageView.setBackgroundResource(R.drawable.default_userinfo);
     }
 
     public static void a(String str, int i, Activity activity) {
@@ -899,9 +899,9 @@ public class Utils {
     }
 
     public static boolean a(InputStream inputStream, File file) {
+        FileOutputStream fileOutputStream;
         Exception e;
         Throwable th;
-        FileOutputStream fileOutputStream;
         try {
             fileOutputStream = new FileOutputStream(file);
             try {
@@ -984,7 +984,6 @@ public class Utils {
     }
 
     public static boolean a(String str, Bitmap bitmap, int i) {
-        FileOutputStream fileOutputStream;
         Exception e;
         Throwable th;
         boolean z = false;
@@ -992,6 +991,7 @@ public class Utils {
         if (file.exists()) {
             file.delete();
         }
+        FileOutputStream fileOutputStream;
         try {
             fileOutputStream = new FileOutputStream(file);
             try {
@@ -1209,14 +1209,14 @@ public class Utils {
                     intent.setDataAndType(uriForDownloadedFile, "application/vnd.android.package-archive");
                     intent.setFlags(268435456);
                     activity.startActivity(intent);
-                    com.huami.android.view.b.a((Context) activity, (int) r.apk_download_ok, 1).show();
+                    com.huami.android.view.b.a((Context) activity, (int) R.string.apk_download_ok, 1).show();
                     Keeper.keepDownloadApkId(-1);
                     return;
                 case kankan.wheel.widget.a.bp /*16*/:
                     C0596r.d(l, "STATUS_FAILED");
                     downloadManager.remove(new long[]{Keeper.readDownloadApkId()});
                     Keeper.keepDownloadApkId(-1);
-                    com.huami.android.view.b.a((Context) activity, (int) r.download_failed, 1).show();
+                    com.huami.android.view.b.a((Context) activity, (int) R.string.download_failed, 1).show();
                     return;
                 default:
                     return;
@@ -1311,16 +1311,16 @@ public class Utils {
                     decodeByteArray.recycle();
                     return;
                 }
-                imageView.setBackgroundResource(k.person_avatar_default_blue);
+                imageView.setBackgroundResource(R.drawable.person_avatar_default_blue);
                 return;
             } else if (!(userInfo.avatarUrl == null || userInfo.avatarUrl.equals(com.xiaomi.e.a.f))) {
-                imageView.setBackgroundResource(k.person_avatar_default_blue);
+                imageView.setBackgroundResource(R.drawable.person_avatar_default_blue);
                 C0596r.e(l, "avatar Url =" + userInfo.avatarUrl);
                 C0544h.a().b(userInfo.avatarUrl, imageView);
                 return;
             }
         }
-        imageView.setBackgroundResource(k.person_avatar_default_blue);
+        imageView.setBackgroundResource(R.drawable.person_avatar_default_blue);
     }
 
     private static void b(C1123b c1123b, Activity activity) {
@@ -1350,7 +1350,6 @@ public class Utils {
     }
 
     public static boolean b(String str, Bitmap bitmap) {
-        FileOutputStream fileOutputStream;
         Exception e;
         Throwable th;
         boolean z = false;
@@ -1358,6 +1357,7 @@ public class Utils {
         if (file.exists()) {
             file.delete();
         }
+        FileOutputStream fileOutputStream;
         try {
             fileOutputStream = new FileOutputStream(file);
             try {
@@ -1421,7 +1421,7 @@ public class Utils {
         if (m == null) {
             synchronized (Utils.class) {
                 if (m == null) {
-                    m = new com.c.a.r().i();
+                    m = new r().i();
                 }
             }
         }
@@ -1433,7 +1433,7 @@ public class Utils {
         date.setYear(sportDay.year - 1900);
         date.setMonth(sportDay.mon);
         date.setDate(sportDay.day);
-        return new SimpleDateFormat(BraceletApp.a().getString(r.date_year_month_day)).format(date);
+        return new SimpleDateFormat(BraceletApp.a().getString(R.string.date_year_month_day)).format(date);
     }
 
     public static String c(String str) {
@@ -1503,14 +1503,14 @@ public class Utils {
         int i2 = i / 12;
         int i3 = i - ((i / 12) * 12);
         if (i2 != 0 && i3 != 0) {
-            return context.getString(r.baby_weight_report_monthyear_templates0, new Object[]{i2 + com.xiaomi.e.a.f, i3 + com.xiaomi.e.a.f});
+            return context.getString(R.string.baby_weight_report_monthyear_templates0, new Object[]{i2 + com.xiaomi.e.a.f, i3 + com.xiaomi.e.a.f});
         } else if (i2 != 0) {
-            return i2 + context.getString(r.year);
+            return i2 + context.getString(R.string.year);
         } else {
             if (i3 != 0) {
-                return context.getString(r.baby_weight_report_monthyear_templates1, new Object[]{i3 + com.xiaomi.e.a.f});
+                return context.getString(R.string.baby_weight_report_monthyear_templates1, new Object[]{i3 + com.xiaomi.e.a.f});
             }
-            return context.getString(r.baby_weight_report_monthyear_templates1, new Object[]{f});
+            return context.getString(R.string.baby_weight_report_monthyear_templates1, new Object[]{f});
         }
     }
 
@@ -1519,7 +1519,7 @@ public class Utils {
         date.setYear(sportDay.year - 1900);
         date.setMonth(sportDay.mon);
         date.setDate(sportDay.day);
-        return new SimpleDateFormat(BraceletApp.a().getString(r.date_month_day)).format(date);
+        return new SimpleDateFormat(BraceletApp.a().getString(R.string.date_month_day)).format(date);
     }
 
     public static String d(String str) {
@@ -1579,14 +1579,14 @@ public class Utils {
         if (((float) i) > kankan.wheel.widget.a.bQ) {
             format = decimalFormat.format((double) round);
             if (((double) Math.abs(round - f)) < 0.1d) {
-                str = context.getString(r.marathon_format_0, new Object[]{format});
+                str = context.getString(R.string.marathon_format_0, new Object[]{format});
             } else {
-                str = context.getString(r.marathon_format_1, new Object[]{format});
+                str = context.getString(R.string.marathon_format_1, new Object[]{format});
             }
         } else if (Math.abs(i - 21000) < kankan.wheel.widget.a.aB) {
-            str = context.getString(r.half_marathon_format_0, new Object[]{Constants.VIA_TO_TYPE_QQ_GROUP});
+            str = context.getString(R.string.half_marathon_format_0, new Object[]{Constants.VIA_TO_TYPE_QQ_GROUP});
         } else if (i > 21000) {
-            str = context.getString(r.half_marathon_format_1);
+            str = context.getString(R.string.half_marathon_format_1);
         } else {
             f = ((float) i) / kankan.wheel.widget.a.bP;
             round = (float) Math.round(f);
@@ -1597,7 +1597,7 @@ public class Utils {
             if (round == 0.0f) {
                 str = com.xiaomi.e.a.f;
             } else {
-                str = context.getString(r.share_play_ground_format, new Object[]{format});
+                str = context.getString(R.string.share_play_ground_format, new Object[]{format});
             }
         }
         C0596r.e(l, "maraton:" + i + ", str=" + str);
@@ -1781,7 +1781,7 @@ public class Utils {
     }
 
     public static String n() {
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(BraceletApp.a().getString(r.date_month_day));
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(BraceletApp.a().getString(R.string.date_month_day));
         Calendar instance = Calendar.getInstance();
         instance.add(2, -1);
         instance.set(5, 1);
@@ -1802,7 +1802,7 @@ public class Utils {
     }
 
     public static String o() {
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(BraceletApp.a().getString(r.date_month_day));
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(BraceletApp.a().getString(R.string.date_month_day));
         Calendar instance = Calendar.getInstance();
         int i = instance.get(7);
         instance.add(5, (i == 1 ? -6 : 2 - i) - 7);
@@ -1864,14 +1864,14 @@ public class Utils {
             b h = b.h();
             if (h.w.booleanValue()) {
                 h.getClass();
-                a("https://hm.mi-ae.com/huami.health.agreement.do", (int) r.user_agreement, context, 3);
+                a("https://hm.mi-ae.com/huami.health.agreement.do", (int) R.string.user_agreement, context, 3);
                 return;
             }
             h.getClass();
-            a("https://hm.xiaomi.com/huami.health.agreement.do", (int) r.user_agreement, context, 3);
+            a("https://hm.xiaomi.com/huami.health.agreement.do", (int) R.string.user_agreement, context, 3);
             return;
         }
-        com.huami.android.view.b.a(context, (int) r.network_error, 1).show();
+        com.huami.android.view.b.a(context, (int) R.string.network_error, 1).show();
     }
 
     public static boolean s(Context context) {

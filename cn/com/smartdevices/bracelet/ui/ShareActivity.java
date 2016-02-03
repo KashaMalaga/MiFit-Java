@@ -26,21 +26,18 @@ import cn.com.smartdevices.bracelet.view.WeightUserAvatar;
 import cn.com.smartdevices.bracelet.weight.J;
 import cn.com.smartdevices.bracelet.weight.UserInfo;
 import com.amap.api.maps.model.GroundOverlayOptions;
+import com.huami.android.widget.share.l;
 import com.huami.android.widget.share.q;
 import com.huami.android.widget.share.s;
 import com.sina.weibo.sdk.constant.WBPageConstants.ParamKey;
 import com.tencent.open.SocialConstants;
 import com.xiaomi.channel.b.v;
 import com.xiaomi.e.a;
-import com.xiaomi.hm.health.k;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.mipush.sdk.f;
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import kankan.wheel.widget.i;
 
 public class ShareActivity extends SystemBarTintActivity implements s {
     private WeightUserAvatar A;
@@ -125,11 +122,11 @@ public class ShareActivity extends SystemBarTintActivity implements s {
         r0 = r7.b;
         r1 = r7.t;
         r0.setImageBitmap(r1);
-        r0 = 2131296914; // 0x7f090292 float:1.8211758E38 double:1.0530005863E-314;
+        r0 = 2131296913; // 0x7f090291 float:1.8211756E38 double:1.053000586E-314;
         r0 = r7.findViewById(r0);
         r0 = (android.widget.TextView) r0;
         r1 = new java.text.SimpleDateFormat;
-        r2 = 2131362186; // 0x7f0a018a float:1.8344145E38 double:1.053032835E-314;
+        r2 = 2131362187; // 0x7f0a018b float:1.8344147E38 double:1.0530328354E-314;
         r2 = r7.getString(r2);
         r1.<init>(r2);
         r2 = new java.util.Date;
@@ -137,7 +134,7 @@ public class ShareActivity extends SystemBarTintActivity implements s {
         r1 = r1.format(r2);
         r2 = new java.lang.StringBuilder;
         r2.<init>();
-        r3 = 2131362578; // 0x7f0a0312 float:1.834494E38 double:1.0530330286E-314;
+        r3 = 2131362579; // 0x7f0a0313 float:1.8344943E38 double:1.053033029E-314;
         r3 = r7.getString(r3);
         r2 = r2.append(r3);
         r3 = " ";
@@ -225,9 +222,9 @@ public class ShareActivity extends SystemBarTintActivity implements s {
             i = Keeper.readPersonInfo().gender;
             i = Birthday.fromStr(Keeper.readPersonInfo().birthday).getAgeInMonths();
         } else if (shareData.fuid == 0) {
-            this.B.setText(getString(r.visitor));
-            this.A.a(getString(r.visitor));
-            this.A.setBackgroundResource(k.default_userinfo);
+            this.B.setText(getString(R.string.visitor));
+            this.A.a(getString(R.string.visitor));
+            this.A.setBackgroundResource(R.drawable.default_userinfo);
             i = 0;
         } else {
             UserInfo a = J.a().a(shareData.fuid);
@@ -237,7 +234,7 @@ public class ShareActivity extends SystemBarTintActivity implements s {
             int i2 = a.gender;
             i = Birthday.fromStr(a.birthday).getAgeInMonths();
         }
-        this.G.setBackgroundResource(k.weight_report_bg);
+        this.G.setBackgroundResource(R.drawable.weight_report_bg);
         C0401a.a(this.S, C0401a.hv, i + a.f);
         if (i <= 83) {
             this.H.setVisibility(8);
@@ -263,41 +260,41 @@ public class ShareActivity extends SystemBarTintActivity implements s {
             this.Q.setText(a(split[7]));
             this.R.setText(a(split[8]));
         }
-        this.E.setText(getString(i.app_name) + " " + new SimpleDateFormat(getString(r.date_month_day)).format(new Date()));
+        this.E.setText(getString(R.string.app_name) + " " + new SimpleDateFormat(getString(R.string.date_month_day)).format(new Date()));
         C0596r.e("SHARE", "share time text " + this.E.getText().toString());
     }
 
     private void c() {
-        this.w = findViewById(l.share_pane_container);
-        this.F = (RelativeLayout) findViewById(l.share_content_ll);
-        this.G = (LinearLayout) findViewById(l.share_content_for_weight);
+        this.w = findViewById(R.id.share_pane_container);
+        this.F = (RelativeLayout) findViewById(R.id.share_content_ll);
+        this.G = (LinearLayout) findViewById(R.id.share_content_for_weight);
         PersonInfo readPersonInfo = Keeper.readPersonInfo();
         C0596r.e("WPJ", readPersonInfo.toString());
-        this.b = (ImageView) findViewById(l.share_pic_iv);
-        this.u = findViewById(l.share_logo);
-        this.d = (ImageView) findViewById(l.share_person_avatar_iv);
+        this.b = (ImageView) findViewById(R.id.share_pic_iv);
+        this.u = findViewById(R.id.share_logo);
+        this.d = (ImageView) findViewById(R.id.share_person_avatar_iv);
         Utils.a(readPersonInfo, this.d);
-        this.e = (TextView) findViewById(l.share_person_name_tv);
+        this.e = (TextView) findViewById(R.id.share_person_name_tv);
         this.e.setText(readPersonInfo.nickname);
-        this.f = (TextView) findViewById(l.share_main_content);
-        this.r = (TextView) findViewById(l.share_main_content_hour_unit);
-        this.q = (TextView) findViewById(l.share_main_content_minute);
-        this.p = (TextView) findViewById(l.share_main_content_minute_unit);
-        this.g = (TextView) findViewById(l.share_main_content_unit);
-        this.h = (TextView) findViewById(l.share_description);
-        this.j = findViewById(l.share_background_v);
-        this.k = (TextView) findViewById(l.share_title);
-        this.c = (TextView) findViewById(l.share_time);
-        this.m = (TextView) findViewById(l.share_time_tips);
-        this.i = (TextView) findViewById(l.ranking);
-        this.x = (TextView) findViewById(l.current_weight_title);
-        this.y = (TextView) findViewById(l.current_weight_value);
-        this.z = (TextView) findViewById(l.current_weight_tips);
-        this.A = (WeightUserAvatar) findViewById(l.user_icon);
-        this.B = (TextView) findViewById(l.user_name);
-        this.C = (TextView) findViewById(l.wr_figure_tips_tv);
-        this.D = (TextView) findViewById(l.wr_bmi_tips_tv);
-        this.E = (TextView) findViewById(l.share_text);
+        this.f = (TextView) findViewById(R.id.share_main_content);
+        this.r = (TextView) findViewById(R.id.share_main_content_hour_unit);
+        this.q = (TextView) findViewById(R.id.share_main_content_minute);
+        this.p = (TextView) findViewById(R.id.share_main_content_minute_unit);
+        this.g = (TextView) findViewById(R.id.share_main_content_unit);
+        this.h = (TextView) findViewById(R.id.share_description);
+        this.j = findViewById(R.id.share_background_v);
+        this.k = (TextView) findViewById(R.id.share_title);
+        this.c = (TextView) findViewById(R.id.share_time);
+        this.m = (TextView) findViewById(R.id.share_time_tips);
+        this.i = (TextView) findViewById(R.id.ranking);
+        this.x = (TextView) findViewById(R.id.current_weight_title);
+        this.y = (TextView) findViewById(R.id.current_weight_value);
+        this.z = (TextView) findViewById(R.id.current_weight_tips);
+        this.A = (WeightUserAvatar) findViewById(R.id.user_icon);
+        this.B = (TextView) findViewById(R.id.user_name);
+        this.C = (TextView) findViewById(R.id.wr_figure_tips_tv);
+        this.D = (TextView) findViewById(R.id.wr_bmi_tips_tv);
+        this.E = (TextView) findViewById(R.id.share_text);
         if (Utils.m()) {
             this.D.setTextSize((float) Utils.a(5.0f, this.S));
             this.C.setTextSize((float) Utils.a(5.0f, this.S));
@@ -305,27 +302,27 @@ public class ShareActivity extends SystemBarTintActivity implements s {
             this.D.setTextSize((float) Utils.a(10.0f, this.S));
             this.C.setTextSize((float) Utils.a(10.0f, this.S));
         }
-        this.H = (RelativeLayout) findViewById(l.bmi_layout);
-        this.I = (RelativeLayout) findViewById(l.baby_layout);
-        this.J = (TextView) findViewById(l.left_title);
-        this.K = (TextView) findViewById(l.right_title);
-        this.L = (TextView) findViewById(l.content_min_3);
-        this.M = (TextView) findViewById(l.content_min_2);
-        this.N = (TextView) findViewById(l.content_min_1);
-        this.O = (TextView) findViewById(l.content_min_0);
-        this.P = (TextView) findViewById(l.content_add_1);
-        this.Q = (TextView) findViewById(l.content_add_2);
-        this.R = (TextView) findViewById(l.content_add_3);
+        this.H = (RelativeLayout) findViewById(R.id.bmi_layout);
+        this.I = (RelativeLayout) findViewById(R.id.baby_layout);
+        this.J = (TextView) findViewById(R.id.left_title);
+        this.K = (TextView) findViewById(R.id.right_title);
+        this.L = (TextView) findViewById(R.id.content_min_3);
+        this.M = (TextView) findViewById(R.id.content_min_2);
+        this.N = (TextView) findViewById(R.id.content_min_1);
+        this.O = (TextView) findViewById(R.id.content_min_0);
+        this.P = (TextView) findViewById(R.id.content_add_1);
+        this.Q = (TextView) findViewById(R.id.content_add_2);
+        this.R = (TextView) findViewById(R.id.content_add_3);
     }
 
     private void d() {
-        if (findViewById(l.share_pane_container) != null) {
+        if (findViewById(R.id.share_pane_container) != null) {
             this.T = new q();
             Bundle bundle = new Bundle();
             bundle.putBoolean(v.e, true);
             this.T.setArguments(bundle);
             FragmentTransaction beginTransaction = getFragmentManager().beginTransaction();
-            beginTransaction.add(l.share_pane_container, this.T);
+            beginTransaction.add(R.id.share_pane_container, this.T);
             this.T.a((s) this);
             beginTransaction.commit();
         }
@@ -341,22 +338,22 @@ public class ShareActivity extends SystemBarTintActivity implements s {
         }
     }
 
-    private com.huami.android.widget.share.l f() {
-        com.huami.android.widget.share.l lVar = new com.huami.android.widget.share.l();
+    private l f() {
+        l lVar = new l();
         if (this.a) {
             this.o = Utils.a(this.G, getApplicationContext());
         } else {
             this.o = Utils.a(this.F, getApplicationContext());
         }
         if (this.l.type == 2 || this.l.type == 3 || this.l.type == 4) {
-            lVar.c = getString(r.share_to_content_sleep);
+            lVar.c = getString(R.string.share_to_content_sleep);
         } else if (this.l.type == v.C) {
-            lVar.c = getString(r.share_to_content_weight);
+            lVar.c = getString(R.string.share_to_content_weight);
         } else if (this.l.type != 11) {
-            lVar.c = getString(r.share_to_content_step);
+            lVar.c = getString(R.string.share_to_content_step);
         }
-        lVar.a = getString(r.share_to_title);
-        lVar.b = getString(r.share_to_topic);
+        lVar.a = getString(R.string.share_to_title);
+        lVar.b = getString(R.string.share_to_topic);
         lVar.e = this.o;
         return lVar;
     }
@@ -367,7 +364,7 @@ public class ShareActivity extends SystemBarTintActivity implements s {
 
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView((int) n.activity_share);
+        setContentView((int) R.layout.activity_share);
         c();
         d();
         Intent intent = getIntent();
@@ -375,7 +372,7 @@ public class ShareActivity extends SystemBarTintActivity implements s {
             this.l = (ShareData) intent.getParcelableExtra("share_data");
             if (this.l == null) {
                 this.l = new ShareData();
-                this.l.setType(intent.getIntExtra(SocialConstants.PARAM_TYPE, 7));
+                this.l.setType(intent.getIntExtra(com.xiaomi.channel.relationservice.data.a.h, 7));
                 this.l.title = intent.getStringExtra(SocialConstants.PARAM_TITLE);
                 this.l.content = intent.getStringExtra(ParamKey.CONTENT);
                 this.l.contentUnit = intent.getStringExtra("unit");
@@ -387,19 +384,19 @@ public class ShareActivity extends SystemBarTintActivity implements s {
             }
             this.v = intent.getStringExtra(kankan.wheel.widget.a.cz);
             if (TextUtils.isEmpty(this.v)) {
-                this.v = getText(r.share_to_topic).toString();
+                this.v = getText(R.string.share_to_topic).toString();
             }
         }
         if (this.l.getType() != v.C) {
             this.a = false;
-            this.w.setBackgroundColor(getResources().getColor(com.xiaomi.hm.health.i.share_panel_bg));
+            this.w.setBackgroundColor(getResources().getColor(R.color.share_panel_bg));
             this.F.setVisibility(0);
             this.G.setVisibility(8);
             a(this.l);
             return;
         }
         this.a = true;
-        this.w.setBackgroundColor(getResources().getColor(com.xiaomi.hm.health.i.share_weight_panel_bg));
+        this.w.setBackgroundColor(getResources().getColor(R.color.share_weight_panel_bg));
         this.F.setVisibility(8);
         this.G.setVisibility(0);
         b(this.l);

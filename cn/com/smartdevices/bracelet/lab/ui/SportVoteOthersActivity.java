@@ -13,9 +13,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import cn.com.smartdevices.bracelet.C0401a;
 import cn.com.smartdevices.bracelet.ui.SystemBarTintActivity;
-import com.xiaomi.hm.health.e;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
+import com.xiaomi.hm.health.R;
 
 public class SportVoteOthersActivity extends SystemBarTintActivity implements OnClickListener {
     private EditText a = null;
@@ -24,16 +22,16 @@ public class SportVoteOthersActivity extends SystemBarTintActivity implements On
     private Animation d = null;
 
     private void a() {
-        this.c = (TextView) findViewById(l.home_back);
+        this.c = (TextView) findViewById(R.id.home_back);
         this.c.setOnClickListener(this);
     }
 
     public void onClick(View view) {
         switch (view.getId()) {
-            case l.home_back /*2131296313*/:
+            case R.id.home_back:
                 finish();
                 return;
-            case l.confirm /*2131296545*/:
+            case R.id.confirm:
                 Editable text = this.a.getText();
                 Object trim = text.toString().trim();
                 if (TextUtils.isEmpty(trim)) {
@@ -53,13 +51,13 @@ public class SportVoteOthersActivity extends SystemBarTintActivity implements On
 
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView((int) n.activity_lab_sport_vote_others);
+        setContentView((int) R.layout.activity_lab_sport_vote_others);
         a();
-        this.a = (EditText) findViewById(l.favorite_user_sport_name);
+        this.a = (EditText) findViewById(R.id.favorite_user_sport_name);
         this.a.addTextChangedListener(new ai(this, 10, this.a));
-        this.b = (TextView) findViewById(l.confirm);
+        this.b = (TextView) findViewById(R.id.confirm);
         this.b.setOnClickListener(this);
-        this.d = AnimationUtils.loadAnimation(getApplicationContext(), e.edit_shake);
+        this.d = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.edit_shake);
     }
 
     protected void onPause() {

@@ -16,13 +16,10 @@ import cn.com.smartdevices.bracelet.ui.C0763dl;
 import cn.com.smartdevices.bracelet.weight.UserInfo;
 import cn.com.smartdevices.bracelet.weight.WeightReportActivity;
 import cn.com.smartdevices.bracelet.weight.aA;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.bt.profile.Weight.e;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
 import kankan.wheel.widget.WheelView;
 import kankan.wheel.widget.a;
-import kankan.wheel.widget.g;
 
 public class MemberInfoSetHeightActivity extends MemberInfoBaseActivity implements OnClickListener {
     private static final long t = 1000;
@@ -147,24 +144,24 @@ public class MemberInfoSetHeightActivity extends MemberInfoBaseActivity implemen
         if (!(getIntent() == null || getIntent().getExtras() == null)) {
             this.g = e.b(getIntent().getStringExtra(e.d));
         }
-        setContentView((int) n.activity_person_info_set_height);
+        setContentView((int) R.layout.activity_person_info_set_height);
         b();
         this.q = Keeper.readPersonInfo().getUnit() != 0;
-        this.k = (TextView) findViewById(l.bracelet_login_title_info);
-        this.k.setText(getString(r.input_precise_user_info));
-        this.i = (WheelView) findViewById(l.person_info_height_picker);
-        this.p = new C0763dl(this, 40, a.an, this.i, getResources().getColor(g.title_color), getResources().getColor(g.content_color), getResources().getColor(g.content_color_darker), false, 50, 48, 45, 45);
-        this.i.a(5).e(kankan.wheel.widget.h.wheel_custom_val_dark_0).a(getString(r.cm), g.content_color, 12, 40.0f, a.bj).a(this.p);
+        this.k = (TextView) findViewById(R.id.bracelet_login_title_info);
+        this.k.setText(getString(R.string.input_precise_user_info));
+        this.i = (WheelView) findViewById(R.id.person_info_height_picker);
+        this.p = new C0763dl(this, 40, a.an, this.i, getResources().getColor(R.color.title_color), getResources().getColor(R.color.content_color), getResources().getColor(R.color.content_color_darker), false, 50, 48, 45, 45);
+        this.i.a(5).e(R.drawable.wheel_custom_val_dark_0).a(getString(R.string.cm), R.color.content_color, 12, 40.0f, a.bj).a(this.p);
         String currentUserInfoByTag = Keeper.getCurrentUserInfoByTag(Keeper.CURRENT_USER_HEIGHT);
         if (!currentUserInfoByTag.isEmpty()) {
             this.m = Integer.parseInt(currentUserInfoByTag);
         }
         if (this.q) {
             this.o = new cn.com.smartdevices.bracelet.ui.person.a(this.m, this.h);
-            this.j = (WheelView) findViewById(l.info_height_foot_wheel);
+            this.j = (WheelView) findViewById(R.id.info_height_foot_wheel);
             this.j.setVisibility(0);
-            this.l = new C0763dl(this, 1, 7, this.j, getResources().getColor(g.title_color), getResources().getColor(g.content_color), getResources().getColor(g.content_color_darker), false, 50, 48, 45, 45);
-            this.j.a(5).e(kankan.wheel.widget.h.wheel_custom_val_dark_0).a(getString(r.cm), g.content_color, 12, 38.0f, a.bj).a(this.l);
+            this.l = new C0763dl(this, 1, 7, this.j, getResources().getColor(R.color.title_color), getResources().getColor(R.color.content_color), getResources().getColor(R.color.content_color_darker), false, 50, 48, 45, 45);
+            this.j.a(5).e(R.drawable.wheel_custom_val_dark_0).a(getString(R.string.cm), R.color.content_color, 12, 38.0f, a.bj).a(this.l);
             this.j.c(this.o.b());
             this.o.a(this.j, this.l, this.i, this.p);
         }

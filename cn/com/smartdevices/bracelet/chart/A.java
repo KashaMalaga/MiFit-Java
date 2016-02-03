@@ -17,7 +17,7 @@ import com.amap.api.maps.model.BitmapDescriptorFactory;
 import com.amap.api.maps.model.GroundOverlayOptions;
 import com.d.a.a.C1012a;
 import com.edmodo.cropper.cropwindow.CropOverlayView;
-import com.xiaomi.hm.health.i;
+import com.xiaomi.hm.health.R;
 import java.util.ArrayList;
 import java.util.List;
 import kankan.wheel.widget.l;
@@ -365,13 +365,13 @@ public class A extends a {
         Resources resources = l().getResources();
         switch (i) {
             case l.a /*1*/:
-                i2 = resources.getColor(i.bg_mode_step);
+                i2 = resources.getColor(R.color.bg_mode_step);
                 break;
             case kankan.wheel.widget.a.bp /*16*/:
-                i2 = resources.getColor(i.bg_mode_sleep);
+                i2 = resources.getColor(R.color.bg_mode_sleep);
                 break;
             case PersonInfo.INCOMING_CALL_DISABLE_BIT /*256*/:
-                i2 = resources.getColor(i.bg_mode_weight);
+                i2 = resources.getColor(R.color.bg_mode_weight);
                 break;
         }
         this.ae = i2 & C0151az.r;

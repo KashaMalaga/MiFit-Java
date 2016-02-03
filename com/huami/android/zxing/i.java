@@ -32,7 +32,6 @@ final class i extends Handler {
     }
 
     private void a(File file) {
-        Message obtain;
         Handler c = this.d.c();
         try {
             Options options = new Options();
@@ -43,6 +42,7 @@ final class i extends Handler {
             }
             options.inJustDecodeBounds = false;
             Bitmap decodeFile = BitmapFactory.decodeFile(file.getAbsolutePath(), options);
+            Message obtain;
             if (decodeFile == null) {
                 C0596r.a(a, "uri is not a bitmap," + file.toString());
                 if (c != null) {

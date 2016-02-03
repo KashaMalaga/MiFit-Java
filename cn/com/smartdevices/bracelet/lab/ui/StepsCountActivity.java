@@ -18,13 +18,10 @@ import cn.com.smartdevices.bracelet.shoes.sync.C0639p;
 import cn.com.smartdevices.bracelet.ui.SystemBarTintActivity;
 import com.tencent.connect.common.Constants;
 import com.xiaomi.account.openauth.h;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.bt.b.c;
 import com.xiaomi.hm.health.bt.d.e;
 import com.xiaomi.hm.health.bt.model.HwConnStatus;
-import com.xiaomi.hm.health.i;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
 import de.greenrobot.event.EventBus;
 import java.util.LinkedList;
 import java.util.Timer;
@@ -62,7 +59,7 @@ public class StepsCountActivity extends SystemBarTintActivity implements e {
 
     private void a() {
         this.b.setClickable(false);
-        b(getResources().getColor(i.bg_color_steps_gray));
+        b(getResources().getColor(R.color.bg_color_steps_gray));
         d();
     }
 
@@ -83,7 +80,7 @@ public class StepsCountActivity extends SystemBarTintActivity implements e {
     }
 
     private void c() {
-        this.e.setText(r.lab_factory_average_pace_frequency);
+        this.e.setText(R.string.lab_factory_average_pace_frequency);
         if (this.k - this.l < 5) {
             this.g.setText(Integer.toString(0));
         } else {
@@ -93,7 +90,7 @@ public class StepsCountActivity extends SystemBarTintActivity implements e {
         this.m.clear();
         this.n.clear();
         this.j = false;
-        this.b.setText(r.lab_factory_start);
+        this.b.setText(R.string.lab_factory_start);
         this.t.setVisibility(4);
         this.u.setVisibility(0);
     }
@@ -112,9 +109,9 @@ public class StepsCountActivity extends SystemBarTintActivity implements e {
 
     private void d() {
         Bundle bundle = new Bundle();
-        bundle.putString(ae.a, getString(r.confirm));
-        bundle.putString(ae.b, getString(r.lab_factory_sport_monitor_shoes_offline_notice) + getString(r.lab_factory_pace_frequency_test));
-        bundle.putString(ae.c, getString(r.lab_factory_shoes_not_connected));
+        bundle.putString(ae.a, getString(R.string.confirm));
+        bundle.putString(ae.b, getString(R.string.lab_factory_sport_monitor_shoes_offline_notice) + getString(R.string.lab_factory_pace_frequency_test));
+        bundle.putString(ae.c, getString(R.string.lab_factory_shoes_not_connected));
         if (this.x == null) {
             this.x = ae.a(this, ae.class, bundle, new ao(this));
         }
@@ -160,7 +157,7 @@ public class StepsCountActivity extends SystemBarTintActivity implements e {
             a.sendMessage(obtain);
         }
         this.j = true;
-        this.b.setText(r.lab_factory_restart);
+        this.b.setText(R.string.lab_factory_restart);
         try {
             this.p = Integer.valueOf(this.f.getText().toString()).intValue();
         } catch (Exception e) {
@@ -170,7 +167,7 @@ public class StepsCountActivity extends SystemBarTintActivity implements e {
     }
 
     private void start() {
-        this.e.setText(r.lab_factory_rt_pace_frequency);
+        this.e.setText(R.string.lab_factory_rt_pace_frequency);
         this.u.setVisibility(4);
         this.t.setVisibility(0);
         this.d.setText(String.valueOf(this.p));
@@ -200,29 +197,29 @@ public class StepsCountActivity extends SystemBarTintActivity implements e {
         super.onCreate(bundle);
         EventBus.getDefault().register(this);
         g();
-        setContentView((int) n.activity_lab_steps_count_test);
+        setContentView((int) R.layout.activity_lab_steps_count_test);
         b();
         C0596r.e("RtStep", "init page");
-        this.B = (SlidingUpPanelLayout) findViewById(l.sliding_layout);
+        this.B = (SlidingUpPanelLayout) findViewById(R.id.sliding_layout);
         this.B.setEnableDragViewTouchEvents(true);
-        this.v = findViewById(l.lab_main_sport);
-        this.z = (LinearLayout) findViewById(l.disconnect_sport);
-        this.A = (RelativeLayout) findViewById(l.personal_best_sport_record);
-        this.b = (Button) findViewById(l.start_button_count);
+        this.v = findViewById(R.id.lab_main_sport);
+        this.z = (LinearLayout) findViewById(R.id.disconnect_sport);
+        this.A = (RelativeLayout) findViewById(R.id.personal_best_sport_record);
+        this.b = (Button) findViewById(R.id.start_button_count);
         this.b.setOnClickListener(new aj(this));
-        this.c = (Button) findViewById(l.ok_button);
+        this.c = (Button) findViewById(R.id.ok_button);
         this.c.setOnClickListener(new ak(this));
-        this.d = (TextView) findViewById(l.textView3);
-        this.e = (TextView) findViewById(l.title_back);
-        this.e.setText(r.lab_factory_rt_pace_frequency);
-        this.f = (TextView) findViewById(l.edit_text);
+        this.d = (TextView) findViewById(R.id.textView3);
+        this.e = (TextView) findViewById(R.id.title_back);
+        this.e.setText(R.string.lab_factory_rt_pace_frequency);
+        this.f = (TextView) findViewById(R.id.edit_text);
         this.f.setOnFocusChangeListener(new al(this));
-        this.g = (TextView) findViewById(l.sport_rating);
-        this.h = (DynamicPieChartView) findViewById(l.sport_progress_state);
+        this.g = (TextView) findViewById(R.id.sport_rating);
+        this.h = (DynamicPieChartView) findViewById(R.id.sport_progress_state);
         this.h.a((int) ChartData.e);
         this.g.setText(Constants.VIA_RESULT_SUCCESS);
-        this.t = findViewById(l.countdown_container);
-        this.u = findViewById(l.time_container);
+        this.t = findViewById(R.id.countdown_container);
+        this.u = findViewById(R.id.time_container);
         this.j = false;
         this.m = new LinkedList();
         this.n = new LinkedList();

@@ -20,9 +20,7 @@ import cn.com.smartdevices.bracelet.partner.Partner;
 import cn.com.smartdevices.bracelet.partner.WebActivity;
 import cn.com.smartdevices.bracelet.ui.SystemBarTintActivity;
 import com.huami.android.view.b;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 import de.greenrobot.event.EventBus;
 
 public class SportFactoryMainActivity extends SystemBarTintActivity implements OnClickListener, OnLongClickListener, OnChildClickListener, OnGroupClickListener {
@@ -41,7 +39,7 @@ public class SportFactoryMainActivity extends SystemBarTintActivity implements O
             Keeper.setBluethoothBrocastEnable(!readBluethoothBrocastEnable);
             this.a.a(k.a(this));
             a();
-            b.a((Context) this, readBluethoothBrocastEnable ? getString(r.toast_disable_bluethooth_brocast) : getString(r.toast_enable_bluethooth_brocast), 0).show();
+            b.a((Context) this, readBluethoothBrocastEnable ? getString(R.string.toast_disable_bluethooth_brocast) : getString(R.string.toast_enable_bluethooth_brocast), 0).show();
         }
     }
 
@@ -72,7 +70,7 @@ public class SportFactoryMainActivity extends SystemBarTintActivity implements O
                 startActivity(intent);
                 return true;
             } catch (ActivityNotFoundException e) {
-                a(r.lab_factory_sport_analyser_activity_not_found);
+                a(R.string.lab_factory_sport_analyser_activity_not_found);
             }
         }
         return true;
@@ -80,10 +78,10 @@ public class SportFactoryMainActivity extends SystemBarTintActivity implements O
 
     public void onClick(View view) {
         switch (view.getId()) {
-            case l.home_back /*2131296313*/:
+            case R.id.home_back:
                 finish();
                 return;
-            case l.rl_head_title /*2131297538*/:
+            case R.id.rl_head_title:
                 this.c++;
                 if (this.c == d) {
                     this.c = 0;
@@ -98,15 +96,15 @@ public class SportFactoryMainActivity extends SystemBarTintActivity implements O
 
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView((int) n.activity_lab_factory_main);
-        View findViewById = findViewById(l.rl_head_title);
+        setContentView((int) R.layout.activity_lab_factory_main);
+        View findViewById = findViewById(R.id.rl_head_title);
         findViewById.setOnLongClickListener(this);
         findViewById.setOnClickListener(this);
-        TextView textView = (TextView) findViewById(l.home_back);
-        textView.setText(getString(r.lab_factory_title));
+        TextView textView = (TextView) findViewById(R.id.home_back);
+        textView.setText(getString(R.string.lab_factory_title));
         textView.setOnClickListener(this);
         this.a = new N(this, k.a(this));
-        this.b = (ExpandableListView) findViewById(l.list);
+        this.b = (ExpandableListView) findViewById(R.id.list);
         this.b.setAdapter(this.a);
         this.b.setOnChildClickListener(this);
         this.b.setOnGroupClickListener(this);
@@ -128,7 +126,7 @@ public class SportFactoryMainActivity extends SystemBarTintActivity implements O
             Keeper.setBehaviorTagEnable(!readBehaviorTagEnable);
             this.a.a(k.a(this));
             a();
-            b.a((Context) this, readBehaviorTagEnable ? getString(r.toast_disable_behavior_tag) : getString(r.toast_enable_behavior_tag), 0).show();
+            b.a((Context) this, readBehaviorTagEnable ? getString(R.string.toast_disable_behavior_tag) : getString(R.string.toast_enable_behavior_tag), 0).show();
         }
         return false;
     }

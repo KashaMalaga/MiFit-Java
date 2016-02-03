@@ -51,7 +51,6 @@ public class r extends PoiHandler<t, ArrayList<PoiItem>> {
 
     public ArrayList<PoiItem> a(String str) {
         ArrayList<PoiItem> c;
-        JSONException e;
         try {
             JSONObject jSONObject = new JSONObject(str);
             this.c = jSONObject.optInt(ParamKey.COUNT);
@@ -62,20 +61,21 @@ public class r extends PoiHandler<t, ArrayList<PoiItem>> {
                     this.e = m.a(jSONObject2);
                     this.d = m.b(jSONObject2);
                 }
-            } catch (JSONException e2) {
+            } catch (JSONException e) {
+                e = e;
+                e.printStackTrace();
+                return c;
+            } catch (Exception e2) {
                 e = e2;
                 e.printStackTrace();
                 return c;
-            } catch (Exception e3) {
-                e = e3;
-                e.printStackTrace();
-                return c;
             }
-        } catch (JSONException e4) {
-            JSONException jSONException = e4;
+        } catch (JSONException e3) {
+            JSONException e4;
+            JSONException jSONException = e3;
             c = null;
-            e = jSONException;
-            e.printStackTrace();
+            e4 = jSONException;
+            e4.printStackTrace();
             return c;
         } catch (Exception e5) {
             Exception e6;

@@ -17,9 +17,7 @@ import cn.com.smartdevices.bracelet.Utils;
 import com.edmodo.cropper.CropImageView;
 import com.f.a.b.a.f;
 import com.huami.android.view.b;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -74,7 +72,7 @@ public class CropImageActivity extends SystemBarTintActivity implements OnClickL
             e2.printStackTrace();
         }
         if (bitmap == null) {
-            b.a((Context) this, (int) r.get_image_file_fail, 1).show();
+            b.a((Context) this, (int) R.string.get_image_file_fail, 1).show();
             setResult(0);
             finish();
             return;
@@ -95,14 +93,14 @@ public class CropImageActivity extends SystemBarTintActivity implements OnClickL
 
     public void onClick(View view) {
         switch (view.getId()) {
-            case l.left_button /*2131296944*/:
+            case R.id.left_button:
                 setResult(0);
                 finish();
                 return;
-            case l.right_button /*2131296946*/:
+            case R.id.right_button:
                 this.e = this.d.a((int) a.by, (int) a.by);
                 if (this.e == null) {
-                    b.a((Context) this, (int) r.get_image_file_fail, 1).show();
+                    b.a((Context) this, (int) R.string.get_image_file_fail, 1).show();
                     setResult(0);
                     finish();
                     return;
@@ -129,15 +127,15 @@ public class CropImageActivity extends SystemBarTintActivity implements OnClickL
 
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView((int) n.crop_image_activity);
+        setContentView((int) R.layout.crop_image_activity);
         Intent intent = new Intent();
         intent.setType("image/*");
         intent.setAction("android.intent.action.GET_CONTENT");
         startActivityForResult(intent, 18);
-        this.d = (CropImageView) findViewById(l.CropImageView);
-        this.h = findViewById(l.right_button);
+        this.d = (CropImageView) findViewById(R.id.CropImageView);
+        this.h = findViewById(R.id.right_button);
         this.h.setOnClickListener(this);
-        this.i = findViewById(l.left_button);
+        this.i = findViewById(R.id.left_button);
         this.i.setOnClickListener(this);
     }
 

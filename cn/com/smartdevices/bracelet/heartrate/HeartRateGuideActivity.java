@@ -10,11 +10,7 @@ import cn.com.smartdevices.bracelet.C0401a;
 import cn.com.smartdevices.bracelet.Keeper;
 import com.huami.android.ui.CustomActionBarActivity;
 import com.xiaomi.e.a;
-import com.xiaomi.hm.health.e;
-import com.xiaomi.hm.health.i;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 
 public class HeartRateGuideActivity extends CustomActionBarActivity implements OnClickListener {
     private static final String a = "HeartRateMainActivity";
@@ -26,18 +22,18 @@ public class HeartRateGuideActivity extends CustomActionBarActivity implements O
     }
 
     protected String b() {
-        return getResources().getString(r.heartrate);
+        return getResources().getString(R.string.heartrate);
     }
 
     public void d() {
         setResult(-1);
         finish();
-        overridePendingTransition(0, e.hr_guide_out);
+        overridePendingTransition(0, R.anim.hr_guide_out);
     }
 
     public void onClick(View view) {
         switch (view.getId()) {
-            case l.bt_measure /*2131296415*/:
+            case R.id.bt_measure:
                 C0401a.a((Context) this, C0401a.gY);
                 this.c.cancel();
                 Keeper.setHRIfDirection(true);
@@ -50,12 +46,12 @@ public class HeartRateGuideActivity extends CustomActionBarActivity implements O
 
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView(n.activity_heart_guide);
-        c(getResources().getColor(i.bg_mode_heartrate));
+        setContentView(R.layout.activity_heart_guide);
+        c(getResources().getColor(R.color.bg_mode_heartrate));
         C0401a.a((Context) this, C0401a.gX);
         getActionBar().setDisplayHomeAsUpEnabled(false);
-        this.b = (TextView) findViewById(l.time);
-        findViewById(l.bt_measure).setOnClickListener(this);
+        this.b = (TextView) findViewById(R.id.time);
+        findViewById(R.id.bt_measure).setOnClickListener(this);
         this.c = new g(this, 6000, 1000);
         this.c.start();
     }

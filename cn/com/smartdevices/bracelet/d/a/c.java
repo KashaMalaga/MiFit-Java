@@ -42,12 +42,12 @@ public abstract class c extends SQLiteOpenHelper {
 
     public void onCreate(SQLiteDatabase sQLiteDatabase) {
         Class cls;
-        String b;
         Throwable th;
         Object obj = null;
         List<Class> a = a();
         if (a != null) {
             sQLiteDatabase.beginTransaction();
+            String b;
             try {
                 cls = null;
                 for (Class cls2 : a) {

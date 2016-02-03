@@ -10,41 +10,37 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import cn.com.smartdevices.bracelet.C0401a;
 import cn.com.smartdevices.bracelet.Utils;
-import com.xiaomi.hm.health.j;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 import java.util.ArrayList;
 import java.util.Iterator;
-import kankan.wheel.widget.g;
 
 public class HelpActivity extends SystemBarTintActivity implements OnClickListener {
     private String a;
     private TextView b;
-    private int[] c = new int[]{r.help_title_0, r.help_info_0, r.help_title_1, r.help_info_1, r.help_title_2, r.help_info_2, r.help_title_3, r.help_info_3, r.help_title_4, r.help_info_4};
-    private int[] d = new int[]{r.weight_help_title_0, r.weight_help_info_0, r.weight_help_title_1, r.weight_help_info_1, r.weight_help_title_2, r.weight_help_info_2, r.weight_help_title_3, r.weight_help_info_3, r.help_title_4, r.help_info_4, r.weight_help_title_4, r.weight_help_info_4};
-    private int[] e = new int[]{r.weight_help_title_0, r.weight_help_info_0, r.weight_help_title_1, r.weight_help_info_1, r.weight_help_title_2, r.weight_help_info_2, r.weight_help_title_3, r.weight_help_info_3, r.help_title_4, r.help_info_4};
-    private int[] f = new int[]{r.unlock_screen_help_title0, r.unlock_screen_help_info0, r.unlock_screen_help_title1, r.unlock_screen_help_info1, r.unlock_screen_help_title2, r.unlock_screen_help_info2, r.unlock_screen_help_title3, r.unlock_screen_help_info3};
+    private int[] c = new int[]{R.string.help_title_0, R.string.help_info_0, R.string.help_title_1, R.string.help_info_1, R.string.help_title_2, R.string.help_info_2, R.string.help_title_3, R.string.help_info_3, R.string.help_title_4, R.string.help_info_4};
+    private int[] d = new int[]{R.string.weight_help_title_0, R.string.weight_help_info_0, R.string.weight_help_title_1, R.string.weight_help_info_1, R.string.weight_help_title_2, R.string.weight_help_info_2, R.string.weight_help_title_3, R.string.weight_help_info_3, R.string.help_title_4, R.string.help_info_4, R.string.weight_help_title_4, R.string.weight_help_info_4};
+    private int[] e = new int[]{R.string.weight_help_title_0, R.string.weight_help_info_0, R.string.weight_help_title_1, R.string.weight_help_info_1, R.string.weight_help_title_2, R.string.weight_help_info_2, R.string.weight_help_title_3, R.string.weight_help_info_3, R.string.help_title_4, R.string.help_info_4};
+    private int[] f = new int[]{R.string.unlock_screen_help_title0, R.string.unlock_screen_help_info0, R.string.unlock_screen_help_title1, R.string.unlock_screen_help_info1, R.string.unlock_screen_help_title2, R.string.unlock_screen_help_info2, R.string.unlock_screen_help_title3, R.string.unlock_screen_help_info3};
     private ArrayList<C0700bb> g = new ArrayList();
 
     private void a() {
-        LinearLayout linearLayout = (LinearLayout) findViewById(l.help_content_area);
+        LinearLayout linearLayout = (LinearLayout) findViewById(R.id.help_content_area);
         Iterator it = this.g.iterator();
         while (it.hasNext()) {
             C0700bb c0700bb = (C0700bb) it.next();
             if (c0700bb.a > 0) {
                 View textView = new TextView(this);
                 textView.setText(c0700bb.a);
-                textView.setTextSize(0, (float) getResources().getDimensionPixelSize(j.click_button_text_size));
-                textView.setTextColor(getResources().getColor(g.title_color));
+                textView.setTextSize(0, (float) getResources().getDimensionPixelSize(R.dimen.click_button_text_size));
+                textView.setTextColor(getResources().getColor(R.color.title_color));
                 linearLayout.addView(textView);
             }
             if (c0700bb.b > 0) {
                 textView = new TextView(this);
                 textView.setText(c0700bb.b);
-                textView.setTextSize(0, (float) getResources().getDimensionPixelSize(j.info_content_size));
-                textView.setTextColor(getResources().getColor(g.content_color));
-                textView.setPadding(0, 0, 0, getResources().getDimensionPixelOffset(j.help_title_margin));
+                textView.setTextSize(0, (float) getResources().getDimensionPixelSize(R.dimen.info_content_size));
+                textView.setTextColor(getResources().getColor(R.color.content_color));
+                textView.setPadding(0, 0, 0, getResources().getDimensionPixelOffset(R.dimen.help_title_margin));
                 linearLayout.addView(textView);
             }
         }
@@ -62,7 +58,7 @@ public class HelpActivity extends SystemBarTintActivity implements OnClickListen
 
     public void onClick(View view) {
         switch (view.getId()) {
-            case l.help_back_txt /*2131297299*/:
+            case R.id.help_back_txt:
                 finish();
                 return;
             default:
@@ -72,9 +68,9 @@ public class HelpActivity extends SystemBarTintActivity implements OnClickListen
 
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView((int) n.help_activity);
-        findViewById(l.help_back_txt).setOnClickListener(this);
-        this.b = (TextView) findViewById(l.help_back_txt);
+        setContentView((int) R.layout.help_activity);
+        findViewById(R.id.help_back_txt).setOnClickListener(this);
+        this.b = (TextView) findViewById(R.id.help_back_txt);
         int[] iArr = this.c;
         Intent intent = getIntent();
         if (intent != null) {
@@ -85,7 +81,7 @@ public class HelpActivity extends SystemBarTintActivity implements OnClickListen
                 iArr = this.c;
             } else if (Utils.e.equals(this.a)) {
                 iArr = this.f;
-                this.b.setText(r.unlock_screen_invalid_helper);
+                this.b.setText(R.string.unlock_screen_invalid_helper);
             } else if (Utils.d.equals(this.a)) {
                 iArr = this.e;
             }

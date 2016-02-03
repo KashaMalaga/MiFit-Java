@@ -6,8 +6,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.text.Html;
 import cn.com.smartdevices.bracelet.C0401a;
-import com.tencent.open.SocialConstants;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -34,7 +33,7 @@ public abstract class a implements c {
         NetworkInfo networkInfo = ((ConnectivityManager) context.getSystemService("connectivity")).getNetworkInfo(1);
         if (networkInfo != null) {
             HashMap hashMap = new HashMap(3);
-            hashMap.put(SocialConstants.PARAM_TYPE, str);
+            hashMap.put(com.xiaomi.channel.relationservice.data.a.h, str);
             hashMap.put("avl", String.valueOf(networkInfo.isAvailable()));
             hashMap.put("con", String.valueOf(networkInfo.isConnected()));
             C0401a.a(context, C0401a.bd, hashMap);
@@ -58,12 +57,12 @@ public abstract class a implements c {
         Resources resources = context.getResources();
         double a = a(i);
         if (a == 0.0d) {
-            return Html.fromHtml(resources.getString(r.sport_ranking_desc_poor, new Object[]{com.xiaomi.e.a.f})).toString();
+            return Html.fromHtml(resources.getString(R.string.sport_ranking_desc_poor, new Object[]{com.xiaomi.e.a.f})).toString();
         } else if (a >= 99.89d) {
-            return Html.fromHtml(resources.getString(r.sport_ranking_desc_great)).toString();
+            return Html.fromHtml(resources.getString(R.string.sport_ranking_desc_great)).toString();
         } else {
             String str = com.xiaomi.e.a.f;
-            return a(context, (a <= 99.0d ? String.valueOf((int) a) : String.valueOf(a)) + resources.getString(r.percent_mark));
+            return a(context, (a <= 99.0d ? String.valueOf((int) a) : String.valueOf(a)) + resources.getString(R.string.percent_mark));
         }
     }
 

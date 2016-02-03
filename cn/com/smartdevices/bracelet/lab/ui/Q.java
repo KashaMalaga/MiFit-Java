@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
 import cn.com.smartdevices.bracelet.C0401a;
-import com.xiaomi.hm.health.k;
+import com.xiaomi.hm.health.R;
 
 class Q implements OnClickListener {
     final /* synthetic */ EditText a;
@@ -24,7 +24,7 @@ class Q implements OnClickListener {
         if (!TextUtils.isEmpty(text)) {
             C0401a.a(this.c, C0401a.bb, "Others", text.toString());
             this.b.dismiss();
-            this.c.a(k.lab_favorite_vote_others_normal, text.toString());
+            this.c.a(R.drawable.lab_favorite_vote_others_normal, text.toString());
         }
     }
 }

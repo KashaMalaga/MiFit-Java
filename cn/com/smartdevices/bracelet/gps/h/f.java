@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.location.LocationManager;
 import com.amap.api.location.LocationManagerProxy;
 import com.amap.api.services.geocoder.GeocodeSearch;
+import com.xiaomi.channel.relationservice.data.a;
 
 public class f {
     private f() {
@@ -15,7 +16,7 @@ public class f {
     }
 
     public static boolean a(Context context) {
-        return ((LocationManager) context.getSystemService(LocationManagerProxy.KEY_LOCATION_CHANGED)).isProviderEnabled(GeocodeSearch.GPS);
+        return ((LocationManager) context.getSystemService(a.l)).isProviderEnabled(GeocodeSearch.GPS);
     }
 
     public static boolean b(Context context) {
@@ -23,6 +24,6 @@ public class f {
     }
 
     public static boolean c(Context context) {
-        return ((LocationManager) context.getSystemService(LocationManagerProxy.KEY_LOCATION_CHANGED)).isProviderEnabled(LocationManagerProxy.NETWORK_PROVIDER);
+        return ((LocationManager) context.getSystemService(a.l)).isProviderEnabled(LocationManagerProxy.NETWORK_PROVIDER);
     }
 }

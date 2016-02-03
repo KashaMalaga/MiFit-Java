@@ -7,21 +7,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import cn.com.smartdevices.bracelet.C0401a;
 import com.huami.android.view.c;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
+import com.xiaomi.hm.health.R;
 
 public class dC extends c {
     protected int inflateLayout() {
-        return n.fragment_select_image_question;
+        return R.layout.fragment_select_image_question;
     }
 
     public void onClick(View view) {
         switch (view.getId()) {
-            case l.select_image_camera_area /*2131297177*/:
+            case R.id.select_image_camera_area:
                 C0401a.a(getActivity(), C0401a.cf);
                 getActivity().startActivityForResult(new Intent("android.media.action.IMAGE_CAPTURE"), 18);
                 break;
-            case l.select_image_local_area /*2131297178*/:
+            case R.id.select_image_local_area:
                 C0401a.a(getActivity(), C0401a.cg);
                 getActivity().startActivityForResult(new Intent(getActivity(), CropImageActivity.class), 17);
                 break;
@@ -35,8 +34,8 @@ public class dC extends c {
 
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         View onCreateView = super.onCreateView(layoutInflater, viewGroup, bundle);
-        onCreateView.findViewById(l.select_image_camera_area).setOnClickListener(this);
-        onCreateView.findViewById(l.select_image_local_area).setOnClickListener(this);
+        onCreateView.findViewById(R.id.select_image_camera_area).setOnClickListener(this);
+        onCreateView.findViewById(R.id.select_image_local_area).setOnClickListener(this);
         return onCreateView;
     }
 

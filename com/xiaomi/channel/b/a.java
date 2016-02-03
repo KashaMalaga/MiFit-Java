@@ -137,10 +137,10 @@ public class a {
     }
 
     private Account[] c(String str) {
-        Cursor query;
         Exception e;
         Throwable th;
         Uri parse = Uri.parse("content://com.xiaomi.channel.providers.AccountProvider/getAccount");
+        Cursor query;
         try {
             query = this.g.getContentResolver().query(parse, new String[]{b.a, "name", b.c}, null, null, null);
             if (query != null) {

@@ -1,7 +1,7 @@
 package cn.com.smartdevices.bracelet;
 
 import android.content.Context;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 import java.text.DecimalFormat;
 import kankan.wheel.widget.a;
 import kankan.wheel.widget.l;
@@ -67,10 +67,10 @@ public class C0890y {
         if (i == 0 && i2 == 1) {
             if (a >= Constant.aM) {
                 strArr[0] = C0890y.a((double) (a / Constant.aM), i3);
-                strArr[1] = context.getString(r.unit_mile);
+                strArr[1] = context.getString(R.string.unit_mile);
             } else {
                 strArr[0] = String.valueOf(Math.round(a));
-                strArr[1] = context.getString(r.unit_foot);
+                strArr[1] = context.getString(R.string.unit_foot);
             }
         }
         return strArr;

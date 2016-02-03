@@ -6,17 +6,17 @@ import cn.com.smartdevices.bracelet.C0596r;
 import cn.com.smartdevices.bracelet.Utils;
 import cn.com.smartdevices.bracelet.chart.L;
 import cn.com.smartdevices.bracelet.g.h;
+import cn.com.smartdevices.bracelet.j.f;
 import cn.com.smartdevices.bracelet.lab.sync.l;
 import cn.com.smartdevices.bracelet.model.PersonInfo;
 import cn.com.smartdevices.bracelet.model.ShareData;
 import cn.com.smartdevices.bracelet.model.ShareData.TimeType;
 import cn.com.smartdevices.bracelet.weight.WeightInfo;
 import com.xiaomi.e.a;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.bt.b.c;
 import com.xiaomi.hm.health.dataprocess.DaySportData.Summary;
 import com.xiaomi.hm.health.dataprocess.SportDay;
-import com.xiaomi.hm.health.f;
-import com.xiaomi.hm.health.r;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -33,13 +33,13 @@ class fc extends eZ {
     public fc(StatisticFragment statisticFragment) {
         this.v = statisticFragment;
         super(statisticFragment);
-        this.w = statisticFragment.getString(r.date_this_week);
-        this.x = statisticFragment.getString(r.date_last_week);
-        this.y = statisticFragment.getString(r.date_from_to);
-        this.z = statisticFragment.getString(r.date_from_to_short);
-        this.A = statisticFragment.getString(r.date_month_day);
-        this.B = statisticFragment.getString(r.date_year_month_day);
-        this.C = statisticFragment.getString(r.date_month_day_short);
+        this.w = statisticFragment.getString(R.string.date_this_week);
+        this.x = statisticFragment.getString(R.string.date_last_week);
+        this.y = statisticFragment.getString(R.string.date_from_to);
+        this.z = statisticFragment.getString(R.string.date_from_to_short);
+        this.A = statisticFragment.getString(R.string.date_month_day);
+        this.B = statisticFragment.getString(R.string.date_year_month_day);
+        this.C = statisticFragment.getString(R.string.date_month_day_short);
     }
 
     protected L a(int i) {
@@ -100,25 +100,25 @@ class fc extends eZ {
         ShareData shareData = new ShareData();
         if (i == 16) {
             a(this.v.s, shareData, sportDay);
-            string = this.v.getString(r.week);
+            string = this.v.getString(R.string.week);
             if (sportDay.offsetWeek(this.v.u) == 0) {
                 string = this.w;
             }
-            shareData.title = string + this.v.getString(r.share_sleep_title_average);
+            shareData.title = string + this.v.getString(R.string.share_sleep_title_average);
         } else if (i == 1) {
             shareData.setType(7);
-            string = this.v.getString(r.one_week);
+            string = this.v.getString(R.string.one_week);
             if (sportDay.offsetWeek(this.v.u) == 0) {
                 string = this.w;
             }
-            shareData.title = string + this.v.getString(r.share_step_walk);
+            shareData.title = string + this.v.getString(R.string.share_step_walk);
             shareData.content = a.f + this.a;
-            shareData.description = Utils.a(this.v.getActivity(), this.b, this.c, this.v.getResources().getStringArray(f.weeks)[this.v.az.getWeek()], this.v.aA, this.g);
-            shareData.contentUnit = this.v.getString(r.unit_step);
+            shareData.description = Utils.a(this.v.getActivity(), this.b, this.c, this.v.getResources().getStringArray(R.array.weeks)[this.v.az.getWeek()], this.v.aA, this.g);
+            shareData.contentUnit = this.v.getString(R.string.unit_step);
             Bundle bundle = new Bundle();
-            bundle.putInt(cn.com.smartdevices.bracelet.j.f.ax, TimeType.WEEK.ordinal());
+            bundle.putInt(f.ax, TimeType.WEEK.ordinal());
             bundle.putInt(l.c, c.MILI.b());
-            bundle.putInt(cn.com.smartdevices.bracelet.j.f.aw, this.a);
+            bundle.putInt(f.aw, this.a);
             shareData.mExtraData = bundle;
             shareData.ranking = new h().a(this.v.getActivity(), this.a);
         }

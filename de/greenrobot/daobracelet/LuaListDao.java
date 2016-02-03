@@ -7,8 +7,7 @@ import cn.com.smartdevices.bracelet.gps.services.ay;
 import cn.com.smartdevices.bracelet.shoes.sync.SyncShoesDataService;
 import cn.com.smartdevices.bracelet.shoes.sync.b.g;
 import com.huami.android.zxing.y;
-import com.tencent.open.SocialConstants;
-import com.xiaomi.e.a;
+import com.xiaomi.channel.relationservice.data.a;
 import com.xiaomi.market.sdk.p;
 import de.greenrobot.dao.AbstractDao;
 import de.greenrobot.dao.Property;
@@ -31,7 +30,7 @@ public class LuaListDao extends AbstractDao<LuaList, Long> {
         public static final Property Text1 = new Property(9, String.class, "text1", false, "TEXT1");
         public static final Property Text2 = new Property(10, String.class, "text2", false, "TEXT2");
         public static final Property Time = new Property(2, String.class, cn.com.smartdevices.bracelet.gps.c.a.g.f, false, "TIME");
-        public static final Property Type = new Property(3, String.class, SocialConstants.PARAM_TYPE, false, y.c);
+        public static final Property Type = new Property(3, String.class, a.h, false, y.c);
     }
 
     public LuaListDao(DaoConfig daoConfig) {
@@ -43,11 +42,11 @@ public class LuaListDao extends AbstractDao<LuaList, Long> {
     }
 
     public static void createTable(SQLiteDatabase sQLiteDatabase, boolean z) {
-        sQLiteDatabase.execSQL("CREATE TABLE " + (z ? "IF NOT EXISTS " : a.f) + "'LUA_LIST' (" + "'_id' INTEGER PRIMARY KEY ," + "'DATE' TEXT," + "'TIME' TEXT," + "'TYPE' TEXT," + "'RIGHT' TEXT," + "'INDEX' TEXT," + "'JSON_STRING' TEXT," + "'SCRIPT_VERSION' TEXT," + "'LUA_ACTION_SCRIPT' TEXT," + "'TEXT1' TEXT," + "'TEXT2' TEXT," + "'START' TEXT," + "'STOP' TEXT," + "'EXPIRE_TIME' TEXT);");
+        sQLiteDatabase.execSQL("CREATE TABLE " + (z ? "IF NOT EXISTS " : com.xiaomi.e.a.f) + "'LUA_LIST' (" + "'_id' INTEGER PRIMARY KEY ," + "'DATE' TEXT," + "'TIME' TEXT," + "'TYPE' TEXT," + "'RIGHT' TEXT," + "'INDEX' TEXT," + "'JSON_STRING' TEXT," + "'SCRIPT_VERSION' TEXT," + "'LUA_ACTION_SCRIPT' TEXT," + "'TEXT1' TEXT," + "'TEXT2' TEXT," + "'START' TEXT," + "'STOP' TEXT," + "'EXPIRE_TIME' TEXT);");
     }
 
     public static void dropTable(SQLiteDatabase sQLiteDatabase, boolean z) {
-        sQLiteDatabase.execSQL("DROP TABLE " + (z ? "IF EXISTS " : a.f) + "'LUA_LIST'");
+        sQLiteDatabase.execSQL("DROP TABLE " + (z ? "IF EXISTS " : com.xiaomi.e.a.f) + "'LUA_LIST'");
     }
 
     protected void bindValues(SQLiteStatement sQLiteStatement, LuaList luaList) {

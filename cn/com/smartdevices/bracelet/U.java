@@ -5,7 +5,7 @@ import cn.com.smartdevices.bracelet.j.n;
 import com.d.a.a.h;
 import com.xiaomi.channel.gamesdk.b;
 import com.xiaomi.e.a;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.market.sdk.C1123b;
 import org.apache.http.Header;
 import org.json.JSONException;
@@ -41,7 +41,7 @@ final class U extends h {
                     str = jSONObject.getJSONObject(b.b).optString("groupname") + "\n";
                 }
                 if (this.a) {
-                    com.huami.android.view.b.a(this.b, str + this.b.getString(r.apk_uptodate), 1, 1).show();
+                    com.huami.android.view.b.a(this.b, str + this.b.getString(R.string.apk_uptodate), 1, 1).show();
                 }
             } else if (!jSONObject.isNull(b.b)) {
                 JSONObject jSONObject2 = jSONObject.getJSONObject(b.b);

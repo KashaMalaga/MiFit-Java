@@ -2,7 +2,7 @@ package cn.com.smartdevices.bracelet.g;
 
 import android.content.Context;
 import android.support.v4.media.h;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 import kankan.wheel.widget.a;
 
 public class g extends a {
@@ -14,7 +14,7 @@ public class g extends a {
 
     protected String a(Context context, String str) {
         a.b(context, "situps");
-        return context.getResources().getString(r.sport_ranking_desc_normal, new Object[]{str, context.getResources().getString(r.lab_factory_sport_type_situp)});
+        return context.getResources().getString(R.string.sport_ranking_desc_normal, new Object[]{str, context.getResources().getString(R.string.lab_factory_sport_type_situp)});
     }
 
     public void a() {

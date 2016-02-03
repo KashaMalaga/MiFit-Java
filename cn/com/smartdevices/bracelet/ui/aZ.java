@@ -1,8 +1,8 @@
 package cn.com.smartdevices.bracelet.ui;
 
 import com.huami.android.view.b;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.bt.a.d;
-import com.xiaomi.hm.health.r;
 
 class aZ extends d {
     final /* synthetic */ HealthGoalsActivity a;
@@ -18,12 +18,12 @@ class aZ extends d {
     public void a(Object obj) {
         super.a(obj);
         if (!((Boolean) obj).booleanValue()) {
-            b.a(this.a, this.a.getString(r.bt_operation_failed_tips), 0).show();
+            b.a(this.a, this.a.getString(R.string.bt_operation_failed_tips), 0).show();
         }
     }
 
     public void b(Object obj) {
         super.b(obj);
-        b.a(this.a, this.a.getString(r.bt_operation_failed_tips), 0).show();
+        b.a(this.a, this.a.getString(R.string.bt_operation_failed_tips), 0).show();
     }
 }

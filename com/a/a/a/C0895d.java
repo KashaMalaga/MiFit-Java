@@ -630,11 +630,11 @@ public class C0895d {
     }
 
     public void a(String str) {
-        Closeable bufferedInputStream;
         IOException e;
         if (str == null) {
             throw new IllegalArgumentException(bx);
         }
+        Closeable bufferedInputStream;
         try {
             bufferedInputStream = new BufferedInputStream(new FileInputStream(str));
             try {
@@ -654,11 +654,11 @@ public class C0895d {
     }
 
     public void a(String str, String str2) {
+        Closeable fileInputStream;
         IOException e;
         if (str == null || str2 == null) {
             throw new IllegalArgumentException(bx);
         }
-        Closeable fileInputStream;
         try {
             fileInputStream = new FileInputStream(str);
             try {

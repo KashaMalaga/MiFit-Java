@@ -3,14 +3,13 @@ package com.xiaomi.h.a;
 import b.a.C0374dh;
 import cn.com.smartdevices.bracelet.d.C0432i;
 import cn.com.smartdevices.bracelet.gps.c.a.g;
-import com.tencent.open.SocialConstants;
+import com.xiaomi.channel.relationservice.data.a;
 import com.xiaomi.market.sdk.o;
 import java.io.Serializable;
 import java.util.BitSet;
 import java.util.Collections;
 import java.util.EnumMap;
 import java.util.Map;
-import kankan.wheel.widget.a;
 import kankan.wheel.widget.l;
 import org.apache.thrift.b;
 import org.apache.thrift.protocol.c;
@@ -22,7 +21,7 @@ public class C1100g implements Serializable, Cloneable, b<C1100g, C1101h> {
     public static final Map<C1101h, org.apache.thrift.meta_data.b> j;
     private static final k k = new k("StatsEvent");
     private static final c l = new c("chid", (byte) 3, (short) 1);
-    private static final c m = new c(SocialConstants.PARAM_TYPE, (byte) 8, (short) 2);
+    private static final c m = new c(a.h, (byte) 8, (short) 2);
     private static final c n = new c(C0432i.b, (byte) 8, (short) 3);
     private static final c o = new c("connpt", C0374dh.i, (short) 4);
     private static final c p = new c(o.A, C0374dh.i, (short) 5);
@@ -44,7 +43,7 @@ public class C1100g implements Serializable, Cloneable, b<C1100g, C1101h> {
     static {
         Map enumMap = new EnumMap(C1101h.class);
         enumMap.put(C1101h.CHID, new org.apache.thrift.meta_data.b("chid", (byte) 1, new org.apache.thrift.meta_data.c((byte) 3)));
-        enumMap.put(C1101h.TYPE, new org.apache.thrift.meta_data.b(SocialConstants.PARAM_TYPE, (byte) 1, new org.apache.thrift.meta_data.c((byte) 8)));
+        enumMap.put(C1101h.TYPE, new org.apache.thrift.meta_data.b(a.h, (byte) 1, new org.apache.thrift.meta_data.c((byte) 8)));
         enumMap.put(C1101h.VALUE, new org.apache.thrift.meta_data.b(C0432i.b, (byte) 1, new org.apache.thrift.meta_data.c((byte) 8)));
         enumMap.put(C1101h.CONNPT, new org.apache.thrift.meta_data.b("connpt", (byte) 1, new org.apache.thrift.meta_data.c(C0374dh.i)));
         enumMap.put(C1101h.HOST, new org.apache.thrift.meta_data.b(o.A, (byte) 2, new org.apache.thrift.meta_data.c(C0374dh.i)));
@@ -99,7 +98,7 @@ public class C1100g implements Serializable, Cloneable, b<C1100g, C1101h> {
                     this.a = fVar.r();
                     a(true);
                     break;
-                case a.k /*2*/:
+                case kankan.wheel.widget.a.k /*2*/:
                     if (i.b != (byte) 8) {
                         i.a(fVar, i.b);
                         break;
@@ -107,7 +106,7 @@ public class C1100g implements Serializable, Cloneable, b<C1100g, C1101h> {
                     this.b = fVar.t();
                     b(true);
                     break;
-                case a.l /*3*/:
+                case kankan.wheel.widget.a.l /*3*/:
                     if (i.b != (byte) 8) {
                         i.a(fVar, i.b);
                         break;
@@ -115,7 +114,7 @@ public class C1100g implements Serializable, Cloneable, b<C1100g, C1101h> {
                     this.c = fVar.t();
                     c(true);
                     break;
-                case a.aQ /*4*/:
+                case kankan.wheel.widget.a.aQ /*4*/:
                     if (i.b != C0374dh.i) {
                         i.a(fVar, i.b);
                         break;
@@ -123,7 +122,7 @@ public class C1100g implements Serializable, Cloneable, b<C1100g, C1101h> {
                         this.d = fVar.w();
                         break;
                     }
-                case a.X /*5*/:
+                case kankan.wheel.widget.a.X /*5*/:
                     if (i.b != C0374dh.i) {
                         i.a(fVar, i.b);
                         break;
@@ -131,7 +130,7 @@ public class C1100g implements Serializable, Cloneable, b<C1100g, C1101h> {
                         this.e = fVar.w();
                         break;
                     }
-                case a.bt /*6*/:
+                case kankan.wheel.widget.a.bt /*6*/:
                     if (i.b != (byte) 8) {
                         i.a(fVar, i.b);
                         break;
@@ -139,7 +138,7 @@ public class C1100g implements Serializable, Cloneable, b<C1100g, C1101h> {
                     this.f = fVar.t();
                     d(true);
                     break;
-                case a.bc /*7*/:
+                case kankan.wheel.widget.a.bc /*7*/:
                     if (i.b != C0374dh.i) {
                         i.a(fVar, i.b);
                         break;
@@ -147,7 +146,7 @@ public class C1100g implements Serializable, Cloneable, b<C1100g, C1101h> {
                         this.g = fVar.w();
                         break;
                     }
-                case a.ba /*8*/:
+                case kankan.wheel.widget.a.ba /*8*/:
                     if (i.b != C0374dh.i) {
                         i.a(fVar, i.b);
                         break;
@@ -155,7 +154,7 @@ public class C1100g implements Serializable, Cloneable, b<C1100g, C1101h> {
                         this.h = fVar.w();
                         break;
                     }
-                case a.bo /*9*/:
+                case kankan.wheel.widget.a.bo /*9*/:
                     if (i.b != (byte) 8) {
                         i.a(fVar, i.b);
                         break;

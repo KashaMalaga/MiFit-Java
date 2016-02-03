@@ -17,10 +17,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import cn.com.smartdevices.bracelet.C0401a;
 import cn.com.smartdevices.bracelet.ui.SystemBarTintActivity;
-import com.xiaomi.hm.health.k;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 
 public class SportFavoriteVoteGridActivity extends SystemBarTintActivity implements OnClickListener {
     private S a = null;
@@ -35,42 +32,42 @@ public class SportFavoriteVoteGridActivity extends SystemBarTintActivity impleme
 
     private void a() {
         Dialog dialog = new Dialog(this);
-        dialog.setTitle(r.lab_factory_sport_type_others);
-        View inflate = getLayoutInflater().inflate(n.dialog_lab_sport_favorite_others, null);
+        dialog.setTitle(R.string.lab_factory_sport_type_others);
+        View inflate = getLayoutInflater().inflate(R.layout.dialog_lab_sport_favorite_others, null);
         dialog.setContentView(inflate);
-        EditText editText = (EditText) inflate.findViewById(l.favorite_user_sport_name);
-        inflate.findViewById(l.left_button).setOnClickListener(new P(this, dialog));
-        inflate.findViewById(l.right_button).setOnClickListener(new Q(this, editText, dialog));
+        EditText editText = (EditText) inflate.findViewById(R.id.favorite_user_sport_name);
+        inflate.findViewById(R.id.left_button).setOnClickListener(new P(this, dialog));
+        inflate.findViewById(R.id.right_button).setOnClickListener(new Q(this, editText, dialog));
         dialog.show();
     }
 
     private void a(int i, String str) {
         if (this.c == null) {
-            this.c = (TextView) findViewById(l.lab_sport_favorite_desc);
+            this.c = (TextView) findViewById(R.id.lab_sport_favorite_desc);
         }
         if (this.d == null) {
-            this.d = (TextView) findViewById(l.lab_sport_favorite_sub_desc);
+            this.d = (TextView) findViewById(R.id.lab_sport_favorite_sub_desc);
         }
         if (this.e == null) {
-            this.e = (RelativeLayout) findViewById(l.vote_result);
+            this.e = (RelativeLayout) findViewById(R.id.vote_result);
         }
         if (this.f == null) {
-            this.f = (ImageView) findViewById(l.vote_result_img);
+            this.f = (ImageView) findViewById(R.id.vote_result_img);
         }
         if (this.g == null) {
-            this.g = (TextView) findViewById(l.vote_result_name);
+            this.g = (TextView) findViewById(R.id.vote_result_name);
         }
         this.f.setImageResource(i);
         this.g.setText(str);
         this.e.setVisibility(0);
         Resources resources = getResources();
-        this.c.setText(resources.getText(r.lab_factory_sport_vote_result_desc));
-        this.d.setText(resources.getText(r.lab_factory_sport_vote_result_sub_desc));
+        this.c.setText(resources.getText(R.string.lab_factory_sport_vote_result_desc));
+        this.d.setText(resources.getText(R.string.lab_factory_sport_vote_result_sub_desc));
         this.b.setVisibility(4);
     }
 
     private void b() {
-        this.h = (TextView) findViewById(l.home_back);
+        this.h = (TextView) findViewById(R.id.home_back);
         this.h.setOnClickListener(this);
     }
 
@@ -78,7 +75,7 @@ public class SportFavoriteVoteGridActivity extends SystemBarTintActivity impleme
         if (i2 == 0 && intent != null) {
             String stringExtra = intent.getStringExtra("sport_name");
             if (!TextUtils.isEmpty(stringExtra)) {
-                a(k.lab_favorite_vote_others_normal, stringExtra);
+                a(R.drawable.lab_favorite_vote_others_normal, stringExtra);
                 C0401a.a((Context) this, C0401a.bb, "Others", stringExtra);
             }
         }
@@ -86,7 +83,7 @@ public class SportFavoriteVoteGridActivity extends SystemBarTintActivity impleme
 
     public void onClick(View view) {
         switch (view.getId()) {
-            case l.home_back /*2131296313*/:
+            case R.id.home_back:
                 finish();
                 return;
             default:
@@ -96,9 +93,9 @@ public class SportFavoriteVoteGridActivity extends SystemBarTintActivity impleme
 
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView((int) n.activity_lab_factory_more_sport_favorite);
+        setContentView((int) R.layout.activity_lab_factory_more_sport_favorite);
         b();
-        this.b = (GridView) findViewById(l.favorite_sports_list);
+        this.b = (GridView) findViewById(R.id.favorite_sports_list);
         this.a = new S(this, this, C0568d.a());
         this.b.setChoiceMode(2);
         this.b.setOnItemClickListener(this.i);

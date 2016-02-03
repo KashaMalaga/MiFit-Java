@@ -3,7 +3,7 @@ package cn.com.smartdevices.bracelet.relation;
 import cn.com.smartdevices.bracelet.relation.b.e;
 import com.handmark.pulltorefresh.library.PullToRefreshBase.Mode;
 import com.huami.android.view.b;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 
 class C0617u implements Runnable {
     final /* synthetic */ e a;
@@ -30,9 +30,9 @@ class C0617u implements Runnable {
             }
             if (i != 0) {
                 if (this.a.d == -2) {
-                    b.a(this.b, (int) r.no_network_connection, 1).show();
+                    b.a(this.b, (int) R.string.no_network_connection, 1).show();
                 } else {
-                    b.a(this.b, (int) r.friend_list_get_error, 1).show();
+                    b.a(this.b, (int) R.string.friend_list_get_error, 1).show();
                 }
             }
         }

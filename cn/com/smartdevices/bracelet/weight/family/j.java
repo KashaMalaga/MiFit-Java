@@ -8,7 +8,7 @@ import cn.com.smartdevices.bracelet.eventbus.weight.EventUserDeleted;
 import cn.com.smartdevices.bracelet.weight.aA;
 import cn.com.smartdevices.bracelet.weight.goal.a;
 import com.huami.android.view.b;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 import de.greenrobot.event.EventBus;
 
 class j extends AsyncTask<Void, Void, Boolean> {
@@ -40,7 +40,7 @@ class j extends AsyncTask<Void, Void, Boolean> {
             return;
         }
         C0596r.e("UserInfoFragment", "onSyncFail");
-        b.a(this.a.a.getActivity().getApplicationContext(), this.a.a.getString(r.please_connect_internet), 0).show();
+        b.a(this.a.a.getActivity().getApplicationContext(), this.a.a.getString(R.string.please_connect_internet), 0).show();
         C0401a.a(this.a.a.getActivity(), C0401a.fs);
     }
 
@@ -54,6 +54,6 @@ class j extends AsyncTask<Void, Void, Boolean> {
 
     protected void onPreExecute() {
         super.onPreExecute();
-        Utils.a(this.a.a.getActivity(), (int) r.delete_family_member);
+        Utils.a(this.a.a.getActivity(), (int) R.string.delete_family_member);
     }
 }

@@ -10,8 +10,7 @@ import android.widget.TextView;
 import cn.com.smartdevices.bracelet.Keeper;
 import cn.com.smartdevices.bracelet.ui.widget.DimPanelBottomBar;
 import com.huami.android.view.c;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
+import com.xiaomi.hm.health.R;
 
 public class C0812l extends c {
     public static final String a = "TITLE";
@@ -35,7 +34,7 @@ public class C0812l extends c {
     }
 
     protected int inflateLayout() {
-        return n.fragment_babyweight;
+        return R.layout.fragment_babyweight;
     }
 
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
@@ -44,14 +43,14 @@ public class C0812l extends c {
         this.k = getArguments().getString(b) == null ? b : getArguments().getString(b);
         this.l = getArguments().getString(c) == null ? c : getArguments().getString(c);
         this.m = getArguments().getString(d) == null ? d : getArguments().getString(d);
-        this.e = (TextView) onCreateView.findViewById(l.title);
+        this.e = (TextView) onCreateView.findViewById(R.id.title);
         this.e.setText(this.j);
-        this.f = (TextView) onCreateView.findViewById(l.content);
+        this.f = (TextView) onCreateView.findViewById(R.id.content);
         this.f.setText(this.k);
-        this.h = (DimPanelBottomBar) onCreateView.findViewById(l.dimbtmbar);
+        this.h = (DimPanelBottomBar) onCreateView.findViewById(R.id.dimbtmbar);
         this.h.a(this.m);
         this.h.b(this.l);
-        this.g = (CheckBox) onCreateView.findViewById(l.check_text);
+        this.g = (CheckBox) onCreateView.findViewById(R.id.check_text);
         this.g.setOnCheckedChangeListener(new C0813m(this));
         return onCreateView;
     }

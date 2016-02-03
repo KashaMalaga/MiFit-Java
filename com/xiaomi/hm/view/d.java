@@ -8,7 +8,7 @@ import android.support.v4.view.C0151az;
 import android.support.v4.view.a.C0113o;
 import android.util.Log;
 import cn.com.smartdevices.bracelet.model.PersonInfo;
-import com.c.b.a.c.c;
+import com.xiaomi.channel.relationservice.data.b;
 import com.xiaomi.hm.health.dataprocess.HeartRateInfo;
 import java.io.ByteArrayInputStream;
 import java.io.FileInputStream;
@@ -608,7 +608,7 @@ public class d extends Thread {
             switch (t()) {
                 case a /*0*/:
                     break;
-                case c.a /*33*/:
+                case b.H /*33*/:
                     switch (t()) {
                         case 249:
                             w();

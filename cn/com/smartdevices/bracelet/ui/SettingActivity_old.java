@@ -16,11 +16,8 @@ import cn.com.smartdevices.bracelet.config.b;
 import cn.com.smartdevices.bracelet.datasource.DeviceSource;
 import cn.com.smartdevices.bracelet.ui.widget.c;
 import com.tencent.connect.common.Constants;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.bt.bleservice.a;
-import com.xiaomi.hm.health.i;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import kankan.wheel.widget.g;
 
 public class SettingActivity_old extends SystemBarTintActivity {
     private static final String a = "SettingActivity";
@@ -33,7 +30,7 @@ public class SettingActivity_old extends SystemBarTintActivity {
     private Context h = this;
 
     private void c() {
-        this.c = (ViewPager) findViewById(l.pager);
+        this.c = (ViewPager) findViewById(R.id.pager);
         this.g = new C0674ad(getFragmentManager());
         if (!DeviceSource.hasBindBracelet() && DeviceSource.hasBindWeight()) {
             C0401a.a(this.h, C0401a.fJ, "01");
@@ -41,10 +38,10 @@ public class SettingActivity_old extends SystemBarTintActivity {
             C0401a.a(this.h, C0401a.fJ, Constants.VIA_REPORT_TYPE_SHARE_TO_QZONE);
         }
         this.c.a(this.g);
-        this.b = (c) findViewById(l.indicator);
+        this.b = (c) findViewById(R.id.indicator);
         this.b.a(this.c);
-        this.e = (TextView) findViewById(l.band_txt);
-        this.f = (TextView) findViewById(l.weight_txt);
+        this.e = (TextView) findViewById(R.id.band_txt);
+        this.f = (TextView) findViewById(R.id.weight_txt);
         if (!b.h().l.a.booleanValue()) {
             this.f.setVisibility(8);
         }
@@ -72,9 +69,9 @@ public class SettingActivity_old extends SystemBarTintActivity {
     }
 
     public void a() {
-        getResources().getColor(g.bg_color_grey);
-        int color = DeviceSource.hasBindBracelet() ? a.c() ? getResources().getColor(i.bg_mode_step) : getResources().getColor(g.bg_color_grey) : getResources().getColor(g.bg_color_grey);
-        int color2 = DeviceSource.hasBindWeight() ? getResources().getColor(i.bg_mode_weight) : getResources().getColor(g.bg_color_grey);
+        getResources().getColor(R.color.bg_color_grey);
+        int color = DeviceSource.hasBindBracelet() ? a.c() ? getResources().getColor(R.color.bg_mode_step) : getResources().getColor(R.color.bg_color_grey) : getResources().getColor(R.color.bg_color_grey);
+        int color2 = DeviceSource.hasBindWeight() ? getResources().getColor(R.color.bg_mode_weight) : getResources().getColor(R.color.bg_color_grey);
         this.c.a(this.c.c(), true);
         this.d = (ValueAnimator) cn.com.smartdevices.bracelet.chart.util.a.a(color, color2, new dS(this), this.c);
         if (this.c.c() == 0) {
@@ -105,7 +102,7 @@ public class SettingActivity_old extends SystemBarTintActivity {
 
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView((int) n.activity_settings_old);
+        setContentView((int) R.layout.activity_settings_old);
         c();
         d();
     }

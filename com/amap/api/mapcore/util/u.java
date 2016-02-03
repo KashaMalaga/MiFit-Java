@@ -189,122 +189,88 @@ public class u {
     }
 
     public static String a(File file) {
-        FileInputStream fileInputStream;
-        BufferedReader bufferedReader;
         Throwable e;
-        FileInputStream fileInputStream2;
-        BufferedReader bufferedReader2 = null;
+        FileInputStream fileInputStream;
+        BufferedReader bufferedReader = null;
         StringBuffer stringBuffer = new StringBuffer();
+        FileInputStream fileInputStream2;
+        BufferedReader bufferedReader2;
         try {
-            fileInputStream = new FileInputStream(file);
+            fileInputStream2 = new FileInputStream(file);
             try {
-                bufferedReader = new BufferedReader(new InputStreamReader(fileInputStream, kankan.wheel.widget.a.bO));
+                bufferedReader2 = new BufferedReader(new InputStreamReader(fileInputStream2, kankan.wheel.widget.a.bO));
                 while (true) {
                     try {
-                        String readLine = bufferedReader.readLine();
+                        String readLine = bufferedReader2.readLine();
                         if (readLine == null) {
                             break;
                         }
                         stringBuffer.append(readLine);
                     } catch (FileNotFoundException e2) {
                         e = e2;
-                        fileInputStream2 = fileInputStream;
+                        fileInputStream = fileInputStream2;
                     } catch (IOException e3) {
                         e = e3;
-                        bufferedReader2 = bufferedReader;
+                        bufferedReader = bufferedReader2;
                     } catch (Throwable th) {
                         e = th;
-                        bufferedReader2 = bufferedReader;
+                        bufferedReader = bufferedReader2;
                     }
                 }
-                if (fileInputStream != null) {
+                if (fileInputStream2 != null) {
                     try {
-                        fileInputStream.close();
+                        fileInputStream2.close();
                     } catch (IOException e4) {
                         e4.printStackTrace();
-                        if (bufferedReader != null) {
+                        if (bufferedReader2 != null) {
                             try {
-                                bufferedReader.close();
+                                bufferedReader2.close();
                             } catch (IOException e42) {
                                 e42.printStackTrace();
                             }
                         }
                     } catch (Throwable th2) {
-                        if (bufferedReader != null) {
+                        if (bufferedReader2 != null) {
                             try {
-                                bufferedReader.close();
+                                bufferedReader2.close();
                             } catch (IOException e5) {
                                 e5.printStackTrace();
                             }
                         }
                     }
                 }
-                if (bufferedReader != null) {
+                if (bufferedReader2 != null) {
                     try {
-                        bufferedReader.close();
+                        bufferedReader2.close();
                     } catch (IOException e422) {
                         e422.printStackTrace();
                     }
                 }
             } catch (FileNotFoundException e6) {
                 e = e6;
-                bufferedReader = null;
-                fileInputStream2 = fileInputStream;
+                bufferedReader2 = null;
+                fileInputStream = fileInputStream2;
                 try {
                     az.a(e, "Util", "readFile fileNotFound");
                     e.printStackTrace();
-                    if (fileInputStream2 != null) {
+                    if (fileInputStream != null) {
                         try {
-                            fileInputStream2.close();
+                            fileInputStream.close();
                         } catch (IOException e4222) {
                             e4222.printStackTrace();
-                            if (bufferedReader != null) {
+                            if (bufferedReader2 != null) {
                                 try {
-                                    bufferedReader.close();
+                                    bufferedReader2.close();
                                 } catch (IOException e42222) {
                                     e42222.printStackTrace();
                                 }
                             }
                         } catch (Throwable th3) {
-                            if (bufferedReader != null) {
+                            if (bufferedReader2 != null) {
                                 try {
-                                    bufferedReader.close();
+                                    bufferedReader2.close();
                                 } catch (IOException e52) {
                                     e52.printStackTrace();
-                                }
-                            }
-                        }
-                    }
-                    if (bufferedReader != null) {
-                        try {
-                            bufferedReader.close();
-                        } catch (IOException e422222) {
-                            e422222.printStackTrace();
-                        }
-                    }
-                    return stringBuffer.toString();
-                } catch (Throwable th4) {
-                    e = th4;
-                    fileInputStream = fileInputStream2;
-                    bufferedReader2 = bufferedReader;
-                    if (fileInputStream != null) {
-                        try {
-                            fileInputStream.close();
-                        } catch (IOException e522) {
-                            e522.printStackTrace();
-                            if (bufferedReader2 != null) {
-                                try {
-                                    bufferedReader2.close();
-                                } catch (IOException e5222) {
-                                    e5222.printStackTrace();
-                                }
-                            }
-                        } catch (Throwable th5) {
-                            if (bufferedReader2 != null) {
-                                try {
-                                    bufferedReader2.close();
-                                } catch (IOException e52222) {
-                                    e52222.printStackTrace();
                                 }
                             }
                         }
@@ -312,6 +278,40 @@ public class u {
                     if (bufferedReader2 != null) {
                         try {
                             bufferedReader2.close();
+                        } catch (IOException e422222) {
+                            e422222.printStackTrace();
+                        }
+                    }
+                    return stringBuffer.toString();
+                } catch (Throwable th4) {
+                    e = th4;
+                    fileInputStream2 = fileInputStream;
+                    bufferedReader = bufferedReader2;
+                    if (fileInputStream2 != null) {
+                        try {
+                            fileInputStream2.close();
+                        } catch (IOException e522) {
+                            e522.printStackTrace();
+                            if (bufferedReader != null) {
+                                try {
+                                    bufferedReader.close();
+                                } catch (IOException e5222) {
+                                    e5222.printStackTrace();
+                                }
+                            }
+                        } catch (Throwable th5) {
+                            if (bufferedReader != null) {
+                                try {
+                                    bufferedReader.close();
+                                } catch (IOException e52222) {
+                                    e52222.printStackTrace();
+                                }
+                            }
+                        }
+                    }
+                    if (bufferedReader != null) {
+                        try {
+                            bufferedReader.close();
                         } catch (IOException e522222) {
                             e522222.printStackTrace();
                         }
@@ -323,31 +323,31 @@ public class u {
                 try {
                     az.a(e, "Util", "readFile io");
                     e.printStackTrace();
-                    if (fileInputStream != null) {
+                    if (fileInputStream2 != null) {
                         try {
-                            fileInputStream.close();
+                            fileInputStream2.close();
                         } catch (IOException e4222222) {
                             e4222222.printStackTrace();
-                            if (bufferedReader2 != null) {
+                            if (bufferedReader != null) {
                                 try {
-                                    bufferedReader2.close();
+                                    bufferedReader.close();
                                 } catch (IOException e42222222) {
                                     e42222222.printStackTrace();
                                 }
                             }
                         } catch (Throwable th6) {
-                            if (bufferedReader2 != null) {
+                            if (bufferedReader != null) {
                                 try {
-                                    bufferedReader2.close();
+                                    bufferedReader.close();
                                 } catch (IOException e5222222) {
                                     e5222222.printStackTrace();
                                 }
                             }
                         }
                     }
-                    if (bufferedReader2 != null) {
+                    if (bufferedReader != null) {
                         try {
-                            bufferedReader2.close();
+                            bufferedReader.close();
                         } catch (IOException e422222222) {
                             e422222222.printStackTrace();
                         }
@@ -355,19 +355,31 @@ public class u {
                     return stringBuffer.toString();
                 } catch (Throwable th7) {
                     e = th7;
-                    if (fileInputStream != null) {
-                        fileInputStream.close();
+                    if (fileInputStream2 != null) {
+                        fileInputStream2.close();
                     }
-                    if (bufferedReader2 != null) {
-                        bufferedReader2.close();
+                    if (bufferedReader != null) {
+                        bufferedReader.close();
                     }
                     throw e;
                 }
             }
         } catch (FileNotFoundException e8) {
             e = e8;
-            bufferedReader = null;
+            bufferedReader2 = null;
             az.a(e, "Util", "readFile fileNotFound");
+            e.printStackTrace();
+            if (fileInputStream != null) {
+                fileInputStream.close();
+            }
+            if (bufferedReader2 != null) {
+                bufferedReader2.close();
+            }
+            return stringBuffer.toString();
+        } catch (IOException e9) {
+            e = e9;
+            fileInputStream2 = null;
+            az.a(e, "Util", "readFile io");
             e.printStackTrace();
             if (fileInputStream2 != null) {
                 fileInputStream2.close();
@@ -376,26 +388,14 @@ public class u {
                 bufferedReader.close();
             }
             return stringBuffer.toString();
-        } catch (IOException e9) {
-            e = e9;
-            fileInputStream = null;
-            az.a(e, "Util", "readFile io");
-            e.printStackTrace();
-            if (fileInputStream != null) {
-                fileInputStream.close();
-            }
-            if (bufferedReader2 != null) {
-                bufferedReader2.close();
-            }
-            return stringBuffer.toString();
         } catch (Throwable th8) {
             e = th8;
-            fileInputStream = null;
-            if (fileInputStream != null) {
-                fileInputStream.close();
+            fileInputStream2 = null;
+            if (fileInputStream2 != null) {
+                fileInputStream2.close();
             }
-            if (bufferedReader2 != null) {
-                bufferedReader2.close();
+            if (bufferedReader != null) {
+                bufferedReader.close();
             }
             throw e;
         }
@@ -551,8 +551,8 @@ public class u {
     }
 
     public static byte[] a(byte[] bArr) {
-        Throwable th;
         GZIPInputStream gZIPInputStream;
+        Throwable th;
         try {
             gZIPInputStream = new GZIPInputStream(new ByteArrayInputStream(bArr, 0, bArr.length));
             try {

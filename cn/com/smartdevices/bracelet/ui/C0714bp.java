@@ -3,7 +3,7 @@ package cn.com.smartdevices.bracelet.ui;
 import android.app.Activity;
 import android.os.Message;
 import cn.com.smartdevices.bracelet.C0596r;
-import com.xiaomi.hm.health.e;
+import com.xiaomi.hm.health.R;
 import kankan.wheel.widget.a;
 import kankan.wheel.widget.l;
 
@@ -27,7 +27,7 @@ class C0714bp extends bF {
             case a.k /*2*/:
                 if (this.a.s == 4) {
                     C0596r.e(InstructionWeightActivity.O, " handle MESSAGE_MAGNIFY_-------SWIPE------_ANIM");
-                    this.a.a(this.a.C, (int) e.instruction_weight_swipe);
+                    this.a.a(this.a.C, (int) R.anim.instruction_weight_swipe);
                     return;
                 }
                 return;

@@ -9,7 +9,7 @@ import cn.com.smartdevices.bracelet.lua.LuaEvent;
 import cn.com.smartdevices.bracelet.model.LuaItem;
 import cn.com.smartdevices.bracelet.partner.Partner;
 import com.xiaomi.e.a;
-import com.xiaomi.hm.health.l;
+import com.xiaomi.hm.health.R;
 import java.util.ArrayList;
 import java.util.List;
 import org.json.JSONObject;
@@ -54,7 +54,7 @@ public class f extends a {
     }
 
     public int a() {
-        return l.notification_home;
+        return R.id.notification_home;
     }
 
     public void b() {

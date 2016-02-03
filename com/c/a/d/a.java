@@ -2,9 +2,9 @@ package com.c.a.d;
 
 import cn.com.smartdevices.bracelet.model.ShareData;
 import com.activeandroid.b;
-import com.amap.api.location.core.AMapLocException;
 import com.c.a.b.u;
 import com.tencent.connect.share.QQShare;
+import com.xiaomi.channel.relationservice.data.BuddyData;
 import java.io.Closeable;
 import java.io.EOFException;
 import java.io.IOException;
@@ -94,7 +94,7 @@ public class a implements Closeable {
             case '{':
             case '}':
                 break;
-            case '#':
+            case com.xiaomi.channel.relationservice.data.b.J /*35*/:
             case '/':
             case ';':
             case '=':
@@ -324,7 +324,7 @@ public class a implements Closeable {
             }
             b = b(true);
             switch (b) {
-                case AMapLocException.ERROR_CODE_FAILURE_LOCATION /*34*/:
+                case com.xiaomi.channel.relationservice.data.b.I /*34*/:
                     this.J = p;
                     return p;
                 case kankan.wheel.widget.a.ay /*39*/:
@@ -376,7 +376,7 @@ public class a implements Closeable {
             throw new IllegalStateException("JsonReader is closed");
         }
         switch (b(true)) {
-            case AMapLocException.ERROR_CODE_FAILURE_LOCATION /*34*/:
+            case com.xiaomi.channel.relationservice.data.b.I /*34*/:
                 if (this.O == v) {
                     w();
                 }
@@ -626,7 +626,7 @@ public class a implements Closeable {
                     case '{':
                     case '}':
                         break;
-                    case '#':
+                    case com.xiaomi.channel.relationservice.data.b.J /*35*/:
                     case '/':
                     case ';':
                     case '=':
@@ -674,7 +674,7 @@ public class a implements Closeable {
                     case '{':
                     case '}':
                         break;
-                    case '#':
+                    case com.xiaomi.channel.relationservice.data.b.J /*35*/:
                     case '/':
                     case ';':
                     case '=':
@@ -741,7 +741,7 @@ public class a implements Closeable {
                     return '\f';
                 case 'n':
                     return '\n';
-                case 'r':
+                case BuddyData.s /*114*/:
                     return '\r';
                 case 't':
                     return '\t';

@@ -19,9 +19,7 @@ import com.sina.weibo.sdk.auth.AuthInfo;
 import com.sina.weibo.sdk.auth.sso.SsoHandler;
 import com.sina.weibo.sdk.net.RequestListener;
 import com.xiaomi.e.a;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 
 public class BindHealthActivity extends SystemBarTintActivity {
     public static int a = 0;
@@ -59,17 +57,17 @@ public class BindHealthActivity extends SystemBarTintActivity {
                 TextView textView = this.h;
                 Object[] objArr = new Object[k];
                 objArr[0] = i2;
-                textView.setText(getString(r.state_binded_nickname_weibo, objArr));
+                textView.setText(getString(R.string.state_binded_nickname_weibo, objArr));
             }
-            this.g.setText(getString(r.unbind));
+            this.g.setText(getString(R.string.unbind));
         }
         if (i == 0) {
             this.h.setVisibility(8);
-            this.g.setText(getString(r.bind_weibo_health));
+            this.g.setText(getString(R.string.bind_weibo_health));
         }
         if (-1 == i) {
             this.h.setVisibility(8);
-            this.g.setText(getString(r.rebind_weibo_health));
+            this.g.setText(getString(R.string.rebind_weibo_health));
         }
         this.g.setTag(Integer.valueOf(i));
     }
@@ -146,14 +144,14 @@ public class BindHealthActivity extends SystemBarTintActivity {
 
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView((int) n.activity_bind_weibo_health);
-        this.g = (Button) findViewById(l.start_bind);
-        this.h = (TextView) findViewById(l.binded_qq_nickname);
+        setContentView((int) R.layout.activity_bind_weibo_health);
+        this.g = (Button) findViewById(R.id.start_bind);
+        this.h = (TextView) findViewById(R.id.binded_qq_nickname);
         this.g.setOnClickListener(new C0856c(this));
         this.j = v.a();
         this.f = q.a(this);
         a(this.f);
-        findViewById(l.home_back).setOnClickListener(new C0857d(this));
+        findViewById(R.id.home_back).setOnClickListener(new C0857d(this));
         this.q = new AuthInfo(this, m.l, o.b, o.c);
         this.s = new SsoHandler(this, this.q);
         Intent intent = getIntent();

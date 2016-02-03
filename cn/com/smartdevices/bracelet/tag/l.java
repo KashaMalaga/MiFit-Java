@@ -8,7 +8,7 @@ import android.widget.TextView;
 import cn.com.smartdevices.bracelet.gaocept.b;
 import cn.com.smartdevices.bracelet.tag.a.a;
 import cn.com.smartdevices.bracelet.tag.a.c;
-import com.xiaomi.hm.health.n;
+import com.xiaomi.hm.health.R;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -46,10 +46,10 @@ class l extends BaseAdapter {
     public View getView(int i, View view, ViewGroup viewGroup) {
         m mVar;
         if (view == null) {
-            view = LayoutInflater.from(this.a.getApplication()).inflate(n.view_tag_history_item, null);
+            view = LayoutInflater.from(this.a.getApplication()).inflate(R.layout.view_tag_history_item, null);
             m mVar2 = new m();
-            mVar2.a = (TextView) view.findViewById(com.xiaomi.hm.health.l.name);
-            mVar2.b = (TextView) view.findViewById(com.xiaomi.hm.health.l.date);
+            mVar2.a = (TextView) view.findViewById(R.id.name);
+            mVar2.b = (TextView) view.findViewById(R.id.date);
             view.setTag(mVar2);
             mVar = mVar2;
         } else {

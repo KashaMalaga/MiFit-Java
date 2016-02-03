@@ -699,14 +699,13 @@ public class SlidingPaneLayout extends ViewGroup {
     }
 
     protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
-        int i5;
         boolean l = l();
         if (l) {
             this.u.a(2);
         } else {
             this.u.a(1);
         }
-        int i6 = i3 - i;
+        int i5 = i3 - i;
         int paddingRight = l ? getPaddingRight() : getPaddingLeft();
         int paddingLeft = l ? getPaddingLeft() : getPaddingRight();
         int paddingTop = getPaddingTop();
@@ -715,48 +714,49 @@ public class SlidingPaneLayout extends ViewGroup {
             float f = (this.k && this.v) ? 1.0f : 0.0f;
             this.m = f;
         }
-        int i7 = 0;
-        int i8 = paddingRight;
-        while (i7 < childCount) {
+        int i6 = 0;
+        int i7 = paddingRight;
+        while (i6 < childCount) {
+            int i8;
             int i9;
-            View childAt = getChildAt(i7);
+            View childAt = getChildAt(i6);
             if (childAt.getVisibility() == 8) {
-                i5 = paddingRight;
-                i9 = i8;
+                i8 = paddingRight;
+                i9 = i7;
             } else {
                 int i10;
                 LayoutParams layoutParams = (LayoutParams) childAt.getLayoutParams();
                 int measuredWidth = childAt.getMeasuredWidth();
                 if (layoutParams.b) {
-                    int min = (Math.min(paddingRight, (i6 - paddingLeft) - this.j) - i8) - (layoutParams.leftMargin + layoutParams.rightMargin);
+                    int min = (Math.min(paddingRight, (i5 - paddingLeft) - this.j) - i7) - (layoutParams.leftMargin + layoutParams.rightMargin);
                     this.o = min;
                     i9 = l ? layoutParams.rightMargin : layoutParams.leftMargin;
-                    layoutParams.c = ((i8 + i9) + min) + (measuredWidth / 2) > i6 - paddingLeft;
-                    i5 = (int) (((float) min) * this.m);
-                    i10 = i8 + (i9 + i5);
-                    this.m = ((float) i5) / ((float) this.o);
-                    i5 = 0;
+                    layoutParams.c = ((i7 + i9) + min) + (measuredWidth / 2) > i5 - paddingLeft;
+                    i8 = (int) (((float) min) * this.m);
+                    i10 = i7 + (i9 + i8);
+                    this.m = ((float) i8) / ((float) this.o);
+                    i8 = 0;
                 } else if (!this.k || this.q == 0) {
-                    i5 = 0;
+                    i8 = 0;
                     i10 = paddingRight;
                 } else {
-                    i5 = (int) ((1.0f - this.m) * ((float) this.q));
+                    i8 = (int) ((1.0f - this.m) * ((float) this.q));
                     i10 = paddingRight;
                 }
                 if (l) {
-                    i9 = (i6 - i10) + i5;
-                    i5 = i9 - measuredWidth;
+                    i9 = (i5 - i10) + i8;
+                    i8 = i9 - measuredWidth;
                 } else {
-                    i5 = i10 - i5;
-                    i9 = i5 + measuredWidth;
+                    i8 = i10 - i8;
+                    i9 = i8 + measuredWidth;
                 }
-                childAt.layout(i5, paddingTop, i9, childAt.getMeasuredHeight() + paddingTop);
-                i5 = childAt.getWidth() + paddingRight;
+                childAt.layout(i8, paddingTop, i9, childAt.getMeasuredHeight() + paddingTop);
+                i8 = childAt.getWidth() + paddingRight;
                 i9 = i10;
             }
-            i7++;
-            paddingRight = i5;
-            i8 = i9;
+            i6++;
+            paddingRight = i8;
+            i7 = i9;
         }
         if (this.w) {
             if (this.k) {
@@ -767,8 +767,8 @@ public class SlidingPaneLayout extends ViewGroup {
                     a(this.l, this.m, this.e);
                 }
             } else {
-                for (i5 = 0; i5 < childCount; i5++) {
-                    a(getChildAt(i5), 0.0f, this.e);
+                for (i8 = 0; i8 < childCount; i8++) {
+                    a(getChildAt(i8), 0.0f, this.e);
                 }
             }
             d(this.l);
@@ -779,7 +779,6 @@ public class SlidingPaneLayout extends ViewGroup {
     protected void onMeasure(int i, int i2) {
         int i3;
         int i4;
-        int i5;
         int mode = MeasureSpec.getMode(i);
         int size = MeasureSpec.getSize(i);
         int mode2 = MeasureSpec.getMode(i2);
@@ -834,58 +833,59 @@ public class SlidingPaneLayout extends ViewGroup {
             Log.e(b, "onMeasure: More than two child views are not supported.");
         }
         this.l = null;
-        int i6 = 0;
-        int i7 = paddingLeft;
-        int i8 = size2;
+        int i5 = 0;
+        int i6 = paddingLeft;
+        int i7 = size2;
         float f = 0.0f;
-        while (i6 < childCount) {
+        while (i5 < childCount) {
             float f2;
+            int i8;
             boolean z2;
-            View childAt = getChildAt(i6);
+            View childAt = getChildAt(i5);
             LayoutParams layoutParams = (LayoutParams) childAt.getLayoutParams();
             if (childAt.getVisibility() == 8) {
                 layoutParams.c = false;
-                size2 = i7;
+                size2 = i6;
                 f2 = f;
-                i5 = i8;
+                i8 = i7;
                 z2 = z;
             } else {
                 if (layoutParams.a > 0.0f) {
                     f += layoutParams.a;
                     if (layoutParams.width == 0) {
-                        size2 = i7;
+                        size2 = i6;
                         f2 = f;
-                        i5 = i8;
+                        i8 = i7;
                         z2 = z;
                     }
                 }
                 mode = layoutParams.leftMargin + layoutParams.rightMargin;
                 mode = layoutParams.width == -2 ? MeasureSpec.makeMeasureSpec(paddingLeft - mode, af.a) : layoutParams.width == -1 ? MeasureSpec.makeMeasureSpec(paddingLeft - mode, 1073741824) : MeasureSpec.makeMeasureSpec(layoutParams.width, 1073741824);
-                i5 = layoutParams.height == -2 ? MeasureSpec.makeMeasureSpec(mode2, af.a) : layoutParams.height == -1 ? MeasureSpec.makeMeasureSpec(mode2, 1073741824) : MeasureSpec.makeMeasureSpec(layoutParams.height, 1073741824);
-                childAt.measure(mode, i5);
+                i8 = layoutParams.height == -2 ? MeasureSpec.makeMeasureSpec(mode2, af.a) : layoutParams.height == -1 ? MeasureSpec.makeMeasureSpec(mode2, 1073741824) : MeasureSpec.makeMeasureSpec(layoutParams.height, 1073741824);
+                childAt.measure(mode, i8);
                 mode = childAt.getMeasuredWidth();
-                i5 = childAt.getMeasuredHeight();
-                if (i3 == Integer.MIN_VALUE && i5 > i8) {
-                    i8 = Math.min(i5, mode2);
+                i8 = childAt.getMeasuredHeight();
+                if (i3 == Integer.MIN_VALUE && i8 > i7) {
+                    i7 = Math.min(i8, mode2);
                 }
-                i5 = i7 - mode;
-                boolean z3 = i5 < 0;
+                i8 = i6 - mode;
+                boolean z3 = i8 < 0;
                 layoutParams.b = z3;
                 z3 |= z;
                 if (layoutParams.b) {
                     this.l = childAt;
                 }
-                size2 = i5;
-                i5 = i8;
+                size2 = i8;
+                i8 = i7;
                 float f3 = f;
                 z2 = z3;
                 f2 = f3;
             }
-            i6++;
+            i5++;
             z = z2;
-            i8 = i5;
+            i7 = i8;
             f = f2;
-            i7 = size2;
+            i6 = size2;
         }
         if (z || f > 0.0f) {
             int i9 = paddingLeft - this.j;
@@ -895,21 +895,21 @@ public class SlidingPaneLayout extends ViewGroup {
                     layoutParams = (LayoutParams) childAt2.getLayoutParams();
                     if (childAt2.getVisibility() != 8) {
                         Object obj = (layoutParams.width != 0 || layoutParams.a <= 0.0f) ? null : 1;
-                        i5 = obj != null ? 0 : childAt2.getMeasuredWidth();
+                        i8 = obj != null ? 0 : childAt2.getMeasuredWidth();
                         if (!z || childAt2 == this.l) {
                             if (layoutParams.a > 0.0f) {
                                 mode = layoutParams.width == 0 ? layoutParams.height == -2 ? MeasureSpec.makeMeasureSpec(mode2, af.a) : layoutParams.height == -1 ? MeasureSpec.makeMeasureSpec(mode2, 1073741824) : MeasureSpec.makeMeasureSpec(layoutParams.height, 1073741824) : MeasureSpec.makeMeasureSpec(childAt2.getMeasuredHeight(), 1073741824);
                                 if (z) {
                                     size2 = paddingLeft - (layoutParams.rightMargin + layoutParams.leftMargin);
-                                    i6 = MeasureSpec.makeMeasureSpec(size2, 1073741824);
-                                    if (i5 != size2) {
-                                        childAt2.measure(i6, mode);
+                                    i5 = MeasureSpec.makeMeasureSpec(size2, 1073741824);
+                                    if (i8 != size2) {
+                                        childAt2.measure(i5, mode);
                                     }
                                 } else {
-                                    childAt2.measure(MeasureSpec.makeMeasureSpec(((int) ((layoutParams.a * ((float) Math.max(0, i7))) / f)) + i5, 1073741824), mode);
+                                    childAt2.measure(MeasureSpec.makeMeasureSpec(((int) ((layoutParams.a * ((float) Math.max(0, i6))) / f)) + i8, 1073741824), mode);
                                 }
                             }
-                        } else if (layoutParams.width < 0 && (i5 > i9 || layoutParams.a > 0.0f)) {
+                        } else if (layoutParams.width < 0 && (i8 > i9 || layoutParams.a > 0.0f)) {
                             size2 = obj != null ? layoutParams.height == -2 ? MeasureSpec.makeMeasureSpec(mode2, af.a) : layoutParams.height == -1 ? MeasureSpec.makeMeasureSpec(mode2, 1073741824) : MeasureSpec.makeMeasureSpec(layoutParams.height, 1073741824) : MeasureSpec.makeMeasureSpec(childAt2.getMeasuredHeight(), 1073741824);
                             childAt2.measure(MeasureSpec.makeMeasureSpec(i9, 1073741824), size2);
                         }
@@ -917,7 +917,7 @@ public class SlidingPaneLayout extends ViewGroup {
                 }
             }
         }
-        setMeasuredDimension(i4, (getPaddingTop() + i8) + getPaddingBottom());
+        setMeasuredDimension(i4, (getPaddingTop() + i7) + getPaddingBottom());
         this.k = z;
         if (this.u.b() != 0 && !z) {
             this.u.h();

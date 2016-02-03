@@ -24,10 +24,10 @@ public class O {
     private static ProgressDialog b = null;
 
     public static Bitmap a(Context context, String str) {
-        InputStream openInputStream;
         Throwable th;
         Drawable drawable = null;
         Uri fromFile = Uri.fromFile(new File(str));
+        InputStream openInputStream;
         try {
             openInputStream = context.getContentResolver().openInputStream(fromFile);
             try {

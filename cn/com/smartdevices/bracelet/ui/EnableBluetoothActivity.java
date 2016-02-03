@@ -6,13 +6,12 @@ import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
+import com.xiaomi.hm.health.R;
 
 public class EnableBluetoothActivity extends Activity implements OnClickListener {
     public void onClick(View view) {
         int id = view.getId();
-        if (id == l.btn_enable_bluetooth) {
+        if (id == R.id.btn_enable_bluetooth) {
             BluetoothAdapter defaultAdapter = BluetoothAdapter.getDefaultAdapter();
             if (defaultAdapter == null || !defaultAdapter.enable()) {
                 setResult(0);
@@ -20,7 +19,7 @@ public class EnableBluetoothActivity extends Activity implements OnClickListener
                 setResult(-1);
             }
             finish();
-        } else if (id == l.skip) {
+        } else if (id == R.id.skip) {
             setResult(0);
             finish();
         }
@@ -28,9 +27,9 @@ public class EnableBluetoothActivity extends Activity implements OnClickListener
 
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView(n.activity_enable_bluetooth);
-        findViewById(l.btn_enable_bluetooth).setOnClickListener(this);
-        findViewById(l.skip).setOnClickListener(this);
+        setContentView(R.layout.activity_enable_bluetooth);
+        findViewById(R.id.btn_enable_bluetooth).setOnClickListener(this);
+        findViewById(R.id.skip).setOnClickListener(this);
     }
 
     public boolean onKeyDown(int i, KeyEvent keyEvent) {

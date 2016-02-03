@@ -7,8 +7,7 @@ import android.view.View;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.LinearLayout;
 import android.widget.ListView;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
+import com.xiaomi.hm.health.R;
 
 public class SelectDaysView extends LinearLayout {
     private ListView a;
@@ -28,8 +27,8 @@ public class SelectDaysView extends LinearLayout {
         this.c = 0;
         this.d = null;
         this.b = context;
-        View inflate = LayoutInflater.from(this.b).inflate(n.view_alarm_select_days, null);
-        this.a = (ListView) inflate.findViewById(l.alarm_select_days_lv);
+        View inflate = LayoutInflater.from(this.b).inflate(R.layout.view_alarm_select_days, null);
+        this.a = (ListView) inflate.findViewById(R.id.alarm_select_days_lv);
         addView(inflate);
     }
 

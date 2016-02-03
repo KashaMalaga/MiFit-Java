@@ -11,8 +11,7 @@ import cn.com.smartdevices.bracelet.C0401a;
 import cn.com.smartdevices.bracelet.e.a;
 import cn.com.smartdevices.bracelet.j.l;
 import com.huami.android.view.b;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 import java.util.regex.Pattern;
 
 public class dT extends p implements OnClickListener {
@@ -43,20 +42,20 @@ public class dT extends p implements OnClickListener {
         String obj = this.b.getText().toString();
         String obj2 = this.c.getText().toString();
         if (!b(obj)) {
-            b.a(getActivity(), (int) r.feedback_empty, 0).show();
+            b.a(getActivity(), (int) R.string.feedback_empty, 0).show();
         } else if (c(obj2)) {
             a(obj, obj2);
             C0401a.a(getActivity(), C0401a.ee);
         } else {
-            b.a(getActivity(), (int) r.feedback_invalid, 0).show();
+            b.a(getActivity(), (int) R.string.feedback_invalid, 0).show();
         }
     }
 
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        View inflate = layoutInflater.inflate(n.fragment_setting_feedback, viewGroup, false);
-        this.b = (EditText) inflate.findViewById(com.xiaomi.hm.health.l.feedback_content);
-        this.c = (EditText) inflate.findViewById(com.xiaomi.hm.health.l.feedback_email);
-        this.d = inflate.findViewById(com.xiaomi.hm.health.l.feedback);
+        View inflate = layoutInflater.inflate(R.layout.fragment_setting_feedback, viewGroup, false);
+        this.b = (EditText) inflate.findViewById(R.id.feedback_content);
+        this.c = (EditText) inflate.findViewById(R.id.feedback_email);
+        this.d = inflate.findViewById(R.id.feedback);
         this.d.setOnClickListener(this);
         this.c.setOnEditorActionListener(new dU(this));
         return inflate;

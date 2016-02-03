@@ -530,13 +530,13 @@ public class p {
 
     public static List<m> a(Context context, int i, List<String> list, int i2) {
         Cursor cursor;
-        Cursor rawQuery;
         if (context == null) {
             throw new IllegalArgumentException("context is null");
         }
         String str;
         Object stringBuilder;
         SQLiteDatabase a;
+        Cursor rawQuery;
         List<m> arrayList;
         List<m> arrayList2;
         StringBuilder stringBuilder2 = new StringBuilder();
@@ -713,7 +713,7 @@ public class p {
         }
         try {
             SQLiteDatabase a = a(context, false);
-            String[] strArr = new String[]{SocialConstants.PARAM_TYPE, m.b, g.a, SocialConstants.PARAM_SUMMARY, i.d};
+            String[] strArr = new String[]{com.xiaomi.channel.relationservice.data.a.h, m.b, g.a, SocialConstants.PARAM_SUMMARY, i.d};
             if (t.a(tVar)) {
                 query = a.query(d.a, strArr, "type =? AND sync =?", new String[]{String.valueOf(4), String.valueOf(tVar.a())}, null, null, "trackid DESC");
             } else {
@@ -760,7 +760,7 @@ public class p {
                 if (!TextUtils.isEmpty(string)) {
                     int i = query.getInt(query.getColumnIndex(m.b));
                     String string2 = query.getString(query.getColumnIndex(g.a));
-                    int i2 = query.getInt(query.getColumnIndex(SocialConstants.PARAM_TYPE));
+                    int i2 = query.getInt(query.getColumnIndex(com.xiaomi.channel.relationservice.data.a.h));
                     aa aaVar = new aa(new JSONObject(string), (long) i, i2, string2);
                     aaVar.a(query.getInt(query.getColumnIndex(i.d)));
                     String a2 = a(a, (long) i, i2);
@@ -868,6 +868,7 @@ public class p {
     }
 
     public static boolean a(Context context, d dVar) {
+        long update;
         long j;
         Exception exception;
         if (context == null || dVar == null) {
@@ -877,7 +878,6 @@ public class p {
         if (c.length() <= 0) {
             return false;
         }
-        long update;
         ContentValues contentValues = new ContentValues();
         contentValues.put(com.xiaomi.channel.gamesdk.b.b, c.toString());
         contentValues.put(i.d, Integer.valueOf(t.STATE_UNSYNCED.a()));
@@ -886,7 +886,7 @@ public class p {
             update = (long) a.update(h.a, contentValues, "type =?", new String[]{String.valueOf(dVar.i())});
             if (update <= 0) {
                 try {
-                    contentValues.put(SocialConstants.PARAM_TYPE, String.valueOf(dVar.i()));
+                    contentValues.put(com.xiaomi.channel.relationservice.data.a.h, String.valueOf(dVar.i()));
                     update = a.insert(h.a, null, contentValues);
                 } catch (Exception e) {
                     Exception exception2 = e;
@@ -917,7 +917,7 @@ public class p {
             throw new IllegalArgumentException();
         }
         ContentValues contentValues = new ContentValues();
-        contentValues.put(SocialConstants.PARAM_TYPE, Integer.valueOf(lVar.c()));
+        contentValues.put(com.xiaomi.channel.relationservice.data.a.h, Integer.valueOf(lVar.c()));
         contentValues.put(m.b, Long.valueOf(lVar.b()));
         contentValues.put(SocialConstants.PARAM_SUMMARY, lVar.a());
         contentValues.put(com.xiaomi.account.openauth.h.N, Integer.valueOf(lVar.e));
@@ -1018,7 +1018,7 @@ public class p {
                 contentValues.put(ParamKey.LONGITUDE, Double.valueOf(cVar.q));
                 contentValues.put(g.e, Double.valueOf(cVar.o));
                 contentValues.put(g.f, Long.valueOf(cVar.e()));
-                contentValues.put(g.g, cVar.c().toString());
+                contentValues.put(com.xiaomi.channel.relationservice.data.a.G, cVar.c().toString());
                 z &= a.insert(f.a, null, contentValues) > 0 ? 1 : 0;
             }
             a.setTransactionSuccessful();
@@ -1213,16 +1213,16 @@ public class p {
     }
 
     public static List<Long> b(Context context, int i) {
+        Cursor rawQuery;
         Exception e;
         Throwable th;
         Cursor cursor = null;
         if (context == null) {
             throw new IllegalArgumentException();
         }
-        Cursor rawQuery;
         try {
             List<Long> arrayList;
-            rawQuery = a(context, false).rawQuery("SELECT trackid FROM trackinfo WHERE type = " + i + " AND (" + i.d + " = " + t.STATE_SYNCED_FROM_SERVER.a() + ") AND " + m.b + " NOT IN (SELECT " + m.b + " FROM " + b.a + " WHERE " + SocialConstants.PARAM_TYPE + " = " + i + " AND " + cn.com.smartdevices.bracelet.shoes.data.db.h.k + " = " + t.STATE_SYNCED_FROM_SERVER.a() + ")", null);
+            rawQuery = a(context, false).rawQuery("SELECT trackid FROM trackinfo WHERE type = " + i + " AND (" + i.d + " = " + t.STATE_SYNCED_FROM_SERVER.a() + ") AND " + m.b + " NOT IN (SELECT " + m.b + " FROM " + b.a + " WHERE " + com.xiaomi.channel.relationservice.data.a.h + " = " + i + " AND " + cn.com.smartdevices.bracelet.shoes.data.db.h.k + " = " + t.STATE_SYNCED_FROM_SERVER.a() + ")", null);
             if (rawQuery != null) {
                 try {
                     if (rawQuery.getCount() != 0) {
@@ -1366,6 +1366,7 @@ public class p {
     }
 
     private static List<C0453l> b(Context context, List<Long> list, int i) {
+        Cursor query;
         Exception e;
         Throwable th;
         Cursor cursor = null;
@@ -1383,8 +1384,7 @@ public class p {
             stringBuilder.deleteCharAt(stringBuilder.length() - 1);
             obj = stringBuilder;
         }
-        String[] strArr = new String[]{m.b, SocialConstants.PARAM_TYPE, c.g, com.xiaomi.channel.gamesdk.b.b, c.d};
-        Cursor query;
+        String[] strArr = new String[]{m.b, com.xiaomi.channel.relationservice.data.a.h, c.g, com.xiaomi.channel.gamesdk.b.b, c.d};
         try {
             SQLiteDatabase a = a(context, false);
             if (TextUtils.isEmpty(obj)) {
@@ -1466,6 +1466,7 @@ public class p {
     }
 
     public static boolean b(Context context, C0466z c0466z) {
+        long update;
         long j;
         Exception exception;
         if (context == null || c0466z == null) {
@@ -1475,10 +1476,9 @@ public class p {
         if (b == null) {
             return false;
         }
-        long update;
         ContentValues contentValues = new ContentValues();
         contentValues.put(g.a, c0466z.j());
-        contentValues.put(SocialConstants.PARAM_TYPE, Integer.valueOf(c0466z.v()));
+        contentValues.put(com.xiaomi.channel.relationservice.data.a.h, Integer.valueOf(c0466z.v()));
         contentValues.put(m.b, Long.valueOf(c0466z.G()));
         contentValues.put(cn.com.smartdevices.bracelet.relation.db.a.g, Float.valueOf(c0466z.C()));
         contentValues.put(e.f, Long.valueOf(c0466z.F()));
@@ -1534,7 +1534,7 @@ public class p {
             for (C0453l c0453l : list) {
                 contentValues.put(m.b, Long.valueOf(c0453l.i()));
                 contentValues.put(c.g, Integer.valueOf(c0453l.c()));
-                contentValues.put(SocialConstants.PARAM_TYPE, Integer.valueOf(c0453l.f()));
+                contentValues.put(com.xiaomi.channel.relationservice.data.a.h, Integer.valueOf(c0453l.f()));
                 if (!TextUtils.isEmpty(c0453l.d())) {
                     contentValues.put(j.e, c0453l.d());
                 }
@@ -1763,14 +1763,14 @@ public class p {
     }
 
     public static C0453l c(Context context, long j, int i) {
-        Cursor query;
         Exception e;
         Throwable th;
         if (context == null || j <= 0) {
             throw new IllegalArgumentException();
         }
+        Cursor query;
         try {
-            query = a(context, false).query(b.a, new String[]{m.b, c.d, j.e, SportBaseInfo.VERSION, SocialConstants.PARAM_TYPE, cn.com.smartdevices.bracelet.shoes.data.db.h.k, c.g, com.xiaomi.channel.gamesdk.b.b}, "type = ? AND trackid =? ", new String[]{String.valueOf(i), String.valueOf(j)}, null, null, null);
+            query = a(context, false).query(b.a, new String[]{m.b, c.d, j.e, SportBaseInfo.VERSION, com.xiaomi.channel.relationservice.data.a.h, cn.com.smartdevices.bracelet.shoes.data.db.h.k, c.g, com.xiaomi.channel.gamesdk.b.b}, "type = ? AND trackid =? ", new String[]{String.valueOf(i), String.valueOf(j)}, null, null, null);
             if (query == null) {
                 if (query != null) {
                     query.close();
@@ -1834,7 +1834,6 @@ public class p {
     }
 
     private static List<C0466z> c(Context context, int i, t tVar) {
-        Cursor query;
         Exception e;
         Cursor cursor;
         Throwable th;
@@ -1842,6 +1841,7 @@ public class p {
             throw new IllegalArgumentException();
         }
         String[] strArr = new String[]{i.d, e.i, g.a, m.b, SocialConstants.PARAM_SUMMARY, com.xiaomi.channel.gamesdk.b.b};
+        Cursor query;
         try {
             SQLiteDatabase a = a(context, false);
             if (t.a(tVar)) {
@@ -2019,14 +2019,14 @@ public class p {
     }
 
     public static C0466z d(Context context, long j) {
-        Cursor query;
         Exception e;
         Cursor cursor;
         Throwable th;
         if (context == null || j <= 0) {
             throw new IllegalArgumentException();
         }
-        String[] strArr = new String[]{i.d, SocialConstants.PARAM_TYPE, g.a, m.b, SocialConstants.PARAM_SUMMARY, com.xiaomi.channel.gamesdk.b.b};
+        String[] strArr = new String[]{i.d, com.xiaomi.channel.relationservice.data.a.h, g.a, m.b, SocialConstants.PARAM_SUMMARY, com.xiaomi.channel.gamesdk.b.b};
+        Cursor query;
         try {
             SQLiteDatabase a = a(context, false);
             query = a.query(d.a, strArr, "trackid =? ", new String[]{String.valueOf(j)}, null, null, null);
@@ -2045,7 +2045,7 @@ public class p {
                         }
                         return null;
                     }
-                    int i = query.getInt(query.getColumnIndex(SocialConstants.PARAM_TYPE));
+                    int i = query.getInt(query.getColumnIndex(com.xiaomi.channel.relationservice.data.a.h));
                     String string2 = query.getString(query.getColumnIndex(com.xiaomi.channel.gamesdk.b.b));
                     String string3 = query.getString(query.getColumnIndex(g.a));
                     int i2 = query.getInt(query.getColumnIndex(i.d));
@@ -2212,12 +2212,12 @@ public class p {
     }
 
     public static List<O> e(Context context, int i) {
-        Cursor query;
         Exception e;
         Throwable th;
         if (context == null || i <= 0) {
             throw new IllegalArgumentException();
         }
+        Cursor query;
         try {
             query = a(context, false).query(d.a, new String[]{com.xiaomi.channel.gamesdk.b.b}, "type = ? AND trackid =? ", new String[]{String.valueOf(4), String.valueOf(i)}, null, null, null);
             List<O> arrayList;
@@ -2286,14 +2286,14 @@ public class p {
     }
 
     public static List<cn.com.smartdevices.bracelet.gps.model.c> e(Context context, long j) {
-        Cursor query;
         Exception e;
         Throwable th;
         if (context == null || j <= 0) {
             throw new IllegalArgumentException();
         }
+        Cursor query;
         try {
-            query = a(context, false).query(f.a, new String[]{g.f, ParamKey.LONGITUDE, ParamKey.LATITUDE, g.e, g.g}, "trackid =?", new String[]{String.valueOf(j)}, null, null, "time ASC");
+            query = a(context, false).query(f.a, new String[]{g.f, ParamKey.LONGITUDE, ParamKey.LATITUDE, g.e, com.xiaomi.channel.relationservice.data.a.G}, "trackid =?", new String[]{String.valueOf(j)}, null, null, "time ASC");
             List<cn.com.smartdevices.bracelet.gps.model.c> arrayList;
             if (query == null) {
                 try {
@@ -2330,7 +2330,7 @@ public class p {
                 cVar.o = query.getDouble(query.getColumnIndex(g.e));
                 int i2 = i + 1;
                 cVar.c(i);
-                cVar.a(query.getString(query.getColumnIndex(g.g)));
+                cVar.a(query.getString(query.getColumnIndex(com.xiaomi.channel.relationservice.data.a.G)));
                 arrayList.add(cVar);
                 i = i2;
             }
@@ -2366,13 +2366,13 @@ public class p {
     }
 
     public static az f(Context context, long j) {
-        Cursor query;
         Exception e;
         Throwable th;
         if (context == null || j <= 0) {
             throw new IllegalArgumentException();
         }
-        String[] strArr = new String[]{SocialConstants.PARAM_TYPE, g.a, SocialConstants.PARAM_SUMMARY};
+        String[] strArr = new String[]{com.xiaomi.channel.relationservice.data.a.h, g.a, SocialConstants.PARAM_SUMMARY};
+        Cursor query;
         try {
             SQLiteDatabase a = a(context, false);
             query = a.query(d.a, strArr, "type =? AND trackid =?", new String[]{String.valueOf(4), String.valueOf(j)}, null, null, "trackid DESC");
@@ -2389,7 +2389,7 @@ public class p {
                     Object string = query.getString(query.getColumnIndex(SocialConstants.PARAM_SUMMARY));
                     if (!TextUtils.isEmpty(string)) {
                         String string2 = query.getString(query.getColumnIndex(g.a));
-                        int i = query.getInt(query.getColumnIndex(SocialConstants.PARAM_TYPE));
+                        int i = query.getInt(query.getColumnIndex(com.xiaomi.channel.relationservice.data.a.h));
                         az azVar = new az(new JSONObject(string), j, i, string2);
                         Object a2 = a(a, j, i);
                         if (!TextUtils.isEmpty(a2)) {
@@ -2527,12 +2527,12 @@ public class p {
     }
 
     public static List<Long> h(Context context) {
+        Cursor query;
         Exception e;
         Throwable th;
         Cursor cursor = null;
         List<Long> linkedList = new LinkedList();
         String str = "sync=?";
-        Cursor query;
         try {
             query = a(context, false).query(d.a, new String[]{m.b}, str, new String[]{a.f + t.STATE_TO_BE_DELETED.a()}, null, null, null, null);
             while (query.moveToNext()) {

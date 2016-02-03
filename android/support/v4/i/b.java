@@ -5,6 +5,7 @@ import android.net.Uri;
 import android.provider.DocumentsContract;
 import android.text.TextUtils;
 import android.util.Log;
+import com.xiaomi.channel.relationservice.data.a;
 
 class b {
     private static final String a = "DocumentFile";
@@ -17,9 +18,9 @@ class b {
     }
 
     private static long a(Context context, Uri uri, String str, long j) {
-        AutoCloseable query;
         Object e;
         Throwable th;
+        AutoCloseable query;
         try {
             query = context.getContentResolver().query(uri, new String[]{str}, null, null, null);
             try {
@@ -57,9 +58,9 @@ class b {
     }
 
     private static String a(Context context, Uri uri, String str, String str2) {
-        AutoCloseable query;
         Object e;
         Throwable th;
+        AutoCloseable query;
         try {
             query = context.getContentResolver().query(uri, new String[]{str}, null, null, null);
             try {
@@ -146,7 +147,7 @@ class b {
             return false;
         }
         CharSequence l = l(context, uri);
-        int a = a(context, uri, "flags", 0);
+        int a = a(context, uri, a.J, 0);
         return !TextUtils.isEmpty(l) ? (a & 4) != 0 ? true : (!"vnd.android.document/directory".equals(l) || (a & 8) == 0) ? (TextUtils.isEmpty(l) || (a & 2) == 0) ? false : true : true : false;
     }
 

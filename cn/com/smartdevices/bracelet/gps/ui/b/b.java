@@ -6,6 +6,7 @@ import android.net.Uri;
 import cn.com.smartdevices.bracelet.C0596r;
 import cn.com.smartdevices.bracelet.gps.services.b.o;
 import com.d.a.a.O;
+import com.xiaomi.channel.relationservice.data.a;
 import java.io.File;
 
 public class b {
@@ -30,7 +31,7 @@ public class b {
         try {
             context.startActivity(intent);
         } catch (Exception e) {
-            C0596r.a("Email", e.getMessage());
+            C0596r.a(a.f, e.getMessage());
         }
         return true;
     }

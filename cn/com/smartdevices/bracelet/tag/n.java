@@ -15,9 +15,8 @@ import cn.com.smartdevices.bracelet.shoes.model.e;
 import cn.com.smartdevices.bracelet.tag.a.c;
 import com.huami.android.view.b;
 import com.xiaomi.e.a;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.bt.profile.a.j;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.r;
 import java.util.List;
 
 public class n extends Fragment implements OnItemClickListener {
@@ -57,8 +56,8 @@ public class n extends Fragment implements OnItemClickListener {
     }
 
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
-        View inflate = layoutInflater.inflate(com.xiaomi.hm.health.n.fragment_mark_menu, viewGroup, false);
-        GridView gridView = (GridView) inflate.findViewById(l.action_list);
+        View inflate = layoutInflater.inflate(R.layout.fragment_mark_menu, viewGroup, false);
+        GridView gridView = (GridView) inflate.findViewById(R.id.action_list);
         gridView.setAdapter(this.a);
         gridView.setOnItemClickListener(this);
         return inflate;
@@ -69,7 +68,7 @@ public class n extends Fragment implements OnItemClickListener {
             startActivity(TagDataActivity.a(getActivity(), this.a.a(i)));
             return;
         }
-        b.a(getActivity(), (int) r.unbind_mili, 0).show();
+        b.a(getActivity(), (int) R.string.unbind_mili, 0).show();
     }
 
     public void onPause() {

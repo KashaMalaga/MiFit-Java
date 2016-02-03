@@ -15,15 +15,10 @@ import cn.com.smartdevices.bracelet.model.PersonInfo;
 import cn.com.smartdevices.bracelet.weight.J;
 import cn.com.smartdevices.bracelet.weight.UserInfo;
 import com.huami.android.view.c;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.p;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 import de.greenrobot.event.EventBus;
 import kankan.wheel.widget.WheelView;
 import kankan.wheel.widget.a;
-import kankan.wheel.widget.g;
-import kankan.wheel.widget.h;
 
 public class C0755dd extends c {
     private static final String a = "Height";
@@ -51,8 +46,8 @@ public class C0755dd extends c {
     private void a() {
         this.e.setVisibility(0);
         this.l.setVisibility(0);
-        this.f = new C0763dl(getActivity(), 1, 7, this.e, getResources().getColor(g.highlight), getResources().getColor(g.main_ui_content_color), a.bm, false, 46, 24, 21, 21, 1);
-        this.e.e(h.wheel_custom_val_white_1).a(getString(r.unit_foot), (float) a.bf).a(this.f).c(d());
+        this.f = new C0763dl(getActivity(), 1, 7, this.e, getResources().getColor(R.color.highlight), getResources().getColor(R.color.main_ui_content_color), a.bm, false, 46, 24, 21, 21, 1);
+        this.e.e(R.drawable.wheel_custom_val_white_1).a(getString(R.string.unit_foot), (float) a.bf).a(this.f).c(d());
         b();
         a(this.e, 1);
         a(this.d, this.k);
@@ -65,9 +60,9 @@ public class C0755dd extends c {
             String quantityString;
             int f = wheelView.f() + i;
             if (wheelView == this.d) {
-                quantityString = getResources().getQuantityString(p.numberInch, f, new Object[]{com.xiaomi.e.a.f});
+                quantityString = getResources().getQuantityString(R.plurals.numberInch, f, new Object[]{com.xiaomi.e.a.f});
             } else {
-                quantityString = getResources().getQuantityString(p.numberFoot, f, new Object[]{com.xiaomi.e.a.f});
+                quantityString = getResources().getQuantityString(R.plurals.numberFoot, f, new Object[]{com.xiaomi.e.a.f});
             }
             C0596r.e(a, "value = " + f + " unit -= " + quantityString);
             wheelView.a(quantityString);
@@ -122,7 +117,7 @@ public class C0755dd extends c {
     }
 
     protected int inflateLayout() {
-        return n.fragment_person_info_setting_height;
+        return R.layout.fragment_person_info_setting_height;
     }
 
     public void onCreate(Bundle bundle) {
@@ -139,11 +134,11 @@ public class C0755dd extends c {
 
     public View onCreateView(LayoutInflater layoutInflater, ViewGroup viewGroup, Bundle bundle) {
         View onCreateView = super.onCreateView(layoutInflater, viewGroup, bundle);
-        this.d = (WheelView) onCreateView.findViewById(l.info_height_wheel);
-        this.g = new C0763dl(getActivity(), this.m == 0 ? 40 : 0, this.m == 0 ? a.an : 11, this.d, getResources().getColor(g.highlight), getResources().getColor(g.main_ui_content_color), a.bm, false, 46, 24, 21, 21, 1);
-        this.d.e(h.wheel_custom_val_white_1).a(this.m == 0 ? getString(r.cm) : getString(r.unit_inch), (float) a.bf).a(this.g).c(c());
-        this.e = (WheelView) onCreateView.findViewById(l.info_height_foot_wheel);
-        this.l = onCreateView.findViewById(l.wheel_split_line);
+        this.d = (WheelView) onCreateView.findViewById(R.id.info_height_wheel);
+        this.g = new C0763dl(getActivity(), this.m == 0 ? 40 : 0, this.m == 0 ? a.an : 11, this.d, getResources().getColor(R.color.highlight), getResources().getColor(R.color.main_ui_content_color), a.bm, false, 46, 24, 21, 21, 1);
+        this.d.e(R.drawable.wheel_custom_val_white_1).a(this.m == 0 ? getString(R.string.cm) : getString(R.string.unit_inch), (float) a.bf).a(this.g).c(c());
+        this.e = (WheelView) onCreateView.findViewById(R.id.info_height_foot_wheel);
+        this.l = onCreateView.findViewById(R.id.wheel_split_line);
         if (this.m == 0) {
             this.e.setVisibility(8);
             this.l.setVisibility(8);

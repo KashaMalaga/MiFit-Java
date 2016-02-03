@@ -3,7 +3,7 @@ package cn.com.smartdevices.bracelet.push;
 import android.content.Context;
 import cn.com.smartdevices.bracelet.C0596r;
 import cn.com.smartdevices.bracelet.config.b;
-import com.xiaomi.hm.health.l;
+import com.xiaomi.hm.health.R;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -17,7 +17,7 @@ public class d extends a {
     }
 
     public int a() {
-        return l.notification_care;
+        return R.id.notification_care;
     }
 
     public void b() {

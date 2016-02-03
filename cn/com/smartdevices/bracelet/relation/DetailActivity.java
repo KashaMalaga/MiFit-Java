@@ -23,6 +23,7 @@ import cn.com.smartdevices.bracelet.Keeper;
 import cn.com.smartdevices.bracelet.Utils;
 import cn.com.smartdevices.bracelet.chart.StatisticChartView;
 import cn.com.smartdevices.bracelet.push.h;
+import cn.com.smartdevices.bracelet.relation.b.f;
 import cn.com.smartdevices.bracelet.relation.db.Friend;
 import cn.com.smartdevices.bracelet.relation.view.CareButton;
 import cn.com.smartdevices.bracelet.relation.view.b;
@@ -31,13 +32,7 @@ import com.huami.android.ui.ActionBarActivity;
 import com.huami.android.ui.a;
 import com.huami.android.view.c;
 import com.tencent.connect.common.Constants;
-import com.xiaomi.hm.health.e;
-import com.xiaomi.hm.health.f;
-import com.xiaomi.hm.health.k;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.o;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.mistatistic.sdk.d;
 import java.util.Calendar;
 import java.util.Collections;
@@ -100,7 +95,7 @@ public class DetailActivity extends ActionBarActivity implements OnClickListener
     public static String a(int i) {
         int i2 = i / 60;
         int i3 = i % 60;
-        return BraceletApp.a().getString(r.label_sleep_time, new Object[]{Integer.valueOf(i2), Integer.valueOf(i3)});
+        return BraceletApp.a().getString(R.string.label_sleep_time, new Object[]{Integer.valueOf(i2), Integer.valueOf(i3)});
     }
 
     private void c() {
@@ -109,21 +104,21 @@ public class DetailActivity extends ActionBarActivity implements OnClickListener
         TextView textView = this.p;
         Object[] objArr = new Object[h];
         objArr[0] = Integer.valueOf(this.i.u);
-        textView.setText(getString(r.label_care_time_by_me, objArr));
+        textView.setText(getString(R.string.label_care_time_by_me, objArr));
         if (this.i.u <= 0) {
-            this.q.setImageResource(k.ic_grey_heart);
+            this.q.setImageResource(R.drawable.ic_grey_heart);
         } else {
-            this.q.setImageResource(k.ic_red_heart);
+            this.q.setImageResource(R.drawable.ic_red_heart);
         }
-        String string = this.i.v == 0 ? getString(r.label_no_update) : DateFormat.format("yyyy-MM-dd HH:mm", this.i.v);
+        String string = this.i.v == 0 ? getString(R.string.label_no_update) : DateFormat.format("yyyy-MM-dd HH:mm", this.i.v);
         TextView textView2 = this.o;
         Object[] objArr2 = new Object[h];
         objArr2[0] = string;
-        textView2.setText(getString(r.label_update_time, objArr2));
+        textView2.setText(getString(R.string.label_update_time, objArr2));
         textView = this.r;
         objArr = new Object[h];
         objArr[0] = Integer.valueOf(this.i.r);
-        textView.setText(getString(r.label_step_with_unit, objArr));
+        textView.setText(getString(R.string.label_step_with_unit, objArr));
         this.s.setText(a(this.i.s));
         this.t.setText(this.i.q + C1009k.a);
     }
@@ -187,7 +182,7 @@ public class DetailActivity extends ActionBarActivity implements OnClickListener
     public void a(View view, int i) {
         if (i == 2) {
             this.J.setVisibility(0);
-            Animation loadAnimation = AnimationUtils.loadAnimation(this, e.header_notify_in);
+            Animation loadAnimation = AnimationUtils.loadAnimation(this, R.anim.header_notify_in);
             if (loadAnimation != null) {
                 this.J.startAnimation(loadAnimation);
             }
@@ -224,7 +219,7 @@ public class DetailActivity extends ActionBarActivity implements OnClickListener
 
     public void onClick(View view) {
         switch (view.getId()) {
-            case l.care_button /*2131296371*/:
+            case R.id.care_button:
                 if (this.j.a((Context) this)) {
                     C0401a.a((Context) this, C0409b.aZ);
                     this.j.b(this, this.i.n, this.N);
@@ -233,11 +228,11 @@ public class DetailActivity extends ActionBarActivity implements OnClickListener
                 }
                 c.showPanel((Activity) this, this.L);
                 return;
-            case l.action_remark /*2131297565*/:
+            case R.id.action_remark:
                 C0401a.a((Context) this, C0409b.aR);
                 startActivityForResult(RemarkActivity.a(this, this.i), h);
                 return;
-            case l.action_remove_friend /*2131297566*/:
+            case R.id.action_remove_friend:
                 C0401a.a((Context) this, C0409b.aT);
                 c.showPanel((Activity) this, this.K);
                 return;
@@ -248,7 +243,7 @@ public class DetailActivity extends ActionBarActivity implements OnClickListener
 
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView(n.activity_detail);
+        setContentView(R.layout.activity_detail);
         Intent intent = getIntent();
         if (intent != null) {
             this.i = (Friend) intent.getParcelableExtra(g);
@@ -256,25 +251,25 @@ public class DetailActivity extends ActionBarActivity implements OnClickListener
         this.k = h.a(getApplicationContext());
         this.k.a((Object) this);
         if (this.i == null) {
-            com.huami.android.view.b.a((Context) this, (int) r.toast_user_info_error, 0);
+            com.huami.android.view.b.a((Context) this, (int) R.string.toast_user_info_error, 0);
             return;
         }
-        this.E = getResources().getStringArray(f.weeks);
-        this.F = getString(r.date_today);
-        this.G = getString(r.date_yesterday);
-        this.H = getString(r.date_month_day_short);
+        this.E = getResources().getStringArray(R.array.weeks);
+        this.F = getString(R.string.date_today);
+        this.G = getString(R.string.date_yesterday);
+        this.H = getString(R.string.date_month_day_short);
         long currentTimeMillis = System.currentTimeMillis() / 1000;
         this.c = (currentTimeMillis - (currentTimeMillis % 86400)) - ((long) (TimeZone.getDefault().getRawOffset() / com.xiaomi.account.openauth.h.E));
         this.e = Locale.getDefault().toString().startsWith(Locale.ENGLISH.toString());
         int daySportGoalSteps = Keeper.readPersonInfo().getDaySportGoalSteps();
-        this.I = (CareButton) findViewById(l.care_button);
+        this.I = (CareButton) findViewById(R.id.care_button);
         this.I.setOnClickListener(this);
         this.I.a((b) this);
-        this.J = findViewById(l.toast_view);
-        this.q = (ImageView) findViewById(l.care_icon);
-        this.b = (StatisticChartView) findViewById(l.sleep_record);
+        this.J = findViewById(R.id.toast_view);
+        this.q = (ImageView) findViewById(R.id.care_icon);
+        this.b = (StatisticChartView) findViewById(R.id.sleep_record);
         this.b.b(true);
-        this.a = (StatisticChartView) findViewById(l.ativity_record);
+        this.a = (StatisticChartView) findViewById(R.id.ativity_record);
         this.a.b(true);
         this.C = new C0608k(this);
         this.a.a(this.C);
@@ -292,28 +287,28 @@ public class DetailActivity extends ActionBarActivity implements OnClickListener
         this.b.c(11);
         this.b.c(false);
         this.b.d(true);
-        this.m = (ImageView) findViewById(l.icon);
-        this.n = (TextView) findViewById(l.username);
-        this.o = (TextView) findViewById(l.last_update_time);
-        this.p = (TextView) findViewById(l.careByMe);
-        this.r = (TextView) findViewById(l.step);
-        this.s = (TextView) findViewById(l.sleep);
-        this.t = (TextView) findViewById(l.weight);
-        this.u = (TextView) findViewById(l.activity_date);
-        this.y = (TextView) findViewById(l.sleep_date);
-        this.x = (TextView) findViewById(l.day_heat);
-        this.v = (TextView) findViewById(l.day_step);
-        this.w = (TextView) findViewById(l.day_mileage);
-        this.M = (TextView) findViewById(l.label_mileage);
-        this.A = (TextView) findViewById(l.day_sleep);
-        this.z = (TextView) findViewById(l.get_up_time);
-        this.B = (TextView) findViewById(l.day_sleep_start);
+        this.m = (ImageView) findViewById(R.id.icon);
+        this.n = (TextView) findViewById(R.id.username);
+        this.o = (TextView) findViewById(R.id.last_update_time);
+        this.p = (TextView) findViewById(R.id.careByMe);
+        this.r = (TextView) findViewById(R.id.step);
+        this.s = (TextView) findViewById(R.id.sleep);
+        this.t = (TextView) findViewById(R.id.weight);
+        this.u = (TextView) findViewById(R.id.activity_date);
+        this.y = (TextView) findViewById(R.id.sleep_date);
+        this.x = (TextView) findViewById(R.id.day_heat);
+        this.v = (TextView) findViewById(R.id.day_step);
+        this.w = (TextView) findViewById(R.id.day_mileage);
+        this.M = (TextView) findViewById(R.id.label_mileage);
+        this.A = (TextView) findViewById(R.id.day_sleep);
+        this.z = (TextView) findViewById(R.id.get_up_time);
+        this.B = (TextView) findViewById(R.id.day_sleep_start);
         c();
         this.j = A.a();
         boolean z = this.i.w < this.i.v;
         this.j.a(this.i.n, z);
         if (z) {
-            Utils.a((Activity) this, (int) r.data_loading, true);
+            Utils.a((Activity) this, (int) R.string.data_loading, true);
         }
         this.K = new C0603f(this);
         this.K.setOpClickListener(new C0598a(this));
@@ -321,7 +316,7 @@ public class DetailActivity extends ActionBarActivity implements OnClickListener
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(o.menu_detail, menu);
+        getMenuInflater().inflate(R.menu.menu_detail, menu);
         return true;
     }
 
@@ -345,9 +340,9 @@ public class DetailActivity extends ActionBarActivity implements OnClickListener
             c();
             this.I.a();
             if (cVar.a) {
-                com.huami.android.view.b.a((Context) this, (int) r.toast_care_send_success, 0);
+                com.huami.android.view.b.a((Context) this, (int) R.string.toast_care_send_success, 0);
             } else {
-                com.huami.android.view.b.a((Context) this, (int) r.toast_care_send_failed, 0);
+                com.huami.android.view.b.a((Context) this, (int) R.string.toast_care_send_failed, 0);
             }
         }
     }
@@ -370,13 +365,13 @@ public class DetailActivity extends ActionBarActivity implements OnClickListener
         }
     }
 
-    public void onEvent(cn.com.smartdevices.bracelet.relation.b.f fVar) {
+    public void onEvent(f fVar) {
         if (fVar.b == this.i.n) {
             if (fVar.a == h) {
                 finish();
-                com.huami.android.view.b.a((Context) this, (int) r.toast_friend_remove_success, 0);
+                com.huami.android.view.b.a((Context) this, (int) R.string.toast_friend_remove_success, 0);
             } else {
-                com.huami.android.view.b.a((Context) this, (int) r.toast_friend_remove_failed, 0);
+                com.huami.android.view.b.a((Context) this, (int) R.string.toast_friend_remove_failed, 0);
                 this.I.setEnabled(true);
             }
             Utils.a((Activity) this);
@@ -384,7 +379,7 @@ public class DetailActivity extends ActionBarActivity implements OnClickListener
     }
 
     public boolean onOptionsItemSelected(MenuItem menuItem) {
-        if (menuItem.getItemId() != l.action_more) {
+        if (menuItem.getItemId() != R.id.action_more) {
             return super.onOptionsItemSelected(menuItem);
         }
         d();

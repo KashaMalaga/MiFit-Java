@@ -3,8 +3,7 @@ package cn.com.smartdevices.bracelet.weather;
 import android.content.Context;
 import com.huami.android.widget.share.m;
 import com.xiaomi.channel.b.v;
-import com.xiaomi.hm.health.f;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 import java.text.DateFormat;
 import java.util.Date;
 import kankan.wheel.widget.a;
@@ -42,7 +41,7 @@ public class WeatherInfo {
     }
 
     public static String toAqiDescription(Context context, int i) {
-        return i > 0 ? context.getResources().getStringArray(f.weather_aqi_descriptions)[i - 1] : null;
+        return i > 0 ? context.getResources().getStringArray(R.array.weather_aqi_descriptions)[i - 1] : null;
     }
 
     public static int toAqiLevel(int i) {
@@ -50,7 +49,7 @@ public class WeatherInfo {
     }
 
     public static String toWeatherDescription(Context context, String str) {
-        return has(sWeatherRains, str) ? context.getString(r.weather_description_rain) : has(sWeatherRainSnows, str) ? context.getString(r.weather_description_rain_snow) : has(sWeatherSnows, str) ? context.getString(r.weather_description_snow) : has(sWeatherSands, str) ? context.getString(r.weather_description_sand) : has(sWeatherFine, str) ? context.getString(r.weather_description_fine) : has(sWeatherCloudy, str) ? context.getString(r.weather_description_cloudy) : has(sWeatherOvercast, str) ? context.getString(r.weather_description_overcast) : has(sWeatherFog, str) ? context.getString(r.weather_description_fog) : has(sWeatherHaze, str) ? context.getString(r.weather_description_haze) : null;
+        return has(sWeatherRains, str) ? context.getString(R.string.weather_description_rain) : has(sWeatherRainSnows, str) ? context.getString(R.string.weather_description_rain_snow) : has(sWeatherSnows, str) ? context.getString(R.string.weather_description_snow) : has(sWeatherSands, str) ? context.getString(R.string.weather_description_sand) : has(sWeatherFine, str) ? context.getString(R.string.weather_description_fine) : has(sWeatherCloudy, str) ? context.getString(R.string.weather_description_cloudy) : has(sWeatherOvercast, str) ? context.getString(R.string.weather_description_overcast) : has(sWeatherFog, str) ? context.getString(R.string.weather_description_fog) : has(sWeatherHaze, str) ? context.getString(R.string.weather_description_haze) : null;
     }
 
     public int getAqi() {

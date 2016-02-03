@@ -9,8 +9,7 @@ import cn.com.smartdevices.bracelet.f.f;
 import cn.com.smartdevices.bracelet.model.PersonInfo;
 import com.tencent.connect.common.Constants;
 import com.xiaomi.account.openauth.h;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.r;
+import com.xiaomi.hm.health.R;
 import java.text.DecimalFormat;
 
 public final class ChartData {
@@ -59,21 +58,21 @@ public final class ChartData {
     }
 
     public static void a(View view, int i, Context context) {
-        TextView textView = (TextView) view.findViewById(l.item_value);
-        TextView textView2 = (TextView) view.findViewById(l.item_value_1);
-        TextView textView3 = (TextView) view.findViewById(l.item_value_unit);
-        TextView textView4 = (TextView) view.findViewById(l.item_value_unit_1);
+        TextView textView = (TextView) view.findViewById(R.id.item_value);
+        TextView textView2 = (TextView) view.findViewById(R.id.item_value_1);
+        TextView textView3 = (TextView) view.findViewById(R.id.item_value_unit);
+        TextView textView4 = (TextView) view.findViewById(R.id.item_value_unit_1);
         String[] e = f.e(i);
         if (e[f].equals(Constants.VIA_RESULT_SUCCESS)) {
-            CharSequence string = context.getString(r.unit_min);
+            CharSequence string = context.getString(R.string.unit_min);
             textView.setVisibility(8);
             textView3.setVisibility(8);
             textView2.setText(e[g]);
             textView4.setText(string);
             return;
         }
-        string = context.getString(r.unit_hour);
-        CharSequence string2 = context.getString(r.unit_min_short);
+        string = context.getString(R.string.unit_hour);
+        CharSequence string2 = context.getString(R.string.unit_min_short);
         textView.setVisibility(f);
         textView3.setVisibility(f);
         textView.setText(e[f]);
@@ -83,8 +82,8 @@ public final class ChartData {
     }
 
     public static void a(View view, String str, String str2) {
-        TextView textView = (TextView) view.findViewById(l.item_value_unit);
-        ((TextView) view.findViewById(l.item_value)).setText(str);
+        TextView textView = (TextView) view.findViewById(R.id.item_value_unit);
+        ((TextView) view.findViewById(R.id.item_value)).setText(str);
         if (str2 != null) {
             textView.setText(str2);
         }
@@ -106,11 +105,11 @@ public final class ChartData {
         }
         if (i >= h.E) {
             strArr[f] = a((double) (f / 1000.0f), i2);
-            strArr[g] = context.getString(r.unit_kilometer);
+            strArr[g] = context.getString(R.string.unit_kilometer);
             return strArr;
         }
         strArr[f] = String.valueOf(i);
-        strArr[g] = context.getString(r.unit_meter);
+        strArr[g] = context.getString(R.string.unit_meter);
         return strArr;
     }
 }

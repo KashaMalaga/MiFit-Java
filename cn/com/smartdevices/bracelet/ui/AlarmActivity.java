@@ -29,11 +29,9 @@ import cn.com.smartdevices.bracelet.Keeper;
 import cn.com.smartdevices.bracelet.Utils;
 import cn.com.smartdevices.bracelet.j.f;
 import cn.com.smartdevices.bracelet.model.PersonInfo;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.bt.model.AlarmClockItem;
 import com.xiaomi.hm.health.bt.model.HwConnStatus;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
-import com.xiaomi.hm.health.r;
 import de.greenrobot.event.EventBus;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
@@ -43,7 +41,6 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import kankan.wheel.widget.a;
-import kankan.wheel.widget.g;
 
 public class AlarmActivity extends SystemBarTintActivity implements OnClickListener {
     public static final int a = 3;
@@ -306,13 +303,13 @@ public class AlarmActivity extends SystemBarTintActivity implements OnClickListe
     private void b() {
         this.y.setVisibility(8);
         this.A.setVisibility(0);
-        this.z.setBackgroundResource(g.bg_color_blue);
+        this.z.setBackgroundResource(R.color.bg_color_blue);
     }
 
     private void c() {
         this.y.setVisibility(0);
         this.A.setVisibility(8);
-        this.z.setBackgroundResource(g.bg_color_grey);
+        this.z.setBackgroundResource(R.color.bg_color_grey);
     }
 
     private void d() {
@@ -321,12 +318,12 @@ public class AlarmActivity extends SystemBarTintActivity implements OnClickListe
     }
 
     private void e() {
-        this.s = (ListView) findViewById(l.alarm_clock_lv);
+        this.s = (ListView) findViewById(R.id.alarm_clock_lv);
         this.t = new C0778e(this);
         this.s.setAdapter(this.t);
-        this.y = findViewById(l.mask_view);
-        this.z = findViewById(l.home_back_area);
-        this.A = (Button) findViewById(l.alarm_edit);
+        this.y = findViewById(R.id.mask_view);
+        this.z = findViewById(R.id.home_back_area);
+        this.A = (Button) findViewById(R.id.alarm_edit);
         this.A.setOnClickListener(this);
     }
 
@@ -395,13 +392,13 @@ public class AlarmActivity extends SystemBarTintActivity implements OnClickListe
 
     public void onClick(View view) {
         switch (view.getId()) {
-            case l.alarm_edit /*2131296885*/:
-                if (getString(r.edit).equals(this.A.getText())) {
-                    this.A.setText(getString(r.alarm_edit_complete));
+            case R.id.alarm_edit:
+                if (getString(R.string.edit).equals(this.A.getText())) {
+                    this.A.setText(getString(R.string.alarm_edit_complete));
                     a(true);
                     return;
                 }
-                this.A.setText(getString(r.edit));
+                this.A.setText(getString(R.string.edit));
                 a(false);
                 return;
             default:
@@ -412,7 +409,7 @@ public class AlarmActivity extends SystemBarTintActivity implements OnClickListe
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         EventBus.getDefault().register(this);
-        setContentView((int) n.alarm_activity);
+        setContentView((int) R.layout.alarm_activity);
         this.p = this;
         this.B = new ArrayList();
         this.C = new ArrayList();
@@ -474,7 +471,7 @@ public class AlarmActivity extends SystemBarTintActivity implements OnClickListe
         super.onResume();
         a();
         this.D = DateFormat.is24HourFormat(this);
-        this.A.setText(getString(r.edit));
+        this.A.setText(getString(R.string.edit));
         if (this.t != null) {
             this.t.notifyDataSetChanged();
         }

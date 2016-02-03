@@ -9,8 +9,8 @@ import cn.com.smartdevices.bracelet.model.PersonInfo;
 import cn.com.smartdevices.bracelet.weight.P;
 import cn.com.smartdevices.bracelet.weight.UserInfo;
 import com.huami.android.view.b;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.bt.profile.Weight.e;
-import com.xiaomi.hm.health.r;
 import java.util.List;
 
 class aB extends Handler {
@@ -54,7 +54,7 @@ class aB extends Handler {
                         this.a.l();
                     } else if (eVar.d() && !eVar.f() && eVar.c()) {
                         if (Utils.c(this.a.getActivity())) {
-                            b.a(this.a.getActivity(), (int) r.weighting_failed, 1, 17).show();
+                            b.a(this.a.getActivity(), (int) R.string.weighting_failed, 1, 17).show();
                         }
                     } else if (!eVar.d() && eVar.f() && p.c == 0) {
                         List<UserInfo> list = p.f;

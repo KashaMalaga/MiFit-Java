@@ -2,7 +2,7 @@ package android.support.v4.k;
 
 import android.support.a.q;
 import android.support.a.r;
-import com.amap.api.location.core.AMapLocException;
+import com.xiaomi.channel.relationservice.data.b;
 import com.xiaomi.e.a;
 import java.util.Locale;
 import kankan.wheel.widget.l;
@@ -31,7 +31,7 @@ public class s {
         for (int i = 0; i < str.length(); i++) {
             char charAt = str.charAt(i);
             switch (charAt) {
-                case AMapLocException.ERROR_CODE_FAILURE_LOCATION /*34*/:
+                case b.I /*34*/:
                     stringBuilder.append("&quot;");
                     break;
                 case '&':

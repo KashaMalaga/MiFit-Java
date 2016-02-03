@@ -47,16 +47,16 @@ public abstract class CrashReportingApplication extends Application implements O
     public abstract Bundle c();
 
     public String d() {
-        String str;
-        String str2 = a.f;
+        String str = a.f;
         PackageManager packageManager = getPackageManager();
+        String str2;
         try {
-            str = (String) packageManager.getApplicationInfo(getPackageName(), 0).loadLabel(packageManager);
-            return str;
-        } catch (NameNotFoundException e) {
-            str = e;
-            str.printStackTrace();
+            str2 = (String) packageManager.getApplicationInfo(getPackageName(), 0).loadLabel(packageManager);
             return str2;
+        } catch (NameNotFoundException e) {
+            str2 = e;
+            str2.printStackTrace();
+            return str;
         } finally {
             System.gc();
         }

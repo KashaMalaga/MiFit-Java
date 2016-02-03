@@ -11,12 +11,11 @@ import cn.com.smartdevices.bracelet.C0401a;
 import cn.com.smartdevices.bracelet.C0544h;
 import cn.com.smartdevices.bracelet.C0596r;
 import cn.com.smartdevices.bracelet.Keeper;
+import cn.com.smartdevices.bracelet.j.l;
 import cn.com.smartdevices.bracelet.model.StartingUpResInfo;
 import com.tencent.open.SocialConstants;
 import com.xiaomi.e.a;
-import com.xiaomi.hm.health.k;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
+import com.xiaomi.hm.health.R;
 import java.util.List;
 
 public class StartUpActivity extends Activity {
@@ -31,7 +30,7 @@ public class StartUpActivity extends Activity {
     private ImageView i;
 
     private void a() {
-        this.i = (ImageView) findViewById(l.center_iv);
+        this.i = (ImageView) findViewById(R.id.center_iv);
         List startupList = Keeper.getStartupList();
         if (startupList == null || startupList.size() == 0) {
             c();
@@ -151,7 +150,7 @@ public class StartUpActivity extends Activity {
 
     private void b() {
         if (C.a(getApplicationContext())) {
-            cn.com.smartdevices.bracelet.j.l.e((Context) this, new v(this));
+            l.e((Context) this, new v(this));
         } else {
             C0596r.d(h, "no network, when request getStaringUpInfo ...");
         }
@@ -162,7 +161,7 @@ public class StartUpActivity extends Activity {
     }
 
     private void c() {
-        this.i.setBackgroundResource(k.start_up_default);
+        this.i.setBackgroundResource(R.drawable.start_up_default);
         C0401a.a(getApplicationContext(), C0401a.hF);
         this.a.sendEmptyMessageDelayed(g, kankan.wheel.widget.a.bX);
     }
@@ -191,7 +190,7 @@ public class StartUpActivity extends Activity {
 
     protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        setContentView(n.activity_start_up);
+        setContentView(R.layout.activity_start_up);
         a();
         b();
     }

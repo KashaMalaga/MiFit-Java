@@ -54,11 +54,10 @@ class C0476i {
     }
 
     public static n a(Context context, String str, o oVar) {
-        JSONException e;
+        n a;
         if (oVar == null || oVar.b == null) {
             throw new IllegalArgumentException();
         }
-        n a;
         n nVar = new n();
         try {
             JSONObject jSONObject = new JSONObject(str);
@@ -76,29 +75,29 @@ class C0476i {
                         oVar.b.add(cn.com.smartdevices.bracelet.gps.model.n.a(jSONArray.getJSONObject(i)));
                     }
                 }
-            } catch (JSONException e2) {
-                e = e2;
+            } catch (JSONException e) {
+                e = e;
                 a.h = 2;
                 C0596r.a("Sync", e.getMessage());
                 return a;
             }
-        } catch (JSONException e3) {
-            JSONException jSONException = e3;
+        } catch (JSONException e2) {
+            JSONException e3;
+            JSONException jSONException = e2;
             a = nVar;
-            e = jSONException;
+            e3 = jSONException;
             a.h = 2;
-            C0596r.a("Sync", e.getMessage());
+            C0596r.a("Sync", e3.getMessage());
             return a;
         }
         return a;
     }
 
     public static n a(Context context, String str, T t) {
-        n a;
-        JSONException e;
         if (t == null) {
             throw new IllegalArgumentException();
         }
+        n a;
         n nVar = new n();
         try {
             JSONObject jSONObject = new JSONObject(str);
@@ -107,18 +106,19 @@ class C0476i {
                 if (a.c()) {
                     t.a(jSONObject.getJSONObject(b.b));
                 }
-            } catch (JSONException e2) {
-                e = e2;
+            } catch (JSONException e) {
+                e = e;
                 a.h = 2;
                 C0596r.a("Sync", e.getMessage());
                 return a;
             }
-        } catch (JSONException e3) {
-            JSONException jSONException = e3;
+        } catch (JSONException e2) {
+            JSONException e3;
+            JSONException jSONException = e2;
             a = nVar;
-            e = jSONException;
+            e3 = jSONException;
             a.h = 2;
-            C0596r.a("Sync", e.getMessage());
+            C0596r.a("Sync", e3.getMessage());
             return a;
         }
         return a;
@@ -126,7 +126,6 @@ class C0476i {
 
     public static n a(Context context, String str, ArrayList<cn.com.smartdevices.bracelet.gps.model.n> arrayList) {
         n a;
-        JSONException e;
         n nVar = new n();
         try {
             JSONObject jSONObject = new JSONObject(str);
@@ -144,29 +143,30 @@ class C0476i {
                         arrayList.add(cn.com.smartdevices.bracelet.gps.model.n.a(jSONObject2.getJSONArray(b.b).toString(), jSONObject2.getString(SocialConstants.PARAM_SUMMARY), i2, j));
                     }
                 }
-            } catch (JSONException e2) {
-                e = e2;
+            } catch (JSONException e) {
+                e = e;
                 a.h = 2;
                 C0596r.a("Sync", e.getMessage());
                 return a;
             }
-        } catch (JSONException e3) {
-            JSONException jSONException = e3;
+        } catch (JSONException e2) {
+            JSONException e3;
+            JSONException jSONException = e2;
             a = nVar;
-            e = jSONException;
+            e3 = jSONException;
             a.h = 2;
-            C0596r.a("Sync", e.getMessage());
+            C0596r.a("Sync", e3.getMessage());
             return a;
         }
         return a;
     }
 
     public static n b(Context context, String str, ArrayList<cn.com.smartdevices.bracelet.gps.model.n> arrayList) {
+        n a;
         JSONException e;
         if (arrayList == null) {
             throw new IllegalArgumentException();
         }
-        n a;
         n nVar = new n();
         try {
             JSONObject jSONObject = new JSONObject(str);
@@ -198,11 +198,11 @@ class C0476i {
     }
 
     public static n c(Context context, String str, ArrayList<cn.com.smartdevices.bracelet.gps.model.n> arrayList) {
+        n a;
         JSONException e;
         if (arrayList == null) {
             throw new IllegalArgumentException();
         }
-        n a;
         n nVar = new n();
         try {
             JSONObject jSONObject = new JSONObject(str);

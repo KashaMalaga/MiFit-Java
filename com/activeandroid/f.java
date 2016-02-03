@@ -134,9 +134,9 @@ public final class f extends SQLiteOpenHelper {
     }
 
     private void b(SQLiteDatabase sQLiteDatabase, InputStream inputStream) {
-        Closeable bufferedReader;
         Throwable th;
         Closeable closeable = null;
+        Closeable bufferedReader;
         try {
             Closeable inputStreamReader = new InputStreamReader(inputStream);
             try {

@@ -12,11 +12,10 @@ import cn.com.smartdevices.bracelet.j.i;
 import cn.com.smartdevices.bracelet.lab.sync.l;
 import cn.com.smartdevices.bracelet.model.HeartRateItem;
 import com.d.a.a.C1012a;
-import com.tencent.open.SocialConstants;
+import com.xiaomi.channel.relationservice.data.a;
 import com.xiaomi.market.sdk.o;
 import java.util.ArrayList;
 import java.util.List;
-import kankan.wheel.widget.a;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -31,8 +30,8 @@ class A {
         JSONObject jSONObject = new JSONObject();
         try {
             jSONObject.put(g.f, j);
-            jSONObject.put(SocialConstants.PARAM_TYPE, 1);
-            jSONObject.put(a.ak, cn.com.smartdevices.bracelet.e.a.d(context));
+            jSONObject.put(a.h, 1);
+            jSONObject.put(kankan.wheel.widget.a.ak, cn.com.smartdevices.bracelet.e.a.d(context));
             jSONObject.put(o.L, 4);
             jSONObject.put(l.f, j2);
         } catch (JSONException e) {
@@ -109,16 +108,17 @@ class A {
     }
 
     static boolean a(Context context, C0466z c0466z) {
-        List a = p.a(1, context, c0466z.x(), c0466z.z());
-        if (a == null || a.isEmpty()) {
+        int a;
+        List a2 = p.a(1, context, c0466z.x(), c0466z.z());
+        if (a2 == null || a2.isEmpty()) {
             return true;
         }
         int i = 1;
-        int size = a.size();
-        long j = ((HeartRateItem) a.get(0)).time;
+        int size = a2.size();
+        long j = ((HeartRateItem) a2.get(0)).time;
         JSONArray jSONArray = new JSONArray();
-        JSONObject a2 = a(context, j, c0466z.G());
-        jSONArray.put(a2);
+        JSONObject a3 = a(context, j, c0466z.G());
+        jSONArray.put(a3);
         ArrayList arrayList = new ArrayList();
         int i2 = 0;
         long j2 = j;
@@ -128,37 +128,36 @@ class A {
                 JSONArray jSONArray2;
                 long j3;
                 int i3;
-                HeartRateItem heartRateItem = (HeartRateItem) a.get(i2);
+                HeartRateItem heartRateItem = (HeartRateItem) a2.get(i2);
                 j = heartRateItem.time;
                 j2 = j - j2;
-                int a3;
                 if (j2 > 60 || arrayList.size() > C1012a.b) {
-                    a2.put("rate", h.a(arrayList));
-                    a3 = i & a(context, jSONArray.toString());
+                    a3.put("rate", h.a(arrayList));
+                    a = i & a(context, jSONArray.toString());
                     try {
                         JSONArray jSONArray3 = new JSONArray();
                         try {
-                            a2 = a(context, j, c0466z.G());
-                            jSONArray3.put(a2);
+                            a3 = a(context, j, c0466z.G());
+                            jSONArray3.put(a3);
                             arrayList.clear();
                             arrayList.add(Byte.valueOf((byte) heartRateItem.hr));
-                            jSONObject = a2;
+                            jSONObject = a3;
                             jSONArray2 = jSONArray3;
                             j3 = j;
-                            i3 = a3;
+                            i3 = a;
                         } catch (JSONException e) {
                             jSONArray = jSONArray3;
-                            i = a3;
+                            i = a;
                         }
                     } catch (JSONException e2) {
-                        i = a3;
+                        i = a;
                     }
                 } else {
-                    for (a3 = 1; ((long) a3) < j2; a3++) {
+                    for (a = 1; ((long) a) < j2; a++) {
                         arrayList.add(Byte.valueOf((byte) 0));
                     }
                     arrayList.add(Byte.valueOf((byte) heartRateItem.hr));
-                    jSONObject = a2;
+                    jSONObject = a3;
                     jSONArray2 = jSONArray;
                     long j4 = j;
                     i3 = i;
@@ -168,11 +167,11 @@ class A {
                 j2 = j3;
                 jSONArray = jSONArray2;
                 i = i3;
-                a2 = jSONObject;
+                a3 = jSONObject;
             } catch (JSONException e3) {
             }
         }
-        a2.put("rate", h.a(arrayList));
+        a3.put("rate", h.a(arrayList));
         return a(context, jSONArray.toString()) & i;
     }
 

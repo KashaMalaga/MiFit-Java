@@ -14,12 +14,11 @@ import android.net.NetworkInfo;
 import android.os.Handler;
 import android.os.Looper;
 import cn.com.smartdevices.bracelet.model.PersonInfo;
-import com.amap.api.location.LocationManagerProxy;
 import com.amap.api.services.geocoder.GeocodeSearch;
 import com.d.a.a.C1012a;
 import com.xiaomi.account.openauth.h;
 import com.xiaomi.channel.b.v;
-import com.xiaomi.e.a;
+import com.xiaomi.channel.relationservice.data.a;
 import com.xiaomi.market.sdk.o;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -89,7 +88,7 @@ public class at {
         this.w = new C0927l(context);
         this.v = new K(this.w);
         this.x = new J(this.w);
-        this.s = (LocationManager) this.r.getSystemService(LocationManagerProxy.KEY_LOCATION_CHANGED);
+        this.s = (LocationManager) this.r.getSystemService(a.l);
         this.y = B.a(this.r);
         this.y.a(this.G);
         n();
@@ -233,7 +232,7 @@ public class at {
         }
         if (atVar.r != null && atVar.z != null) {
             SharedPreferences sharedPreferences = atVar.r.getSharedPreferences("app_pref", 0);
-            if (!sharedPreferences.getString("get_sensor", a.f).equals("true")) {
+            if (!sharedPreferences.getString("get_sensor", com.xiaomi.e.a.f).equals("true")) {
                 try {
                     C0921f c0921f2 = atVar.z;
                     a = C0921f.a(null, atVar.t, i2, (byte) atVar.O, j, true);
@@ -293,7 +292,7 @@ public class at {
             intentFilter.addAction("android.location.GPS_FIX_CHANGE");
             b = true;
             this.r.registerReceiver(this.I, intentFilter);
-            String str = a.f;
+            String str = com.xiaomi.e.a.f;
             this.s.removeUpdates(this.H);
             if (this.B != null) {
                 this.B.quit();

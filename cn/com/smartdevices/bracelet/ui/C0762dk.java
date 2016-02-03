@@ -12,11 +12,9 @@ import cn.com.smartdevices.bracelet.eventbus.EventSettingFragmentUpdate;
 import cn.com.smartdevices.bracelet.model.MiliConfig;
 import cn.com.smartdevices.bracelet.model.PersonInfo;
 import com.huami.android.view.c;
+import com.xiaomi.hm.health.R;
 import com.xiaomi.hm.health.bt.a.x;
-import com.xiaomi.hm.health.l;
-import com.xiaomi.hm.health.n;
 import de.greenrobot.event.EventBus;
-import kankan.wheel.widget.g;
 
 public class C0762dk extends c {
     private PersonInfo a;
@@ -36,41 +34,41 @@ public class C0762dk extends c {
             this.b.setVisibility(0);
             this.c.setVisibility(4);
             this.d.setVisibility(4);
-            this.i.setTextColor(getResources().getColor(g.highlight));
-            this.h.setTextColor(getResources().getColor(g.main_ui_title_color));
-            this.j.setTextColor(getResources().getColor(g.main_ui_title_color));
+            this.i.setTextColor(getResources().getColor(R.color.highlight));
+            this.h.setTextColor(getResources().getColor(R.color.main_ui_title_color));
+            this.j.setTextColor(getResources().getColor(R.color.main_ui_title_color));
         } else if (this.a.getMiliWearHand().equals(MiliConfig.RIGHT_HAND)) {
             this.b.setVisibility(4);
             this.c.setVisibility(0);
             this.d.setVisibility(4);
-            this.h.setTextColor(getResources().getColor(g.highlight));
-            this.i.setTextColor(getResources().getColor(g.main_ui_title_color));
-            this.j.setTextColor(getResources().getColor(g.main_ui_title_color));
+            this.h.setTextColor(getResources().getColor(R.color.highlight));
+            this.i.setTextColor(getResources().getColor(R.color.main_ui_title_color));
+            this.j.setTextColor(getResources().getColor(R.color.main_ui_title_color));
         } else if (this.a.getMiliWearHand().equals(MiliConfig.ONBODY)) {
             this.b.setVisibility(4);
             this.c.setVisibility(4);
             this.d.setVisibility(0);
-            this.h.setTextColor(getResources().getColor(g.main_ui_title_color));
-            this.i.setTextColor(getResources().getColor(g.main_ui_title_color));
-            this.j.setTextColor(getResources().getColor(g.highlight));
+            this.h.setTextColor(getResources().getColor(R.color.main_ui_title_color));
+            this.i.setTextColor(getResources().getColor(R.color.main_ui_title_color));
+            this.j.setTextColor(getResources().getColor(R.color.highlight));
         }
     }
 
     protected int inflateLayout() {
-        return n.fragment_person_info_wear_hand;
+        return R.layout.fragment_person_info_wear_hand;
     }
 
     public void onClick(View view) {
         switch (view.getId()) {
-            case l.person_info_left_hand_area /*2131297080*/:
+            case R.id.person_info_left_hand_area:
                 this.a.setMiliWearHand(MiliConfig.LEFT_HAND);
                 onRightButtonClicked();
                 return;
-            case l.person_info_right_hand_area /*2131297082*/:
+            case R.id.person_info_right_hand_area:
                 this.a.setMiliWearHand(MiliConfig.RIGHT_HAND);
                 onRightButtonClicked();
                 return;
-            case l.person_info_body_area /*2131297085*/:
+            case R.id.person_info_body_area:
                 this.a.setMiliWearHand(MiliConfig.ONBODY);
                 onRightButtonClicked();
                 return;
@@ -89,18 +87,18 @@ public class C0762dk extends c {
             t.a(getActivity(), (int) BaseActivity.MI_NOTE_ORIGINAL_DPI);
         }
         View onCreateView = super.onCreateView(layoutInflater, viewGroup, bundle);
-        this.b = onCreateView.findViewById(l.person_info_left_hand);
-        this.c = onCreateView.findViewById(l.person_info_right_hand);
-        this.d = onCreateView.findViewById(l.person_info_body);
-        this.e = onCreateView.findViewById(l.person_info_right_hand_area);
+        this.b = onCreateView.findViewById(R.id.person_info_left_hand);
+        this.c = onCreateView.findViewById(R.id.person_info_right_hand);
+        this.d = onCreateView.findViewById(R.id.person_info_body);
+        this.e = onCreateView.findViewById(R.id.person_info_right_hand_area);
         this.e.setOnClickListener(this);
-        this.f = onCreateView.findViewById(l.person_info_left_hand_area);
+        this.f = onCreateView.findViewById(R.id.person_info_left_hand_area);
         this.f.setOnClickListener(this);
-        this.g = onCreateView.findViewById(l.person_info_body_area);
+        this.g = onCreateView.findViewById(R.id.person_info_body_area);
         this.g.setOnClickListener(this);
-        this.h = (TextView) onCreateView.findViewById(l.person_info_right_hand_txt);
-        this.i = (TextView) onCreateView.findViewById(l.person_info_left_hand_txt);
-        this.j = (TextView) onCreateView.findViewById(l.person_info_body_txt);
+        this.h = (TextView) onCreateView.findViewById(R.id.person_info_right_hand_txt);
+        this.i = (TextView) onCreateView.findViewById(R.id.person_info_left_hand_txt);
+        this.j = (TextView) onCreateView.findViewById(R.id.person_info_body_txt);
         this.k = this.a.getMiliWearHand();
         a();
         return onCreateView;
